@@ -1,4 +1,5 @@
 export default {
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sitechtimes',
@@ -29,6 +30,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/axios',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -36,6 +38,10 @@ export default {
   ],
   server: {
     port: 8080
+  },
+
+  axios: {
+    baseURL: 'http://localhost:3000/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
