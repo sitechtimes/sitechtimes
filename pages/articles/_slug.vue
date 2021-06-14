@@ -1,6 +1,13 @@
 <template>
   <div>
-  {{ article }}
+    <h1>
+      {{ article.title }}
+    </h1>
+
+    <img v-if="article.imageUrl" :src=article.imageUrl alt="image alt"/>
+    {{ article.imageUrl}}
+
+    <p v-html="article.content"></p>
   </div>
 </template>
 
@@ -15,6 +22,7 @@ export default {
   async mounted() {
     try {
       const article = await this.$axios.get(`/articles/${this.slug}`);
+      console.log(article.data);
       this.article = article.data;
     } catch(e){
       await this.$router.push('/');
