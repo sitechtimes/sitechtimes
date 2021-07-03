@@ -1,4 +1,4 @@
-import {ENV_VALUES} from "../cms/config";
+import {ENV_VALUES} from "./config";
 
 export default {
   ssr: false,
