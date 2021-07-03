@@ -4,6 +4,8 @@
       {{ article.title }}
     </h1>
 
+    <p class="mb-4">{{ article.category }}</p>
+
     <img v-if="article.imageUrl" :src=article.imageUrl alt="image alt"/>
     {{ article.imageUrl}}
 

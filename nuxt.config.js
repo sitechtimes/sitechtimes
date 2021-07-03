@@ -1,3 +1,5 @@
+import {ENV_VALUES} from "../cms/config";
+
 export default {
   ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -41,7 +43,7 @@ export default {
   },
 
   axios: {
-    baseURL: 'http://localhost:3000/'
+    baseURL: ENV_VALUES[process.env.ENV].api
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
