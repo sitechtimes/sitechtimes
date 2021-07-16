@@ -1,9 +1,19 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
-    <h1>Home</h1>
-    <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
+    <Navbar />
+    <div class="global-container">
+      <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
-  </NuxtLink>
+    </NuxtLink> -->
+    <h3>Trending Articles</h3>
+    <h3>News</h3>
+    <h3>Politics</h3>
+    <h3>Entertainment</h3>
+    <h3>Opinion</h3>
+    <h3>Science</h3>
+    <h3>Activities</h3>
+    </div>
+    <Footer />
   </div>
 </template>
 
