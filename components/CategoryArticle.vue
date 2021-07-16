@@ -1,14 +1,14 @@
 <template>
     <div class="category-article">
         <div class="category-img-div">
-            <a :href="article.articleUrl"><img :href="article.articleUrl" :src="article.imageUrl" :alt="article.imageAlt" class="category-article-img"></a>
+            <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img"></a>
         </div>
         <div class="category-article-img-content">
             <div class="category-labels">
                 <category-icon class="category-article-icon" :category="category"></category-icon>
-                <author-and-date class="category-article-authdate" :author="article.author" :published="article.published" />
+                <author-and-date class="category-article-authdate" :author="author" :published="published" />
             </div>
-            <h3 class="category-title">{{article.title}}</h3>
+            <h3 class="category-title">{{title}}</h3>
         </div>
     </div>
 </template>
@@ -16,7 +16,7 @@
 <script>
 export default {
 name: "CategoryArticle",
-props: ["article"]
+props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "category"]
 }
 </script>
 
