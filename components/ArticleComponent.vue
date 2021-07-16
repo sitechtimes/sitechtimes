@@ -5,14 +5,14 @@
     <p class="main-article-description">{{ description }}</p>
     <img
       class="main-article-img"
-      src="../assets/big article temp img.jpg"
-      alt=""
+      :src=articleImg
+      :alt=articleAlt
     />
     <section class="main-article-metadata">
       <author-and-date
         class="article-author-and-date"
-        author="Michael Whalen"
-        published="Feb 1, 2021"
+        :author=author
+        :published=published
       />
       <div class="main-article-metadata-actions">
         <social-media-icons />
@@ -33,7 +33,7 @@ import CategoryIcon from "./CategoryIcon.vue";
 
 export default {
   name: "ArticleComponent",
-  props: ["title", "description", "articleText"],
+  props: ["title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
   components: {
     AuthorAndDate,
     SocialMediaIcons,
