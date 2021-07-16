@@ -43,7 +43,7 @@ a:active { text-decoration: none;  color: var(--black)}
 }
 .article-info {
   display: flex;
-  width: 42.2rem;
+   width: 42.2rem;
 }
 .article-image {
   width: 42.2rem;

@@ -46,9 +46,9 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     margin-top: 2rem;
     display: flex;
     }
-    .category-article-icon {
-        padding-right: 1.5rem;
-    }
+     .category-article-icon {
+         padding-right: 1.5rem;
+     }
     .category-article-authdate {
         margin: auto 0;
         line-height: 2.2rem;
