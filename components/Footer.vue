@@ -2,13 +2,18 @@
   <footer class="footer-container">
       <GetNotifiedSection class="form"/>
       <FooterSocialMedia class="social"/>
-      <FooterNav class="nav"/>
+      <FooterNav :categories="categories" class="nav"/>
   </footer>
 </template>
 
 <script>
 export default {
     name: "Footer",
+    data () {
+      return {
+        categories: ['news', 'opinion', 'politics', 'entertainment', 'science', 'activities', 'events'],
+    }
+  },
     components: {
         GetNotifiedSection: () => import('./GetNotifiedSection.vue'),
         FooterSocialMedia: () => import('./FooterSocialMedia.vue'),

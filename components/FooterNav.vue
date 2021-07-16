@@ -3,22 +3,19 @@
         <h4 class="footer-header footer-nav-header">Navigation</h4>
         <div>
         <ul class="footer-nav-ul">
-            <a href=""><li class="footer-nav-li">News</li></a>
-            <a href=""><li class="footer-nav-li">Politics</li></a>
-            <a href=""><li class="footer-nav-li">Entertainment</li></a>
-            <a href=""><li class="footer-nav-li">Opinion</li></a>
-            <a href=""><li class="footer-nav-li">Science</li></a>
-            <a href=""><li class="footer-nav-li">Activities</li></a>
-            <a href=""><li class="footer-nav-li">Events</li></a>
+            <a v-for="category in categories" 
+            :key="category"
+            :href="category"><li>{{ category }}</li></a>
         </ul>
     </div>
     </div>
 </template>
-
+]
 <script>
-export default {
-    name: "FooterNav",
-}
+    export default {
+    name: 'FooterNav', // vue component name
+    props: ["categories"],
+  };
 </script>
 
 <style lang="scss">
@@ -34,12 +31,6 @@ export default {
         width: 36rem;
         margin: 0 auto;
     }
-    .footer-nav-li {
-        color: var(--primary-color);
-        font-size: var(--h4);
-        list-style-type: none;
-        padding: .75rem;
-    }
     .footer-nav-ul {
         display: flex;
         flex-direction: column;
@@ -48,6 +39,13 @@ export default {
         margin-top: 1.5rem;
         border-top: .3rem solid var(--primary-color); 
         border-bottom: .3rem solid var(--primary-color); 
+    }
+    .footer-nav-ul li {
+        color: var(--primary-color);
+        font-size: var(--h4);
+        list-style-type: none;
+        text-transform: capitalize;
+        padding: .75rem;
     }
      @media only screen and (max-width: $x-small-screen) {
         .footer-nav {
