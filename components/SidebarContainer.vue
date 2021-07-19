@@ -93,7 +93,7 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
 .sidebar-container {
-  border-left: 2px solid #d9b75e;
+  border-left: 2px solid var(--primary-color);
   max-width: 50rem;
 
   float: right;
