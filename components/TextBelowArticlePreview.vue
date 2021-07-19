@@ -37,17 +37,12 @@ a:active { text-decoration: none;  color: var(--black)}
 .text-below-preview-article {
   display: flex;
   flex-direction: column;
-  width: 46.1rem;
-  height: 37rem;
-  margin-right: 3rem;
 }
 .article-info {
   display: flex;
-  width: 42.2rem;
 }
 .article-image {
-  width: 42.2rem;
-  height: 21.7rem;
+  width: 100%;
   border-radius: 1.5rem;
 }
 .article-cat {
@@ -62,23 +57,6 @@ a:active { text-decoration: none;  color: var(--black)}
 }
 .article-data {
     padding-top: 1rem;
-}
-@media only screen and (max-width: $x-small-screen) {
-  .article-cat {
-    margin-right: 1rem;
-  }
-  .article-data {
-    margin-right: 0.25rem;
-  }
-  .article-info {
-    width: 35rem;
-  }
-  .article-image {
-    width: 37rem;
-  }
-  .article-title {
-    width: 37rem;
-  }
 }
 
 
