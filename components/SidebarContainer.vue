@@ -13,7 +13,7 @@
     /><!-- css var for imgUrl? -->
 
     <h3 class="sidebar-heading">More Like This</h3>
-    <!-- <sidebar
+    <sidebar
       v-for="article in moreLikeThis"
       :key="article"
       :category="article.category"
@@ -22,7 +22,7 @@
       :title="article.title"
       :imgUrl="article.imageUrl"
       :articleUrl="article.slug"
-    /> -->
+    /> 
   </section>
 </template>
 
@@ -34,7 +34,7 @@ export default {
   components: { Sidebar },
   props: {
     trending: Array,
-    // moreLikeThis: [],
+    moreLikeThis: Array,
   },
   //trending articles 
   data() {
