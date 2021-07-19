@@ -167,6 +167,30 @@ small,
   font-size: var(--small-text);
 }
 
+@media only screen and (max-width: $large-screen) {
+  *,
+  html,
+  body {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: $mid-screen) {
+  *,
+  html,
+  body {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: $x-small-screen) {
+  *,
+  html,
+  body {
+    font-size: 45%;
+  }
+}
+
 //The only reason the code is the right size in styleguide.
 .prism-editor > textarea {
   font-size: 1.5rem;

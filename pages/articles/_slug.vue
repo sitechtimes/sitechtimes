@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>
+  <div class="article-page">
+    <!-- <h1>
       {{ article.title }}
     </h1>
 
@@ -15,7 +15,10 @@
       title="Article Title"
       description="Article Description"
       articleText="article text blah blah"
-    />
+    /> -->
+    <ArticleComponent v-if="article.user" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" description="This is a sample description because there is currently no article description property for each article in the api data. > _ <" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
+    <!--  :articleAlt="" :author=""  -->
+    <SidebarContainer />
   </div>
 </template>
 
@@ -34,9 +37,28 @@ export default {
       const article = await this.$axios.get(`/articles/${this.slug}`);
       console.log(article.data);
       this.article = article.data;
+      console.log(this.article);
     } catch (e) {
       await this.$router.push("/");
     }
   }
 };
 </script>
+
+<style lang="scss">
+  .article-page {
+    width: 120rem;
+    overflow: scroll;
+    padding: 10rem 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+  #article-component {
+    width: 75rem;
+  }
+  .sidebar-container {
+    width: 40rem;
+  }
+</style>

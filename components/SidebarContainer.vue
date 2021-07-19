@@ -95,7 +95,6 @@ export default {
 .sidebar-container {
   border-left: 2px solid #d9b75e;
   max-width: 50rem;
-
   float: right;
   overflow: hidden;
   /*   display: flex;
@@ -103,7 +102,9 @@ export default {
   align-items: flex-end; */
 }
 .sidebar-heading {
-  padding: 1.5rem 2.5rem;
+  font-size: var(--h4);
+  padding: 0 3rem;
+  padding-top: 5rem;
   margin: 0;
 }
 
