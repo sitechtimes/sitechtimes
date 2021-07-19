@@ -1,14 +1,123 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
-    <h1>Home</h1>
-    <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
+    <Navbar />
+    <div class="global-container">
+      <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
-  </NuxtLink>
+    </NuxtLink> -->
+    <h3 class="section-title">Trending Articles</h3>
+    <section class="trending-section">
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="trending-main"/>
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="trending-sub"/>
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="trending-detail"/>
+    </section>
+    <h3 class="section-title">News</h3>
+    <section class="news-section">
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      />
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      />
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      />
+    </section>
+    <h3 class="section-title">Politics</h3>
+    <section class="politics-section">
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="politics-main"/>
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="politics-sub"/>
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="politics-detail"/>
+    </section>
+    <h3 class="section-title">Entertainment</h3>
+    <section class="entertainment-section">
+      <CardComponent 
+      articleUrl="https://www.thetravel.com/best-surfing-spots-california/" author="Daniel Briskman" published="Jan 21, 2021" category="sports" imageTitle="A Girl Surfing" title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard." class="entertainment-main"/>
+      <EntertainmentSideArticle
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      category="entertainment"
+      author="Charley Baluja"
+      published="July 12, 2021"
+      title="Podcasts: Radio, But Less Cool"
+      class="entertainment-sub"
+      />
+      <EntertainmentSideArticle
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      category="entertainment"
+      author="Charley Baluja"
+      published="July 12, 2021"
+      title="Podcasts: Radio, But Less Cool"
+      class="entertainment-detail"
+      />
+    </section>
+    <h3 class="section-title">Opinion</h3>
+    <h3 class="section-title">Science</h3>
+    <section class="science-section">
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      class="science-main"
+      />
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      class="science-sub"
+      />
+      <text-below-article-preview
+      articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+      author="Daniel Briskman"
+      published="Jan 31, 2020"
+      category="opinion"
+      imageAlt="Space X Rocket"
+      title="I hate rockets, and this is why you should too"
+      imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+      class="science-detail"
+      />
+    </section>
+    <h3 class="section-title">Activities</h3>
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
-  export default {
+export default {
     data() {
       return {
         homepages: []
@@ -20,3 +129,83 @@
     }
   }
 </script>
+
+<style lang="scss">
+.section-title {
+  padding: 4rem 0;
+}
+.trending-main {
+  grid-area: 1 / 1 / 3 / 5;
+}
+.trending-sub {
+  grid-area: 1 / 5 / 2 / 8;
+}
+.trending-detail {
+  grid-area: 2 / 5 / 3 / 8;
+}
+.trending-section {
+  height: 60rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px; 
+}
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+}
+.politics-section {
+  height: 35rem;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px; 
+}
+.politics-main {
+  grid-area: 1 / 1 / 2 / 8;
+}
+.politics-sub {
+  grid-area: 1 / 8 / 2 / 13;
+}
+.politics-detail {
+  grid-area: 1 / 13 / 2 / 17;
+}
+.entertainment-section {
+  height: 45rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px; 
+}
+.entertainment-main {
+  grid-area: 1 / 1 / 3 / 5;
+}
+.entertainment-sub {
+  grid-area: 1 / 5 / 2 / 8;
+}
+.entertainment-detail {
+  grid-area: 2 / 5 / 3 / 8;
+}
+.science-section {
+  height: 80rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px; 
+}
+.science-main {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.science-sub {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.science-detail {
+  grid-area: 2 / 2 / 3 / 3;
+}
+</style>
