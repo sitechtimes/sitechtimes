@@ -19,6 +19,15 @@
         <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category"/>
          <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category"/>
         <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category"/>
+                      <TextBelowArticlePreview       
+      v-for="article in newArticles"
+      :key="article"
+      :category="article.category"
+      :author="article.user.name"
+      :published="article.createdAt"
+      :title="article.title"
+      :imageUrl="article.imageUrl"
+      :articleUrl="article.slug"/>
         <div class="entertainment-seymour">
           <SeeMoreBtn class="seymour"  @click.native="newArticles()" />
           </div>
@@ -54,6 +63,7 @@ export default {
       const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=1`);
       this.newArticles = newArticles.data;
      console.log(newArticles.data);
+     this.$forceUpdate();
     }catch(e){
       await this.$router.push('/');
     }
