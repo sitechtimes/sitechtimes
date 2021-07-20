@@ -40,6 +40,9 @@ export default {
       const createFontSize = ({ fontSize }) => ({
         "--customFontSize": fontSize
       });
+       const small = createFontSize({ //create size here
+        fontSize: "2.4rem"
+      });
       const medium = createFontSize({ //create size here
         fontSize: "3.6rem"
       });

@@ -25,6 +25,7 @@
           imageTitle="A Girl Surfing"
           title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
           class="trending-sub"
+          size="small"
         />
         <CardComponent
           articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
