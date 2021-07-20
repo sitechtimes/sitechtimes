@@ -3,14 +3,12 @@
     <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img"/>
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <a
-        :href="articleUrl"
-        target="_blank"
-        rel="noopener noreferrer"
+      <NuxtLink
+        :to="articleUrl"
         id="sidebar-article-details-title"
       >
         {{ title }}
-      </a>
+      </NuxtLink>
       <author-and-date-sidebar
         :author="author"
         :published="published"
