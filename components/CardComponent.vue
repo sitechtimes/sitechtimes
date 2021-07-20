@@ -1,7 +1,7 @@
 <template>
   <div
     class="card-component card-component-image"
-    title="Humanoid Entity Surfing In The Ocean at Dusk" :style="getFontSize"
+    :style="getFontSize"
   >
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
@@ -40,11 +40,16 @@ export default {
       const createFontSize = ({ fontSize }) => ({
         "--customFontSize": fontSize
       });
-      const medium = createFontSize({
+      const medium = createFontSize({ //create size here
         fontSize: "3.6rem"
       });
-      const fontSizes = {
-        medium
+      const large = createFontSize({
+        fontSize: "4.2rem"
+      });
+      const fontSizes = { //list of sizes just names
+        small,
+        medium, //default
+        large,
       };
       return fontSizes[this.size];
     },
