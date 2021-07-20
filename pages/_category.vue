@@ -53,23 +53,18 @@ export default {
     }
   },
   methods: {
-  async newArticles() {
-    try {
-      const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`);
-      this.newArticles = newArticles.data;
-      this.page++;
-      this.allArticles = [].concat(this.allArticles, newArticles.data);
-      console.log(this.newArticles);
-      if(this.newArticles.length < 5) {
-        this.moreToLoad = false;
-      }
-      else {
-        this.moreToLoad = true;
-      }
-     return (this.allArticles);
-    }catch(e){
-      await this.$router.push('/');
-    }
+  newArticles() {
+     this.$axios.get(`/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`).then((response)=> {
+       this.page++;
+       this.allArticles = [].concat(this.allArticles, response.data);
+       if(response.data.length < 5){
+         this.moreToLoad = false;
+       }
+       else{
+         this.moreToLoad = true;
+       }
+       return(this.allArticles)
+     })
    }
   }
   }
