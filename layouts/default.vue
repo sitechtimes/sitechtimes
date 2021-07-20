@@ -1,6 +1,10 @@
 <template>
   <div>
     <Datebar />
-    <Nuxt />
+
+    <div class="global-container">
+       <Nuxt />
+    </div>
+    <Footer />
   </div>
 </template>

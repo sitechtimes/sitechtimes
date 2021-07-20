@@ -1,5 +1,5 @@
 <template>
-  <div class="article-page">
+  <div class="article-page global-container">
     <!-- <h1>
       {{ article.title }}
     </h1>
@@ -62,30 +62,27 @@ export default {
 @import '/../assets/variables';
 
   .article-page {
-    width: 120rem;
     overflow: scroll;
-    padding: 10rem 0;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    display: flex;
+    flex-direction: row;
   }
   #article-component {
-    width: 75rem;
+    width: 65%;
   }
   .sidebar-container {
-    width: 40rem;
+    width: 30%;
+    margin-left: 5%;
   }
-  @media only screen and (max-width: $large-screen) {
-    
-  }
-  @media only screen and (max-width: $mid-screen) {
+  @media only screen and (max-width: $midlarge-screen) {
     .article-page {
-      grid-template-columns: 1fr;
+      flex-direction: column;
     }
-    #article-component, .sidebar-component {
-    width: 100%;
+    #article-component, .sidebar-container {
+      width: 100%;  
     }   
-    // .sidebar-container 
+    .sidebar-container {
+      margin-left: 0;
+    }
   }
 </style>
