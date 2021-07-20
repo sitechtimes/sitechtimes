@@ -1,25 +1,29 @@
 <template>
-  <section class= "global-container">
+  <section class="global-container">
     <h1 class="cat-title">{{ category }}</h1>
-<!--    <h1>-->
-<!--      <NuxtLink class="block" v-for="article in articles" :to="`/articles/${article.slug}`" :key="article.slug">-->
-<!--        {{ article.title }}-->
-<!--      </NuxtLink>-->
-<!--    </h1>-->
 <div class="border-right">
 <div class="cat-main">
-    <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" class="testing" />
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="articles[0].slug" class="testing" /> 
     </div>
     <div class="two-sub-articles">
-    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category"/>
-     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category"/>
+    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="articles[1].slug"/>
+     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="articles[2].slug"/>
      </div>
      <div class="cat-sub">
-    <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category"/>
-        <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category"/>
-         <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category"/>
-        <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category"/>
-          <CategoryArticle      
+  <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="articles[3].slug"/>
+        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="articles[4].slug"/>
+         <CategoryArticle class="sub-art" v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="articles[5].slug"/>
+        <CategoryArticle class="sub-art" v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="articles[6].slug"/> 
+         <CategoryArticle   class="sub-art"  
+      v-for="article in hozier"
+      :key="article"
+      :category="article.category"
+      :author="article.user.name"
+      :published="article.createdAt"
+      :title="article.title"
+      :imageUrl="article.imageUrl"
+      :articleUrl="article.slug"/>
+          <CategoryArticle   class="sub-art"   
       v-for="article in newArticles"
       :key="article"
       :category="article.category"
@@ -28,10 +32,10 @@
       :title="article.title"
       :imageUrl="article.imageUrl"
       :articleUrl="article.slug"/>
+          </div>
         <div class="entertainment-seymour">
           <SeeMoreBtn class="seymour"  @click.native="newArticles()" />
           </div>
-    </div>
     </div>
   </section>
 </template>
@@ -50,9 +54,8 @@ export default {
   },
   async beforeMount () {
     try {
-      const articles = await this.$axios.get(`/articles?category=${this.category}`);
+      const articles = await this.$axios.get(`/articles?category=${this.category}&sortBy=dateDesc`);
       this.articles = articles.data;
-      console.log(articles)
     }catch(e){
       await this.$router.push('/');
     }
@@ -61,14 +64,25 @@ export default {
    newArticles: async function() {
     try {
       const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=1`);
-      this.newArticles = newArticles.data;
-     console.log(newArticles.data);
+      this.newArticles= newArticles.data;
      this.$forceUpdate();
     }catch(e){
       await this.$router.push('/');
     }
    }
-  }
+  }, 
+  // computed: {
+  //   hozier: async function(){
+  // try {
+  //     const articles = await this.$axios.get(`/articles?category=${this.category}`);
+  //     this.articles.reverse().forEach(function(){
+  //       return articles.data;
+  //     })
+  //   }catch(e){
+  //     await this.$router.push('/');
+  //   }
+  //   }
+  // }
   }
 </script>
 
@@ -95,7 +109,7 @@ display: flex;
 .two-sub-articles{
   display: flex;
   flex-direction: row;
-  margin-bottom: 5rem;
+  margin-bottom: 1.4rem;
   width: 100%;
 }
 .cat-sub{
