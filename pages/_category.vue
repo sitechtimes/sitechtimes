@@ -15,7 +15,7 @@
          <CategoryArticle class="sub-art" v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="articles[5].slug"/>
         <CategoryArticle class="sub-art" v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="articles[6].slug"/> 
          <CategoryArticle   class="sub-art"  
-      v-for="article in hozier"
+      v-for="article in articles"
       :key="article"
       :category="article.category"
       :author="article.user.name"
@@ -34,7 +34,7 @@
       :articleUrl="article.slug"/>
           </div>
         <div class="entertainment-seymour">
-          <SeeMoreBtn class="seymour"  @click.native="newArticles()" />
+          <SeeMoreBtn class="seymour" v-if="moreToLoad" @click.prevent.native="newArticles()" />
           </div>
     </div>
   </section>
@@ -48,24 +48,36 @@ export default {
   },
   data () {
     return {
-      category: this.$route.params.category,
+         category: this.$route.params.category,
+      page: 2,
       articles: [],
+      allArticles: [],
+      moreToLoad: true
     }
   },
   async beforeMount () {
     try {
-      const articles = await this.$axios.get(`/articles?category=${this.category}&sortBy=dateDesc`);
+      const articles = await this.$axios.get(`/articles?category=${this.category}&sort=dateDes`);
       this.articles = articles.data;
     }catch(e){
       await this.$router.push('/');
     }
   },
   methods: {
-   newArticles: async function() {
+  async newArticles() {
     try {
-      const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=1`);
-      this.newArticles= newArticles.data;
-     this.$forceUpdate();
+      const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=${this.page}&sortBy=dateDes`);
+      this.newArticles = newArticles.data;
+      this.page++;
+      this.allArticles = [].concat(this.allArticles, newArticles.data);
+      console.log(this.newArticles);
+      if(this.newArticles.length < 5) {
+        this.moreToLoad = false;
+      }
+      else {
+        this.moreToLoad = true;
+      }
+     return (this.allArticles);
     }catch(e){
       await this.$router.push('/');
     }
