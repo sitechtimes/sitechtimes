@@ -1,5 +1,5 @@
 <template>
-  <div class="article-page global-container">
+  <div class="article-page">
     <!-- <h1>
       {{ article.title }}
     </h1>
