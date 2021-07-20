@@ -23,9 +23,10 @@
           published="Jan 21, 2021"
           category="sports"
           imageTitle="A Girl Surfing"
-          title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
+          title="Boy almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
           class="trending-sub"
           size="small"
+          clampSize="smallClamp"
         />
         <CardComponent
           articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
