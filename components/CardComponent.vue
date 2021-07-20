@@ -1,7 +1,7 @@
 <template>
   <div
     class="card-component card-component-image"
-    title="Humanoid Entity Surfing In The Ocean at Dusk"
+    title="Humanoid Entity Surfing In The Ocean at Dusk" :style="getFontSize"
   >
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
@@ -20,29 +20,35 @@
 <script>
 export default {
   name: "CardComponent",
-  props: [
-    "author",
-    "articleUrl",
-    "published",
-    "category",
-    "imageUrl",
-    "imageAlt",
-    "title",
-    "size"
-  ],
+  props: { author:{type:String},
+    articleUrl:{type:String},
+    published:{type:String},
+    category:{type:String},
+    imageUrl:{type:String},
+    imageAlt:{type:String},
+    title:{type:String},
+    size:{
+      default:"Medium",
+      type:String
+    },},
+   
+    
+  
+
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
         "--customFontSize": fontSize
       });
       const medium = createFontSize({
-        fontSize: "45rem"
+        fontSize: "3.6rem"
       });
       const fontSizes = {
         medium
       };
       return fontSizes[this.size];
-    }
+    },
+   
   }
 };
 </script>
