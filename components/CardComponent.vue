@@ -41,13 +41,13 @@ export default {
         "--customFontSize": fontSize
       });
        const small = createFontSize({ //create size here
-        fontSize: "2.4rem"
+        fontSize: "2.827rem"
       });
       const medium = createFontSize({ //create size here
-        fontSize: "3.6rem"
+        fontSize: "3.998rem"
       });
       const large = createFontSize({
-        fontSize: "4.2rem"
+        fontSize: "5.653rem"
       });
       const fontSizes = { //list of sizes just names
         small,
@@ -83,6 +83,9 @@ a:active {
   cursor: pointer;
   border-radius: 1.5rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .card-component-image {
   background: var(--greyToBlack), url("../assets/card-comp-tempimg.jpeg");
@@ -98,24 +101,22 @@ a:active {
   flex-direction: row;
 }
 .card-component-text-container {
-  width: 80.2%;
-  max-height: 50%;
-  margin: 0 5.2rem auto;
-  position: absolute;
-  top: 50%;
+  width: 80%;
+  max-height: 70%;
+  margin: 0 auto;
+  padding-bottom: 10%;
 }
 .card-component-category-author-date {
-  max-height: 5rem auto;
   padding-bottom: 1.7rem;
 }
 .card-component-category {
-  padding-right: 1.7rem;
   color: var(--white);
+  padding-right: 1.7rem;
 }
 .card-component-author-and-date {
   position: relative;
   height: 1.6rem;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   color: var(--white);
 }
 .text-overflow {

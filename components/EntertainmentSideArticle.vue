@@ -31,10 +31,13 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
   height: 20rem;
   width: 18rem;
   border-radius: 1.5rem;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
 .entertainment-side-img-content{
-width: 40vw;
-margin-left: 2rem;
+  width: 40vw;
+  margin-left: 2rem;
 }
 .entertainment-title{
   font-size: 2.4rem;
