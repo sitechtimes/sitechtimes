@@ -37,19 +37,20 @@ export default {
   async mounted() {
     try {
       const article = await this.$axios.get(`/articles/${this.slug}`);
-      console.log(article.data);
+      // console.log(article.data);
       this.article = article.data;
-      console.log(this.article);
+      // console.log(this.article);
 
       const categoryHome = await this.$axios.get(`/articles/homepage?category=${this.article.category}`);
-      console.log(categoryHome.data);
+      // console.log(categoryHome.data);
       this.categoryHome = categoryHome.data;
-      console.log(this.categoryHome);
+      // console.log(this.categoryHome);
 
       const categoryRecent = await this.$axios.get(`/articles?category=${this.article.category}`);
-      console.log(categoryRecent.data);
+      // console.log(categoryRecent.data);
       this.categoryRecent = categoryRecent.data;
-      console.log(this.categoryRecent);
+      // console.log(this.categoryRecent);
+      this.categoryRecent = this.categoryRecent.slice(0, 3);
     } catch (e) {
       await this.$router.push("/");
     }
@@ -58,6 +59,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '/../assets/variables';
+
   .article-page {
     width: 120rem;
     overflow: scroll;
@@ -72,5 +75,17 @@ export default {
   }
   .sidebar-container {
     width: 40rem;
+  }
+  @media only screen and (max-width: $large-screen) {
+    
+  }
+  @media only screen and (max-width: $mid-screen) {
+    .article-page {
+      grid-template-columns: 1fr;
+    }
+    #article-component, .sidebar-component {
+    width: 100%;
+    }   
+    // .sidebar-container 
   }
 </style>
