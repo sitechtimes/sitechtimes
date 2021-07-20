@@ -49,8 +49,8 @@ export default {
 @import '../assets/variables';
 .sidebar-container {
   border-left: 2px solid #d9b75e;
-  max-width: 50rem;
-  float: right;
+  // max-width: 50rem;
+  // float: right;
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
@@ -61,11 +61,14 @@ export default {
   padding-top: 5rem;
   margin: 0;
 }
-
+@media only screen and (max-width: $midlarge-screen) {
+  .sidebar-container {
+    border: none;
+  }
+}
 @media only screen and (max-width: $mid-screen) {
   .sidebar-container {
     max-width: none;
-    border: none;
   }
   .sidebar-heading {
     padding: 1.5rem var(--sidebarSidePadding);
