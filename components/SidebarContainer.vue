@@ -17,7 +17,7 @@
       v-for="article in moreLikeThis"
       :key="article"
       :category="article.category"
-      :author="article.user"
+      :author="article.user.name"
       :published="article.createdAt"
       :title="article.title"
       :imgUrl="article.imageUrl"
@@ -51,7 +51,6 @@ export default {
   border-left: 2px solid #d9b75e;
   max-width: 50rem;
   float: right;
-  overflow: hidden;
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
