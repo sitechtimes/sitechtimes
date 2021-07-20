@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="card-component card-component-image"
-    :style="getFontSize"
-  >
+  <div class="card-component card-component-image" :style="getFontSize">
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -12,7 +9,9 @@
           class="card-component-author-and-date"
         />
       </div>
-      <div class="text-overflow card-component-title">{{ title }}</div>
+      <div class="text-overflow card-component-title" :style="getClampSize">
+        {{ title }}
+      </div>
     </a>
   </div>
 </template>
@@ -20,44 +19,45 @@
 <script>
 export default {
   name: "CardComponent",
-  props: { author:{type:String},
-    articleUrl:{type:String},
-    published:{type:String},
-    category:{type:String},
-    imageUrl:{type:String},
-    imageAlt:{type:String},
-    title:{type:String},
-    size:{
-      default:"Medium",
-      type:String
+  props: {
+    author: { type: String },
+    articleUrl: { type: String },
+    published: { type: String },
+    category: { type: String },
+    imageUrl: { type: String },
+    imageAlt: { type: String },
+    title: { type: String },
+    size: {
+      default: "Medium",
+      type: String
     },
     clampSize: {
-      default:"Medium",
-      type:String
+      default: "mediumClamp",
+      type: String
     }
-    },
-   
-    
-  
+  },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
         "--customFontSize": fontSize
       });
-       const small = createFontSize({ //create size here
+      const small = createFontSize({
+        //create size here
         fontSize: "2.827rem"
       });
-      const medium = createFontSize({ //create size here
+      const medium = createFontSize({
+        //create size here
         fontSize: "3.998rem"
       });
       const large = createFontSize({
         fontSize: "5.653rem"
       });
-      const fontSizes = { //list of sizes just names
+      const fontSizes = {
+        //list of sizes just names
         small,
         medium, //default
-        large,
+        large
       };
       return fontSizes[this.size];
     },
@@ -66,23 +66,25 @@ export default {
       const createClampSize = ({ clampSize }) => ({
         "--customClampSize": clampSize
       });
-       const small = createClampSize({ //create size here
-        fontSize: "2"
+      const smallClamp = createClampSize({
+        //create size here
+        clampSize: "2"
       });
-      const medium = createClampSize({ //create size here
-        fontSize: "4"
+      const mediumClamp = createClampSize({
+        //create size here
+        clampSize: "4"
       });
-      const large = createClampSize({
-        fontSize: "5"
+      const largeClamp = createClampSize({
+        clampSize: "5"
       });
-      const clampSizes = { //list of sizes just names
-        small,
-        medium, //default
-        large,
+      const clampSizes = {
+        //list of sizes just names
+        smallClamp,
+        mediumClamp, //default
+        largeClamp
       };
       return clampSizes[this.clampSize];
-    },
-   
+    }
   }
 };
 </script>
@@ -148,12 +150,12 @@ a:active {
 .text-overflow {
   display: block;
   display: -webkit-box;
-  -webkit-line-clamp: var(--customClampSize); //The Number of Lines Shown Before Cutting Off the Text
+  -webkit-line-clamp: var(
+    --customClampSize
+  ); //The Number of Lines Shown Before Cutting Off the Text
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  
 }
 .card-component-title {
   font-weight: bold;
