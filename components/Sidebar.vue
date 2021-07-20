@@ -4,9 +4,7 @@
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
       <NuxtLink
-        :href="articleUrl"
-        target="_blank"
-        rel="noopener noreferrer"
+        :to="articleUrl"
         id="sidebar-article-details-title"
       >
         {{ title }}
