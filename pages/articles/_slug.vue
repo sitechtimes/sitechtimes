@@ -1,5 +1,5 @@
 <template>
-  <div class="article-page">
+  <div class="article-page global-container">
     <!-- <h1>
       {{ article.title }}
     </h1>
@@ -18,7 +18,7 @@
     /> -->
     <ArticleComponent v-if="article.user" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" description="This is a sample description because there is currently no article description property for each article in the api data. > _ <" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
     <!--  :articleAlt="" :author=""  -->
-    <SidebarContainer />
+    <SidebarContainer v-if="article.user" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
 
@@ -29,36 +29,60 @@ export default {
   data() {
     return {
       slug: this.$route.params.slug,
+      categoryHome: this.$route.params.category,
+      categoryRecent: this.$route.params.category,
       article: {}
     };
   },
   async mounted() {
     try {
       const article = await this.$axios.get(`/articles/${this.slug}`);
-      console.log(article.data);
+      // console.log(article.data);
       this.article = article.data;
-      console.log(this.article);
+      // console.log(this.article);
+
+      const categoryHome = await this.$axios.get(`/articles/homepage?category=${this.article.category}`);
+      // console.log(categoryHome.data);
+      this.categoryHome = categoryHome.data;
+      // console.log(this.categoryHome);
+
+      const categoryRecent = await this.$axios.get(`/articles?category=${this.article.category}`);
+      // console.log(categoryRecent.data);
+      this.categoryRecent = categoryRecent.data;
+      // console.log(this.categoryRecent);
+      this.categoryRecent = this.categoryRecent.slice(0, 3);
     } catch (e) {
       await this.$router.push("/");
     }
-  }
+  },
 };
 </script>
 
 <style lang="scss">
+@import '/../assets/variables';
+
   .article-page {
-    width: 120rem;
     overflow: scroll;
-    padding: 10rem 0;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    display: flex;
+    flex-direction: row;
   }
   #article-component {
-    width: 75rem;
+    width: 65%;
   }
   .sidebar-container {
-    width: 40rem;
+    width: 30%;
+    margin-left: 5%;
+  }
+  @media only screen and (max-width: $midlarge-screen) {
+    .article-page {
+      flex-direction: column;
+    }
+    #article-component, .sidebar-container {
+      width: 100%;  
+    }   
+    .sidebar-container {
+      margin-left: 0;
+    }
   }
 </style>

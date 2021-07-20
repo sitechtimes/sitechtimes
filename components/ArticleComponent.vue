@@ -19,8 +19,8 @@
         <share-icon />
       </div>
     </section>
-    <section class="main-article-text-section">
-      <p class="main-article-text">{{ articleText }}</p>
+    <section class="main-article-text-section main-article-text" v-html="articleText">
+      <!-- <p class="main-article-text">{{ articleText }}</p> -->
     </section>
   </div>
 </template>
@@ -79,4 +79,7 @@ export default {
 .main-article-metadata-actions {
   display: flex;
 }
+.main-article-text-section > * { 
+  font-size: 3rem;
+} 
 </style>

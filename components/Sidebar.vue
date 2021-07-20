@@ -2,7 +2,7 @@
   <div class="sidebar-article">
     <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img"/>
     <div class="sidebar-article-details">
-      <category-icon-sidebar category="opinion"></category-icon-sidebar>
+      <category-icon-sidebar :category="category"></category-icon-sidebar>
       <a
         :href="articleUrl"
         target="_blank"

@@ -5,23 +5,24 @@
       v-for="article in trending"
       :key="article"
       :category="article.category"
-      :author="article.author"
-      :published="article.published"
+      :author="article.user.name"
+      :published="article.createdAt"
       :title="article.title"
-      :imgUrl="article.imgUrl"
-      :articleUrl="article.articleUrl"
+      :imgUrl="article.imageUrl"
+      :articleUrl="article.slug"
     /><!-- css var for imgUrl? -->
 
     <h3 class="sidebar-heading">More Like This</h3>
     <sidebar
       v-for="article in moreLikeThis"
       :key="article"
-      :author="article.author"
-      :published="article.published"
+      :category="article.category"
+      :author="article.user"
+      :published="article.createdAt"
       :title="article.title"
-      :imgUrl="article.imgUrl"
-      :articleUrl="article.articleUrl"
-    />
+      :imgUrl="article.imageUrl"
+      :articleUrl="article.slug"
+    /> 
   </section>
 </template>
 
@@ -31,63 +32,17 @@ import Sidebar from "./Sidebar.vue";
 export default {
   name: "SidebarContainer",
   components: { Sidebar },
+  props: {
+    trending: Array,
+    moreLikeThis: Array,
+  },
+  //trending articles 
   data() {
     return {
-      trending: [
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 31, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 32, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 33, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-      ],
-      moreLikeThis: [
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 34, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 35, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 36, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-      ],
     };
   },
 };
+
 </script>
 
 <style lang="scss">
