@@ -11,20 +11,9 @@
      </div>
      <div class="cat-sub">
   <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="articles[3].slug"/>
-        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="articles[4].slug"/>
-         <CategoryArticle class="sub-art" v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="articles[5].slug"/>
-        <CategoryArticle class="sub-art" v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="articles[6].slug"/> 
-         <CategoryArticle   class="sub-art"  
-      v-for="article in articles"
-      :key="article"
-      :category="article.category"
-      :author="article.user.name"
-      :published="article.createdAt"
-      :title="article.title"
-      :imageUrl="article.imageUrl"
-      :articleUrl="article.slug"/>
+        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="articles[4].slug"/> 
           <CategoryArticle   class="sub-art"   
-      v-for="article in newArticles"
+      v-for="article in allArticles"
       :key="article"
       :category="article.category"
       :author="article.user.name"
@@ -66,7 +55,7 @@ export default {
   methods: {
   async newArticles() {
     try {
-      const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=${this.page}&sortBy=dateDes`);
+      const newArticles = await this.$axios.get(`/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`);
       this.newArticles = newArticles.data;
       this.page++;
       this.allArticles = [].concat(this.allArticles, newArticles.data);
@@ -82,19 +71,7 @@ export default {
       await this.$router.push('/');
     }
    }
-  }, 
-  // computed: {
-  //   hozier: async function(){
-  // try {
-  //     const articles = await this.$axios.get(`/articles?category=${this.category}`);
-  //     this.articles.reverse().forEach(function(){
-  //       return articles.data;
-  //     })
-  //   }catch(e){
-  //     await this.$router.push('/');
-  //   }
-  //   }
-  // }
+  }
   }
 </script>
 
@@ -121,7 +98,6 @@ display: flex;
 .two-sub-articles{
   display: flex;
   flex-direction: row;
-  margin-bottom: 1.4rem;
   width: 100%;
 }
 .cat-sub{
