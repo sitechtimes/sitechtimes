@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Datebar />
+<!--    <Datebar />-->
 
     <div class="global-container">
        <Nuxt />
