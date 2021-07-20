@@ -30,7 +30,12 @@ export default {
     size:{
       default:"Medium",
       type:String
-    },},
+    },
+    clampSize: {
+      default:"Medium",
+      type:String
+    }
+    },
    
     
   
@@ -55,6 +60,27 @@ export default {
         large,
       };
       return fontSizes[this.size];
+    },
+
+    getClampSize() {
+      const createClampSize = ({ clampSize }) => ({
+        "--customClampSize": clampSize
+      });
+       const small = createClampSize({ //create size here
+        fontSize: "2"
+      });
+      const medium = createClampSize({ //create size here
+        fontSize: "4"
+      });
+      const large = createClampSize({
+        fontSize: "5"
+      });
+      const clampSizes = { //list of sizes just names
+        small,
+        medium, //default
+        large,
+      };
+      return clampSizes[this.clampSize];
     },
    
   }
@@ -122,19 +148,12 @@ a:active {
 .text-overflow {
   display: block;
   display: -webkit-box;
-  -webkit-line-clamp: 5; //The Number of Lines Shown Before Cutting Off the Text
+  -webkit-line-clamp: var(--customClampSize); //The Number of Lines Shown Before Cutting Off the Text
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  @media only screen and (max-width: $large-screen) {
-    -webkit-line-clamp: 5;
-  }
-  @media only screen and (max-width: $mid-screen) {
-    -webkit-line-clamp: 4;
-  }
-  @media only screen and (max-width: $x-small-screen) {
-    -webkit-line-clamp: 4;
-  }
+  
+  
 }
 .card-component-title {
   font-weight: bold;
