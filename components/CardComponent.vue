@@ -88,7 +88,7 @@ a:active {
   justify-content: flex-end;
 }
 .card-component-image {
-  background: var(--greyToBlack), url("../assets/card-comp-tempimg.jpeg");
+  background: url("../assets/card-comp-tempimg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -101,10 +101,13 @@ a:active {
   flex-direction: row;
 }
 .card-component-text-container {
-  width: 80%;
+  width: 100%;
+  padding: 0 10%;
   max-height: 70%;
   margin: 0 auto;
   padding-bottom: 10%;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  border-radius: 1.5rem;
 }
 .card-component-category-author-date {
   padding-bottom: 1.7rem;

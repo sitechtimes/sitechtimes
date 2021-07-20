@@ -200,7 +200,7 @@ export default {
   grid-area: 2 / 5 / 3 / 8;
 }
 .trending-section {
-  height: 60rem;
+  height: 65rem;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);

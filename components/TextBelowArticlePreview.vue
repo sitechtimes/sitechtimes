@@ -39,6 +39,7 @@ a:active { text-decoration: none;  color: var(--black)}
   flex-direction: column;
 }
 .article-info {
+  margin: 1rem 0;
   display: flex;
 }
 .article-image {
@@ -49,11 +50,11 @@ a:active { text-decoration: none;  color: var(--black)}
   margin-right: 2rem;
 }
 .article-title {
-  margin: 0;
+  margin: 0 0.2rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: var(--h4)
 }
 .article-data {
     padding-top: 1rem;
