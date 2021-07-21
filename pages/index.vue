@@ -67,6 +67,7 @@
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
       </section>
+      <div class="darksection">
       <h3 class="section-title">Politics</h3>
       <section class="politics-section">
         <CardComponent
@@ -100,6 +101,7 @@
           size="small"
         />
       </section>
+      </div>
       <h3 class="section-title">Entertainment</h3>
       <section class="entertainment-section">
         <CardComponent
@@ -290,5 +292,9 @@ export default {
 }
 .science-detail {
   grid-area: 2 / 2 / 3 / 3;
+}
+.darksection {
+  background-color: var(--grey);
+  color: white;
 }
 </style>

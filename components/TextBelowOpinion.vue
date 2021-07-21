@@ -56,7 +56,7 @@ a:active { text-decoration: none;  color: var(--black)}
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: var(--h4);
 }
 .opinion-data {
     padding-top: 1rem;
