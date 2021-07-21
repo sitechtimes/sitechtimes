@@ -41,7 +41,7 @@ export default {
 @import '/../assets/variables';
 
   .article-page {
-    overflow: scroll;
+    overflow: hidden;
     margin: auto;
     display: flex;
     flex-direction: row;
