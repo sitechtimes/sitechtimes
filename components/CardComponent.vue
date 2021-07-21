@@ -1,5 +1,5 @@
 <template>
-  <div class="card-component card-component-image" title="Humanoid Entity Surfing In The Ocean at Dusk">
+  <div class="card-component card-component-image" v-bind:style="{ backgroundImage: 'url(' + imageUrl + ')' }"> 
         <a :href="articleUrl" class="flex-col card-component-text-container">
             <div class="flex-row card-component-category-author-date">
                 <category-icon :category="category" class="card-component-category" />

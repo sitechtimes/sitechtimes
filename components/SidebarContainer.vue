@@ -43,9 +43,13 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
 .sidebar-container {
-  border-left: 2px solid #d9b75e;
-  // max-width: 50rem;
-  // float: right;
+
+  border-left: 2px solid var(--primary-color);
+  max-width: 50rem;
+
+  float: right;
+  overflow: hidden;
+
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */

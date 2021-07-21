@@ -39,11 +39,11 @@ a:active { text-decoration: none;  color: var(--black)}
   flex-direction: column;
   width: 46.1rem;
   height: 37rem;
-  margin-right: 3rem;
+  // margin-right: 3rem;
 }
 .article-info {
   display: flex;
-  width: 42.2rem;
+   width: 42.2rem;
 }
 .article-image {
   width: 42.2rem;
