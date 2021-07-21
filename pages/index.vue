@@ -1,5 +1,6 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="global-container">
       <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
     </NuxtLink> -->
@@ -67,7 +68,9 @@
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
       </section>
+      </div>
       <div class="darksection">
+        <div class="global-container">
       <h3 class="section-title">Politics</h3>
       <section class="politics-section">
         <CardComponent
@@ -102,6 +105,8 @@
         />
       </section>
       </div>
+      </div>
+      <div class="global-container">
       <h3 class="section-title">Entertainment</h3>
       <section class="entertainment-section">
         <CardComponent
@@ -135,6 +140,9 @@
       </section>
       <h3 class="section-title">Opinion</h3>
       <OpinionSlider />
+      </div>
+      <div class="darksection">
+      <div class="global-container">
       <h3 class="section-title">Science</h3>
       <section class="science-section">
         <text-below-article-preview
@@ -168,6 +176,9 @@
           class="science-detail"
         />
       </section>
+      </div>
+      </div>
+      <div class="global-container">
       <h3 class="section-title">Activities</h3>
       <section class="news-section">
         <text-below-article-preview
@@ -198,6 +209,7 @@
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
       </section>
+      </div>
   </div>
 </template>
 
@@ -277,7 +289,7 @@ export default {
   grid-area: 2 / 6 / 3 / 10;
 }
 .science-section {
-  height: 80rem;
+  height: 85rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -296,5 +308,6 @@ export default {
 .darksection {
   background-color: var(--grey);
   color: white;
+  padding-bottom: 5rem;
 }
 </style>

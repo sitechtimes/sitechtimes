@@ -14,20 +14,19 @@
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
   name: "TextBelowOpinion",
-  props: ["author", "articleUrl", "published", "category", "imageUrl", "imageAlt", "title"],
+  props: [
+    "author", 
+    "articleUrl", 
+    "published", 
+    "category", 
+    "imageUrl", 
+    "imageAlt", 
+    "title",
+    ],
 };
 </script>
 
 <style lang="scss">
-*,
-html,
-body {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-size: 62.5%;
-  font-family: var(--font);
-}
 a:link { text-decoration: none; color: var(--black)}
 a:visited { text-decoration: none;  color: var(--black)}
 a:hover { text-decoration: none;  color: var(--black)}
