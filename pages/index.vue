@@ -3,7 +3,7 @@
     <h1>Home</h1>
     <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
-  </NuxtLink>
+    </NuxtLink>
   </div>
 </template>
 

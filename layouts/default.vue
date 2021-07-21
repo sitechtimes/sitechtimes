@@ -2,7 +2,11 @@
   <div>
     <Datebar />
     <Navbar />
-    <Nuxt />
+
+    <div class="global-container">
+       <Nuxt />
+    </div>
+
     <Footer />
   </div>
 </template>

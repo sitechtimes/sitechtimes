@@ -1,6 +1,6 @@
 <template>
   <div id="article-component">
-    <category-icon category="entertainment" />
+    <category-icon :category=category />
     <h2 class="main-article-title">{{ title }}</h2>
     <p class="main-article-description">{{ description }}</p>
     <img
@@ -19,8 +19,8 @@
         <share-icon />
       </div>
     </section>
-    <section class="main-article-text-section">
-      <p class="main-article-text">{{ articleText }}</p>
+    <section class="main-article-text-section main-article-text" v-html="articleText">
+      <!-- <p class="main-article-text">{{ articleText }}</p> -->
     </section>
   </div>
 </template>
@@ -33,7 +33,7 @@ import CategoryIcon from "./CategoryIcon.vue";
 
 export default {
   name: "ArticleComponent",
-  props: ["title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
+  props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
   components: {
     AuthorAndDate,
     SocialMediaIcons,
@@ -64,6 +64,7 @@ export default {
 .main-article-img {
   width: 100%;
   height: auto;
+  border-radius: 1.5rem;
 }
 
 .main-article-metadata {
@@ -78,4 +79,7 @@ export default {
 .main-article-metadata-actions {
   display: flex;
 }
+.main-article-text-section > * { 
+  font-size: 3rem;
+} 
 </style>

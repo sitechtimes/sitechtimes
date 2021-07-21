@@ -1,5 +1,5 @@
 <template>
-  <section class="global-container">
+  <section>
 <div class="border-right">
   <div class="cat-main-parent">
 <div class="cat-main">
@@ -27,6 +27,7 @@
           <SeeMoreBtn class="seymour" v-if="moreToLoad" @click.prevent.native="newArticles()" />
           </div>
   </section>
+
 </template>
 <script>
 import CardComponent from "../components/CardComponent";
