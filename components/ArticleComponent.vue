@@ -47,20 +47,63 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/variables';
+
 .main-article-title {
   margin: 2rem auto;
   font-weight: 600;
 }
-.main-article-description,
-.main-article-text {
-  font-size: 1.8rem;
-}
 .main-article-description {
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: var(--h4);
+  font-weight: 300;
   margin: 2rem auto;
 }
-
+.main-article-text-section p,
+.main-article-text-section p em,
+.main-article-text-section p strong,
+.main-article-text-section span { 
+  font-size: var(--h4);
+} 
+.main-article-text-section p {
+  font-weight: 300;
+  word-break: break-all;
+}
+.main-article-text ul li,
+.main-article-text ul li span,
+.main-article-text ol li,
+.main-article-text ol li span {
+  font-size: var(--h4);
+  font-weight: 300;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.main-article-text ol li {
+  list-style-type: decimal;
+}
+.main-article-text h1,
+.main-article-text h2,
+.main-article-text h3 {
+  font-weight: 400;
+}
+.main-article-text h1 {
+  font-size: var(--h1);
+}
+.main-article-text h2 {
+  font-size: var(--h2);
+}
+.main-article-text h3 {
+  font-size: var(--h3);
+}
+.main-article-text h4 {
+  font-size: var(--h4);
+}
+.main-article-text h5 {
+  font-size: var(--h5);
+}
+.main-article-text h6 {
+  font-size: var(--small-text);
+}
 .main-article-img {
   width: 100%;
   height: auto;
@@ -79,7 +122,17 @@ export default {
 .main-article-metadata-actions {
   display: flex;
 }
-.main-article-text-section > * { 
-  font-size: 3rem;
+
+@media only screen and (max-width: $x-small-screen) {
+    .main-article-text-section > * { 
+  font-size: var(--h3);
 } 
+.main-article-text ul li,
+.main-article-text ol li {
+  font-size: var(--h3);
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 2rem;
+}
+}
 </style>
