@@ -7,7 +7,7 @@
   <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
     </div>
     </div>
-    <div class="two-sub-articles">
+    <div class="two-sub-articles" >
     <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`"/>
      <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`"/>
      </div>
@@ -22,6 +22,13 @@
       :title="article.title"
       :imageUrl="article.imageUrl"
       :articleUrl="`/articles/${article.slug}`"/>
+      <div class="cat-visible">
+        <h2 class="cat-subhead">More Articles</h2>
+      <MobileCategoryArticle  class="hiya"  v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="`/articles/${articles[5].slug}`"/>
+        <MobileCategoryArticle   class="hiya"   v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="`/articles/${articles[6].slug}`"/>
+          <MobileCategoryArticle  class="hiya"   v-if="articles[7]" :title="articles[7].title" :author="articles[7].user.name" :published="articles[7].createdAt" :imageUrl="articles[7].imageUrl" :category="category" :articleUrl="`/articles/${articles[7].slug}`"/>
+               <MobileCategoryArticle class="hiya"   v-if="articles[8]" :title="articles[8].title" :author="articles[8].user.name" :published="articles[7].createdAt" :imageUrl="articles[8].imageUrl" :category="category" :articleUrl="`/articles/${articles[8].slug}`"/>
+               </div>
           </div>
         <div class="entertainment-seymour">
           <SeeMoreBtn class="seymour" v-if="moreToLoad" @click.prevent.native="newArticles()" />
@@ -74,7 +81,8 @@ export default {
   }
 </script>
 
-<style>
+<style lang="scss">
+@import '/../assets/variables';
 .border-right{
   border-radius: 0.1rem;
   margin-left: 5%;
@@ -95,8 +103,6 @@ width: 90%;
 }
 .cat-main{
   margin: 6rem 0 6rem 0;
-
-
 }
 .cat-main-art{
     width: 100%;
@@ -105,10 +111,14 @@ width: 90%;
 .two-sub-articles{
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 .sub-art{
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
+}
+.cat-visible{
+  display: none;
 }
 .entertainment-seymour{
   display: flex;
@@ -117,4 +127,25 @@ width: 90%;
 .seymour{
    margin: 6rem 0 20rem 0;
 }
+.cat-subhead{
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: $mid-screen) {
+  .border-right{
+    width: 70%;
+  }
+    .two-sub-articles{
+      display: none;
+    }
+    .cat-visible{
+      display: flex;
+      flex-direction: column;
+    }
+    .hiya{
+      justify-content: center;
+    }
+    .seymour{
+      margin: 6rem 0 10rem 0;
+    }
+  }
 </style>

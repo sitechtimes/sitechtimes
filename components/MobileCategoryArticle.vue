@@ -31,7 +31,7 @@ props: ["category", "author", "published", "title"]
   margin-left: 1.7rem;
 }
 .cat-article-title{
-  font-size: var(--h3);
+  font-size: var(--h4);
   font-weight: 700;
 }
 </style>
