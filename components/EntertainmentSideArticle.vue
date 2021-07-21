@@ -28,8 +28,8 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
 }
 .entertainment-side-img{
   /* these height + width things are arbitrary right now, they'll be more specific when the other entertainment component is made */
-  height: 20rem;
-  width: 18rem;
+  height: 22rem;
+  width: 21rem;
   border-radius: 1.5rem;
   object-fit: cover;
   object-position: center;

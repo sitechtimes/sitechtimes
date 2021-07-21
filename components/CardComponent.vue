@@ -138,6 +138,8 @@ a:active {
   border-radius: 1.5rem;
 }
 .card-component-category-author-date {
+    display: flex;
+    flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
 .card-component-category {

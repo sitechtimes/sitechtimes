@@ -134,6 +134,7 @@
         />
       </section>
       <h3 class="section-title">Opinion</h3>
+      <OpinionSlider />
       <h3 class="section-title">Science</h3>
       <section class="science-section">
         <text-below-article-preview
@@ -168,6 +169,35 @@
         />
       </section>
       <h3 class="section-title">Activities</h3>
+      <section class="news-section">
+        <text-below-article-preview
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          author="Daniel Briskman"
+          published="Jan 31, 2020"
+          category="events"
+          imageAlt="Space X Rocket"
+          title="I hate rockets, and this is why you should too"
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+        />
+        <text-below-article-preview
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          author="Daniel Briskman"
+          published="Jan 31, 2020"
+          category="events"
+          imageAlt="Space X Rocket"
+          title="I hate rockets, and this is why you should too"
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+        />
+        <text-below-article-preview
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          author="Daniel Briskman"
+          published="Jan 31, 2020"
+          category="events"
+          imageAlt="Space X Rocket"
+          title="I hate rockets, and this is why you should too"
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+        />
+      </section>
     </div>
     <Footer />
   </div>
@@ -205,22 +235,22 @@ export default {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 .news-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
 }
 .politics-section {
   height: 35rem;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 .politics-main {
   grid-area: 1 / 1 / 2 / 8;
@@ -236,8 +266,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 .entertainment-main {
   grid-area: 1 / 1 / 3 / 6;
@@ -253,8 +283,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 .science-main {
   grid-area: 1 / 1 / 3 / 2;
