@@ -7,7 +7,10 @@
   --off-white: #fffaf4;
   --white: #ffffff;
   --black: #000;
+  --dark-grey: #191919;
+  --dark-grey-2: #383838;
   --grey: #374151;
+  --mid-grey: #636363;
   --lightGray: #ececec;
   --red: #dc2626;
   --orange: #f59e0b;
@@ -19,8 +22,14 @@
   --purple: #5b21b6;
   --pink: #ec4899;
   /* intentions */
+  --background-color: var(--white);
   --primary-color: var(--gold);
   --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
   --calendar-band: var(--off-white);
   --news: var(--dark-blue);
   --politics: var(--pink);
@@ -30,7 +39,6 @@
   --events: var(--orange);
   --clubs: var(--blue);
   --sports: var(--dark-orange);
-  --hover: var(--lightGray);
   /* font size */
   --font: "Josefin Sans", sans-serif;
   --h1: 5.653rem;
@@ -54,6 +62,45 @@
     rgba(132, 132, 132, 0.29) 54.17%,
     rgba(0, 0, 0, 0.5) 65.1%
   );
+}
+
+.light-mode {
+  --background-color: var(--white);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
+  --calendar-band: var(--off-white);
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
+}
+.dark-mode {
+  --background-color: var(--dark-grey);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--off-white);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--dark-grey-2);
+  --calendar-band: var(--off-white);
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
@@ -118,6 +165,30 @@ h5 {
 small,
 .text_small {
   font-size: var(--small-text);
+}
+
+@media only screen and (max-width: $large-screen) {
+  *,
+  html,
+  body {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: $mid-screen) {
+  *,
+  html,
+  body {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: $x-small-screen) {
+  *,
+  html,
+  body {
+    font-size: 45%;
+  }
 }
 
 //The only reason the code is the right size in styleguide.

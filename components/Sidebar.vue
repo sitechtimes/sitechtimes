@@ -1,16 +1,14 @@
 <template>
   <div class="sidebar-article">
-    <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img"/>
+    <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
     <div class="sidebar-article-details">
-      <category-icon-sidebar category="opinion"></category-icon-sidebar>
-      <a
-        :href="articleUrl"
-        target="_blank"
-        rel="noopener noreferrer"
+      <category-icon-sidebar :category="category"></category-icon-sidebar>
+      <nuxt-link
+        :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
       >
         {{ title }}
-      </a>
+      </nuxt-link>
       <author-and-date-sidebar
         :author="author"
         :published="published"
@@ -33,23 +31,21 @@ export default {
     title: String,
     imgUrl: String,
     imgAlt: String,
-    articleUrl: String,
-  },
+    articleUrl: String
+  }
 };
 </script>
 
 <style lang="scss">
-
-@import '../assets/variables';
+@import "../assets/variables";
 :root {
-  --sidebarArticleWidth: 30vw;
+  --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;
-  --sidebarSidePadding: min(2.5vw, 4.16rem);
+  --sidebarSidePadding: min(2.5vw, 3rem);
   --sidebarDetailsPaddingLeft: 1.7rem;
   --toggleBorder: none;
   --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
 }
-
 
 .temp-img {
   width: 30vw;
@@ -95,10 +91,10 @@ export default {
 } */
 
 .sidebar-article-details {
-  width: calc(
+  /*   width: calc(
     var(--sidebarArticleWidth) - var(--sidebarImgWidth) -
       (var(--sidebarSidePadding) * 2)
-  );
+  ); */
   max-width: 32.65rem;
   padding-left: var(--sidebarDetailsPaddingLeft);
   display: flex;
@@ -139,7 +135,6 @@ export default {
 #sidebar-article-details-title {
   font-weight: bold;
 }
-
 
 .example-img {
   border: var(--toggleBorder);

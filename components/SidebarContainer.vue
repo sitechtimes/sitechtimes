@@ -1,26 +1,27 @@
 <template>
   <section class="sidebar-container">
     <h3 class="sidebar-heading">Trending</h3>
-    <sidebar
+    <Sidebar
       v-for="article in trending"
-      :key="article"
+      :key="article.slug"
       :category="article.category"
-      :author="article.author"
-      :published="article.published"
+      :author="article.user.name"
+      :published="article.createdAt"
       :title="article.title"
-      :imgUrl="article.imgUrl"
-      :articleUrl="article.articleUrl"
+      :imgUrl="article.imageUrl"
+      :articleUrl="article.slug"
     /><!-- css var for imgUrl? -->
 
     <h3 class="sidebar-heading">More Like This</h3>
-    <sidebar
+    <Sidebar
       v-for="article in moreLikeThis"
-      :key="article"
-      :author="article.author"
-      :published="article.published"
+      :key="article.slug"
+      :category="article.category"
+      :author="article.user.name"
+      :published="article.createdAt"
       :title="article.title"
-      :imgUrl="article.imgUrl"
-      :articleUrl="article.articleUrl"
+      :imgUrl="article.imageUrl"
+      :articleUrl="article.slug"
     />
   </section>
 </template>
@@ -31,86 +32,42 @@ import Sidebar from "./Sidebar.vue";
 export default {
   name: "SidebarContainer",
   components: { Sidebar },
-  data() {
-    return {
-      trending: [
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 31, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 32, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 33, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-      ],
-      moreLikeThis: [
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 34, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 35, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-        {
-          category: "opinion",
-          author: "Charley Baluja",
-          published: "Jan 36, 2020",
-          title: "Hello this is Dr. Death Defying: MCR ain't dead yet",
-          imgUrl: "https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg",
-          articleUrl: "https://google.com",
-        },
-      ],
-    };
-  },
+  props: {
+    trending: Array,
+    moreLikeThis: Array,
+  }
 };
+
 </script>
 
 <style lang="scss">
 @import '../assets/variables';
 .sidebar-container {
-  border-left: 2px solid #d9b75e;
+
+  border-left: 2px solid var(--primary-color);
   max-width: 50rem;
 
   float: right;
   overflow: hidden;
+
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
 }
 .sidebar-heading {
-  padding: 1.5rem 2.5rem;
+  font-size: var(--h4);
+  padding: 0 3rem;
+  padding-top: 5rem;
   margin: 0;
 }
-
+@media only screen and (max-width: $midlarge-screen) {
+  .sidebar-container {
+    border: none;
+  }
+}
 @media only screen and (max-width: $mid-screen) {
   .sidebar-container {
     max-width: none;
-    border: none;
   }
   .sidebar-heading {
     padding: 1.5rem var(--sidebarSidePadding);

@@ -15,8 +15,8 @@
 
 <script>
 export default {
-name: "CategoryArticle", 
-props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published", "title"]
+name: "CategoryArticle",
+props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "category"]
 }
 </script>
 
@@ -46,9 +46,9 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
     margin-top: 2rem;
     display: flex;
     }
-    .category-article-icon {
-        padding-right: 1.5rem;
-    } 
+     .category-article-icon {
+         padding-right: 1.5rem;
+     }
     .category-article-authdate {
         margin: auto 0;
         line-height: 2.2rem;
@@ -80,7 +80,7 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
             width: 3rem;
             padding-right: 1.5rem;
             height: 3rem;
-        } 
+        }
         .category-article-authdate {
             margin-left: 7rem;
             line-height: 2.2rem;
@@ -118,7 +118,7 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
             width: 3rem;
             padding-right: 1.5rem;
             height: 3rem;
-        } 
+        }
         .category-article-authdate {
             margin-left: 7rem;
             line-height: 2.2rem;
@@ -133,7 +133,7 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
 </style>
 
 <docs>
-This component is used in the category category. It is one of the two side articles on the side of the main category article picture. 
+This component is used in the category category. It is one of the two side articles on the side of the main category article picture.
 
 ```jsx
   <CategoryArticle articleUrl="https://theconversation.com/us/topics/rocket-science-195" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU" category="opinion" author="Charley Baluja" published="July 12, 2021" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."/>
