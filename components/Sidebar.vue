@@ -4,7 +4,7 @@
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
       <nuxt-link
-        :to="articleUrl"
+        :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
       >
         {{ title }}

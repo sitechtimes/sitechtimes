@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>
-      <NuxtLink class="block" v-for="article in articles" :to="`/articles/${article.slug}`" :key="article.slug">
+      <nuxt-link class="block" v-for="article in articles" :to=`/articles/${article.slug}` :key="article.slug">
         {{ article.title }}
-      </NuxtLink>
+      </nuxt-link>
     </h1>
     <CardComponent />
   </div>

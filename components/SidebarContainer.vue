@@ -1,9 +1,9 @@
 <template>
   <section class="sidebar-container">
     <h3 class="sidebar-heading">Trending</h3>
-    <sidebar
+    <Sidebar
       v-for="article in trending"
-      :key="article"
+      :key="article.slug"
       :category="article.category"
       :author="article.user.name"
       :published="article.createdAt"
@@ -13,16 +13,16 @@
     /><!-- css var for imgUrl? -->
 
     <h3 class="sidebar-heading">More Like This</h3>
-    <sidebar
+    <Sidebar
       v-for="article in moreLikeThis"
-      :key="article"
+      :key="article.slug"
       :category="article.category"
       :author="article.user.name"
       :published="article.createdAt"
       :title="article.title"
       :imgUrl="article.imageUrl"
       :articleUrl="article.slug"
-    /> 
+    />
   </section>
 </template>
 
@@ -35,12 +35,7 @@ export default {
   props: {
     trending: Array,
     moreLikeThis: Array,
-  },
-  //trending articles 
-  data() {
-    return {
-    };
-  },
+  }
 };
 
 </script>
