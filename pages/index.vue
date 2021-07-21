@@ -1,7 +1,5 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
-    <Navbar />
-    <div class="global-container">
       <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
     </NuxtLink> -->
@@ -198,8 +196,6 @@
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
       </section>
-    </div>
-    <Footer />
   </div>
 </template>
 
