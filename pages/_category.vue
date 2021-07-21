@@ -1,15 +1,16 @@
 <template>
   <section class="global-container">
-    <h1 class="cat-title">{{ category }}</h1>
 <div class="border-right">
+  <div class="cat-main-parent">
 <div class="cat-main">
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="articles[0].slug" class="testing" /> 
+    <h1 class="cat-title">{{ category }}</h1>
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="articles[0].slug" class="cat-main-art" /> 
+    </div>
     </div>
     <div class="two-sub-articles">
     <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="articles[1].slug"/>
      <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="articles[2].slug"/>
      </div>
-     <div class="cat-sub">
   <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="articles[3].slug"/>
         <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="articles[4].slug"/> 
           <CategoryArticle   class="sub-art"   
@@ -25,7 +26,6 @@
         <div class="entertainment-seymour">
           <SeeMoreBtn class="seymour" v-if="moreToLoad" @click.prevent.native="newArticles()" />
           </div>
-    </div>
   </section>
 </template>
 <script>
@@ -71,43 +71,46 @@ export default {
 </script>
 
 <style>
-.testing{ 
-  width: 87.5rem;
-}
 .border-right{
-  /* display: inline-block; */
   border-radius: 0.1rem;
+  margin-left: 5%;
   border-right: solid var(--primary-color);
-display: flex;
-  flex-direction: column;
   width: 85%;
 }
 .cat-title{
   font-size: var(--h3);
   text-transform: capitalize;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.cat-main-parent{
+  display: grid;
+grid-template-columns: repeat( 1fr);
+grid-template-rows: repeat( 1fr); 
+width: 90%;
 }
 .cat-main{
   margin: 6rem 0 6rem 0;
-  width: 100%;
+
+
+}
+.cat-main-art{
+    width: 100%; 
+  grid-area: 1 / 1 / 2 / 3; 
 }
 .two-sub-articles{
   display: flex;
   flex-direction: row;
-  width: 100%;
-}
-.cat-sub{
-  width: 100%;
 }
 .sub-art{
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
 }
 .entertainment-seymour{
-  width: 100%;
   display: flex;
   justify-content: center;
 }
 .seymour{
-  margin-top: 6rem;
+   margin: 6rem 0 20rem 0;
 }
 </style>
