@@ -67,6 +67,7 @@ export default {
 } 
 .main-article-text-section p {
   font-weight: 300;
+  word-break: break-all;
 }
 .main-article-text ul li,
 .main-article-text ul li span,
