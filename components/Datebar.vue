@@ -15,7 +15,7 @@
     data: function () {
         return {
             date: '',
-        } 
+        }
     }
   }
 </script>
@@ -97,20 +97,20 @@
 
 </style>
 
-<docs>
-Colored banner at the top of the page. Text updates dynamically to current date. Uses moment.js library for the time. If the date doesn't show up, check if moment.js is installed.
+<!--<docs>-->
+<!--Colored banner at the top of the page. Text updates dynamically to current date. Uses moment.js library for the time. If the date doesn't show up, check if moment.js is installed.-->
 
-## Variables Used:
---accent-color
+<!--## Variables Used:-->
+<!--&#45;&#45;accent-color-->
 
-## Examples
+<!--## Examples-->
 
-Looks funky on the preview.
+<!--Looks funky on the preview.-->
 
-```jsx
-<Datebar />
-```
+<!--```jsx-->
+<!--<Datebar />-->
+<!--```-->
 
-    
-   
-</docs>
+<!--    -->
+<!--   -->
+<!--</docs>-->

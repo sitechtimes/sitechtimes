@@ -40,13 +40,13 @@ export default {
 }
 .scrolls::-webkit-scrollbar{
 height: 0.8rem;
-border-radius: 1.5rem; 
+border-radius: 1.5rem;
 background-color: var(--accent-color);
 }
 .scrolls::-webkit-scrollbar-thumb{
   background-color: var(--primary-color);
   height: 1.5rem;
-border-radius: 1.5rem; 
+border-radius: 1.5rem;
 width: 10rem;
 }
 .scrollbar{
@@ -57,17 +57,17 @@ border-radius: 1.5rem;
 }
 </style>
 
-<docs>
-This element is a slider used in the opinion section of our website. It displays part of an article and invites the user to scroll to see the other two articles. 
+<!--<docs>-->
+<!--This element is a slider used in the opinion section of our website. It displays part of an article and invites the user to scroll to see the other two articles. -->
 
-## Variables Used:
---primary-color
---acent-color
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-color-->
+<!--&#45;&#45;acent-color-->
 
-## Examples
+<!--## Examples-->
 
-```jsx
- <OpinionSlider />
-```
+<!--```jsx-->
+<!-- <OpinionSlider />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->
