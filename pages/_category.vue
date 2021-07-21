@@ -4,16 +4,16 @@
   <div class="cat-main-parent">
 <div class="cat-main">
     <h1 class="cat-title">{{ category }}</h1>
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="articles[0].slug" class="cat-main-art" /> 
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
     </div>
     </div>
     <div class="two-sub-articles">
-    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="articles[1].slug"/>
-     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="articles[2].slug"/>
+    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`"/>
+     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`"/>
      </div>
-  <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="articles[3].slug"/>
-        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="articles[4].slug"/> 
-          <CategoryArticle   class="sub-art"   
+  <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
+        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
+          <CategoryArticle   class="sub-art"
       v-for="article in allArticles"
       :key="article"
       :category="article.category"
@@ -21,7 +21,7 @@
       :published="article.createdAt"
       :title="article.title"
       :imageUrl="article.imageUrl"
-      :articleUrl="article.slug"/>
+      :articleUrl="`/articles/${article.slug}`"/>
           </div>
         <div class="entertainment-seymour">
           <SeeMoreBtn class="seymour" v-if="moreToLoad" @click.prevent.native="newArticles()" />
@@ -31,10 +31,13 @@
 </template>
 <script>
 import CardComponent from "../components/CardComponent";
+import TextBelowArticlePreview from "../components/TextBelowArticlePreview";
+import CategoryArticle from "../components/CategoryArticle";
+import SeeMoreBtn from "../components/SeeMoreBtn";
 
 export default {
   components: {
-   CardComponent
+   CardComponent, TextBelowArticlePreview, CategoryArticle, SeeMoreBtn
   },
   data () {
     return {
@@ -87,7 +90,7 @@ export default {
 .cat-main-parent{
   display: grid;
 grid-template-columns: repeat( 1fr);
-grid-template-rows: repeat( 1fr); 
+grid-template-rows: repeat( 1fr);
 width: 90%;
 }
 .cat-main{
@@ -96,8 +99,8 @@ width: 90%;
 
 }
 .cat-main-art{
-    width: 100%; 
-  grid-area: 1 / 1 / 2 / 3; 
+    width: 100%;
+  grid-area: 1 / 1 / 2 / 3;
 }
 .two-sub-articles{
   display: flex;
