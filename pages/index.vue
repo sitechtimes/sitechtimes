@@ -139,7 +139,7 @@
         />
       </section>
       <h3 class="section-title">Opinion</h3>
-      <OpinionSlider />
+      <OpinionSlider :articles="articles"/>
       </div>
       <div class="darksection">
       <div class="global-container">
@@ -215,15 +215,20 @@
 
 <script>
 export default {
-  data() {
-    return {
-      homepages: []
-    };
-  },
-  async mounted() {
-    const homepages = await this.$axios.get("/articles/homepage");
-    this.homepages = homepages.data;
-  }
+    data() {
+      return {
+        homepages: [],
+        articles: [],
+      }
+    },
+    async mounted() {
+      const homepages = await this.$axios.get('/articles/homepage');
+      this.homepages = homepages.data;
+
+      const articles = await this.$axios.get(`/articles/homepage?category=entertainment`);
+      this.articles = articles.data;
+
+    }
 };
 </script>
 
