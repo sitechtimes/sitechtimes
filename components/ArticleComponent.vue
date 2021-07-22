@@ -62,12 +62,14 @@ export default {
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
+.main-article-text-section li em,
+.main-article-text-section li strong,
 .main-article-text-section span { 
   font-size: var(--h4);
 } 
 .main-article-text-section p {
   font-weight: 300;
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 .main-article-text ul li,
 .main-article-text ul li span,
@@ -124,7 +126,7 @@ export default {
 }
 
 @media only screen and (max-width: $x-small-screen) {
-    .main-article-text-section > * { 
+  .main-article-text-section > * { 
   font-size: var(--h3);
 } 
 .main-article-text ul li,

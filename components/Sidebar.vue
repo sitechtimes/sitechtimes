@@ -80,7 +80,7 @@ export default {
   border-radius: 1rem;
 
   border: var(--toggleBorder);
-
+  object-fit: cover;
   display: inline-block;
   vertical-align: middle;
 }
@@ -158,42 +158,27 @@ export default {
   background-color: unset;
 }
 }
+
 @media only screen and (max-width: $mid-screen) {
+    :root {
+  --sidebarImgWidth: 20rem;
+}
+  .sidebar-article-details {
+    max-width: 100%;
+}
+  #sidebar-article-details-title {
+    font-size: var(--h4);
+}
   .sidebar-article {
     max-width: none;
-    width: 100vw;
+    width: 100%;
+  }
+  .sidebar-img {
+    height: var(--sidebarImgWidth);
+    width: var(--sidebarImgWidth);
   }
 }
- 
 
-// }
-// @media only screen and (max-width: $mid-screen) {
-//   :root {
-//     --sidebarArticleWidth: 100vw;
-//     --sidebarSidePadding: 15vw;
-//   }
-//   .sidebar-container {
-//     max-width: none;
-//     border: none;
-//   }
-//   .sidebar-article {
-//     max-width: none;
-//     padding: 2.5rem var(--sidebarSidePadding);
-//   }
-//   .sidebar-article-details {
-//     max-width: none;
-//   }
-// }
-// @media only screen and (max-width: 450px) {
-//   :root {
-//     --sidebarSidePadding: 12vw;
-//   }
-// }
-// @media only screen and (max-width: 380px) {
-//   :root {
-//     --sidebarSidePadding: 8vw;
-//   }
-// }
 </style>
 
 /* Ripple effect on click? */

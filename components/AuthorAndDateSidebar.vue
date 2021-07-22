@@ -79,6 +79,19 @@ export default {
 #sidebar-published-icon {
   font-size: 1.3rem;
 }
+
+// @media only screen and (max-width: $mid-screen) {
+//   .sidebar-article-details-author-date > section > h5 {
+//     font-size: var(--h5);
+//   // }
+//   // #sidebar-author-icon,
+//   // #sidebar-published-icon {
+//   //   font-size: var(--h3);
+//   // }
+//   // .sidebar-icon {
+//   //   font-size: var(--h3);
+//   }
+// }
 </style>
 
 <!--<docs>-->
