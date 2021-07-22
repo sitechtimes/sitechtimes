@@ -1,10 +1,11 @@
 <template>
     <nav>
         <ul class="home-nav-ul">
-            <a v-for="category in navbar"
+            <a v-for="category in categories"
             :key="category"
-            :href='category.navLink'
-            class="home-nav-li"><li>{{category.navType}}</li></a>
+            :href="category">
+            <li class="home-nav-li">{{ category }}</li>
+            </a>
         </ul>
     </nav>
 
@@ -13,25 +14,19 @@
 <script>
     export default {
     name: 'Navbar', // vue component name
-    props: [],
+    props: ["categories"],
     data () {
       return {
-        navbar: [
-        {navLink: 'news', navType: 'NEWS'},
-        {navLink: 'opinion', navType: 'OPINION'},
-        {navLink: 'politics', navType: 'POLITICS'},
-        {navLink: 'entertainment', navType: 'ENTERTAINMENT'},
-        {navLink: 'science', navType: 'SCIENCE'},
-        {navLink: 'activities', navType: 'ACTIVITIES'},
-        {navLink: 'events', navType: 'EVENTS'}
-      ]
     }
-  }
+    },
+
 };
 </script>
 
 
 <style lang="scss">
+@import '../assets/variables';
+
     a {
         text-decoration: none;
         color: inherit;
@@ -52,6 +47,12 @@
         padding-left: 10%;
         padding-right: 10%;
         width: 100%;
+    }
+
+@media only screen and (max-width: $mid-screen) {
+        .home-nav-ul {
+          display: none;
+        }
     }
 </style>
 
