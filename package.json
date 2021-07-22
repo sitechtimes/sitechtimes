@@ -17,7 +17,8 @@
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "vue-cli-plugin-styleguidist": "^4.40.0",
-    "vue-date-fns": "^2.0.1"
+    "vue-date-fns": "^2.0.1",
+    "postcss": "^7.0.35"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",
