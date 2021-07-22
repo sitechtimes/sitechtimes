@@ -30,10 +30,10 @@
 
 </template>
 <script>
-import CardComponent from "../components/CardComponent";
-import TextBelowArticlePreview from "../components/TextBelowArticlePreview";
-import CategoryArticle from "../components/CategoryArticle";
-import SeeMoreBtn from "../components/SeeMoreBtn";
+import CardComponent from "../../components/CardComponent";
+import TextBelowArticlePreview from "../../components/TextBelowArticlePreview";
+import CategoryArticle from "../../components/CategoryArticle";
+import SeeMoreBtn from "../../components/SeeMoreBtn";
 
 export default {
   components: {

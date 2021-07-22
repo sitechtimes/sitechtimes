@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ArticleComponent from "../../components/ArticleComponent.vue";
-import SidebarContainer from "../../components/SidebarContainer.vue";
+import ArticleComponent from "../../../components/ArticleComponent.vue";
+import SidebarContainer from "../../../components/SidebarContainer.vue";
 
 export default {
   components: { ArticleComponent, SidebarContainer },
