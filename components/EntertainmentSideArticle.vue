@@ -24,17 +24,20 @@ props: ["articleUrl", "imageUrl", "imageAlt", "category", "author", "published",
 .entertainment-side{
   display: flex;
   flex-direction: row;
-
+  width: 100%;
 }
 .entertainment-side-img{
   /* these height + width things are arbitrary right now, they'll be more specific when the other entertainment component is made */
   height: 22rem;
-  width: 18rem;
+  width: 21rem;
   border-radius: 1.5rem;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
 .entertainment-side-img-content{
-width: 40vw;
-margin-left: 2rem;
+  width: 40vw;
+  margin-left: 2rem;
 }
 .entertainment-title{
   font-size: 2.4rem;
