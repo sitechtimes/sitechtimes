@@ -3,6 +3,7 @@
       <div class="scrolls">
       <TextBelowArticlePreview
       class="opinion-card"
+      :height="height"
       v-for="article in articles"
       :key="article.slug"
       :articleUrl="article.slug" 
@@ -25,6 +26,7 @@ export default {
  components: { },
  props: {
    articles: Array,
+   height
  }
 }
 </script>
@@ -33,7 +35,6 @@ export default {
 .opinion-section{
     display: flex;
     flex-direction: column;
-      margin-bottom: 3rem;
 }
 .span-div{
     display: flex;
@@ -43,7 +44,7 @@ export default {
 .scrolls{
     display: flex;
     flex-direction: row;
-    width: 70vw;
+    width: 100%;
     margin: 3rem auto;
     overflow-x: auto;
     overflow-y: hidden;
