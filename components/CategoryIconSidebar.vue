@@ -40,20 +40,20 @@ export default {
 }
 </style>
 
-<docs>
-This component is the same as above, with different width and height
+<!--<docs>-->
+<!--This component is the same as above, with different width and height-->
 
-## Variables Used:
---font, --off-white
+<!--## Variables Used:-->
+<!--&#45;&#45;font, &#45;&#45;off-white-->
 
-## Examples
+<!--## Examples-->
 
-Category Icons
+<!--Category Icons-->
 
-```jsx
-<CategoryIconSidebar category="sports"/>
-<CategoryIconSidebar category="entertainment"/>
-```
+<!--```jsx-->
+<!--<CategoryIconSidebar category="sports"/>-->
+<!--<CategoryIconSidebar category="entertainment"/>-->
+<!--```-->
 
 
-</docs>
+<!--</docs>-->

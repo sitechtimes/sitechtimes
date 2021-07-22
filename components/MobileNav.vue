@@ -2,7 +2,7 @@
     <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
   <FooterNav class="mobile-nav"/> -->
 <div class="mobile-nav-box" :style="backgroundColor">
-  
+
     <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
         <span></span>
         <span></span>
@@ -46,7 +46,7 @@ export default {
                 this.spanClass = "";
             }
 
-        }, 
+        },
         openNav: function() {
           this.show = !this.show;
         },
@@ -211,17 +211,17 @@ export default {
           top: 4.5rem;
         }
     }
-    
+
 </style>
 
-<docs>
-The mobile nav-bar is used for navigating the sections of the website while on a mobile device. Media queries are used to toggle which nav-bar (desktop or mobile) is displayed.
-## Variables Used:
---primary-color, --white, --black
+<!--<docs>-->
+<!--The mobile nav-bar is used for navigating the sections of the website while on a mobile device. Media queries are used to toggle which nav-bar (desktop or mobile) is displayed.-->
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-color, &#45;&#45;white, &#45;&#45;black-->
 
-## Examples:
+<!--## Examples:-->
 
-```jsx
-<MobileNav />
-```
-</docs>
+<!--```jsx-->
+<!--<MobileNav />-->
+<!--```-->
+<!--</docs>-->

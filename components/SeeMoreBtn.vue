@@ -22,18 +22,18 @@ export default {
 
 </style>
 
-<docs>
-This button is a simple button that will be used to generate new articles in the page after a user clicks "see-more".
+<!--<docs>-->
+<!--This button is a simple button that will be used to generate new articles in the page after a user clicks "see-more".-->
 
-It isn't a very dynamic component and takes no arguments, which as a simple button that will only be used a in a few situation's it doesn't need to do.
+<!--It isn't a very dynamic component and takes no arguments, which as a simple button that will only be used a in a few situation's it doesn't need to do.-->
 
-## Variables Used:
---primary-color, --white
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-color, &#45;&#45;white-->
 
-## Examples
+<!--## Examples-->
 
-```jsx
-<SeeMoreBtn />
-```
+<!--```jsx-->
+<!--<SeeMoreBtn />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

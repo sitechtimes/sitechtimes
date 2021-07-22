@@ -22,15 +22,15 @@ name: "SocialMediaIcons"
 }
 </style>
 
-<docs>
-This component is used in the footer's social media section and underneath the articles' main pictures. In the footer, it takes the user to the Tech Times' social media pages. Underneath the articles, it provides a way for the users to share the article on their favorite social media sites. 
+<!--<docs>-->
+<!--This component is used in the footer's social media section and underneath the articles' main pictures. In the footer, it takes the user to the Tech Times' social media pages. Underneath the articles, it provides a way for the users to share the article on their favorite social media sites. -->
 
-## Variables Used:
---primary-Color
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-Color-->
 
-## Examples
-```jsx
-<SocialMediaIcons />
-```
+<!--## Examples-->
+<!--```jsx-->
+<!--<SocialMediaIcons />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

@@ -8,7 +8,7 @@
 <script>
 export default {
     name: "FooterSocialMedia",
-    components: { 
+    components: {
         SocialMediaIcons: () => import('./SocialMediaIcons.vue')
     },
 }
@@ -32,15 +32,15 @@ export default {
 </style>
 
 
-<docs>
-This is the section of the footer with social media icons that, when clicked, take the user to the newspaper's social media pages.
+<!--<docs>-->
+<!--This is the section of the footer with social media icons that, when clicked, take the user to the newspaper's social media pages.-->
 
-## Variables Used:
---font, --primary-color, --accent-color, --h3, 
+<!--## Variables Used:-->
+<!--&#45;&#45;font, &#45;&#45;primary-color, &#45;&#45;accent-color, &#45;&#45;h3, -->
 
-## Examples
-```jsx
-<FooterSocialMedia />
-```
+<!--## Examples-->
+<!--```jsx-->
+<!--<FooterSocialMedia />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

@@ -62,16 +62,16 @@ a:active { text-decoration: none;  color: var(--black)}
 
 </style>
 
-<docs>
-This is one of the ways articles on the homepage will be represented (currently Opinion and News).
+<!--<docs>-->
+<!--This is one of the ways articles on the homepage will be represented (currently Opinion and News).-->
 
-## Variables Used:
---font
+<!--## Variables Used:-->
+<!--&#45;&#45;font-->
 
-## Examples
+<!--## Examples-->
 
-```jsx
-<text-below-article-preview articleUrl="https://theconversation.com/us/topics/rocket-science-195" author="Daniel Briskman" published="Jan 31, 2020" category="opinion" imageAlt="Space X Rocket" title="I hate rockets, and this is why you should too" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"/>
-```
+<!--```jsx-->
+<!--<text-below-article-preview articleUrl="https://theconversation.com/us/topics/rocket-science-195" author="Daniel Briskman" published="Jan 31, 2020" category="opinion" imageAlt="Space X Rocket" title="I hate rockets, and this is why you should too" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"/>-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

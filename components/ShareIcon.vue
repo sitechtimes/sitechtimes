@@ -14,17 +14,17 @@ name: "ShareIcon"
 
 </style>
 
-<docs>
-This component is used on the article page underneath the article's main picture. It isn't used in the footer, which is why it's a separate component. It will take the user to the Tech Times social media pages when the Tech Times has social media pages. 
+<!--<docs>-->
+<!--This component is used on the article page underneath the article's main picture. It isn't used in the footer, which is why it's a separate component. It will take the user to the Tech Times social media pages when the Tech Times has social media pages. -->
 
-## Variables Used:
---primary-color
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-color-->
 
-## Examples
-The style of this component is identical to the style on the SocialMediaIcons component. 
+<!--## Examples-->
+<!--The style of this component is identical to the style on the SocialMediaIcons component. -->
 
-```jsx
-  <ShareIcon /> 
-```
+<!--```jsx-->
+<!--  <ShareIcon /> -->
+<!--```-->
 
-</docs>
+<!--</docs>-->

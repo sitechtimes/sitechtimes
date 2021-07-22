@@ -81,17 +81,17 @@ export default {
 }
 </style>
 
-<docs>
-This component is the same as above, with different width and height
+<!--<docs>-->
+<!--This component is the same as above, with different width and height-->
 
-## Variables Used:
---font: 
-## Examples
-Enter in an Author and Date to see the dynamic change.
+<!--## Variables Used:-->
+<!--&#45;&#45;font: -->
+<!--## Examples-->
+<!--Enter in an Author and Date to see the dynamic change.-->
 
-```jsx
-<author-and-date author="Charley Baluja" published="Jan 31, 2020" />
-```
+<!--```jsx-->
+<!--<author-and-date author="Charley Baluja" published="Jan 31, 2020" />-->
+<!--```-->
 
 
-</docs>
+<!--</docs>-->
