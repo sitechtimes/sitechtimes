@@ -44,11 +44,11 @@ export default {
       });
       const small = createFontSize({
         //create size here
-        fontSize: "2.827rem"
+        fontSize: "var(--fontSmall)"
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "3.998rem"
+        fontSize: "var(--fontMedium)"
       });
       const large = createFontSize({
         fontSize: "5.653rem"
@@ -84,12 +84,18 @@ export default {
         largeClamp
       };
       return clampSizes[this.clampSize];
-    }
+    },
   }
 };
 </script>
 
 <style lang="scss">
+:root {
+    --fontSmall: 2.827rem;
+  --fontMedium: 3.998rem;
+  --fontLarge: 5.653rem;
+}
+
 @import "../assets/variables";
 a:link {
   text-decoration: none;
@@ -171,6 +177,20 @@ a:active {
 .dropshadow {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
+@media only screen and (max-width: $x-small-screen) {
+    :root{
+--fontSmall: 2.827rem;
+  --fontMedium: 2rem;
+  --fontLarge: 5.653rem;
+    }
+  
+}
+
+
+
+
+
+
 </style>
 <docs>
 

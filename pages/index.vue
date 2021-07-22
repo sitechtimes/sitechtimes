@@ -13,7 +13,7 @@
           category="sports"
           imageTitle="A Girl Surfing"
           title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
-          class="trending-main"
+          class="trending-main cardquery"
           size="medium"
         />
         <CardComponent
