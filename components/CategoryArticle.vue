@@ -131,11 +131,11 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     }
 </style>
 
-<docs>
-This component is used in the category category. It is one of the two side articles on the side of the main category article picture.
+<!--<docs>-->
+<!--This component is used in the category category. It is one of the two side articles on the side of the main category article picture.-->
 
-```jsx
-  <CategoryArticle articleUrl="https://theconversation.com/us/topics/rocket-science-195" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU" category="opinion" author="Charley Baluja" published="July 12, 2021" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."/>
-```
+<!--```jsx-->
+<!--  <CategoryArticle articleUrl="https://theconversation.com/us/topics/rocket-science-195" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU" category="opinion" author="Charley Baluja" published="July 12, 2021" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."/>-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

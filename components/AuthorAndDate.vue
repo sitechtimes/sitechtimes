@@ -42,26 +42,26 @@ export default {
   }
 </style>
 
-<docs>
-This component is used in a variety of other Components to form a preview of an article. It shows the date it was published and the author's name side-by-side after both props are entered.
+<!--<docs>-->
+<!--This component is used in a variety of other Components to form a preview of an article. It shows the date it was published and the author's name side-by-side after both props are entered.-->
 
-## Variables Used:
---font
+<!--## Variables Used:-->
+<!--&#45;&#45;font-->
 
-## Examples
-Enter in an Author and Date to see the dynamic change.
+<!--## Examples-->
+<!--Enter in an Author and Date to see the dynamic change.-->
 
-```jsx
-<author-and-date author="Charley Baluja" published="Jan 31, 2020" />
-```
+<!--```jsx-->
+<!--<author-and-date author="Charley Baluja" published="Jan 31, 2020" />-->
+<!--```-->
 
-```jsx
-<author-and-date author="Donald Trump" published="Jan 31, 1990" />
-```
+<!--```jsx-->
+<!--<author-and-date author="Donald Trump" published="Jan 31, 1990" />-->
+<!--```-->
 
 
-```jsx
-<author-and-date author="Mark Twain" published="Jan 31, 2100" />
-```
+<!--```jsx-->
+<!--<author-and-date author="Mark Twain" published="Jan 31, 2100" />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

@@ -3,7 +3,7 @@
         <h4 class="footer-header footer-nav-header">Navigation</h4>
         <div>
         <ul class="footer-nav-ul">
-            <a v-for="category in categories" 
+            <a v-for="category in categories"
             :key="category"
             :href="category"><li>{{ category }}</li></a>
         </ul>
@@ -37,8 +37,8 @@
         align-items: center;
         padding: 2rem;
         margin-top: 1.5rem;
-        border-top: .3rem solid var(--primary-color); 
-        border-bottom: .3rem solid var(--primary-color); 
+        border-top: .3rem solid var(--primary-color);
+        border-bottom: .3rem solid var(--primary-color);
     }
     .footer-nav-ul li {
         color: var(--primary-color);
@@ -55,15 +55,15 @@
 
 </style>
 
-<docs>
-This is the section of the footer with a navigation bar so the user can go to the different cateogries of the newpaper.
+<!--<docs>-->
+<!--This is the section of the footer with a navigation bar so the user can go to the different cateogries of the newpaper.-->
 
-## Variables Used:
---font, --primary-color, --accent-color, --h3, --h5
+<!--## Variables Used:-->
+<!--&#45;&#45;font, &#45;&#45;primary-color, &#45;&#45;accent-color, &#45;&#45;h3, &#45;&#45;h5-->
 
-## Examples
-```jsx
-<FooterSocialMedia />
-```
+<!--## Examples-->
+<!--```jsx-->
+<!--<FooterSocialMedia />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

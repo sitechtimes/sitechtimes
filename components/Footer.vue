@@ -25,23 +25,23 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
     .footer-container {
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
-        grid-template-areas: 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
             "form nav"
-            "social nav"; 
+            "social nav";
         margin: 0 auto;
         background-color: var(--grey);
         padding: 3rem 15%;
     }
-    .form { 
-        grid-area: form; 
+    .form {
+        grid-area: form;
     }
-    .social { 
-        grid-area: social; 
+    .social {
+        grid-area: social;
     }
-    .nav { 
+    .nav {
         grid-area: nav;
     }
     @media only screen and (max-width: $large-screen) {
@@ -58,14 +58,14 @@ export default {
 
 </style>
 
-<docs>
-The Final Footer that will be seen at the bottom. It uses GetNotifiedSection, FooterSocialMedia, and FooterNav to make a Footer with all the needed information.
-## Variables Used:
---grey
-
-## Examples:
-
-```jsx
-<Footer />
-```
-</docs>
+<!--<docs>-->
+<!--The Final Footer that will be seen at the bottom. It uses GetNotifiedSection, FooterSocialMedia, and FooterNav to make a Footer with all the needed information.-->
+<!--## Variables Used:-->
+<!--&#45;&#45;grey-->
+<!---->
+<!--## Examples:-->
+<!---->
+<!--```jsx-->
+<!--<Footer />-->
+<!--```-->
+<!--</docs>-->
