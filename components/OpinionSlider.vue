@@ -3,7 +3,6 @@
       <div class="scrolls">
       <TextBelowArticlePreview
       class="opinion-card"
-      :height="height"
       v-for="article in articles"
       :key="article.slug"
       :articleUrl="article.slug" 
@@ -26,7 +25,6 @@ export default {
  components: { },
  props: {
    articles: Array,
-   height
  }
 }
 </script>
