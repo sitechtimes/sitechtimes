@@ -141,35 +141,59 @@ export default {
   height: 11.7rem;
   width: 40rem;
 }
+// @media only screen and (max-width: $midlarge-screen) {
+//   .sidebar-article-details {
+//     flex-direction: row;
+//   }
+// }
 
-@media only screen and (max-width: $mid-screen) {
-  :root {
-    --sidebarArticleWidth: 100vw;
-    --sidebarSidePadding: 15vw;
-  }
+@media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
-    border: none;
   }
   .sidebar-article {
-    max-width: none;
-    padding: 2.5rem var(--sidebarSidePadding);
+    padding: 1.5rem 0;
   }
-  .sidebar-article-details {
+  .sidebar-article:hover {
+  background-color: unset;
+}
+}
+@media only screen and (max-width: $mid-screen) {
+  .sidebar-article {
     max-width: none;
+    width: 100vw;
   }
 }
+ 
 
-@media only screen and (max-width: 450px) {
-  :root {
-    --sidebarSidePadding: 12vw;
-  }
-}
-@media only screen and (max-width: 380px) {
-  :root {
-    --sidebarSidePadding: 8vw;
-  }
-}
+// }
+// @media only screen and (max-width: $mid-screen) {
+//   :root {
+//     --sidebarArticleWidth: 100vw;
+//     --sidebarSidePadding: 15vw;
+//   }
+//   .sidebar-container {
+//     max-width: none;
+//     border: none;
+//   }
+//   .sidebar-article {
+//     max-width: none;
+//     padding: 2.5rem var(--sidebarSidePadding);
+//   }
+//   .sidebar-article-details {
+//     max-width: none;
+//   }
+// }
+// @media only screen and (max-width: 450px) {
+//   :root {
+//     --sidebarSidePadding: 12vw;
+//   }
+// }
+// @media only screen and (max-width: 380px) {
+//   :root {
+//     --sidebarSidePadding: 8vw;
+//   }
+// }
 </style>
 
 /* Ripple effect on click? */
