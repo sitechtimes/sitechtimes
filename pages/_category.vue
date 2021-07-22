@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="global-container">
 <div class="border-right">
   <div class="cat-main-parent">
 <div class="cat-main">
@@ -133,6 +133,10 @@ width: 90%;
 @media only screen and (max-width: $mid-screen) {
   .border-right{
     width: 70%;
+      border: none;
+  }
+  .cat-title{
+    font-size: var(--h4);
   }
     .two-sub-articles{
       display: none;
