@@ -1,7 +1,7 @@
 <template>
   <article class="entertainment-side">
     <div class="entertainment-img-div">
-    <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="entertainment-side-img"></a>
+    <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="entertainment-side-img dropshadow"></a>
     </div>
     <div class="entertainment-side-img-content">
     <category-icon :category="category"></category-icon>

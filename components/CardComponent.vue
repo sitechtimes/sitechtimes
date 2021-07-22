@@ -1,5 +1,5 @@
 <template>
-  <div class="card-component card-component-image" :style="getFontSize">
+  <div class="card-component card-component-image dropshadow" :style="getFontSize">
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -167,6 +167,9 @@ a:active {
   font-size: var(--customFontSize);
   line-height: 4rem;
   color: var(--white);
+}
+.dropshadow {
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
 </style>
 
