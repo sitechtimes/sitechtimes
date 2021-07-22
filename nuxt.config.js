@@ -2,6 +2,7 @@ import {ENV_VALUES} from "./config";
 
 export default {
   ssr: true,
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sitechtimes',

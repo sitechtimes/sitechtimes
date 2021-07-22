@@ -75,15 +75,15 @@ export default {
 }
 </style>
 
-<docs>
-The Container for all Sidebar Articles, it's tied to the right side of the screen and should show up only with an article on the page. It contains six articles
-## Variables Used:
---sidebarSidePadding
+<!--<docs>-->
+<!--The Container for all Sidebar Articles, it's tied to the right side of the screen and should show up only with an article on the page. It contains six articles-->
+<!--## Variables Used:-->
+<!--&#45;&#45;sidebarSidePadding-->
 
-## Examples
+<!--## Examples-->
 
-```jsx
-<sidebar-container />
-```
+<!--```jsx-->
+<!--<sidebar-container />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->

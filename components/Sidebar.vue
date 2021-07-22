@@ -174,15 +174,15 @@ export default {
 
 /* Ripple effect on click? */
 
-<docs>
-The Sidebar article is the article found in the sidebar and has an image on one side and the article's info on the other
+<!--<docs>-->
+<!--The Sidebar article is the article found in the sidebar and has an image on one side and the article's info on the other-->
 
-## Variables Used:
---sidebarSidePadding, --sidebarArticleWidth, --sidebarSidePadding, --toggleBorder, --sidebarDetailsPaddingLeft, --sidebarImgWidth, --centerSquareThumbnail, --
+<!--## Variables Used:-->
+<!--&#45;&#45;sidebarSidePadding, &#45;&#45;sidebarArticleWidth, &#45;&#45;sidebarSidePadding, &#45;&#45;toggleBorder, &#45;&#45;sidebarDetailsPaddingLeft, &#45;&#45;sidebarImgWidth, &#45;&#45;centerSquareThumbnail, &#45;&#45;-->
 
-## Examples:
+<!--## Examples:-->
 
-```jsx
-<Sidebar author="Daniel Briskman" published="November 42, 2780" title="One Piece is Bad and here's why" imgUrl="https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg" imgAlt="Sad Man"/>
-```
-</docs>
+<!--```jsx-->
+<!--<Sidebar author="Daniel Briskman" published="November 42, 2780" title="One Piece is Bad and here's why" imgUrl="https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg" imgAlt="Sad Man"/>-->
+<!--```-->
+<!--</docs>-->

@@ -1,13 +1,13 @@
 <template>
     <nav>
         <ul class="home-nav-ul">
-            <a v-for="category in navbar" 
+            <a v-for="category in navbar"
             :key="category"
             :href='category.navLink'
             class="home-nav-li"><li>{{category.navType}}</li></a>
         </ul>
     </nav>
-  
+
 </template>
 
 <script>
@@ -23,7 +23,7 @@
         {navLink: 'entertainment', navType: 'ENTERTAINMENT'},
         {navLink: 'science', navType: 'SCIENCE'},
         {navLink: 'activities', navType: 'ACTIVITIES'},
-        {navLink: 'events', navType: 'EVENTS'} 
+        {navLink: 'events', navType: 'EVENTS'}
       ]
     }
   }
@@ -55,16 +55,16 @@
     }
 </style>
 
-<docs>
-This is the Navigation Bar - it links to all other pages related to a category
+<!--<docs>-->
+<!--This is the Navigation Bar - it links to all other pages related to a category-->
 
-## Variables Used:
---font
+<!--## Variables Used:-->
+<!--&#45;&#45;font-->
 
-## Examples
+<!--## Examples-->
 
-```jsx
-<Navbar />
-```
-   
-</docs>
+<!--```jsx-->
+<!--<Navbar />-->
+<!--```-->
+<!--   -->
+<!--</docs>-->

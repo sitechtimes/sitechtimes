@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="scss"> 
+<style lang="scss">
 @import "../assets/_variables.scss";
     .footer-header-container {
         display: flex;
@@ -32,7 +32,7 @@ export default {
         padding-bottom: 3.1rem;
         border-bottom: .2rem solid var(--primary-color);
     }
-    .footer-header, 
+    .footer-header,
     .footer-sub-header {
         font-size: var(--h2);
         text-align: center;
@@ -85,14 +85,14 @@ export default {
 
 </style>
 
-<docs>
-This is the section of the footer with a form that allows the user to subscribe to the newsletter.
+<!--<docs>-->
+<!--This is the section of the footer with a form that allows the user to subscribe to the newsletter.-->
 
-## Variables Used:
---font, --primary-color, --accent-color, --h3
-## Examples
-```jsx
-<GetNotifiedSection />
-```
+<!--## Variables Used:-->
+<!--&#45;&#45;font, &#45;&#45;primary-color, &#45;&#45;accent-color, &#45;&#45;h3-->
+<!--## Examples-->
+<!--```jsx-->
+<!--<GetNotifiedSection />-->
+<!--```-->
 
-</docs>
+<!--</docs>-->
