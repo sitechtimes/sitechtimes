@@ -1,15 +1,11 @@
 <template>
   <section class="global-container">
 <div class="border-right">
-  <div class="cat-main-parent">
-<div class="cat-main">
-    <h1 class="cat-title">{{ category }}</h1>
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
-    </div>
-    </div>
-    <div class="two-sub-articles" >
-    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`"/>
-     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`"/>
+   <h1 class="cat-title">{{ category }}</h1>
+  <div class="three-cat-articles">
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art"/>
+    <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`" class="cat-sub-one"/>
+     <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`" class="cat-sub-two"/>
      </div>
   <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
         <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
@@ -85,33 +81,32 @@ export default {
 @import '/../assets/variables';
 .border-right{
   border-radius: 0.1rem;
-  margin-left: 5%;
   border-right: solid var(--primary-color);
   width: 85%;
 }
 .cat-title{
   font-size: var(--h3);
   text-transform: capitalize;
-  width: 100%;
+  // width: 100%;
   margin-bottom: 3rem;
 }
-.cat-main-parent{
-  display: grid;
-grid-template-columns: repeat( 1fr);
-grid-template-rows: repeat( 1fr);
-width: 90%;
-}
-.cat-main{
-  margin: 6rem 0 6rem 0;
+.three-cat-articles{
+   display: grid; 
+   grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 20px;
+grid-row-gap: 20px; 
+height: 60rem;
+max-width: 95rem;
 }
 .cat-main-art{
-    width: 100%;
-  grid-area: 1 / 1 / 2 / 3;
+   grid-area: 1 / 1 / 3 / 3;
 }
-.two-sub-articles{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+.cat-sub-one{
+  grid-area: 3 / 1 / 4 / 2;
+}
+.cat-sub-two{
+   grid-area: 3 / 2 / 4 / 3;
 }
 .sub-art{
   margin-top: 3.4rem;

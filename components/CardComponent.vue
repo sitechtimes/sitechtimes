@@ -1,5 +1,6 @@
 <template>
-  <div class="card-component card-component-image" :style="getFontSize">
+  <div class="card-component" :style="getFontSize" >
+    <div class="card-component-image" :style="{ backgroundImage: 'url(' +  imageUrl + ')' }">
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -13,6 +14,7 @@
         {{ title }}
       </div>
     </a>
+    </div>
   </div>
 </template>
 
@@ -116,9 +118,14 @@ a:active {
   justify-content: flex-end;
 }
 .card-component-image {
-  background: url("../assets/card-comp-tempimg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .flex-col {
   display: flex;
