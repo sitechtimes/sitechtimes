@@ -3,7 +3,7 @@
         <ul class="home-nav-ul">
             <nuxt-link v-for="category in navbar"
             :key="category"
-            :href='category.navLink'
+            :to='category.navLink'
             class="home-nav-li"><li>{{category.navType}}</li></nuxt-link>
         </ul>
     </nav>
