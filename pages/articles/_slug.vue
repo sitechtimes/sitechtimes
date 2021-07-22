@@ -19,7 +19,7 @@ export default {
       article: {}
     };
   },
-  async mounted() {
+  async beforeMount() {
     try {
       const article = await this.$axios.get(`/articles/${this.slug}`);
       this.article = article.data;
