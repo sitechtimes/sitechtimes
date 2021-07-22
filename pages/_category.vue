@@ -3,7 +3,7 @@
 <div class="border-right">
    <h1 class="cat-title">{{ category }}</h1>
   <div class="three-cat-articles">
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art"/>
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`"   class="cat-main-art"/>
     <TextBelowArticlePreview v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`" class="cat-sub-one"/>
      <TextBelowArticlePreview v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`" class="cat-sub-two"/>
      </div>
@@ -87,7 +87,6 @@ export default {
 .cat-title{
   font-size: var(--h3);
   text-transform: capitalize;
-  // width: 100%;
   margin-bottom: 3rem;
 }
 .three-cat-articles{
@@ -108,6 +107,10 @@ max-width: 95rem;
 .cat-sub-two{
    grid-area: 3 / 2 / 4 / 3;
 }
+
+
+
+
 .sub-art{
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;

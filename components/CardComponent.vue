@@ -1,6 +1,6 @@
 <template>
-  <div class="card-component" :style="getFontSize" >
-    <div class="card-component-image" :style="{ backgroundImage: 'url(' +  imageUrl + ')' }">
+  <div class="card-component" :style="getFontSize">
+    <div class="card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
     <a :href="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -30,7 +30,7 @@ export default {
     imageAlt: { type: String },
     title: { type: String },
     size: {
-      default: "Medium",
+      default: "medium",
       type: String
     },
     clampSize: {
@@ -116,16 +116,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 }
 .card-component-image {
   background-repeat: no-repeat;
   background-size: cover;
-  cursor: pointer;
-  border-radius: 1.5rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  height: 100%;
 }
 .flex-col {
   display: flex;
@@ -138,9 +134,8 @@ a:active {
 .card-component-text-container {
   width: 100%;
   padding: 0 10%;
-  max-height: 70%;
+  height: 100%;
   margin: 0 auto;
-  padding-bottom: 10%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1.5rem;
 }
