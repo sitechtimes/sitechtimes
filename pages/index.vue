@@ -4,6 +4,7 @@
     <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
     </NuxtLink>
+    <OpinionSlider :articles="articles"/>
   </div>
 </template>
 
@@ -11,12 +12,17 @@
 export default {
     data() {
       return {
-        homepages: []
+        homepages: [],
+        articles: [],
       }
     },
     async mounted() {
       const homepages = await this.$axios.get('/articles/homepage');
       this.homepages = homepages.data;
+
+      const articles = await this.$axios.get(`/articles/homepage?category=entertainment`);
+      this.articles = articles.data;
+
     }
   }
 </script>
