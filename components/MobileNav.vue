@@ -12,7 +12,7 @@
         <ul class="mobile-nav-ul">
             <a v-for="category in categories"
             :key="category"
-            :href="category">
+            :href="'../' + category">
             <li class="mobile-nav-li">{{ category }}</li>
             </a>
         </ul>

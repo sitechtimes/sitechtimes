@@ -2,13 +2,11 @@
   <div>
     <Datebar />
     <Navbar :categories="categories" />
-    <MobileNav :categories="categories"/>
+    <MobileNav :categories="categories" />
 
-    <div class="global-container">
        <Nuxt />
-    </div>
 
-    <Footer :categories="categories"/>
+    <Footer :categories="categories" />
   </div>
 </template>
 

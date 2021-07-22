@@ -3,7 +3,7 @@
         <ul class="home-nav-ul">
             <a v-for="category in categories"
             :key="category"
-            :href="category">
+            :href="'../' + category">
             <li class="home-nav-li">{{ category }}</li>
             </a>
         </ul>
@@ -32,11 +32,13 @@
         color: inherit;
     }
     .home-nav-li {
+        text-transform: uppercase;
         font-family: var(--font);
         display: inline;
         //width: calc(100% / 7 + 2rem);
         list-style-type: none;
         font-size: var(--h4);
+        letter-spacing: .05rem;
     }
     .home-nav-ul {
         display: flex;
