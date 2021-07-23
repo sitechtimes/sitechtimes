@@ -27,7 +27,7 @@ export default {
   props: {
     category: String,
     author: String,
-    published: String,
+    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,
@@ -164,7 +164,7 @@ export default {
     width: 100vw;
   }
 }
- 
+
 
 // }
 // @media only screen and (max-width: $mid-screen) {
