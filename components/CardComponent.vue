@@ -6,7 +6,7 @@
         <category-icon :category="category" class="card-component-category" />
         <author-and-date
           :author="author"
-          :published="published"
+          :published="this.$format(this.published)"
           class="card-component-author-and-date"
         />
       </div>
@@ -24,7 +24,7 @@ export default {
   props: {
     author: { type: String },
     articleUrl: { type: String },
-    published: { type: String },
+    published: { type: Date },
     category: { type: String },
     imageUrl: { type: String },
     imageAlt: { type: String },
@@ -169,6 +169,9 @@ a:active {
   font-size: var(--customFontSize);
   line-height: 4rem;
   color: var(--white);
+}
+.dropshadow {
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
 </style>
 <docs>
