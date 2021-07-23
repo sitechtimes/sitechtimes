@@ -71,6 +71,7 @@ export default {
     border: none;
     flex-direction: row;
     max-width: none;
+    width: 100vw;
   }
   .morelikethis-section {
     margin-left: 2rem;
@@ -82,15 +83,14 @@ export default {
 @media only screen and (max-width: $mid-screen) {
    .sidebar-container {
     flex-direction: column;
-    width: 100vw;
   }
   .morelikethis-section {
     margin-left: 0;
     margin-top: 3rem;
   }
   .sidebar-heading {
-    padding: 0;
-  }
+  font-size: var(--h3);
+}
 }
 </style>
 
