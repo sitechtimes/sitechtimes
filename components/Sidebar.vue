@@ -6,8 +6,14 @@
       <nuxt-link
         :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
-      >
+        v-if="title.length < 40">
         {{ title }}
+      </nuxt-link>
+      <nuxt-link
+        :to="`/articles/${articleUrl}`"
+        id="sidebar-article-details-title"
+        v-else>
+        {{ title.substring(0, 40) + '...' }}
       </nuxt-link>
       <author-and-date-sidebar
         :author="author"
@@ -32,8 +38,8 @@ export default {
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  }
-};
+  },
+ };
 </script>
 
 <style lang="scss">
@@ -151,6 +157,9 @@ export default {
   .sidebar-article:hover {
   background-color: unset;
 }
+#sidebar-article-details-title {
+    font-size: var(--h4);
+  }
 }
 
 @media only screen and (max-width: $mid-screen) {
@@ -171,9 +180,7 @@ export default {
     height: var(--sidebarImgWidth);
     width: var(--sidebarImgWidth);
   }
-}
-@media only screen and (max-width: $small-screen) {
-#sidebar-article-details-title {
+  #sidebar-article-details-title {
     font-size: var(--h3);
   }
 }

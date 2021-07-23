@@ -82,7 +82,7 @@ export default {
   font-size: 1.3rem;
 }
 
-@media only screen and (max-width: $midlarge-screen) {
+@media only screen and (max-width: $mid-screen) {
   .sidebar-article-details-author-date > section > h5 {
     font-size: var(--h5);
   }

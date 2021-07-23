@@ -40,7 +40,7 @@ export default {
   line-height: 1.5rem;
   padding: 0.2rem 0.6rem 0 0.6rem;
 }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: $mid-screen) {
   #sidebar-article-category {
    font-size: var(--h5);
    padding: 0.8rem 0.8rem 0.6rem 0.8rem;

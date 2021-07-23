@@ -9,7 +9,7 @@
       :alt=articleAlt
     />
     <section class="main-article-metadata">
-      <author-and-date-sidebar
+      <author-and-date
         class="article-author-and-date"
         :author=author
         :published="this.$format(this.published)"
