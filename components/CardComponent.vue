@@ -1,18 +1,18 @@
 <template>
-  <div class="card-component card-component-image dropshadow" :style="getFontSize">
-    <a :href="articleUrl" class="flex-col card-component-text-container">
+  <div class="card-component card-component-image" :style="getFontSize">
+    <nuxt-link :to="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
         <author-and-date
           :author="author"
-          :published="published"
+          :published="this.$format(this.published)"
           class="card-component-author-and-date"
         />
       </div>
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </a>
+    </nuxt-link>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   props: {
     author: { type: String },
     articleUrl: { type: String },
-    published: { type: String },
+    published: { type: Date },
     category: { type: String },
     imageUrl: { type: String },
     imageAlt: { type: String },
