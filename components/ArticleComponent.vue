@@ -9,7 +9,7 @@
       :alt=articleAlt
     />
     <section class="main-article-metadata">
-      <author-and-date
+      <author-and-date-article
         class="article-author-and-date"
         :author=author
         :published="this.$format(this.published)"
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import AuthorAndDate from "./AuthorAndDate.vue";
+import AuthorAndDateArticle from "./AuthorAndDateArticle.vue";
 import SocialMediaIcons from "./SocialMediaIcons.vue";
 import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
@@ -35,7 +35,7 @@ export default {
   name: "ArticleComponent",
   props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
   components: {
-    AuthorAndDate,
+    AuthorAndDateArticle,
     SocialMediaIcons,
     ShareIcon,
     CategoryIcon
@@ -62,8 +62,10 @@ export default {
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
+.main-article-text-section p a,
 .main-article-text-section li em,
 .main-article-text-section li strong,
+.main-article-text-section li a,
 .main-article-text-section span,
 .main-article-text ul li,
 .main-article-text ul li span,
