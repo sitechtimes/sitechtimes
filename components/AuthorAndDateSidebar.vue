@@ -65,33 +65,41 @@ export default {
   display: flex;
 }
 .sidebar-article-details-author-date > section > h5 {
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-transform: uppercase;
   margin: 0 1.5rem 0 0;
 
   line-height: 1.75;
 }
 .sidebar-icon {
-  font-size: 1.3rem;
-  padding-right: 4px;
-}
+    // width: var(--h5);
+    // height: var(--h5);
+    margin-top: .1rem;
+    // padding-right: .4rem;
+  }
 #sidebar-author-icon,
 #sidebar-published-icon {
   font-size: 1.3rem;
 }
 
-// @media only screen and (max-width: $mid-screen) {
-//   .sidebar-article-details-author-date > section > h5 {
-//     font-size: var(--h5);
-//   // }
-//   // #sidebar-author-icon,
-//   // #sidebar-published-icon {
-//   //   font-size: var(--h3);
-//   // }
-//   // .sidebar-icon {
-//   //   font-size: var(--h3);
-//   }
-// }
+@media only screen and (max-width: $midlarge-screen) {
+  .sidebar-article-details-author-date > section > h5 {
+    font-size: var(--h5);
+  }
+  .sidebar-icon {
+    width: var(--h5);
+    height: var(--h5);
+    margin-top: .3rem;
+  }
+}
+@media only screen and (max-width: $small-screen) {
+  .sidebar-icon {
+    width: var(--h4);
+    height: var(--h4);
+    margin-top: 0.2rem;
+  }
+}
+
 </style>
 
 <!--<docs>-->

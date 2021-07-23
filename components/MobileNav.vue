@@ -104,13 +104,13 @@ export default {
    background-color: var(--black);
    border-radius: 5rem;
  }
-/* Icon 4 */
+
 #nav-icon4 {
   width: 5rem;
   height: 7vh;
   padding: 2rem;
   position: relative;
-  margin-left: 87vw;
+  margin-left: 90%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);

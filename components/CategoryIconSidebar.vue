@@ -26,6 +26,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/variables';
+
 #sidebar-article-category {
   text-transform: uppercase;
   width: max-content;
@@ -36,7 +38,14 @@ export default {
   border-radius: 0.6rem;
   margin: 0.3rem 0 0.5rem 0;
   line-height: 1.5rem;
-  padding: 0.4em 0.6rem 0.2em 0.6rem;
+  padding: 0.2rem 0.6rem 0 0.6rem;
+}
+@media only screen and (max-width: $small-screen) {
+  #sidebar-article-category {
+   font-size: var(--h5);
+   padding: 0.8rem 0.8rem 0.6rem 0.8rem;
+   margin: 0.3rem 0 1.5rem 0;
+  }
 }
 </style>
 

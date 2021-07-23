@@ -11,7 +11,7 @@
       </nuxt-link>
       <author-and-date-sidebar
         :author="author"
-        :published="published"
+        :published="this.$format(this.published)"
       ></author-and-date-sidebar>
     </div>
   </div>
@@ -105,9 +105,8 @@ export default {
 
 #sidebar-article-details-title {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: var(--h5);
   line-height: 1.35;
-
   text-decoration: none;
   color: var(--black);
 
@@ -131,11 +130,6 @@ export default {
 #published-icon {
   font-size: 1.4rem;
 }
-
-#sidebar-article-details-title {
-  font-weight: bold;
-}
-
 .example-img {
   border: var(--toggleBorder);
   height: 11.7rem;
@@ -166,9 +160,9 @@ export default {
   .sidebar-article-details {
     max-width: 100%;
 }
-  #sidebar-article-details-title {
-    font-size: var(--h4);
-}
+//   #sidebar-article-details-title {
+//     font-size: var(--h4);
+// }
   .sidebar-article {
     max-width: none;
     width: 100%;
@@ -176,6 +170,11 @@ export default {
   .sidebar-img {
     height: var(--sidebarImgWidth);
     width: var(--sidebarImgWidth);
+  }
+}
+@media only screen and (max-width: $small-screen) {
+#sidebar-article-details-title {
+    font-size: var(--h3);
   }
 }
 

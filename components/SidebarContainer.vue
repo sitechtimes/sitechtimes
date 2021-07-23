@@ -88,9 +88,11 @@ export default {
     margin-left: 0;
     margin-top: 3rem;
   }
+}
+@media only screen and (max-width: $small-screen) {
   .sidebar-heading {
-    padding: 0;
-  }
+  font-size: var(--h3);
+}
 }
 </style>
 
