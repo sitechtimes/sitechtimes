@@ -1,11 +1,11 @@
 <template>
     <nav>
         <ul class="home-nav-ul">
-            <a v-for="category in categories"
+            <nuxt-link v-for="category in categories"
             :key="category"
-            :href="'../' + category">
+            :to="'../' + category">
             <li class="home-nav-li">{{ category }}</li>
-            </a>
+            </nuxt-link>
         </ul>
     </nav>
 

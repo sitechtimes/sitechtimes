@@ -1,6 +1,7 @@
 <template>
   <div>
     <Datebar />
+
     <Navbar :categories="categories" />
     <MobileNav :categories="categories" />
 

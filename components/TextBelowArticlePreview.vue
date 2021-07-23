@@ -1,6 +1,6 @@
 <template>
    <article class="text-below-preview-article">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image"></a>
+       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
        <h5 class="article-info">
             <category-icon :category="category" class="article-cat"/>
             <author-and-date :author="author" :published="published" class="article-data" />
@@ -14,22 +14,21 @@
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
   name: "TextBelowArticlePreview",
-  props: ["author", "articleUrl", "published", "category", "imageUrl", "imageAlt", "title"],
+  props: [
+    "author", 
+    "articleUrl", 
+    "published", 
+    "category", 
+    "imageUrl", 
+    "imageAlt", 
+    "title",
+    ],
 };
 </script>
 
 <style lang="scss">
 
 @import '../assets/variables';
-*,
-html,
-body {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-size: 62.5%;
-  font-family: var(--font);
-}
 a:link { text-decoration: none; color: var(--black)}
 a:visited { text-decoration: none;  color: var(--black)}
 a:hover { text-decoration: none;  color: var(--black)}
@@ -37,48 +36,28 @@ a:active { text-decoration: none;  color: var(--black)}
 .text-below-preview-article {
   display: flex;
   flex-direction: column;
-  width: 46.1rem;
-  height: 37rem;
-  // margin-right: 3rem;
 }
 .article-info {
+  margin: 1rem 0;
   display: flex;
-   width: 42.2rem;
 }
 .article-image {
-  width: 42.2rem;
-  height: 21.7rem;
+  width: 100%;
   border-radius: 1.5rem;
+  height:20rem;
 }
 .article-cat {
   margin-right: 2rem;
 }
 .article-title {
-  margin: 0;
+  margin: 0 0.2rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: var(--h4)
 }
 .article-data {
     padding-top: 1rem;
-}
-@media only screen and (max-width: $x-small-screen) {
-  .article-cat {
-    margin-right: 1rem;
-  }
-  .article-data {
-    margin-right: 0.25rem;
-  }
-  .article-info {
-    width: 35rem;
-  }
-  .article-image {
-    width: 37rem;
-  }
-  .article-title {
-    width: 37rem;
-  }
 }
 
 

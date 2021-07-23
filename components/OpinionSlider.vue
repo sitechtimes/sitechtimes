@@ -1,10 +1,19 @@
 <template>
   <div class="opinion-section">
       <div class="scrolls">
-      <text-below-article-preview width="" class="opinion-card" articleUrl="https://theconversation.com/us/topics/rocket-science-195" author="Daniel Briskman" published="Jan 31, 2020" category="opinion" imageAlt="Space X Rocket" title="I hate rockets, and this is why you should too" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"></text-below-article-preview>
-        <text-below-article-preview class="opinion-card" articleUrl="https://theconversation.com/us/topics/rocket-science-195" author="Alston Chan" published="Jan 31, 2020" category="opinion" imageAlt="Space X Rocket" title="Rockets are so valid and chill" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"></text-below-article-preview>
-          <text-below-article-preview class="opinion-card" articleUrl="https://theconversation.com/us/topics/rocket-science-195" author="Charley Baluja" published="Jan 31, 2020" category="opinion" imageAlt="Space X Rocket" title="Rockets are cool" imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"></text-below-article-preview>
-            </div>
+      <TextBelowArticlePreview
+      class="opinion-card"
+      v-for="article in articles"
+      :key="article.slug"
+      :articleUrl="article.slug" 
+      :author="article.user.name" 
+      :published="article.createdAt" 
+      :category="article.category" 
+      :imageAlt="article.imageAlt" 
+      :title="article.title" 
+      :imageUrl="article.imageUrl"
+      />
+      </div>
 
  </div>
 </template>
@@ -13,6 +22,10 @@
 
 export default {
  name: "OpinionSlider",
+ components: { },
+ props: {
+   articles: Array,
+ }
 }
 </script>
 
@@ -20,7 +33,6 @@ export default {
 .opinion-section{
     display: flex;
     flex-direction: column;
-      margin-bottom: 3rem;
 }
 .span-div{
     display: flex;
@@ -30,7 +42,7 @@ export default {
 .scrolls{
     display: flex;
     flex-direction: row;
-    width: 70vw;
+    width: 100%;
     margin: 3rem auto;
     overflow-x: auto;
     overflow-y: hidden;

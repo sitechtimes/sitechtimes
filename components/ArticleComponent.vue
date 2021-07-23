@@ -126,7 +126,7 @@ export default {
   height: auto;
   border-radius: 1.5rem;
 }
-
+//
 .main-article-metadata {
   display: flex;
   justify-content: space-between;

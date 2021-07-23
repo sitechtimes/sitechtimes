@@ -27,7 +27,7 @@ export default {
   props: {
     category: String,
     author: String,
-    published: String,
+    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,
