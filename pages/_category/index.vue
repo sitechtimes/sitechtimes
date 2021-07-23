@@ -4,7 +4,7 @@
   <div class="cat-main-parent">
 <div class="cat-main">
     <h1 class="cat-title">{{ category }}</h1>
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
+  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].updatedAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
     </div>
     </div>
     <div class="two-sub-articles">
