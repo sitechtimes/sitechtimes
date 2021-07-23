@@ -9,16 +9,19 @@
 <script>
 export default {
     name: "Footer",
-    data () {
-      return {
-        categories: ['news', 'opinion', 'politics', 'entertainment', 'science', 'activities', 'events'],
-    }
-  },
+//     data () {
+//       return {
+//         categories: ['news', 'opinion', 'politics', 'entertainment', 'science', 'activities', 'events'],
+//     }
+//   },
     components: {
         GetNotifiedSection: () => import('./GetNotifiedSection.vue'),
         FooterSocialMedia: () => import('./FooterSocialMedia.vue'),
         FooterNav: () => import('./FooterNav.vue'),
-    }
+    },
+    props: {
+    categories: Array,
+  }
 }
 </script>
 

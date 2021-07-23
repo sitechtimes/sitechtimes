@@ -1,13 +1,13 @@
 <template>
-  <div class="article-page">
+  <div class="article-page global-container">
     <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" description="This is a sample description because there is currently no article description property for each article in the api data. > _ <" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
 
 <script>
-import ArticleComponent from "../../components/ArticleComponent.vue";
-import SidebarContainer from "../../components/SidebarContainer.vue";
+import ArticleComponent from "../../../components/ArticleComponent.vue";
+import SidebarContainer from "../../../components/SidebarContainer.vue";
 
 export default {
   components: { ArticleComponent, SidebarContainer },

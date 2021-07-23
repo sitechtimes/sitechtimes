@@ -1,7 +1,7 @@
 <template>
   <div class="card-component" :style="getFontSize">
     <div class="card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <a :href="articleUrl" class="flex-col card-component-text-container">
+    <nuxt-link :to="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
         <author-and-date
@@ -13,7 +13,7 @@
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </a>
+    </nuxt-link>
     </div>
   </div>
 </template>

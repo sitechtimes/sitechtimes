@@ -57,13 +57,13 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     @media only screen and (max-width: $mid-screen) {
         .category-article{
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: center;
-            margin: auto
+            margin-left: 10rem;
         }
         .category-article-img{
-            height: 16rem;
-            width: 22rem;
+            height: 12rem;
+            width: 20rem;
             border-radius: 1.5rem;
         }
         .category-article-img-content{
@@ -82,13 +82,18 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             height: 3rem;
         }
         .category-article-authdate {
-            margin-left: 7rem;
             line-height: 2.2rem;
             padding-top: 1rem;
         }
         .category-labels{
-            margin-top: 2rem;
+            margin-top: 0rem;
             display: flex;
+            width: 40rem;
+        }
+        .category-labels{
+            margin-top: 0rem;
+            display: flex;
+            flex-direction: column;
             width: 40rem;
         }
     }
@@ -100,7 +105,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
         }
         .category-article-img{
             height: 12rem;
-            width: 16.5rem;
+            width: 25vw;
             border-radius: 1.5rem;
         }
         .category-article-img-content{
@@ -119,16 +124,18 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             height: 3rem;
         }
         .category-article-authdate {
-            margin-left: 7rem;
+            margin-left: 0rem;
             line-height: 2.2rem;
             padding-top: 1rem;
         }
         .category-labels{
-            margin-top: 2rem;
+            margin-top: 0rem;
             display: flex;
+            flex-direction: column;
             width: 40rem;
         }
     }
+
 </style>
 
 <!--<docs>-->
