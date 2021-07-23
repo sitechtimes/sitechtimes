@@ -88,19 +88,19 @@ export default {
     margin-top: .3rem;
   }
 }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: $mid-screen) {
   .article-icon {
     width: var(--h4);
     height: var(--h4);
     margin-top: 0.2rem;
   }
+    .author-date-article > section > h5 {
+    font-size: var(--h4);
+  }
 }
 @media only screen and (max-width: $x-small-screen) {
   .author-date-article {
     flex-direction: column;
-  }
-  .author-date-article > section > h5 {
-    font-size: var(--h4);
   }
   .article-icon {
     margin-top: 0.5rem;
