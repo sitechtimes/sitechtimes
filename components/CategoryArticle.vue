@@ -67,13 +67,13 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             border-radius: 1.5rem;
         }
         .category-article-img-content{
-            width: 40vw;
-            margin-left: 5rem;
+            width: 20%;
+            margin: 0 20rem 0 0;
         }
         .category-title{
             font-size: 2rem;
             font-weight: 700;
-            width: 45rem;
+            width: 30rem;
             padding-top: 1rem;
         }
         .category-article-icon {
@@ -101,8 +101,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
         .category-article{
             display: flex;
             flex-direction: row-reverse;
-            justify-content: center;
-            margin-left: 6rem;
+            margin: auto
         }
         .category-article-img{
             height: 12rem;
