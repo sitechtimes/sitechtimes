@@ -51,7 +51,7 @@ export default {
         fontSize: "var(--fontMedium)"
       });
       const large = createFontSize({
-        fontSize: "5.653rem"
+        fontSize: "var(--fontLarge)"
       });
       const fontSizes = {
         //list of sizes just names
@@ -179,18 +179,24 @@ a:active {
 }
 @media only screen and (max-width: $x-small-screen) {
     :root{
---fontSmall: 2.827rem;
+--fontSmall: 1.4rem;
   --fontMedium: 2rem;
-  --fontLarge: 5.653rem;
+  --fontLarge: 2.8rem;
     }
   
 }
+.card-component-category-author-date {
+    display: flex;
+    flex-wrap: wrap;
+  padding-bottom: 3rem;
+}
 
-
-
-
-
-
+#article-details-author {
+    font-size: 1.1rem;
+}
+#article-details-date {
+    font-size: 1.1rem;
+}
 </style>
 <docs>
 

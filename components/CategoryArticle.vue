@@ -52,7 +52,6 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     .category-article-authdate {
         margin: auto 0;
         line-height: 2.2rem;
-        padding-top: 1rem;
     }
     @media only screen and (max-width: $mid-screen) {
         .category-article{
