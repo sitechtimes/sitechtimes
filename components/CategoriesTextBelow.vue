@@ -35,8 +35,8 @@ export default {
 .text-below-preview-opinion {
   display: flex;
   flex-direction: column;
-  // width: 46.1rem;
-  // height: 37.1rem;
+   width: 46.1rem;
+   height: 37.1rem;
 
 }
 .opinion-info {

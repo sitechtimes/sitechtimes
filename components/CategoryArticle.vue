@@ -59,7 +59,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin-left: 10rem;
+            // margin-left: 10rem;
         }
         .category-article-img{
             height: 12rem;

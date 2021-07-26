@@ -15,7 +15,7 @@
      <CategoriesTextBelow v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`"/>
      </div>
      </div>
-
+<div class="mobile-sub-arts">
   <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
         <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
           <CategoryArticle   class="sub-art"
@@ -27,6 +27,7 @@
       :title="article.title"
       :imageUrl="article.imageUrl"
       :articleUrl="`/articles/${article.slug}`"/>
+        </div>
       <div class="cat-visible">
         <h2 class="cat-subhead">More Articles</h2>
       <MobileCategoryArticle  class="mobile-cat"  v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="`/articles/${articles[5].slug}`"/>
@@ -121,9 +122,9 @@ export default {
  .sub-art{
    margin-top: 3.4rem;
    margin-bottom: 3.4rem;
-   width: 100%;
-   display: flex;
-   justify-content: flex-start;
+  //  width: 100%;
+  //  display: flex;
+  //  justify-content: flex-start;
  }
  .cat-visible{
    display: none;
@@ -155,8 +156,15 @@ export default {
  .two-cat-articles{
    background-color: teal;
  }
+ .mobile-sub-arts{
+   width: 100%;
+margin-left: 0rem;
+   background-color: green;
+ }
    .sub-art{
      background-color: red;
+     display: flex;
+justify-content: flex-start;
    }
      .seymour{
        margin: 6rem 0 10rem 0;
