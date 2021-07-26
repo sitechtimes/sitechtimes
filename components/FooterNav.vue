@@ -5,7 +5,7 @@
         <ul class="footer-nav-ul">
             <a v-for="category in categories"
             :key="category"
-            :href="'../' + category"><li>{{ category }}</li></a>
+            :href="category"><li>{{ category }}</li></a>
         </ul>
     </div>
     </div>

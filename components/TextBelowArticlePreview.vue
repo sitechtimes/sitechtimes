@@ -44,7 +44,6 @@ a:active { text-decoration: none;  color: var(--black)}
 .article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height:20rem;
 }
 .article-cat {
   margin-right: 2rem;
