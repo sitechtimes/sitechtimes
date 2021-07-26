@@ -1,6 +1,7 @@
 <template>
   <section class="global-container">
 <div class="border-right">
+  <div class="here">
    <h1 class="cat-title">{{ category }}</h1>
    <div class="all-of-em">
      <div class="snowball-in-hell">
@@ -32,6 +33,7 @@
         <MobileCategoryArticle   class="mobile-cat"   v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="`/articles/${articles[6].slug}`"/>
           <MobileCategoryArticle  class="mobile-cat"   v-if="articles[7]" :title="articles[7].title" :author="articles[7].user.name" :published="articles[7].createdAt" :imageUrl="articles[7].imageUrl" :category="category" :articleUrl="`/articles/${articles[7].slug}`"/>
                <MobileCategoryArticle class="mobile-cat"   v-if="articles[8]" :title="articles[8].title" :author="articles[8].user.name" :published="articles[7].createdAt" :imageUrl="articles[8].imageUrl" :category="category" :articleUrl="`/articles/${articles[8].slug}`"/>
+               </div>
                </div>
           </div>
         <div class="entertainment-seymour">
@@ -97,47 +99,35 @@ export default {
   text-transform: capitalize;
   margin-bottom: 3rem;
 }
-// .cat-main-art{
-// width: 100%;
-// }
-.all-of-em{
-  display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px; 
-height: 60rem;
-max-width: 95rem;
+.all-of-em {
+    height: 60rem;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+     margin-right: 1rem;
+  }
+  .snowball-in-hell {
+    grid-area: 1 / 1 / 4 / 3;
+  }
+  .cat-sub-one{
+    grid-area: 4 / 1 / 7 / 2;
+  }
+  .cat-sub-two {
+    grid-area: 4 / 2 / 7 / 3;
+  }
+ .sub-art{
+   margin-top: 3.4rem;
+   margin-bottom: 3.4rem;
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+ }
+ .cat-visible{
+   display: none;
 }
-.snowball-in-hell{
-   grid-area: 1 / 1 / 3 / 3;
-}
-.cat-sub-one{
-   grid-area: 3 / 1 / 4 / 2;
-}
-.cat-sub-two{
-   grid-area: 3 / 2 / 4 / 3;
-}
-// .two-cat-articles{
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   width: 100%;
-//   margin-top: 7rem;
-// }
-// .cat-sub-one, .cat-sub-two{
-//   margin-bottom: 1.4rem;
-// }
-// .sub-art{
-//   margin-top: 3.4rem;
-//   margin-bottom: 3.4rem;
-//   width: 100%;
-//   display: flex;
-//   justify-content: flex-start;
-// }
-// .cat-visible{
-//   display: none;
-// }
 .entertainment-seymour{
   display: flex;
   justify-content: center;
@@ -148,38 +138,28 @@ max-width: 95rem;
 .cat-subhead{
   margin-bottom: 2rem;
 }
-// @media only screen and (max-width: $mid-screen) {
-//   .global-container{
-//     background-color:purple;
-//   }
-//   .border-right{
-// margin-top: 7rem;
-//       border: none;
-//       background-color: white;
-//       width: 100%;
-//   }
-//   .cat-articles{
-//     width: 90%;
-//     margin: auto;
-//     background-color: blue;
-//   }
-//   .cat-main-art{
-//     width: 100%
-//   }
-// .two-cat-articles{
-//   background-color: teal;
-
-// }
-//   .sub-art{
-//     background-color: red;
-//     justify-content: flex-start;
-//   }
-//   .category-article-img-content{
-//        width: 20%;
-//              margin: 0 0 0 5rem;
-//   }
-//     .seymour{
-//       margin: 6rem 0 10rem 0;
-//     }
-//   }
+ @media only screen and (max-width: $mid-screen) {
+   .global-container{
+     background-color:purple;
+   }
+   .border-right{
+ margin-top: 7rem;
+       border: none;
+       background-color: white;
+       width: 100%;
+   }
+   .all-of-em{
+     max-width: 70%;
+     background-color: blue;
+   }
+ .two-cat-articles{
+   background-color: teal;
+ }
+   .sub-art{
+     background-color: red;
+   }
+     .seymour{
+       margin: 6rem 0 10rem 0;
+     }
+   }
 </style>
