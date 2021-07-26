@@ -75,7 +75,8 @@ export default {
   font-size: var(--h5);
   line-height: 3rem;
 } 
-.main-article-text-section p {
+.main-article-text-section p,
+.main-article-text-section li {
   font-weight: 300;
   overflow-wrap: break-word;
 }
