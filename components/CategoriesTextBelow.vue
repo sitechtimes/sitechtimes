@@ -1,6 +1,6 @@
 <template>
    <div class="text-below-preview-opinion">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image"></a>
+    <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image">
        <div class="opinion-info">
             <category-icon :category="category" class="opinion-cat"/>
             <author-and-date :author="author" :published="published" class="opinion-data" />
@@ -27,16 +27,17 @@ export default {
 </script>
 
 <style lang="scss">
-a:link { text-decoration: none; color: var(--black)}
-a:visited { text-decoration: none;  color: var(--black)}
-a:hover { text-decoration: none;  color: var(--black)}
-a:active { text-decoration: none;  color: var(--black)}
+// a:link { text-decoration: none; color: var(--black)}
+// a:visited { text-decoration: none;  color: var(--black)}
+// a:hover { text-decoration: none;  color: var(--black)}
+// a:active { text-decoration: none;  color: var(--black)}
 
 .text-below-preview-opinion {
   display: flex;
   flex-direction: column;
-  width: 46.1rem;
-  height: 37.1rem;
+  // width: 46.1rem;
+  // height: 37.1rem;
+
 }
 .opinion-info {
   display: flex;

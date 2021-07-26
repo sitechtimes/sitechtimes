@@ -2,12 +2,19 @@
   <section class="global-container">
 <div class="border-right">
    <h1 class="cat-title">{{ category }}</h1>
-   <div class="cat-articles">
+   <div class="all-of-em">
+     <div class="snowball-in-hell">
   <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`"   class="cat-main-art"/>
-   <div class="two-cat-articles">
-    <CategoriesTextBelow v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`" class="cat-sub-one"/>
-     <CategoriesTextBelow v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`" class="cat-sub-two"/>
+   </div>
+ 
+     <div class="cat-sub-one">
+    <CategoriesTextBelow v-if="articles[1]" :title="articles[1].title" :author="articles[1].user.name" :published="articles[1].createdAt" :imageUrl="articles[1].imageUrl" :category="category" :articleUrl="`/articles/${articles[1].slug}`"/>
+    </div>
+    <div class="cat-sub-two">
+     <CategoriesTextBelow v-if="articles[2]" :title="articles[2].title" :author="articles[2].user.name" :published="articles[2].createdAt" :imageUrl="articles[2].imageUrl" :category="category" :articleUrl="`/articles/${articles[2].slug}`"/>
      </div>
+     </div>
+
   <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
         <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
           <CategoryArticle   class="sub-art"
@@ -19,7 +26,6 @@
       :title="article.title"
       :imageUrl="article.imageUrl"
       :articleUrl="`/articles/${article.slug}`"/>
-      </div>
       <div class="cat-visible">
         <h2 class="cat-subhead">More Articles</h2>
       <MobileCategoryArticle  class="mobile-cat"  v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="`/articles/${articles[5].slug}`"/>
@@ -57,7 +63,6 @@ export default {
     try {
       const articles = await this.$axios.get(`/articles?category=${this.category}&sort=dateDes`);
       this.articles = articles.data;
-      this.$format(this.published)
     }catch(e){
       await this.$router.push('/');
     }
@@ -92,25 +97,47 @@ export default {
   text-transform: capitalize;
   margin-bottom: 3rem;
 }
-.cat-main-art{
-width: 100%;
-  margin-right: 3rem;
+// .cat-main-art{
+// width: 100%;
+// }
+.all-of-em{
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+height: 60rem;
+max-width: 95rem;
 }
-.two-cat-articles{
-  display: flex;
-  flex-direction: row;
-  margin-top: 3rem;
+.snowball-in-hell{
+   grid-area: 1 / 1 / 3 / 3;
 }
-.cat-sub-one, .cat-sub-two{
-  margin-right: 3rem;
+.cat-sub-one{
+   grid-area: 3 / 1 / 4 / 2;
 }
-.sub-art{
-  margin-top: 3.4rem;
-  margin-bottom: 3.4rem;
+.cat-sub-two{
+   grid-area: 3 / 2 / 4 / 3;
 }
-.cat-visible{
-  display: none;
-}
+// .two-cat-articles{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   width: 100%;
+//   margin-top: 7rem;
+// }
+// .cat-sub-one, .cat-sub-two{
+//   margin-bottom: 1.4rem;
+// }
+// .sub-art{
+//   margin-top: 3.4rem;
+//   margin-bottom: 3.4rem;
+//   width: 100%;
+//   display: flex;
+//   justify-content: flex-start;
+// }
+// .cat-visible{
+//   display: none;
+// }
 .entertainment-seymour{
   display: flex;
   justify-content: center;
@@ -121,38 +148,38 @@ width: 100%;
 .cat-subhead{
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: $mid-screen) {
-  .global-container{
-    background-color:purple;
-  }
-  .border-right{
-margin-top: 7rem;
-      border: none;
-      background-color: white;
-      width: 100%;
-  }
-  .cat-articles{
-    width: 90%;
-    margin: auto;
-    background-color: blue;
-  }
-  .cat-main-art{
-    width: 100%
-  }
-.two-cat-articles{
-  background-color: teal;
+// @media only screen and (max-width: $mid-screen) {
+//   .global-container{
+//     background-color:purple;
+//   }
+//   .border-right{
+// margin-top: 7rem;
+//       border: none;
+//       background-color: white;
+//       width: 100%;
+//   }
+//   .cat-articles{
+//     width: 90%;
+//     margin: auto;
+//     background-color: blue;
+//   }
+//   .cat-main-art{
+//     width: 100%
+//   }
+// .two-cat-articles{
+//   background-color: teal;
 
-}
-  .sub-art{
-    background-color: red;
-    justify-content: flex-start;
-  }
-  .category-article-img-content{
-       width: 20%;
-             margin: 0 0 0 5rem;
-  }
-    .seymour{
-      margin: 6rem 0 10rem 0;
-    }
-  }
+// }
+//   .sub-art{
+//     background-color: red;
+//     justify-content: flex-start;
+//   }
+//   .category-article-img-content{
+//        width: 20%;
+//              margin: 0 0 0 5rem;
+//   }
+//     .seymour{
+//       margin: 6rem 0 10rem 0;
+//     }
+//   }
 </style>
