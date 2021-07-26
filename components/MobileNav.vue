@@ -10,13 +10,11 @@
   </div>
 <div class="mobile-nav" v-if="show">
         <ul class="mobile-nav-ul">
-            <a href=""><li class="mobile-nav-li">News</li></a>
-            <a href=""><li class="mobile-nav-li">Politics</li></a>
-            <a href=""><li class="mobile-nav-li">Entertainment</li></a>
-            <a href=""><li class="mobile-nav-li">Opinion</li></a>
-            <a href=""><li class="mobile-nav-li">Science</li></a>
-            <a href=""><li class="mobile-nav-li">Activities</li></a>
-            <a href=""><li class="mobile-nav-li">Events</li></a>
+            <a v-for="category in categories"
+            :key="category"
+            :href="'../' + category">
+            <li class="mobile-nav-li">{{ category }}</li>
+            </a>
         </ul>
 </div>
 </div>
@@ -26,6 +24,7 @@
 <script>
 export default {
     name: "MobileNav",
+    props: ["categories"],
     data() {
         return {
             spanClass: "",
@@ -93,6 +92,7 @@ export default {
    margin-bottom: 10vh;
  }
  .mobile-nav li {
+   text-transform: capitalize;
    list-style: none;
    font-size: 3.5rem;
    margin: 4vh;
@@ -104,13 +104,13 @@ export default {
    background-color: var(--black);
    border-radius: 5rem;
  }
-/* Icon 4 */
+
 #nav-icon4 {
   width: 5rem;
   height: 7vh;
   padding: 2rem;
   position: relative;
-  margin-left: 87vw;
+  margin-left: 90%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);

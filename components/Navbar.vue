@@ -1,10 +1,11 @@
 <template>
     <nav>
         <ul class="home-nav-ul">
-            <a v-for="category in navbar"
+            <nuxt-link v-for="category in categories"
             :key="category"
-            :href='category.navLink'
-            class="home-nav-li"><li>{{category.navType}}</li></a>
+            :to="'../' + category">
+            <li class="home-nav-li">{{ category }}</li>
+            </nuxt-link>
         </ul>
     </nav>
 
@@ -13,35 +14,31 @@
 <script>
     export default {
     name: 'Navbar', // vue component name
-    props: [],
+    props: ["categories"],
     data () {
       return {
-        navbar: [
-        {navLink: 'news', navType: 'NEWS'},
-        {navLink: 'opinion', navType: 'OPINION'},
-        {navLink: 'politics', navType: 'POLITICS'},
-        {navLink: 'entertainment', navType: 'ENTERTAINMENT'},
-        {navLink: 'science', navType: 'SCIENCE'},
-        {navLink: 'activities', navType: 'ACTIVITIES'},
-        {navLink: 'events', navType: 'EVENTS'}
-      ]
     }
-  }
+    },
+
 };
 </script>
 
 
 <style lang="scss">
+@import '../assets/variables';
+
     a {
         text-decoration: none;
         color: inherit;
     }
     .home-nav-li {
+        text-transform: uppercase;
         font-family: var(--font);
         display: inline;
         //width: calc(100% / 7 + 2rem);
         list-style-type: none;
         font-size: var(--h4);
+        letter-spacing: .05rem;
     }
     .home-nav-ul {
         display: flex;
@@ -52,6 +49,12 @@
         padding-left: 10%;
         padding-right: 10%;
         width: 100%;
+    }
+
+@media only screen and (max-width: $mid-screen) {
+        .home-nav-ul {
+          display: none;
+        }
     }
 </style>
 

@@ -6,12 +6,18 @@
       <nuxt-link
         :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
-      >
+        v-if="title.length < 40">
         {{ title }}
+      </nuxt-link>
+      <nuxt-link
+        :to="`/articles/${articleUrl}`"
+        id="sidebar-article-details-title"
+        v-else>
+        {{ title.substring(0, 40) + '...' }}
       </nuxt-link>
       <author-and-date-sidebar
         :author="author"
-        :published="published"
+        :published="this.$format(this.published)"
       ></author-and-date-sidebar>
     </div>
   </div>
@@ -27,13 +33,13 @@ export default {
   props: {
     category: String,
     author: String,
-    published: String,
+    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  }
-};
+  },
+ };
 </script>
 
 <style lang="scss">
@@ -80,7 +86,7 @@ export default {
   border-radius: 1rem;
 
   border: var(--toggleBorder);
-
+  object-fit: cover;
   display: inline-block;
   vertical-align: middle;
 }
@@ -105,9 +111,8 @@ export default {
 
 #sidebar-article-details-title {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: var(--h5);
   line-height: 1.35;
-
   text-decoration: none;
   color: var(--black);
 
@@ -131,45 +136,55 @@ export default {
 #published-icon {
   font-size: 1.4rem;
 }
-
-#sidebar-article-details-title {
-  font-weight: bold;
-}
-
 .example-img {
   border: var(--toggleBorder);
   height: 11.7rem;
   width: 40rem;
 }
+// @media only screen and (max-width: $midlarge-screen) {
+//   .sidebar-article-details {
+//     flex-direction: row;
+//   }
+// }
 
-@media only screen and (max-width: $mid-screen) {
-  :root {
-    --sidebarArticleWidth: 100vw;
-    --sidebarSidePadding: 15vw;
-  }
+@media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
-    border: none;
   }
   .sidebar-article {
-    max-width: none;
-    padding: 2.5rem var(--sidebarSidePadding);
+    padding: 1.5rem 0;
   }
-  .sidebar-article-details {
-    max-width: none;
+  .sidebar-article:hover {
+  background-color: unset;
+}
+#sidebar-article-details-title {
+    font-size: var(--h4);
   }
 }
 
-@media only screen and (max-width: 450px) {
-  :root {
-    --sidebarSidePadding: 12vw;
+@media only screen and (max-width: $mid-screen) {
+    :root {
+  --sidebarImgWidth: 20rem;
+}
+  .sidebar-article-details {
+    max-width: 100%;
+}
+//   #sidebar-article-details-title {
+//     font-size: var(--h4);
+// }
+  .sidebar-article {
+    max-width: none;
+    width: 100%;
+  }
+  .sidebar-img {
+    height: var(--sidebarImgWidth);
+    width: var(--sidebarImgWidth);
+  }
+  #sidebar-article-details-title {
+    font-size: var(--h3);
   }
 }
-@media only screen and (max-width: 380px) {
-  :root {
-    --sidebarSidePadding: 8vw;
-  }
-}
+
 </style>
 
 /* Ripple effect on click? */

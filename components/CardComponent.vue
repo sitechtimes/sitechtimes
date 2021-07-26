@@ -1,18 +1,20 @@
 <template>
-  <div class="card-component card-component-image dropshadow" :style="getFontSize">
-    <a :href="articleUrl" class="flex-col card-component-text-container">
+  <div class="card-component" :style="getFontSize">
+    <div class="card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
+    <nuxt-link :to="articleUrl" class="flex-col card-component-text-container">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
         <author-and-date
           :author="author"
-          :published="published"
+          :published="this.$format(this.published)"
           class="card-component-author-and-date"
         />
       </div>
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </a>
+    </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -22,13 +24,13 @@ export default {
   props: {
     author: { type: String },
     articleUrl: { type: String },
-    published: { type: String },
+    published: { type: Date },
     category: { type: String },
     imageUrl: { type: String },
     imageAlt: { type: String },
     title: { type: String },
     size: {
-      default: "Medium",
+      default: "medium",
       type: String
     },
     clampSize: {
@@ -120,11 +122,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 }
 .card-component-image {
-  background: url("../assets/card-comp-tempimg.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 .flex-col {
   display: flex;
@@ -136,10 +139,9 @@ a:active {
 }
 .card-component-text-container {
   width: 100%;
-  padding: 0 10%;
-  max-height: 70%;
+  padding: 16% 0 0 5%;
+  height: 100%;
   margin: 0 auto;
-  padding-bottom: 10%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1.5rem;
 }

@@ -231,7 +231,7 @@
         />
       </section>
       <h3 class="section-title">Opinion</h3>
-      <OpinionSlider />
+      <OpinionSlider :articles="articles"/>
       </div>
       <div class="darksection">
       <div class="global-container">

@@ -61,13 +61,15 @@
 }
 @media only screen and (max-width: $midlarge-screen) {
     .datebar-container {
-        width: 80rem;
+        width: calc(100vw - 2rem);
     }
 }
 @media only screen and (max-width: $mid-screen) {
     .datebar-container {
         justify-content: flex-start;
         margin-left: 2rem;
+        white-space: nowrap;
+        overflow: hidden;
     }
     .datebar-date {
         font-size: 3.5rem;
@@ -76,11 +78,11 @@
     .calendar-icon {
     padding-top: 0.6rem;
     }
-    .datebar-container {
-        width: 60rem;
-    }
 }
 @media only screen and (max-width: $small-screen) {
+    .datebar {
+        width: 100%;
+    }
     .datebar-container {
         justify-content: flex-start;
         margin-left: 2rem;

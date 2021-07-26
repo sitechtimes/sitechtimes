@@ -1,5 +1,6 @@
 <template>
   <section class="sidebar-container">
+    <div>
     <h3 class="sidebar-heading">Trending</h3>
     <Sidebar
       v-for="article in trending"
@@ -11,7 +12,8 @@
       :imgUrl="article.imageUrl"
       :articleUrl="article.slug"
     /><!-- css var for imgUrl? -->
-
+</div>
+<div class="morelikethis-section">
     <h3 class="sidebar-heading">More Like This</h3>
     <Sidebar
       v-for="article in moreLikeThis"
@@ -23,6 +25,8 @@
       :imgUrl="article.imageUrl"
       :articleUrl="article.slug"
     />
+</div>
+    
   </section>
 </template>
 
@@ -49,6 +53,8 @@ export default {
 
   float: right;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   /*   display: flex;
   flex-direction: column;
@@ -63,15 +69,28 @@ export default {
 @media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     border: none;
+    flex-direction: row;
+    max-width: none;
+    width: 100vw;
+  }
+  .morelikethis-section {
+    margin-left: 2rem;
+  }
+  .sidebar-heading {
+    padding: 0;
   }
 }
 @media only screen and (max-width: $mid-screen) {
-  .sidebar-container {
-    max-width: none;
+   .sidebar-container {
+    flex-direction: column;
+  }
+  .morelikethis-section {
+    margin-left: 0;
+    margin-top: 3rem;
   }
   .sidebar-heading {
-    padding: 1.5rem var(--sidebarSidePadding);
-  }
+  font-size: var(--h3);
+}
 }
 </style>
 
