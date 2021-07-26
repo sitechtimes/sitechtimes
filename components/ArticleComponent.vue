@@ -2,17 +2,17 @@
   <div id="article-component">
     <category-icon :category=category />
     <h2 class="main-article-title">{{ title }}</h2>
-    <!-- <p class="main-article-description">{{ description }}</p> -->
+    <p class="main-article-description">{{ description }}</p>
     <img
       class="main-article-img"
       :src=articleImg
       :alt=articleAlt
     />
     <section class="main-article-metadata">
-      <author-and-date-article
+      <author-and-date
         class="article-author-and-date"
         :author=author
-        :published="this.$format(this.published)"
+        :published=published
       />
       <div class="main-article-metadata-actions">
         <social-media-icons />
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import AuthorAndDateArticle from "./AuthorAndDateArticle.vue";
+import AuthorAndDate from "./AuthorAndDate.vue";
 import SocialMediaIcons from "./SocialMediaIcons.vue";
 import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
@@ -35,7 +35,7 @@ export default {
   name: "ArticleComponent",
   props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
   components: {
-    AuthorAndDateArticle,
+    AuthorAndDate,
     SocialMediaIcons,
     ShareIcon,
     CategoryIcon
@@ -53,37 +53,27 @@ export default {
   margin: 2rem auto;
   font-weight: 600;
 }
-// .main-article-description {
-//   font-style: italic;
-//   font-size: var(--h4);
-//   font-weight: 300;
-//   margin: 2rem auto;
-// }
+.main-article-description {
+  font-style: italic;
+  font-size: var(--h4);
+  font-weight: 300;
+  margin: 2rem auto;
+}
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
-.main-article-text-section p a,
-.main-article-text-section li em,
-.main-article-text-section li strong,
-.main-article-text-section li a,
-.main-article-text-section span,
-.main-article-text ul li,
-.main-article-text ul li span,
-.main-article-text ol li,
-.main-article-text ol li span { 
-  font-family: var(--article-font);
-  font-size: var(--h5);
-  line-height: 3rem;
+.main-article-text-section span { 
+  font-size: var(--h4);
 } 
-.main-article-text-section p,
-.main-article-text-section li {
+.main-article-text-section p {
   font-weight: 300;
-  overflow-wrap: break-word;
+  word-break: break-all;
 }
 .main-article-text ul li,
 .main-article-text ul li span,
 .main-article-text ol li,
 .main-article-text ol li span {
+  font-size: var(--h4);
   font-weight: 300;
   list-style-type: disc;
   list-style-position: inside;
@@ -93,35 +83,25 @@ export default {
 }
 .main-article-text h1,
 .main-article-text h2,
-.main-article-text h3,
-.main-article-text h4,
-.main-article-text h5,
-.main-article-text h6,
-.main-article-text h1 strong,
-.main-article-text h2 strong,
-.main-article-text h3 strong,
-.main-article-text h4 strong,
-.main-article-text h5 strong,
-.main-article-text h6 strong {
-  font-family: var(--article-font);
+.main-article-text h3 {
   font-weight: 400;
 }
-.main-article-text h1 strong {
+.main-article-text h1 {
   font-size: var(--h1);
 }
-.main-article-text h2 strong {
+.main-article-text h2 {
   font-size: var(--h2);
 }
-.main-article-text h3 strong {
+.main-article-text h3 {
   font-size: var(--h3);
 }
-.main-article-text h4 strong {
+.main-article-text h4 {
   font-size: var(--h4);
 }
-.main-article-text h5 strong {
+.main-article-text h5 {
   font-size: var(--h5);
 }
-.main-article-text h6 strong{
+.main-article-text h6 {
   font-size: var(--small-text);
 }
 .main-article-img {
@@ -129,7 +109,7 @@ export default {
   height: auto;
   border-radius: 1.5rem;
 }
-//
+
 .main-article-metadata {
   display: flex;
   justify-content: space-between;
@@ -143,23 +123,16 @@ export default {
   display: flex;
 }
 
-@media only screen and (max-width: $mid-screen) {
-.main-article-text ul li,
-.main-article-text ul li span,
-.main-article-text ol li,
-.main-article-text ol li span, 
-.main-article-text-section p,
-.main-article-text-section p em,
-.main-article-text-section p strong,
-.main-article-text-section li em,
-.main-article-text-section li strong,
-.main-article-text-section span { 
-  font-size: var(--h4);
-  line-height: 4rem;
+@media only screen and (max-width: $x-small-screen) {
+    .main-article-text-section > * { 
+  font-size: var(--h3);
 } 
-// .main-article-description {
-//   font-size: var(--h3);
-//   line-height: 3.5rem;
-// }
+.main-article-text ul li,
+.main-article-text ol li {
+  font-size: var(--h3);
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 2rem;
+}
 }
 </style>
