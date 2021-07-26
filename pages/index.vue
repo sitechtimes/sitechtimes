@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-      <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
+    <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
     {{ homepage.title }}
     </NuxtLink> -->
       <h3 class="section-title">Trending Articles</h3>
@@ -369,6 +369,8 @@ export default {
   grid-row-gap: 20px;
 }
 .news-section {
+  height: auto;
+  padding-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;

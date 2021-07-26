@@ -39,6 +39,7 @@ a:active { text-decoration: none;  color: var(--black)}
   height: 37.1rem;
 }
 .opinion-info {
+  padding: 1rem 0;
   display: flex;
   width: 42.2rem;
 }
