@@ -58,7 +58,8 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             display: flex;
             flex-direction: row-reverse;
             justify-content: center;
-            margin: auto
+            margin: auto;
+            width: 100%;
         }
         .category-article-img{
             height: 16rem;
@@ -96,7 +97,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             display: flex;
             flex-direction: row-reverse;
             justify-content: center;
-            margin: auto
+            margin: auto;
         }
         .category-article-img{
             height: 12rem;
