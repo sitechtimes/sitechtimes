@@ -13,7 +13,7 @@
           category="sports"
           imageTitle="A Girl Surfing"
           title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
-          class="trending-main"
+          class="trending-main cardquery"
           size="medium"
         />
         <CardComponent
@@ -38,8 +38,9 @@
           size="small"
         />
       </section>
+      
       <h3 class="section-title">News</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <text-below-article-preview
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
@@ -68,11 +69,40 @@
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
       </section>
+      <section id="news-mobile" class="news-section mobile-view">
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-main-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-sub-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-detail-mobile"
+        />
+      </section>
       </div>
       <div class="darksection">
         <div class="global-container">
       <h3 class="section-title">Politics</h3>
-      <section class="politics-section">
+      <section class="politics-section desktop-view">
         <CardComponent
           articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
           author="Daniel Briskman"
@@ -104,11 +134,41 @@
           size="small"
         />
       </section>
+      <section id="politics-mobile" class="politics-section mobile-view">
+        <TextBelowOpinion 
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195" 
+          author="Daniel Briskman" 
+          published="Jan 31, 2020" 
+          category="opinion" 
+          imageAlt="Space X Rocket" 
+          title="I hate rockets, and this is why you should too" 
+          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU" 
+          class="politics-main-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="politics-sub-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="politics-detail-mobile"
+        />
+      </section>
       </div>
       </div>
       <div class="global-container">
       <h3 class="section-title">Entertainment</h3>
-      <section class="entertainment-section">
+      <section class="entertainment-section desktop-view">
         <CardComponent
           articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
           author="Daniel Briskman"
@@ -138,6 +198,38 @@
           class="entertainment-detail"
         />
       </section>
+      <section id="entertainment-mobile" class="entertainment-section mobile-view">
+        <CardComponent
+          articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
+          author="Daniel Briskman"
+          published="Jan 21, 2021"
+          category="entertainment"
+          imageTitle="A Girl Surfing"
+          title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
+          class="entertainment-main-mobile"
+          size="medium"
+        />
+        <CardComponent
+          articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
+          author="Daniel Briskman"
+          published="Jan 21, 2021"
+          category="entertainment"
+          imageTitle="A Girl Surfing"
+          title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
+          class="entertainment-sub-mobile"
+          size="medium"
+        />
+        <CardComponent
+          articleUrl="https://www.thetravel.com/best-surfing-spots-california/"
+          author="Daniel Briskman"
+          published="Jan 21, 2021"
+          category="entertainment"
+          imageTitle="A Girl Surfing"
+          title="Girl almost eaten by shark but makes friends with shark and then betrays it and rides it like a surfboard."
+          class="entertainment-detail-mobile"
+          size="medium"
+        />
+      </section>
       <h3 class="section-title">Opinion</h3>
       <OpinionSlider :articles="articles"/>
       </div>
@@ -145,34 +237,31 @@
       <div class="global-container">
       <h3 class="section-title">Science</h3>
       <section class="science-section">
-        <text-below-article-preview
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
-          author="Daniel Briskman"
-          published="Jan 31, 2020"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
-          imageAlt="Space X Rocket"
-          title="I hate rockets, and this is why you should too"
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
           class="science-main"
         />
-        <text-below-article-preview
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
-          author="Daniel Briskman"
-          published="Jan 31, 2020"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
-          imageAlt="Space X Rocket"
-          title="I hate rockets, and this is why you should too"
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
           class="science-sub"
         />
-        <text-below-article-preview
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
-          author="Daniel Briskman"
-          published="Jan 31, 2020"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
-          imageAlt="Space X Rocket"
-          title="I hate rockets, and this is why you should too"
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
           class="science-detail"
         />
       </section>
@@ -180,7 +269,7 @@
       </div>
       <div class="global-container">
       <h3 class="section-title">Activities</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <text-below-article-preview
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
@@ -207,6 +296,35 @@
           imageAlt="Space X Rocket"
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+        />
+      </section>
+      <section id="activities-mobile" class="news-section mobile-view">
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-main-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-sub-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-detail-mobile"
         />
       </section>
       </div>
@@ -215,24 +333,21 @@
 
 <script>
 export default {
-    data() {
-      return {
-        homepages: [],
-        articles: [],
-      }
-    },
-    async mounted() {
-      const homepages = await this.$axios.get('/articles/homepage');
-      this.homepages = homepages.data;
-
-      const articles = await this.$axios.get(`/articles/homepage?category=entertainment`);
-      this.articles = articles.data;
-
-    }
-};
+  data() {
+    return {
+      homepages: [],
+      isMobile: false,
+    };
+  },
+  async mounted() {
+    const homepages = await this.$axios.get("/articles/homepage");
+    this.homepages = homepages.data;
+  },
+}
 </script>
 
 <style lang="scss">
+@import "../assets/variables";
 .section-title {
   padding: 4rem 0;
 }
@@ -260,7 +375,7 @@ export default {
   grid-column-gap: 20px;
 }
 .politics-section {
-  height: 35rem;
+  height: 40rem;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: 1fr;
@@ -294,25 +409,112 @@ export default {
   grid-area: 2 / 6 / 3 / 10;
 }
 .science-section {
-  height: 85rem;
+  height: 75rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-columns: 1fr; 
+  grid-template-rows: repeat(3, 1fr);
 }
 .science-main {
-  grid-area: 1 / 1 / 3 / 2;
+  grid-area: 1 / 1 / 2 / 2;
 }
 .science-sub {
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 2 / 1 / 3 / 2;
 }
 .science-detail {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 3 / 1 / 4 / 2;
 }
 .darksection {
   background-color: var(--grey);
   color: white;
   padding-bottom: 5rem;
 }
+.desktop-view {
+  display: grid;
+}
+.mobile-view {
+  display: none;
+}
+
+@media only screen and (max-width: $mid-screen) {
+  .science-section {
+  height: 50rem;
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: repeat(3, 1fr);
+}
+}
+@media only screen and (max-width: $small-screen) {
+    .science-section {
+    height: 40rem;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(3, 1fr);
+  }
+  #news-mobile {
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 20px; 
+  }
+  .news-main-mobile {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .news-sub-mobile {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .news-detail-mobile {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  #politics-mobile {
+    height: 80rem;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 20px; 
+  }
+  .politics-main-mobile {
+    grid-area: 1 / 1 / 4 / 2;
+  }
+  .politics-sub-mobile {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .politics-detail-mobile {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+  #entertainment-mobile {
+    height: 80rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+  }
+  .entertainment-main-mobile {
+    grid-area: 1 / 1 / 4 / 3;
+  }
+  .entertainment-sub-mobile {
+    grid-area: 4 / 1 / 7 / 2;
+  }
+  .entertainment-detail-mobile {
+    grid-area: 4 / 2 / 7 / 3;
+  }
+  #activities-mobile {
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 20px; 
+  }
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: grid;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .science-section {
+  height: 40rem;
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: repeat(3, 1fr);
+}
+}
+
 </style>
