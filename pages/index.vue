@@ -269,7 +269,7 @@
       </div>
       <div class="global-container">
       <h3 class="section-title">Activities</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <text-below-article-preview
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
@@ -296,6 +296,35 @@
           imageAlt="Space X Rocket"
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
+        />
+      </section>
+      <section id="activities-mobile" class="news-section mobile-view">
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-main-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-sub-mobile"
+        />
+        <CategoryArticle
+          articleUrl="https://theconversation.com/us/topics/rocket-science-195"
+          imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
+          category="opinion"
+          author="Charley Baluja"
+          published="July 12, 2021"
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
+          class="news-detail-mobile"
         />
       </section>
       </div>
@@ -451,6 +480,7 @@ export default {
     grid-area: 5 / 1 / 6 / 2;
   }
   #entertainment-mobile {
+    height: 80rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(6, 1fr);
@@ -465,6 +495,11 @@ export default {
   }
   .entertainment-detail-mobile {
     grid-area: 4 / 2 / 7 / 3;
+  }
+  #activities-mobile {
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 20px; 
   }
   .desktop-view {
     display: none;
