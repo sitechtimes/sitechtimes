@@ -88,11 +88,11 @@ export default {
     margin-top: .3rem;
   }
 }
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: $small-screen) {
   .article-icon {
     width: var(--h4);
     height: var(--h4);
-    margin-top: 0.2rem;
+    margin-top: 0.4rem;
   }
     .author-date-article > section > h5 {
     font-size: var(--h4);
@@ -101,6 +101,7 @@ export default {
 @media only screen and (max-width: $x-small-screen) {
   .author-date-article {
     flex-direction: column;
+    margin-bottom: 2rem;
   }
   .article-icon {
     margin-top: 0.5rem;
