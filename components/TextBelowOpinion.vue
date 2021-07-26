@@ -27,40 +27,56 @@ export default {
 </script>
 
 <style lang="scss">
-a:link { text-decoration: none; color: var(--white)}
-a:visited { text-decoration: none;  color: var(--white)}
-a:hover { text-decoration: none;  color: var(--white)}
-a:active { text-decoration: none;  color: var(--white)}
+a:link { text-decoration: none; color: var(--black)}
+a:visited { text-decoration: none;  color: var(--black)}
+a:hover { text-decoration: none;  color: var(--black)}
+a:active { text-decoration: none;  color: var(--black)}
 
 .text-below-preview-opinion {
-  margin-left: 1rem;
-  margin-right: -1rem;
+  display: flex;
+  flex-direction: column;
+  width: 46.1rem;
+  height: 37.1rem;
 }
 .opinion-info {
   display: flex;
-  margin: 1rem 0;
+  width: 42.2rem;
 }
 .opinion-image {
-  width: 97%;
+  width: 42.2rem;
+  height: 21.7rem;
   border-radius: 1.5rem;
 }
 .opinion-cat {
   margin-right: 2rem;
 }
 .opinion-title {
-  width: 94%;
+  margin: 0;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: var(--h3);
-  color: white;
+  font-size: var(--h4);
 }
 .opinion-data {
     padding-top: 1rem;
 }
 @import "../assets/variables";
 @media only screen and (max-width: $x-small-screen) {
-  
+  .opinion-cat {
+    margin-right: 1rem;
+  }
+  .opinion-data {
+    margin-right: 0.25rem;
+  }
+  .opinion-info {
+    width: 35rem;
+  }
+  .opinion-image {
+    width: 37rem;
+  }
+  .opinion-title {
+    width: 37rem;
+  }
 }
 
 </style>

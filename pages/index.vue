@@ -135,7 +135,7 @@
         />
       </section>
       <section id="politics-mobile" class="politics-section mobile-view">
-        <TextBelowOpinion 
+        <TextBelowScience 
           articleUrl="https://theconversation.com/us/topics/rocket-science-195" 
           author="Daniel Briskman" 
           published="Jan 31, 2020" 
