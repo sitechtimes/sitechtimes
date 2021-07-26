@@ -5,7 +5,7 @@
    <h1 class="cat-title">{{ category }}</h1>
    <div class="all-of-em">
      <div class="snowball-in-hell">
-  <CardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`"   class="cat-main-art"/>
+  <CategoryCardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`"   class="cat-main-art"/>
    </div>
  
      <div class="cat-sub-one">
