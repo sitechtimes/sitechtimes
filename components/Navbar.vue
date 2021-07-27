@@ -32,6 +32,7 @@
 
 
 <style lang="scss">
+@import '../assets/variables';
     a {
         text-decoration: none;
         color: inherit;
