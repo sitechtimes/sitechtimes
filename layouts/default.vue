@@ -1,18 +1,34 @@
 <template>
   <div>
     <Datebar />
-    <Navbar />
-       <Nuxt />
-    <Footer />
+
+    <Navbar :categories="categories" />
+    <MobileNav :categories="categories" />
+
+    <Nuxt />
+
+    <Footer :categories="categories" />
   </div>
 </template>
 
 <script>
 import Datebar from "../components/Datebar";
-import Navbar from "../components/Navbar";
 export default {
   components: {
-    Datebar, Navbar
-  }
-}
+    Datebar
+  },
+  data() {
+    return {
+      categories: [],
+    };
+  },
+  async beforeMount () {
+    try {
+      const categories = await this.$axios.get(`/cms/categories`);
+      this.categories = categories.data;
+    } catch(e){
+      await this.$router.push('/');
+    }
+  },
+};
 </script>
