@@ -16,9 +16,9 @@
      </div>
      </div>
 <div class="mobile-sub-arts">
-  <CategoryArticle class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
-        <CategoryArticle class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
-          <CategoryArticle   class="sub-art"
+  <CatArticleTwo class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
+        <CatArticleTwo class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
+          <CatArticleTwo   class="sub-art"
       v-for="article in allArticles"
       :key="article"
       :category="article.category"
@@ -46,12 +46,12 @@
 <script>
 import CardComponent from "../components/CardComponent";
 import TextBelowArticlePreview from "../components/TextBelowArticlePreview";
-import CategoryArticle from "../components/CategoryArticle";
+import CatArticleTwo from "../components/CatArticleTwo";
 import SeeMoreBtn from "../components/SeeMoreBtn";
 
 export default {
   components: {
-   CardComponent, TextBelowArticlePreview, CategoryArticle, SeeMoreBtn
+   CardComponent, TextBelowArticlePreview, CatArticleTwo, SeeMoreBtn
   },
   data () {
     return {
@@ -107,7 +107,7 @@ export default {
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 20px; 
+    grid-row-gap: 30px; 
      margin-right: 1rem;
   }
   .snowball-in-hell {
@@ -118,6 +118,13 @@ export default {
   }
   .cat-sub-two {
     grid-area: 4 / 2 / 7 / 3;
+  }
+  .cat-sub-one,
+   .cat-sub-two {
+margin-top: 13rem;
+  }
+  .mobile-sub-arts{
+    margin-top: 17rem;
   }
  .sub-art{
    margin-top: 3.4rem;
