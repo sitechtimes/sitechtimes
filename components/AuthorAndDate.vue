@@ -31,6 +31,15 @@ export default {
 #published-icon {
   font-size: 1.8rem;
 }
+@media only screen and (max-width: $mid-screen) {
+  .icon{
+    font-size: 0.8rem;
+  }
+  #author-icon,
+  #published-icon {
+    font-size: 1.2rem;
+  }
+}
 </style>
 
 <!--<docs>-->
