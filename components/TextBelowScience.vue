@@ -5,7 +5,7 @@
             <category-icon :category="category" class="science-cat"/>
             <author-and-date :author="author" :published="published" class="science-data" />
        </div>
-       <a :href="articleUrl" class="science-title">{{title}}</a>
+       <nuxt-link :to="articleUrl" class="science-title">{{title}}</nuxt-link>
    </div>
 </template>
 

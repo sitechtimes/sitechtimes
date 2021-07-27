@@ -1,6 +1,6 @@
 <template>
    <div class="text-below-preview-opinion">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image"></a>
+       <nuxt-link :to="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image"></nuxt-link>
        <div class="opinion-info">
             <category-icon :category="category" class="opinion-cat"/>
             <author-and-date :author="author" :published="published" class="opinion-data" />
