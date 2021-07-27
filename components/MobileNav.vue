@@ -1,75 +1,71 @@
 <template>
-    <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
-  <FooterNav class="mobile-nav"/> -->
-<div class="mobile-nav-box" :style="backgroundColor">
-  <div class="mobile-nav-menu-box global-container">
-    <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
+  <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
+<FooterNav class="mobile-nav"/> -->
+  <div class="mobile-nav-box" :style="backgroundColor">
+    <div class="mobile-nav-menu-box global-container">
+      <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
         <span></span>
         <span></span>
         <span></span>
+      </div>
+    </div>
+    <div class="mobile-nav" v-if="show">
+      <ul class="mobile-nav-ul">
+        <a v-for="category in categories"
+           :key="category"
+           :href="'../' + category">
+          <li class="mobile-nav-li">{{ category }}</li>
+        </a>
+      </ul>
     </div>
   </div>
-<div class="mobile-nav" v-if="show">
-        <ul class="mobile-nav-ul">
-            <a href=""><li class="mobile-nav-li">News</li></a>
-            <a href=""><li class="mobile-nav-li">Politics</li></a>
-            <a href=""><li class="mobile-nav-li">Entertainment</li></a>
-            <a href=""><li class="mobile-nav-li">Opinion</li></a>
-            <a href=""><li class="mobile-nav-li">Science</li></a>
-            <a href=""><li class="mobile-nav-li">Activities</li></a>
-            <a href=""><li class="mobile-nav-li">Events</li></a>
-        </ul>
-</div>
-</div>
 
 </template>
 
 <script>
 export default {
-    name: "MobileNav",
-    data() {
-        return {
-            spanClass: "",
-            show: false,
-            bgColor: "",
-        }
-    },
-    computed: {
-      backgroundColor: function () {
+  name: "MobileNav",
+  props: ["categories"],
+  data() {
+    return {
+      spanClass: "",
+      show: false,
+      bgColor: "",
+    }
+  },
+  computed: {
+    backgroundColor: function () {
       return "background-color: " + this.bgColor;
     },
+  },
+  methods: {
+    changeMenu: function() {
+      if (this.spanClass != "open") {
+        this.spanClass = "open";
+      } else {
+        this.spanClass = "";
+      }
     },
-    methods: {
-        changeMenu: function() {
-            if (this.spanClass != "open") {
-                this.spanClass = "open";
-            } else {
-                this.spanClass = "";
-            }
-
-        },
-        openNav: function() {
-          this.show = !this.show;
-        },
-        toggleBackground: function() {
-          if (this.bgColor === "") {
-            this.bgColor = "var(--primary-color)";
-          } else {
-            this.bgColor = "";
-          }
-        },
-        navFunction: function() {
-          this.toggleBackground();
-          this.openNav();
-          this.changeMenu();
-        }
+    openNav: function() {
+      this.show = !this.show;
+    },
+    toggleBackground: function() {
+      if (this.bgColor === "") {
+        this.bgColor = "var(--primary-color)";
+      } else {
+        this.bgColor = "";
+      }
+    },
+    navFunction: function() {
+      this.toggleBackground();
+      this.openNav();
+      this.changeMenu();
     }
+  }
 }
-
 </script>
 
 <style lang="scss">
-
 @import '../assets/variables';
 .mobile-nav-box {
   display: none;
@@ -81,30 +77,31 @@ export default {
   position: fixed;
   top: 0;
 }
- .mobile-nav {
-   width: 100vw;
-   height: 95vh;
-   background-color: var(--primary-color);
-   display: flex;
-   text-align: center;
-   justify-content: center;
-   align-items: space-between;
- }
- .mobile-nav-ul {
-   margin-bottom: 10vh;
- }
- .mobile-nav li {
-   list-style: none;
-   font-size: 3.5rem;
-   margin: 4vh;
-   color: var(--white);
-   transition: all .3s;
- }
- .mobile-nav li:focus {
-   padding: 1.5rem;
-   background-color: var(--black);
-   border-radius: 5rem;
- }
+.mobile-nav {
+  width: 100vw;
+  height: 95vh;
+  background-color: var(--primary-color);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: space-between;
+}
+.mobile-nav-ul {
+  margin-bottom: 10vh;
+}
+.mobile-nav li {
+  text-transform: capitalize;
+  list-style: none;
+  font-size: 3.5rem;
+  margin: 4vh;
+  color: var(--white);
+  transition: all .3s;
+}
+.mobile-nav li:focus {
+  padding: 1.5rem;
+  background-color: var(--black);
+  border-radius: 5rem;
+}
 .mobile-nav-menu-box {
   display: flex;
   justify-content: flex-end;
@@ -142,19 +139,16 @@ export default {
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
-
 #nav-icon4 span:nth-child(1) {
   top: 0.5rem;
 }
-
 #nav-icon4 span:nth-child(2) {
   top: 2rem;
 }
-
 #nav-icon4 span:nth-child(3) {
   top: 3.5rem;
 }
-#nav-icon4 span:nth-child(1), 
+#nav-icon4 span:nth-child(1),
 #nav-icon4 span:nth-child(2),
 #nav-icon4 span:nth-child(3) {
   -webkit-transform-origin: left center;
@@ -162,7 +156,6 @@ export default {
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-
 #nav-icon4.open span:nth-child(1) {
   background: var(--white);
   -webkit-transform: rotate(45deg);
@@ -172,12 +165,10 @@ export default {
   left: .8rem;
   top: 0;
 }
-
 #nav-icon4.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-
 #nav-icon4.open span:nth-child(3) {
   background: var(--white);
   -webkit-transform: rotate(-45deg);
@@ -187,46 +178,41 @@ export default {
   top: 3.5rem;
   left: .8rem;
 }
-
-    @media only screen and (max-width: $mid-screen) {
-        .mobile-nav-box {
-          display: block;
-        }
-    }
-    @media only screen and (max-width: $x-small-screen) {
-        #nav-icon4 span:nth-child(1) {
-          top: 1.2rem;
-        }
-
-        #nav-icon4 span:nth-child(2) {
-          top: 2.7rem;
-        }
-
-        #nav-icon4 span:nth-child(3) {
-          top: 4.2rem;
-        }
-        // #nav-icon4 {
-        //   height: 5rem;
-        // }
-        // #nav-icon4 span:nth-child(1) {
-        //   top: 1.25rem;
-        // }
-        // #nav-icon4 span:nth-child(2) {
-        //   top: 2.75rem;
-        // }
-        // #nav-icon4 span:nth-child(3) {
-        //   top: 4.25rem;
-        // }
-        #nav-icon4.open span:nth-child(1) {
-          top: 1rem;
-        }
-        #nav-icon4.open span:nth-child(3) {
-          top: 4.5rem;
-        }
-    }
-
+@media only screen and (max-width: $mid-screen) {
+  .mobile-nav-box {
+    display: block;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  #nav-icon4 span:nth-child(1) {
+    top: 1.2rem;
+  }
+  #nav-icon4 span:nth-child(2) {
+    top: 2.7rem;
+  }
+  #nav-icon4 span:nth-child(3) {
+    top: 4.2rem;
+  }
+  // #nav-icon4 {
+  //   height: 5rem;
+  // }
+  // #nav-icon4 span:nth-child(1) {
+  //   top: 1.25rem;
+  // }
+  // #nav-icon4 span:nth-child(2) {
+  //   top: 2.75rem;
+  // }
+  // #nav-icon4 span:nth-child(3) {
+  //   top: 4.25rem;
+  // }
+  #nav-icon4.open span:nth-child(1) {
+    top: 1rem;
+  }
+  #nav-icon4.open span:nth-child(3) {
+    top: 4.5rem;
+  }
+}
 </style>
-
 <!--<docs>-->
 <!--The mobile nav-bar is used for navigating the sections of the website while on a mobile device. Media queries are used to toggle which nav-bar (desktop or mobile) is displayed.-->
 <!--## Variables Used:-->
