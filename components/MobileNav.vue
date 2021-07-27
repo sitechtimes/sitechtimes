@@ -86,7 +86,7 @@ export default {
    display: flex;
    text-align: center;
    justify-content: center;
-   align-items: center;
+   align-items: space-between;
  }
  .mobile-nav-ul {
    margin-bottom: 10vh;
