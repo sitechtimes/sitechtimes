@@ -77,22 +77,12 @@ export default {
     margin-right: .5rem;
     // padding-right: .4rem;
   }
-
-@media only screen and (max-width: $mid-screen) {
-  .author-date-article > section > h5 {
-    font-size: var(--h5);
-  }
-  .article-icon {
-    width: var(--h5);
-    height: var(--h5);
-    margin-top: .3rem;
-  }
-}
+  
 @media only screen and (max-width: $mid-screen) {
   .article-icon {
     width: var(--h4);
     height: var(--h4);
-    margin-top: 0.2rem;
+    margin-top: 0.4rem;
   }
     .author-date-article > section > h5 {
     font-size: var(--h4);
