@@ -22,6 +22,9 @@ name: "SocialMediaIcons"
 .social-media-icon-box:first-child {
   margin-left: 0;
 }
+.social-media-icon-box:last-child {
+  margin-right: 0;
+}
 </style>
 
 <!--<docs>-->

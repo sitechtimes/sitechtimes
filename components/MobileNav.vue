@@ -11,11 +11,11 @@
     </div>
     <div class="mobile-nav" v-if="show">
       <ul class="mobile-nav-ul">
-        <a v-for="category in categories"
+        <nuxt-link v-for="category in categories"
            :key="category"
-           :href="'../' + category">
+           :to="'../' + category">
           <li class="mobile-nav-li">{{ category }}</li>
-        </a>
+        </nuxt-link>
       </ul>
     </div>
   </div>
@@ -72,7 +72,7 @@ export default {
   padding-top: 5vh;
   width: 100vw;
   max-height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -86,11 +86,8 @@ export default {
   justify-content: center;
   align-items: space-between;
 }
-.mobile-nav-ul {
-  margin-bottom: 10vh;
-}
 .mobile-nav li {
-  text-transform: capitalize;
+  text-transform: uppercase;
   list-style: none;
   font-size: 3.5rem;
   margin: 4vh;
@@ -194,7 +191,8 @@ export default {
     top: 4.2rem;
   }
   // #nav-icon4 {
-  //   height: 5rem;
+  //   height: 4rem;
+  //   width: 3rem;
   // }
   // #nav-icon4 span:nth-child(1) {
   //   top: 1.25rem;
