@@ -40,8 +40,8 @@
       </section>
       
       <h3 class="section-title">News</h3>
-      <section class="news-section desktop-view">
-        <text-below-article-preview
+      <section class="news-section">
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
@@ -50,7 +50,7 @@
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
-        <text-below-article-preview
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
@@ -59,7 +59,7 @@
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
-        <text-below-article-preview
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
@@ -237,7 +237,7 @@
       <div class="global-container">
       <h3 class="section-title">Science</h3>
       <section class="science-section">
-        <CategoryArticle
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
@@ -246,7 +246,7 @@
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
           class="science-main"
         />
-        <CategoryArticle
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
@@ -255,7 +255,7 @@
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
           class="science-sub"
         />
-        <CategoryArticle
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
           category="science"
@@ -269,8 +269,8 @@
       </div>
       <div class="global-container">
       <h3 class="section-title">Activities</h3>
-      <section class="news-section desktop-view">
-        <text-below-article-preview
+      <section class="news-section">
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
@@ -279,7 +279,7 @@
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
-        <text-below-article-preview
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
@@ -288,7 +288,7 @@
           title="I hate rockets, and this is why you should too"
           imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNAu-JntINSfv0U6b2Df439C-cXbDOOYRzsj9UuhMwwP290pnObcSbtJHXo93jNBpA5Ys&usqp=CAU"
         />
-        <text-below-article-preview
+        <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
           published="Jan 31, 2020"
