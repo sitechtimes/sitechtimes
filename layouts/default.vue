@@ -9,9 +9,10 @@
 
 <script>
 import Datebar from "../components/Datebar";
+import Navbar from "../components/Navbar";
 export default {
   components: {
-    Datebar
+    Datebar, Navbar
   }
 }
 </script>
