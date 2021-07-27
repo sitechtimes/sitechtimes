@@ -1,32 +1,31 @@
 <template>
   <section class="sidebar-container">
     <div>
-    <h3 class="sidebar-heading">Trending</h3>
-    <Sidebar
-      v-for="article in trending"
-      :key="article.slug"
-      :category="article.category"
-      :author="article.user.name"
-      :published="article.createdAt"
-      :title="article.title"
-      :imgUrl="article.imageUrl"
-      :articleUrl="article.slug"
-    /><!-- css var for imgUrl? -->
-</div>
-<div class="morelikethis-section">
-    <h3 class="sidebar-heading">More Like This</h3>
-    <Sidebar
-      v-for="article in moreLikeThis"
-      :key="article.slug"
-      :category="article.category"
-      :author="article.user.name"
-      :published="article.createdAt"
-      :title="article.title"
-      :imgUrl="article.imageUrl"
-      :articleUrl="article.slug"
-    />
-</div>
-    
+      <h3 class="sidebar-heading">Trending</h3>
+      <Sidebar
+        v-for="article in trending"
+        :key="article.slug"
+        :category="article.category"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :title="article.title"
+        :imgUrl="article.imageUrl"
+        :articleUrl="article.slug"
+      /><!-- css var for imgUrl? -->
+    </div>
+    <div class="morelikethis-section">
+      <h3 class="sidebar-heading">More Like This</h3>
+      <Sidebar
+        v-for="article in moreLikeThis"
+        :key="article.slug"
+        :category="article.category"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :title="article.title"
+        :imgUrl="article.imageUrl"
+        :articleUrl="article.slug"
+      />
+    </div>
   </section>
 </template>
 
@@ -38,16 +37,14 @@ export default {
   components: { Sidebar },
   props: {
     trending: Array,
-    moreLikeThis: Array,
+    moreLikeThis: Array
   }
 };
-
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 .sidebar-container {
-
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;
 
@@ -59,6 +56,9 @@ export default {
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
+}
+.sidebar-container > * {
+  color: var(--on-background);
 }
 .sidebar-heading {
   font-size: var(--h4);
@@ -81,7 +81,7 @@ export default {
   }
 }
 @media only screen and (max-width: $mid-screen) {
-   .sidebar-container {
+  .sidebar-container {
     flex-direction: column;
   }
   .morelikethis-section {
@@ -89,8 +89,8 @@ export default {
     margin-top: 3rem;
   }
   .sidebar-heading {
-  font-size: var(--h3);
-}
+    font-size: var(--h3);
+  }
 }
 </style>
 

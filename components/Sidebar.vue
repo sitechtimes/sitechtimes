@@ -6,14 +6,16 @@
       <nuxt-link
         :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
-        v-if="title.length < 40">
+        v-if="title.length < 40"
+      >
         {{ title }}
       </nuxt-link>
       <nuxt-link
         :to="`/articles/${articleUrl}`"
         id="sidebar-article-details-title"
-        v-else>
-        {{ title.substring(0, 40) + '...' }}
+        v-else
+      >
+        {{ title.substring(0, 40) + "..." }}
       </nuxt-link>
       <author-and-date-sidebar
         :author="author"
@@ -38,8 +40,8 @@ export default {
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  },
- };
+  }
+};
 </script>
 
 <style lang="scss">
@@ -51,6 +53,9 @@ export default {
   --sidebarDetailsPaddingLeft: 1.7rem;
   --toggleBorder: none;
   --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
+}
+.sidebar-article > * {
+  color: var(--on-background);
 }
 
 .temp-img {
@@ -114,7 +119,7 @@ export default {
   font-size: var(--h5);
   line-height: 1.35;
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
 
   margin: 0;
 }
@@ -155,23 +160,23 @@ export default {
     padding: 1.5rem 0;
   }
   .sidebar-article:hover {
-  background-color: unset;
-}
-#sidebar-article-details-title {
+    background-color: unset;
+  }
+  #sidebar-article-details-title {
     font-size: var(--h4);
   }
 }
 
 @media only screen and (max-width: $mid-screen) {
-    :root {
-  --sidebarImgWidth: 20rem;
-}
+  :root {
+    --sidebarImgWidth: 20rem;
+  }
   .sidebar-article-details {
     max-width: 100%;
-}
-//   #sidebar-article-details-title {
-//     font-size: var(--h4);
-// }
+  }
+  //   #sidebar-article-details-title {
+  //     font-size: var(--h4);
+  // }
   .sidebar-article {
     max-width: none;
     width: 100%;
@@ -184,7 +189,6 @@ export default {
     font-size: var(--h3);
   }
 }
-
 </style>
 
 /* Ripple effect on click? */

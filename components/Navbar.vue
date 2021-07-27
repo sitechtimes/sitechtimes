@@ -48,6 +48,8 @@ a {
   list-style-type: none;
   font-size: var(--h4);
   letter-spacing: 0.05rem;
+
+  color: var(--on-background);
 }
 .home-nav-ul {
   display: flex;

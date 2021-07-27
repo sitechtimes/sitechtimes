@@ -7,10 +7,10 @@
   --off-white: #fffaf4;
   --white: #ffffff;
   --black: #000;
-  --dark-grey: #191919;
+  --dark-grey: #202020;
   --dark-grey-2: #383838;
   --grey: #374151;
-  --mid-grey: #636363;
+  --mid-grey: #595959;
   --lightGray: #ececec;
   --red: #dc2626;
   --orange: #f59e0b;
@@ -30,6 +30,7 @@
   --on-secondary: var(--black);
   --on-secondary-light: var(--mid-grey);
   --hover: var(--lightGray);
+  --footer: var(--grey);
   --calendar-band: var(--off-white);
   --news: var(--dark-blue);
   --politics: var(--pink);
@@ -85,6 +86,7 @@
   --sports: var(--dark-orange);
 }
 .dark-mode {
+  --grey: #272b32;
   --background-color: var(--dark-grey);
   --primary-color: var(--gold);
   --accent-color: var(--light-gold);

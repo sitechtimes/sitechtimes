@@ -1,17 +1,13 @@
 <template>
   <div id="article-component">
-    <category-icon :category=category />
+    <category-icon :category="category" />
     <h2 class="main-article-title">{{ title }}</h2>
     <!-- <p class="main-article-description">{{ description }}</p> -->
-    <img
-      class="main-article-img"
-      :src=articleImg
-      :alt=articleAlt
-    />
+    <img class="main-article-img" :src="articleImg" :alt="articleAlt" />
     <section class="main-article-metadata">
       <author-and-date
         class="article-author-and-date"
-        :author=author
+        :author="author"
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
@@ -19,7 +15,10 @@
         <share-icon />
       </div>
     </section>
-    <section class="main-article-text-section main-article-text" v-html="articleText">
+    <section
+      class="main-article-text-section main-article-text"
+      v-html="articleText"
+    >
       <!-- <p class="main-article-text">{{ articleText }}</p> -->
     </section>
   </div>
@@ -33,7 +32,16 @@ import CategoryIcon from "./CategoryIcon.vue";
 
 export default {
   name: "ArticleComponent",
-  props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
+  props: [
+    "category",
+    "title",
+    "description",
+    "articleText",
+    "articleImg",
+    "articleAlt",
+    "author",
+    "published"
+  ],
   components: {
     AuthorAndDate,
     SocialMediaIcons,
@@ -47,7 +55,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
+
+#article-component > * {
+  color: var(--on-background);
+}
 
 .main-article-title {
   margin: 2rem auto;
@@ -68,11 +80,11 @@ export default {
 .main-article-text ul li,
 .main-article-text ul li span,
 .main-article-text ol li,
-.main-article-text ol li span { 
+.main-article-text ol li span {
   font-family: var(--article-font);
   font-size: var(--h5);
   line-height: 3rem;
-} 
+}
 .main-article-text-section p {
   font-weight: 300;
   overflow-wrap: break-word;
@@ -118,7 +130,7 @@ export default {
 .main-article-text h5 strong {
   font-size: var(--h5);
 }
-.main-article-text h6 strong{
+.main-article-text h6 strong {
   font-size: var(--small-text);
 }
 .main-article-img {
@@ -141,22 +153,22 @@ export default {
 }
 
 @media only screen and (max-width: $mid-screen) {
-.main-article-text ul li,
-.main-article-text ul li span,
-.main-article-text ol li,
-.main-article-text ol li span, 
-.main-article-text-section p,
-.main-article-text-section p em,
-.main-article-text-section p strong,
-.main-article-text-section li em,
-.main-article-text-section li strong,
-.main-article-text-section span { 
-  font-size: var(--h4);
-  line-height: 4rem;
-} 
-// .main-article-description {
-//   font-size: var(--h3);
-//   line-height: 3.5rem;
-// }
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span,
+  .main-article-text-section p,
+  .main-article-text-section p em,
+  .main-article-text-section p strong,
+  .main-article-text-section li em,
+  .main-article-text-section li strong,
+  .main-article-text-section span {
+    font-size: var(--h4);
+    line-height: 4rem;
+  }
+  // .main-article-description {
+  //   font-size: var(--h3);
+  //   line-height: 3.5rem;
+  // }
 }
 </style>
