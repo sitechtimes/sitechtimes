@@ -11,11 +11,13 @@
   </div>
 <div class="mobile-nav" v-if="show">
         <ul class="mobile-nav-ul">
-            <a v-for="category in categories"
-            :key="category"
-            :href="'../' + category">
-            <li class="mobile-nav-li">{{ category }}</li>
-            </a>
+            <a href=""><li class="mobile-nav-li">News</li></a>
+            <a href=""><li class="mobile-nav-li">Politics</li></a>
+            <a href=""><li class="mobile-nav-li">Entertainment</li></a>
+            <a href=""><li class="mobile-nav-li">Opinion</li></a>
+            <a href=""><li class="mobile-nav-li">Science</li></a>
+            <a href=""><li class="mobile-nav-li">Activities</li></a>
+            <a href=""><li class="mobile-nav-li">Events</li></a>
         </ul>
 </div>
 </div>
@@ -25,7 +27,6 @@
 <script>
 export default {
     name: "MobileNav",
-    props: ["categories"],
     data() {
         return {
             spanClass: "",
@@ -93,7 +94,6 @@ export default {
    margin-bottom: 10vh;
  }
  .mobile-nav li {
-   text-transform: capitalize;
    list-style: none;
    font-size: 3.5rem;
    margin: 4vh;
@@ -109,6 +109,7 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
+/* Icon 4 */
 #nav-icon4 {
   width: 5rem;
   padding: 2rem;
@@ -154,7 +155,7 @@ export default {
 #nav-icon4 span:nth-child(3) {
   top: 3.5rem;
 }
-#nav-icon4 span:nth-child(1), 
+#nav-icon4 span:nth-child(1),
 #nav-icon4 span:nth-child(2),
 #nav-icon4 span:nth-child(3) {
   -webkit-transform-origin: left center;

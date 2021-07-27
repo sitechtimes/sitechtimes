@@ -52,14 +52,14 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     .category-article-authdate {
         margin: auto 0;
         line-height: 2.2rem;
+        padding-top: 1rem;
     }
     @media only screen and (max-width: $mid-screen) {
         .category-article{
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin: auto;
-            width: 100%;
+            // margin-left: 10rem;
         }
         .category-article-img{
             height: 12rem;
@@ -101,8 +101,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
         .category-article{
             display: flex;
             flex-direction: row-reverse;
-            justify-content: center;
-            margin: auto;
+            margin: auto
         }
         .category-article-img{
             height: 12rem;
