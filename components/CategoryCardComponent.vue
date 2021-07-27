@@ -131,7 +131,7 @@ a:active {
   display: flex;
   flex-direction: row;
 }
-.card-component-text-container {
+.category-card-component-text-container {
   width: 100%;
   padding: 16% 0 0 5%;
   height: 100%;
