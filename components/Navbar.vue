@@ -1,74 +1,67 @@
 <template>
-    <nav>
-        <ul class="home-nav-ul">
-            <a v-for="category in navbar"
-            :key="category"
-            :href='category.navLink'
-            class="home-nav-li"><li>{{category.navType}}</li></a>
-        </ul>
-    </nav>
+  <nav>
+    <ul class="home-nav-ul">
+      <nuxt-link v-for="category in categories"
+                 :key="category"
+                 :to="'../' + category">
+        <li class="home-nav-li">{{ category }}</li>
+      </nuxt-link>
+    </ul>
+  </nav>
 
 </template>
 
 <script>
-    export default {
-    name: 'Navbar', // vue component name
-    props: [],
-    data () {
-      return {
-        navbar: [
-        {navLink: 'news', navType: 'NEWS'},
-        {navLink: 'opinion', navType: 'OPINION'},
-        {navLink: 'politics', navType: 'POLITICS'},
-        {navLink: 'entertainment', navType: 'ENTERTAINMENT'},
-        {navLink: 'science', navType: 'SCIENCE'},
-        {navLink: 'activities', navType: 'ACTIVITIES'},
-        {navLink: 'events', navType: 'EVENTS'}
-      ]
+export default {
+  name: 'Navbar', // vue component name
+  props: ["categories"],
+  data () {
+    return {
     }
-  }
+  },
 };
 </script>
 
 
 <style lang="scss">
 @import '../assets/variables';
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    .home-nav-li {
-        font-family: var(--font);
-        display: inline;
-        //width: calc(100% / 7 + 2rem);
-        list-style-type: none;
-        font-size: var(--h4);
-    }
-    .home-nav-ul {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: nowrap;
-        padding: 3rem 0;
-        width: 70%;
-        margin: auto;
-    }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.home-nav-li {
+  text-transform: uppercase;
+  font-family: var(--font);
+  display: inline;
+  //width: calc(100% / 7 + 2rem);
+  list-style-type: none;
+  font-size: var(--h4);
+  letter-spacing: .05rem;
+}
+.home-nav-ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  padding: 3rem 0;
+  width: 70%;
+  margin: auto;
+}
 @media only screen and (max-width: $large-screen) {
-        .home-nav-ul {
-          width: 80%;
-        }
-    }
+  .home-nav-ul {
+    width: 80%;
+  }
+}
 @media only screen and (max-width: $midlarge-screen) {
-    .home-nav-ul {
-        max-width: $container;
-        width: unset;
-    }
+  .home-nav-ul {
+    max-width: $container;
+    width: unset;
+  }
 }
 @media only screen and (max-width: $mid-screen) {
-        .home-nav-ul {
-          display: none;
-        }
-    }
+  .home-nav-ul {
+    display: none;
+  }
+}
 </style>
 
 <!--<docs>-->
@@ -84,3 +77,4 @@
 <!--```-->
 <!--   -->
 <!--</docs>-->
+
