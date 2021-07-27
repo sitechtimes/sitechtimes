@@ -400,6 +400,7 @@ export default {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  margin-bottom: 2rem;
 }
 .entertainment-main {
   grid-area: 1 / 1 / 3 / 6;
