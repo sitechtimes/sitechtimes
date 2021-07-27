@@ -5,6 +5,7 @@
         v-for="category in categories"
         :key="category"
         :to="'../' + category"
+        class="home-nav-li-nuxt-link"
       >
         <li class="home-nav-li">{{ category }}</li>
       </nuxt-link>
@@ -51,21 +52,25 @@ a {
 
   color: var(--on-background);
 }
+.home-nav-li-nuxt-link,
+#theme-nav-button {
+  padding: 1.5rem;
+}
 .home-nav-ul {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 1.5rem 10%;
   width: 100%;
+
+  line-height: 1;
 }
 
 #theme-nav-button {
   cursor: pointer;
   border: 1px solid black;
   user-select: none;
+  line-height: 1;
 
   position: relative;
 }
