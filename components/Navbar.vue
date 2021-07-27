@@ -51,8 +51,6 @@
         width: 70%;
         margin: auto;
     }
-<<<<<<< HEAD
-=======
 
 @media only screen and (max-width: $large-screen) {
         .home-nav-ul {
@@ -70,7 +68,6 @@
           display: none;
         }
     }
->>>>>>> 7-27
 </style>
 
 <!--<docs>-->
