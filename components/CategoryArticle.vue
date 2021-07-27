@@ -56,24 +56,24 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     @media only screen and (max-width: $mid-screen) {
         .category-article{
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             justify-content: center;
             margin: auto;
             width: 100%;
         }
         .category-article-img{
-            height: 12rem;
-            width: 20rem;
+            height: 16rem;
+            width: 22rem;
             border-radius: 1.5rem;
         }
         .category-article-img-content{
-            width: 20%;
-            margin: 0 20rem 0 0;
+            width: 40vw;
+            margin: 0 15rem 0 0;
         }
         .category-title{
             font-size: 2rem;
             font-weight: 700;
-            width: 30rem;
+            width: 45rem;
             padding-top: 1rem;
         }
         .category-article-icon {
@@ -82,18 +82,13 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             height: 3rem;
         }
         .category-article-authdate {
+            margin-left: 7rem;
             line-height: 2.2rem;
             padding-top: 1rem;
         }
         .category-labels{
-            margin-top: 0rem;
+            margin-top: 2rem;
             display: flex;
-            width: 40rem;
-        }
-        .category-labels{
-            margin-top: 0rem;
-            display: flex;
-            flex-direction: column;
             width: 40rem;
         }
     }
@@ -106,7 +101,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
         }
         .category-article-img{
             height: 12rem;
-            width: 25vw;
+            width: 16.5rem;
             border-radius: 1.5rem;
         }
         .category-article-img-content{
@@ -125,18 +120,16 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             height: 3rem;
         }
         .category-article-authdate {
-            margin-left: 0rem;
+            margin-left: 7rem;
             line-height: 2.2rem;
             padding-top: 1rem;
         }
         .category-labels{
-            margin-top: 0rem;
+            margin-top: 2rem;
             display: flex;
-            flex-direction: column;
             width: 40rem;
         }
     }
-
 </style>
 
 <!--<docs>-->

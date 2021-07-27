@@ -1,11 +1,10 @@
 <template>
     <nav>
         <ul class="home-nav-ul">
-            <nuxt-link v-for="category in categories"
+            <a v-for="category in navbar"
             :key="category"
-            :to="'../' + category">
-            <li class="home-nav-li">{{ category }}</li>
-            </nuxt-link>
+            :href='category.navLink'
+            class="home-nav-li"><li>{{category.navType}}</li></a>
         </ul>
     </nav>
 
@@ -14,31 +13,35 @@
 <script>
     export default {
     name: 'Navbar', // vue component name
-    props: ["categories"],
+    props: [],
     data () {
       return {
+        navbar: [
+        {navLink: 'news', navType: 'NEWS'},
+        {navLink: 'opinion', navType: 'OPINION'},
+        {navLink: 'politics', navType: 'POLITICS'},
+        {navLink: 'entertainment', navType: 'ENTERTAINMENT'},
+        {navLink: 'science', navType: 'SCIENCE'},
+        {navLink: 'activities', navType: 'ACTIVITIES'},
+        {navLink: 'events', navType: 'EVENTS'}
+      ]
     }
-    },
-
+  }
 };
 </script>
 
 
 <style lang="scss">
-@import '../assets/variables';
-
     a {
         text-decoration: none;
         color: inherit;
     }
     .home-nav-li {
-        text-transform: uppercase;
         font-family: var(--font);
         display: inline;
         //width: calc(100% / 7 + 2rem);
         list-style-type: none;
         font-size: var(--h4);
-        letter-spacing: .05rem;
     }
     .home-nav-ul {
         display: flex;
