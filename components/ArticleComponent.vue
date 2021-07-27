@@ -12,7 +12,7 @@
       <author-and-date
         class="article-author-and-date"
         :author=author
-        :published="this.$format(this.published)"
+        :published=published
       />
       <div class="main-article-metadata-actions">
         <social-media-icons />
@@ -54,7 +54,6 @@ export default {
   font-weight: 600;
 }
 .main-article-description {
-  //font-family: "Merriweather", ;
   font-style: italic;
   font-size: var(--h4);
   font-weight: 300;
@@ -63,12 +62,11 @@ export default {
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
-.main-article-text-section span {
-  font-family: 'Merriweather', serif;
+.main-article-text-section span { 
   font-size: var(--h4);
-}
+} 
 .main-article-text-section p {
-  font-weight: 400;
+  font-weight: 300;
   word-break: break-all;
 }
 .main-article-text ul li,
@@ -76,7 +74,7 @@ export default {
 .main-article-text ol li,
 .main-article-text ol li span {
   font-size: var(--h4);
-  font-weight: 400;
+  font-weight: 300;
   list-style-type: disc;
   list-style-position: inside;
 }
@@ -111,7 +109,7 @@ export default {
   height: auto;
   border-radius: 1.5rem;
 }
-//
+
 .main-article-metadata {
   display: flex;
   justify-content: space-between;
@@ -126,9 +124,9 @@ export default {
 }
 
 @media only screen and (max-width: $x-small-screen) {
-    .main-article-text-section > * {
+    .main-article-text-section > * { 
   font-size: var(--h3);
-}
+} 
 .main-article-text ul li,
 .main-article-text ol li {
   font-size: var(--h3);

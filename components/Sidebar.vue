@@ -27,7 +27,7 @@ export default {
   props: {
     category: String,
     author: String,
-    published: Date,
+    published: String,
     title: String,
     imgUrl: String,
     imgAlt: String,
@@ -141,59 +141,35 @@ export default {
   height: 11.7rem;
   width: 40rem;
 }
-// @media only screen and (max-width: $midlarge-screen) {
-//   .sidebar-article-details {
-//     flex-direction: row;
-//   }
-// }
 
-@media only screen and (max-width: $midlarge-screen) {
+@media only screen and (max-width: $mid-screen) {
+  :root {
+    --sidebarArticleWidth: 100vw;
+    --sidebarSidePadding: 15vw;
+  }
   .sidebar-container {
     max-width: none;
+    border: none;
   }
-  .sidebar-article {
-    padding: 1.5rem 0;
-  }
-  .sidebar-article:hover {
-  background-color: unset;
-}
-}
-@media only screen and (max-width: $mid-screen) {
   .sidebar-article {
     max-width: none;
-    width: 100vw;
+    padding: 2.5rem var(--sidebarSidePadding);
+  }
+  .sidebar-article-details {
+    max-width: none;
   }
 }
 
-
-// }
-// @media only screen and (max-width: $mid-screen) {
-//   :root {
-//     --sidebarArticleWidth: 100vw;
-//     --sidebarSidePadding: 15vw;
-//   }
-//   .sidebar-container {
-//     max-width: none;
-//     border: none;
-//   }
-//   .sidebar-article {
-//     max-width: none;
-//     padding: 2.5rem var(--sidebarSidePadding);
-//   }
-//   .sidebar-article-details {
-//     max-width: none;
-//   }
-// }
-// @media only screen and (max-width: 450px) {
-//   :root {
-//     --sidebarSidePadding: 12vw;
-//   }
-// }
-// @media only screen and (max-width: 380px) {
-//   :root {
-//     --sidebarSidePadding: 8vw;
-//   }
-// }
+@media only screen and (max-width: 450px) {
+  :root {
+    --sidebarSidePadding: 12vw;
+  }
+}
+@media only screen and (max-width: 380px) {
+  :root {
+    --sidebarSidePadding: 8vw;
+  }
+}
 </style>
 
 /* Ripple effect on click? */

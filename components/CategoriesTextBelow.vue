@@ -1,11 +1,11 @@
 <template>
-   <div class="text-below-preview-opinion">
+   <div class="category-text-below-preview">
   <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
-       <div class="opinion-info">
-            <category-icon :category="category" class="opinion-cat"/>
-            <author-and-date :author="author" :published="published" class="opinion-data" />
+       <div class="category-info">
+            <category-icon :category="category" class="category-cat"/>
+            <author-and-date :author="author" :published="published" class="category-data" />
        </div>
-       <a :href="articleUrl" class="opinion-title">{{title}}</a>
+       <a :href="articleUrl" class="category-title">{{title}}</a>
    </div>
 </template>
 
@@ -13,7 +13,7 @@
 //import AuthorAndDate from './AuthorAndDate.vue';
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
-  name: "TextBelowOpinion",
+  name: "CategoriesTextBelow",
   props: [
     "author",
     "articleUrl",
@@ -32,56 +32,56 @@ export default {
  a:hover { text-decoration: none;  color: var(--black)}
  a:active { text-decoration: none;  color: var(--black)}
 
-.text-below-preview-opinion {
+.category-text-below-preview {
   display: flex;
   flex-direction: column;
    width: 46.1rem;
    height: 37.1rem;
 
 }
-.opinion-info {
+.category-info {
   display: flex;
   width: 42.2rem;
 }
-.opinion-image {
+.category-image {
   width: 100%;
   height: 21.7rem;
   border-radius: 1.5rem;
 }
-.opinion-cat {
+.category-cat {
   margin-right: 2rem;
 }
-.opinion-title {
+.category-title {
   margin: 0;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
   font-size: var(--h4);
 }
-.opinion-data {
+.category-data {
     padding-top: 1rem;
 }
 @import "../assets/variables";
 @media only screen and (max-width: $mid-screen){
-.opinion-image{
+.category-image{
     width: 90%;
     // height: 20rem;
 }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .opinion-cat {
+  .category-cat {
     margin-right: 1rem;
   }
-  .opinion-data {
+  .category-data {
     margin-right: 0.25rem;
   }
-  .opinion-info {
+  .category-info {
     width: 35rem;
   }
-  .opinion-image {
+  .category-image {
     width: 37rem;
   }
-  .opinion-title {
+  .category-title {
     width: 37rem;
   }
 }

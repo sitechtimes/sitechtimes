@@ -35,7 +35,7 @@ export default {
   font-weight: 500;
   border-radius: 0.6rem;
   margin: 0.3rem 0 0.5rem 0;
-  line-height: 1.5rem;
+
   padding: 0.4em 0.6rem 0.2em 0.6rem;
 }
 </style>

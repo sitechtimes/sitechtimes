@@ -41,7 +41,6 @@
   --sports: var(--dark-orange);
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: 'Merriweather', serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -63,6 +62,7 @@
     rgba(132, 132, 132, 0.29) 54.17%,
     rgba(0, 0, 0, 0.5) 65.1%
   );
+
 }
 
 .light-mode {
@@ -105,7 +105,6 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
 
 *,
 html,
