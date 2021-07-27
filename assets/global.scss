@@ -41,7 +41,7 @@
   --sports: var(--dark-orange);
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: 'Merriweather', serif;
+  --article-font: "Merriweather", serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -122,7 +122,7 @@ body {
 }
 
 body {
-  background: var(--white);
+  background: var(--background-color);
   font-family: var(--font);
   font-weight: 400;
   line-height: 1.75;
