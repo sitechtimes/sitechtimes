@@ -2,11 +2,12 @@
     <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
   <FooterNav class="mobile-nav"/> -->
 <div class="mobile-nav-box" :style="backgroundColor">
-
+  <div class="mobile-nav-menu-box global-container">
     <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
         <span></span>
         <span></span>
         <span></span>
+    </div>
   </div>
 <div class="mobile-nav" v-if="show">
         <ul class="mobile-nav-ul">
@@ -87,7 +88,7 @@ export default {
    display: flex;
    text-align: center;
    justify-content: center;
-   align-items: center;
+   align-items: space-between;
  }
  .mobile-nav-ul {
    margin-bottom: 10vh;
@@ -104,13 +105,16 @@ export default {
    background-color: var(--black);
    border-radius: 5rem;
  }
+.mobile-nav-menu-box {
+  display: flex;
+  justify-content: flex-end;
+}
 /* Icon 4 */
 #nav-icon4 {
   width: 5rem;
-  height: 7vh;
   padding: 2rem;
+  // margin-left: 90vw;
   position: relative;
-  margin-left: 87vw;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -141,23 +145,19 @@ export default {
 }
 
 #nav-icon4 span:nth-child(1) {
-  top: .5rem;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
+  top: 0.5rem;
 }
 
 #nav-icon4 span:nth-child(2) {
   top: 2rem;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
 }
 
 #nav-icon4 span:nth-child(3) {
   top: 3.5rem;
+}
+#nav-icon4 span:nth-child(1),
+#nav-icon4 span:nth-child(2),
+#nav-icon4 span:nth-child(3) {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -196,14 +196,28 @@ export default {
     }
     @media only screen and (max-width: $x-small-screen) {
         #nav-icon4 span:nth-child(1) {
-          top: 1.25rem;
+          top: 1.2rem;
         }
+
         #nav-icon4 span:nth-child(2) {
-          top: 2.75rem;
+          top: 2.7rem;
         }
+
         #nav-icon4 span:nth-child(3) {
-          top: 4.25rem;
+          top: 4.2rem;
         }
+        // #nav-icon4 {
+        //   height: 5rem;
+        // }
+        // #nav-icon4 span:nth-child(1) {
+        //   top: 1.25rem;
+        // }
+        // #nav-icon4 span:nth-child(2) {
+        //   top: 2.75rem;
+        // }
+        // #nav-icon4 span:nth-child(3) {
+        //   top: 4.25rem;
+        // }
         #nav-icon4.open span:nth-child(1) {
           top: 1rem;
         }

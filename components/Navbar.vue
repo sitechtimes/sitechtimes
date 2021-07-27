@@ -45,13 +45,27 @@
     }
     .home-nav-ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: nowrap;
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        padding-left: 10%;
-        padding-right: 10%;
-        width: 100%;
+        padding: 3rem 0;
+        width: 70%;
+        margin: auto;
+    }
+@media only screen and (max-width: $large-screen) {
+        .home-nav-ul {
+          width: 80%;
+        }
+    }
+@media only screen and (max-width: $midlarge-screen) {
+    .home-nav-ul {
+        max-width: $container;
+        width: unset;
+    }
+}
+@media only screen and (max-width: $mid-screen) {
+        .home-nav-ul {
+          display: none;
+        }
     }
 </style>
 
