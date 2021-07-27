@@ -1,43 +1,36 @@
-import {ENV_VALUES} from "./config";
+import { ENV_VALUES } from "./config";
 
 export default {
   // ssr: false,
   // target: static,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sitechtimes',
+    title: "sitechtimes",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-    css: ['./assets/global.scss'],
+  css: ["./assets/global.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '~/plugins/dateFormat.js'
-  ],
+  plugins: ["~/plugins/dateFormat.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/axios',
-  ],
+  buildModules: ["@nuxtjs/axios", "@nuxtjs/color-mode"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
   server: {
     port: 8080
   },
@@ -47,10 +40,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  },
+  build: {},
 
   generate: {
     fallback: false
   }
-}
+};
