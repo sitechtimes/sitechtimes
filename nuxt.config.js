@@ -53,6 +53,6 @@ export default {
   },
 
   generate: {
-    fallback: false
+    fallback: true
   }
 }
