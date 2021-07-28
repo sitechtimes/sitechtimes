@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-article-details-author-date">
+  <div class="author-date-article">
     <section>
       <svg
         width="1.3rem"
@@ -11,8 +11,8 @@
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
-        id="sidebar-author-icon"
-        class="sidebar-icon svg-inline--fa fa-user fa-w-14"
+        id="article-author-icon"
+        class="article-icon svg-inline--fa fa-user fa-w-14"
       >
         <path
           fill="currentColor"
@@ -20,7 +20,7 @@
           class=""
         ></path>
       </svg>
-      <h5 id="sidebar-article-details-author">{{ author }}</h5>
+      <h5>{{ author }}</h5>
     </section>
     <section>
       <svg
@@ -33,8 +33,8 @@
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
-        id="sidebar-published-icon"
-        class="sidebar-icon svg-inline--fa fa-clock fa-w-16"
+        id="article-published-icon"
+        class="article-icon svg-inline--fa fa-clock fa-w-16"
       >
         <path
           fill="currentColor"
@@ -42,55 +42,55 @@
           class=""
         ></path>
       </svg>
-      <h5 id="sidebar-article-details-date">{{ published }}</h5>
+      <h5>{{ published }}</h5>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AuthorAndDateSidebar",
+  name: "AuthorAndDateArticle",
   props: ["author", "published"],
 };
 </script>
 
 <style lang="scss">
 @import '../assets/variables';
-.sidebar-article-details-author-date {
+.author-date-article {
   display: flex;
   //flex-direction: column;
   flex-wrap: wrap;
 }
-.sidebar-article-details-author-date > section {
+.author-date-article > section {
   display: flex;
 }
-.sidebar-article-details-author-date > section > h5 {
-  font-size: 1rem;
+.author-date-article > section > h5 {
+  font-size: var(--h5);
   text-transform: uppercase;
   margin: 0 1.5rem 0 0;
   line-height: 1.75;
 }
-.sidebar-icon {
-  // width: var(--h5);
-  // height: var(--h5);
-  margin-top: .1rem;
-  // padding-right: .4rem;
+.article-icon {
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
 }
+
 @media only screen and (max-width: $mid-screen) {
-  .sidebar-article-details-author-date > section > h5 {
-    font-size: var(--h5);
-  }
-  .sidebar-icon {
-    width: var(--h5);
-    height: var(--h5);
-    margin-top: .3rem;
-  }
-}
-@media only screen and (max-width: $small-screen) {
-  .sidebar-icon {
+  .article-icon {
     width: var(--h4);
     height: var(--h4);
-    margin-top: 0.2rem;
+  }
+  .author-date-article > section > h5 {
+    font-size: var(--h4);
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .author-date-article {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .article-icon {
+    margin-top: 0.5rem;
   }
 }
 </style>

@@ -9,9 +9,9 @@
 <script>
 export default {
     name: "Footer",
+    props: ["categories"],
     data () {
       return {
-        categories: ['news', 'opinion', 'politics', 'entertainment', 'science', 'activities', 'events'],
     }
   },
     components: {

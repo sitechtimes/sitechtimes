@@ -68,6 +68,7 @@ export default {
         position: absolute;
         height: 100%;
         right: 0;
+        font-family: var(--font);
         font-size: var(--h5);
         font-weight: 700;
         background-color: var(--primary-color);
