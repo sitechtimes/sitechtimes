@@ -4,9 +4,10 @@
     <h4 class="footer-header footer-nav-header">Navigation</h4>
     <div>
       <ul class="footer-nav-ul">
-        <a v-for="category in categories"
+        <nuxt-link v-for="category in categories"
+            class="footer-nav-link"
            :key="category"
-           :href="'../' + category"><li>{{ category }}</li></a>
+           :to="'../' + category"><li>{{ category }}</li></nuxt-link>
       </ul>
     </div>
   </div>
@@ -15,7 +16,12 @@
 <script>
 export default {
   name: 'FooterNav', // vue component name
-  props: ["categories"],
+   data () {
+    return {
+        categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
+    }
+  },
+
 };
 </script>
 
@@ -24,7 +30,7 @@ export default {
 .footer-nav-header {
   font-size: var(--h3);
 }
-a {
+.footer-nav-link {
   text-decoration: none;
   color: inherit;
 }
@@ -47,6 +53,10 @@ a {
   list-style-type: none;
   text-transform: capitalize;
   padding: .75rem;
+  transition: all .1s;
+}
+.footer-nav-ul li:hover {
+  color: var(--accent-color);
 }
 @media only screen and (max-width: $x-small-screen) {
   .footer-nav {

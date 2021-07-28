@@ -60,6 +60,7 @@ export default {
     .footer-email-input {
         width: 36rem;
         font-size: 1.6rem;
+        font-family: var(--font);
     }
     .footer-email-input:focus {
         outline: none;
@@ -68,10 +69,16 @@ export default {
         position: absolute;
         height: 100%;
         right: 0;
+        font-family: var(--font);
         font-size: var(--h5);
         font-weight: 700;
         background-color: var(--primary-color);
         text-transform: uppercase;
+        transition: all .3s;
+    }
+    .footer-join-btn:hover {
+        background-color: #bf9f4b;
+        cursor: pointer;
     }
     // .footer-join-btn:hover {
     //     background-color: #ceac58;
