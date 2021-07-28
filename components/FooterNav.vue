@@ -4,9 +4,10 @@
     <h4 class="footer-header footer-nav-header">Navigation</h4>
     <div>
       <ul class="footer-nav-ul">
-        <a v-for="category in categories"
+        <nuxt-link v-for="category in categories"
+            class="footer-nav-link"
            :key="category"
-           :href="'../' + category"><li>{{ category }}</li></a>
+           :to="'../' + category"><li>{{ category }}</li></nuxt-link>
       </ul>
     </div>
   </div>
@@ -24,7 +25,7 @@ export default {
 .footer-nav-header {
   font-size: var(--h3);
 }
-a {
+.footer-nav-link {
   text-decoration: none;
   color: inherit;
 }
@@ -45,7 +46,7 @@ a {
   color: var(--primary-color);
   font-size: var(--h4);
   list-style-type: none;
-  text-transform: capitalize;
+  text-transform: uppercase;
   padding: .75rem;
 }
 @media only screen and (max-width: $x-small-screen) {

@@ -1,8 +1,8 @@
 import {ENV_VALUES} from "./config";
 
 export default {
-  ssr: false,
-  target: 'static',
+  ssr: true,
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sitechtimes',
@@ -53,6 +53,6 @@ export default {
   },
 
   generate: {
-    fallback: false
+    fallback: true
   }
 }
