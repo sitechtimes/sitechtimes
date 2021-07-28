@@ -40,7 +40,7 @@
       </section>
       
       <h3 class="section-title">News</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
@@ -269,7 +269,7 @@
       </div>
       <div class="global-container">
       <h3 class="section-title">Activities</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <TextBelowArticlePreviewHome
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           author="Daniel Briskman"
