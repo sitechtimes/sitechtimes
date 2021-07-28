@@ -44,7 +44,7 @@
       <h3 class="section-title">News</h3>
       <section class="news-section desktop-view">
         <TextBelowArticlePreviewHome 
-        v-for="article in homepages.filter((article) => article.category === 'covid')" 
+        v-for="article in news" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -57,7 +57,7 @@
       </section>
       <section id="news-mobile" class="news-section mobile-view">
         <CategoryArticle
-        v-for="article in homepages.filter((article) => article.category === 'covid')" 
+        v-for="article in news" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -75,7 +75,7 @@
       <h3 class="section-title">Politics</h3>
       <section class="politics-section desktop-view">
         <CardComponent
-        v-for="article in homepages.filter((article) => article.category === 'us')" 
+        v-for="article in politics" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -89,7 +89,7 @@
         />
       </section>
       <section id="politics-mobile" class="politics-section mobile-view">
-        <div v-for="article in homepages.filter((article) => article.category === 'us')" 
+        <div v-for="article in politics" 
         :key="article">
         <TextBelowScience 
         v-if="article.position === 'main'"
@@ -120,7 +120,7 @@
       <div class="global-container">
       <h3 class="section-title">Entertainment</h3>
       <section class="entertainment-section desktop-view">
-        <div v-for="article in homepages.filter((article) => article.category === 'entertainment')" 
+        <div v-for="article in entertainment" 
         :key="article">
         <CardComponent 
         v-if="article.position === 'main'"
@@ -150,7 +150,7 @@
       </section>
       <section id="entertainment-mobile" class="entertainment-section mobile-view">
         <CardComponent 
-        v-for="article in homepages.filter((article) => article.category === 'entertainment')" 
+        v-for="article in entertainment" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -164,14 +164,14 @@
         />
       </section>
       <h3 class="section-title">Opinion</h3>
-      <OpinionSlider />
+      <OpinionSlider :articles="opinion"/>
       </div>
       <div class="darksection">
       <div class="global-container">
       <h3 class="section-title">Science</h3>
       <section class="science-section">
         <CategoryArticle 
-        v-for="article in homepages.filter((article) => article.category === 'science')" 
+        v-for="article in science" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -187,9 +187,9 @@
       </div>
       <div class="global-container">
       <h3 class="section-title">Activities</h3>
-      <section class="news-section">
+      <section class="news-section desktop-view">
         <TextBelowArticlePreviewHome
-        v-for="article in homepages.filter((article) => article.category === 'world')" 
+        v-for="article in activities" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -202,7 +202,7 @@
       </section>
       <section id="activities-mobile" class="news-section mobile-view">
         <CategoryArticle
-        v-for="article in homepages.filter((article) => article.category === 'entertainment')" 
+        v-for="article in activities" 
         :key="article"
         :articleUrl="'/articles/' + article.slug"
         :author="article.user.name"
@@ -229,7 +229,7 @@ export default {
       entertainment: [],
       opinion: [],
       science: [],
-      activities: []
+      activities: [],
     };
   },
   async beforeMount() {
@@ -237,8 +237,13 @@ export default {
     this.homepages = homepages.data;
     console.log(this.homepages);
 
-    const politics = await this.$axios.get("/articles/homepage?category=news");
-    this.politics = politics.data;
+    this.news = this.homepages.filter((article) => article.category === 'covid');
+    this.politics = this.homepages.filter((article) => article.category === 'us');
+    this.entertainment = this.homepages.filter((article) => article.category === 'entertainment');
+    this.opinion = this.homepages.filter((article) => article.category === 'entertainment');
+    this.science = this.homepages.filter((article) => article.category === 'science');
+    this.activities = this.homepages.filter((article) => article.category === 'world');
+
 
     //const entertainment = await this.$axios.get("/articles/homepage?category=news");
     //this.entertainment = entertainment.data;
