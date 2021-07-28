@@ -35,17 +35,17 @@ export default {
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
-   width: 46.1rem;
-   height: 37.1rem;
+  //  width: 46.1rem;
+  //  height: 37.1rem;
 
 }
 .category-info {
   display: flex;
-  width: 42.2rem;
+  margin-top: 1rem;
 }
 .category-image {
-  width: 100%;
-  height: 21.7rem;
+   background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 1.5rem;
 }
 .category-cat {
@@ -65,7 +65,6 @@ export default {
 @media only screen and (max-width: $mid-screen){
 .category-image{
     width: 90%;
-    // height: 20rem;
 }
 }
 @media only screen and (max-width: $x-small-screen) {

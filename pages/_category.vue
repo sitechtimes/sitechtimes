@@ -1,8 +1,7 @@
 <template>
   <section class="global-container">
 <div class="border-right">
-  <div class="here">
-   <h1 class="cat-title">{{ category }}</h1>
+   <h1 class="cat-page-title">{{ category }}</h1>
    <div class="all-of-em">
      <div class="snowball-in-hell">
   <CategoryCardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name" :published="articles[0].createdAt" :imageUrl="articles[0].imageUrl" :category="category" :articleUrl="`/articles/${articles[0].slug}`"   class="cat-main-art"/>
@@ -18,6 +17,7 @@
 <div class="mobile-sub-arts">
   <CatArticleTwo class="sub-art" v-if="articles[3]" :title="articles[3].title" :author="articles[3].user.name" :published="articles[3].createdAt" :imageUrl="articles[3].imageUrl" :category="category" :articleUrl="`/articles/${articles[3].slug}`"/>
         <CatArticleTwo class="sub-art" v-if="articles[4]" :title="articles[4].title" :author="articles[4].user.name" :published="articles[4].createdAt" :imageUrl="articles[4].imageUrl" :category="category" :articleUrl="`/articles/${articles[4].slug}`"/>
+           <CatArticleTwo class="sub-art cat-visible" v-if="articles[5]" :title="articles[5].title" :author="articles[5].user.name" :published="articles[5].createdAt" :imageUrl="articles[5].imageUrl" :category="category" :articleUrl="`/articles/${articles[5].slug}`" />
           <CatArticleTwo   class="sub-art"
       v-for="article in allArticles"
       :key="article"
@@ -34,7 +34,6 @@
         <MobileCategoryArticle   class="mobile-cat"   v-if="articles[6]" :title="articles[6].title" :author="articles[6].user.name" :published="articles[6].createdAt" :imageUrl="articles[6].imageUrl" :category="category" :articleUrl="`/articles/${articles[6].slug}`"/>
           <MobileCategoryArticle  class="mobile-cat"   v-if="articles[7]" :title="articles[7].title" :author="articles[7].user.name" :published="articles[7].createdAt" :imageUrl="articles[7].imageUrl" :category="category" :articleUrl="`/articles/${articles[7].slug}`"/>
                <MobileCategoryArticle class="mobile-cat"   v-if="articles[8]" :title="articles[8].title" :author="articles[8].user.name" :published="articles[7].createdAt" :imageUrl="articles[8].imageUrl" :category="category" :articleUrl="`/articles/${articles[8].slug}`"/>
-               </div>
                </div>
           </div>
         <div class="entertainment-seymour">
@@ -95,7 +94,7 @@ export default {
   border-right: solid var(--primary-color);
   width: 85%;
 }
-.cat-title{
+.cat-page-title{
   font-size: var(--h3);
   text-transform: capitalize;
   margin-bottom: 3rem;
@@ -115,6 +114,7 @@ export default {
   }
   .cat-sub-one{
     grid-area: 4 / 1 / 7 / 2;
+
   }
   .cat-sub-two {
     grid-area: 4 / 2 / 7 / 3;
@@ -147,32 +147,66 @@ margin-top: 13rem;
   margin-bottom: 2rem;
 }
  @media only screen and (max-width: $mid-screen) {
-   .global-container{
-     background-color:purple;
-   }
+  //  .global-container{
+  //   background-color:purple;
+  //   }
    .border-right{
- margin-top: 7rem;
+           width: 90%;
+      //  margin: auto;
+     margin: 0 auto;
+ margin-top: 10rem;
        border: none;
-       background-color: white;
-       width: 100%;
    }
    .all-of-em{
-     max-width: 70%;
-     background-color: blue;
+       grid-column-gap: 20px;
+    grid-row-gap: 5px; 
    }
- .two-cat-articles{
-   background-color: teal;
- }
+   .snowball-in-hell{
+     width: 100%;
+   }
+ .cat-sub-one,
+   .cat-sub-two {
+margin-top: 9rem;
+// width: 90%;
+  }
  .mobile-sub-arts{
    width: 100%;
 margin-left: 0rem;
-   background-color: green;
  }
+   .mobile-sub-arts{
+    margin-top: 13rem;
+  }
    .sub-art{
-     background-color: red;
      display: flex;
 justify-content: flex-start;
    }
+     .seymour{
+       margin: 6rem 0 10rem 0;
+     }
+   }
+@media only screen and (max-width: $small-screen) {
+   .border-right{
+           width: 70%;
+      //  margin: auto;
+//       margin-left: 0;
+//  margin-top: 10rem;
+margin: 10rem 0;
+       border: none;
+   }
+ .all-of-em{
+   display: flex;
+ }
+   .snowball-in-hell{
+     width: 100%;
+   }
+ .cat-sub-one,
+   .cat-sub-two {
+display: none;
+  }
+ .mobile-sub-arts{
+   width: 100%;
+margin: 0;
+ }
      .seymour{
        margin: 6rem 0 10rem 0;
      }

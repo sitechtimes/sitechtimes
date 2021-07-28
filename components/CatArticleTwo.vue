@@ -62,8 +62,8 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             // margin-left: 10rem;
         }
         .cat-article-img{
-            height: 12rem;
-            width: 20rem;
+            height: 18.8rem;
+            width: 26rem;
             border-radius: 1.5rem;
         }
         .cat-article-img-content{
@@ -71,9 +71,9 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             margin: 0 20rem 0 4rem;
         }
         .cat-title{
-            font-size: 2rem;
+            font-size: var(--h3);
             font-weight: 700;
-            width: 30rem;
+             width: 50rem;
             padding-top: 1rem;
         }
         .cat-article-icon {
@@ -89,18 +89,18 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             margin-top: 0rem;
             display: flex;
             flex-direction: column;
-            width: 40rem;
+            width: 60rem;
         }
     }
     @media only screen and (max-width: $small-screen) {
         .cat-article{
             display: flex;
             flex-direction: row-reverse;
-            margin: auto
+            // margin: auto
         }
         .cat-article-img{
-            height: 12rem;
-            width: 25vw;
+            height: 14rem;
+            width: 35vw;
             border-radius: 1.5rem;
         }
         .cat-article-img-content{

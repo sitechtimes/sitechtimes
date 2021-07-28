@@ -116,12 +116,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
 }
 .category-card-component-image {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  border-radius: 1.5rem;
 }
 .category-flex-col {
   display: flex;
@@ -173,6 +173,20 @@ a:active {
 .category-dropshadow {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
+@media only screen and (max-width: $mid-screen) {
+.category-card-component-image{
+  width: 95%;
+ 
+}
+   }
+   @media only screen and (max-width: $mid-screen) {
+.category-card-component-image{
+   width: 150%;
+}
+.category-card-component-text-container {
+  padding: 60% 0 0 5%;
+}
+   }
 </style>
 <docs>
 
