@@ -9,8 +9,11 @@
           class="card-component-author-and-date"
         />
       </div>
-      <div class="text-overflow card-component-title" :style="getClampSize">
+      <div class="text-overflow card-component-title" v-if="title.length < 50">
         {{ title }}
+      </div>
+      <div class="text-overflow card-component-title" v-else>
+        {{ title.substring(0, 50) + '...' }}
       </div>
     </a>
   </div>
@@ -36,7 +39,6 @@ export default {
       type: String
     }
   },
-
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
