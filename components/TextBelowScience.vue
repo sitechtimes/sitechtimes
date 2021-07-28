@@ -5,7 +5,7 @@
             <category-icon :category="category" class="science-cat"/>
             <author-and-date :author="author" :published="published" class="science-data" />
        </div>
-       <nuxt-link :to="articleUrl" class="science-title">{{title}}</nuxt-link>
+       <nuxt-link :to="articleUrl" id="science-title">{{title}}</nuxt-link>
    </div>
 </template>
 
@@ -47,7 +47,7 @@ a:active { text-decoration: none;  color: var(--white)}
 .science-cat {
   margin-right: 2rem;
 }
-.science-title {
+#science-title {
   width: 94%;
   font-family: var(--font);
   font-style: normal;

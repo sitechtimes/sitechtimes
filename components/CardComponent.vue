@@ -175,7 +175,7 @@ a:active {
   color: var(--white);
 }
 .dropshadow {
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
+    box-shadow: 0px 5px px rgba(0,0,0,0.45);
 }
 
 @media only screen and (max-width: $x-small-screen) {
