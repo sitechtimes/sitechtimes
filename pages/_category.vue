@@ -140,9 +140,6 @@ export default {
   margin-bottom: 2rem;
 }
  @media only screen and (max-width: $mid-screen) {
-   .global-container{
-     background-color:purple;
-   }
    .border-right{
  margin-top: 7rem;
        border: none;
