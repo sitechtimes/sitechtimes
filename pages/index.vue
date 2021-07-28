@@ -237,32 +237,32 @@
       <div class="global-container">
       <h3 class="section-title">Science</h3>
       <section class="science-section">
-        <TextBelowArticlePreviewHome
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
-          category="science"
+          category="opinion"
           author="Charley Baluja"
           published="July 12, 2021"
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
-          class="science-main"
+          class="news-main-mobile"
         />
-        <TextBelowArticlePreviewHome
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
-          category="science"
+          category="opinion"
           author="Charley Baluja"
           published="July 12, 2021"
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
-          class="science-sub"
+          class="news-sub-mobile"
         />
-        <TextBelowArticlePreviewHome
+        <CategoryArticle
           articleUrl="https://theconversation.com/us/topics/rocket-science-195"
           imageUrl="https://i.dailymail.co.uk/1s/2020/01/24/10/23816570-0-image-a-18_1579862990670.jpg"
-          category="science"
+          category="opinion"
           author="Charley Baluja"
           published="July 12, 2021"
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet."
-          class="science-detail"
+          class="news-detail-mobile"
         />
       </section>
       </div>
@@ -339,10 +339,14 @@ export default {
       isMobile: false,
     };
   },
-  async mounted() {
+  async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+    console.log(homepages.data);
   },
+  methods: {
+
+  }
 }
 </script>
 
