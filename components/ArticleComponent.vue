@@ -107,23 +107,23 @@ export default {
 }
 .main-article-text h1,
 .main-article-text h1 strong {
-  font-size: var(--h2);
+  font-size: 3rem;
 }
 .main-article-text h2
 .main-article-text h2 strong {
-  font-size: var(--h3);
+  font-size: 2.5rem;
 }
 .main-article-text h3,
 .main-article-text h3 strong {
-  font-size: var(--h4);
+  font-size: 2rem;
 }
 .main-article-text h4,
 .main-article-text h4 strong {
-  font-size: var(--h5);
+  font-size: 1.5rem;
 }
 .main-article-text h5,
 .main-article-text h5 strong {
-  font-size: var(--small-text)
+  font-size: 1rem;
 }
 .main-article-text h6,
 .main-article-text h6 strong{

@@ -41,9 +41,10 @@ a {
 }
 .home-nav-li:hover {
   color: var(--primary-color);
-  border-bottom: .3rem solid var(--primary-color);
+  border-bottom: .25rem solid var(--primary-color);
 }
 .home-nav-li:focus {
+  border-bottom: unset;
   color: var(--primary-color);
   font-weight: 900;
 }
@@ -52,7 +53,7 @@ a {
   justify-content: space-evenly;
   flex-wrap: nowrap;
   padding: 3rem 0;
-  width: 80%;
+  width: 85%;
   margin: auto;
 }
 @media only screen and (max-width: $large-screen) {
