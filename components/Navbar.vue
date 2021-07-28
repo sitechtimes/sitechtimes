@@ -4,7 +4,7 @@
       <nuxt-link v-for="category in categories"
                  :key="category"
                  :to="'../' + category">
-        <li class="home-nav-li">{{ category }}</li>
+        <li tabindex="1" class="home-nav-li">{{ category }}</li>
       </nuxt-link>
     </ul>
   </nav>
@@ -14,9 +14,9 @@
 <script>
 export default {
   name: 'Navbar', // vue component name
-  props: ["categories"],
   data () {
     return {
+        categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
     }
   },
 };
@@ -37,18 +37,27 @@ a {
   list-style-type: none;
   font-size: var(--h4);
   letter-spacing: .05rem;
+  transition: all .1s;
+}
+.home-nav-li:hover {
+  color: var(--primary-color);
+  border-bottom: .3rem solid var(--primary-color);
+}
+.home-nav-li:focus {
+  color: var(--primary-color);
+  font-weight: 900;
 }
 .home-nav-ul {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: nowrap;
   padding: 3rem 0;
-  width: 70%;
+  width: 80%;
   margin: auto;
 }
 @media only screen and (max-width: $large-screen) {
   .home-nav-ul {
-    width: 80%;
+    width: 90%;
   }
 }
 @media only screen and (max-width: $midlarge-screen) {

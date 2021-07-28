@@ -16,7 +16,12 @@
 <script>
 export default {
   name: 'FooterNav', // vue component name
-  props: ["categories"],
+   data () {
+    return {
+        categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
+    }
+  },
+
 };
 </script>
 
@@ -46,8 +51,12 @@ export default {
   color: var(--primary-color);
   font-size: var(--h4);
   list-style-type: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: .75rem;
+  transition: all .1s;
+}
+.footer-nav-ul li:hover {
+  color: var(--accent-color);
 }
 @media only screen and (max-width: $x-small-screen) {
   .footer-nav {

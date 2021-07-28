@@ -24,6 +24,8 @@ export default {
   box-shadow: 0 .5rem 1rem .5rem var(--accent-color);
   text-shadow: .1rem .1rem .1rem var(--mid-grey);
   transform: translateY(-.5rem);
+  cursor: pointer;
+
 }
 </style>
 
