@@ -14,7 +14,7 @@
         <nuxt-link v-for="category in categories"
            :key="category"
            :to="'../' + category">
-          <li class="mobile-nav-li">{{ category }}</li>
+          <li class="mobile-nav-li" v-on:click="navFunction()">{{ category }}</li>
         </nuxt-link>
       </ul>
     </div>
@@ -25,12 +25,12 @@
 <script>
 export default {
   name: "MobileNav",
-  props: ["categories"],
   data() {
     return {
       spanClass: "",
       show: false,
       bgColor: "",
+      categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
     }
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
         this.spanClass = "";
       }
     },
-    openNav: function() {
+    toggleNav: function() {
       this.show = !this.show;
     },
     toggleBackground: function() {
@@ -58,7 +58,7 @@ export default {
     },
     navFunction: function() {
       this.toggleBackground();
-      this.openNav();
+      this.toggleNav();
       this.changeMenu();
     }
   }
@@ -87,10 +87,10 @@ export default {
   align-items: space-between;
 }
 .mobile-nav li {
-  text-transform: uppercase;
+  text-transform: capitalize;
   list-style: none;
   font-size: 3.5rem;
-  margin: 4vh;
+  margin: 2vh;
   color: var(--white);
   transition: all .3s;
 }
@@ -181,19 +181,21 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
+   #nav-icon4 {
+    width: 4rem;
+  }
+  #nav-icon4 span {
+    height: .4rem;
+  }
   #nav-icon4 span:nth-child(1) {
-    top: 1.2rem;
+    top: 1rem;
   }
   #nav-icon4 span:nth-child(2) {
-    top: 2.7rem;
+    top: 2.3rem;
   }
   #nav-icon4 span:nth-child(3) {
-    top: 4.2rem;
+    top: 3.6rem;
   }
-  // #nav-icon4 {
-  //   height: 4rem;
-  //   width: 3rem;
-  // }
   // #nav-icon4 span:nth-child(1) {
   //   top: 1.25rem;
   // }
@@ -207,7 +209,7 @@ export default {
     top: 1rem;
   }
   #nav-icon4.open span:nth-child(3) {
-    top: 4.5rem;
+    top: 3.9rem;
   }
 }
 </style>
