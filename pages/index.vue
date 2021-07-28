@@ -89,64 +89,80 @@
         />
       </section>
       <section id="politics-mobile" class="politics-section mobile-view">
-        <div v-for="article in politics" 
-        :key="article">
         <TextBelowScience 
-        v-if="article.position === 'main'"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'politics-' + article.position + '-mobile'"
+        v-if="politics[0]"
+        :articleUrl="'/articles/' + politics[0].slug"
+        :author="politics[0].user.name"
+        :published="politics[0].createdAt"
+        :category="politics[0].category"
+        :imageAlt="politics[0].imageAlt"
+        :title="politics[0].title"
+        :imageUrl="politics[0].imageUrl"
+        :class="'politics-' + politics[0].position + '-mobile'"
         />
         <CategoryArticle
-        v-else
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'politics-' + article.position + '-mobile'"
+        v-if="politics[0]"
+        :articleUrl="'/articles/' + politics[1].slug"
+        :author="politics[1].user.name"
+        :published="politics[1].createdAt"
+        :category="politics[1].category"
+        :imageAlt="politics[1].imageAlt"
+        :title="politics[1].title"
+        :imageUrl="politics[1].imageUrl"
+        :class="'politics-' + politics[1].position + '-mobile'"
         />
-        </div>
+        <CategoryArticle
+        v-if="politics[0]"
+        :articleUrl="'/articles/' + politics[2].slug"
+        :author="politics[2].user.name"
+        :published="politics[2].createdAt"
+        :category="politics[2].category"
+        :imageAlt="politics[2].imageAlt"
+        :title="politics[2].title"
+        :imageUrl="politics[2].imageUrl"
+        :class="'politics-' + politics[2].position + '-mobile'"
+        />
       </section>
+      
       </div>
       </div>
       <div class="global-container">
       <h3 class="section-title">Entertainment</h3>
       <section class="entertainment-section desktop-view">
-        <div v-for="article in entertainment" 
-        :key="article">
         <CardComponent 
-        v-if="article.position === 'main'"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'entertainment-' + article.position"
+        v-if="entertainment[0]"
+        :articleUrl="'/articles/' + entertainment[0].slug"
+        :author="entertainment[0].user.name"
+        :published="entertainment[0].createdAt"
+        :category="entertainment[0].category"
+        :imageAlt="entertainment[0].imageAlt"
+        :title="entertainment[0].title"
+        :imageUrl="entertainment[0].imageUrl"
+        :class="'entertainment-' + entertainment[0].position"
         size="medium"
         />
-        <div v-else>
         <EntertainmentSideArticle
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'entertainment-' + article.position"
+        v-if="entertainment[1]"
+        :articleUrl="'/articles/' + entertainment[1].slug"
+        :author="entertainment[1].user.name"
+        :published="entertainment[1].createdAt"
+        :category="entertainment[1].category"
+        :imageAlt="entertainment[1].imageAlt"
+        :title="entertainment[1].title"
+        :imageUrl="entertainment[1].imageUrl"
+        :class="'entertainment-' + entertainment[1].position"
         />
-        </div>
-        </div>
+        <EntertainmentSideArticle
+        v-if="entertainment[2]"
+        :articleUrl="'/articles/' + entertainment[2].slug"
+        :author="entertainment[2].user.name"
+        :published="entertainment[2].createdAt"
+        :category="entertainment[2].category"
+        :imageAlt="entertainment[2].imageAlt"
+        :title="entertainment[2].title"
+        :imageUrl="entertainment[2].imageUrl"
+        :class="'entertainment-' + entertainment[2].position"
+        />
       </section>
       <section id="entertainment-mobile" class="entertainment-section mobile-view">
         <CardComponent 
@@ -238,7 +254,8 @@ export default {
     console.log(this.homepages);
 
     this.news = this.homepages.filter((article) => article.category === 'covid');
-    this.politics = this.homepages.filter((article) => article.category === 'us');
+    this.politics = this.homepages.filter((article) => article.category === 'entertainment');
+    console.log(this.politics);
     this.entertainment = this.homepages.filter((article) => article.category === 'entertainment');
     this.opinion = this.homepages.filter((article) => article.category === 'entertainment');
     this.science = this.homepages.filter((article) => article.category === 'science');
