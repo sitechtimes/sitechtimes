@@ -177,20 +177,29 @@ a:active {
 .dropshadow {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
+
 @media only screen and (max-width: $x-small-screen) {
     :root{
---fontSmall: 1.4rem;
-  --fontMedium: 2rem;
-  --fontLarge: 2.8rem;
+      --fontSmall: 2.2rem;
+      --fontMedium: 2.2rem;
+      --fontLarge: 2.8rem;
     }
   
 }
 .card-component-category-author-date {
     display: flex;
     flex-wrap: wrap;
-  padding-bottom: 3rem;
+  padding-bottom: 3%;
 }
-
+.card-component-text-container {
+  width: 100%;
+  padding: 0 10%;
+  max-height: 80%;
+  margin: 0 auto;
+  padding-bottom: 5%;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  border-radius: 1.5rem;
+}
 #article-details-author {
     font-size: 1.1rem;
 }
