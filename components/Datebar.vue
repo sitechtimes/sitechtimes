@@ -24,8 +24,8 @@
           <input
             type="checkbox"
             v-model="colorMode"
-            true-value="dark"
-            false-value="light"
+            true-value="light"
+            false-value="dark"
             @click="$colorMode.preference = colorMode"
           />
           <span class="slider round"></span>
@@ -45,7 +45,7 @@ export default {
   conponents: { Theme },
   data() {
     return {
-      colorMode: "light"
+      colorMode: "dark"
     };
   },
   methods: {}
@@ -137,7 +137,7 @@ export default {
   transition: 0.4s;
 }
 
-input:checked + .slider:before {
+.slider:before {
   background-color: var(--background-color);
 }
 /* input:checked + .slider {
