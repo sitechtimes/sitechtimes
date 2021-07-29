@@ -30,8 +30,9 @@
     <ul class="home-nav-ul">
       <nuxt-link v-for="category in categories"
                  :key="category"
-                 :to="'../' + category">
-        <li tabindex="1" class="home-nav-li">{{ category }}</li>
+                 :to="'../' + category"
+                 class="home-nav-link">
+                 <li class="home-nav-li">{{ category }}</li>
       </nuxt-link>
     </ul>
   </nav>
@@ -68,7 +69,7 @@ a {
 }
 .logo-container {
   width: 100vw;
-  padding-top: 2rem;
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,12 +95,19 @@ a {
   font-size: var(--h5);
   letter-spacing: 0.05rem;
   transition: all 0.1s;
+  line-height: 0;
 }
-.home-nav-li:hover {
+.home-nav-li {
+  padding: 0;
+}
+.home-nav-link {
+   border-bottom: 0.25rem solid transparent;
+}
+.home-nav-link:hover {
   color: var(--primary-color);
   border-bottom: 0.25rem solid var(--primary-color);
 }
-.home-nav-li:focus {
+.home-nav-link.nuxt-link-active {
   border-bottom: unset;
   color: var(--primary-color);
   font-weight: 900;
