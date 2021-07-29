@@ -1,12 +1,12 @@
 <template>
-   <div class="text-below-preview-opinion">
-       <nuxt-link :to="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image"></nuxt-link>
+   <nuxt-link :to="articleUrl" class="text-below-preview-opinion">
+       <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image">
        <div class="opinion-info">
             <category-icon :category="category" class="opinion-cat"/>
             <author-and-date :author="author" :published="published" class="opinion-data" />
        </div>
-       <a :href="articleUrl" class="opinion-title">{{title}}</a>
-   </div>
+       <h4 class="opinion-title">{{title}}</h4>
+   </nuxt-link>
 </template>
 
 <script>

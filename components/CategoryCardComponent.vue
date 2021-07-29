@@ -1,7 +1,7 @@
 <template>
-  <div class="category-card-component" :style="getFontSize">
+  <nuxt-link :to="articleUrl" class="category-card-component" :style="getFontSize">
     <div class="category-card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <nuxt-link :to="articleUrl" class="category-flex-col category-card-component-text-container">
+    <div class="category-flex-col category-card-component-text-container">
       <div class="category-flex-row category-card-component-category-author-date">
         <category-icon :category="category" class="category-card-component-category" />
         <author-and-date
@@ -13,22 +13,22 @@
       <div class="category-text-overflow category-card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </nuxt-link>
     </div>
-  </div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: "CategoryCardComponent",
   props: {
-    author: { type: String },
-    articleUrl: { type: String },
-    published: { type: Date },
-    category: { type: String },
-    imageUrl: { type: String },
-    imageAlt: { type: String },
-    title: { type: String },
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
     size: {
       default: "medium",
       type: String

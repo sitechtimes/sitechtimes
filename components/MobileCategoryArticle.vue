@@ -1,18 +1,18 @@
 <template>
-  <div class="cat-article">
+  <nuxt-link :to="articleUrl" class="cat-article">
     <div class="cat-labels">
    <category-icon :category="category" />
    <author-and-date :author="author" :published="published" class="auth-date"/>
    </div>
    <a :href="articleUrl" class="cat-article-title" >{{title}}</a>
 
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
 name: "MobileCategoryArticle",
-props: ["category", "author", "published", "title"]
+props: ["category", "author", "published", "title", "articleUrl"]
 }
 </script>
 
