@@ -495,6 +495,26 @@ export default {
   .politics-detail-mobile {
     grid-area: 5 / 1 / 6 / 2;
   }
+  #entertainment-mobile {
+    height: 50rem;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+  }
+  .entertainment-main-mobile {
+    grid-area: 1 / 1 / 5 / 9;
+  }
+  .entertainment-sub-mobile {
+    grid-area: 5 / 1 / 9 / 5;
+  }
+  .entertainment-detail-mobile {
+    grid-area: 5 / 5 / 9 / 9;
+  }
+  .global-container {
+    width: 400px;
+  }
 }
 
 </style>
