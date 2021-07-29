@@ -89,12 +89,11 @@
     }
 }
 
-
 </style>
 
 <!--<docs>-->
-<!--Colored banner at the top of the page. Text updates dynamically to current date. Uses moment.js library for the time. If the date doesn't show up, check if moment.js is installed.-->
-
+<!--Colored banner at the top of the page. Text updates dynamically to current date. Uses javascript Date.toLocaleString to show date and time in formatted fashion. -->
+<!---->
 <!--## Variables Used:-->
 <!--&#45;&#45;accent-color-->
 

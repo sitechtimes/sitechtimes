@@ -16,7 +16,15 @@
 <script>
 export default {
 name: "CategoryArticle",
-props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "category"]
+props: {
+  title: String,
+  author: String,
+  published: Date,
+  articleUrl: String,
+  imageUrl: String,
+  imageAlt: String,
+  category: String,
+}
 }
 </script>
 

@@ -22,13 +22,13 @@
 export default {
   name: "CategoryCardComponent",
   props: {
-    author: { type: String },
-    articleUrl: { type: String },
-    published: { type: Date },
-    category: { type: String },
-    imageUrl: { type: String },
-    imageAlt: { type: String },
-    title: { type: String },
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
     size: {
       default: "medium",
       type: String
