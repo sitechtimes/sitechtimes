@@ -75,6 +75,10 @@ export default {
         background-color: var(--primary-color);
         text-transform: uppercase;
         transition: all .3s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        opacity: 1;
     }
     .footer-join-btn:hover {
         background-color: #bf9f4b;

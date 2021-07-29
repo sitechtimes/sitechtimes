@@ -177,8 +177,8 @@ a:active {
 
 @media only screen and (max-width: $x-small-screen) {
     :root{
-      --fontSmall: 2.2rem;
-      --fontMedium: 2.2rem;
+      --fontSmall: 2.7rem;
+      --fontMedium: 2.7rem;
       --fontLarge: 2.8rem;
     }
   
