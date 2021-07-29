@@ -1,26 +1,24 @@
 <template>
-  <div class="sidebar-article">
-    <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
+  <nuxt-link :to="'/articles/' + articleUrl" class="sidebar-article">
+    <img :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <nuxt-link
-        :to="`/articles/${articleUrl}`"
+      <h4
         id="sidebar-article-details-title"
         v-if="title.length < 40">
         {{ title }}
-      </nuxt-link>
-      <nuxt-link
-        :to="`/articles/${articleUrl}`"
+      </h4>
+      <h4
         id="sidebar-article-details-title"
         v-else>
         {{ title.substring(0, 40) + '...' }}
-      </nuxt-link>
+      </h4>
       <author-and-date-sidebar
         :author="author"
         :published="this.$format(this.published)"
       ></author-and-date-sidebar>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -61,21 +59,13 @@ export default {
   display: flex;
   border: var(--toggleBorder);
   padding: 1.5rem var(--sidebarSidePadding);
-  /* margin-bottom: 2rem; */
-  /* float: right; */
 }
 .sidebar-article:hover {
   background-color: var(--hover);
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
-/* .sidebar-img {
-  height: 100%;
-  width: auto;
-  border: 1px solid black;
-} */
 .sidebar-img {
-  //background: url("../assets/temp image.jpg") var(--centerSquareThumbnail); /* 50% 50% centers image in div */
   height: var(--sidebarImgWidth);
   width: var(--sidebarImgWidth);
   border-radius: 1rem;
@@ -84,16 +74,7 @@ export default {
   display: inline-block;
   vertical-align: middle;
 }
-/* .thumb1 a {
-  display: block;
-  width: 250px;
-  height: 250px;
-} */
 .sidebar-article-details {
-  /*   width: calc(
-    var(--sidebarArticleWidth) - var(--sidebarImgWidth) -
-      (var(--sidebarSidePadding) * 2)
-  ); */
   max-width: 32.65rem;
   padding-left: var(--sidebarDetailsPaddingLeft);
   display: flex;
@@ -108,15 +89,6 @@ export default {
   color: var(--black);
   margin: 0;
 }
-/* .sidebar-article-details-author-date {
-  display: flex;
-}
-.sidebar-article-details-author-date > p {
-  font-size: 1rem;
-  //font-size: var(--small-text);
-  text-transform: uppercase;
-  margin-right: 1.5rem;
-} */
 .sidebar-icon {
   font-size: 1.4rem;
   padding-right: 4px;
@@ -130,11 +102,6 @@ export default {
   height: 11.7rem;
   width: 40rem;
 }
-// @media only screen and (max-width: $midlarge-screen) {
-//   .sidebar-article-details {
-//     flex-direction: row;
-//   }
-// }
 @media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
@@ -156,9 +123,6 @@ export default {
   .sidebar-article-details {
     max-width: 100%;
   }
-  //   #sidebar-article-details-title {
-  //     font-size: var(--h4);
-  // }
   .sidebar-article {
     max-width: none;
     width: 100%;
