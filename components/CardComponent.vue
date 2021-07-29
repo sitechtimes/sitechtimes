@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="articleUrl" class="card-component card-component-image dropshadow" :style="{ background: 'url(' + imageUrl + ')' }">
+  <nuxt-link :to="articleUrl" class="card-component card-component-image dropshadow" :style="{ background: 'url(' + imageUrl + ')', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }">
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -122,10 +122,6 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
-.card-component-image {
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .flex-col {
   display: flex;
