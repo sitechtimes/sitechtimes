@@ -1,23 +1,65 @@
 <template>
-    <div class="datebar">
-        <div class="datebar-container">
-            <h5 class="datebar-date">
-                <span id="date-text">{{ new Date().toLocaleString("en-US") }} </span>
-                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar" class="calendar-icon svg-inline--fa fa-calendar fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"></path></svg>
-            </h5>
-        </div>
+  <div class="datebar">
+    <div class="datebar-container">
+      <h5 class="datebar-date">
+        <span id="date-text">{{ new Date().toLocaleString("en-US") }} </span>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="far"
+          data-icon="calendar"
+          class="calendar-icon svg-inline--fa fa-calendar fa-w-10"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"
+          ></path>
+        </svg>
+      </h5>
+      <div class="color-toggle-switch">
+        <label class="switch">
+          <input
+            type="checkbox"
+            v-model="colorMode"
+            true-value="dark"
+            false-value="light"
+            @click="$colorMode.preference = colorMode"
+          />
+          <span class="slider round"></span>
+        </label>
+        <p class="test">colorMode: {{ colorMode }}</p>
+        <!-- <Theme v-if="openTheme" /> -->
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-    name: 'Datebar' // vue component name
-  }
+import Theme from "./Theme.vue";
+
+export default {
+  name: "Datebar", // vue component name
+  conponents: { Theme },
+  data() {
+    return {
+      colorMode: "light"
+    };
+  },
+  methods: {}
+};
 </script>
 
-
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
+
+.test {
+  font-size: 1.6rem;
+  position: absolute;
+}
+
 .datebar {
   background-color: var(--accent-color);
   height: 4rem;
@@ -30,7 +72,7 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .datebar-date {
   margin: auto 0;
@@ -45,51 +87,128 @@
   width: 1.5rem;
   height: 2rem;
 }
+/* .color-toggle-switch {
+  justify-content: flex-end;
+} */
+
+:root {
+  --switch-width: 5rem;
+  --switch-height: 2.5rem;
+  --slider-diameter: 1.7rem;
+  --slider-spacing: calc((var(--switch-height) - var(--slider-diameter)) / 2);
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 2.5rem;
+
+  margin-top: 1rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--slider-diameter);
+  width: var(--slider-diameter);
+  left: var(--slider-spacing);
+  bottom: var(--slider-spacing);
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  background-color: var(--background-color);
+}
+/* input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+} */
+
+input:checked + .slider:before {
+  transform: translateX(
+    calc(
+      var(--switch-width) -
+        calc(2 * ((var(--slider-diameter) / 2) + var(--slider-spacing)))
+    )
+  );
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 3rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: $large-screen) {
-    .datebar-date {
-        font-size: 2.8rem;
-        line-height: 3rem;
-    }
-    .datebar-container {
-        width: 100rem;
-    }
+  .datebar-date {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+  .datebar-container {
+    width: 100rem;
+  }
 }
 @media only screen and (max-width: $midlarge-screen) {
-    .datebar-container {
-        width: 80rem;
-    }
+  .datebar-container {
+    width: 80rem;
+  }
 }
 @media only screen and (max-width: $mid-screen) {
-    .datebar-container {
-        justify-content: flex-start;
-        margin-left: 2rem;
-    }
-    .datebar-date {
-        font-size: 3.5rem;
-        line-height: 3.2rem;
-    }
-    .calendar-icon {
+  .datebar-container {
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+  .datebar-date {
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+  }
+  .calendar-icon {
     padding-top: 0.6rem;
-    }
-    .datebar-container {
-        width: 60rem;
-    }
+  }
+  .datebar-container {
+    width: 60rem;
+  }
 }
 @media only screen and (max-width: $small-screen) {
-    .datebar-container {
-        justify-content: flex-start;
-        margin-left: 2rem;
-    }
-    .datebar-date {
-        font-size: 3.5rem;
-        line-height: 3.2rem;
-    }
-    .calendar-icon {
-        padding-top: 0.6rem;
-    }
+  .datebar-container {
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+  .datebar-date {
+    font-size: 3.5rem;
+    line-height: 3.2rem;
+  }
+  .calendar-icon {
+    padding-top: 0.6rem;
+  }
 }
-
-
 </style>
 
 <!--<docs>-->
