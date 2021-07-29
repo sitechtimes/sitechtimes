@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "CategoryIcon",
-  props: ["category"],
+  props: {category: String},
   data() {
     return {};
   },

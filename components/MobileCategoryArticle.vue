@@ -12,7 +12,13 @@
 <script>
 export default {
 name: "MobileCategoryArticle",
-props: ["category", "author", "published", "title", "articleUrl"]
+props: { 
+  category: String,
+  author: String,
+  published: Date,
+  title: String,
+  articleUrl: String
+}
 }
 </script>
 

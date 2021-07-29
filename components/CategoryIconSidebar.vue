@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "CategoryIconSidebar",
-  props: ["category"],
+  props: {category: String},
   data() {
     return {};
   },

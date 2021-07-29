@@ -35,10 +35,10 @@ import Sidebar from "./Sidebar.vue";
 export default {
   name: "SidebarContainer",
   components: { Sidebar },
-  props: {
+  props: [{
     trending: Array,
     moreLikeThis: Array,
-  }
+  }]
 };
 </script>
 

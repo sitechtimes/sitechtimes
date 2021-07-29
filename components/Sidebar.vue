@@ -35,7 +35,7 @@ export default {
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  },
+  }
 };
 </script>
 

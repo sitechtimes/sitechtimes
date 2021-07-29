@@ -9,7 +9,7 @@
 <script>
 export default {
     name: "Footer",
-    props: ["categories"],
+    props: { categories: Array},
     data () {
       return {
     }
