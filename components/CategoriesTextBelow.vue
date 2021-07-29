@@ -37,13 +37,14 @@ export default {
   flex-direction: column;
   //  width: 46.1rem;
   //  height: 37.1rem;
-
+  width: 100%;
+height: 100%;
 }
 .category-info {
   display: flex;
   margin-top: 1rem;
 }
-.category-image {
+.article-image {
    background-repeat: no-repeat;
   background-size: cover;
   border-radius: 1.5rem;
@@ -63,10 +64,18 @@ export default {
 }
 @import "../assets/variables";
 @media only screen and (max-width: $mid-screen){
-.category-image{
+.article-image{
     width: 90%;
 }
 }
+ @media only screen and (max-width: 670px){
+ .article-image{
+     width: 80%;
+ }
+//  .category-cat{
+
+//  }
+ }
 @media only screen and (max-width: $x-small-screen) {
   .category-cat {
     margin-right: 1rem;
@@ -77,7 +86,7 @@ export default {
   .category-info {
     width: 35rem;
   }
-  .category-image {
+  .article-image {
     width: 37rem;
   }
   .category-title {

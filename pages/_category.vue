@@ -121,10 +121,10 @@ export default {
   }
   .cat-sub-one,
    .cat-sub-two {
-margin-top: 13rem;
+margin-top: 17rem;
   }
   .mobile-sub-arts{
-    margin-top: 17rem;
+    margin-top: 23rem;
   }
  .sub-art{
    margin-top: 3.4rem;
@@ -166,16 +166,14 @@ margin-top: 13rem;
    }
  .cat-sub-one,
    .cat-sub-two {
-margin-top: 9rem;
+margin-top: 13rem;
 // width: 90%;
   }
  .mobile-sub-arts{
    width: 100%;
 margin-left: 0rem;
+margin-top: 17rem;
  }
-   .mobile-sub-arts{
-    margin-top: 13rem;
-  }
    .sub-art{
      display: flex;
 justify-content: flex-start;
@@ -184,31 +182,35 @@ justify-content: flex-start;
        margin: 6rem 0 10rem 0;
      }
    }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: 670px) {
    .border-right{
-           width: 70%;
+           width: 103%;
       //  margin: auto;
 //       margin-left: 0;
 //  margin-top: 10rem;
-margin: 10rem 0;
+// margin: 10rem 0;
+margin: auto;
+margin-top: 10rem;
        border: none;
+       padding: 0 2rem 0 2rem;
    }
- .all-of-em{
-   display: flex;
- }
+//  .all-of-em{
+//    display: flex;
+//  }
    .snowball-in-hell{
      width: 100%;
    }
- .cat-sub-one,
-   .cat-sub-two {
-display: none;
-  }
+  .cat-sub-one,
+    .cat-sub-two {
+margin-top: 0;
+ }
  .mobile-sub-arts{
-   width: 100%;
-margin: 0;
+  //  width: 100%;
+margin-top: 8rem;
  }
      .seymour{
-       margin: 6rem 0 10rem 0;
+       margin: 4rem 0 10rem 0;
      }
    }
+   @media only screen and (max-width: $x-small-screen){}
 </style>

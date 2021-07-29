@@ -92,21 +92,23 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             width: 60rem;
         }
     }
-    @media only screen and (max-width: $small-screen) {
+    @media only screen and (max-width: 670px) {
         .cat-article{
             display: flex;
             flex-direction: row-reverse;
-            // margin: auto
+            margin: auto
         }
         .cat-article-img{
             height: 14rem;
             width: 35vw;
             border-radius: 1.5rem;
+            //   margin-left: 15rem;
+            margin-right: 0;
         }
-        .cat-article-img-content{
-            width: 40vw;
-            margin: 0 15rem 0 0;
-        }
+        .cat-article-img-content {
+    width: 20%;
+    margin: 0;
+}
         .cat-title{
             font-size: 1.8rem;
             font-weight: 700;

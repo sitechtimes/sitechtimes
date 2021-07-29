@@ -133,7 +133,7 @@ a:active {
 }
 .category-card-component-text-container {
   width: 100%;
-  padding: 32% 0 0 5%;
+  padding: 32% 0 5% 5%;
   height: 100%;
   margin: 0 auto;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
@@ -179,12 +179,20 @@ a:active {
  
 }
    }
-   @media only screen and (max-width: $mid-screen) {
+   @media only screen and (max-width: 670px) {
 .category-card-component-image{
-   width: 150%;
+   width: 90%;
 }
 .category-card-component-text-container {
-  padding: 60% 0 0 5%;
+  padding: 20% 10% 0 5%;
+}
+   }
+   @media only screen and (max-width: $x-small-screen) {
+.category-card-component-image{
+   width: 85%;
+}
+.category-card-component-text-container {
+  padding: 20% 10% 0 5%;
 }
    }
 </style>
