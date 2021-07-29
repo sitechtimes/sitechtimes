@@ -1,12 +1,12 @@
 <template>
-   <article class="text-below-preview-article-home">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
+   <nuxt-link :to="articleUrl" class="text-below-preview-article-home">
+       <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
        <h5 class="article-info">
             <category-icon :category="category" class="article-cat"/>
             <author-and-date :author="author" :published="published" class="article-data" />
        </h5>
-       <a :href="articleUrl" class="article-title">{{title}}</a>
-   </article>
+       <h4 class="article-title">{{title}}</h4>
+   </nuxt-link>
 </template>
 
 <script>

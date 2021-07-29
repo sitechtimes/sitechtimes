@@ -21,7 +21,7 @@
 
 export default {
  name: "OpinionSlider",
- props: { articles: [] }
+ props: { articles: Array }
 }
 </script>
 
