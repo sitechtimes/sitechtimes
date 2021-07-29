@@ -50,7 +50,8 @@ a {
   justify-content: center;
   align-items: center;
 }
-.logo-container h1 {
+.logo-container h1,
+.mobile-logo-container h1 {
   color: var(--primary-color);
   margin-left: 2rem;
   margin-top: 2rem;
