@@ -42,7 +42,7 @@
           class=""
         ></path>
       </svg>
-      <h5 id="sidebar-article-details-date">{{ published }}</h5>
+      <h5 id="sidebar-article-details-date">{{ this.$format(this.published) }}</h5>
     </section>
   </div>
 </template>
@@ -50,7 +50,10 @@
 <script>
 export default {
   name: "AuthorAndDateSidebar",
-  props: ["author", "published"],
+  props: {
+    author: String,
+    published: Date
+  },
 };
 </script>
 
