@@ -14,15 +14,15 @@
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
   name: "CategoriesTextBelow",
-  props: [
-    "author",
-    "articleUrl",
-    "published",
-    "category",
-    "imageUrl",
-    "imageAlt",
-    "title",
-    ],
+  props: {
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
+    },
 };
 </script>
 

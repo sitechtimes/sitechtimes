@@ -32,7 +32,16 @@ import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
 export default {
   name: "ArticleComponent",
-  props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
+  props: {
+    category: String,
+    title: String,
+    description: String,
+    articleText: String,
+    articleImg: String,
+    articleAlt: String,
+    author: String,
+    published: Date
+  },
   components: {
     AuthorAndDateArticle,
     SocialMediaIcons,
