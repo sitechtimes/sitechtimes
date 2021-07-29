@@ -36,10 +36,10 @@ export default {
     font-size: 0.8rem;
   }
   #author-icon,
-#published-icon {
-  font-size: 1.2rem;
-}
+  #published-icon {
+    font-size: 1.2rem;
   }
+}
 </style>
 
 <!--<docs>-->

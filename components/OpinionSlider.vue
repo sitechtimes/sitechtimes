@@ -1,11 +1,11 @@
 <template>
   <div class="opinion-section">
       <div class="scrolls">
-      <TextBelowArticlePreview
-      class="opinion-card"
+      <TextBelowOpinion 
+      class="opinion-card" 
       v-for="article in articles"
-      :key="article.slug"
-      :articleUrl="article.slug" 
+      :key="article"
+      :articleUrl="'/articles/' + articles.slug" 
       :author="article.user.name" 
       :published="article.createdAt" 
       :category="article.category" 
@@ -13,8 +13,7 @@
       :title="article.title" 
       :imageUrl="article.imageUrl"
       />
-      </div>
-
+     </div>
  </div>
 </template>
 
@@ -22,10 +21,7 @@
 
 export default {
  name: "OpinionSlider",
- components: { },
- props: {
-   articles: Array,
- }
+ props: { articles: [] }
 }
 </script>
 

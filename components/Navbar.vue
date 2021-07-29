@@ -5,16 +5,9 @@
         v-for="category in categories"
         :key="category"
         :to="'../' + category"
-        class="home-nav-li-nuxt-link"
       >
-        <li class="home-nav-li">{{ category }}</li>
+        <li tabindex="1" class="home-nav-li">{{ category }}</li>
       </nuxt-link>
-      <div to="/Theme" id="theme-nav-button" @click="openThemeMenu">
-        <h4 class="home-nav-li">
-          Theme
-        </h4>
-        <Theme v-if="openTheme" />
-      </div>
     </ul>
   </nav>
 </template>
@@ -22,21 +15,25 @@
 <script>
 export default {
   name: "Navbar", // vue component name
-  props: ["categories"],
   data() {
-    return { openTheme: false };
-  },
-  methods: {
-    openThemeMenu() {
-      this.openTheme = !this.openTheme;
-    }
+    return {
+      categories: [
+        "covid",
+        "entertainment",
+        "news",
+        "politics",
+        "opinion",
+        "science",
+        "technology",
+        "sports"
+      ]
+    };
   }
 };
 </script>
 
 <style lang="scss">
 @import "../assets/variables";
-
 a {
   text-decoration: none;
   color: inherit;
@@ -49,32 +46,36 @@ a {
   list-style-type: none;
   font-size: var(--h4);
   letter-spacing: 0.05rem;
-
-  color: var(--on-background);
+  transition: all 0.1s;
 }
-.home-nav-li-nuxt-link,
-#theme-nav-button {
-  padding: 1.5rem;
+.home-nav-li:hover {
+  color: var(--primary-color);
+  border-bottom: 0.25rem solid var(--primary-color);
+}
+.home-nav-li:focus {
+  border-bottom: unset;
+  color: var(--primary-color);
+  font-weight: 900;
 }
 .home-nav-ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
-  padding: 1.5rem 10%;
-  width: 100%;
-
-  line-height: 1;
+  padding: 3rem 0;
+  width: 85%;
+  margin: auto;
 }
-
-#theme-nav-button {
-  cursor: pointer;
-  border: 1px solid black;
-  user-select: none;
-  line-height: 1;
-
-  position: relative;
+@media only screen and (max-width: $large-screen) {
+  .home-nav-ul {
+    width: 90%;
+  }
 }
-
+@media only screen and (max-width: $midlarge-screen) {
+  .home-nav-ul {
+    max-width: $container;
+    width: unset;
+  }
+}
 @media only screen and (max-width: $mid-screen) {
   .home-nav-ul {
     display: none;

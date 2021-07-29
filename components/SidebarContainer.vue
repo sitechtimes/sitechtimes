@@ -31,7 +31,6 @@
 
 <script>
 import Sidebar from "./Sidebar.vue";
-
 export default {
   name: "SidebarContainer",
   components: { Sidebar },
@@ -47,12 +46,10 @@ export default {
 .sidebar-container {
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;
-
   float: right;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */

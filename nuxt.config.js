@@ -1,8 +1,8 @@
 import { ENV_VALUES } from "./config";
 
 export default {
-  // ssr: false,
-  // target: static,
+  ssr: true,
+  target: "server",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "sitechtimes",
@@ -27,10 +27,13 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/axios", "@nuxtjs/color-mode"],
+  buildModules: [
+    // '@nuxtjs/axios',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/axios"],
+
   server: {
     port: 8080
   },
@@ -43,6 +46,6 @@ export default {
   build: {},
 
   generate: {
-    fallback: false
+    fallback: true
   }
 };

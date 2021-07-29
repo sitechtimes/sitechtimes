@@ -5,7 +5,7 @@
     <Navbar :categories="categories" />
     <MobileNav :categories="categories" />
 
-       <Nuxt />
+    <Nuxt />
 
     <Footer :categories="categories" />
   </div>

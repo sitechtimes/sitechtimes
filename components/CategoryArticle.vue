@@ -1,7 +1,7 @@
 <template>
     <div class="category-article">
         <div class="category-img-div">
-            <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img"></a>
+            <nuxt-link :to="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img"></nuxt-link>
         </div>
         <div class="category-article-img-content">
             <div class="category-labels">
@@ -59,7 +59,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin-left: 10rem;
+            // margin-left: 10rem;
         }
         .category-article-img{
             height: 12rem;

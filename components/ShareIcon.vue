@@ -11,7 +11,10 @@ name: "ShareIcon"
 </script>
 
 <style>
-
+  .fa-share {
+  margin-left: 2.5rem;
+  margin-right: 0;
+}
 </style>
 
 <!--<docs>-->

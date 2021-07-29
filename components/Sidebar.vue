@@ -28,7 +28,6 @@
 <script>
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
 import AuthorAndDateSidebar from "./AuthorAndDateSidebar.vue";
-
 export default {
   components: { CategoryIconSidebar, AuthorAndDateSidebar },
   name: "Sidebar",
@@ -57,7 +56,6 @@ export default {
 .sidebar-article > * {
   color: var(--on-background);
 }
-
 .temp-img {
   width: 30vw;
   height: auto;
@@ -67,7 +65,6 @@ export default {
   max-width: 50rem;
   display: flex;
   border: var(--toggleBorder);
-
   padding: 1.5rem var(--sidebarSidePadding);
   /* margin-bottom: 2rem; */
   /* float: right; */
@@ -75,10 +72,8 @@ export default {
 .sidebar-article:hover {
   background-color: var(--hover);
   cursor: pointer;
-
   transition: all 0.3s ease-out;
 }
-
 /* .sidebar-img {
   height: 100%;
   width: auto;
@@ -89,7 +84,6 @@ export default {
   height: var(--sidebarImgWidth);
   width: var(--sidebarImgWidth);
   border-radius: 1rem;
-
   border: var(--toggleBorder);
   object-fit: cover;
   display: inline-block;
@@ -100,7 +94,6 @@ export default {
   width: 250px;
   height: 250px;
 } */
-
 .sidebar-article-details {
   /*   width: calc(
     var(--sidebarArticleWidth) - var(--sidebarImgWidth) -
@@ -110,20 +103,16 @@ export default {
   padding-left: var(--sidebarDetailsPaddingLeft);
   display: flex;
   flex-direction: column;
-
   display: inline-block;
 }
-
 #sidebar-article-details-title {
   font-weight: bold;
   font-size: var(--h5);
   line-height: 1.35;
   text-decoration: none;
   color: var(--on-background);
-
   margin: 0;
 }
-
 /* .sidebar-article-details-author-date {
   display: flex;
 }
@@ -151,7 +140,6 @@ export default {
 //     flex-direction: row;
 //   }
 // }
-
 @media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
@@ -166,7 +154,6 @@ export default {
     font-size: var(--h4);
   }
 }
-
 @media only screen and (max-width: $mid-screen) {
   :root {
     --sidebarImgWidth: 20rem;
@@ -190,8 +177,6 @@ export default {
   }
 }
 </style>
-
-/* Ripple effect on click? */
 
 <!--<docs>-->
 <!--The Sidebar article is the article found in the sidebar and has an image on one side and the article's info on the other-->

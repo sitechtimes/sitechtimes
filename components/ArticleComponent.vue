@@ -5,7 +5,7 @@
     <!-- <p class="main-article-description">{{ description }}</p> -->
     <img class="main-article-img" :src="articleImg" :alt="articleAlt" />
     <section class="main-article-metadata">
-      <author-and-date
+      <author-and-date-article
         class="article-author-and-date"
         :author="author"
         :published="this.$format(this.published)"
@@ -25,11 +25,10 @@
 </template>
 
 <script>
-import AuthorAndDate from "./AuthorAndDate.vue";
+import AuthorAndDateArticle from "./AuthorAndDateArticle.vue";
 import SocialMediaIcons from "./SocialMediaIcons.vue";
 import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
-
 export default {
   name: "ArticleComponent",
   props: [
@@ -43,7 +42,7 @@ export default {
     "published"
   ],
   components: {
-    AuthorAndDate,
+    AuthorAndDateArticle,
     SocialMediaIcons,
     ShareIcon,
     CategoryIcon
@@ -74,8 +73,10 @@ export default {
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
+.main-article-text-section p a,
 .main-article-text-section li em,
 .main-article-text-section li strong,
+.main-article-text-section li a,
 .main-article-text-section span,
 .main-article-text ul li,
 .main-article-text ul li span,
@@ -85,7 +86,9 @@ export default {
   font-size: var(--h5);
   line-height: 3rem;
 }
-.main-article-text-section p {
+
+.main-article-text-section p,
+.main-article-text-section li {
   font-weight: 300;
   overflow-wrap: break-word;
 }
@@ -114,22 +117,28 @@ export default {
 .main-article-text h6 strong {
   font-family: var(--article-font);
   font-weight: 400;
+  margin-bottom: 0;
 }
+.main-article-text h1,
 .main-article-text h1 strong {
-  font-size: var(--h1);
+  font-size: 3rem;
 }
-.main-article-text h2 strong {
-  font-size: var(--h2);
+.main-article-text h2 .main-article-text h2 strong {
+  font-size: 2.5rem;
 }
+.main-article-text h3,
 .main-article-text h3 strong {
-  font-size: var(--h3);
+  font-size: 2rem;
 }
+.main-article-text h4,
 .main-article-text h4 strong {
-  font-size: var(--h4);
+  font-size: 1.5rem;
 }
+.main-article-text h5,
 .main-article-text h5 strong {
-  font-size: var(--h5);
+  font-size: 1rem;
 }
+.main-article-text h6,
 .main-article-text h6 strong {
   font-size: var(--small-text);
 }
@@ -151,7 +160,6 @@ export default {
 .main-article-metadata-actions {
   display: flex;
 }
-
 @media only screen and (max-width: $mid-screen) {
   .main-article-text ul li,
   .main-article-text ul li span,
@@ -164,7 +172,7 @@ export default {
   .main-article-text-section li strong,
   .main-article-text-section span {
     font-size: var(--h4);
-    line-height: 4rem;
+    line-height: 3.5rem;
   }
   // .main-article-description {
   //   font-size: var(--h3);

@@ -68,20 +68,14 @@ export default {
   font-size: 1rem;
   text-transform: uppercase;
   margin: 0 1.5rem 0 0;
-
   line-height: 1.75;
 }
 .sidebar-icon {
-    // width: var(--h5);
-    // height: var(--h5);
-    margin-top: .1rem;
-    // padding-right: .4rem;
-  }
-#sidebar-author-icon,
-#sidebar-published-icon {
-  font-size: 1.3rem;
+  // width: var(--h5);
+  // height: var(--h5);
+  margin-top: .1rem;
+  // padding-right: .4rem;
 }
-
 @media only screen and (max-width: $mid-screen) {
   .sidebar-article-details-author-date > section > h5 {
     font-size: var(--h5);
@@ -99,7 +93,6 @@ export default {
     margin-top: 0.2rem;
   }
 }
-
 </style>
 
 <!--<docs>-->

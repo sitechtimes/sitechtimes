@@ -2,8 +2,8 @@
   <div class="author-date-article">
     <section>
       <svg
-        width="1.5rem"
-        height="1.5rem"
+        width="1.3rem"
+        height="1.3rem"
         aria-hidden="true"
         focusable="false"
         data-prefix="fas"
@@ -20,12 +20,12 @@
           class=""
         ></path>
       </svg>
-      <h5 id="article-details-author">{{ author }}</h5>
+      <h5>{{ author }}</h5>
     </section>
     <section>
       <svg
-        width="1.5rem"
-        height="1.5rem"
+        width="1.3rem"
+        height="1.3rem"
         aria-hidden="true"
         focusable="false"
         data-prefix="fas"
@@ -42,7 +42,7 @@
           class=""
         ></path>
       </svg>
-      <h5 id="article-details-date">{{ published }}</h5>
+      <h5>{{ published }}</h5>
     </section>
   </div>
 </template>
@@ -71,28 +71,14 @@ export default {
   line-height: 1.75;
 }
 .article-icon {
-  // width: var(--h5);
-  // height: var(--h5);
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
   margin-right: 0.5rem;
-  // padding-right: .4rem;
 }
 
 @media only screen and (max-width: $mid-screen) {
-  .author-date-article > section > h5 {
-    font-size: var(--h5);
-  }
-  .article-icon {
-    width: var(--h5);
-    height: var(--h5);
-    margin-top: 0.3rem;
-  }
-}
-@media only screen and (max-width: $small-screen) {
   .article-icon {
     width: var(--h4);
     height: var(--h4);
-    margin-top: 0.4rem;
   }
   .author-date-article > section > h5 {
     font-size: var(--h4);
