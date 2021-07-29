@@ -135,6 +135,43 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             width: 40rem;
         }
     }
+    @media only screen and (max-width: $xx-small-screen) {
+        .category-article{
+            display: flex;
+            flex-direction: row-reverse;
+            margin: auto
+        }
+        .category-article-img{
+            height: 12rem;
+            width: 12rem;
+            border-radius: 1.5rem;
+        }
+        .category-article-img-content{
+            width: 40rem;
+            //margin: 0 15rem 0 0;
+        }
+        .category-title{
+            font-size: 1.8rem;
+            font-weight: 700;
+            padding-top: 1rem;
+            width: 70%;
+        }
+        .category-article-icon {
+            width: 3rem;
+            padding-right: 1.5rem;
+            height: 3rem;
+        }
+        .category-article-authdate {
+            margin-left: 0rem;
+            line-height: 2.2rem;
+            padding-top: 1rem;
+        }
+        .category-labels{
+            margin-top: 0rem;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 
 </style>
 
