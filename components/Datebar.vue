@@ -27,9 +27,7 @@
             changeColorMode();
             $colorMode.preference = colorMode;
           "
-        >
-          CHangeColorMode
-        </button>
+        ></button>
         <!-- <label class="switch">
           <input
             type="checkbox"
@@ -123,33 +121,37 @@ export default {
 
 .color-toggle-button {
   font-size: var(--h5);
+  background-image: var(--button-icon);
+  background-size: contain;
+  height: 3rem;
+  width: 3rem;
 }
 
-:root {
-  --switch-width: 5rem;
+/* :root {
+   --switch-width: 5rem;
   --switch-height: 2.5rem;
   --slider-diameter: 1.7rem;
-  --slider-spacing: calc((var(--switch-height) - var(--slider-diameter)) / 2);
-}
+  --slider-spacing: calc((var(--switch-height) - var(--slider-diameter)) / 2); 
+} */
 /* The switch - the box around the slider */
-.switch {
+/* .switch {
   position: relative;
   display: inline-block;
   width: 5rem;
   height: 2.5rem;
 
   margin-top: 1rem;
-}
+} */
 
 /* Hide default HTML checkbox */
-.switch input {
+/* .switch input {
   opacity: 0;
   width: 0;
   height: 0;
-}
+} */
 
 /* The slider */
-.slider {
+/* .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -158,9 +160,9 @@ export default {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
-}
+} */
 
-.slider:before {
+/* .slider:before {
   position: absolute;
   content: "";
   height: var(--slider-diameter);
@@ -173,7 +175,7 @@ export default {
 
 .slider:before {
   background-color: var(--background-color);
-}
+} */
 /* input:checked + .slider {
   background-color: #2196f3;
 }
@@ -182,23 +184,23 @@ input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 } */
 
-input:checked + .slider:before {
+/* input:checked + .slider:before {
   transform: translateX(
     calc(
       var(--switch-width) -
         calc(2 * ((var(--slider-diameter) / 2) + var(--slider-spacing)))
     )
   );
-}
+} */
 
 /* Rounded sliders */
-.slider.round {
+/* .slider.round {
   border-radius: 3rem;
 }
 
 .slider.round:before {
   border-radius: 50%;
-}
+} */
 
 @media only screen and (max-width: $large-screen) {
   .datebar-date {
