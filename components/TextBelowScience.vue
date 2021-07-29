@@ -59,8 +59,18 @@ a:active { text-decoration: none;  color: var(--white)}
     padding-top: 1rem;
 }
 @import "../assets/variables";
-@media only screen and (max-width: $x-small-screen) {
-
+@media only screen and (max-width: $xx-small-screen) {
+.text-below-preview-science {
+  margin-right: -1rem;
+}
+.science-title {
+  width: 94%;
+  font-family: var(--font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: var(--h3);
+  color: white;
+}
 }
 
 </style>

@@ -147,7 +147,7 @@ props: {
         .category-article{
             display: flex;
             flex-direction: row-reverse;
-            margin: auto
+            margin: auto;
         }
         .category-article-img{
             height: 12rem;
@@ -155,19 +155,19 @@ props: {
             border-radius: 1.5rem;
         }
         .category-article-img-content{
-            width: 40rem;
+            width: 10rem;
             //margin: 0 15rem 0 0;
         }
         .category-title{
             font-size: 1.8rem;
             font-weight: 700;
             padding-top: 1rem;
-            width: 70%;
+            width: 200%;
         }
         .category-article-icon {
-            width: 3rem;
+            width: 2rem;
             padding-right: 1.5rem;
-            height: 3rem;
+            height: 2rem;
         }
         .category-article-authdate {
             margin-left: 0rem;

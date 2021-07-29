@@ -476,5 +476,25 @@ export default {
   grid-template-rows: repeat(3, 1fr);
 }
 }
+@media only screen and (max-width: $xx-small-screen) {
+  body {
+  width: 100%;
+}
+  #politics-mobile {
+    height: 67rem;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(5, 1fr);
+    grid-row-gap: 20px; 
+  }
+  .politics-main-mobile {
+    grid-area: 1 / 1 / 4 / 2;
+  }
+  .politics-sub-mobile {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .politics-detail-mobile {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+}
 
 </style>
