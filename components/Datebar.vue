@@ -27,6 +27,10 @@
             changeColorMode();
             $colorMode.preference = colorMode;
           "
+          @tap="
+            changeColorMode();
+            $colorMode.preference = colorMode;
+          "
         ></button>
         <!-- <label class="switch">
           <input
