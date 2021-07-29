@@ -19,8 +19,18 @@
           ></path>
         </svg>
       </h5>
+
       <div class="color-toggle-switch">
-        <label class="switch">
+        <button
+          class="color-toggle-button"
+          @click="
+            changeColorMode();
+            $colorMode.preference = colorMode;
+          "
+        >
+          CHangeColorMode
+        </button>
+        <!-- <label class="switch">
           <input
             type="checkbox"
             v-model="colorMode"
@@ -29,7 +39,7 @@
             @click="$colorMode.preference = colorMode"
           />
           <span class="slider round"></span>
-        </label>
+        </label> -->
         <p class="test">colorMode: {{ colorMode }}</p>
         <!-- <Theme v-if="openTheme" /> -->
       </div>
@@ -45,10 +55,30 @@ export default {
   conponents: { Theme },
   data() {
     return {
-      colorMode: "dark"
+      colorMode: ""
     };
   },
-  methods: {}
+  methods: {
+    changeColorMode: function() {
+      /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
+
+      //console.log(document.querySelectorAll("html")[0].classList);
+
+      if (
+        document.querySelectorAll("html")[0].classList.contains("light-mode")
+      ) {
+        console.log("contains light-mode");
+        this.colorMode = "dark";
+      } else if (
+        document.querySelectorAll("html")[0].classList.contains("dark-mode")
+      ) {
+        console.log("contains dark-mode");
+        this.colorMode = "light";
+      } else {
+        console.log("contains neither light-mode or dark-mode");
+      }
+    }
+  }
 };
 </script>
 
@@ -90,6 +120,10 @@ export default {
 /* .color-toggle-switch {
   justify-content: flex-end;
 } */
+
+.color-toggle-button {
+  font-size: var(--h5);
+}
 
 :root {
   --switch-width: 5rem;
