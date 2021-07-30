@@ -1,7 +1,7 @@
 <template>
-  <li class="theme-choice" @click="$colorMode.preference = color">
+  <li class="theme-choice color-name" @click="$colorMode.preference = color">
     <!-- <span class="icon"><fa :icon="icon" /></span> -->
-    <span class="color-name">{{ color }}</span>
+    {{ color }}
   </li>
 </template>
 
@@ -19,10 +19,12 @@ export default {
 @import "../assets/global.scss";
 
 .theme-choice {
-  font-size: var(--h4);
+  font-size: 1.6rem;
   //color: var(--white);
+  background-color: white;
   list-style: none;
   //margin: 1rem auto;
+  padding: 1rem 2rem;
   transition: all 0.3s;
 
   text-align: center;
@@ -30,20 +32,11 @@ export default {
   z-index: 3;
   //border: 1px solid white;
 }
-.icon,
-.color-name {
-  margin: 0rem;
-}
-.color-name {
-  border-bottom: 3px solid transparent;
-}
+
 .theme-choice:hover {
   //transform: scale(1.1);
 
   cursor: pointer;
   background-color: var(--hover);
-}
-.theme-icon:hover .color-name {
-  border-bottom: 3px solid white;
 }
 </style>

@@ -1,18 +1,17 @@
 <template>
-  <div class="theme-switcher">
-    <ThemeColors icon="moon" color="dark" />
-    <ThemeColors icon="sun" color="light" />
+  <ul class="theme-switcher">
+    <ThemeColors icon="moon" color="system" />
     <nuxt-link id="dropdown-more-link" to="/Theme"
       ><ThemeColors icon="sun" color="more"
     /></nuxt-link>
-  </div>
+  </ul>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      colors: ["system", "light", "dark", "theme"]
+      //colors: ["system", "light", "dark", "theme"]
     };
   }
 };
@@ -20,7 +19,7 @@ export default {
 
 <style lang="scss">
 .theme-switcher {
-  width: 100%;
+  //width: 30rem;
 
   display: flex;
   flex-direction: column;
@@ -31,7 +30,7 @@ export default {
   border: 1px solid black;
 
   position: absolute;
-  top: 3.2rem;
+  top: 8rem;
 }
 .theme-switcher > * {
   width: 100%;

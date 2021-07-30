@@ -13,10 +13,10 @@
         $colorMode.preference = colorMode;
       "
     ></button>
-    <button class="color-toggle-dropdown-button" @click="!toggleDropdown">
-      d
+    <button class="color-toggle-dropdown-button" @click="toggleDropdown">
+      <i class="down-arrow"></i>
     </button>
-    <h1 v-show="toggleDropdown">toggledropdown true</h1>
+    <Theme v-if="dropdown" />
     <!-- <label class="switch">
           <input
             type="checkbox"
@@ -49,7 +49,7 @@ export default {
   data() {
     return {
       colorMode: "",
-      toggleDropdown: false
+      dropdown: false
     };
   },
   /*   created() {
@@ -77,6 +77,9 @@ export default {
       } else {
         alert("Current color mode is neither light or dark");
       }
+    },
+    toggleDropdown: function() {
+      this.dropdown = !this.dropdown;
     }
   }
 };
@@ -101,17 +104,37 @@ export default {
 
 .color-toggle-button {
   border: 0.2rem solid var(--on-background);
-  border-radius: 8px;
+  border-radius: 0.8rem 0 0 0.8rem;
   /* padding: 14px; */
   cursor: pointer;
   background-color: var(--background-color);
   background-image: var(--button-icon);
-  background-size: 2rem;
+  background-size: 3rem;
   background-position: center;
   background-repeat: no-repeat;
-  height: 3rem;
-  width: 3rem;
+  height: 4rem;
+  width: 4rem;
 }
+
+.color-toggle-dropdown-button {
+  background-color: var(--background-color);
+  border: 0.2rem solid var(--on-background);
+  margin-left: -0.2rem;
+  border-radius: 0 0.8rem 0.8rem 0;
+  padding: 0.8rem 0.6rem 1rem 0.6rem;
+
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+.down-arrow {
+  border: solid var(--on-background);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
 /* MAYBE ADD HOVER EFFECT? */
 
 /* :root {
