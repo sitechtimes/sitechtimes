@@ -97,7 +97,6 @@ a {
 .logo-container h1,
 .mobile-logo-container h1 {
   font-family: var(--article-font);
-  font-weight: 700;
   color: var(--primary-color);
   margin-left: 2rem;
   margin-top: 2rem;
@@ -107,7 +106,6 @@ a {
     width: 10rem;
     fill: var(--primary-color);
     stroke: var(--primary-color);
-    stroke-width: .3rem;
 }
 .home-nav-li {
   text-transform: uppercase;
