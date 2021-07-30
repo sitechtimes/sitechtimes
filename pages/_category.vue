@@ -71,8 +71,9 @@
           :category="category"
           :articleUrl="`/articles/${articles[5].slug}`"
         />
+        <div>
         <CatArticleTwo
-          class="sub-art"
+          class="sub-art not-visible"
           v-for="article in allArticles"
           :key="article"
           :category="article.category"
@@ -82,6 +83,7 @@
           :imageUrl="article.imageUrl"
           :articleUrl="`/articles/${article.slug}`"
         />
+        </div>
       </div>
       <div class="cat-visible">
          <div class="fireball-in-hell">
@@ -117,29 +119,9 @@
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
         />
-        <CatArticleTwo
-          class="sub-art cat-visible"
-          v-if="articles[5]"
-          :title="articles[5].title"
-          :author="articles[5].user.name"
-          :published="articles[5].createdAt"
-          :imageUrl="articles[5].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[5].slug}`"
-        />
-        <CatArticleTwo
-          class="sub-art"
-          v-for="article in allArticles"
-          :key="article"
-          :category="article.category"
-          :author="article.user.name"
-          :published="article.createdAt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-          :articleUrl="`/articles/${article.slug}`"
-        />
       </div>
-        <h2 class="cat-subhead">More Articles</h2> ??
+     <hr class="break" size=".6rem">
+        <h2 class="cat-subhead">More Articles</h2> 
         <MobileCategoryArticle
           class="mobile-cat"
           v-if="articles[6]"
@@ -170,16 +152,19 @@
           :category="category"
           :articleUrl="`/articles/${articles[8].slug}`"
         />
-        <MobileCategoryArticle
-          class="mobile-cat"
-          v-if="articles[9]"
-          :title="articles[9].title"
-          :author="articles[9].user.name"
-          :published="articles[9].createdAt"
-          :imageUrl="articles[9].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[9].slug}`"
+        <div >
+         <MobileCategoryArticle
+         class="visible"
+          v-for="article in allArticles"
+          :key="article"
+          :category="article.category"
+          :author="article.user.name"
+          :published="article.createdAt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :articleUrl="`/articles/${article.slug}`"
         />
+        </div>
       </div>
     </div>
     <div class="entertainment-seymour">
@@ -210,7 +195,7 @@ export default {
       page: 2,
       articles: [],
       allArticles: [],
-      moreToLoad: true
+      moreToLoad: true, 
     };
   },
   async beforeMount() {
@@ -290,8 +275,8 @@ export default {
 .seymour {
   margin: 6rem 0 20rem 0;
 }
-.cat-subhead {
-  margin-bottom: 2rem;
+.visible{
+  display: none;
 }
 @media only screen and (max-width: $mid-screen) {
   .border-right {
@@ -345,6 +330,26 @@ export default {
 .temp-fix{
   width: 100%;
   justify-content: flex-end;
+}
+.sub-art{
+  width: 100%;
+}
+.break{
+width: 100%;
+color: var(--primary-color);
+}
+.cat-subhead{
+  margin-top: 2rem;
+}
+.mobile-cat{
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.not-visible{
+  display: none;
+}
+.visible{
+  display: block;
 }
 }
 </style>

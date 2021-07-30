@@ -21,14 +21,12 @@ props: ["category", "author", "published", "title", "articleUrl"]
       border-bottom: .3rem solid var(--primary-color);
       margin-bottom: 2rem;
        display: inline-block;
+       width: 90%;
 }
 .mobile-cat-labels{
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.mobile-auth-date{
-  margin-left: 1.7rem;
 }
 .mobile-cat-article-title{
   font-size: var(--h3);

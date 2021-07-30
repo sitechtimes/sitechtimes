@@ -31,16 +31,17 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
     height: 23rem;
     width: 35rem;
     border-radius: 1.5rem;
+    margin-right: 4rem;
     }
     .cat-article-img-content{
-        width: 40vw;
-        margin: 0 0 auto 4rem;
+         width: 60%;
+        // margin-left: 4rem;
     }
     .cat-title{
     font-size: 2.5rem;
     font-weight: 700;
-    width: 45rem;
     padding-top: 1rem;
+    max-width: 70rem;
     }
     .cat-labels{
     margin-top: 2rem;
@@ -66,33 +67,17 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             width: 26rem;
             border-radius: 1.5rem;
         }
-        .cat-article-img-content{
-            width: 20%;
-            margin: 0 20rem 0 4rem;
-        }
         .cat-title{
             font-size: var(--h3);
             font-weight: 700;
-             width: 50rem;
             padding-top: 1rem;
+            max-width: 60rem;
         }
         .cat-article-icon {
-            width: 3rem;
             padding-right: 1.5rem;
-            height: 3rem;
-        }
-        .cat-article-authdate {
-            line-height: 2.2rem;
-            padding-top: 1rem;
-        }
-        .cat-labels{
-            margin-top: 0rem;
-            display: flex;
-            flex-direction: column;
-            width: 60rem;
         }
     }
-    @media only screen and (max-width: $mid-screen) {
+    @media only screen and (max-width: $x-small-screen) {
         .cat-article{
             display: flex;
             flex-direction: row-reverse;
@@ -102,32 +87,22 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             height: 14rem;
             width: 35vw;
             border-radius: 1.5rem;
+            //   margin-left: 15rem;
+            margin-right: 0;
         }
-        .cat-article-img-content {
-    width: 20%;
-    margin: 0;
-}
+        .cat-article-image-content{
+            justify-content: flex-end;
+        }
         .cat-title{
             font-size: 1.8rem;
             font-weight: 700;
-            width: 40rem;
             padding-top: 1rem;
+            max-width: 40rem;
         }
         .cat-article-icon {
             width: 3rem;
             padding-right: 1.5rem;
             height: 3rem;
-        }
-        .cat-article-authdate {
-            margin-left: 0rem;
-            line-height: 2.2rem;
-            padding-top: 1rem;
-        }
-        .cat-labels{
-            margin-top: 0rem;
-            display: flex;
-            flex-direction: column;
-            width: 40rem;
         }
     }
 

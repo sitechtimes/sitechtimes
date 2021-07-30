@@ -179,6 +179,11 @@ a:active {
  
 }
    }
+   @media only screen and (max-width: $small-screen){
+     .category-card-component-image{
+       width: 100%;
+     }
+   }
 </style>
 <docs>
 
