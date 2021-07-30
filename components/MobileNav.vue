@@ -11,15 +11,18 @@
     </div>
     <div class="mobile-nav" v-if="show">
       <ul class="mobile-nav-ul">
-        <nuxt-link v-for="category in categories"
-           :key="category"
-           :to="'../' + category">
-          <li class="mobile-nav-li" v-on:click="navFunction()">{{ category }}</li>
+        <nuxt-link
+          v-for="category in categories"
+          :key="category"
+          :to="'../' + category"
+        >
+          <li class="mobile-nav-li" v-on:click="navFunction()">
+            {{ category }}
+          </li>
         </nuxt-link>
       </ul>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -30,13 +33,22 @@ export default {
       spanClass: "",
       show: false,
       bgColor: "",
-      categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
-    }
+      categories: [
+        "covid",
+        "entertainment",
+        "news",
+        "politics",
+        "opinion",
+        "science",
+        "technology",
+        "sports"
+      ]
+    };
   },
   computed: {
-    backgroundColor: function () {
+    backgroundColor: function() {
       return "background-color: " + this.bgColor;
-    },
+    }
   },
   methods: {
     changeMenu: function() {
@@ -62,20 +74,22 @@ export default {
       this.changeMenu();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 .mobile-nav-box {
   display: none;
   padding-top: 5vh;
   width: 100vw;
   max-height: 100vh;
-  overflow: scroll;
+  //overflow: scroll;
   z-index: 1;
   position: fixed;
   top: 0;
+
+  position: relative;
 }
 .mobile-nav {
   width: 100vw;
@@ -92,7 +106,7 @@ export default {
   font-size: 3.5rem;
   margin: 2vh;
   color: var(--white);
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .mobile-nav li:focus {
   padding: 1.5rem;
@@ -112,16 +126,16 @@ export default {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
 }
 #nav-icon4 span {
   display: block;
   position: absolute;
-  height: .5rem;
+  height: 0.5rem;
   width: 100%;
   background: var(--primary-color);
   border-radius: 1rem;
@@ -131,10 +145,10 @@ export default {
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: .25s ease-in-out;
-  -moz-transition: .25s ease-in-out;
-  -o-transition: .25s ease-in-out;
-  transition: .25s ease-in-out;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 #nav-icon4 span:nth-child(1) {
   top: 0.5rem;
@@ -159,7 +173,7 @@ export default {
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
-  left: .8rem;
+  left: 0.8rem;
   top: 0;
 }
 #nav-icon4.open span:nth-child(2) {
@@ -173,7 +187,7 @@ export default {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   top: 3.5rem;
-  left: .8rem;
+  left: 0.8rem;
 }
 @media only screen and (max-width: $mid-screen) {
   .mobile-nav-box {
@@ -181,11 +195,11 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-   #nav-icon4 {
+  #nav-icon4 {
     width: 4rem;
   }
   #nav-icon4 span {
-    height: .4rem;
+    height: 0.4rem;
   }
   #nav-icon4 span:nth-child(1) {
     top: 1rem;

@@ -43,6 +43,11 @@ export default {
     baseURL: ENV_VALUES[process.env.ENV].api
   },
 
+  colorMode: {
+    preference: "system", // default value of $colorMode.preference
+    fallback: "light" // fallback value if not system preference found
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
