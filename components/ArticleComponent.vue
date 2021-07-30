@@ -175,4 +175,33 @@ export default {
   //   line-height: 3.5rem;
   // }
 }
+@media only screen and (max-width: $small-screen) {
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span,
+  .main-article-text-section p,
+  .main-article-text-section p em,
+  .main-article-text-section p strong,
+  .main-article-text-section li em,
+  .main-article-text-section li strong,
+  .main-article-text-section span {
+    font-size: var(--h5);
+    line-height: 3.5rem;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span,
+  .main-article-text-section p,
+  .main-article-text-section p em,
+  .main-article-text-section p strong,
+  .main-article-text-section li em,
+  .main-article-text-section li strong,
+  .main-article-text-section span {
+    font-size: var(--h4);
+  }
+}
 </style>
