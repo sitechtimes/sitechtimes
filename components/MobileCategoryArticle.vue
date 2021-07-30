@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-cat-article">
+  <nuxt-link :to="articleUrl" class="mobile-cat-article">
     <div class="mobile-cat-labels">
    <category-icon :category="category" />
    <author-and-date :author="author" :published="published" class="mobile-auth-date"/>
