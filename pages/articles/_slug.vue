@@ -35,8 +35,12 @@ export default {
 
 <style lang="scss">
 @import '/../assets/variables';
+.ariticle-page,
+#article-component,
+.sidebar-container {
+  overflow-x: hidden;
+}
 .article-page {
-  overflow: hidden;
   margin: auto;
   display: flex;
   flex-direction: row;

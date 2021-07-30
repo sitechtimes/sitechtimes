@@ -2,7 +2,7 @@
   <footer class="footer-container">
       <GetNotifiedSection class="form"/>
       <FooterSocialMedia class="social"/>
-      <FooterNav :categories="categories" class="nav"/>
+      <FooterNav class="nav"/>
   </footer>
 </template>
 

@@ -6,13 +6,13 @@
    </div>
    <a :href="articleUrl" class="mobile-cat-article-title" >{{title}}</a>
 
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
 name: "MobileCategoryArticle",
-props: ["category", "author", "published", "title"]
+props: ["category", "author", "published", "title", "articleUrl"]
 }
 </script>
 

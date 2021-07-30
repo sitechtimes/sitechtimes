@@ -32,7 +32,16 @@ import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
 export default {
   name: "ArticleComponent",
-  props: ["category", "title", "description", "articleText", "articleImg", "articleAlt", "author", "published"],
+  props: {
+    category: String,
+    title: String,
+    description: String,
+    articleText: String,
+    articleImg: String,
+    articleAlt: String,
+    author: String,
+    published: Date
+  },
   components: {
     AuthorAndDateArticle,
     SocialMediaIcons,
@@ -103,22 +112,29 @@ export default {
 .main-article-text h6 strong {
   font-family: var(--article-font);
   font-weight: 400;
+  margin-bottom: 0;
 }
+.main-article-text h1,
 .main-article-text h1 strong {
-  font-size: var(--h1);
+  font-size: 3rem;
 }
+.main-article-text h2
 .main-article-text h2 strong {
-  font-size: var(--h2);
+  font-size: 2.5rem;
 }
+.main-article-text h3,
 .main-article-text h3 strong {
-  font-size: var(--h3);
+  font-size: 2rem;
 }
+.main-article-text h4,
 .main-article-text h4 strong {
-  font-size: var(--h4);
+  font-size: 1.5rem;
 }
+.main-article-text h5,
 .main-article-text h5 strong {
-  font-size: var(--h5);
+  font-size: 1rem;
 }
+.main-article-text h6,
 .main-article-text h6 strong{
   font-size: var(--small-text);
 }
@@ -152,7 +168,7 @@ export default {
   .main-article-text-section li strong,
   .main-article-text-section span {
     font-size: var(--h4);
-    line-height: 4rem;
+    line-height: 3.5rem;
   }
   // .main-article-description {
   //   font-size: var(--h3);
