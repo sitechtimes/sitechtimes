@@ -15,7 +15,7 @@
             class="cat-main-art"
           />
         </div>
-
+<div class="new-penny">
         <div class="cat-sub-one">
           <CategoriesTextBelow
             v-if="articles[1]"
@@ -37,6 +37,7 @@
             :category="category"
             :articleUrl="`/articles/${articles[2].slug}`"
           />
+        </div>
         </div>
       </div>
       <div class="mobile-sub-arts">
@@ -83,9 +84,41 @@
         />
       </div>
       <div class="cat-visible">
-        <h2 class="cat-subhead">More Articles</h2>
-        <MobileCategoryArticle
-          class="mobile-cat"
+         <div class="fireball-in-hell">
+          <CategoryCardComponent
+            v-if="articles[0]"
+            :title="articles[0].title"
+            :author="articles[0].user.name"
+            :published="articles[0].createdAt"
+            :imageUrl="articles[0].imageUrl"
+            :category="category"
+            :articleUrl="`/articles/${articles[0].slug}`"
+            class="cat-main-art"
+          />
+        </div>
+         <div class="temp-fix">
+        <CatArticleTwo
+          class="sub-art"
+          v-if="articles[3]"
+          :title="articles[3].title"
+          :author="articles[3].user.name"
+          :published="articles[3].createdAt"
+          :imageUrl="articles[3].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[3].slug}`"
+        />
+        <CatArticleTwo
+          class="sub-art"
+          v-if="articles[4]"
+          :title="articles[4].title"
+          :author="articles[4].user.name"
+          :published="articles[4].createdAt"
+          :imageUrl="articles[4].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[4].slug}`"
+        />
+        <CatArticleTwo
+          class="sub-art cat-visible"
           v-if="articles[5]"
           :title="articles[5].title"
           :author="articles[5].user.name"
@@ -94,6 +127,19 @@
           :category="category"
           :articleUrl="`/articles/${articles[5].slug}`"
         />
+        <CatArticleTwo
+          class="sub-art"
+          v-for="article in allArticles"
+          :key="article"
+          :category="article.category"
+          :author="article.user.name"
+          :published="article.createdAt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :articleUrl="`/articles/${article.slug}`"
+        />
+      </div>
+        <h2 class="cat-subhead">More Articles</h2> ??
         <MobileCategoryArticle
           class="mobile-cat"
           v-if="articles[6]"
@@ -119,10 +165,20 @@
           v-if="articles[8]"
           :title="articles[8].title"
           :author="articles[8].user.name"
-          :published="articles[7].createdAt"
+          :published="articles[8].createdAt"
           :imageUrl="articles[8].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[8].slug}`"
+        />
+        <MobileCategoryArticle
+          class="mobile-cat"
+          v-if="articles[9]"
+          :title="articles[9].title"
+          :author="articles[9].user.name"
+          :published="articles[9].createdAt"
+          :imageUrl="articles[9].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[9].slug}`"
         />
       </div>
     </div>
@@ -201,37 +257,28 @@ export default {
   margin-bottom: 3rem;
 }
 .all-of-em {
-  height: 60rem;
-  max-width: 90%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 30px;
-  margin-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.new-penny{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
 }
 .snowball-in-hell {
-  grid-area: 1 / 1 / 4 / 3;
+  width: 90%;
 }
-.cat-sub-one {
-  grid-area: 4 / 1 / 7 / 2;
-}
-.cat-sub-two {
-  grid-area: 4 / 2 / 7 / 3;
-}
-.cat-sub-one,
-.cat-sub-two {
-  margin-top: 17rem;
+.cat-sub-one, .cat-sub-two {
+  width: 45%;
+  margin-top: 7rem;
 }
 .mobile-sub-arts {
-  margin-top: 23rem;
+  margin-top: 9rem;
 }
 .sub-art {
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
-  //  width: 100%;
-  //  display: flex;
-  //  justify-content: flex-start;
 }
 .cat-visible {
   display: none;
@@ -248,28 +295,23 @@ export default {
 }
 @media only screen and (max-width: $mid-screen) {
   .border-right {
-    width: 90%;
-    //  margin: auto;
-    margin: 0 auto;
-    margin-top: 10rem;
+    width: 100%;
+// margin-left: 5%;
+    margin-top: 7rem;
     border: none;
   }
-  .all-of-em {
-    grid-column-gap: 20px;
-    grid-row-gap: 5px;
-  }
-  .snowball-in-hell {
+  .new-penny{
     width: 100%;
   }
-  .cat-sub-one,
-  .cat-sub-two {
-    margin-top: 13rem;
-    // width: 90%;
-  }
+  .snowball-in-hell {
+  width: 100%;
+}
+.cat-sub-one, .cat-sub-two {
+  width: 50%;
+}
   .mobile-sub-arts {
     width: 100%;
     margin-left: 0rem;
-    margin-top: 17rem;
   }
   .sub-art {
     display: flex;
@@ -279,36 +321,30 @@ export default {
     margin: 6rem 0 10rem 0;
   }
 }
-@media only screen and (max-width: 670px) {
-  .border-right {
-    width: 103%;
-    //  margin: auto;
-    //       margin-left: 0;
-    //  margin-top: 10rem;
-    // margin: 10rem 0;
-    margin: auto;
-    margin-top: 10rem;
-    border: none;
-    padding: 0 2rem 0 2rem;
-  }
-  //  .all-of-em{
-  //    display: flex;
-  //  }
-  .snowball-in-hell {
-    width: 100%;
-  }
-  .cat-sub-one,
-  .cat-sub-two {
-    margin-top: 0;
-  }
-  .mobile-sub-arts {
-    //  width: 100%;
-    margin-top: 8rem;
-  }
+@media only screen and (max-width: $small-screen) {
   .seymour {
     margin: 4rem 0 10rem 0;
   }
 }
 @media only screen and (max-width: $x-small-screen) {
+  .border-right{
+    width: 95%;
+    margin: auto;
+  }
+.all-of-em,.mobile-sub-arts{
+  display: none;
+}
+.cat-visible{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.fireball-in-hell {
+  width: 100%;
+}
+.temp-fix{
+  width: 100%;
+  justify-content: flex-end;
+}
 }
 </style>

@@ -4,11 +4,11 @@
     <div class="category-flex-col category-card-component-text-container">
       <div class="category-flex-row category-card-component-category-author-date">
         <category-icon :category="category" class="category-card-component-category" />
-        <author-and-date
+        <!-- <author-and-date
           :author="author"
           :published="this.published"
           class="category-card-component-author-and-date"
-        />
+        /> -->
       </div>
       <div class="category-text-overflow category-card-component-title" :style="getClampSize">
         {{ title }}
@@ -177,22 +177,6 @@ a:active {
 .category-card-component-image{
   width: 95%;
  
-}
-   }
-   @media only screen and (max-width: 670px) {
-.category-card-component-image{
-   width: 90%;
-}
-.category-card-component-text-container {
-  padding: 20% 10% 0 5%;
-}
-   }
-   @media only screen and (max-width: $x-small-screen) {
-.category-card-component-image{
-   width: 85%;
-}
-.category-card-component-text-container {
-  padding: 20% 10% 0 5%;
 }
    }
 </style>

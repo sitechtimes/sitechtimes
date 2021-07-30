@@ -6,7 +6,7 @@
         <div class="cat-article-img-content">
             <div class="cat-labels">
                 <category-icon class="cat-article-icon" :category="category"></category-icon>
-                <author-and-date class="cat-article-authdate" :author="author" :published="published" />
+                <!-- <author-and-date class="cat-article-authdate" :author="author" :published="published" /> -->
             </div>
             <h3 class="cat-title">{{title}}</h3>
         </div>
@@ -92,18 +92,16 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             width: 60rem;
         }
     }
-    @media only screen and (max-width: 670px) {
+    @media only screen and (max-width: $mid-screen) {
         .cat-article{
             display: flex;
             flex-direction: row-reverse;
-            margin: auto
+            margin: auto;
         }
         .cat-article-img{
             height: 14rem;
             width: 35vw;
             border-radius: 1.5rem;
-            //   margin-left: 15rem;
-            margin-right: 0;
         }
         .cat-article-img-content {
     width: 20%;
