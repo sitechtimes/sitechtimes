@@ -1,16 +1,22 @@
 <template>
   <div class="color-toggle-switch">
+    <!-- <button
+      class="color-toggle-button"
+      @click="$colorMode.preference = 'system'"
+    >
+      System
+    </button> -->
     <button
       class="color-toggle-button"
       @click="
         changeColorMode();
         $colorMode.preference = colorMode;
       "
-      @tap="
-        changeColorMode();
-        $colorMode.preference = colorMode;
-      "
     ></button>
+    <button class="color-toggle-dropdown-button" @click="!toggleDropdown">
+      d
+    </button>
+    <h1 v-show="toggleDropdown">toggledropdown true</h1>
     <!-- <label class="switch">
           <input
             type="checkbox"
@@ -21,7 +27,14 @@
           />
           <span class="slider round"></span>
         </label> -->
-    <p class="test">colorMode: {{ colorMode }}</p>
+    <p class="test">$colorMode.preference: {{ $colorMode.preference }}</p>
+    <p
+      class="test"
+      style="right: 25rem"
+      v-if="$colorMode.preference === 'system'"
+    >
+      (<i>{{ $colorMode.value }}</i> mode detected)
+    </p>
     <!-- <Theme v-if="openTheme" /> -->
   </div>
 </template>
@@ -32,15 +45,19 @@ import Theme from "./Theme.vue";
 export default {
   name: "ColorModeToggleTemp",
   components: { Theme },
-  colorMode: "system",
+  //colorMode: "system",
   data() {
     return {
-      colorMode: ""
+      colorMode: "",
+      toggleDropdown: false
     };
   },
-  created() {
+  /*   created() {
     this.colorMode = "system";
-  },
+  }, */
+  /*   updated() {
+    this.colorMode = "system";
+  },  */
   methods: {
     changeColorMode: function() {
       /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
@@ -58,7 +75,7 @@ export default {
         //console.log("contains dark-mode");
         this.colorMode = "light";
       } else {
-        console.log("contains neither light-mode or dark-mode");
+        alert("Current color mode is neither light or dark");
       }
     }
   }
@@ -72,7 +89,8 @@ export default {
   font-size: 1.6rem;
   padding-left: 1rem;
   color: var(--on-background);
-  //position: absolute;
+  position: absolute;
+  top: 7rem;
 }
 
 .color-toggle-switch {
@@ -82,12 +100,19 @@ export default {
 }
 
 .color-toggle-button {
-  font-size: var(--h5);
+  border: 0.2rem solid var(--on-background);
+  border-radius: 8px;
+  /* padding: 14px; */
+  cursor: pointer;
+  background-color: var(--background-color);
   background-image: var(--button-icon);
-  background-size: contain;
+  background-size: 2rem;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 3rem;
   width: 3rem;
 }
+/* MAYBE ADD HOVER EFFECT? */
 
 /* :root {
    --switch-width: 5rem;
