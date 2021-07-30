@@ -167,12 +167,23 @@ export default {
   .main-article-text-section li em,
   .main-article-text-section li strong,
   .main-article-text-section span {
+    font-size: 1.7rem;
+    line-height: 3rem;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span,
+  .main-article-text-section p,
+  .main-article-text-section p em,
+  .main-article-text-section p strong,
+  .main-article-text-section li em,
+  .main-article-text-section li strong,
+  .main-article-text-section span {
     font-size: var(--h4);
     line-height: 3.5rem;
   }
-  // .main-article-description {
-  //   font-size: var(--h3);
-  //   line-height: 3.5rem;
-  // }
 }
 </style>

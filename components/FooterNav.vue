@@ -36,7 +36,6 @@ export default {
 }
 .footer-nav {
   width: 36rem;
-  margin: 0 auto;
 }
 .footer-nav-ul {
   display: flex;
@@ -58,11 +57,11 @@ export default {
 .footer-nav-ul li:hover {
   color: var(--accent-color);
 }
-@media only screen and (max-width: $x-small-screen) {
+ @media only screen and (max-width: $small-screen) {
   .footer-nav {
-    margin: 5.1rem auto;
+    margin: 3rem auto;
   }
-}
+ }
 </style>
 
 <!--<docs>-->
