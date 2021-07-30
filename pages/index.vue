@@ -183,7 +183,33 @@
         />
       </section>
       <h3 class="section-title">Opinion</h3>
-      <OpinionSlider :articles="opinion"/>
+      <section class="op-section desktop-view">
+        <TextBelowArticlePreviewHome 
+        v-for="article in news" 
+        :key="article"
+        :articleUrl="'/articles/' + article.slug"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :category="article.category"
+        :imageAlt="article.imageAlt"
+        :title="article.title"
+        :imageUrl="article.imageUrl"
+        />
+      </section>
+      <section id="opinion-mobile" class="op-section mobile-view">
+        <CategoryArticle
+        v-for="article in news" 
+        :key="article"
+        :articleUrl="'/articles/' + article.slug"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :category="article.category"
+        :imageAlt="article.imageAlt"
+        :title="article.title"
+        :imageUrl="article.imageUrl"
+        :class="'news-' + article.position + '-mobile'"
+        />
+      </section>
       </div>
       <div class="darksection">
       <div class="global-container">
@@ -315,6 +341,13 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 20px;
+}.op-section {
+  height: auto;
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
 }
 .politics-section {
   height: 40rem;
@@ -415,6 +448,11 @@ export default {
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 20px; 
   }
+    #opinion-mobile {
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 20px; 
+  }
   .news-main-mobile {
     grid-area: 1 / 1 / 2 / 2;
   }
@@ -511,9 +549,6 @@ export default {
   }
   .entertainment-detail-mobile {
     grid-area: 5 / 5 / 9 / 9;
-  }
-  .global-container {
-    width: 400px;
   }
 }
 
