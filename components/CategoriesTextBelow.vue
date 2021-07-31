@@ -3,7 +3,7 @@
   <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
        <div class="category-info">
             <category-icon :category="category" class="category-cat"/>
-            <author-and-date :author="author" :published="published" class="category-data" />
+            <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
        </div>
        <a :href="articleUrl" class="category-title">{{title}}</a>
    </div>
@@ -35,17 +35,18 @@ export default {
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
-   width: 46.1rem;
-   height: 37.1rem;
-
+  //  width: 46.1rem;
+  //  height: 37.1rem;
+  width: 100%;
+height: 100%;
 }
 .category-info {
   display: flex;
-  width: 42.2rem;
+  margin-top: 1rem;
 }
-.category-image {
-  width: 100%;
-  height: 21.7rem;
+.article-image {
+   background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 1.5rem;
 }
 .category-cat {
@@ -63,11 +64,18 @@ export default {
 }
 @import "../assets/variables";
 @media only screen and (max-width: $mid-screen){
-.category-image{
+.article-image{
     width: 90%;
-    // height: 20rem;
 }
 }
+//  @media only screen and (max-width: 670px){
+//  .article-image{
+//      width: 80%;
+//  }
+// //  .category-cat{
+
+// //  }
+//  }
 @media only screen and (max-width: $x-small-screen) {
   .category-cat {
     margin-right: 1rem;
@@ -78,7 +86,7 @@ export default {
   .category-info {
     width: 35rem;
   }
-  .category-image {
+  .article-image {
     width: 37rem;
   }
   .category-title {

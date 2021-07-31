@@ -1,10 +1,10 @@
 <template>
-  <nuxt-link :to="articleUrl" class="cat-article">
-    <div class="cat-labels">
+  <nuxt-link :to="articleUrl" class="mobile-cat-article">
+    <div class="mobile-cat-labels">
    <category-icon :category="category" />
-   <author-and-date :author="author" :published="published" class="auth-date"/>
+   <!-- <author-and-date :author="author" :published="published" class="mobile-auth-date"/> -->
    </div>
-   <a :href="articleUrl" class="cat-article-title" >{{title}}</a>
+   <a :href="articleUrl" class="mobile-cat-article-title" >{{title}}</a>
 
   </nuxt-link>
 </template>
@@ -17,20 +17,18 @@ props: ["category", "author", "published", "title", "articleUrl"]
 </script>
 
 <style>
-.cat-article{
+.mobile-cat-article{
       border-bottom: .3rem solid var(--primary-color);
       margin-bottom: 2rem;
        display: inline-block;
+       width: 90%;
 }
-.cat-labels{
+.mobile-cat-labels{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.auth-date{
-  margin-left: 1.7rem;
-}
-.cat-article-title{
+.mobile-cat-article-title{
   font-size: var(--h3);
   font-weight: 700;
 }
