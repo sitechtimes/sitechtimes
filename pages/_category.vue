@@ -121,8 +121,8 @@ export default {
 
   .border-right {
     border-radius: 0.1rem;
-    border-right: solid var(--primary-color);
-    width: 85%;
+    border-right: none;
+    width: 100%;
   }
 }
 .cat-page-title {
