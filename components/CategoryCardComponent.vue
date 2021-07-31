@@ -1,19 +1,34 @@
 <template>
-  <nuxt-link :to="articleUrl" class="category-card-component" :style="getFontSize">
-    <div class="category-card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <div class="category-flex-col category-card-component-text-container">
-      <div class="category-flex-row category-card-component-category-author-date">
-        <category-icon :category="category" class="category-card-component-category" />
-        <!-- <author-and-date
+  <nuxt-link
+    :to="articleUrl"
+    class="category-card-component"
+    :style="getFontSize"
+  >
+    <div
+      class="category-card-component-image"
+      :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
+    >
+      <div class="category-flex-col category-card-component-text-container">
+        <div
+          class="category-flex-row category-card-component-category-author-date"
+        >
+          <category-icon
+            :category="category"
+            class="category-card-component-category"
+          />
+          <!-- <author-and-date
           :author="author"
           :published="this.published"
           class="category-card-component-author-and-date"
         /> -->
+        </div>
+        <div
+          class="category-text-overflow category-card-component-title"
+          :style="getClampSize"
+        >
+          {{ title }}
+        </div>
       </div>
-      <div class="category-text-overflow category-card-component-title" :style="getClampSize">
-        {{ title }}
-      </div>
-    </div>
     </div>
   </nuxt-link>
 </template>
@@ -116,6 +131,7 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 100%;
 }
 .category-card-component-image {
   background-repeat: no-repeat;
@@ -136,12 +152,16 @@ a:active {
   padding: 32% 0 5% 5%;
   height: 100%;
   margin: 0 auto;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
   border-radius: 1.5rem;
 }
 .category-card-component-category-author-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
 .category-card-component-category {
@@ -171,21 +191,19 @@ a:active {
   color: var(--white);
 }
 .category-dropshadow {
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
 @media only screen and (max-width: $mid-screen) {
-.category-card-component-image{
-  width: 95%;
- 
+  .category-card-component-image {
+    width: 95%;
+  }
 }
-   }
-   @media only screen and (max-width: $small-screen){
-     .category-card-component-image{
-       width: 100%;
-     }
-   }
+@media only screen and (max-width: $small-screen) {
+  .category-card-component-image {
+    width: 100%;
+  }
+}
 </style>
 <docs>
 
 </docs>
-
