@@ -1,6 +1,6 @@
 <template>
    <div class="category-text-below-preview">
-  <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
+  <a :href="articleUrl" class="category-link"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
        <div class="category-info">
             <category-icon :category="category" class="category-cat"/>
             <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
@@ -68,14 +68,6 @@ height: 100%;
     width: 90%;
 }
 }
-//  @media only screen and (max-width: 670px){
-//  .article-image{
-//      width: 80%;
-//  }
-// //  .category-cat{
-
-// //  }
-//  }
 @media only screen and (max-width: $x-small-screen) {
   .category-cat {
     margin-right: 1rem;

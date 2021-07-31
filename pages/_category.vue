@@ -285,6 +285,9 @@ export default {
     margin-top: 7rem;
     border: none;
   }
+  .trying-two{
+    display: inline-block;
+  }
   .two-cat-articles{
     width: 100%;
   }
@@ -293,6 +296,7 @@ export default {
 }
 .cat-sub-one, .cat-sub-two {
   width: 50%;
+  justify-content: space-between;
 }
   .mobile-sub-arts {
     width: 100%;
@@ -314,7 +318,6 @@ export default {
 @media only screen and (max-width: $x-small-screen) {
   .border-right{
     width: 95%;
-    margin: auto;
   }
 .three-cat-articles,.mobile-sub-arts{
   display: none;
