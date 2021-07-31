@@ -231,9 +231,6 @@ export default {
   top: 3.5rem;
   left: .8rem;
 }
-#nav-icon4.open .mobile-nav-box {
-  position: fixed;
-}
 @media only screen and (max-width: $mid-screen) {
   .mobile-nav-box {
     display: block;
