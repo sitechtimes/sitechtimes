@@ -8,7 +8,7 @@
       :src=articleImg
       :alt=articleAlt
     />
-    <section class="main-article-metadata">
+    <div class="main-article-metadata">
       <author-and-date-article
         class="article-author-and-date"
         :author=author
@@ -18,10 +18,10 @@
         <social-media-icons />
         <share-icon />
       </div>
-    </section>
-    <section class="main-article-text-section main-article-text" v-html="articleText">
+    </div>
+    <div class="main-article-text-section main-article-text" v-html="articleText">
       <!-- <p class="main-article-text">{{ articleText }}</p> -->
-    </section>
+    </div>
   </div>
 </template>
 
