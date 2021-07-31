@@ -1,6 +1,6 @@
 <template>
    <nuxt-link :to="articleUrl" class="text-below-preview-science">
-       <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="science-image">
+       <img :src="imageUrl" :alt="imageAlt" class="science-image">
        <div class="science-info">
             <category-icon :category="category" class="science-cat"/>
             <author-and-date :author="author" :published="published" class="science-data" />
@@ -15,12 +15,12 @@
 export default {
   name: "TextBelowSkicience",
   props: {
-    author: String, 
-    articleUrl: String, 
-    published: Date, 
-    category: String, 
-    imageUr: String, 
-    imageAlt: String, 
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
     title: String,
   }
 };

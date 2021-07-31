@@ -1,6 +1,6 @@
 <template>
    <nuxt-link :to="articleUrl" class="text-below-preview-opinion">
-       <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="opinion-image">
+       <img :src="imageUrl" :alt="imageAlt" class="opinion-image">
        <div class="opinion-info">
             <category-icon :category="category" class="opinion-cat"/>
             <author-and-date :author="author" :published="published" class="opinion-data" />
@@ -15,12 +15,12 @@
 export default {
   name: "TextBelowOpinion",
   props: {
-    author: String, 
-    articleUrl: String, 
-    published: Date, 
-    category: String, 
-    imageUr: String, 
-    imageAlt: String, 
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
     title: String,
   }
 };
