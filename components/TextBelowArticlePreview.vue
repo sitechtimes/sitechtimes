@@ -1,6 +1,6 @@
 <template>
    <nuxt-link :to="articleUrl" class="text-below-preview-article">
-       <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
+       <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
        <h5 class="article-info">
             <category-icon :category="category" class="article-cat"/>
             <author-and-date :author="author" :published="published" class="article-data" />
@@ -15,12 +15,12 @@
 export default {
   name: "TextBelowArticlePreview",
   props: {
-    author: String, 
-    articleUrl: String, 
-    published: Date, 
-    category: String, 
-    imageUr: String, 
-    imageAlt: String, 
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
     title: String,
   }
 };
