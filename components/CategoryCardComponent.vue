@@ -1,19 +1,34 @@
 <template>
-  <nuxt-link :to="articleUrl" class="category-card-component" :style="getFontSize">
-    <div class="category-card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <div class="category-flex-col category-card-component-text-container">
-      <div class="category-flex-row category-card-component-category-author-date">
-        <category-icon :category="category" class="category-card-component-category" />
-        <!-- <author-and-date
+  <nuxt-link
+    :to="articleUrl"
+    class="category-card-component"
+    :style="getFontSize"
+  >
+    <div
+      class="category-card-component-image"
+      :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
+    >
+      <div class="category-flex-col category-card-component-text-container">
+        <div
+          class="category-flex-row category-card-component-category-author-date"
+        >
+          <category-icon
+            :category="category"
+            class="category-card-component-category"
+          />
+          <!-- <author-and-date
           :author="author"
           :published="this.published"
           class="category-card-component-author-and-date"
         /> -->
+        </div>
+        <div
+          class="category-text-overflow category-card-component-title"
+          :style="getClampSize"
+        >
+          {{ title }}
+        </div>
       </div>
-      <div class="category-text-overflow category-card-component-title" :style="getClampSize">
-        {{ title }}
-      </div>
-    </div>
     </div>
   </nuxt-link>
 </template>
@@ -24,70 +39,70 @@ export default {
   props: {
     author: String,
     articleUrl: String,
-    published: Date,
+    published: String,
     category: String,
     imageUrl: String,
     imageAlt: String,
     title: String,
     size: {
       default: "medium",
-      type: String
+      type: String,
     },
     clampSize: {
       default: "mediumClamp",
-      type: String
-    }
+      type: String,
+    },
   },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize
+        "--customFontSize": fontSize,
       });
       const small = createFontSize({
         //create size here
-        fontSize: "2.827rem"
+        fontSize: "2.827rem",
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "3.998rem"
+        fontSize: "3.998rem",
       });
       const large = createFontSize({
-        fontSize: "5.653rem"
+        fontSize: "5.653rem",
       });
       const fontSizes = {
         //list of sizes just names
         small,
         medium, //default
-        large
+        large,
       };
       return fontSizes[this.size];
     },
 
     getClampSize() {
       const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize
+        "--customClampSize": clampSize,
       });
       const smallClamp = createClampSize({
         //create size here
-        clampSize: "2"
+        clampSize: "2",
       });
       const mediumClamp = createClampSize({
         //create size here
-        clampSize: "4"
+        clampSize: "4",
       });
       const largeClamp = createClampSize({
-        clampSize: "5"
+        clampSize: "5",
       });
       const clampSizes = {
         //list of sizes just names
         smallClamp,
         mediumClamp, //default
-        largeClamp
+        largeClamp,
       };
       return clampSizes[this.clampSize];
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -136,12 +151,16 @@ a:active {
   padding: 32% 0 5% 5%;
   height: 100%;
   margin: 0 auto;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
   border-radius: 1.5rem;
 }
 .category-card-component-category-author-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
 .category-card-component-category {
@@ -171,19 +190,18 @@ a:active {
   color: var(--white);
 }
 .category-dropshadow {
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
 @media only screen and (max-width: $mid-screen) {
-.category-card-component-image{
-  width: 95%;
- 
+  .category-card-component-image {
+    width: 95%;
+  }
 }
-   }
-   @media only screen and (max-width: $small-screen){
-     .category-card-component-image{
-       width: 100%;
-     }
-   }
+@media only screen and (max-width: $small-screen) {
+  .category-card-component-image {
+    width: 100%;
+  }
+}
 </style>
 <docs>
 
