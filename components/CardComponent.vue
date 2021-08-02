@@ -91,7 +91,7 @@ export default {
 
 <style lang="scss">
 :root {
-    --fontSmall: 2.827rem;
+  --fontSmall: 2.827rem;
   --fontMedium: 3.998rem;
   --fontLarge: 5.653rem;
 }
@@ -175,11 +175,20 @@ a:active {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
 
+@media only screen and (max-width: $small-screen) {
+    :root{
+      --fontSmall: 2rem;
+      --fontMedium: 2.5rem;
+      --fontLarge: 2.7rem;
+    }
+  
+}
+
 @media only screen and (max-width: $x-small-screen) {
     :root{
-      --fontSmall: 2.7rem;
-      --fontMedium: 2.7rem;
-      --fontLarge: 2.8rem;
+      --fontSmall: 1.7rem;
+      --fontMedium: 2rem;
+      --fontLarge: 2.5rem;
     }
   
 }

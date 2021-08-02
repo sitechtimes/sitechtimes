@@ -28,7 +28,7 @@
           :title="homepages[1].title"
           :imageUrl="homepages[1].imageUrl"
           class="trending-sub"
-          size="small"
+          size="medium"
         />
         <CardComponent
           v-if="homepages[2]"
@@ -40,10 +40,10 @@
           :title="homepages[2].title"
           :imageUrl="homepages[2].imageUrl"
           class="trending-detail"
-          size="small"
+          size="medium"
         />
       </section>
-      
+
       <h3 class="section-title">News</h3>
       <section class="news-section desktop-view">
         <TextBelowArticlePreviewHome 
@@ -308,6 +308,8 @@ export default {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
+
+
 .news-section {
   height: auto;
   padding-bottom: 3rem;
@@ -388,21 +390,20 @@ export default {
 }
 @media only screen and (max-width: $small-screen) {
   .trending-main {
-  grid-area: 1 / 1 / 8 / 2;
+  grid-area: 1 / 1 / 2 / 3;
 }
 .trending-sub {
-  grid-area: 8 / 1 / 13 / 2;
+  grid-area: 2 / 1 / 3 / 2;
 }
 .trending-detail {
-  grid-area: 13 / 1 / 18 / 2;
+  grid-area: 2 / 2 / 3 / 3;
 }
 .trending-section {
-  height: 80rem;
+  height: 100vw;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(17, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 10px;
 }
     .science-section {
     height: 40rem;
