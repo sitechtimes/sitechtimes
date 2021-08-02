@@ -100,7 +100,7 @@
         </div>
          <div class="mobile-cat-sub-arts">
         <CatArticleTwo
-          class="sub-art"
+          class="mobile-sub-art"
           v-if="articles[1]"
           :title="articles[1].title"
           :author="articles[1].user.name"
@@ -110,7 +110,7 @@
           :articleUrl="`/articles/${articles[1].slug}`"
         />
         <CatArticleTwo
-          class="sub-art"
+          class="mobile-sub-art"
           v-if="articles[2]"
           :title="articles[2].title"
           :author="articles[2].user.name"
@@ -120,7 +120,7 @@
           :articleUrl="`/articles/${articles[2].slug}`"
         />
       </div>
-     <hr class="break" size=".6rem">
+     <div class="break"></div>
         <h2 class="cat-subhead">More Articles</h2> 
          <MobileCategoryArticle
           class="mobile-cat"
@@ -285,9 +285,6 @@ export default {
     margin-top: 7rem;
     border: none;
   }
-  .trying-two{
-    display: inline-block;
-  }
   .two-cat-articles{
     width: 100%;
   }
@@ -334,14 +331,18 @@ export default {
   width: 100%;
   justify-content: flex-end;
 }
-.sub-art{
+.mobile-sub-art{
   width: 100%;
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
 }
 .break{
 width: 100%;
-color: var(--primary-color);
+background-color: var(--primary-color);
+height: 0.6rem;
+border-radius: 0.3rem;
+margin-top: 2rem;
+margin-bottom: 2rem;
 }
 .cat-subhead{
   margin-top: 2rem;
