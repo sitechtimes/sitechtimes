@@ -32,6 +32,7 @@ export default {
     } catch (e) {
       await this.$router.push("/");
     }
-  }
+  },
+  methods: {}
 };
 </script>

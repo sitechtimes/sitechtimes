@@ -1,11 +1,5 @@
 <template>
-  <div class="color-toggle-switch">
-    <!-- <button
-      class="color-toggle-button"
-      @click="$colorMode.preference = 'system'"
-    >
-      System
-    </button> -->
+  <div class="color-toggle-switch" @mouseleave="dropdownFalse">
     <button
       class="color-toggle-button"
       @click="
@@ -13,20 +7,39 @@
         $colorMode.preference = colorMode;
       "
     ></button>
-    <button class="color-toggle-dropdown-button" @click="toggleDropdown">
+    <button
+      class="color-toggle-dropdown-button"
+      id="color-toggle-dropdown-button"
+      @mouseover="dropdownTrue"
+      @click="toggleDropdown"
+    >
       <i class="down-arrow"></i>
     </button>
-    <Theme v-if="dropdown" />
+    <Theme
+      id="color-theme-dropdown"
+      v-if="dropdown"
+      @mouseover.native="dropdownTrue"
+      @mouseleave.native="dropdownFalse"
+    />
+    <!--     <Theme
+      id="color-theme-dropdown"
+      v-if="dropdown"
+      tabindex="0"
+      @mouseover="handleFocus"
+      @mouseleave="handleFocusOut"
+    /> -->
+
     <!-- <label class="switch">
-          <input
-            type="checkbox"
-            v-model="colorMode"
-            true-value="light"
-            false-value="dark"
-            @click="$colorMode.preference = colorMode"
-          />
-          <span class="slider round"></span>
-        </label> -->
+      <input
+        type="checkbox"
+        v-model="colorMode"
+        true-value="light"
+        false-value="dark"
+        @click="$colorMode.preference = colorMode"
+      />
+      <span class="slider round"></span>
+    </label> -->
+
     <p class="test">$colorMode.preference: {{ $colorMode.preference }}</p>
     <p
       class="test"
@@ -80,7 +93,37 @@ export default {
     },
     toggleDropdown: function() {
       this.dropdown = !this.dropdown;
+    },
+    dropdownTrue() {
+      this.dropdown = true;
+    },
+    dropdownFalse() {
+      this.dropdown = false;
     }
+    /*     closeDropdown: function() {
+      document.addEventListener("click", event => {
+        const dropdown = document.getElementById("color-theme-dropdown");
+        const dropdownButton = document.getElementById(
+          "color-toggle-dropdown-button"
+        );
+        let targetEl = event.target; //clicked element
+        do {
+          if (targetEl == dropdown || targetEl !== dropdownButton) {
+            return;
+          }
+          targetEl = targetEl.parentNode;
+        } while (targetEl);
+        this.dropdown = false;
+        alert("clicked ouside");
+      });
+    } */
+    /*     handleFocus() {
+      alert("focus in");
+    },
+    handleFocusOut() {
+      this.dropdown == false;
+      alert("handleFocusOut");
+    } */
   }
 };
 </script>
@@ -97,15 +140,17 @@ export default {
 }
 
 .color-toggle-switch {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-end;
   z-index: 9;
+
+  float: right;
 }
 
 .color-toggle-button {
   border: 0.2rem solid var(--on-background);
   border-radius: 0.8rem 0 0 0.8rem;
-  /* padding: 14px; */
+  //padding: 14px;
   cursor: pointer;
   background-color: var(--background-color);
   background-image: var(--button-icon);
@@ -114,6 +159,8 @@ export default {
   background-repeat: no-repeat;
   height: 4rem;
   width: 4rem;
+
+  outline: none;
 }
 
 .color-toggle-dropdown-button {
@@ -140,31 +187,30 @@ export default {
 
 /* MAYBE ADD HOVER EFFECT? */
 
-/* :root {
-   --switch-width: 5rem;
+:root {
+  --switch-width: 5rem;
   --switch-height: 2.5rem;
   --slider-diameter: 1.7rem;
-  --slider-spacing: calc((var(--switch-height) - var(--slider-diameter)) / 2); 
-} */
-/* The switch - the box around the slider */
-/* .switch {
+  --slider-spacing: calc((var(--switch-height) - var(--slider-diameter)) / 2);
+}
+.switch {
   position: relative;
   display: inline-block;
   width: 5rem;
   height: 2.5rem;
 
   margin-top: 1rem;
-} */
+}
 
-/* Hide default HTML checkbox */
-/* .switch input {
+//Hide default HTML checkbox
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
-} */
+}
 
-/* The slider */
-/* .slider {
+//The slider
+.slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -173,9 +219,9 @@ export default {
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
-} */
+}
 
-/* .slider:before {
+.slider:before {
   position: absolute;
   content: "";
   height: var(--slider-diameter);
@@ -188,30 +234,30 @@ export default {
 
 .slider:before {
   background-color: var(--background-color);
-} */
-/* input:checked + .slider {
+}
+input:checked + .slider {
   background-color: #2196f3;
 }
 
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
-} */
+}
 
-/* input:checked + .slider:before {
+input:checked + .slider:before {
   transform: translateX(
     calc(
       var(--switch-width) -
         calc(2 * ((var(--slider-diameter) / 2) + var(--slider-spacing)))
     )
   );
-} */
+}
 
-/* Rounded sliders */
-/* .slider.round {
+//Rounded sliders
+.slider.round {
   border-radius: 3rem;
 }
 
 .slider.round:before {
   border-radius: 50%;
-} */
+}
 </style>
