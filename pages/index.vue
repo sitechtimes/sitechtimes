@@ -1,11 +1,9 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-    <!-- <NuxtLink class="block" v-for="homepage in homepages" :to="`/articles/${homepage.slug}`" :key="homepage.slug">
-    {{ homepage.title }}
-    </NuxtLink> -->
+
       <h3 class="section-title">Trending Articles</h3>
-      <section class="trending-section" >
+      <section class="trending-section">
           <CardComponent
           class="trending-main cardquery"
           size="medium"
@@ -44,73 +42,38 @@
         />
       </section>
 
-      <section class="grid-article-container">
-        <GridArticleComponent 
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[1]"
-          :articleUrl="'/articles/' + politics[1].slug"
-          :author="politics[1].user.name"
-          :published="politics[1].createdAt"
-          :category="politics[1].category"
-          :imageAlt="politics[1].imageAlt"
-          :title="politics[1].title"
-          :imageUrl="politics[1].imageUrl"
-          :class="'politics-' + politics[1].position + '-mobile'"
 
-        />
+      <section class="grid-article-container">
         <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
+          v-if="homepages[3]"
+          v-for="article in homepages.slice(3, 6)"
+          :articleUrl="'/articles/' + article.slug"
+          :author="article.user.name"
+          :published="article.createdAt"
+          :category="article.category"
+          :imageAlt="article.imageAlt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :class="'politics-' + article.position + '-mobile'"
         />
-        <GridArticleComponent 
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
+      </section>
+
+      <section>
+        <DuoArticleContainer v-if="homepages[7]" :articles="homepages.slice(7, 9)"/>
+      </section>
+
+      <section class="grid-article-container">
         <GridArticleComponent
-          v-if="politics[1]"
-          :articleUrl="'/articles/' + politics[1].slug"
-          :author="politics[1].user.name"
-          :published="politics[1].createdAt"
-          :category="politics[1].category"
-          :imageAlt="politics[1].imageAlt"
-          :title="politics[1].title"
-          :imageUrl="politics[1].imageUrl"
-          :class="'politics-' + politics[1].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
+          v-for="article in homepages.slice(10, 20)"
+          v-if="homepages[0]"
+          :articleUrl="'/articles/' + article.slug"
+          :author="article.user.name"
+          :published="article.createdAt"
+          :category="article.category"
+          :imageAlt="article.imageAlt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :class="'politics-' + article.position + '-mobile'"
         />
       </section>
       </div>
@@ -118,44 +81,22 @@
 </template>
 
 <script>
+import CardComponent from "../components/CardComponent";
+import DuoArticleContainer from "../components/DuoArticleContainer";
+import GridArticleComponent from "../components/GridArticleComponent";
 export default {
+  components: {
+    DuoArticleContainer, CardComponent, GridArticleComponent
+  },
   data() {
     return {
       homepages: [],
       isMobile: false,
-      news: [],
-      politics: [],
-      entertainment: [],
-      opinion: [],
-      science: [],
-      activities: [],
     };
   },
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
-    console.log(this.homepages);
-
-    this.news = this.homepages.filter((article) => article.category === 'covid');
-    this.politics = this.homepages.filter((article) => article.category === 'entertainment');
-    console.log(this.politics);
-    this.entertainment = this.homepages.filter((article) => article.category === 'entertainment');
-    this.opinion = this.homepages.filter((article) => article.category === 'entertainment');
-    this.science = this.homepages.filter((article) => article.category === 'science');
-    this.activities = this.homepages.filter((article) => article.category === 'world');
-
-
-    //const entertainment = await this.$axios.get("/articles/homepage?category=news");
-    //this.entertainment = entertainment.data;
-
-
-  },
-  computed: {
-    categoryFilter: function() {
-      return _.pickBy
-    }
-  },
-  methods: {
   }
 }
 </script>
@@ -240,7 +181,7 @@ export default {
 .science-section {
   height: 75rem;
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 .science-main {
@@ -268,7 +209,7 @@ export default {
   .science-section {
   height: 50rem;
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 
@@ -294,13 +235,13 @@ export default {
     .science-section {
     height: 40rem;
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
   }
   #news-mobile {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 20px; 
+    grid-row-gap: 20px;
   }
   .news-main-mobile {
     grid-area: 1 / 1 / 2 / 2;
@@ -313,9 +254,9 @@ export default {
   }
   #politics-mobile {
     height: 80rem;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
-    grid-row-gap: 20px; 
+    grid-row-gap: 20px;
   }
   .politics-main-mobile {
     grid-area: 1 / 1 / 4 / 2;
@@ -329,10 +270,10 @@ export default {
   #entertainment-mobile {
     height: 80rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 20px; 
+    grid-row-gap: 20px;
   }
   .entertainment-main-mobile {
     grid-area: 1 / 1 / 4 / 3;
@@ -344,9 +285,9 @@ export default {
     grid-area: 4 / 2 / 7 / 3;
   }
   #activities-mobile {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 20px; 
+    grid-row-gap: 20px;
   }
   .desktop-view {
     display: none;
@@ -359,7 +300,7 @@ export default {
   .science-section {
   height: 40rem;
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 }
