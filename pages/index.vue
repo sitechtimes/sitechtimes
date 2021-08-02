@@ -56,120 +56,15 @@
           :class="'politics-' + politics[0].position + '-mobile'"
         />
         <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-      </section>
-      <section class="grid-article-container">
-        <GridArticleComponent 
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-      </section>
-      <section class="grid-article-container">
-        <GridArticleComponent 
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-      </section>
-      <section class="grid-article-container">
-        <GridArticleComponent 
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
-        />
-        <GridArticleComponent
-          v-if="politics[0]"
-          :articleUrl="'/articles/' + politics[0].slug"
-          :author="politics[0].user.name"
-          :published="politics[0].createdAt"
-          :category="politics[0].category"
-          :imageAlt="politics[0].imageAlt"
-          :title="politics[0].title"
-          :imageUrl="politics[0].imageUrl"
-          :class="'politics-' + politics[0].position + '-mobile'"
+          v-if="politics[1]"
+          :articleUrl="'/articles/' + politics[1].slug"
+          :author="politics[1].user.name"
+          :published="politics[1].createdAt"
+          :category="politics[1].category"
+          :imageAlt="politics[1].imageAlt"
+          :title="politics[1].title"
+          :imageUrl="politics[1].imageUrl"
+          :class="'politics-' + politics[1].position + '-mobile'"
         />
         <GridArticleComponent
           v-if="politics[0]"
@@ -235,7 +130,7 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-  margin: 5rem 0;
+  margin: 4rem 0;
 }
 .invisible {
   height: 0rem;
