@@ -1,16 +1,16 @@
 <template>
   <div class="opinion-section">
       <div class="scrolls">
-      <TextBelowOpinion 
-      class="opinion-card" 
+      <TextBelowOpinion
+      class="opinion-card"
       v-for="article in articles"
       :key="article"
-      :articleUrl="'/articles/' + articles.slug" 
-      :author="article.user.name" 
-      :published="article.createdAt" 
-      :category="article.category" 
-      :imageAlt="article.imageAlt" 
-      :title="article.title" 
+      :articleUrl="'/articles/' + articles.slug"
+      :author="article.user.name"
+      :published="article.createdAt"
+      :category="article.category"
+      :imageAlt="article.imageAlt"
+      :title="article.title"
       :imageUrl="article.imageUrl"
       />
      </div>
@@ -18,10 +18,13 @@
 </template>
 
 <script>
-
+import TextBelowOpinion from "./TextBelowOpinion";
 export default {
- name: "OpinionSlider",
- props: { articles: Array }
+  name: "OpinionSlider",
+  props: { articles: Array },
+  components: {
+    TextBelowOpinion
+  }
 }
 </script>
 
@@ -70,7 +73,7 @@ border-radius: 1.5rem;
 
 <!--## Variables Used:-->
 <!--&#45;&#45;primary-color-->
-<!--&#45;&#45;acent-color-->
+<!--&#45;&#45;accent-color-->
 
 <!--## Examples-->
 
