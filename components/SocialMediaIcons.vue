@@ -14,14 +14,14 @@ name: "SocialMediaIcons"
 
 <style>
 .social-media-icon { 
-    color: var(--primary-color);
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
-    transition: all .3s;
+  color: var(--primary-color);
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  transition: all .3s;
 }
 .social-media-icon:hover { 
-    transform: scale(115%);
-    cursor: pointer;
+  transform: scale(115%);
+  cursor: pointer;
 }
 .instagram-icon {
   margin-left: 0;
