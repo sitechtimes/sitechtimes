@@ -78,6 +78,9 @@ export default {
     .footer-email-input:focus {
         outline: none;
     }
+    .footer-email-input:focus::placeholder {
+        color: transparent;
+    }
     .footer-email-input:focus .footer-form-label {
         visibility: visible;
     }
