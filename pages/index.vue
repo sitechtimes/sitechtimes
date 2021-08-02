@@ -43,194 +43,144 @@
           size="small"
         />
       </section>
-      
-      <h3 class="section-title">News</h3>
-      <section class="news-section desktop-view">
-        <TextBelowArticlePreviewHome 
-        v-for="article in news" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
+      <section class="grid-article-container">
+        <GridArticleComponent 
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
       </section>
-      <section id="news-mobile" class="news-section mobile-view">
-        <CategoryArticle
-        v-for="article in news" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'news-' + article.position + '-mobile'"
+      <section class="grid-article-container">
+        <GridArticleComponent 
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
       </section>
-      </div>
-      <div class="darksection">
-        <div class="global-container">
-      <h3 class="section-title">Politics</h3>
-      <section class="politics-section desktop-view">
-        <CardComponent
-        v-for="article in politics" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'politics-' + article.position"
-        size="medium"
+      <section class="grid-article-container">
+        <GridArticleComponent 
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
+        />
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
       </section>
-      <section id="politics-mobile" class="politics-section mobile-view">
-        <TextBelowScience 
-        v-if="politics[0]"
-        :articleUrl="'/articles/' + politics[0].slug"
-        :author="politics[0].user.name"
-        :published="politics[0].createdAt"
-        :category="politics[0].category"
-        :imageAlt="politics[0].imageAlt"
-        :title="politics[0].title"
-        :imageUrl="politics[0].imageUrl"
-        :class="'politics-' + politics[0].position + '-mobile'"
+      <section class="grid-article-container">
+        <GridArticleComponent 
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
-        <CategoryArticle
-        v-if="politics[0]"
-        :articleUrl="'/articles/' + politics[1].slug"
-        :author="politics[1].user.name"
-        :published="politics[1].createdAt"
-        :category="politics[1].category"
-        :imageAlt="politics[1].imageAlt"
-        :title="politics[1].title"
-        :imageUrl="politics[1].imageUrl"
-        :class="'politics-' + politics[1].position + '-mobile'"
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
-        <CategoryArticle
-        v-if="politics[0]"
-        :articleUrl="'/articles/' + politics[2].slug"
-        :author="politics[2].user.name"
-        :published="politics[2].createdAt"
-        :category="politics[2].category"
-        :imageAlt="politics[2].imageAlt"
-        :title="politics[2].title"
-        :imageUrl="politics[2].imageUrl"
-        :class="'politics-' + politics[2].position + '-mobile'"
-        />
-      </section>
-      
-      </div>
-      </div>
-      <div class="global-container">
-      <h3 class="section-title">Entertainment</h3>
-      <section class="entertainment-section desktop-view">
-        <CardComponent 
-        v-if="entertainment[0]"
-        :articleUrl="'/articles/' + entertainment[0].slug"
-        :author="entertainment[0].user.name"
-        :published="entertainment[0].createdAt"
-        :category="entertainment[0].category"
-        :imageAlt="entertainment[0].imageAlt"
-        :title="entertainment[0].title"
-        :imageUrl="entertainment[0].imageUrl"
-        :class="'entertainment-' + entertainment[0].position"
-        size="medium"
-        />
-        <EntertainmentSideArticle
-        v-if="entertainment[1]"
-        :articleUrl="'/articles/' + entertainment[1].slug"
-        :author="entertainment[1].user.name"
-        :published="entertainment[1].createdAt"
-        :category="entertainment[1].category"
-        :imageAlt="entertainment[1].imageAlt"
-        :title="entertainment[1].title"
-        :imageUrl="entertainment[1].imageUrl"
-        :class="'entertainment-' + entertainment[1].position"
-        />
-        <EntertainmentSideArticle
-        v-if="entertainment[2]"
-        :articleUrl="'/articles/' + entertainment[2].slug"
-        :author="entertainment[2].user.name"
-        :published="entertainment[2].createdAt"
-        :category="entertainment[2].category"
-        :imageAlt="entertainment[2].imageAlt"
-        :title="entertainment[2].title"
-        :imageUrl="entertainment[2].imageUrl"
-        :class="'entertainment-' + entertainment[2].position"
-        />
-      </section>
-      <section id="entertainment-mobile" class="entertainment-section mobile-view">
-        <CardComponent 
-        v-for="article in entertainment" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'entertainment-' + article.position + '-mobile'"
-        size="medium"
-        />
-      </section>
-      <h3 class="section-title">Opinion</h3>
-      <OpinionSlider :articles="opinion"/>
-      </div>
-      <div class="darksection">
-      <div class="global-container">
-      <h3 class="section-title">Science</h3>
-      <section class="science-section">
-        <CategoryArticle 
-        v-for="article in science" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'news-' + article.position + '-mobile'"
-        />
-      </section>
-      </div>
-      </div>
-      <div class="global-container">
-      <h3 class="section-title">Activities</h3>
-      <section class="news-section desktop-view">
-        <TextBelowArticlePreviewHome
-        v-for="article in activities" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        />
-      </section>
-      <section id="activities-mobile" class="news-section mobile-view">
-        <CategoryArticle
-        v-for="article in activities" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        :class="'news-' + article.position + 'mobile'"
+        <GridArticleComponent
+          v-if="politics[0]"
+          :articleUrl="'/articles/' + politics[0].slug"
+          :author="politics[0].user.name"
+          :published="politics[0].createdAt"
+          :category="politics[0].category"
+          :imageAlt="politics[0].imageAlt"
+          :title="politics[0].title"
+          :imageUrl="politics[0].imageUrl"
+          :class="'politics-' + politics[0].position + '-mobile'"
         />
       </section>
       </div>
@@ -282,7 +232,11 @@ export default {
 
 <style lang="scss">
 @import "../assets/variables";
-
+.grid-article-container {
+  display: flex;
+  gap: 2rem;
+  margin: 5rem 0;
+}
 .invisible {
   height: 0rem;
   width: 0rem;
