@@ -240,6 +240,9 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
+  #nav-icon4 {
+    width: 3rem;
+  }
   #nav-icon4 span {
     height: .4rem;
   }
@@ -247,25 +250,16 @@ export default {
     top: 1rem;
   }
   #nav-icon4 span:nth-child(2) {
-    top: 2.4rem;
+    top: 2.1rem;
   }
   #nav-icon4 span:nth-child(3) {
-    top: 3.8rem;
+    top: 3.2rem;
   }
-  // #nav-icon4 span:nth-child(1) {
-  //   top: 1.25rem;
-  // }
-  // #nav-icon4 span:nth-child(2) {
-  //   top: 2.75rem;
-  // }
-  // #nav-icon4 span:nth-child(3) {
-  //   top: 4.25rem;
-  // }
   #nav-icon4.open span:nth-child(1) {
     top: 1rem;
   }
   #nav-icon4.open span:nth-child(3) {
-    top: 4.5rem;
+    top: 3.9rem;
   }
 }
 </style>

@@ -29,7 +29,7 @@ export default {
     .footer-container {
         display: flex;
         justify-content: center;
-        padding: 3rem;
+        padding: 5rem;
         // margin: 0 auto;
         background-color: var(--grey);
     }

@@ -5,11 +5,12 @@
         <span class="footer-sub-header">Sign up for our newsletter!</span>
     </h2>
   <form class="footer-form" action="#">
-            <label for="email"></label>
+            <label class="footer-form-label" for="email">Email</label>
             <div class="footer-inputs">
-                <input class="footer-email-input" type="text" for="email" placeholder="Email" name="mail" required>
+                <input v-on:click="seeLabel()" class="footer-email-input" type="text" id="email" placeholder="Email" name="mail" required>
                 <input class="footer-join-btn" type="submit" value="Join">
             </div>
+            <!-- <p class="footer-form-alert">Success!</p> -->
   </form>
 </div>
 </template>
@@ -17,6 +18,15 @@
 <script>
 export default {
     name: "GetNotifiedSection",
+    methods: {
+        seeLabel: function () {
+            const label = document.querySelector(".footer-form-label");
+            label.style.opacity = "1";
+        },
+        // formAlert: function () {
+        //     alert("Success!");
+        // }
+    }
 }
 </script>
 
@@ -27,7 +37,7 @@ export default {
         flex-direction: column;
     }
     .footer-form-box {
-        width: 36rem;
+        width: 40rem;
         margin: 0 auto;
         padding-bottom: 3.1rem;
         border-bottom: .2rem solid var(--primary-color);
@@ -40,35 +50,39 @@ export default {
         font-weight: 700;
     }
     .footer-sub-header {
-        font-size: var(--h5);
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
-    .footer-form {
-        display: flex;
-        justify-content: center;
-        border: none;
+    .footer-form-label {
+        opacity: 0;
+        font-size: 1.5rem;
+        letter-spacing: .05rem;
+        color: var(--accent-color);
+        transition: all .2s; 
     }
     .footer-email-input, .footer-join-btn {
+        margin-top: .2rem;
         border: none;
         background-color: var(--accent-color);
         padding: 1.3rem 2.2rem;
         border-radius: 5rem;
     }
     .footer-inputs {
-        position: relative;
-        margin-top: 2.8rem;
+        display: flex; 
     }
     .footer-email-input {
-        width: 36rem;
+        width: 40rem;
         font-size: 1.6rem;
         font-family: var(--font);
     }
     .footer-email-input:focus {
         outline: none;
     }
+    .footer-email-input:focus .footer-form-label {
+        visibility: visible;
+    }
     .footer-join-btn {
-        position: absolute;
-        height: 100%;
-        right: 0;
+        margin-left: -7.5rem;
         font-family: var(--font);
         font-size: var(--h5);
         font-weight: 700;
@@ -84,13 +98,35 @@ export default {
         background-color: #bf9f4b;
         cursor: pointer;
     }
-    // .footer-join-btn:hover {
-    //     background-color: #ceac58;
+    // .footer-form-alert {
+    //     opacity: 0;
+    //     transition: .2s;
     // }
 
     @media only screen and (max-width: $x-small-screen) {
         .footer-form-box {
             border-bottom: none;
+        }
+        .footer-sub-header {
+            font-size: var(--h4);
+            font-weight: 500;
+        }
+        .footer-form-box {
+            width: 45rem;
+        }
+        .footer-email-input {
+            width: 45rem;
+        }
+         .footer-join-btn {
+            margin-left: -7.5rem;
+            opacity: 1;
+         }
+        .footer-email-input, .footer-join-btn {
+            margin-top: .5rem;
+            padding: 1.6rem 2.5rem;
+        }
+        .footer-email-input, .footer-join-btn, .footer-form-label {
+            font-size: 1.8rem;
         }
     }
 
