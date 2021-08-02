@@ -26,9 +26,6 @@ export default {
   },
   props: {
     articles: Array
-  },
-  mounted() {
-    console.log(this.articles)
   }
 }
 </script>
