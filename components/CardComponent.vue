@@ -117,7 +117,7 @@ a:active {
 }
 .card-component {
   cursor: pointer;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,7 +138,7 @@ a:active {
   margin: 0 auto;
   padding-bottom: 10%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 .card-component-category-author-date {
     display: flex;
@@ -195,7 +195,7 @@ a:active {
   margin: 0 auto;
   padding-bottom: 5%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 #article-details-author {
     font-size: 1.1rem;
