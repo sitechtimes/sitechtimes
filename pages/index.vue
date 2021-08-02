@@ -43,20 +43,9 @@
           size="small"
         />
       </section>
-      
       <h3 class="section-title">News</h3>
-      <section class="news-section desktop-view">
-        <TextBelowArticlePreviewHome 
-        v-for="article in news" 
-        :key="article"
-        :articleUrl="'/articles/' + article.slug"
-        :author="article.user.name"
-        :published="article.createdAt"
-        :category="article.category"
-        :imageAlt="article.imageAlt"
-        :title="article.title"
-        :imageUrl="article.imageUrl"
-        />
+      <section class=".duo-article-component-container">
+      <DuoArticleContainer />
       </section>
       <section id="news-mobile" class="news-section mobile-view">
         <CategoryArticle
