@@ -8,7 +8,7 @@
       <section class="trending-section" >
           <CardComponent
           class="trending-main cardquery"
-          size="medium"
+          size="large"
           v-if="homepages[0]"
           :articleUrl="'/articles/' + homepages[0].slug"
           :author="homepages[0].user.name"
@@ -403,7 +403,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px 10px;
+  gap: 3.5rem 3.5rem;
 }
     .science-section {
     height: 40rem;

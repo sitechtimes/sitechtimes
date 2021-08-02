@@ -3,11 +3,7 @@
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
-        <author-and-date
-          :author="author"
-          :published="published"
-          class="card-component-author-and-date"
-        />
+
       </div>
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
@@ -136,13 +132,13 @@ a:active {
   padding: 0 10%;
   max-height: 70%;
   margin: 0 auto;
-  padding-bottom: 10%;
+  padding-bottom: 30%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1.5rem;
 }
 .card-component-category-author-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
 .card-component-category {
@@ -168,7 +164,7 @@ a:active {
 .card-component-title {
   font-weight: bold;
   font-size: var(--customFontSize);
-  line-height: 4rem;
+  line-height: 5rem;
   color: var(--white);
 }
 .dropshadow {
@@ -181,14 +177,16 @@ a:active {
       --fontMedium: 2.5rem;
       --fontLarge: 2.7rem;
     }
-  
+    .card-component-title {
+        line-height: 3rem;
+    }  
 }
 
 @media only screen and (max-width: $x-small-screen) {
     :root{
-      --fontSmall: 1.7rem;
-      --fontMedium: 2rem;
-      --fontLarge: 2.5rem;
+      --fontSmall: 2rem;
+      --fontMedium: 2.4rem;
+      --fontLarge: 2.8rem;
     }
   
 }
@@ -200,9 +198,9 @@ a:active {
 .card-component-text-container {
   width: 100%;
   padding: 0 10%;
-  max-height: 80%;
+  max-height: 70%;
   margin: 0 auto;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1.5rem;
 }
