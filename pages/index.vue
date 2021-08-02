@@ -43,6 +43,7 @@
           size="small"
         />
       </section>
+
       <section class="grid-article-container">
         <GridArticleComponent 
           v-if="politics[0]"
@@ -65,6 +66,7 @@
           :title="politics[1].title"
           :imageUrl="politics[1].imageUrl"
           :class="'politics-' + politics[1].position + '-mobile'"
+
         />
         <GridArticleComponent
           v-if="politics[0]"
