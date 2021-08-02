@@ -1,16 +1,16 @@
 <template>
-  <article class="entertainment-side">
+  <nuxt-link :to="articleUrl" class="entertainment-side">
     <div class="entertainment-img-div">
-    <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="entertainment-side-img dropshadow"></a>
+    <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="entertainment-side-img dropshadow">
     </div>
     <div class="entertainment-side-img-content">
     <category-icon :category="category"></category-icon>
-<div class="entertainment-labels">
+    <div class="entertainment-labels">
        <author-and-date :author="author" :published="published" />
        </div>
        <h3 class="entertainment-title">{{title}}</h3>
        </div>
-  </article>
+  </nuxt-link>
 </template>
 
 <script>

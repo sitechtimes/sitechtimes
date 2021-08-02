@@ -1,8 +1,12 @@
 <template>
   <div>
-    <Datebar />
+     <Datebar /> 
+
     <Navbar />
-       <Nuxt />
+    <MobileNav />
+
+    <Nuxt />
+
     <Footer />
   </div>
 </template>
@@ -12,6 +16,10 @@ import Datebar from "../components/Datebar";
 export default {
   components: {
     Datebar
-  }
-}
+  },
+  data() {
+    return {
+    };
+  },
+};
 </script>

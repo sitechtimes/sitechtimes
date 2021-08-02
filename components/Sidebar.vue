@@ -1,38 +1,41 @@
 <template>
-  <div class="sidebar-article">
-    <img :href="articleUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
+  <nuxt-link :to="'/articles/' + articleUrl" class="sidebar-article">
+    <img :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <nuxt-link
-        :to="`/articles/${articleUrl}`"
+      <h4
         id="sidebar-article-details-title"
-      >
+        v-if="title.length < 40">
         {{ title }}
-      </nuxt-link>
+      </h4>
+      <h4
+        id="sidebar-article-details-title"
+        v-else>
+        {{ title.substring(0, 40) + '...' }}
+      </h4>
       <author-and-date-sidebar
         :author="author"
-        :published="published"
+        :published="this.$format(this.published)"
       ></author-and-date-sidebar>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
 import AuthorAndDateSidebar from "./AuthorAndDateSidebar.vue";
-
 export default {
   components: { CategoryIconSidebar, AuthorAndDateSidebar },
   name: "Sidebar",
   props: {
     category: String,
     author: String,
-    published: String,
+    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  }
+  },
 };
 </script>
 
@@ -46,7 +49,6 @@ export default {
   --toggleBorder: none;
   --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
 }
-
 .temp-img {
   width: 30vw;
   height: auto;
@@ -56,73 +58,37 @@ export default {
   max-width: 50rem;
   display: flex;
   border: var(--toggleBorder);
-
   padding: 1.5rem var(--sidebarSidePadding);
-  /* margin-bottom: 2rem; */
-  /* float: right; */
 }
 .sidebar-article:hover {
   background-color: var(--hover);
   cursor: pointer;
-
   transition: all 0.3s ease-out;
 }
-
-/* .sidebar-img {
-  height: 100%;
-  width: auto;
-  border: 1px solid black;
-} */
 .sidebar-img {
-  //background: url("../assets/temp image.jpg") var(--centerSquareThumbnail); /* 50% 50% centers image in div */
   height: var(--sidebarImgWidth);
   width: var(--sidebarImgWidth);
   border-radius: 1rem;
-
   border: var(--toggleBorder);
-
+  object-fit: cover;
   display: inline-block;
   vertical-align: middle;
 }
-/* .thumb1 a {
-  display: block;
-  width: 250px;
-  height: 250px;
-} */
-
 .sidebar-article-details {
-  /*   width: calc(
-    var(--sidebarArticleWidth) - var(--sidebarImgWidth) -
-      (var(--sidebarSidePadding) * 2)
-  ); */
   max-width: 32.65rem;
   padding-left: var(--sidebarDetailsPaddingLeft);
   display: flex;
   flex-direction: column;
-
   display: inline-block;
 }
-
 #sidebar-article-details-title {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: var(--h5);
   line-height: 1.35;
-
   text-decoration: none;
   color: var(--black);
-
   margin: 0;
 }
-
-/* .sidebar-article-details-author-date {
-  display: flex;
-}
-.sidebar-article-details-author-date > p {
-  font-size: 1rem;
-  //font-size: var(--small-text);
-  text-transform: uppercase;
-  margin-right: 1.5rem;
-} */
 .sidebar-icon {
   font-size: 1.4rem;
   padding-right: 4px;
@@ -131,48 +97,45 @@ export default {
 #published-icon {
   font-size: 1.4rem;
 }
-
-#sidebar-article-details-title {
-  font-weight: bold;
-}
-
 .example-img {
   border: var(--toggleBorder);
   height: 11.7rem;
   width: 40rem;
 }
-
-@media only screen and (max-width: $mid-screen) {
-  :root {
-    --sidebarArticleWidth: 100vw;
-    --sidebarSidePadding: 15vw;
-  }
+@media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
-    border: none;
+  }
+  .sidebar-article {
+    padding: 1.5rem 0;
+  }
+  .sidebar-article:hover {
+    background-color: unset;
+  }
+  #sidebar-article-details-title {
+    font-size: var(--h4);
+  }
+}
+@media only screen and (max-width: $mid-screen) {
+  :root {
+    --sidebarImgWidth: 20rem;
+  }
+  .sidebar-article-details {
+    max-width: 100%;
   }
   .sidebar-article {
     max-width: none;
-    padding: 2.5rem var(--sidebarSidePadding);
+    width: 100%;
   }
-  .sidebar-article-details {
-    max-width: none;
+  .sidebar-img {
+    height: var(--sidebarImgWidth);
+    width: var(--sidebarImgWidth);
   }
-}
-
-@media only screen and (max-width: 450px) {
-  :root {
-    --sidebarSidePadding: 12vw;
-  }
-}
-@media only screen and (max-width: 380px) {
-  :root {
-    --sidebarSidePadding: 8vw;
+  #sidebar-article-details-title {
+    font-size: var(--h3);
   }
 }
 </style>
-
-/* Ripple effect on click? */
 
 <!--<docs>-->
 <!--The Sidebar article is the article found in the sidebar and has an image on one side and the article's info on the other-->

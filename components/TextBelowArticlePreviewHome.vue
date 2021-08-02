@@ -1,19 +1,19 @@
 <template>
-   <nuxt-link :to="articleUrl" class="text-below-preview-article">
+   <nuxt-link :to="articleUrl" class="text-below-preview-article-home">
        <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
        <h5 class="article-info">
             <category-icon :category="category" class="article-cat"/>
             <author-and-date :author="author" :published="published" class="article-data" />
        </h5>
        <h4 class="article-title">{{title}}</h4>
-    </nuxt-link>
+   </nuxt-link>
 </template>
 
 <script>
 //import AuthorAndDate from './AuthorAndDate.vue';
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
-  name: "TextBelowArticlePreview",
+  name: "TextBelowArticlePreviewHome",
   props: {
     author: String,
     articleUrl: String,
@@ -33,29 +33,30 @@ a:link { text-decoration: none; color: var(--black)}
 a:visited { text-decoration: none;  color: var(--black)}
 a:hover { text-decoration: none;  color: var(--black)}
 a:active { text-decoration: none;  color: var(--black)}
-.text-below-preview-article {
+.text-below-preview-article-home {
   display: flex;
   flex-direction: column;
 }
-.article-info {
+.home-article-info {
   margin: 1rem 0;
   display: flex;
 }
-.article-image {
+.home-article-image {
   width: 100%;
   border-radius: 1.5rem;
   height:20rem;
 }
-.article-cat {
+.home-article-cat {
   margin-right: 2rem;
 }
-.article-title {
+.home-article-title {
   margin: 0 0.2rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
+  font-size: var(--h4)
 }
-.article-data {
+.home-article-data {
     padding-top: 1rem;
 }
 

@@ -1,17 +1,19 @@
 <template>
   <footer class="footer-container">
-      <GetNotifiedSection class="form"/>
-      <FooterSocialMedia class="social"/>
-      <FooterNav :categories="categories" class="nav"/>
+      <div class="form-and-media">
+        <GetNotifiedSection />
+        <FooterSocialMedia />
+      </div>
+      <FooterNav />
   </footer>
 </template>
 
 <script>
 export default {
     name: "Footer",
+    props: ["categories"],
     data () {
       return {
-        categories: ['news', 'opinion', 'politics', 'entertainment', 'science', 'activities', 'events'],
     }
   },
     components: {
@@ -25,34 +27,28 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
     .footer-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
-            "form nav"
-            "social nav";
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        padding: 3rem;
+        // margin: 0 auto;
         background-color: var(--grey);
-        padding: 3rem 15%;
     }
-    .form {
-        grid-area: form;
-    }
-    .social {
-        grid-area: social;
-    }
-    .nav {
-        grid-area: nav;
-    }
-    @media only screen and (max-width: $large-screen) {
-        .footer-container {
-            padding: 3rem;
-        }
+    .form-and-media {
+        display: flex;
+        flex-direction: column;
+        padding-right: 15%;
     }
      @media only screen and (max-width: $mid-screen) {
+        .form-and-media {
+            padding-right: 10%;
+        }
+    }
+     @media only screen and (max-width: $small-screen) {
         .footer-container {
-            display: flex;
             flex-direction: column;
+        }
+        .form-and-media {
+            padding-right: 0;
         }
     }
 

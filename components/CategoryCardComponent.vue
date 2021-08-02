@@ -1,34 +1,34 @@
 <template>
-  <div class="category-card-component" :style="getFontSize">
+  <nuxt-link :to="articleUrl" class="category-card-component" :style="getFontSize">
     <div class="category-card-component-image" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
-    <nuxt-link :to="articleUrl" class="category-flex-col category-card-component-text-container">
+    <div class="category-flex-col category-card-component-text-container">
       <div class="category-flex-row category-card-component-category-author-date">
         <category-icon :category="category" class="category-card-component-category" />
-        <author-and-date
+        <!-- <author-and-date
           :author="author"
           :published="this.published"
           class="category-card-component-author-and-date"
-        />
+        /> -->
       </div>
       <div class="category-text-overflow category-card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </nuxt-link>
     </div>
-  </div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: "CategoryCardComponent",
   props: {
-    author: { type: String },
-    articleUrl: { type: String },
-    published: { type: Date },
-    category: { type: String },
-    imageUrl: { type: String },
-    imageAlt: { type: String },
-    title: { type: String },
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
     size: {
       default: "medium",
       type: String
@@ -116,12 +116,12 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  overflow: hidden;
 }
 .category-card-component-image {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  border-radius: 1.5rem;
 }
 .category-flex-col {
   display: flex;
@@ -133,7 +133,7 @@ a:active {
 }
 .category-card-component-text-container {
   width: 100%;
-  padding: 16% 0 0 5%;
+  padding: 32% 0 5% 5%;
   height: 100%;
   margin: 0 auto;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
@@ -173,6 +173,17 @@ a:active {
 .category-dropshadow {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
+@media only screen and (max-width: $mid-screen) {
+.category-card-component-image{
+  width: 95%;
+ 
+}
+   }
+   @media only screen and (max-width: $small-screen){
+     .category-card-component-image{
+       width: 100%;
+     }
+   }
 </style>
 <docs>
 

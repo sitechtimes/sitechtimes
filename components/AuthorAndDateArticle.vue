@@ -2,8 +2,8 @@
   <div class="author-date-article">
     <section>
       <svg
-        width="1.5rem"
-        height="1.5rem"
+        width="1.3rem"
+        height="1.3rem"
         aria-hidden="true"
         focusable="false"
         data-prefix="fas"
@@ -20,12 +20,12 @@
           class=""
         ></path>
       </svg>
-      <h5 id="article-details-author">{{ author }}</h5>
+      <h5>{{ author }}</h5>
     </section>
     <section>
       <svg
-        width="1.5rem"
-        height="1.5rem"
+        width="1.3rem"
+        height="1.3rem"
         aria-hidden="true"
         focusable="false"
         data-prefix="fas"
@@ -42,7 +42,7 @@
           class=""
         ></path>
       </svg>
-      <h5 id="article-details-date">{{ published }}</h5>
+      <h5>{{ this.$format(this.published) }}</h5>
     </section>
   </div>
 </template>
@@ -50,12 +50,15 @@
 <script>
 export default {
   name: "AuthorAndDateArticle",
-  props: ["author", "published"],
+  props: {
+    author: String,
+    published: Date
+  }
 };
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 .author-date-article {
   display: flex;
   //flex-direction: column;
@@ -71,30 +74,16 @@ export default {
   line-height: 1.75;
 }
 .article-icon {
-    // width: var(--h5);
-    // height: var(--h5);
-    margin-top: .2rem;
-    margin-right: .5rem;
-    // padding-right: .4rem;
-  }
+  margin-top: 0.4rem;
+  margin-right: 0.5rem;
+}
 
 @media only screen and (max-width: $mid-screen) {
-  .author-date-article > section > h5 {
-    font-size: var(--h5);
-  }
-  .article-icon {
-    width: var(--h5);
-    height: var(--h5);
-    margin-top: .3rem;
-  }
-}
-@media only screen and (max-width: $small-screen) {
   .article-icon {
     width: var(--h4);
     height: var(--h4);
-    margin-top: 0.4rem;
   }
-    .author-date-article > section > h5 {
+  .author-date-article > section > h5 {
     font-size: var(--h4);
   }
 }
@@ -107,7 +96,6 @@ export default {
     margin-top: 0.5rem;
   }
 }
-
 </style>
 
 <!--<docs>-->
@@ -121,6 +109,5 @@ export default {
 <!--```jsx-->
 <!--<author-and-date author="Charley Baluja" published="Jan 31, 2020" />-->
 <!--```-->
-
 
 <!--</docs>-->

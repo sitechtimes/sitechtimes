@@ -1,6 +1,6 @@
 <template>
-  <div class="card-component card-component-image dropshadow" :style="getFontSize">
-    <a :href="articleUrl" class="flex-col card-component-text-container">
+  <nuxt-link :to="articleUrl" class="card-component card-component-image dropshadow" :style="{ background: 'url(' + imageUrl + ')', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }">
+    <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
         <author-and-date
@@ -12,8 +12,8 @@
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
       </div>
-    </a>
-  </div>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -97,6 +97,8 @@ export default {
 }
 
 @import "../assets/variables";
+
+
 a:link {
   text-decoration: none;
   color: var(--black);
@@ -120,11 +122,6 @@ a:active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-}
-.card-component-image {
-  background: url("../assets/card-comp-tempimg.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .flex-col {
   display: flex;
@@ -177,20 +174,29 @@ a:active {
 .dropshadow {
     box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
 }
+
 @media only screen and (max-width: $x-small-screen) {
     :root{
---fontSmall: 1.4rem;
-  --fontMedium: 2rem;
-  --fontLarge: 2.8rem;
+      --fontSmall: 2.7rem;
+      --fontMedium: 2.7rem;
+      --fontLarge: 2.8rem;
     }
   
 }
 .card-component-category-author-date {
     display: flex;
     flex-wrap: wrap;
-  padding-bottom: 3rem;
+  padding-bottom: 3%;
 }
-
+.card-component-text-container {
+  width: 100%;
+  padding: 0 10%;
+  max-height: 80%;
+  margin: 0 auto;
+  padding-bottom: 5%;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  border-radius: 1.5rem;
+}
 #article-details-author {
     font-size: 1.1rem;
 }

@@ -1,34 +1,37 @@
 <template>
   <section class="sidebar-container">
-    <h3 class="sidebar-heading">Trending</h3>
-    <Sidebar
-      v-for="article in trending"
-      :key="article.slug"
-      :category="article.category"
-      :author="article.user.name"
-      :published="article.createdAt"
-      :title="article.title"
-      :imgUrl="article.imageUrl"
-      :articleUrl="article.slug"
-    /><!-- css var for imgUrl? -->
+    <div>
+      <h3 class="sidebar-heading">Trending</h3>
+      <Sidebar
+        v-for="article in trending"
+        :key="article.slug"
+        :category="article.category"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :title="article.title"
+        :imgUrl="article.imageUrl"
+        :articleUrl="article.slug"
+      /><!-- css var for imgUrl? -->
+    </div>
+    <div class="morelikethis-section">
+      <h3 class="sidebar-heading">More Like This</h3>
+      <Sidebar
+        v-for="article in moreLikeThis"
+        :key="article.slug"
+        :category="article.category"
+        :author="article.user.name"
+        :published="article.createdAt"
+        :title="article.title"
+        :imgUrl="article.imageUrl"
+        :articleUrl="article.slug"
+      />
+    </div>
 
-    <h3 class="sidebar-heading">More Like This</h3>
-    <Sidebar
-      v-for="article in moreLikeThis"
-      :key="article.slug"
-      :category="article.category"
-      :author="article.user.name"
-      :published="article.createdAt"
-      :title="article.title"
-      :imgUrl="article.imageUrl"
-      :articleUrl="article.slug"
-    />
   </section>
 </template>
 
 <script>
 import Sidebar from "./Sidebar.vue";
-
 export default {
   name: "SidebarContainer",
   components: { Sidebar },
@@ -37,19 +40,17 @@ export default {
     moreLikeThis: Array,
   }
 };
-
 </script>
 
 <style lang="scss">
 @import '../assets/variables';
 .sidebar-container {
-
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;
-
   float: right;
   overflow: hidden;
-
+  display: flex;
+  flex-direction: column;
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
@@ -63,14 +64,27 @@ export default {
 @media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     border: none;
+    flex-direction: row;
+    max-width: none;
+    width: 100vw;
+  }
+  .morelikethis-section {
+    margin-left: 2rem;
+  }
+  .sidebar-heading {
+    padding: 0;
   }
 }
 @media only screen and (max-width: $mid-screen) {
   .sidebar-container {
-    max-width: none;
+    flex-direction: column;
+  }
+  .morelikethis-section {
+    margin-left: 0;
+    margin-top: 3rem;
   }
   .sidebar-heading {
-    padding: 1.5rem var(--sidebarSidePadding);
+    font-size: var(--h3);
   }
 }
 </style>
