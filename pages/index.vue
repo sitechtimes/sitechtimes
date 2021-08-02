@@ -269,6 +269,7 @@ export default {
   grid-template-columns: 1fr; 
   grid-template-rows: repeat(3, 1fr);
 }
+
 }
 @media only screen and (max-width: $small-screen) {
   .trending-main {
