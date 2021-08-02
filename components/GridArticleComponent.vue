@@ -35,6 +35,7 @@ a:active { text-decoration: none;  color: var(--black)}
 .grid-article-component {
   display: flex;
   flex-direction: column;
+  width: 32%;
 }
 .grid-article-info {
   margin: 1rem 0;

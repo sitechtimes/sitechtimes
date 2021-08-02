@@ -165,6 +165,7 @@ export default {
   gap: 2rem;
   margin: 4rem 0;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .invisible {
   height: 0rem;
