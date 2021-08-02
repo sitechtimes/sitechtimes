@@ -26,7 +26,6 @@
   width: 100%;
 }
 .datebar-container {
-  width: 120rem;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -50,15 +49,8 @@
         font-size: 2.8rem;
         line-height: 3rem;
     }
-    .datebar-container {
-        width: 100rem;
-    }
 }
-@media only screen and (max-width: $midlarge-screen) {
-    .datebar-container {
-        width: 80rem;
-    }
-}
+
 @media only screen and (max-width: $mid-screen) {
     .datebar-container {
         justify-content: flex-start;
@@ -70,9 +62,6 @@
     }
     .calendar-icon {
     padding-top: 0.6rem;
-    }
-    .datebar-container {
-        width: 60rem;
     }
 }
 @media only screen and (max-width: $small-screen) {
