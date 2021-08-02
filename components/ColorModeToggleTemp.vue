@@ -126,6 +126,8 @@ export default {
   height: 4rem;
   display: flex;
   align-items: center;
+
+  outline: none;
 }
 .down-arrow {
   border: solid var(--on-background);
@@ -133,6 +135,7 @@ export default {
   display: inline-block;
   padding: 3px;
   transform: rotate(45deg);
+  outline: none;
 }
 
 /* MAYBE ADD HOVER EFFECT? */

@@ -129,11 +129,10 @@ export default {
   display: none;
   width: 100vw;
   max-height: 100vh;
-  <<<<<<<head//overflow: scroll;
   z-index: 1;
   position: fixed;
-  =======overflow: scroll;
-  >>>>>>>developtop: 0;
+  overflow: scroll;
+  top: 0;
 
   position: relative;
 }
