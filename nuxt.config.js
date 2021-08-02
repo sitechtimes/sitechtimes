@@ -1,4 +1,8 @@
+import {ENV_VALUES} from "./config";
+
 export default {
+  ssr: true,
+  target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sitechtimes',
@@ -16,11 +20,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: ['./assets/global.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/dateFormat.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -28,17 +32,27 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/axios',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
+
   server: {
     port: 8080
   },
 
+  axios: {
+    baseURL: ENV_VALUES[process.env.ENV].api
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  generate: {
+    fallback: true
   }
 }
