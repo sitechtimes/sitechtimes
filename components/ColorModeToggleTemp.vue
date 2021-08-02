@@ -148,7 +148,7 @@ export default {
 }
 
 .color-toggle-button {
-  border: 0.2rem solid var(--on-background);
+  border: 0.1rem solid var(--on-background);
   border-radius: 0.8rem 0 0 0.8rem;
   //padding: 14px;
   cursor: pointer;
@@ -165,8 +165,8 @@ export default {
 
 .color-toggle-dropdown-button {
   background-color: var(--background-color);
-  border: 0.2rem solid var(--on-background);
-  margin-left: -0.2rem;
+  border: 0.1rem solid var(--on-background);
+  margin-left: -0.1rem;
   border-radius: 0 0.8rem 0.8rem 0;
   padding: 0.8rem 0.6rem 1rem 0.6rem;
 
