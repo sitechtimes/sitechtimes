@@ -1,12 +1,12 @@
 <template>
-   <article class="text-below-preview-article-home">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
+   <nuxt-link :to="articleUrl" class="text-below-preview-article-home">
+       <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
        <h5 class="article-info">
             <category-icon :category="category" class="article-cat"/>
             <author-and-date :author="author" :published="published" class="article-data" />
        </h5>
-       <a :href="articleUrl" class="article-title">{{title}}</a>
-   </article>
+       <h4 class="article-title">{{title}}</h4>
+   </nuxt-link>
 </template>
 
 <script>
@@ -14,15 +14,15 @@
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
   name: "TextBelowArticlePreviewHome",
-  props: [
-    "author", 
-    "articleUrl", 
-    "published", 
-    "category", 
-    "imageUrl", 
-    "imageAlt", 
-    "title",
-    ],
+  props: {
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
+  }
 };
 </script>
 

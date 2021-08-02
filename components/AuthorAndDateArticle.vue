@@ -42,7 +42,7 @@
           class=""
         ></path>
       </svg>
-      <h5>{{ published }}</h5>
+      <h5>{{ this.$format(this.published) }}</h5>
     </section>
   </div>
 </template>
@@ -50,7 +50,10 @@
 <script>
 export default {
   name: "AuthorAndDateArticle",
-  props: ["author", "published"]
+  props: {
+    author: String,
+    published: Date
+  }
 };
 </script>
 

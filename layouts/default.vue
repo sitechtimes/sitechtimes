@@ -3,12 +3,12 @@
     <Datebar />
     <color-mode-toggle-temp />
 
-    <Navbar :categories="categories" />
-    <MobileNav :categories="categories" />
+    <Navbar />
+    <MobileNav />
 
     <Nuxt />
 
-    <Footer :categories="categories" />
+    <Footer />
   </div>
 </template>
 

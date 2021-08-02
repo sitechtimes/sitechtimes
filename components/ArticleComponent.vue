@@ -4,7 +4,7 @@
     <h2 class="main-article-title">{{ title }}</h2>
     <!-- <p class="main-article-description">{{ description }}</p> -->
     <img class="main-article-img" :src="articleImg" :alt="articleAlt" />
-    <section class="main-article-metadata">
+    <div class="main-article-metadata">
       <author-and-date-article
         class="article-author-and-date"
         :author="author"
@@ -14,13 +14,13 @@
         <social-media-icons />
         <share-icon />
       </div>
-    </section>
-    <section
+    </div>
+    <div
       class="main-article-text-section main-article-text"
       v-html="articleText"
     >
       <!-- <p class="main-article-text">{{ articleText }}</p> -->
-    </section>
+    </div>
   </div>
 </template>
 
@@ -31,16 +31,16 @@ import ShareIcon from "./ShareIcon.vue";
 import CategoryIcon from "./CategoryIcon.vue";
 export default {
   name: "ArticleComponent",
-  props: [
-    "category",
-    "title",
-    "description",
-    "articleText",
-    "articleImg",
-    "articleAlt",
-    "author",
-    "published"
-  ],
+  props: {
+    category: String,
+    title: String,
+    description: String,
+    articleText: String,
+    articleImg: String,
+    articleAlt: String,
+    author: String,
+    published: Date
+  },
   components: {
     AuthorAndDateArticle,
     SocialMediaIcons,
@@ -171,12 +171,23 @@ export default {
   .main-article-text-section li em,
   .main-article-text-section li strong,
   .main-article-text-section span {
+    font-size: 1.7rem;
+    line-height: 3rem;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span,
+  .main-article-text-section p,
+  .main-article-text-section p em,
+  .main-article-text-section p strong,
+  .main-article-text-section li em,
+  .main-article-text-section li strong,
+  .main-article-text-section span {
     font-size: var(--h4);
     line-height: 3.5rem;
   }
-  // .main-article-description {
-  //   font-size: var(--h3);
-  //   line-height: 3.5rem;
-  // }
 }
 </style>

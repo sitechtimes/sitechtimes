@@ -1,7 +1,7 @@
 <template>
-    <div class="category-article">
+    <nuxt-link :to="articleUrl" class="category-article">
         <div class="category-img-div">
-            <nuxt-link :to="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img"></nuxt-link>
+            <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img">
         </div>
         <div class="category-article-img-content">
             <div class="category-labels">
@@ -10,13 +10,21 @@
             </div>
             <h3 class="category-title">{{title}}</h3>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>
 export default {
 name: "CategoryArticle",
-props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "category"]
+props: {
+  title: String,
+  author: String,
+  published: Date,
+  articleUrl: String,
+  imageUrl: String,
+  imageAlt: String,
+  category: String,
+}
 }
 </script>
 

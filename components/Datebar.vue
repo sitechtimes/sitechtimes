@@ -1,24 +1,11 @@
 <template>
-  <div class="datebar">
-    <div class="datebar-container">
-      <h5 class="datebar-date">
-        <span id="date-text">{{ new Date().toLocaleString("en-US") }} </span>
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="far"
-          data-icon="calendar"
-          class="calendar-icon svg-inline--fa fa-calendar fa-w-10"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 448 512"
-        >
-          <path
-            fill="currentColor"
-            d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"
-          ></path>
-        </svg>
-      </h5>
+    <div class="datebar">
+        <div class="datebar-container">
+            <h5 class="datebar-date">
+                <span id="date-text">{{ new Date().toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'}) }} </span>
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="calendar" class="calendar-icon svg-inline--fa fa-calendar fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"></path></svg>
+            </h5>
+        </div>
     </div>
   </div>
 </template>
@@ -106,11 +93,12 @@ export default {
     padding-top: 0.6rem;
   }
 }
+
 </style>
 
 <!--<docs>-->
-<!--Colored banner at the top of the page. Text updates dynamically to current date. Uses moment.js library for the time. If the date doesn't show up, check if moment.js is installed.-->
-
+<!--Colored banner at the top of the page. Text updates dynamically to current date. Uses javascript Date.toLocaleString to show date and time in formatted fashion. -->
+<!---->
 <!--## Variables Used:-->
 <!--&#45;&#45;accent-color-->
 

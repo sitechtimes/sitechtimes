@@ -1,12 +1,12 @@
 <template>
-   <div class="text-below-preview-science">
-       <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="science-image"></a>
+   <nuxt-link :to="articleUrl" class="text-below-preview-science">
+       <img :src="imageUrl" :alt="imageAlt" class="science-image">
        <div class="science-info">
             <category-icon :category="category" class="science-cat"/>
             <author-and-date :author="author" :published="published" class="science-data" />
        </div>
-       <nuxt-link :to="articleUrl" class="science-title">{{title}}</nuxt-link>
-   </div>
+       <h4 class="science-title">{{title}}</h4>
+   </nuxt-link>
 </template>
 
 <script>
@@ -14,15 +14,15 @@
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
   name: "TextBelowSkicience",
-  props: [
-    "author",
-    "articleUrl",
-    "published",
-    "category",
-    "imageUrl",
-    "imageAlt",
-    "title",
-    ],
+  props: {
+    author: String,
+    articleUrl: String,
+    published: Date,
+    category: String,
+    imageUrl: String,
+    imageAlt: String,
+    title: String,
+  }
 };
 </script>
 
