@@ -8,7 +8,7 @@
       <section class="trending-section" >
           <CardComponent
           class="trending-main cardquery"
-          size="large"
+          size="medium"
           v-if="homepages[0]"
           :articleUrl="'/articles/' + homepages[0].slug"
           :author="homepages[0].user.name"
@@ -28,7 +28,7 @@
           :title="homepages[1].title"
           :imageUrl="homepages[1].imageUrl"
           class="trending-sub"
-          size="medium"
+          size="small"
         />
         <CardComponent
           v-if="homepages[2]"
@@ -40,7 +40,7 @@
           :title="homepages[2].title"
           :imageUrl="homepages[2].imageUrl"
           class="trending-detail"
-          size="medium"
+          size="small"
         />
       </section>
 

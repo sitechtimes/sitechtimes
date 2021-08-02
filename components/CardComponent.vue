@@ -132,25 +132,16 @@ a:active {
   padding: 0 10%;
   max-height: 70%;
   margin: 0 auto;
-  padding-bottom: 30%;
+  padding-bottom: 4%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1.5rem;
 }
-.card-component-category-author-date {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 1.7rem;
-}
+
 .card-component-category {
   color: var(--white);
   padding-right: 1.7rem;
 }
-.card-component-author-and-date {
-  position: relative;
-  height: 1.6rem;
-  padding-top: 1rem;
-  color: var(--white);
-}
+
 .text-overflow {
   display: block;
   display: -webkit-box;
@@ -195,15 +186,7 @@ a:active {
     flex-wrap: wrap;
   padding-bottom: 3%;
 }
-.card-component-text-container {
-  width: 100%;
-  padding: 0 10%;
-  max-height: 70%;
-  margin: 0 auto;
-  padding-bottom: 8%;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  border-radius: 1.5rem;
-}
+
 #article-details-author {
     font-size: 1.1rem;
 }
