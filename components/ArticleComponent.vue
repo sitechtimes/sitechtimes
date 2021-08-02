@@ -47,9 +47,6 @@ export default {
     SocialMediaIcons,
     ShareIcon,
     CategoryIcon
-  },
-  data() {
-    return {};
   }
 };
 </script>

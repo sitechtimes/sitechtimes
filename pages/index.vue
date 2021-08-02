@@ -9,8 +9,6 @@
           size="medium"
           v-if="homepages[0]"
           :articleUrl="'/articles/' + homepages[0].slug"
-          :author="homepages[0].user.name"
-          :published="homepages[0].createdAt"
           :category="homepages[0].category"
           :imageTitle="homepages[0].imageAlt"
           :title="homepages[0].title"
@@ -19,8 +17,6 @@
         <CardComponent
           v-if="homepages[1]"
           :articleUrl="'/articles/' + homepages[1].slug"
-          :author="homepages[1].user.name"
-          :published="homepages[1].createdAt"
           :category="homepages[1].category"
           :imageTitle="homepages[1].imageAlt"
           :title="homepages[1].title"
@@ -31,8 +27,6 @@
         <CardComponent
           v-if="homepages[2]"
           :articleUrl="'/articles/' + homepages[2].slug"
-          :author="homepages[2].user.name"
-          :published="homepages[2].createdAt"
           :category="homepages[2].category"
           :imageTitle="homepages[2].imageAlt"
           :title="homepages[2].title"
@@ -48,13 +42,10 @@
           v-if="homepages[3]"
           v-for="article in homepages.slice(3, 6)"
           :articleUrl="'/articles/' + article.slug"
-          :author="article.user.name"
-          :published="article.createdAt"
           :category="article.category"
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
-          :class="'politics-' + article.position + '-mobile'"
         />
       </section>
 
@@ -73,7 +64,6 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
-          :class="'politics-' + article.position + '-mobile'"
         />
       </section>
       </div>
@@ -141,12 +131,12 @@ export default {
   color: white;
   padding-bottom: 5rem;
 }
-.desktop-view {
-  display: grid;
-}
-.mobile-view {
-  display: none;
-}
+//.desktop-view {
+//  display: grid;
+//}
+//.mobile-view {
+//  display: none;
+//}
 
 @media only screen and (max-width: $small-screen) {
   .trending-main {
@@ -166,13 +156,13 @@ export default {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 }
-
-  .desktop-view {
-    display: none;
-  }
-  .mobile-view {
-    display: grid;
-  }
+  //
+  //.desktop-view {
+  //  display: none;
+  //}
+  //.mobile-view {
+  //  display: grid;
+  //}
 }
 
 </style>
