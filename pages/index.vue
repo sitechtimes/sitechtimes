@@ -43,7 +43,9 @@
           size="small"
         />
       </section>
-
+<section >
+  <DuoArticleContainer />
+</section>
       <section class="grid-article-container">
         <GridArticleComponent 
           v-if="politics[0]"
