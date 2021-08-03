@@ -30,12 +30,15 @@ export default {
 #article-category {
   text-transform: uppercase;
   width: max-content;
-  //background-color: var(--opinion);
   color: var(--off-white);
   font-weight: 500;
   border-radius: 0.8rem;
   margin: 0.3rem 0 0.3rem 0;
-  padding: 0.5em 1rem 0.3em 1rem;
+  padding: 0.5em 1rem 0.2em 1rem;
+  transition: all .2s;
+}
+#article-category:hover {
+  transform: scale(110%);
 }
 </style>
 
