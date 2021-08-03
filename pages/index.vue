@@ -35,9 +35,8 @@
           size="small"
         />
       </section>
-      <section class="grid-article-container">
+      <section class="grid-article-container" v-if="homepages[3]">
         <GridArticleComponent
-          v-if="homepages[3]"
           v-for="article in homepages.slice(3, 6)"
           :key= "article.id"
           :articleUrl="'/articles/' + article.slug"
@@ -50,7 +49,7 @@
       <section>
         <DuoArticleContainer v-if="homepages[7]" :articles="homepages.slice(7, 9)"/>
       </section>
-      <section class="grid-article-container"v-if="homepages[0]">
+      <section class="grid-article-container" v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
           :key= "article.id"
