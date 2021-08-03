@@ -35,7 +35,7 @@
         />
       </section>
 
-      <section class="grid-article-container" v-if="homepages[3]">
+      <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
           :key="article.id"
@@ -44,7 +44,6 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
-          :key="article.id"
         />
       </section>
       <section>

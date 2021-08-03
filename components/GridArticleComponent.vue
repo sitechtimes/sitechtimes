@@ -64,7 +64,7 @@ a:active { text-decoration: none;  color: var(--black)}
   flex-direction: column;
   width: 47%;
 }
-.grid-article-component:last-child {
+.trio-grid-container .grid-article-component:last-child {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -75,7 +75,7 @@ a:active { text-decoration: none;  color: var(--black)}
   height: 35rem;
   object-fit: cover;
 }
-.grid-article-component:last-child .grid-article-title {
+.trio-grid-container .grid-article-component:last-child .grid-article-title {
   font-size: var(--h3);
 }
 }

@@ -174,7 +174,12 @@ a:active {
       --fontMedium: 2.7rem;
       --fontLarge: 2.8rem;
     }
-
+  .card-component-title {
+    font-weight: bold;
+    font-size: var(--h3);
+    line-height: auto;
+    color: var(--white);
+  }
 }
 .card-component-category-author-date {
     display: flex;
