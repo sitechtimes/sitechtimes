@@ -29,22 +29,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/variables";
-a:link {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:active {
-  text-decoration: none;
-  color: var(--on-background);
-}
+
 .grid-article-component {
   display: flex;
   flex-direction: column;

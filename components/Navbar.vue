@@ -82,10 +82,10 @@ export default {
 
 <style lang="scss">
 @import "../assets/variables";
-a {
+/* a {
   text-decoration: none;
   color: inherit;
-}
+} */
 .logo-container {
   width: 100vw;
 }

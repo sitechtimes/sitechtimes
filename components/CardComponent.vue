@@ -99,22 +99,6 @@ export default {
 
 @import "../assets/variables";
 
-a:link {
-  text-decoration: none;
-  color: var(--black);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--black);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--black);
-}
-a:active {
-  text-decoration: none;
-  color: var(--black);
-}
 .card-component {
   cursor: pointer;
   border-radius: 1rem;

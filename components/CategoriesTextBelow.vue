@@ -33,23 +33,6 @@ export default {
 </script>
 
 <style lang="scss">
-a:link {
-  text-decoration: none;
-  color: var(--black);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--black);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--black);
-}
-a:active {
-  text-decoration: none;
-  color: var(--black);
-}
-
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
