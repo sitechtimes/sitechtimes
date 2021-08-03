@@ -145,7 +145,7 @@ a:active {
 }
 .duo-card-component-text-container {
   width: 100%;
-  padding: 50% 5% 5% 5%;
+  padding: 50% 7% 7% 7%;
   height: 100%;
   margin: 0 auto;
   background: -webkit-linear-gradient(
