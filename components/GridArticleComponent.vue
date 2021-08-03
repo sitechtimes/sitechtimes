@@ -34,7 +34,7 @@ a:active { text-decoration: none;  color: var(--black)}
   display: flex;
   flex-direction: column;
   width: 32%;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 .grid-article-info {
   margin: 1rem 0;
