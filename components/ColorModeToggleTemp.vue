@@ -7,7 +7,7 @@
         $colorMode.preference = colorMode;
       "
     ></button>
-    <button
+    <!--     <button
       class="color-toggle-dropdown-button"
       id="color-toggle-dropdown-button"
       @mouseover="dropdownTrue"
@@ -20,7 +20,8 @@
       v-if="dropdown"
       @mouseover.native="dropdownTrue"
       @mouseleave.native="dropdownFalse"
-    />
+    /> -->
+
     <!--     <Theme
       id="color-theme-dropdown"
       v-if="dropdown"
@@ -150,7 +151,7 @@ export default {
 
 .color-toggle-button {
   border: 0.1rem solid var(--on-background);
-  border-radius: 0.8rem 0 0 0.8rem;
+  border-radius: 0.8rem /*  0 0 0.8rem */;
   //padding: 14px;
   cursor: pointer;
   background-color: var(--background-color);
