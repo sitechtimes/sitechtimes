@@ -11,7 +11,9 @@
 <script>
 export default {
     name: "Footer",
-    props: ["categories"],
+    props: {
+    category: String
+  },
     data () {
       return {
     }

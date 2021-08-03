@@ -13,7 +13,9 @@
 <script>
 export default {
   name: "CategoryIcon",
-  props: ["category"],
+  props: {
+    categories: String
+  },
   data() {
     return {};
   },

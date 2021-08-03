@@ -13,7 +13,9 @@
 <script>
 export default {
   name: "CategoryIconSidebar",
-  props: ["category"],
+  props: {
+    categories: String
+  },
   data() {
     return {};
   },
