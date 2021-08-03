@@ -162,6 +162,7 @@ export default {
 #nav-icon4 {
   width: 5rem;
   padding: 2rem;
+  margin-top: 2rem;
   // margin-left: 90vw;
   position: relative;
   -webkit-transform: rotate(0deg);

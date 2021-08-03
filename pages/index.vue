@@ -106,7 +106,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
-   padding: var(--title-spacing) 0;
+   padding-bottom: var(--title-spacing);
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;

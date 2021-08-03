@@ -283,7 +283,6 @@ export default {
   .border-right {
     width: 100%;
 // margin-left: 5%;
-    margin-top: 7rem;
     border: none;
   }
   .two-cat-articles{
