@@ -188,10 +188,10 @@ a:active {
 }
 .card-component-text-container {
   width: 100%;
-  padding: 0 10%;
+  padding: 0 7%;
   max-height: 80%;
   margin: 0 auto;
-  padding-bottom: 5%;
+  padding-bottom: 7%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1rem;
 }
