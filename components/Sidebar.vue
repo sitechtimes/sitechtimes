@@ -13,19 +13,14 @@
         v-else>
         {{ title.substring(0, 40) + '...' }}
       </h4>
-      <author-and-date-sidebar
-        :author="author"
-        :published="this.$format(this.published)"
-      ></author-and-date-sidebar>
     </div>
   </nuxt-link>
 </template>
 
 <script>
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
-import AuthorAndDateSidebar from "./AuthorAndDateSidebar.vue";
 export default {
-  components: { CategoryIconSidebar, AuthorAndDateSidebar },
+  components: { CategoryIconSidebar },
   name: "Sidebar",
   props: {
     category: String,
