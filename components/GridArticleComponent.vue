@@ -62,8 +62,14 @@ a:active { text-decoration: none;  color: var(--black)}
   .grid-article-component {
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 47%;
 }
+/* .grid-article-image {
+  width: 100%;
+  border-radius: 1.5rem;
+  height:35rem;
+  object-fit: cover;
+} */
 }
 @media only screen and (max-width: $small-screen) {
   .grid-article-component {
