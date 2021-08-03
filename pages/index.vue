@@ -38,7 +38,6 @@
       <section class="grid-article-container"     v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
-            :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -58,7 +57,6 @@
       <section class="grid-article-container"          v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
-     :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :author="article.user.name"
           :published="article.createdAt"
