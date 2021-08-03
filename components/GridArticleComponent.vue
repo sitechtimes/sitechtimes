@@ -35,6 +35,7 @@ a:active { text-decoration: none;  color: var(--black)}
   display: flex;
   flex-direction: column;
   width: 32%;
+  margin: 1.5rem 0;
 }
 .grid-article-info {
   margin: 1rem 0;
@@ -43,7 +44,7 @@ a:active { text-decoration: none;  color: var(--black)}
 .grid-article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height:20rem;
+  height: 25rem;
   object-fit: cover;
 }
 .grid-article-cat {
@@ -62,7 +63,7 @@ a:active { text-decoration: none;  color: var(--black)}
   .grid-article-component {
   display: flex;
   flex-direction: column;
-  width: 47%;
+  width: 48%;
 }
 }
 @media only screen and (max-width: $small-screen) {
