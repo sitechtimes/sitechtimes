@@ -40,9 +40,10 @@
   --science: var(--green);
   --technology: var(--blue);
   --sports: var(--dark-orange);
-
-
-
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
 
   /* font size */
   --font: "Josefin Sans", sans-serif;
@@ -91,6 +92,10 @@
   --clubs: var(--blue);
   --sports: var(--dark-orange);
   --button-icon: url(https://static.thenounproject.com/png/4078841-200.png);
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
 }
 .dark-mode {
   --grey: #272b32;
@@ -112,6 +117,10 @@
   --clubs: var(--blue);
   --sports: var(--dark-orange);
   --button-icon: url(https://i.imgur.com/8GHl6if.png);
+  /* new intentions */
+  --mobile-nav-background: var(--background-color);
+  --mobile-nav-text: var(--primary-color);
+  --nav-color: var(--on-background);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");

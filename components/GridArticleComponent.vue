@@ -1,11 +1,15 @@
 <template>
-   <nuxt-link :to="articleUrl" class="grid-article-component">
-       <img :src="imageUrl" :alt="imageAlt" class="grid-article-image dropshadow">
-       <h5 class="grid-article-info">
-            <category-icon :category="category" class="grid-article-cat"/>
-       </h5>
-       <h4 class="grid-article-title">{{title}}</h4>
-    </nuxt-link>
+  <nuxt-link :to="articleUrl" class="grid-article-component">
+    <img
+      :src="imageUrl"
+      :alt="imageAlt"
+      class="grid-article-image dropshadow"
+    />
+    <h5 class="grid-article-info">
+      <category-icon :category="category" class="grid-article-cat" />
+    </h5>
+    <h4 class="grid-article-title">{{ title }}</h4>
+  </nuxt-link>
 </template>
 
 <script>
@@ -18,22 +22,37 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
+    title: String
   }
 };
 </script>
 
 <style lang="scss">
-
-@import '../assets/variables';
-a:link { text-decoration: none; color: var(--black)}
-a:visited { text-decoration: none;  color: var(--black)}
-a:hover { text-decoration: none;  color: var(--black)}
-a:active { text-decoration: none;  color: var(--black)}
+@import "../assets/variables";
+a:link {
+  text-decoration: none;
+  color: var(--black);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--black);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--black);
+}
+a:active {
+  text-decoration: none;
+  color: var(--black);
+}
 .grid-article-component {
   display: flex;
   flex-direction: column;
   width: 32%;
+}
+.grid-article-component > h5,
+.grid-article-component h4 {
+  color: var(--on-background);
 }
 .grid-article-info {
   margin: 1rem 0;
@@ -42,7 +61,7 @@ a:active { text-decoration: none;  color: var(--black)}
 .grid-article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height:20rem;
+  height: 20rem;
   object-fit: cover;
 }
 .grid-article-cat {
@@ -55,28 +74,28 @@ a:active { text-decoration: none;  color: var(--black)}
   font-weight: bold;
 }
 .grid-article-data {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 @media only screen and (max-width: $midlarge-screen) {
   .grid-article-component {
-  display: flex;
-  flex-direction: column;
-  width: 47%;
-}
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+  }
 }
 @media only screen and (max-width: $small-screen) {
   .grid-article-component {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 1.5rem 0;
-}
-.grid-article-image {
-  width: 100%;
-  border-radius: 1.5rem;
-  height:30rem;
-  object-fit: cover;
-}
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 30rem;
+    object-fit: cover;
+  }
 }
 </style>
 

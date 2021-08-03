@@ -1,5 +1,13 @@
 <template>
-  <nuxt-link :to="articleUrl" class="card-component card-component-image dropshadow" :style="{ background: 'url(' + imageUrl + ')', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }">
+  <nuxt-link
+    :to="articleUrl"
+    class="card-component card-component-image dropshadow"
+    :style="{
+      background: 'url(' + imageUrl + ')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }"
+  >
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
@@ -77,20 +85,19 @@ export default {
         largeClamp
       };
       return clampSizes[this.clampSize];
-    },
+    }
   }
 };
 </script>
 
 <style lang="scss">
 :root {
-    --fontSmall: 2.827rem;
+  --fontSmall: 2.827rem;
   --fontMedium: 3.998rem;
   --fontLarge: 5.653rem;
 }
 
 @import "../assets/variables";
-
 
 a:link {
   text-decoration: none;
@@ -130,12 +137,16 @@ a:active {
   max-height: 70%;
   margin: 0 auto;
   padding-bottom: 10%;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
   border-radius: 1rem;
 }
 .card-component-category-author-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
 .card-component-category {
@@ -165,20 +176,19 @@ a:active {
   color: var(--white);
 }
 .dropshadow {
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
 
 @media only screen and (max-width: $x-small-screen) {
-    :root{
-      --fontSmall: 2.7rem;
-      --fontMedium: 2.7rem;
-      --fontLarge: 2.8rem;
-    }
-
+  :root {
+    --fontSmall: 2.7rem;
+    --fontMedium: 2.7rem;
+    --fontLarge: 2.8rem;
+  }
 }
 .card-component-category-author-date {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
   padding-bottom: 3%;
 }
 .card-component-text-container {
@@ -187,17 +197,21 @@ a:active {
   max-height: 80%;
   margin: 0 auto;
   padding-bottom: 5%;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
   border-radius: 1rem;
 }
 #article-details-author {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 #article-details-date {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 </style>
+
 <docs>
 
 </docs>
-

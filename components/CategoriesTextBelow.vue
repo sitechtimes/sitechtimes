@@ -27,8 +27,8 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
@@ -76,6 +76,7 @@ a:active {
   font-style: normal;
   font-weight: bold;
   font-size: var(--h4);
+  color: var(--on-background) !important;
 }
 .category-data {
   padding-top: 1rem;

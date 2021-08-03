@@ -109,7 +109,7 @@ export default {
     },
     toggleBackground: function() {
       if (this.bgColor === "") {
-        this.bgColor = "var(--primary-color)";
+        this.bgColor = "var(--mobile-nav-background)";
       } else {
         this.bgColor = "";
       }
@@ -153,7 +153,7 @@ export default {
 .mobile-nav {
   width: 100vw;
   height: 95vh;
-  background-color: var(--primary-color);
+  background-color: var(--mobile-nav-background);
   display: flex;
   text-align: center;
   justify-content: center;
@@ -164,7 +164,7 @@ export default {
   list-style: none;
   font-size: 3.5rem;
   margin: 1vh;
-  color: var(--white);
+  color: var(--mobile-nav-text);
   transition: all 0.3s;
 }
 .mobile-nav li:focus {

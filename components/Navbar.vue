@@ -125,14 +125,15 @@ a {
 }
 .home-nav-link {
   border-bottom: 0.25rem solid transparent;
+  color: var(--nav-color) !important;
 }
 .home-nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   border-bottom: 0.25rem solid var(--primary-color);
 }
 .home-nav-link.nuxt-link-active {
   border-bottom: unset;
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   font-weight: 900;
 }
 .home-nav-ul {
