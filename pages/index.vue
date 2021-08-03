@@ -122,8 +122,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
 }
 
 // .darksection {

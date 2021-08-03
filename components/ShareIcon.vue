@@ -12,8 +12,8 @@ name: "ShareIcon"
 
 <style>
   .fa-share {
-  margin-left: 2.5rem;
-  margin-right: 0;
+  margin-left: 2rem;
+  margin-right: .5rem;
 }
 </style>
 
