@@ -3,7 +3,6 @@
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
-
       </div>
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
@@ -16,9 +15,7 @@
 export default {
   name: "CardComponent",
   props: {
-    author: { type: String },
     articleUrl: { type: String },
-    published: { type: String },
     category: { type: String },
     imageUrl: { type: String },
     imageAlt: { type: String },
@@ -113,7 +110,7 @@ a:active {
 }
 .card-component {
   cursor: pointer;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -134,7 +131,7 @@ a:active {
   margin: 0 auto;
   padding-bottom: 4%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 
 .card-component-category {
@@ -179,14 +176,13 @@ a:active {
       --fontMedium: 2.4rem;
       --fontLarge: 2.8rem;
     }
-  
+
 }
 .card-component-category-author-date {
     display: flex;
     flex-wrap: wrap;
   padding-bottom: 3%;
 }
-
 #article-details-author {
     font-size: 1.1rem;
 }

@@ -1,12 +1,18 @@
 <template>
-   <div class="category-text-below-preview">
-  <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="article-image dropshadow"></a>
-       <div class="category-info">
-            <category-icon :category="category" class="category-cat"/>
-            <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
-       </div>
-       <a :href="articleUrl" class="category-title">{{title}}</a>
-   </div>
+  <div class="category-text-below-preview">
+    <a :href="articleUrl" class="category-link"
+      ><img
+        :href="articleUrl"
+        :src="imageUrl"
+        :alt="imageAlt"
+        class="article-image dropshadow"
+    /></a>
+    <div class="category-info">
+      <category-icon :category="category" class="category-cat" />
+      <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
+    </div>
+    <a :href="articleUrl" class="category-title">{{ title }}</a>
+  </div>
 </template>
 
 <script>
@@ -22,15 +28,27 @@ export default {
     imageUrl: String,
     imageAlt: String,
     title: String,
-    },
+  },
 };
 </script>
 
 <style lang="scss">
- a:link { text-decoration: none; color: var(--black)}
- a:visited { text-decoration: none;  color: var(--black)}
- a:hover { text-decoration: none;  color: var(--black)}
- a:active { text-decoration: none;  color: var(--black)}
+a:link {
+  text-decoration: none;
+  color: var(--black);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--black);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--black);
+}
+a:active {
+  text-decoration: none;
+  color: var(--black);
+}
 
 .category-text-below-preview {
   display: flex;
@@ -38,14 +56,14 @@ export default {
   //  width: 46.1rem;
   //  height: 37.1rem;
   width: 100%;
-height: 100%;
+  height: 100%;
 }
 .category-info {
   display: flex;
   margin-top: 1rem;
 }
 .article-image {
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   border-radius: 1.5rem;
 }
@@ -60,22 +78,14 @@ height: 100%;
   font-size: var(--h4);
 }
 .category-data {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
 @import "../assets/variables";
-@media only screen and (max-width: $mid-screen){
-.article-image{
+@media only screen and (max-width: $mid-screen) {
+  .article-image {
     width: 90%;
+  }
 }
-}
-//  @media only screen and (max-width: 670px){
-//  .article-image{
-//      width: 80%;
-//  }
-// //  .category-cat{
-
-// //  }
-//  }
 @media only screen and (max-width: $x-small-screen) {
   .category-cat {
     margin-right: 1rem;
@@ -93,7 +103,6 @@ height: 100%;
     width: 37rem;
   }
 }
-
 </style>
 
 <!--<docs>-->

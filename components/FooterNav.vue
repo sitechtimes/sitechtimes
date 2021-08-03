@@ -51,7 +51,7 @@ export default {
   font-size: var(--h4);
   list-style-type: none;
   text-transform: capitalize;
-  padding: .75rem;
+  padding: .3rem;
   transition: all .1s;
 }
 .footer-nav-ul li:hover {
@@ -61,7 +61,15 @@ export default {
   .footer-nav {
     margin: 3rem auto;
   }
+.footer-nav-ul li {
+  font-size: 2.5rem;
+  }
  }
+@media only screen and (max-width: $x-small-screen) {
+        .footer-nav-header {
+        font-size: var(--h2);
+    }
+    }
 </style>
 
 <!--<docs>-->

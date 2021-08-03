@@ -1,23 +1,20 @@
 <template>
-   <nuxt-link :to="articleUrl" class="text-below-preview-article-home">
-       <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
-       <h5 class="article-info">
-            <category-icon :category="category" class="article-cat"/>
-            <author-and-date :author="author" :published="published" class="article-data" />
+   <nuxt-link :to="articleUrl" class="grid-article-component">
+       <img :src="imageUrl" :alt="imageAlt" class="grid-article-image dropshadow">
+       <h5 class="grid-article-info">
+            <category-icon :category="category" class="grid-article-cat"/>
        </h5>
-       <h4 class="article-title">{{title}}</h4>
-   </nuxt-link>
+       <h4 class="grid-article-title">{{title}}</h4>
+    </nuxt-link>
 </template>
 
 <script>
 //import AuthorAndDate from './AuthorAndDate.vue';
 //import CategoryIcon from './CategoryIcon.vue';
 export default {
-  name: "TextBelowArticlePreviewHome",
+  name: "GridArticleComponent",
   props: {
-    author: String,
     articleUrl: String,
-    published: Date,
     category: String,
     imageUrl: String,
     imageAlt: String,
@@ -33,34 +30,54 @@ a:link { text-decoration: none; color: var(--black)}
 a:visited { text-decoration: none;  color: var(--black)}
 a:hover { text-decoration: none;  color: var(--black)}
 a:active { text-decoration: none;  color: var(--black)}
-.text-below-preview-article-home {
+.grid-article-component {
   display: flex;
   flex-direction: column;
+  width: 32%;
 }
-.home-article-info {
+.grid-article-info {
   margin: 1rem 0;
   display: flex;
 }
-.home-article-image {
+.grid-article-image {
   width: 100%;
   border-radius: 1.5rem;
   height:20rem;
+  object-fit: cover;
 }
-.home-article-cat {
+.grid-article-cat {
   margin-right: 2rem;
 }
-.home-article-title {
+.grid-article-title {
   margin: 0 0.2rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: var(--h4)
 }
-.home-article-data {
+.grid-article-data {
     padding-top: 1rem;
 }
-
-
+@media only screen and (max-width: $midlarge-screen) {
+  .grid-article-component {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+}
+@media only screen and (max-width: $small-screen) {
+  .grid-article-component {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+.grid-article-image {
+  width: 100%;
+  border-radius: 1.5rem;
+  height:30rem;
+  object-fit: cover;
+}
+}
 </style>
 
 <!--<docs>-->
