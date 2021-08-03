@@ -14,7 +14,7 @@
 export default {
   name: "CategoryIconSidebar",
   props: {
-    categories: String
+    category: String
   },
   data() {
     return {};

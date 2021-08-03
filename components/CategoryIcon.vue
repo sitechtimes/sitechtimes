@@ -14,7 +14,7 @@
 export default {
   name: "CategoryIcon",
   props: {
-    categories: String
+    category: String
   },
   data() {
     return {};
