@@ -122,6 +122,7 @@ a:active {
 .duo-card-component {
   cursor: pointer;
   border-radius: 1rem;
+  box-shadow: var(--card-shadow);
 //   position: relative;
 //   display: flex;
 //   flex-direction: column;
