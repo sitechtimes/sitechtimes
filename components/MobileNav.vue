@@ -127,7 +127,8 @@ export default {
 @import "../assets/variables";
 .mobile-nav-box {
   display: none;
-  width: 100vw;
+  //width: 100vw;
+  width: 100%;
   max-height: 100vh;
   z-index: 1;
   position: fixed;
