@@ -1,20 +1,20 @@
 <template>
   <nuxt-link
     :to="articleUrl"
-    class="category-card-component"
+    class="duo-card-component"
     :style="getFontSize"
   >
     <div
-      class="category-card-component-image"
+      class="duo-card-component-image"
       :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
     >
-      <div class="category-flex-col category-card-component-text-container">
+      <div class="duo-flex-col duo-card-component-text-container">
         <div
-          class="category-flex-row category-card-component-category-author-date"
+          class="duo-flex-row duo-card-component-category-author-date"
         >
           <category-icon
             :category="category"
-            class="category-card-component-category"
+            class="duo-card-component-category"
           />
           <!-- <author-and-date
           :author="author"
@@ -23,7 +23,7 @@
         /> -->
         </div>
         <div
-          class="category-text-overflow category-card-component-title"
+          class="duo-text-overflow duo-card-component-title"
           :style="getClampSize"
         >
           {{ title }}
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "CategoryCardComponent",
+  name: "DuoArticleComponent",
   props: {
     author: String,
     articleUrl: String,
@@ -124,29 +124,31 @@ a:active {
   text-decoration: none;
   color: var(--black);
 }
-.category-card-component {
+.duo-card-component {
   cursor: pointer;
-  border-radius: 1.5rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  border-radius: 1rem;
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   width: 60rem;
 }
-.category-card-component-image {
+.duo-card-component-image {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  border-radius: 1.5rem;
+//   width: 95%;
+  border-radius: 1rem;
 }
-.category-flex-col {
+.duo-flex-col {
   display: flex;
   flex-direction: column;
 }
-.category-flex-row {
+.duo-flex-row {
   display: flex;
   flex-direction: row;
 }
-.category-card-component-text-container {
+.duo-card-component-text-container {
   width: 100%;
   padding: 32% 0 5% 5%;
   height: 100%;
@@ -156,24 +158,24 @@ a:active {
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.65) 100%
   );
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
-.category-card-component-category-author-date {
+.duo-card-component-category-author-date {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 1.7rem;
 }
-.category-card-component-category {
+.duo-card-component-category {
   color: var(--white);
   padding-right: 1.7rem;
 }
-.category-card-component-author-and-date {
+.duo-card-component-author-and-date {
   position: relative;
   height: 1.6rem;
   padding-top: 1rem;
   color: var(--white);
 }
-.category-text-overflow {
+.duo-text-overflow {
   display: block;
   display: -webkit-box;
   -webkit-line-clamp: var(
@@ -183,24 +185,14 @@ a:active {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.category-card-component-title {
+.duo-card-component-title {
   font-weight: bold;
   font-size: var(--customFontSize);
   line-height: 4rem;
   color: var(--white);
 }
-.category-dropshadow {
+.duo-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
-}
-@media only screen and (max-width: $mid-screen) {
-  .category-card-component-image {
-    width: 95%;
-  }
-}
-@media only screen and (max-width: $small-screen) {
-  .category-card-component-image {
-    width: 100%;
-  }
 }
 </style>
 <docs>
