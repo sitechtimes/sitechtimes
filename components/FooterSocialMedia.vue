@@ -37,8 +37,8 @@ export default {
         margin-right: 1rem;
         transition: all .3s;
     }
-    .footer-sm-icon:hover { 
-        transform: scale(115%);
+    .footer-sm-icon:hover {
+        color: #bf9f4b;
         transform: scale(110%);
         cursor: pointer;
     }
