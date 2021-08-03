@@ -35,29 +35,26 @@
         />
       </section>
 
-      <section class="grid-article-container">
+      <section class="grid-article-container" v-if="homepages[3]">
         <GridArticleComponent
-          v-if="homepages[3]"
           v-for="article in homepages.slice(3, 6)"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
+          :key="article.id"
         />
       </section>
-
       <section>
         <DuoArticleContainer
           v-if="homepages[7]"
           :articles="homepages.slice(7, 9)"
         />
       </section>
-
-      <section class="grid-article-container">
+      <section class="grid-article-container" v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
-          v-if="homepages[0]"
           :articleUrl="'/articles/' + article.slug"
           :author="article.user.name"
           :published="article.createdAt"
@@ -65,6 +62,7 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
+          :key="article.id"
         />
       </section>
     </div>
@@ -99,17 +97,16 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-  margin: 4rem 0;
+  margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.invisible {
-  height: 0rem;
-  width: 0rem;
-}
-
+// .invisible {
+//   height: 0rem;
+//   width: 0rem;
+// }
 .section-title {
-  padding: 4rem 0;
+  padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -125,8 +122,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
 }
 
 .global-container > h3 {

@@ -3,30 +3,20 @@
     <img :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <h4 id="sidebar-article-details-title" v-if="title.length < 40">
+      <h4 id="sidebar-article-details-title">
         {{ title }}
       </h4>
-      <h4 id="sidebar-article-details-title" v-else>
-        {{ title.substring(0, 40) + "..." }}
-      </h4>
-      <author-and-date-sidebar
-        :author="author"
-        :published="this.$format(this.published)"
-      ></author-and-date-sidebar>
     </div>
   </nuxt-link>
 </template>
 
 <script>
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
-import AuthorAndDateSidebar from "./AuthorAndDateSidebar.vue";
 export default {
-  components: { CategoryIconSidebar, AuthorAndDateSidebar },
+  components: { CategoryIconSidebar },
   name: "Sidebar",
   props: {
     category: String,
-    author: String,
-    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,

@@ -9,6 +9,9 @@
 </template>
 
 <script>
+import GetNotifiedSection from "./GetNotifiedSection";
+import FooterSocialMedia from "./FooterSocialMedia";
+import FooterNav from "./FooterNav";
 export default {
     name: "Footer",
     props: ["categories"],
@@ -17,10 +20,8 @@ export default {
     }
   },
     components: {
-        GetNotifiedSection: () => import('./GetNotifiedSection.vue'),
-        FooterSocialMedia: () => import('./FooterSocialMedia.vue'),
-        FooterNav: () => import('./FooterNav.vue'),
-    }
+       GetNotifiedSection, FooterSocialMedia, FooterNav
+     }
 }
 </script>
 
@@ -29,6 +30,7 @@ export default {
     .footer-container {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding: 5rem;
         // margin: 0 auto;
         background-color: var(--grey);
@@ -36,6 +38,7 @@ export default {
     .form-and-media {
         display: flex;
         flex-direction: column;
+        height: 100%;
         padding-right: 15%;
     }
      @media only screen and (max-width: $mid-screen) {

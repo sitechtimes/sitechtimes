@@ -104,6 +104,23 @@ export default {
   .datebar-container {
     width: 80rem;
   }
+  .datebar-date {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+@media only screen and (max-width: $midlarge-screen) {
+  .datebar-container {
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+  .datebar-date {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .calendar-icon {
+    padding-top: 0.6rem;
+  }
 }
 
 @media only screen and (max-width: $mid-screen) {
@@ -121,6 +138,7 @@ export default {
     width: auto;
   }
 }
+
 @media only screen and (max-width: $small-screen) {
   .datebar-container {
     margin: auto 2rem;
@@ -128,6 +146,26 @@ export default {
   .datebar-date {
     font-size: 4.4rem;
     //line-height: 3.2rem;
+  }
+  .calendar-icon {
+    padding-top: 0.6rem;
+  }
+}
+@media only screen and (max-width: $x-small-screen) {
+  .datebar {
+    background-color: var(--accent-color);
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .datebar-container {
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+  .datebar-date {
+    font-size: 4.5rem;
+    line-height: 4rem;
   }
   .calendar-icon {
     padding-top: 0.6rem;

@@ -31,24 +31,25 @@ export default {
 @import "../assets/variables";
 a:link {
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
 }
 a:visited {
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
 }
 a:hover {
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
 }
 a:active {
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
 }
 .grid-article-component {
   display: flex;
   flex-direction: column;
   width: 32%;
+  margin: 1.5rem 0;
 }
 .grid-article-component > h5,
 .grid-article-component h4 {
@@ -61,14 +62,15 @@ a:active {
 .grid-article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height: 20rem;
+  height: 25rem;
+
   object-fit: cover;
 }
 .grid-article-cat {
-  margin-right: 2rem;
+  margin: 0.2rem 0.5rem;
 }
 .grid-article-title {
-  margin: 0 0.2rem;
+  margin: 0 0.5rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
@@ -95,6 +97,56 @@ a:active {
     border-radius: 1.5rem;
     height: 30rem;
     object-fit: cover;
+
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+  }
+  .grid-article-component:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 35rem;
+    object-fit: cover;
+  }
+  .grid-article-component:last-child .grid-article-title {
+    font-size: var(--h3);
+  }
+
+  @media only screen and (max-width: $mid-screen) {
+    .grid-article-component:last-child {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .grid-article-image {
+      width: 100%;
+      border-radius: 1.5rem;
+      height: 40rem;
+      object-fit: cover;
+    }
+  }
+  @media only screen and (max-width: $small-screen) {
+    .grid-article-component {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+    .grid-article-image {
+      width: 100%;
+      border-radius: 1.5rem;
+      height: 30rem;
+      object-fit: cover;
+    }
+    .grid-article-title {
+      font-size: var(--h3);
+    }
   }
 }
 </style>

@@ -87,7 +87,7 @@ export default {
         "opinion",
         "science",
         "technology",
-        "sports"
+        "activities"
       ]
     };
   },

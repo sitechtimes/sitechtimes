@@ -15,13 +15,9 @@ name: "SocialMediaIcons"
 <style>
 .social-media-icon { 
   color: var(--primary-color);
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-  transition: all .3s;
-}
-.social-media-icon:hover { 
-  transform: scale(115%);
-  cursor: pointer;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  transition: all .2s;
 }
 .instagram-icon {
   margin-left: 0;
@@ -29,6 +25,12 @@ name: "SocialMediaIcons"
 .facebook-icon {
   margin-right: 0;
 }
+.social-media-icon:hover {
+  color: #bf9f4b;
+  transform: scale(110%);
+  cursor: pointer;
+}
+
 </style>
 
 <!--<docs>-->

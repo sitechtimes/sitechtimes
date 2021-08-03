@@ -257,8 +257,8 @@ export default {
 }
 .cat-sub-one,
 .cat-sub-two {
-  width: 45%;
-  margin-top: 7rem;
+  width: 48.5%;
+  margin-top: 3rem;
 }
 .mobile-sub-arts {
   margin-top: 9rem;
@@ -271,6 +271,7 @@ export default {
   display: none;
 }
 .entertainment-seymour {
+  width: 85%;
   display: flex;
   justify-content: center;
 }
