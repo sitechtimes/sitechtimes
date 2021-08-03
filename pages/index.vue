@@ -35,10 +35,10 @@
         />
       </section>
 
-      <section class="grid-article-container">
+      <section class="grid-article-container"     v-if="homepages[3]">
         <GridArticleComponent
-          v-if="homepages[3]"
           v-for="article in homepages.slice(3, 6)"
+            :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -54,10 +54,10 @@
         />
       </section>
 
-      <section class="grid-article-container">
+      <section class="grid-article-container"          v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
-          v-if="homepages[0]"
+     :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :author="article.user.name"
           :published="article.createdAt"
@@ -99,17 +99,16 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-  margin: 4rem 0;
+   margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.invisible {
-  height: 0rem;
-  width: 0rem;
-}
-
+// .invisible {
+//   height: 0rem;
+//   width: 0rem;
+// }
 .section-title {
-  padding: 4rem 0;
+   padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -129,11 +128,11 @@ export default {
   grid-row-gap: 20px;
 }
 
-.darksection {
-  background-color: var(--grey);
-  color: white;
-  padding-bottom: 5rem;
-}
+// .darksection {
+//   background-color: var(--grey);
+//   color: white;
+//   padding-bottom: 5rem;
+// }
 //.desktop-view {
 //  display: grid;
 //}
