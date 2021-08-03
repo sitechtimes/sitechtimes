@@ -146,7 +146,7 @@ a:active {
 }
 .duo-card-component-text-container {
   width: 100%;
-  padding: 32% 0 5% 5%;
+  padding: 50% 7% 7% 7%;
   height: 100%;
   margin: 0 auto;
   background: -webkit-linear-gradient(
@@ -155,21 +155,16 @@ a:active {
     rgba(0, 0, 0, 0.65) 100%
   );
   border-radius: 1rem;
+  justify-content: flex-end;
 }
 .duo-card-component-category-author-date {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 1.7rem;
+  padding-bottom: 1rem;
 }
 .duo-card-component-category {
   color: var(--white);
   padding-right: 1.7rem;
-}
-.duo-card-component-author-and-date {
-  position: relative;
-  height: 1.6rem;
-  padding-top: 1rem;
-  color: var(--white);
 }
 .duo-text-overflow {
   display: block;
