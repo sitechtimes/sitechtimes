@@ -39,7 +39,7 @@ export default {
     .footer-form-box {
         width: 40rem;
         margin: 0 auto;
-        padding-bottom: 3.1rem;
+        padding-bottom: 5.1rem;
         border-bottom: .2rem solid var(--primary-color);
     }
     .footer-header,
@@ -85,6 +85,7 @@ export default {
         visibility: visible;
     }
     .footer-join-btn {
+        width: 7.5rem;
         margin-left: -7.5rem;
         font-family: var(--font);
         font-size: var(--h5);
@@ -121,8 +122,7 @@ export default {
             width: 45rem;
         }
          .footer-join-btn {
-            margin-left: -7.5rem;
-            opacity: 1;
+            margin-left: -9.2rem;
          }
         .footer-email-input, .footer-join-btn {
             margin-top: .5rem;

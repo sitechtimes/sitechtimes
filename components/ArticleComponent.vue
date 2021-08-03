@@ -59,7 +59,7 @@ export default {
 .main-article-title {
   margin: 2rem auto;
   font-weight: 600;
-  font-size: var(--h1);
+  font-size: var(--h2);
 }
 // .main-article-description {
 //   font-style: italic;
@@ -67,6 +67,9 @@ export default {
 //   font-weight: 300;
 //   margin: 2rem auto;
 // }
+.main-article-text-section {
+  padding: .05rem;
+}
 .main-article-text-section p,
 .main-article-text-section p em,
 .main-article-text-section p strong,
@@ -80,7 +83,7 @@ export default {
 .main-article-text ol li,
 .main-article-text ol li span {
   font-family: var(--article-font);
-  font-size: var(--h5);
+  font-size: 1.6rem;
   line-height: 3rem;
 }
 .main-article-text-section p,
@@ -185,6 +188,9 @@ export default {
   .main-article-text-section span {
     font-size: 2.25rem;
     line-height: 3.5rem;
+  }
+  .main-article-title {
+    font-size: var(--h1);
   }
 }
 </style>

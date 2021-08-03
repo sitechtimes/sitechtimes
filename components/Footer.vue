@@ -29,6 +29,7 @@ export default {
     .footer-container {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding: 5rem;
         // margin: 0 auto;
         background-color: var(--grey);
@@ -36,6 +37,7 @@ export default {
     .form-and-media {
         display: flex;
         flex-direction: column;
+        height: 100%;
         padding-right: 15%;
     }
      @media only screen and (max-width: $mid-screen) {

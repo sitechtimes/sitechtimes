@@ -37,9 +37,6 @@ export default {
   padding: 0.5em 1rem 0.2em 1rem;
   transition: all .2s;
 }
-#article-category:hover {
-  transform: scale(110%);
-}
 </style>
 
 <!--<docs>-->

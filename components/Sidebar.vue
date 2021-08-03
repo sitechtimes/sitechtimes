@@ -3,15 +3,8 @@
     <img :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
     <div class="sidebar-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <h4
-        id="sidebar-article-details-title"
-        v-if="title.length < 40">
+      <h4 id="sidebar-article-details-title">
         {{ title }}
-      </h4>
-      <h4
-        id="sidebar-article-details-title"
-        v-else>
-        {{ title.substring(0, 40) + '...' }}
       </h4>
     </div>
   </nuxt-link>
