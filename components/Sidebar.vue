@@ -13,10 +13,6 @@
         v-else>
         {{ title.substring(0, 40) + '...' }}
       </h4>
-      <author-and-date-sidebar
-        :author="author"
-        :published="this.$format(this.published)"
-      ></author-and-date-sidebar>
     </div>
   </nuxt-link>
 </template>
@@ -29,8 +25,6 @@ export default {
   name: "Sidebar",
   props: {
     category: String,
-    author: String,
-    published: Date,
     title: String,
     imgUrl: String,
     imgAlt: String,
