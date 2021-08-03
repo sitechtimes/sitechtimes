@@ -1,10 +1,9 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-
       <h3 class="section-title">Trending Articles</h3>
       <section class="trending-section">
-          <CardComponent
+        <CardComponent
           class="trending-main cardquery"
           size="medium"
           v-if="homepages[0]"
@@ -36,11 +35,10 @@
         />
       </section>
 
-
-      <section class="grid-article-container">
+      <section class="grid-article-container"     v-if="homepages[3]">
         <GridArticleComponent
-          v-if="homepages[3]"
           v-for="article in homepages.slice(3, 6)"
+            :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -51,13 +49,16 @@
       </section>
 
       <section>
-        <DuoArticleContainer v-if="homepages[7]" :articles="homepages.slice(7, 9)"/>
+        <DuoArticleContainer
+          v-if="homepages[7]"
+          :articles="homepages.slice(7, 9)"
+        />
       </section>
 
-      <section class="grid-article-container">
+      <section class="grid-article-container"          v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
-          v-if="homepages[0]"
+     :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :author="article.user.name"
           :published="article.createdAt"
@@ -68,7 +69,7 @@
           :key="article.id"
         />
       </section>
-      </div>
+    </div>
   </div>
 </template>
 
@@ -78,19 +79,21 @@ import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
 export default {
   components: {
-    DuoArticleContainer, CardComponent, GridArticleComponent
+    DuoArticleContainer,
+    CardComponent,
+    GridArticleComponent
   },
   data() {
     return {
       homepages: [],
-      isMobile: false,
+      isMobile: false
     };
   },
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -98,17 +101,16 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-  margin: 4rem 0;
+   margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.invisible {
-  height: 0rem;
-  width: 0rem;
-}
-
+// .invisible {
+//   height: 0rem;
+//   width: 0rem;
+// }
 .section-title {
-  padding: 4rem 0;
+   padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -128,11 +130,11 @@ export default {
   grid-row-gap: 20px;
 }
 
-.darksection {
-  background-color: var(--grey);
-  color: white;
-  padding-bottom: 5rem;
-}
+// .darksection {
+//   background-color: var(--grey);
+//   color: white;
+//   padding-bottom: 5rem;
+// }
 //.desktop-view {
 //  display: grid;
 //}
@@ -142,22 +144,22 @@ export default {
 
 @media only screen and (max-width: $small-screen) {
   .trending-main {
-  grid-area: 1 / 1 / 8 / 2;
-}
-.trending-sub {
-  grid-area: 8 / 1 / 13 / 2;
-}
-.trending-detail {
-  grid-area: 13 / 1 / 18 / 2;
-}
-.trending-section {
-  height: 80rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(17, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-}
+    grid-area: 1 / 1 / 8 / 2;
+  }
+  .trending-sub {
+    grid-area: 8 / 1 / 13 / 2;
+  }
+  .trending-detail {
+    grid-area: 13 / 1 / 18 / 2;
+  }
+  .trending-section {
+    height: 80rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(17, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
   //
   //.desktop-view {
   //  display: none;
@@ -166,5 +168,4 @@ export default {
   //  display: grid;
   //}
 }
-
 </style>
