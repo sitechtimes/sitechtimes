@@ -131,7 +131,7 @@ export default {
   max-height: 100vh;
   z-index: 1;
   position: fixed;
-  overflow: scroll;
+  //overflow: scroll;
   top: 0;
 
   position: relative;

@@ -29,13 +29,18 @@
           ></path>
         </svg>
       </h5>
+
+      <color-mode-toggle-temp />
     </div>
   </div>
 </template>
 
 <script>
+import ColorModeToggleTemp from "../components/ColorModeToggleTemp.vue";
+
 export default {
   name: "Datebar", // vue component name
+  components: { ColorModeToggleTemp },
   data() {
     return {};
   }
@@ -58,6 +63,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .datebar-date {
   margin: auto 0;
@@ -89,28 +95,26 @@ export default {
 }
 @media only screen and (max-width: $mid-screen) {
   .datebar-container {
-    justify-content: flex-start;
-    margin-left: 2rem;
+    margin: auto 2rem;
   }
   .datebar-date {
-    font-size: 3.5rem;
-    line-height: 3.2rem;
+    font-size: 4rem;
+    //line-height: 3.2rem;
   }
   .calendar-icon {
     padding-top: 0.6rem;
   }
   .datebar-container {
-    width: 60rem;
+    width: 100%;
   }
 }
 @media only screen and (max-width: $small-screen) {
   .datebar-container {
-    justify-content: flex-start;
-    margin-left: 2rem;
+    margin: auto 2rem;
   }
   .datebar-date {
-    font-size: 3.5rem;
-    line-height: 3.2rem;
+    font-size: 4.4rem;
+    //line-height: 3.2rem;
   }
   .calendar-icon {
     padding-top: 0.6rem;

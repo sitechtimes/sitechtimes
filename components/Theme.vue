@@ -30,7 +30,7 @@ export default {
   border: 1px solid black;
 
   position: absolute;
-  top: 8rem;
+  top: 3.7rem;
 }
 .theme-switcher > * {
   width: 100%;

@@ -1,7 +1,6 @@
 <template>
   <div>
     <Datebar />
-    <color-mode-toggle-temp />
 
     <Navbar />
     <MobileNav />
@@ -13,12 +12,10 @@
 </template>
 
 <script>
-import ColorModeToggleTemp from "../components/ColorModeToggleTemp.vue";
 import Datebar from "../components/Datebar";
 export default {
   components: {
-    Datebar,
-    ColorModeToggleTemp
+    Datebar
   },
   data() {
     return {

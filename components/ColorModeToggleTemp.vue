@@ -40,14 +40,14 @@
       <span class="slider round"></span>
     </label> -->
 
-    <p class="test">$colorMode.preference: {{ $colorMode.preference }}</p>
+    <!--     <p class="test">$colorMode.preference: {{ $colorMode.preference }}</p>
     <p
       class="test"
       style="right: 25rem"
       v-if="$colorMode.preference === 'system'"
     >
       (<i>{{ $colorMode.value }}</i> mode detected)
-    </p>
+    </p> -->
     <!-- <Theme v-if="openTheme" /> -->
   </div>
 </template>
@@ -130,21 +130,22 @@ export default {
 
 <style lang="scss">
 @import "../assets/variables";
+:root {
+  --color-toggle-switch-height: 3.5rem;
+}
 
 .test {
   font-size: 1.6rem;
   padding-left: 1rem;
   color: var(--on-background);
   position: absolute;
-  top: 7rem;
+  top: 4rem;
 }
 
 .color-toggle-switch {
   display: inline-flex;
   justify-content: flex-end;
   z-index: 9;
-
-  float: right;
 }
 
 .color-toggle-button {
@@ -154,11 +155,11 @@ export default {
   cursor: pointer;
   background-color: var(--background-color);
   background-image: var(--button-icon);
-  background-size: 3rem;
+  background-size: 2.75rem;
   background-position: center;
   background-repeat: no-repeat;
-  height: 4rem;
-  width: 4rem;
+  height: var(--color-toggle-switch-height);
+  width: var(--color-toggle-switch-height);
 
   outline: none;
 }
@@ -170,7 +171,7 @@ export default {
   border-radius: 0 0.8rem 0.8rem 0;
   padding: 0.8rem 0.6rem 1rem 0.6rem;
 
-  height: 4rem;
+  height: var(--color-toggle-switch-height);
   display: flex;
   align-items: center;
 
@@ -178,16 +179,16 @@ export default {
 }
 .down-arrow {
   border: solid var(--on-background);
-  border-width: 0 3px 3px 0;
+  border-width: 0 0.3rem 0.3rem 0;
   display: inline-block;
-  padding: 3px;
+  padding: 0.3rem;
   transform: rotate(45deg);
   outline: none;
 }
 
 /* MAYBE ADD HOVER EFFECT? */
 
-:root {
+/* :root {
   --switch-width: 5rem;
   --switch-height: 2.5rem;
   --slider-diameter: 1.7rem;
@@ -259,5 +260,5 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
+} */
 </style>
