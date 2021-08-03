@@ -74,7 +74,7 @@ export default {
       spanClass: "",
       show: false,
       bgColor: "",
-      categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
+      categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'activities'],
     }
   },
   computed: {

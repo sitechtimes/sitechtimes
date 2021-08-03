@@ -70,7 +70,7 @@ export default {
         "opinion",
         "science",
         "technology",
-        "sports",
+        "activities",
       ],
     };
   },
@@ -119,7 +119,7 @@ a {
   line-height: 0;
 }
 .home-nav-li {
-  padding: 0;
+  padding: .6rem 0;
 }
 .home-nav-link {
    border-bottom: 0.25rem solid transparent;

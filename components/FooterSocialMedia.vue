@@ -33,12 +33,13 @@ export default {
     }
     .footer-sm-icon {
         color: var(--primary-color);
-        margin-left: 1.25rem;
-        margin-right: 1.25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
         transition: all .3s;
     }
-    .footer-sm-icon:hover { 
-        transform: scale(115%);
+    .footer-sm-icon:hover {
+        color: #bf9f4b;
+        transform: scale(110%);
         cursor: pointer;
     }
 

@@ -37,9 +37,9 @@ export default {
         flex-direction: column;
     }
     .footer-form-box {
-        width: 40rem;
+        width: 36rem;
         margin: 0 auto;
-        padding-bottom: 3.1rem;
+        padding-bottom: 5.1rem;
         border-bottom: .2rem solid var(--primary-color);
     }
     .footer-header,
@@ -71,7 +71,7 @@ export default {
         display: flex; 
     }
     .footer-email-input {
-        width: 40rem;
+        width: 36rem;
         font-size: 1.6rem;
         font-family: var(--font);
     }
@@ -85,6 +85,7 @@ export default {
         visibility: visible;
     }
     .footer-join-btn {
+        width: 7.5rem;
         margin-left: -7.5rem;
         font-family: var(--font);
         font-size: var(--h5);
@@ -114,16 +115,10 @@ export default {
             font-size: var(--h4);
             font-weight: 500;
         }
-        .footer-form-box {
-            width: 45rem;
+        .footer-join-btn {
+            width: 9rem;
+            margin-left: -9rem;
         }
-        .footer-email-input {
-            width: 45rem;
-        }
-         .footer-join-btn {
-            margin-left: -7.5rem;
-            opacity: 1;
-         }
         .footer-email-input, .footer-join-btn {
             margin-top: .5rem;
             padding: 1.6rem 2.5rem;

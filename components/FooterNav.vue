@@ -18,7 +18,7 @@ export default {
   name: 'FooterNav', // vue component name
    data () {
     return {
-        categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'sports'],
+        categories: ['covid', 'entertainment', 'news', 'politics', 'opinion', 'science', 'technology', 'activities'],
     }
   },
 
