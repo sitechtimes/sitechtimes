@@ -156,7 +156,7 @@ a:active {
   color: var(--white);
 }
 .dropshadow {
-    box-shadow: 0px 5px 12px rgba(0,0,0,0.45);
+    box-shadow: var(--card-shadow);
 }
 
 @media only screen and (max-width: $small-screen) {
