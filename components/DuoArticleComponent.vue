@@ -145,7 +145,7 @@ a:active {
 }
 .duo-card-component-text-container {
   width: 100%;
-  padding: 32% 0 5% 5%;
+  padding: 50% 5% 5% 5%;
   height: 100%;
   margin: 0 auto;
   background: -webkit-linear-gradient(
@@ -154,6 +154,7 @@ a:active {
     rgba(0, 0, 0, 0.65) 100%
   );
   border-radius: 1rem;
+  justify-content: flex-end;
 }
 .duo-card-component-category-author-date {
   display: flex;

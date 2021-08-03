@@ -64,12 +64,34 @@ a:active { text-decoration: none;  color: var(--black)}
   flex-direction: column;
   width: 47%;
 }
-/* .grid-article-image {
+.grid-article-component:last-child {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.grid-article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height:35rem;
+  height: 35rem;
   object-fit: cover;
-} */
+}
+.grid-article-component:last-child .grid-article-title {
+  font-size: var(--h3);
+}
+}
+@media only screen and (max-width: $mid-screen) {
+  .grid-article-component:last-child {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.grid-article-image {
+  width: 100%;
+  border-radius: 1.5rem;
+  height: 40rem;
+  object-fit: cover;
+}
 }
 @media only screen and (max-width: $small-screen) {
   .grid-article-component {
