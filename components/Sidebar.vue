@@ -117,7 +117,7 @@ export default {
 }
 @media only screen and (max-width: $mid-screen) {
   :root {
-    --sidebarImgWidth: 20rem;
+    --sidebarImgWidth: 17rem;
   }
   .sidebar-article-details {
     max-width: 100%;

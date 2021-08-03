@@ -2,17 +2,7 @@
   <div class="datebar">
     <div class="datebar-container">
       <h5 class="datebar-date">
-        <span id="date-text"
-          >{{
-            new Date().toLocaleString([], {
-              year: "numeric",
-              month: "numeric",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit"
-            })
-          }}
-        </span>
+        <span id="date-text">{{ this.date }} </span>
         <svg
           aria-hidden="true"
           focusable="false"
@@ -39,10 +29,31 @@
 import ColorModeToggleTemp from "../components/ColorModeToggleTemp.vue";
 
 export default {
-  name: "Datebar", // vue component name
+  name: "Datebar",
   components: { ColorModeToggleTemp },
   data() {
-    return {};
+    return {
+      date: ""
+    };
+  },
+  mounted() {
+    this.refreshDate();
+  },
+  created() {
+    setInterval(() => {
+      this.refreshDate();
+    }, 1000);
+  },
+  methods: {
+    refreshDate() {
+      this.date = new Date().toLocaleString([], {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
   }
 };
 </script>
@@ -58,12 +69,12 @@ export default {
   width: 100%;
 }
 .datebar-container {
-  width: 120rem;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 120rem;
 }
 .datebar-date {
   margin: auto 0;
@@ -93,6 +104,7 @@ export default {
     width: 80rem;
   }
 }
+
 @media only screen and (max-width: $mid-screen) {
   .datebar-container {
     margin: auto 2rem;
@@ -105,7 +117,7 @@ export default {
     padding-top: 0.6rem;
   }
   .datebar-container {
-    width: 100%;
+    width: auto;
   }
 }
 @media only screen and (max-width: $small-screen) {

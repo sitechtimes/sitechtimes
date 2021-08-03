@@ -10,6 +10,7 @@
         :published="article.createdAt"
         :title="article.title"
         :imgUrl="article.imageUrl"
+        :imgAlt="article.imageAlt"
         :articleUrl="article.slug"
       /><!-- css var for imgUrl? -->
     </div>
@@ -23,6 +24,7 @@
         :published="article.createdAt"
         :title="article.title"
         :imgUrl="article.imageUrl"
+        :imgAlt="article.imageAlt"
         :articleUrl="article.slug"
       />
     </div>

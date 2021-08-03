@@ -46,9 +46,6 @@ export default {
     SocialMediaIcons,
     ShareIcon,
     CategoryIcon
-  },
-  data() {
-    return {};
   }
 };
 </script>
@@ -63,6 +60,7 @@ export default {
 .main-article-title {
   margin: 2rem auto;
   font-weight: 600;
+  font-size: var(--h1);
 }
 // .main-article-description {
 //   font-style: italic;
@@ -121,22 +119,22 @@ export default {
 }
 .main-article-text h1,
 .main-article-text h1 strong {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 .main-article-text h2 .main-article-text h2 strong {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .main-article-text h3,
 .main-article-text h3 strong {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .main-article-text h4,
 .main-article-text h4 strong {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 .main-article-text h5,
 .main-article-text h5 strong {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 .main-article-text h6,
 .main-article-text h6 strong {
@@ -186,7 +184,7 @@ export default {
   .main-article-text-section li em,
   .main-article-text-section li strong,
   .main-article-text-section span {
-    font-size: var(--h4);
+    font-size: 2.25rem;
     line-height: 3.5rem;
   }
 }
