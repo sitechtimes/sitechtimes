@@ -14,7 +14,6 @@
 export default {
   name: "GridArticleComponent",
   props: {
-    author: String,
     articleUrl: String,
     category: String,
     imageUrl: String,

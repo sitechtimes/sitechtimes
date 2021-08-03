@@ -3,11 +3,6 @@
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
-        <author-and-date
-          :author="author"
-          :published="published"
-          class="card-component-author-and-date"
-        />
       </div>
       <div class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
@@ -20,9 +15,7 @@
 export default {
   name: "CardComponent",
   props: {
-    author: { type: String },
     articleUrl: { type: String },
-    published: { type: String },
     category: { type: String },
     imageUrl: { type: String },
     imageAlt: { type: String },
@@ -181,7 +174,7 @@ a:active {
       --fontMedium: 2.7rem;
       --fontLarge: 2.8rem;
     }
-  
+
 }
 .card-component-category-author-date {
     display: flex;

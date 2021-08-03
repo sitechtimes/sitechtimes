@@ -16,11 +16,6 @@
             :category="category"
             class="duo-card-component-category"
           />
-          <!-- <author-and-date
-          :author="author"
-          :published="this.published"
-          class="category-card-component-author-and-date"
-        /> -->
         </div>
         <div
           class="duo-text-overflow duo-card-component-title"
