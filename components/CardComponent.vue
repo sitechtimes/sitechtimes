@@ -161,9 +161,9 @@ a:active {
 
 @media only screen and (max-width: $small-screen) {
     :root{
-      --fontSmall: 2rem;
-      --fontMedium: 2.5rem;
-      --fontLarge: 2.7rem;
+      --fontSmall: 2.3rem;
+      --fontMedium: 2.8rem;
+      --fontLarge: 3rem;
     }
     .card-component-title {
         line-height: 3rem;
@@ -172,9 +172,12 @@ a:active {
 
 @media only screen and (max-width: $x-small-screen) {
     :root{
-      --fontSmall: 2rem;
-      --fontMedium: 2.4rem;
-      --fontLarge: 2.8rem;
+      --fontSmall: 2.2rem;
+      --fontMedium: 2.6rem;
+      --fontLarge: 3.2rem;
+    }
+    .card-component-title {
+      line-height: 2.4rem;
     }
 
 }

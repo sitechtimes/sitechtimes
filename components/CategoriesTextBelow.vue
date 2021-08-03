@@ -1,18 +1,17 @@
 <template>
-  <div class="category-text-below-preview">
-    <a :href="articleUrl" class="category-link"
-      ><img
+  <nuxt-link :to="articleUrl" class="category-text-below-preview">
+    <img
         :href="articleUrl"
         :src="imageUrl"
         :alt="imageAlt"
         class="article-image dropshadow"
-    /></a>
+    />
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />
       <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
     </div>
     <a :href="articleUrl" class="category-title">{{ title }}</a>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>

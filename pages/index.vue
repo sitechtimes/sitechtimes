@@ -38,7 +38,7 @@
       <section class="grid-article-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
-          :key= "article.id"
+          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -52,7 +52,7 @@
       <section class="grid-article-container" v-if="homepages[0]">
         <GridArticleComponent
           v-for="article in homepages.slice(10, 20)"
-          :key= "article.id"
+          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :author="article.user.name"
           :published="article.createdAt"
@@ -118,8 +118,8 @@ export default {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 .darksection {
@@ -147,9 +147,9 @@ export default {
 .trending-section {
   height: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3.5rem 3.5rem;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 2.5rem 2.5rem;
 }
   //
   //.desktop-view {

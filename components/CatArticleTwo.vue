@@ -1,16 +1,15 @@
 <template>
-    <div class="cat-article">
+    <nuxt-link :to="articleUrl" class="cat-article">
         <div class="cat-img-div">
-            <a :href="articleUrl"><img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="cat-article-img"></a>
+            <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="cat-article-img">
         </div>
         <div class="cat-article-img-content">
             <div class="cat-labels">
                 <category-icon class="cat-article-icon" :category="category"></category-icon>
-                <!-- <author-and-date class="cat-article-authdate" :author="author" :published="published" /> -->
             </div>
             <h3 class="cat-title">{{title}}</h3>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>

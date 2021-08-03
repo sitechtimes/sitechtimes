@@ -1,7 +1,7 @@
 <template>
     <nuxt-link :to="articleUrl" class="category-article">
         <div class="category-img-div">
-            <img :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="category-article-img">
+            <img :src="imageUrl" :alt="imageAlt" class="category-article-img">
         </div>
         <div class="category-article-img-content">
             <div class="category-labels">
