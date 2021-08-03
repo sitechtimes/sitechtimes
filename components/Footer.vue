@@ -9,6 +9,9 @@
 </template>
 
 <script>
+import GetNotifiedSection from "./GetNotifiedSection";
+import FooterSocialMedia from "./FooterSocialMedia";
+import FooterNav from "./FooterNav";
 export default {
     name: "Footer",
     props: ["categories"],
@@ -17,10 +20,8 @@ export default {
     }
   },
     components: {
-        GetNotifiedSection: () => import('./GetNotifiedSection.vue'),
-        FooterSocialMedia: () => import('./FooterSocialMedia.vue'),
-        FooterNav: () => import('./FooterNav.vue'),
-    }
+       GetNotifiedSection, FooterSocialMedia, FooterNav
+     }
 }
 </script>
 

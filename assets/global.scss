@@ -45,27 +45,24 @@
 
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: 'Merriweather', serif;
+  --article-font: "Merriweather", serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
   --h4: 1.999rem;
   --h5: 1.414rem;
   --small-text: 0.707rem;
-  /* boxshadows */
-  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-  0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* spacing */
+  --section-spacing: 8rem;
+  --title-spacing: 3rem;
+  /* boxshadow */
+  --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
   /*linear gradient */
   --greyToBlack: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(132, 132, 132, 0.29) 54.17%,
-      rgba(0, 0, 0, 0.5) 65.1%
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(132, 132, 132, 0.4) 54.17%,
+    rgba(0, 0, 0, 0.6) 70%
   );
 }
 

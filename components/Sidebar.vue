@@ -12,9 +12,8 @@
 
 <script>
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
-import AuthorAndDateSidebar from "./AuthorAndDateSidebar.vue";
 export default {
-  components: { CategoryIconSidebar, AuthorAndDateSidebar },
+  components: { CategoryIconSidebar },
   name: "Sidebar",
   props: {
     category: String,
