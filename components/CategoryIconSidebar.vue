@@ -42,7 +42,7 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   #sidebar-article-category {
     font-size: var(--h5);
-    padding: 0.8rem 0.8rem 0.6rem 0.8rem;
+    padding: 0.8rem 0.8rem 0.4rem 0.8rem;
     margin: 0.3rem 0 1.5rem 0;
   }
 }
