@@ -46,6 +46,7 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
+          :key="article.id"
         />
       </section>
 
@@ -64,6 +65,7 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
+          :key="article.id"
         />
       </section>
       </div>
