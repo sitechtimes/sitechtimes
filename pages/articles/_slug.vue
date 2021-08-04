@@ -30,6 +30,14 @@ export default {
       await this.$router.push("/");
     }
   },
+  head: {
+      meta: [
+      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/articles/' + slug},
+      { name: 'twitter:title', content: article.title },
+      { name: 'twitter:description', content: article.content.substring(0,30)+".." },
+      { name: 'twitter:image', content: article.imageUrl },
+  ]
+  }
 };
 </script>
 
