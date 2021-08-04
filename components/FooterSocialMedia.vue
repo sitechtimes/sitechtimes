@@ -76,7 +76,7 @@ export default {
 }
 .footer-social-media-box {
   width: 36rem;
-  margin: 5.1rem auto;
+  margin: 5.1rem auto 0 auto;
 }
 .footer-social-media {
   text-align: center;
