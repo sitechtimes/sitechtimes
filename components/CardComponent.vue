@@ -163,11 +163,11 @@ export default {
 }
 
 @media only screen and (max-width: $x-small-screen) {
-    :root{
-      --fontSmall: 2.7rem;
-      --fontMedium: 2.7rem;
-      --fontLarge: 2.8rem;
-    }
+  :root {
+    --fontSmall: 2.7rem;
+    --fontMedium: 2.7rem;
+    --fontLarge: 2.8rem;
+  }
   .card-component-title {
     font-weight: bold;
     font-size: var(--h3);
@@ -181,16 +181,21 @@ export default {
   .flex-row {
     display: flex;
     flex-wrap: wrap;
-  padding-bottom: 3%;
-}
-.card-component-text-container {
-  width: 100%;
-  padding: 0 7%;
-  max-height: 80%;
-  margin: 0 auto;
-  padding-bottom: 7%;
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  border-radius: 1rem;
+    padding-bottom: 3%;
+  }
+  .card-component-text-container {
+    width: 100%;
+    padding: 0 7%;
+    max-height: 80%;
+    margin: 0 auto;
+    padding-bottom: 7%;
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+    border-radius: 1rem;
+  }
 }
 </style>
 
