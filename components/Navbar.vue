@@ -99,13 +99,13 @@ a {
   font-family: var(--article-font);
   color: var(--primary-color);
   margin-left: 2rem;
-  margin-top: 2rem;
 }
 .logo, .mobile-logo {
     height: 10rem;
     width: 10rem;
     fill: var(--primary-color);
     stroke: var(--primary-color);
+    margin-bottom: 1.3rem;
 }
 .home-nav-li {
   text-transform: uppercase;

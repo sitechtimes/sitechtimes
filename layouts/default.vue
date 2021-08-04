@@ -1,6 +1,6 @@
 <template>
   <div>
-     <Datebar /> 
+    <Datebar /> 
 
     <Navbar />
     <MobileNav />
@@ -12,14 +12,13 @@
 </template>
 
 <script>
-import Datebar from "../components/Datebar";
 export default {
   components: {
-    Datebar
   },
   data() {
     return {
     };
   },
 };
+
 </script>

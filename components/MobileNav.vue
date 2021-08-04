@@ -113,6 +113,11 @@ export default {
 @import '../assets/variables';
 
 .mobile-nav-box {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--background-color);
+  border-bottom: .1rem solid var(--primary-color);
   display: none;
   width: 100vw;
   max-height: 100vh;
@@ -129,8 +134,8 @@ export default {
   margin-left: 1.5rem;
 }
 .mobile-logo {
-  height: 8rem;
-  width: 8rem;
+  height: 7rem;
+  width: 7rem;
 }
 .mobile-nav {
   width: 100vw;
@@ -158,12 +163,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 #nav-icon {
   width: 5rem;
   padding: 2rem;
-  margin-top: 2rem;
-  // margin-left: 90vw;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);

@@ -55,7 +55,7 @@ export default {
 @import '../assets/variables';
 .main-article-title {
   margin: 2rem auto;
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--h2);
 }
 // .main-article-description {
@@ -112,7 +112,7 @@ export default {
 .main-article-text h5 strong,
 .main-article-text h6 strong {
   font-family: var(--article-font);
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0;
 }
 .main-article-text h1,

@@ -45,7 +45,7 @@
 
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: "Merriweather", serif;
+  --article-font: "Raleway", sans-serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -106,7 +106,7 @@
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
 
 *,
 html,
@@ -226,4 +226,11 @@ pre {
   max-width: $container;
   margin: auto;
   padding: 2rem;
+}
+
+::selection {
+  background: var(--accent-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--accent-color); /* Gecko Browsers */
 }
