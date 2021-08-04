@@ -185,6 +185,11 @@ a:active {
 .duo-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
+@media only screen and (max-width: $x-small-screen){
+.duo-card-component-title{
+  line-height: 3rem;
+}
+}
 </style>
 <docs>
 

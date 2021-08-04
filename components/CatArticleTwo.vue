@@ -94,7 +94,7 @@ props: ["title", "author", "published", "articleUrl", "imageUrl", "imageAlt", "c
             justify-content: flex-end;
         }
         .cat-title{
-            font-size: 1.8rem;
+            font-size: var(--h3);
             font-weight: 700;
             padding-top: 1rem;
             max-width: 40rem;
