@@ -35,7 +35,7 @@
         />
       </section>
 
-      <section class="grid-article-container" v-if="homepages[3]">
+      <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
           :articleUrl="'/articles/' + article.slug"
@@ -43,7 +43,6 @@
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
-          :key="article.id"
         />
       </section>
       <section>
@@ -140,21 +139,21 @@ export default {
 
 @media only screen and (max-width: $small-screen) {
   .trending-main {
-    grid-area: 1 / 1 / 8 / 2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .trending-sub {
-    grid-area: 8 / 1 / 13 / 2;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .trending-detail {
-    grid-area: 13 / 1 / 18 / 2;
+    grid-area: 3 / 1 / 4 / 2;
   }
   .trending-section {
-    height: 80rem;
+    height: 95rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(17, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 20px; 
   }
   //
   //.desktop-view {
