@@ -30,14 +30,20 @@ export default {
       await this.$router.push("/");
     }
   },
-  // head: {
-  //     meta: [
-  //     { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
-  //     { name: 'twitter:title', content: this.article.title },
-  //     { name: 'twitter:description', content: this.article.content.substring(0,30)+".." },
-  //     { name: 'twitter:image', content: this.article.imageUrl },
-  // ]
-  // }
+  head: function() {
+    return {
+      meta: [
+      { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { name: 'twitter:title', content: this.article.title },
+      { name: 'twitter:description', content: "Click to read more about" + this.article.title + "!"},
+      { name: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+      { name: 'og:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { name: 'og:title', content: this.article.title },
+      { name: 'og:description', content: "Click to read more about" + this.article.title + "!"},
+      { name: 'og:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+  ]
+    }
+  }
 };
 </script>
 

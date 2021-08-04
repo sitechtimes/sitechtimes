@@ -225,6 +225,20 @@ export default {
           return this.allArticles;
         });
     }
+  },
+  head: function() {
+    return {
+      meta: [
+      { name: 'twitter:site', content: `https://dev.sitechtimes.com/${this.category}`},
+      { name: 'twitter:title', content: this.category },
+      { name: 'twitter:description', content: "Click to read all articles about" + this.category + "writen at Staten Island Tech"},
+      { name: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+      { name: 'og:site', content: `https://dev.sitechtimes.com/${this.category}`},
+      { name: 'og:title', content: this.category },
+      { name: 'og:description', content: "Click to read all articles about" + this.category + "writen at Staten Island Tech"},
+      { name: 'og:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+  ]
+    }
   }
 };
 </script>
