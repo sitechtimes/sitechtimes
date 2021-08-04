@@ -80,7 +80,7 @@ a:active { text-decoration: none;  color: var(--black)}
 }
 }
 @media only screen and (max-width: $mid-screen) {
-  .grid-article-component:last-child {
+  .trio-grid-container .grid-article-component:last-child {
   display: flex;
   flex-direction: column;
   width: 100%;
