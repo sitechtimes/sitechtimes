@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="article.slug"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
@@ -30,14 +30,14 @@ export default {
       await this.$router.push("/");
     }
   },
-  head: {
-      meta: [
-      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/articles/' + slug},
-      { name: 'twitter:title', content: article.title },
-      { name: 'twitter:description', content: article.content.substring(0,30)+".." },
-      { name: 'twitter:image', content: article.imageUrl },
-  ]
-  }
+  // head: {
+  //     meta: [
+  //     { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+  //     { name: 'twitter:title', content: this.article.title },
+  //     { name: 'twitter:description', content: this.article.content.substring(0,30)+".." },
+  //     { name: 'twitter:image', content: this.article.imageUrl },
+  // ]
+  // }
 };
 </script>
 
