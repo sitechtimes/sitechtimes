@@ -173,7 +173,12 @@ a:active {
       --fontMedium: 2.7rem;
       --fontLarge: 2.8rem;
     }
-
+  .card-component-title {
+    font-weight: bold;
+    font-size: var(--h3);
+    line-height: auto;
+    color: var(--white);
+  }
 }
 .flex-row {
     display: flex;
@@ -185,7 +190,7 @@ a:active {
   padding: 0 7%;
   max-height: 80%;
   margin: 0 auto;
-  padding-bottom: 5%;
+  padding-bottom: 7%;
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
   border-radius: 1rem;
 }
