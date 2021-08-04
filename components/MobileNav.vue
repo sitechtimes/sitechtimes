@@ -46,7 +46,7 @@
     </nuxt-link>
   </span>
 
-      <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
+      <div id="nav-icon" :class="spanClass" v-on:click="navFunction()">
         <span></span>
         <span></span>
         <span></span>
@@ -159,7 +159,7 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
-#nav-icon4 {
+#nav-icon {
   width: 5rem;
   padding: 2rem;
   margin-top: 2rem;
@@ -175,7 +175,7 @@ export default {
   transition: .5s ease-in-out;
   cursor: pointer;
 }
-#nav-icon4 span {
+#nav-icon span {
   display: block;
   position: absolute;
   height: .5rem;
@@ -193,24 +193,24 @@ export default {
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
-#nav-icon4 span:nth-child(1) {
+#nav-icon span:nth-child(1) {
   top: 0.5rem;
 }
-#nav-icon4 span:nth-child(2) {
+#nav-icon span:nth-child(2) {
   top: 2rem;
 }
-#nav-icon4 span:nth-child(3) {
+#nav-icon span:nth-child(3) {
   top: 3.5rem;
 }
-#nav-icon4 span:nth-child(1),
-#nav-icon4 span:nth-child(2),
-#nav-icon4 span:nth-child(3) {
+#nav-icon span:nth-child(1),
+#nav-icon span:nth-child(2),
+#nav-icon span:nth-child(3) {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-#nav-icon4.open span:nth-child(1) {
+#nav-icon.open span:nth-child(1) {
   background: var(--white);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -219,11 +219,11 @@ export default {
   left: .8rem;
   top: 0;
 }
-#nav-icon4.open span:nth-child(2) {
+#nav-icon.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-#nav-icon4.open span:nth-child(3) {
+#nav-icon.open span:nth-child(3) {
   background: var(--white);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -241,25 +241,25 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-  #nav-icon4 {
+  #nav-icon {
     width: 3rem;
   }
-  #nav-icon4 span {
+  #nav-icon span {
     height: .4rem;
   }
-  #nav-icon4 span:nth-child(1) {
+  #nav-icon span:nth-child(1) {
     top: 1rem;
   }
-  #nav-icon4 span:nth-child(2) {
+  #nav-icon span:nth-child(2) {
     top: 2.1rem;
   }
-  #nav-icon4 span:nth-child(3) {
+  #nav-icon span:nth-child(3) {
     top: 3.2rem;
   }
-  #nav-icon4.open span:nth-child(1) {
+  #nav-icon.open span:nth-child(1) {
     top: 1rem;
   }
-  #nav-icon4.open span:nth-child(3) {
+  #nav-icon.open span:nth-child(3) {
     top: 3.9rem;
   }
 }
