@@ -201,6 +201,9 @@ a:active {
   );
   border-radius: 1rem;
   justify-content: flex-end;
+@media only screen and (max-width: $x-small-screen){
+.duo-card-component-title{
+  line-height: 3rem;
 }
 }
 </style>

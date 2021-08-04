@@ -304,6 +304,9 @@ export default {
     display: flex;
     justify-content: flex-start;
   }
+  .entertainment-seymour{
+    width: 100%;
+  }
   .seymour {
     margin: 6rem 0 10rem 0;
   }
@@ -316,6 +319,8 @@ export default {
 @media only screen and (max-width: $x-small-screen) {
   .border-right{
     width: 95%;
+    margin: 0 auto;
+    margin-top: var(--title-spacing);
   }
 .three-cat-articles,.mobile-sub-arts{
   display: none;
@@ -358,5 +363,8 @@ margin-bottom: 2rem;
 .visible{
   display: block;
 }
+ .entertainment-seymour{
+    width: 95%;
+  }
 }
 </style>
