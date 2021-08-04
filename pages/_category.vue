@@ -282,8 +282,7 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
-// margin-left: 5%;
-    margin-top: 7rem;
+    margin-top: var(--title-spacing);
     border: none;
   }
   .two-cat-articles{
@@ -317,18 +316,13 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .border-right{
-    width: 95%;
-    margin: 0 auto;
-    margin-top: var(--title-spacing);
-  }
+ 
 .three-cat-articles,.mobile-sub-arts{
   display: none;
 }
 .cat-visible{
   display: flex;
   flex-wrap: wrap;
-
 }
 .mobile-big-cat-article {
   width: 100%;
