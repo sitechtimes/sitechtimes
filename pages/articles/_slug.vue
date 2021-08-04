@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="article.slug"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>

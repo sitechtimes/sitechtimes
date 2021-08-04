@@ -38,6 +38,7 @@
       <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
+          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -87,7 +88,20 @@ export default {
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
-  }
+  },
+  head: {
+  meta: [
+      { name: 'twitter:card', content: "summary" },
+      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/'},
+      { name: 'twitter:title', content: "SITECHTIMES" },
+      { name: 'twitter:description', content: 'Visit the Website to read more!' },
+      { name: 'twitter:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' },
+      { name: 'og:site', content: 'https://dev.sitechtimes.com/'},
+      { name: 'og:title', content: "SITECHTIMES" },
+      { name: 'og:description', content: 'Visit the Website to read more!' },
+      { name: 'og:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' }
+  ]
+}
 };
 </script>
 
