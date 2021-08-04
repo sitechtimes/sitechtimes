@@ -94,6 +94,12 @@ export default {
   cursor: pointer;
 }
 
+@media only screen and (max-width: $small-screen) {
+  .footer-social-media-box {
+    margin-bottom: 5.1rem;
+  }
+}
+
 @media only screen and (max-width: $x-small-screen) {
   .footer-sm-header {
     font-size: var(--h2);
