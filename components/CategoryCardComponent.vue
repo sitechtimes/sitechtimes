@@ -46,84 +46,69 @@ export default {
     title: String,
     size: {
       default: "medium",
-      type: String,
+      type: String
     },
     clampSize: {
       default: "mediumClamp",
-      type: String,
-    },
+      type: String
+    }
   },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize,
+        "--customFontSize": fontSize
       });
       const small = createFontSize({
         //create size here
-        fontSize: "2.827rem",
+        fontSize: "2.827rem"
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "3.998rem",
+        fontSize: "3.998rem"
       });
       const large = createFontSize({
-        fontSize: "5.653rem",
+        fontSize: "5.653rem"
       });
       const fontSizes = {
         //list of sizes just names
         small,
         medium, //default
-        large,
+        large
       };
       return fontSizes[this.size];
     },
 
     getClampSize() {
       const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize,
+        "--customClampSize": clampSize
       });
       const smallClamp = createClampSize({
         //create size here
-        clampSize: "2",
+        clampSize: "2"
       });
       const mediumClamp = createClampSize({
         //create size here
-        clampSize: "4",
+        clampSize: "4"
       });
       const largeClamp = createClampSize({
-        clampSize: "5",
+        clampSize: "5"
       });
       const clampSizes = {
         //list of sizes just names
         smallClamp,
         mediumClamp, //default
-        largeClamp,
+        largeClamp
       };
       return clampSizes[this.clampSize];
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss">
 @import "../assets/variables";
-a:link {
-  text-decoration: none;
-  color: var(--black);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--black);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--black);
-}
-a:active {
-  text-decoration: none;
-  color: var(--black);
-}
+
 .category-card-component {
   cursor: pointer;
   border-radius: 1.5rem;
@@ -206,4 +191,3 @@ a:active {
 <docs>
 
 </docs>
-

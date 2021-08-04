@@ -110,7 +110,7 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-   margin: var(--section-spacing) 0;
+  margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -119,7 +119,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
-   padding: var(--title-spacing) 0;
+  padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -139,11 +139,14 @@ export default {
   grid-row-gap: 2.5rem;
 }
 
-// .darksection {
-//   background-color: var(--grey);
-//   color: white;
-//   padding-bottom: 5rem;
-// }
+.global-container > h3 {
+  color: var(--on-background);
+}
+/* .darksection {
+  background-color: var(--grey);
+  color: white;
+  padding-bottom: 5rem;
+} */
 //.desktop-view {
 //  display: grid;
 //}

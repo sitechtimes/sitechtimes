@@ -28,7 +28,6 @@
         :articleUrl="article.slug"
       />
     </div>
-
   </section>
 </template>
 
@@ -39,13 +38,13 @@ export default {
   components: { Sidebar },
   props: {
     trending: Array,
-    moreLikeThis: Array,
+    moreLikeThis: Array
   }
 };
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 .sidebar-container {
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;
@@ -56,6 +55,9 @@ export default {
   /*   display: flex;
   flex-direction: column;
   align-items: flex-end; */
+}
+.sidebar-container > * {
+  color: var(--on-background);
 }
 .sidebar-heading {
   font-size: var(--h4);
