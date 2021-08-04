@@ -203,7 +203,9 @@ a:active {
   text-decoration: none;
   color: var(--on-background);
 }
-
+ul {
+  list-style-type: none;
+}
 small,
 .text_small {
   font-size: var(--small-text);

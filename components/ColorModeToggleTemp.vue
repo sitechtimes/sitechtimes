@@ -7,7 +7,7 @@
         $colorMode.preference = colorMode;
       "
     ></button>
-    <!--     <button
+    <button
       class="color-toggle-dropdown-button"
       id="color-toggle-dropdown-button"
       @mouseover="dropdownTrue"
@@ -15,12 +15,36 @@
     >
       <i class="down-arrow"></i>
     </button>
+
     <Theme
       id="color-theme-dropdown"
       v-if="dropdown"
       @mouseover.native="dropdownTrue"
       @mouseleave.native="dropdownFalse"
-    /> -->
+      @showModalButtonClicked="showModal = true"
+    />
+    <themes-modal
+      class="modal-test"
+      v-if="showModal"
+      @closeModal="showModal = false"
+    >
+      you can use custom content here to overwrite default content
+      <h3 slot="header">custom header</h3>
+    </themes-modal>
+    <!-- 
+    <button id="show-modal" @click="showModal = true">Show Modal</button> -->
+    <!-- use the modal component, pass in the prop -->
+    <!--     <themes-modal
+      class="modal-test"
+      v-if="showModal"
+      @close="showModal = false"
+    > -->
+    <!--
+      you can use custom content here to overwrite
+      default content
+    -->
+    <!--       <h3 slot="header">custom header</h3>
+    </themes-modal> -->
 
     <!--     <Theme
       id="color-theme-dropdown"
@@ -63,7 +87,9 @@ export default {
   data() {
     return {
       colorMode: "",
-      dropdown: false
+      dropdown: false,
+      showModal: false
+      /*       showModal: false */
     };
   },
   /*   created() {
@@ -101,6 +127,7 @@ export default {
     dropdownFalse() {
       this.dropdown = false;
     }
+
     /*     closeDropdown: function() {
       document.addEventListener("click", event => {
         const dropdown = document.getElementById("color-theme-dropdown");
@@ -130,6 +157,11 @@ export default {
 </script>
 
 <style lang="scss">
+.modal-test {
+  position: absolute;
+  top: 10rem;
+}
+
 @import "../assets/variables";
 :root {
   --color-toggle-switch-height: 3.5rem;
@@ -151,7 +183,7 @@ export default {
 
 .color-toggle-button {
   border: 0.1rem solid var(--on-background);
-  border-radius: 0.8rem /*  0 0 0.8rem */;
+  border-radius: 0.8rem 0 0 0.8rem;
   //padding: 14px;
   cursor: pointer;
   background-color: var(--background-color);
