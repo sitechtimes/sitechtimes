@@ -15,8 +15,9 @@
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
-        <social-media-icons />
+        <social-media-sharing :title="title" :articleUrl="articleUrl" />
         <share-icon />
+        <print />
       </div>
     </div>
     <div class="main-article-text-section main-article-text" v-html="articleText">
@@ -40,7 +41,8 @@ export default {
     articleImg: String,
     articleAlt: String,
     author: String,
-    published: Date
+    published: Date,
+    articleUrl: String
   },
   components: {
     AuthorAndDateArticle,
