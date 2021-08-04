@@ -164,6 +164,27 @@ export default {
 .duo-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
+@media only screen and (max-width: $small-screen) {
+  .duo-card-component-image {
+  height: 30.2rem;
+}
+.duo-card-component-text-container {
+  width: 100%;
+  padding: 10% 7% 7% 7%;
+  height: 100%;
+  margin: 0 auto;
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  border-radius: 1rem;
+  justify-content: flex-end;
+@media only screen and (max-width: $x-small-screen){
+.duo-card-component-title{
+  line-height: 3rem;
+}
+}
 </style>
 <docs>
 

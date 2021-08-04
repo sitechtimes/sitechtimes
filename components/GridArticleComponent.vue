@@ -34,7 +34,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 32%;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 .grid-article-component > h5,
 .grid-article-component h4 {
@@ -68,6 +68,34 @@ export default {
     display: flex;
     flex-direction: column;
     width: 47%;
+  }
+  .trio-grid-container .grid-article-component:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 35rem;
+    object-fit: cover;
+  }
+  .trio-grid-container .grid-article-component:last-child .grid-article-title {
+    font-size: var(--h3);
+  }
+}
+@media only screen and (max-width: $mid-screen) {
+  .trio-grid-container .grid-article-component:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 40rem;
+    object-fit: cover;
   }
 }
 @media only screen and (max-width: $small-screen) {

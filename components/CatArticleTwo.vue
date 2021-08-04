@@ -98,31 +98,65 @@ export default {
 @media only screen and (max-width: $x-small-screen) {
   .cat-article {
     display: flex;
-    flex-direction: row-reverse;
-    margin: auto;
-  }
-  .cat-article-img {
-    height: 14rem;
-    width: 35vw;
-    border-radius: 1.5rem;
-    //   margin-left: 15rem;
-    margin-right: 0;
-  }
-  .cat-article-image-content {
-    justify-content: flex-end;
-  }
-  .cat-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding-top: 1rem;
-    max-width: 40rem;
-  }
-  .cat-article-icon {
-    width: 3rem;
-    padding-right: 1.5rem;
-    height: 3rem;
-  }
-}
+    }
+     .cat-article-icon {
+         padding-right: 1.5rem;
+     }
+    .cat-article-authdate {
+        margin: auto 0;
+        line-height: 2.2rem;
+        padding-top: 1rem;
+    }
+    @media only screen and (max-width: $mid-screen) {
+        .cat-article{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            // margin-left: 10rem;
+        }
+        .cat-article-img{
+            height: 18.8rem;
+            width: 26rem;
+            border-radius: 1.5rem;
+        }
+        .cat-title{
+            font-size: var(--h3);
+            font-weight: 700;
+            padding-top: 1rem;
+            max-width: 60rem;
+        }
+        .cat-article-icon {
+            padding-right: 1.5rem;
+        }
+    }
+    @media only screen and (max-width: $x-small-screen) {
+        .cat-article{
+            display: flex;
+            flex-direction: row-reverse;
+            margin: auto;
+        }
+        .cat-article-img{
+            height: 14rem;
+            width: 35vw;
+            border-radius: 1.5rem;
+            //   margin-left: 15rem;
+            margin-right: 0;
+        }
+        .cat-article-image-content{
+            justify-content: flex-end;
+        }
+        .cat-title{
+            font-size: var(--h3);
+            font-weight: 700;
+            padding-top: 1rem;
+            max-width: 40rem;
+        }
+        .cat-article-icon {
+            width: 3rem;
+            padding-right: 1.5rem;
+            height: 3rem;
+        }
+    }
 </style>
 
 <!--<docs>-->
