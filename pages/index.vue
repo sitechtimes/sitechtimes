@@ -65,6 +65,7 @@
           :key="article.id"
         />
       </section>
+      <ImageGallery />
     </div>
   </div>
 </template>
