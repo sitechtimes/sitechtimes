@@ -24,7 +24,6 @@ export default {
         font-size: var(--h3);
     }
     .footer-social-media-box {
-        width: 36rem;
         margin: 5.1rem auto;
     }
     .footer-social-media {

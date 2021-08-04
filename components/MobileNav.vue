@@ -100,6 +100,34 @@ export default {
         this.bgColor = "";
       }
     },
+    // trackScroll: function() {
+    //   // The debounce function receives our function as a parameter
+    //   const debounce = (fn) => {
+    //     // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    //     let frame;
+    //     // The debounce function returns a new function that can receive a variable number of arguments
+    //     return (...params) => {
+    //       // If the frame variable has been defined, clear it now, and queue for next frame
+    //       if (frame) { 
+    //         cancelAnimationFrame(frame);
+    //       }
+    //       // Queue our function call for the next frame
+    //       frame = requestAnimationFrame(() => {
+    //         // Call our function and pass any params we received
+    //         fn(...params);
+    //       });
+    //     } 
+    //   };
+    //   // Reads out the scroll position and stores it in the data attribute
+    //   // so we can use it in our stylesheets
+    //   const storeScroll = () => {
+    //     document.documentElement.dataset.scroll = window.scrollY;
+    //   }
+    //   // Listen for new scroll events, here we debounce our `storeScroll` function
+    //   document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    //   // Update scroll position for first time
+    //   storeScroll();
+    // },
     navFunction: function() {
       this.toggleBackground();
       this.toggleNav();
@@ -112,6 +140,11 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
 
+// html:not([data-scroll='0']) {
+//   .mobile-nav-box {
+//     border-bottom: .1rem solid var(--primary-color);
+//   }
+// }
 .mobile-nav-box {
   position: sticky;
   top: 0;
@@ -121,8 +154,7 @@ export default {
   display: none;
   width: 100vw;
   max-height: 100vh;
-  overflow: scroll;
-  top: 0;
+  overflow: scroll;  
 }
 .mobile-logo-link {
   display: flex;
@@ -152,7 +184,6 @@ export default {
   font-size: 3.5rem;
   margin: 1vh;
   color: var(--white);
-  transition: all .3s;
 }
 .mobile-nav li:focus {
   padding: 1.5rem;

@@ -18,6 +18,7 @@ name: "SocialMediaIcons"
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all .2s;
+  opacity: 0.2;
 }
 .instagram-icon {
   margin-left: 0;
@@ -30,7 +31,6 @@ name: "SocialMediaIcons"
   transform: scale(110%);
   cursor: pointer;
 }
-
 </style>
 
 <!--<docs>-->

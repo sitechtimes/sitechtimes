@@ -37,7 +37,6 @@ export default {
         flex-direction: column;
     }
     .footer-form-box {
-        width: 36rem;
         margin: 0 auto;
         padding-bottom: 5.1rem;
         border-bottom: .2rem solid var(--primary-color);

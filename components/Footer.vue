@@ -1,11 +1,13 @@
 <template>
-  <footer class="footer-container">
+<div class="footer-bg">
+    <footer class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
         <FooterSocialMedia />
       </div>
       <FooterNav />
-  </footer>
+    </footer>
+</div>
 </template>
 
 <script>
@@ -27,25 +29,23 @@ export default {
 
 <style lang="scss">
 @import '../assets/variables';
+    .footer-bg {
+        background-color: var(--grey);
+    }
     .footer-container {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        padding: 5rem;
+        gap: 10%;
         // margin: 0 auto;
-        background-color: var(--grey);
     }
     .form-and-media {
         display: flex;
         flex-direction: column;
+        // margin-right: 10%;
         height: 100%;
-        padding-right: 15%;
     }
-     @media only screen and (max-width: $mid-screen) {
-        .form-and-media {
-            padding-right: 10%;
-        }
-    }
+
      @media only screen and (max-width: $small-screen) {
         .footer-container {
             flex-direction: column;

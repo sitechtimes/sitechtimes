@@ -27,15 +27,15 @@ export default {
 
 <style lang="scss">
 @import '../assets/variables';
+.footer-nav {
+  width: 36rem;
+}
 .footer-nav-header {
   font-size: var(--h3);
 }
 .footer-nav-link {
   text-decoration: none;
   color: inherit;
-}
-.footer-nav {
-  width: 36rem;
 }
 .footer-nav-ul {
   display: flex;
@@ -58,18 +58,15 @@ export default {
   color: var(--accent-color);
 }
  @media only screen and (max-width: $small-screen) {
-  .footer-nav {
-    margin: 3rem auto;
-  }
 .footer-nav-ul li {
   font-size: 2.5rem;
   }
  }
 @media only screen and (max-width: $x-small-screen) {
-        .footer-nav-header {
-        font-size: var(--h2);
-    }
-    }
+  .footer-nav-header {
+  font-size: var(--h2);
+  }
+}
 </style>
 
 <!--<docs>-->

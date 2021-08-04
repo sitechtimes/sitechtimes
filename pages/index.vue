@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-      <h3 class="section-title">Trending Articles</h3>
+      <h2 class="section-title">Trending Articles</h2>
       <section class="trending-section">
         <CardComponent
           class="trending-main cardquery"
@@ -106,6 +106,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
+  font-size: var(--h3);
    padding-bottom: var(--title-spacing);
 }
 .trending-main {
