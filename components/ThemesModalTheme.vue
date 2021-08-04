@@ -26,4 +26,13 @@ export default {
   transition: background-color 0.5s ease;
   cursor: pointer;
 }
+.theme-choice-modal:focus {
+  border: 1px solid var(--primary-color);
+}
+
+@media screen and (max-width: 420px) {
+  .theme-choice-modal {
+    padding: 0.4rem 0;
+  }
+}
 </style>

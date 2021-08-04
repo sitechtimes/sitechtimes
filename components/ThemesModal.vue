@@ -3,15 +3,16 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <h1>All Color Themes</h1>
+          <h2>All Color Themes</h2>
           <ul class="color-themes-list">
             <li
               class="theme-choice-modal"
               @click="$colorMode.preference = 'system'"
               style="text-transform:none;"
             >
-              System (Currently in {{ $colorMode.value }} mode)
+              Auto detect system
             </li>
+            <!-- <themes-modal-theme color="system" /> -->
             <themes-modal-theme color="light" />
             <themes-modal-theme color="dark" />
           </ul>
@@ -52,6 +53,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding: 4rem 0;
 }
 
 .modal-container {
@@ -61,8 +64,11 @@ export default {
   border-radius: 0.5rem;
 
   padding: 4rem;
+
+  max-height: 90vh;
+  overflow-y: auto;
 }
-.modal-container > h1,
+.modal-container > h2,
 .modal-container > ul {
   color: var(--on-background);
 }
@@ -91,6 +97,15 @@ export default {
   background-color: var(--accent-color);
   color: black;
   transition: 0.3s ease;
+}
+
+@media screen and (max-width: 420px) {
+  .modal-container {
+    margin: auto 2rem;
+  }
+  .modal-container > ul > li {
+    font-size: 2.3rem;
+  }
 }
 
 /*

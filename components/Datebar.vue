@@ -111,7 +111,7 @@ export default {
 }
 @media only screen and (max-width: $midlarge-screen) {
   .datebar-container {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     margin-left: 2rem;
   }
   .datebar-date {
@@ -160,7 +160,7 @@ export default {
     width: 100%;
   }
   .datebar-container {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     margin-left: 2rem;
   }
   .datebar-date {
