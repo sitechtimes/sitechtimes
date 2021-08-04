@@ -7,7 +7,7 @@
         $colorMode.preference = colorMode;
       "
     ></button>
-    <button
+    <!-- <button
       class="color-toggle-dropdown-button"
       id="color-toggle-dropdown-button"
       @mouseover="dropdownTrue"
@@ -30,7 +30,8 @@
     >
       you can use custom content here to overwrite default content
       <h3 slot="header">custom header</h3>
-    </themes-modal>
+    </themes-modal> -->
+
     <!-- 
     <button id="show-modal" @click="showModal = true">Show Modal</button> -->
     <!-- use the modal component, pass in the prop -->
@@ -183,7 +184,7 @@ export default {
 
 .color-toggle-button {
   border: 0.1rem solid var(--on-background);
-  border-radius: 0.8rem 0 0 0.8rem;
+  border-radius: 0.8rem /* 0 0 0.8rem */;
   //padding: 14px;
   cursor: pointer;
   background-color: var(--background-color);
