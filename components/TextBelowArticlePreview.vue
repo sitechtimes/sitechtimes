@@ -1,12 +1,16 @@
 <template>
-   <nuxt-link :to="articleUrl" class="text-below-preview-article">
-       <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow">
-       <h5 class="article-info">
-            <category-icon :category="category" class="article-cat"/>
-            <author-and-date :author="author" :published="published" class="article-data" />
-       </h5>
-       <h4 class="article-title">{{title}}</h4>
-    </nuxt-link>
+  <nuxt-link :to="articleUrl" class="text-below-preview-article">
+    <img :src="imageUrl" :alt="imageAlt" class="article-image dropshadow" />
+    <h5 class="article-info">
+      <category-icon :category="category" class="article-cat" />
+      <author-and-date
+        :author="author"
+        :published="published"
+        class="article-data"
+      />
+    </h5>
+    <h4 class="article-title">{{ title }}</h4>
+  </nuxt-link>
 </template>
 
 <script>
@@ -21,18 +25,14 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
+    title: String
   }
 };
 </script>
 
 <style lang="scss">
+@import "../assets/variables";
 
-@import '../assets/variables';
-a:link { text-decoration: none; color: var(--black)}
-a:visited { text-decoration: none;  color: var(--black)}
-a:hover { text-decoration: none;  color: var(--black)}
-a:active { text-decoration: none;  color: var(--black)}
 .text-below-preview-article {
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ a:active { text-decoration: none;  color: var(--black)}
 .article-image {
   width: 100%;
   border-radius: 1.5rem;
-  height:20rem;
+  height: 20rem;
 }
 .article-cat {
   margin-right: 2rem;
@@ -56,10 +56,8 @@ a:active { text-decoration: none;  color: var(--black)}
   font-weight: bold;
 }
 .article-data {
-    padding-top: 1rem;
+  padding-top: 1rem;
 }
-
-
 </style>
 
 <!--<docs>-->

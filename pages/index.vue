@@ -88,7 +88,24 @@ export default {
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+  },
+  head: function() {
+    return {
+        meta: [
+      { property: 'og:url', content: 'https://dev.sitechtimes.com/'},
+      { property: 'og:type', content: 'website'},
+      { property: 'og:title', content: "The SITECH Times Official Website" },
+      { property: 'og:description', content: 'Visit the Website to read more!' },
+      { property: 'og:image', content: '%PUBLIC_URL%/assets/icons/logo_thicker.svg' },
+      { property: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
+      { property: 'twitter:card', content: 'summary'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com`},
+      { property: 'twitter:title', content: "The SITECH Times Official Website" },
+      { property: 'twitter:image', content: '%PUBLIC_URL%/assets/icons/logo_thicker.svg' },
+      { property: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
+     ]
   }
+}
 };
 </script>
 
@@ -97,7 +114,7 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-   margin: var(--section-spacing) 0;
+  margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -106,7 +123,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
-   padding: var(--title-spacing) 0;
+  padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -126,11 +143,14 @@ export default {
   grid-row-gap: 2.5rem;
 }
 
-// .darksection {
-//   background-color: var(--grey);
-//   color: white;
-//   padding-bottom: 5rem;
-// }
+.global-container > h3 {
+  color: var(--on-background);
+}
+/* .darksection {
+  background-color: var(--grey);
+  color: white;
+  padding-bottom: 5rem;
+} */
 //.desktop-view {
 //  display: grid;
 //}

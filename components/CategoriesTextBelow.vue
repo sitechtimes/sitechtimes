@@ -27,29 +27,12 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
 <style lang="scss">
-a:link {
-  text-decoration: none;
-  color: var(--black);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--black);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--black);
-}
-a:active {
-  text-decoration: none;
-  color: var(--black);
-}
-
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
@@ -76,6 +59,7 @@ a:active {
   font-style: normal;
   font-weight: bold;
   font-size: var(--h4);
+  color: var(--on-background) !important;
 }
 .category-data {
   padding-top: 1rem;
