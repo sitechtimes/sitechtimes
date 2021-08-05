@@ -33,14 +33,23 @@ export default {
   head: function() {
     return {
       meta: [
-      { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
-      { name: 'twitter:title', content: this.article.title },
-      { name: 'twitter:description', content: "Click to read more about" + this.article.title + "!"},
-      { name: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
-      { name: 'og:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
-      { name: 'og:title', content: this.article.title },
-      { name: 'og:description', content: "Click to read more about" + this.article.title + "!"},
-      { name: 'og:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+      { property: 'og:type', content: 'article'},
+      { property: 'og:url', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { property: 'og:site_name', content: 'SITECHTIMES'},
+      { property: 'og:title', content: this.article.title },
+      { property: 'og:description', content: "Click to read more about" + this.article.title + "!"},
+      { property: 'og:image', content: this.article.imageUrl },
+      { property: 'og:image:alt', content: this.article.imageAlt },
+      { property: 'article:published_time', content: this.article.createdAt},
+      { property: 'article:modified_time', content: this.article.updatedAt},
+      { property: 'article:author', content: this.article.user},
+      { property: 'article:section', content: this.article.category},
+      { property: 'article:tag', content: this.article.category},
+      { property: 'twitter:card', content: 'summary_large_image'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { property: 'twitter:title', content: this.article.title },
+      { property: 'twitter:image', content: this.article.imageUrl },
+      { property: 'twitter:image:alt', content: this.article.imageAlt },
   ]
     }
   }
