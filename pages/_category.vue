@@ -368,6 +368,7 @@ export default {
   }
   .cat-subhead {
     margin-top: 2rem;
+    color: var(--on-background);
   }
   .mobile-cat {
     margin-top: 2rem;

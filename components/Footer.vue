@@ -34,7 +34,7 @@ export default {
   align-items: center;
   padding: 5rem;
   // margin: 0 auto;
-  background-color: var(--grey);
+  background-color: var(--footer);
 }
 .form-and-media {
   display: flex;
