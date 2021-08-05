@@ -163,11 +163,11 @@ export default {
 }
 .mobile-logo-container h1 {
   font-size: var(--h2);
-  margin-left: 1.5rem;
+  margin-left: 1rem;
 }
 .mobile-logo {
-  height: 7rem;
-  width: 7rem;
+  height: 6.5rem;
+  width: 6.5rem;
 }
 .mobile-nav {
   width: 100vw;
@@ -194,8 +194,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 #nav-icon {
   width: 5rem;

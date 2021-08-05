@@ -106,10 +106,12 @@ export default {
     //     transition: .2s;
     // }
 
-    @media only screen and (max-width: $x-small-screen) {
+    @media only screen and (max-width: $mid-screen) {
         .footer-form-box {
             border-bottom: none;
         }
+    }
+    @media only screen and (max-width: $x-small-screen) {
         .footer-sub-header {
             font-size: var(--h4);
             font-weight: 500;

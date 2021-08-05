@@ -31,12 +31,13 @@ export default {
 @import '../assets/variables';
     .footer-bg {
         background-color: var(--grey);
+        padding: 3rem 0;
     }
     .footer-container {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        gap: 10%;
+        gap: 5%;
         // margin: 0 auto;
     }
     .form-and-media {

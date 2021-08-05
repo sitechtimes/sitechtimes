@@ -92,11 +92,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
 }
 .logo-container h1,
 .mobile-logo-container h1 {
   font-family: var(--article-font);
+  font-weight: 700;
   color: var(--primary-color);
   margin-left: 2rem;
 }

@@ -16,7 +16,7 @@
       />
       <div class="main-article-metadata-actions">
         <social-media-icons />
-        <share-icon />
+        <!-- <share-icon /> -->
       </div>
     </div>
     <div class="main-article-text-section main-article-text" v-html="articleText">
