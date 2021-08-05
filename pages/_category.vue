@@ -230,6 +230,7 @@ export default {
     return {
       meta: [
       { property: 'og:url', content: `https://dev.sitechtimes.com/${this.category}`},
+      { property: 'og:site_name', content: 'SITECHTIMES'},
       { property: 'og:title', content: this.category },
       { property: 'og:section', content: this.category },
       { property: 'og:description', content: "Click to read all articles about" + this.category + "writen by the SITECH Times team!"},
