@@ -1,33 +1,41 @@
 <template>
-<div class="footer-form-box">
+  <div class="footer-form-box">
     <h2 class="footer-header-container">
-        <span class="footer-header">Get Notified</span>
-        <span class="footer-sub-header">Sign up for our newsletter!</span>
+      <span class="footer-header">Get Notified</span>
+      <span class="footer-sub-header">Sign up for our newsletter!</span>
     </h2>
-  <form class="footer-form" action="#">
-            <label class="footer-form-label" for="email">Email</label>
-            <div class="footer-inputs">
-                <input v-on:click="seeLabel()" class="footer-email-input" type="text" id="email" placeholder="Email" name="mail" required>
-                <input class="footer-join-btn" type="submit" value="Join">
-            </div>
-            <!-- <p class="footer-form-alert">Success!</p> -->
-  </form>
-</div>
+    <form class="footer-form" action="#">
+      <label class="footer-form-label" for="email">Email</label>
+      <div class="footer-inputs">
+        <input
+          v-on:click="seeLabel()"
+          class="footer-email-input"
+          type="text"
+          id="email"
+          placeholder="Email"
+          name="mail"
+          required
+        />
+        <input class="footer-join-btn" type="submit" value="Join" />
+      </div>
+      <!-- <p class="footer-form-alert">Success!</p> -->
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "GetNotifiedSection",
-    methods: {
-        seeLabel: function () {
-            const label = document.querySelector(".footer-form-label");
-            label.style.opacity = "1";
-        },
-        // formAlert: function () {
-        //     alert("Success!");
-        // }
+  name: "GetNotifiedSection",
+  methods: {
+    seeLabel: function() {
+      const label = document.querySelector(".footer-form-label");
+      label.style.opacity = "1";
     }
-}
+    // formAlert: function () {
+    //     alert("Success!");
+    // }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -129,6 +137,29 @@ export default {
         }
     }
 
+@media only screen and (max-width: $x-small-screen) {
+  .footer-form-box {
+    border-bottom: none;
+  }
+  .footer-sub-header {
+    font-size: var(--h4);
+    font-weight: 500;
+  }
+  .footer-join-btn {
+    width: 9rem;
+    margin-left: -9rem;
+  }
+  .footer-email-input,
+  .footer-join-btn {
+    margin-top: 0.5rem;
+    padding: 1.6rem 2.5rem;
+  }
+  .footer-email-input,
+  .footer-join-btn,
+  .footer-form-label {
+    font-size: 1.8rem;
+  }
+}
 </style>
 
 <!--<docs>-->

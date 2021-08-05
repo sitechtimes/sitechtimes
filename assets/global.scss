@@ -7,10 +7,10 @@
   --off-white: #fffaf4;
   --white: #ffffff;
   --black: #000;
-  --dark-grey: #191919;
+  --dark-grey: #202020;
   --dark-grey-2: #383838;
   --grey: #374151;
-  --mid-grey: #636363;
+  --mid-grey: #595959;
   --lightGray: #ececec;
   --red: #dc2626;
   // --orange: #f59e0b;
@@ -30,6 +30,7 @@
   --on-secondary: var(--black);
   --on-secondary-light: var(--mid-grey);
   --hover: var(--lightGray);
+  --footer: var(--grey);
   --calendar-band: var(--off-white);
   --covid: var(--purple);
   --entertainment: var(--red);
@@ -38,11 +39,12 @@
   --opinion: var(--orange);
   --science: var(--green);
   --technology: var(--blue);
+  --sports: var(--dark-orange);
   --activities: var(--dark-orange);
-
-
-
-
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
   /* font size */
   --font: "Josefin Sans", sans-serif;
   --article-font: "Raleway", sans-serif;
@@ -52,11 +54,18 @@
   --h4: 1.999rem;
   --h5: 1.414rem;
   --small-text: 0.707rem;
+  /* boxshadows */
+  --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   /* spacing */
   --section-spacing: 4rem;
   --title-spacing: 3rem;
-  /* boxshadow */
-  --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
   /*linear gradient */
   --greyToBlack: linear-gradient(
     180deg,
@@ -64,6 +73,8 @@
     rgba(132, 132, 132, 0.4) 54.17%,
     rgba(0, 0, 0, 0.6) 70%
   );
+  /* button icon */
+  --button-icon: url(https://aux2.iconspalace.com/uploads/sun-icon-256.png);
 }
 
 .light-mode {
@@ -84,8 +95,14 @@
   --events: var(--orange);
   --clubs: var(--blue);
   --sports: var(--dark-orange);
+  --button-icon: url(https://static.thenounproject.com/png/4078841-200.png);
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
 }
 .dark-mode {
+  --grey: #272b32;
   --background-color: var(--dark-grey);
   --primary-color: var(--gold);
   --accent-color: var(--light-gold);
@@ -103,6 +120,11 @@
   --events: var(--orange);
   --clubs: var(--blue);
   --sports: var(--dark-orange);
+  --button-icon: url(https://i.imgur.com/8GHl6if.png);
+  /* new intentions */
+  --mobile-nav-background: var(--background-color);
+  --mobile-nav-text: var(--primary-color);
+  --nav-color: var(--on-background);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
@@ -123,7 +145,7 @@ body {
 }
 
 body {
-  background: var(--white);
+  background: var(--background-color);
   font-family: var(--font);
   font-weight: 400;
   line-height: 1.75;
@@ -165,6 +187,25 @@ h5 {
   font-size: var(--h5);
 }
 
+a:link {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:active {
+  text-decoration: none;
+  color: var(--on-background);
+}
+ul {
+  list-style-type: none;
+}
 small,
 .text_small {
   font-size: var(--small-text);

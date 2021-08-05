@@ -15,16 +15,17 @@ import GetNotifiedSection from "./GetNotifiedSection";
 import FooterSocialMedia from "./FooterSocialMedia";
 import FooterNav from "./FooterNav";
 export default {
-    name: "Footer",
-    props: ["categories"],
-    data () {
-      return {
-    }
+  name: "Footer",
+  props: ["categories"],
+  data() {
+    return {};
   },
-    components: {
-       GetNotifiedSection, FooterSocialMedia, FooterNav
-     }
-}
+  components: {
+    GetNotifiedSection,
+    FooterSocialMedia,
+    FooterNav
+  }
+};
 </script>
 
 <style lang="scss">

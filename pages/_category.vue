@@ -15,29 +15,29 @@
             class="cat-main-art"
           />
         </div>
-<div class="two-cat-articles">
-        <div class="cat-sub-one">
-          <CategoriesTextBelow
-            v-if="articles[1]"
-            :title="articles[1].title"
-            :author="articles[1].user.name"
-            :published="articles[1].createdAt"
-            :imageUrl="articles[1].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[1].slug}`"
-          />
-        </div>
-        <div class="cat-sub-two">
-          <CategoriesTextBelow
-            v-if="articles[2]"
-            :title="articles[2].title"
-            :author="articles[2].user.name"
-            :published="articles[2].createdAt"
-            :imageUrl="articles[2].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[2].slug}`"
-          />
-        </div>
+        <div class="two-cat-articles">
+          <div class="cat-sub-one">
+            <CategoriesTextBelow
+              v-if="articles[1]"
+              :title="articles[1].title"
+              :author="articles[1].user.name"
+              :published="articles[1].createdAt"
+              :imageUrl="articles[1].imageUrl"
+              :category="category"
+              :articleUrl="`/articles/${articles[1].slug}`"
+            />
+          </div>
+          <div class="cat-sub-two">
+            <CategoriesTextBelow
+              v-if="articles[2]"
+              :title="articles[2].title"
+              :author="articles[2].user.name"
+              :published="articles[2].createdAt"
+              :imageUrl="articles[2].imageUrl"
+              :category="category"
+              :articleUrl="`/articles/${articles[2].slug}`"
+            />
+          </div>
         </div>
       </div>
       <div class="mobile-sub-arts">
@@ -72,21 +72,21 @@
           :articleUrl="`/articles/${articles[5].slug}`"
         />
         <div>
-        <CatArticleTwo
-          class="sub-art not-visible"
-          v-for="article in allArticles"
-          :key="article"
-          :category="article.category"
-          :author="article.user.name"
-          :published="article.createdAt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-          :articleUrl="`/articles/${article.slug}`"
-        />
+          <CatArticleTwo
+            class="sub-art not-visible"
+            v-for="article in allArticles"
+            :key="article"
+            :category="article.category"
+            :author="article.user.name"
+            :published="article.createdAt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :articleUrl="`/articles/${article.slug}`"
+          />
         </div>
       </div>
       <div class="cat-visible">
-         <div class="mobile-big-cat-article">
+        <div class="mobile-big-cat-article">
           <CategoryCardComponent
             v-if="articles[0]"
             :title="articles[0].title"
@@ -98,31 +98,31 @@
             class="cat-main-art"
           />
         </div>
-         <div class="mobile-cat-sub-arts">
-        <CatArticleTwo
-          class="mobile-sub-art"
-          v-if="articles[1]"
-          :title="articles[1].title"
-          :author="articles[1].user.name"
-          :published="articles[1].createdAt"
-          :imageUrl="articles[1].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[1].slug}`"
-        />
-        <CatArticleTwo
-          class="mobile-sub-art"
-          v-if="articles[2]"
-          :title="articles[2].title"
-          :author="articles[2].user.name"
-          :published="articles[2].createdAt"
-          :imageUrl="articles[2].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[2].slug}`"
-        />
-      </div>
-     <div class="break"></div>
-        <h2 class="cat-subhead">More Articles</h2> 
-         <MobileCategoryArticle
+        <div class="mobile-cat-sub-arts">
+          <CatArticleTwo
+            class="mobile-sub-art"
+            v-if="articles[1]"
+            :title="articles[1].title"
+            :author="articles[1].user.name"
+            :published="articles[1].createdAt"
+            :imageUrl="articles[1].imageUrl"
+            :category="category"
+            :articleUrl="`/articles/${articles[1].slug}`"
+          />
+          <CatArticleTwo
+            class="mobile-sub-art"
+            v-if="articles[2]"
+            :title="articles[2].title"
+            :author="articles[2].user.name"
+            :published="articles[2].createdAt"
+            :imageUrl="articles[2].imageUrl"
+            :category="category"
+            :articleUrl="`/articles/${articles[2].slug}`"
+          />
+        </div>
+        <div class="break"></div>
+        <h2 class="cat-subhead">More Articles</h2>
+        <MobileCategoryArticle
           class="mobile-cat"
           v-if="articles[3]"
           :title="articles[3].title"
@@ -152,22 +152,22 @@
           :category="category"
           :articleUrl="`/articles/${articles[5].slug}`"
         />
-        <div >
-         <MobileCategoryArticle
-         class="visible"
-          v-for="article in allArticles"
-          :key="article"
-          :category="article.category"
-          :author="article.user.name"
-          :published="article.createdAt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-          :articleUrl="`/articles/${article.slug}`"
-        />
+        <div>
+          <MobileCategoryArticle
+            class="visible"
+            v-for="article in allArticles"
+            :key="article"
+            :category="article.category"
+            :author="article.user.name"
+            :published="article.createdAt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :articleUrl="`/articles/${article.slug}`"
+          />
         </div>
       </div>
     </div>
-      <div class="entertainment-seymour">
+    <div class="entertainment-seymour">
       <SeeMoreBtn
         class="seymour"
         v-if="moreToLoad"
@@ -195,7 +195,7 @@ export default {
       page: 2,
       articles: [],
       allArticles: [],
-      moreToLoad: true, 
+      moreToLoad: true
     };
   },
   async beforeMount() {
@@ -225,6 +225,24 @@ export default {
           return this.allArticles;
         });
     }
+  },
+  head: function() {
+    return {
+      meta: [
+      { property: 'og:url', content: `https://dev.sitechtimes.com/${this.category}`},
+      { property: 'og:site_name', content: 'SITECHTIMES'},
+      { property: 'og:title', content: this.category },
+      { property: 'og:section', content: this.category },
+      { property: 'og:description', content: "Click to read all articles about" + this.category + "writen by the SITECH Times team!"},
+      { property: 'og:image', content: this.articles[0].imageUrl },
+      { property: 'og:image:alt', content: this.articles[0].imageAlt },
+      { property: 'twitter:card', content: 'summary'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com/${this.category}`},
+      { property: 'twitter:title', content: this.category },
+      { property: 'twitter:description', content: "Click to read all articles about" + this.category + "writen by the SITECH Times team!"},,
+      { property: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+  ]
+    }
   }
 };
 </script>
@@ -240,12 +258,13 @@ export default {
   font-size: var(--h3);
   text-transform: capitalize;
   margin-bottom: 3rem;
+  color: var(--on-background);
 }
 .three-cat-articles {
   display: flex;
   flex-wrap: wrap;
 }
-.two-cat-articles{
+.two-cat-articles {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -254,7 +273,8 @@ export default {
 .big-cat-article {
   width: 90%;
 }
-.cat-sub-one, .cat-sub-two {
+.cat-sub-one,
+.cat-sub-two {
   width: 48.5%;
   margin-top: 3rem;
 }
@@ -276,7 +296,7 @@ export default {
 .seymour {
   margin: 6rem 0 20rem 0;
 }
-.visible{
+.visible {
   display: none;
 }
 @media only screen and (max-width: $mid-screen) {
@@ -285,16 +305,17 @@ export default {
 // margin-left: 5%;
     border: none;
   }
-  .two-cat-articles{
+  .two-cat-articles {
     width: 100%;
   }
   .big-cat-article {
-  width: 100%;
-}
-.cat-sub-one, .cat-sub-two {
-  width: 50%;
-  justify-content: space-between;
-}
+    width: 100%;
+  }
+  .cat-sub-one,
+  .cat-sub-two {
+    width: 50%;
+    justify-content: space-between;
+  }
   .mobile-sub-arts {
     width: 100%;
     margin-left: 0rem;
@@ -303,7 +324,7 @@ export default {
     display: flex;
     justify-content: flex-start;
   }
-  .entertainment-seymour{
+  .entertainment-seymour {
     width: 100%;
   }
   .seymour {
@@ -316,53 +337,53 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .border-right{
+  .border-right {
     width: 95%;
     margin: 0 auto;
     margin-top: var(--title-spacing);
   }
-.three-cat-articles,.mobile-sub-arts{
-  display: none;
-}
-.cat-visible{
-  display: flex;
-  flex-wrap: wrap;
-
-}
-.mobile-big-cat-article {
-  width: 100%;
-}
-.mobile-cat-sub-arts{
-  width: 100%;
-  justify-content: flex-end;
-}
-.mobile-sub-art{
-  width: 100%;
-  margin-top: 3.4rem;
-  margin-bottom: 3.4rem;
-}
-.break{
-width: 100%;
-background-color: var(--primary-color);
-height: 0.6rem;
-border-radius: 0.3rem;
-margin-top: 2rem;
-margin-bottom: 2rem;
-}
-.cat-subhead{
-  margin-top: 2rem;
-}
-.mobile-cat{
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-}
-.not-visible{
-  display: none;
-}
-.visible{
-  display: block;
-}
- .entertainment-seymour{
+  .three-cat-articles,
+  .mobile-sub-arts {
+    display: none;
+  }
+  .cat-visible {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mobile-big-cat-article {
+    width: 100%;
+  }
+  .mobile-cat-sub-arts {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .mobile-sub-art {
+    width: 100%;
+    margin-top: 3.4rem;
+    margin-bottom: 3.4rem;
+  }
+  .break {
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .cat-subhead {
+    margin-top: 2rem;
+  }
+  .mobile-cat {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .not-visible {
+    display: none;
+  }
+  .visible {
+    display: block;
+  }
+  .entertainment-seymour {
     width: 95%;
   }
 }

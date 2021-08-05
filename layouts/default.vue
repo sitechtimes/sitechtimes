@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Datebar /> 
+    <Datebar />
 
     <Navbar />
     <MobileNav />
@@ -17,8 +17,18 @@ export default {
   },
   data() {
     return {
+      categories: []
     };
   },
+  async beforeMount() {
+    try {
+      const categories = await this.$axios.get(`/cms/categories`);
+      this.categories = categories.data;
+    } catch (e) {
+      await this.$router.push("/");
+    }
+  },
+  methods: {}
 };
 
 </script>

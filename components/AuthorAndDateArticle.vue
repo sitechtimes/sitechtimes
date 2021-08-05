@@ -53,12 +53,12 @@ export default {
   props: {
     author: String,
     published: Date
-  },
+  }
 };
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 .author-date-article {
   display: flex;
   //flex-direction: column;
@@ -108,6 +108,5 @@ export default {
 <!--```jsx-->
 <!--<author-and-date author="Charley Baluja" published="Jan 31, 2020" />-->
 <!--```-->
-
 
 <!--</docs>-->

@@ -1,25 +1,27 @@
 <template>
   <div id="article-component">
-    <category-icon :category=category />
+    <category-icon :category="category" />
     <h2 class="main-article-title">{{ title }}</h2>
     <!-- <p class="main-article-description">{{ description }}</p> -->
-    <img
-      class="main-article-img"
-      :src=articleImg
-      :alt=articleAlt
-    />
+    <img class="main-article-img" :src="articleImg" :alt="articleAlt" />
     <div class="main-article-metadata">
       <author-and-date-article
         class="article-author-and-date"
-        :author=author
+        :author="author"
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
         <social-media-icons />
         <!-- <share-icon /> -->
+        <social-media-sharing :title="title" :articleUrl="articleUrl" />
+        <share-icon />
+        <print />
       </div>
     </div>
-    <div class="main-article-text-section main-article-text" v-html="articleText">
+    <div
+      class="main-article-text-section main-article-text"
+      v-html="articleText"
+    >
       <!-- <p class="main-article-text">{{ articleText }}</p> -->
     </div>
   </div>
@@ -40,7 +42,8 @@ export default {
     articleImg: String,
     articleAlt: String,
     author: String,
-    published: Date
+    published: Date,
+    articleUrl: String
   },
   components: {
     AuthorAndDateArticle,
@@ -52,7 +55,12 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
+
+#article-component > * {
+  color: var(--on-background);
+}
+
 .main-article-title {
   margin: 2rem auto;
   font-weight: 700;
@@ -83,6 +91,7 @@ export default {
   font-size: 1.6rem;
   line-height: 3rem;
 }
+
 .main-article-text-section p,
 .main-article-text-section li {
   font-weight: 300;

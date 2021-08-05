@@ -36,13 +36,13 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 4rem;
   }
   .duo {
     width: 50%;
   }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: $small-screen){
   .duo-article-component-container{
     flex-direction: column;
   }

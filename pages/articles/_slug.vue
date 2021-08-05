@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
@@ -30,6 +30,29 @@ export default {
       await this.$router.push("/");
     }
   },
+  head: function() {
+    return {
+      meta: [
+      { property: 'og:type', content: 'article'},
+      { property: 'og:url', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { property: 'og:site_name', content: 'SITECHTIMES'},
+      { property: 'og:title', content: this.article.title },
+      { property: 'og:description', content: "Click to read more about" + this.article.title + "!"},
+      { property: 'og:image', content: this.article.imageUrl },
+      { property: 'og:image:alt', content: this.article.imageAlt },
+      { property: 'article:published_time', content: this.article.createdAt},
+      { property: 'article:modified_time', content: this.article.updatedAt},
+      { property: 'article:author', content: this.article.user},
+      { property: 'article:section', content: this.article.category},
+      { property: 'article:tag', content: this.article.category},
+      { property: 'twitter:card', content: 'summary_large_image'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { property: 'twitter:title', content: this.article.title },
+      { property: 'twitter:image', content: this.article.imageUrl },
+      { property: 'twitter:image:alt', content: this.article.imageAlt },
+  ]
+    }
+  }
 };
 </script>
 
