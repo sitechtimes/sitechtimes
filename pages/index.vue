@@ -89,18 +89,22 @@ export default {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
   },
-  head: {
-  meta: [
-      { name: 'twitter:card', content: "summary" },
-      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/'},
-      { name: 'twitter:title', content: "SITECHTIMES" },
-      { name: 'twitter:description', content: 'Visit the Website to read more!' },
-      { name: 'twitter:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' },
-      { name: 'og:site', content: 'https://dev.sitechtimes.com/'},
-      { name: 'og:title', content: "SITECHTIMES" },
-      { name: 'og:description', content: 'Visit the Website to read more!' },
-      { name: 'og:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' }
-  ]
+  head: function() {
+    return {
+        meta: [
+      { property: 'og:url', content: 'https://dev.sitechtimes.com/'},
+      { property: 'og:type', content: 'website'},
+      { property: 'og:title', content: "The SITECH Times Official Website" },
+      { property: 'og:description', content: 'Visit the Website to read more!' },
+      { property: 'og:image', content: '%PUBLIC_URL%/assets/icons/logo_thicker.svg' },
+      { property: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
+      { property: 'twitter:card', content: 'summary'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com`},
+      { property: 'twitter:title', content: "The SITECH Times Official Website" },
+      { property: 'twitter:image', content: '%PUBLIC_URL%/assets/icons/logo_thicker.svg' },
+      { property: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
+     ]
+  }
 }
 };
 </script>
