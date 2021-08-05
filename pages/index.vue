@@ -65,7 +65,11 @@
           :key="article.id"
         />
       </section>
-      <ImageGallery />
+      <section class="image-gallery">
+        <img class="image" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
+        <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+        <script type="application/javascript" defer src="https://unpkg.com/vue-gallery-slideshow"></script>
+      </section>
     </div>
   </div>
 </template>
@@ -74,16 +78,41 @@
 import CardComponent from "../components/CardComponent";
 import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
+import VueGallerySlideshow from 'vue-gallery-slideshow';
 export default {
   components: {
     DuoArticleContainer,
     CardComponent,
-    GridArticleComponent
+    GridArticleComponent,
+    VueGallerySlideshow
   },
   data() {
     return {
       homepages: [],
-      isMobile: false
+      isMobile: false,
+      images: [
+      'https://placekitten.com/801/800',
+      'https://placekitten.com/802/800',
+      'https://placekitten.com/803/800',
+      'https://placekitten.com/804/800',
+      'https://placekitten.com/805/800',
+      'https://placekitten.com/806/800',
+      'https://placekitten.com/807/800',
+      'https://placekitten.com/808/800',
+      'https://placekitten.com/809/800',
+      'https://placekitten.com/810/800',
+      'https://placekitten.com/801/800',
+      'https://placekitten.com/802/800',
+      'https://placekitten.com/803/800',
+      'https://placekitten.com/804/800',
+      'https://placekitten.com/805/800',
+      'https://placekitten.com/806/800',
+      'https://placekitten.com/807/800',
+      'https://placekitten.com/808/800',
+      'https://placekitten.com/809/800',
+      'https://placekitten.com/810/800'
+    ],
+    index: null
     };
   },
   async beforeMount() {
@@ -154,7 +183,16 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-
+.image {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  object-fit: contain;
+}
 @media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
