@@ -145,12 +145,12 @@ export default {
 //     border-bottom: .1rem solid var(--primary-color);
 //   }
 // }
+
 .mobile-nav-box {
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: var(--background-color);
-  border-bottom: .1rem solid var(--primary-color);
   display: none;
   width: 100vw;
   max-height: 100vh;

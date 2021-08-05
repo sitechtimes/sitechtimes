@@ -18,7 +18,6 @@ name: "SocialMediaIcons"
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all .2s;
-  opacity: 0.2;
 }
 .instagram-icon {
   margin-left: 0;
@@ -26,7 +25,8 @@ name: "SocialMediaIcons"
 .facebook-icon {
   margin-right: 0;
 }
-.social-media-icon:hover {
+.social-media-icon:hover,
+.fa-share:hover {
   color: #bf9f4b;
   transform: scale(110%);
   cursor: pointer;

@@ -71,7 +71,7 @@ export default {
     }
     .footer-email-input {
         width: 36rem;
-        font-size: 1.6rem;
+        font-size: 1.7rem;
         font-family: var(--font);
     }
     .footer-email-input:focus {

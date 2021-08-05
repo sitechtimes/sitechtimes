@@ -45,7 +45,12 @@ export default {
         // margin-right: 10%;
         height: 100%;
     }
-
+     @media only screen and (max-width: $mid-screen) {
+         .form-and-media, .footer-nav {
+             margin: auto;
+         }
+     }
+     
      @media only screen and (max-width: $small-screen) {
         .footer-container {
             flex-direction: column;
