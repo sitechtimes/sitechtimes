@@ -334,8 +334,6 @@ export default {
 }
 @media only screen and (max-width: $x-small-screen) {
   .border-right {
-    width: 95%;
-    margin: 0 auto;
     margin-top: var(--title-spacing);
   }
   .three-cat-articles,
@@ -379,9 +377,6 @@ export default {
   }
   .visible {
     display: block;
-  }
-  .entertainment-seymour {
-    width: 95%;
   }
 }
 </style>

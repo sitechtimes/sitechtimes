@@ -20,7 +20,7 @@ export default {
   border-bottom: 0.3rem solid var(--primary-color);
   margin-bottom: 2rem;
   display: inline-block;
-  width: 90%;
+  width: 100%;
 }
 .mobile-cat-article > a {
   color: var(--on-background);

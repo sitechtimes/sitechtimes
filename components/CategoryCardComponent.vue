@@ -185,7 +185,11 @@ export default {
 @media only screen and (max-width: $small-screen) {
   .category-card-component-image {
     width: 100%;
+ height: 30rem;
   }
+  .category-card-component-text-container {
+  padding: 35% 0 0 5%;
+}
 }
 </style>
 <docs>
