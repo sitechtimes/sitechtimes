@@ -5,6 +5,13 @@
       <!-- <author-and-date :author="author" :published="published" class="mobile-auth-date"/> -->
     </div>
     <a :href="articleUrl" class="mobile-cat-article-title">{{ title }}</a>
+     <a :href="articleUrl"
+        ><img
+          :href="articleUrl"
+          :src="imageUrl"
+          :alt="imageAlt"
+          class="mobile-cat-article-img"
+      /></a>
   </nuxt-link>
 </template>
 
@@ -33,6 +40,8 @@ export default {
 .mobile-cat-article-title {
   font-size: var(--h3);
   font-weight: 700;
+  display: inline-block;
+  max-width: 60%;
 }
 </style>
 
