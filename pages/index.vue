@@ -38,7 +38,6 @@
       <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
-          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"

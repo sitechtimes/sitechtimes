@@ -99,7 +99,7 @@ export default {
 .logo-container h1,
 .mobile-logo-container h1 {
   font-family: var(--article-font);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--primary-color);
   margin-left: 2rem;
 }
