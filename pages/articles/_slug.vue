@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
@@ -30,6 +30,20 @@ export default {
       await this.$router.push("/");
     }
   },
+  head: function() {
+    return {
+      meta: [
+      { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { name: 'twitter:title', content: this.article.title },
+      { name: 'twitter:description', content: "Click to read more about" + this.article.title + "!"},
+      { name: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+      { name: 'og:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
+      { name: 'og:title', content: this.article.title },
+      { name: 'og:description', content: "Click to read more about" + this.article.title + "!"},
+      { name: 'og:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+  ]
+    }
+  }
 };
 </script>
 

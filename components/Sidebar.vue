@@ -21,7 +21,7 @@ export default {
     imgUrl: String,
     imgAlt: String,
     articleUrl: String
-  },
+  }
 };
 </script>
 
@@ -34,6 +34,9 @@ export default {
   --sidebarDetailsPaddingLeft: 1.7rem;
   --toggleBorder: none;
   --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
+}
+.sidebar-article > * {
+  color: var(--on-background);
 }
 .temp-img {
   width: 30vw;
@@ -72,7 +75,7 @@ export default {
   font-size: var(--h5);
   line-height: 1.35;
   text-decoration: none;
-  color: var(--black);
+  color: var(--on-background);
   margin: 0;
 }
 .sidebar-icon {

@@ -1,34 +1,36 @@
 <template>
   <nuxt-link :to="articleUrl" class="mobile-cat-article">
     <div class="mobile-cat-labels">
-   <category-icon :category="category" />
-   <!-- <author-and-date :author="author" :published="published" class="mobile-auth-date"/> -->
-   </div>
-   <a :href="articleUrl" class="mobile-cat-article-title" >{{title}}</a>
-
+      <category-icon :category="category" />
+      <!-- <author-and-date :author="author" :published="published" class="mobile-auth-date"/> -->
+    </div>
+    <a :href="articleUrl" class="mobile-cat-article-title">{{ title }}</a>
   </nuxt-link>
 </template>
 
 <script>
 export default {
-name: "MobileCategoryArticle",
-props: ["category", "author", "published", "title", "articleUrl"]
-}
+  name: "MobileCategoryArticle",
+  props: ["category", "author", "published", "title", "articleUrl"]
+};
 </script>
 
 <style>
-.mobile-cat-article{
-      border-bottom: .3rem solid var(--primary-color);
-      margin-bottom: 2rem;
-       display: inline-block;
-       width: 100%;
+.mobile-cat-article {
+  border-bottom: 0.3rem solid var(--primary-color);
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 90%;
 }
-.mobile-cat-labels{
+.mobile-cat-article > a {
+  color: var(--on-background);
+}
+.mobile-cat-labels {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.mobile-cat-article-title{
+.mobile-cat-article-title {
   font-size: var(--h3);
   font-weight: 700;
 }

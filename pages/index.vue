@@ -38,6 +38,7 @@
       <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
+          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
@@ -87,7 +88,20 @@ export default {
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
-  }
+  },
+  head: {
+  meta: [
+      { name: 'twitter:card', content: "summary" },
+      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/'},
+      { name: 'twitter:title', content: "SITECHTIMES" },
+      { name: 'twitter:description', content: 'Visit the Website to read more!' },
+      { name: 'twitter:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' },
+      { name: 'og:site', content: 'https://dev.sitechtimes.com/'},
+      { name: 'og:title', content: "SITECHTIMES" },
+      { name: 'og:description', content: 'Visit the Website to read more!' },
+      { name: 'og:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' }
+  ]
+}
 };
 </script>
 
@@ -96,7 +110,7 @@ export default {
 .grid-article-container {
   display: flex;
   gap: 2rem;
-   margin: var(--section-spacing) 0;
+  margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -105,7 +119,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
-   padding: var(--title-spacing) 0;
+  padding: var(--title-spacing) 0;
 }
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
@@ -125,11 +139,14 @@ export default {
   grid-row-gap: 2.5rem;
 }
 
-// .darksection {
-//   background-color: var(--grey);
-//   color: white;
-//   padding-bottom: 5rem;
-// }
+.global-container > h3 {
+  color: var(--on-background);
+}
+/* .darksection {
+  background-color: var(--grey);
+  color: white;
+  padding-bottom: 5rem;
+} */
 //.desktop-view {
 //  display: grid;
 //}
