@@ -229,14 +229,17 @@ export default {
   head: function() {
     return {
       meta: [
-      { name: 'twitter:site', content: `https://dev.sitechtimes.com/${this.category}`},
-      { name: 'twitter:title', content: this.category },
-      { name: 'twitter:description', content: "Click to read all articles about" + this.category + "writen at Staten Island Tech"},
-      { name: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
-      { name: 'og:site', content: `https://dev.sitechtimes.com/${this.category}`},
-      { name: 'og:title', content: this.category },
-      { name: 'og:description', content: "Click to read all articles about" + this.category + "writen at Staten Island Tech"},
-      { name: 'og:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
+      { property: 'og:url', content: `https://dev.sitechtimes.com/${this.category}`},
+      { property: 'og:title', content: this.category },
+      { property: 'og:section', content: this.category },
+      { property: 'og:description', content: "Click to read all articles about" + this.category + "writen by the SITECH Times team!"},
+      { property: 'og:image', content: this.articles[0].imageUrl },
+      { property: 'og:image:alt', content: this.articles[0].imageAlt },
+      { property: 'twitter:card', content: 'summary'},
+      { property: 'twitter:url', content: `https://dev.sitechtimes.com/${this.category}`},
+      { property: 'twitter:title', content: this.category },
+      { property: 'twitter:description', content: "Click to read all articles about" + this.category + "writen by the SITECH Times team!"},,
+      { property: 'twitter:image', content: "https://dev.sitechtimes.com/assets/icons/logo_thicker.svg" },
   ]
     }
   }
