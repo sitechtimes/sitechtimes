@@ -11,10 +11,9 @@
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
-        <social-media-icons />
         <!-- <share-icon /> -->
         <social-media-sharing :title="title" :articleUrl="articleUrl" />
-        <share-icon />
+        <!-- <share-icon /> -->
         <print />
       </div>
     </div>
