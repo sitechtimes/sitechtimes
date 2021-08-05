@@ -91,26 +91,26 @@ export default {
       homepages: [],
       isMobile: false,
       images: [
-      'https://placekitten.com/801/800',
-      'https://placekitten.com/802/800',
-      'https://placekitten.com/803/800',
-      'https://placekitten.com/804/800',
-      'https://placekitten.com/805/800',
-      'https://placekitten.com/806/800',
-      'https://placekitten.com/807/800',
-      'https://placekitten.com/808/800',
-      'https://placekitten.com/809/800',
-      'https://placekitten.com/810/800',
-      'https://placekitten.com/801/800',
-      'https://placekitten.com/802/800',
-      'https://placekitten.com/803/800',
-      'https://placekitten.com/804/800',
-      'https://placekitten.com/805/800',
-      'https://placekitten.com/806/800',
-      'https://placekitten.com/807/800',
-      'https://placekitten.com/808/800',
-      'https://placekitten.com/809/800',
-      'https://placekitten.com/810/800'
+      'https://res.cloudinary.com/alston/image/upload/v1628171963/tech%20placeholder%20pictures/DSC_0996_hbhuqh.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171962/tech%20placeholder%20pictures/DSC_0995_bkn2sh.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171962/tech%20placeholder%20pictures/DSC_0991_o0h81a.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171962/tech%20placeholder%20pictures/DSC_0945_qrqxyt.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171962/tech%20placeholder%20pictures/DSC_0997_nc1mjf.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171962/tech%20placeholder%20pictures/DSC_0993_gddgxx.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171959/tech%20placeholder%20pictures/DSC_0983_ecm5cs.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171958/tech%20placeholder%20pictures/DSC_0811_tfi3x3.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171957/tech%20placeholder%20pictures/DSC_0839_sxcmb3.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171957/tech%20placeholder%20pictures/DSC_0982_wtk7gt.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171956/tech%20placeholder%20pictures/DSC_0958_tedfyd.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171931/tech%20placeholder%20pictures/DSC_0881_xog8ht.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171931/tech%20placeholder%20pictures/DSC_0873_oclwzb.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171931/tech%20placeholder%20pictures/DSC_0874_e4m9py.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171930/tech%20placeholder%20pictures/DSC_0868_ihwzdg.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171930/tech%20placeholder%20pictures/DSC_0877_oimzzx.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171929/tech%20placeholder%20pictures/DSC_0875_dateiv.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171929/tech%20placeholder%20pictures/DSC_0841_aejz03.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171928/tech%20placeholder%20pictures/DSC_0876_t2l2me.jpg',
+      'https://res.cloudinary.com/alston/image/upload/v1628171927/tech%20placeholder%20pictures/DSC_0850_gtzzqa.jpg'
     ],
     index: null
     };
@@ -191,7 +191,7 @@ export default {
   margin: 5px;
   border-radius: 3px;
   border: 1px solid lightgray;
-  object-fit: contain;
+  object-fit: cover;
 }
 @media only screen and (max-width: $small-screen) {
   .trending-main {
