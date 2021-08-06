@@ -58,6 +58,7 @@ export default {
     }
     .footer-sub-header {
         font-size: 1.6rem;
+        font-weight: 400;
         margin-bottom: 1rem;
     }
     .footer-form-label {
@@ -117,6 +118,7 @@ export default {
     @media only screen and (max-width: $mid-screen) {
         .footer-form-box {
             border-bottom: none;
+            padding-bottom: 0;
         }
     }
     @media only screen and (max-width: $x-small-screen) {
