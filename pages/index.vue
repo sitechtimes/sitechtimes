@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-      <h3 class="section-title">Trending Articles</h3>
+      <h2 class="section-title">Trending Articles</h2>
       <section class="trending-section">
         <CardComponent
           class="trending-main cardquery"
@@ -38,12 +38,12 @@
       <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
         <GridArticleComponent
           v-for="article in homepages.slice(3, 6)"
-          :key="article.id"
           :articleUrl="'/articles/' + article.slug"
           :category="article.category"
           :imageAlt="article.imageAlt"
           :title="article.title"
           :imageUrl="article.imageUrl"
+          :key="article.id"
         />
       </section>
       <section>
@@ -136,6 +136,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
+  font-size: var(--h3);
   padding: var(--title-spacing) 0;
 }
 .trending-main {

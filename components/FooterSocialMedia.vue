@@ -94,14 +94,19 @@ export default {
   cursor: pointer;
 }
 
+@media only screen and (max-width: $mid-screen) {
+    .footer-social-media-box {
+         margin: 6.5rem 0;
+    }
+}
 @media only screen and (max-width: $x-small-screen) {
   .footer-sm-header {
     font-size: var(--h2);
   }
   .footer-sm-icon {
     color: var(--primary-color);
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
   }
 }
 </style>

@@ -11,8 +11,9 @@
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
+        <!-- <share-icon /> -->
         <social-media-sharing :title="title" :articleUrl="articleUrl" />
-        <share-icon />
+        <!-- <share-icon /> -->
         <print />
       </div>
     </div>
@@ -61,7 +62,7 @@ export default {
 
 .main-article-title {
   margin: 2rem auto;
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--h2);
 }
 // .main-article-description {
@@ -126,7 +127,8 @@ export default {
 .main-article-text h1 strong {
   font-size: 4rem;
 }
-.main-article-text h2 .main-article-text h2 strong {
+.main-article-text h2
+.main-article-text h2 strong {
   font-size: 3.5rem;
 }
 .main-article-text h3,
@@ -142,8 +144,8 @@ export default {
   font-size: 2rem;
 }
 .main-article-text h6,
-.main-article-text h6 strong {
-  font-size: var(--small-text);
+.main-article-text h6 strong{
+  font-size: 1.7rem;
 }
 .main-article-img {
   width: 100%;

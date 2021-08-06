@@ -93,21 +93,21 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
 }
 .logo-container h1,
 .mobile-logo-container h1 {
   font-family: var(--article-font);
   color: var(--primary-color);
   margin-left: 2rem;
-  margin-top: 2rem;
 }
-.logo,
-.mobile-logo {
-  height: 10rem;
-  width: 10rem;
-  fill: var(--primary-color);
-  stroke: var(--primary-color);
+.logo, .mobile-logo {
+    height: 10rem;
+    width: 10rem;
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    margin-bottom: 1.3rem;
 }
 .home-nav-li {
   text-transform: uppercase;

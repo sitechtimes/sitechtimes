@@ -12,10 +12,8 @@
 </template>
 
 <script>
-import Datebar from "../components/Datebar";
 export default {
   components: {
-    Datebar
   },
   data() {
     return {
@@ -32,4 +30,5 @@ export default {
   },
   methods: {}
 };
+
 </script>
