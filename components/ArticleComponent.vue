@@ -120,7 +120,7 @@ export default {
 .main-article-text h5 strong,
 .main-article-text h6 strong {
   font-family: var(--article-font);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 0;
 }
 .main-article-text h1,

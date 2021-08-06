@@ -31,7 +31,7 @@ export default {
 <style lang="scss">
 @import '../assets/variables';
     .footer-bg {
-        background-color: var(--grey);
+        background-color: var(--footer);
         padding: 3rem 0;
     }
     .footer-container {
