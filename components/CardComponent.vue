@@ -117,7 +117,7 @@ export default {
 }
 .card-component-text-container {
   width: 100%;
-  padding: 0 7%;
+  padding: 0 7% 7% 7%;
   max-height: 70%;
   margin: 0 auto;
   background: -webkit-linear-gradient(
