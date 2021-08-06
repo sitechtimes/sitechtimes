@@ -34,7 +34,7 @@ export default {
   font-weight: 500;
   border-radius: 0.8rem;
   margin: 0.3rem 0 0.3rem 0;
-  padding: 0.6rem .9rem 0.2rem .9rem;
+  padding: 0.6rem .9rem 0.3rem .9rem;
   transition: all .2s;
 }
 </style>

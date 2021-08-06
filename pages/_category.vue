@@ -304,8 +304,7 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
-    // margin-left: 5%;
-    margin-top: 7rem;
+// margin-left: 5%;
     border: none;
   }
   .two-cat-articles {

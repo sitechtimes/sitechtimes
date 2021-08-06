@@ -21,7 +21,7 @@ export default {
     transition: all .3s;
 }
 .see-more-btn:hover {
-  box-shadow: 0 .5rem 1rem .5rem var(--accent-color);
+  box-shadow: 0 .5rem 1rem .5rem rgba(#fff3d2, .5);
   text-shadow: .1rem .1rem .1rem var(--mid-grey);
   transform: translateY(-.5rem);
   cursor: pointer;
