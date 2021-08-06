@@ -82,40 +82,30 @@ export default {
   data() {
     return {
       homepages: [],
-      isMobile: false
+      isMobile: false,
     };
   },
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+
   },
   head: function() {
     return {
         meta: [
       { name: 'title', content: "The SITECH Times Official Website" },
       { name: 'description', content: 'Visit the Website to read more!' },
-      { name: 'og:url', content: 'https://dev.sitechtimes.com/'},
+      { name: 'og:url', content: window.location.href},
       { name: 'og:type', content: 'website'},
       { name: 'og:title', content: "The SITECH Times Official Website" },
       { name: 'og:description', content: 'Visit the Website to read more!' },
       { name: 'og:image', content: '/logo_thicker.svg' },
       { name: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
       { name: 'twitter:card', content: 'summary'},
-      { name: 'twitter:url', content: `https://dev.sitechtimes.com`},
+      { name: 'twitter:url', content: window.location.href},
       { name: 'twitter:title', content: "The SITECH Times Official Website" },
       { name: 'twitter:image', content: '/logo_thicker.svg' },
       { name: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
-      { property: 'og:url', content: 'https://dev.sitechtimes.com/'},
-      { property: 'og:type', content: 'website'},
-      { property: 'og:title', content: "The SITECH Times Official Website" },
-      { property: 'og:description', content: 'Visit the Website to read more!' },
-      { property: 'og:image', content: '/logo_thicker.svg' },
-      { property: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
-      { property: 'twitter:card', content: 'summary'},
-      { property: 'twitter:url', content: `https://dev.sitechtimes.com`},
-      { property: 'twitter:title', content: "The SITECH Times Official Website" },
-      { property: 'twitter:image', content: '/logo_thicker.svg' },
-      { property: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
      ]
   }
 }
