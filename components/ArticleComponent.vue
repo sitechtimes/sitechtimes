@@ -11,9 +11,9 @@
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
-        <!-- <share-icon /> -->
-        <social-media-sharing :title="title" :articleUrl="articleUrl" />
-        <!-- <share-icon /> -->
+        <social-media-sharing :title="title" :articleUrl="articleUrl" :webUrl="webUrl" />
+        <share-icon />
+
         <print />
       </div>
     </div>
@@ -42,7 +42,8 @@ export default {
     articleAlt: String,
     author: String,
     published: Date,
-    articleUrl: String
+    articleUrl: String,
+    webUrl: String,
   },
   components: {
     AuthorAndDateArticle,
