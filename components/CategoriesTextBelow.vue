@@ -48,7 +48,7 @@ export default {
 .article-image {
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 .category-cat {
   margin-right: 2rem;

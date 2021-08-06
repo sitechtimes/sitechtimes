@@ -47,7 +47,7 @@ export default {
   /* these height + width things are arbitrary right now, they'll be more specific when the other category component is made */
   height: 23rem;
   width: 35rem;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   margin-right: 4rem;
 }
 .cat-article-img-content {
@@ -62,7 +62,6 @@ export default {
   color: var(--on-background) !important;
 }
 .cat-labels {
-  margin-top: 2rem;
   display: flex;
 }
 .cat-article-icon {
@@ -83,7 +82,7 @@ export default {
   .cat-article-img {
     height: 18.8rem;
     width: 26rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
   }
   .cat-title {
     font-size: var(--h3);
@@ -117,7 +116,7 @@ export default {
     .cat-article-img {
       height: 18.8rem;
       width: 26rem;
-      border-radius: 1.5rem;
+      border-radius: 1rem;
     }
     .cat-title {
       font-size: var(--h3);
@@ -138,7 +137,7 @@ export default {
     .cat-article-img {
       height: 14rem;
       width: 35vw;
-      border-radius: 1.5rem;
+      border-radius: 1rem;
       //   margin-left: 15rem;
       margin-right: 0;
     }

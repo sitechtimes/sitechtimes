@@ -111,7 +111,7 @@ export default {
 
 .category-card-component {
   cursor: pointer;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -121,7 +121,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 .category-flex-col {
   display: flex;
@@ -141,7 +141,7 @@ export default {
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.65) 100%
   );
-  border-radius: 1.5rem;
+  border-radius: 1rem;
 }
 .category-card-component-category-author-date {
   display: flex;
