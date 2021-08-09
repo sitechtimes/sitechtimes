@@ -99,6 +99,11 @@ export default {
     margin-bottom: 5.1rem;
   }
 }
+/* @media only screen and (max-width: $mid-screen) {
+  .footer-social-media-box {
+    margin: 6.5rem 0;
+  }
+} */
 
 @media only screen and (max-width: $x-small-screen) {
   .footer-sm-header {
