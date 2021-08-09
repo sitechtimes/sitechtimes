@@ -51,6 +51,7 @@
           v-for="category in categories"
           :key="category"
           :to="'../' + category"
+          :aria-label="category"
           class="home-nav-link"
         >
           <li class="home-nav-li">{{ category }}</li>

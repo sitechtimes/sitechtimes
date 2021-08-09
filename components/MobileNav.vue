@@ -61,6 +61,7 @@
           v-for="category in categories"
           :key="category"
           :to="'../' + category"
+          :aria-label="category"
         >
           <li class="mobile-nav-li" v-on:click="navFunction()">
             {{ category }}
