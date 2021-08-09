@@ -13,7 +13,6 @@ export default {
   data() {
     return {
       slug: this.$route.params.slug,
-      location: window.location.href,
       categoryHome: null,
       categoryRecent: null,
       article: {},
