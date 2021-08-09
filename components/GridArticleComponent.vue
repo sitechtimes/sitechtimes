@@ -63,6 +63,7 @@ export default {
 .grid-article-data {
   padding-top: 1rem;
 }
+
 @media only screen and (max-width: $midlarge-screen) {
   .grid-article-component {
     display: flex;
@@ -84,54 +85,9 @@ export default {
     font-size: var(--h3);
   }
 }
-@media only screen and (max-width: $mid-screen) {
-  .trio-grid-container .grid-article-component:last-child {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .grid-article-image {
-    width: 100%;
-    border-radius: 1.5rem;
-    height: 40rem;
-    object-fit: cover;
-  }
-}
-@media only screen and (max-width: $small-screen) {
-  .grid-article-component {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 1.5rem 0;
-  }
-  .grid-article-image {
-    width: 100%;
-    border-radius: 1.5rem;
-    height: 30rem;
-    object-fit: cover;
-
-    display: flex;
-    flex-direction: column;
-    width: 47%;
-  }
-  .grid-article-component:last-child {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .grid-article-image {
-    width: 100%;
-    border-radius: 1.5rem;
-    height: 35rem;
-    object-fit: cover;
-  }
-  .grid-article-component:last-child .grid-article-title {
-    font-size: var(--h3);
-  }
 
   @media only screen and (max-width: $mid-screen) {
-    .grid-article-component:last-child {
+    .trio-grid-container .grid-article-component:last-child {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -144,12 +100,13 @@ export default {
       object-fit: cover;
     }
   }
+
   @media only screen and (max-width: $small-screen) {
     .grid-article-component {
       display: flex;
       flex-direction: column;
       width: 100%;
-      margin: 1.5rem 0;
+      margin: 5rem 0;
     }
     .grid-article-image {
       width: 100%;
@@ -161,7 +118,6 @@ export default {
       font-size: var(--h3);
     }
   }
-}
 </style>
 
 <!--<docs>-->
