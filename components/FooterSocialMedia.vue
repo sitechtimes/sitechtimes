@@ -111,8 +111,8 @@ export default {
   }
   .footer-sm-icon {
     color: var(--primary-color);
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
   }
 }
 </style>

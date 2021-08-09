@@ -72,7 +72,7 @@ export default {
 }
 #sidebar-article-details-title {
   font-weight: bold;
-  font-size: var(--h5);
+  font-size: 1.55rem;
   line-height: 1.35;
   text-decoration: none;
   color: var(--on-background);

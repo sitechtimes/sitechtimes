@@ -48,7 +48,7 @@
         </nuxt-link>
       </span>
 
-      <div id="nav-icon4" :class="spanClass" v-on:click="navFunction()">
+      <div id="nav-icon" :class="spanClass" v-on:click="navFunction()">
         <span></span>
         <span></span>
         <span></span>
@@ -114,6 +114,34 @@ export default {
         this.bgColor = "";
       }
     },
+    // trackScroll: function() {
+    //   // The debounce function receives our function as a parameter
+    //   const debounce = (fn) => {
+    //     // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    //     let frame;
+    //     // The debounce function returns a new function that can receive a variable number of arguments
+    //     return (...params) => {
+    //       // If the frame variable has been defined, clear it now, and queue for next frame
+    //       if (frame) { 
+    //         cancelAnimationFrame(frame);
+    //       }
+    //       // Queue our function call for the next frame
+    //       frame = requestAnimationFrame(() => {
+    //         // Call our function and pass any params we received
+    //         fn(...params);
+    //       });
+    //     } 
+    //   };
+    //   // Reads out the scroll position and stores it in the data attribute
+    //   // so we can use it in our stylesheets
+    //   const storeScroll = () => {
+    //     document.documentElement.dataset.scroll = window.scrollY;
+    //   }
+    //   // Listen for new scroll events, here we debounce our `storeScroll` function
+    //   document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+    //   // Update scroll position for first time
+    //   storeScroll();
+    // },
     navFunction: function() {
       this.toggleBackground();
       this.toggleNav();
@@ -126,16 +154,14 @@ export default {
 <style lang="scss">
 @import "../assets/variables";
 .mobile-nav-box {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--background-color);
   display: none;
   //width: 100vw;
   width: 100%;
   max-height: 100vh;
-  z-index: 1;
-  position: fixed;
-  //overflow: scroll;
-  top: 0;
-
-  position: relative;
 }
 .mobile-logo-link {
   display: flex;
@@ -144,11 +170,11 @@ export default {
 }
 .mobile-logo-container h1 {
   font-size: var(--h2);
-  margin-left: 1.5rem;
+  margin-left: 1rem;
 }
 .mobile-logo {
-  height: 8rem;
-  width: 8rem;
+  height: 6.5rem;
+  width: 6.5rem;
 }
 .mobile-nav {
   width: 100vw;
@@ -165,7 +191,6 @@ export default {
   font-size: 3.5rem;
   margin: 1vh;
   color: var(--mobile-nav-text);
-  transition: all 0.3s;
 }
 .mobile-nav li:focus {
   padding: 1.5rem;
@@ -176,12 +201,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
-/* Icon 4 */
-#nav-icon4 {
+#nav-icon {
   width: 5rem;
   padding: 2rem;
-  // margin-left: 90vw;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -193,7 +218,7 @@ export default {
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
-#nav-icon4 span {
+#nav-icon span {
   display: block;
   position: absolute;
   height: 0.5rem;
@@ -211,24 +236,24 @@ export default {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
-#nav-icon4 span:nth-child(1) {
+#nav-icon span:nth-child(1) {
   top: 0.5rem;
 }
-#nav-icon4 span:nth-child(2) {
+#nav-icon span:nth-child(2) {
   top: 2rem;
 }
-#nav-icon4 span:nth-child(3) {
+#nav-icon span:nth-child(3) {
   top: 3.5rem;
 }
-#nav-icon4 span:nth-child(1),
-#nav-icon4 span:nth-child(2),
-#nav-icon4 span:nth-child(3) {
+#nav-icon span:nth-child(1),
+#nav-icon span:nth-child(2),
+#nav-icon span:nth-child(3) {
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
   transform-origin: left center;
 }
-#nav-icon4.open span:nth-child(1) {
+#nav-icon.open span:nth-child(1) {
   background: var(--white);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -237,11 +262,11 @@ export default {
   left: 0.8rem;
   top: 0;
 }
-#nav-icon4.open span:nth-child(2) {
+#nav-icon.open span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-#nav-icon4.open span:nth-child(3) {
+#nav-icon.open span:nth-child(3) {
   background: var(--white);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -259,25 +284,25 @@ export default {
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-  #nav-icon4 {
+  #nav-icon {
     width: 3rem;
   }
-  #nav-icon4 span {
+  #nav-icon span {
     height: 0.4rem;
   }
-  #nav-icon4 span:nth-child(1) {
+  #nav-icon span:nth-child(1) {
     top: 1rem;
   }
-  #nav-icon4 span:nth-child(2) {
+  #nav-icon span:nth-child(2) {
     top: 2.1rem;
   }
-  #nav-icon4 span:nth-child(3) {
+  #nav-icon span:nth-child(3) {
     top: 3.2rem;
   }
-  #nav-icon4.open span:nth-child(1) {
+  #nav-icon.open span:nth-child(1) {
     top: 1rem;
   }
-  #nav-icon4.open span:nth-child(3) {
+  #nav-icon.open span:nth-child(3) {
     top: 3.9rem;
   }
 }

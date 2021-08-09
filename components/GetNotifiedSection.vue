@@ -40,81 +40,104 @@ export default {
 
 <style lang="scss">
 @import "../assets/_variables.scss";
-.footer-header-container {
-  display: flex;
-  flex-direction: column;
-}
-.footer-form-box {
-  width: 36rem;
-  margin: 0 auto;
-  padding-bottom: 5.1rem;
-  border-bottom: 0.2rem solid var(--primary-color);
-}
-.footer-header,
-.footer-sub-header {
-  font-size: var(--h2);
-  text-align: center;
-  color: var(--accent-color);
-  font-weight: 700;
-}
-.footer-sub-header {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-.footer-form-label {
-  opacity: 0;
-  font-size: 1.5rem;
-  letter-spacing: 0.05rem;
-  color: var(--accent-color);
-  transition: all 0.2s;
-}
-.footer-email-input,
-.footer-join-btn {
-  margin-top: 0.2rem;
-  border: none;
-  background-color: var(--accent-color);
-  padding: 1.3rem 2.2rem;
-  border-radius: 5rem;
-}
-.footer-inputs {
-  display: flex;
-}
-.footer-email-input {
-  width: 36rem;
-  font-size: 1.6rem;
-  font-family: var(--font);
-}
-.footer-email-input:focus {
-  outline: none;
-}
-.footer-email-input:focus::placeholder {
-  color: transparent;
-}
-.footer-email-input:focus .footer-form-label {
-  visibility: visible;
-}
-.footer-join-btn {
-  width: 7.5rem;
-  margin-left: -7.5rem;
-  font-family: var(--font);
-  font-size: var(--h5);
-  font-weight: 700;
-  background-color: var(--primary-color);
-  text-transform: uppercase;
-  transition: all 0.3s;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  opacity: 1;
-}
-.footer-join-btn:hover {
-  background-color: #bf9f4b;
-  cursor: pointer;
-}
-// .footer-form-alert {
-//     opacity: 0;
-//     transition: .2s;
-// }
+    .footer-header-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-form-box {
+        margin: 0 auto;
+        padding-bottom: 5.1rem;
+        border-bottom: .2rem solid var(--primary-color);
+    }
+    .footer-header,
+    .footer-sub-header {
+        font-size: var(--h2);
+        text-align: center;
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+    .footer-sub-header {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    .footer-form-label {
+        opacity: 0;
+        font-size: 1.5rem;
+        letter-spacing: .05rem;
+        color: var(--accent-color);
+        transition: all .2s; 
+    }
+    .footer-email-input, .footer-join-btn {
+        margin-top: .2rem;
+        border: none;
+        background-color: var(--accent-color);
+        padding: 1.3rem 2.2rem;
+        border-radius: 5rem;
+    }
+    .footer-inputs {
+        display: flex; 
+    }
+    .footer-email-input {
+        width: 36rem;
+        font-size: 1.7rem;
+        font-family: var(--font);
+    }
+    .footer-email-input:focus {
+        outline: none;
+    }
+    .footer-email-input:focus::placeholder {
+        color: transparent;
+    }
+    .footer-email-input:focus .footer-form-label {
+        visibility: visible;
+    }
+    .footer-join-btn {
+        width: 7.5rem;
+        margin-left: -7.5rem;
+        font-family: var(--font);
+        font-size: var(--h5);
+        font-weight: 700;
+        background-color: var(--primary-color);
+        text-transform: uppercase;
+        transition: all .3s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        opacity: 1;
+    }
+    .footer-join-btn:hover {
+        background-color: #bf9f4b;
+        cursor: pointer;
+    }
+    // .footer-form-alert {
+    //     opacity: 0;
+    //     transition: .2s;
+    // }
+
+    @media only screen and (max-width: $mid-screen) {
+        .footer-form-box {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+    @media only screen and (max-width: $x-small-screen) {
+        .footer-sub-header {
+            font-size: var(--h4);
+            font-weight: 500;
+        }
+        .footer-join-btn {
+            width: 9rem;
+            margin-left: -9rem;
+        }
+        .footer-email-input, .footer-join-btn {
+            margin-top: .5rem;
+            padding: 1.6rem 2.5rem;
+        }
+        .footer-email-input, .footer-join-btn, .footer-form-label {
+            font-size: 1.8rem;
+        }
+    }
 
 @media only screen and (max-width: $x-small-screen) {
   .footer-form-box {

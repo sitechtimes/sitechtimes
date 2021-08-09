@@ -225,6 +225,26 @@ export default {
           return this.allArticles;
         });
     }
+  },
+  head: function() {
+    return {
+      meta: [
+      { name: 'title', content: this.$route.params.category },
+      { name: 'description', content: "Click to read all articles about" + this.$route.params.category + "writen by the SITECH Times team!"},
+       { name: 'og:url', content: window.location.href},
+      { name: 'og:site_name', content: 'SITECHTIMES'},
+      { name: 'og:title', content: this.$route.params.category },
+      { name: 'og:section', content: this.$route.params.category },
+      { name: 'og:description', content: "Click to read all articles about" + this.$route.params.category + "writen by the SITECH Times team!"},
+      { name: 'og:image', content: "/logo_thicker.svg" },
+      { name: 'og:image:alt', content: "SITECH Times logo" },
+      { name: 'twitter:card', content: 'summary'},
+      { name: 'twitter:url', content:  window.location.href},
+      { name: 'twitter:title', content: this.$route.params.category },
+      { name: 'twitter:description', content: "Click to read all articles about" + this.$route.params.category + "writen by the SITECH Times team!"},
+      { name: 'twitter:image', content: "/logo_thicker.svg" },
+  ]
+    }
   }
 };
 </script>
@@ -284,8 +304,7 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
-    // margin-left: 5%;
-    margin-top: 7rem;
+// margin-left: 5%;
     border: none;
   }
   .two-cat-articles {

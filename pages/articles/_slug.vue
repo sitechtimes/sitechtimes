@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug" :webUrl="location"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
@@ -13,14 +13,15 @@ export default {
   data() {
     return {
       slug: this.$route.params.slug,
+      location: window.location.href,
       categoryHome: null,
       categoryRecent: null,
-      article: {}
+      article: {},
     };
   },
-  async beforeMount() {
+  async beforeCreate() {
     try {
-      const article = await this.$axios.get(`/articles/${this.slug}`);
+      const article = await this.$axios.get(`/articles/${this.$route.params.slug}`);
       this.article = article.data;
       const categoryHome = await this.$axios.get(`/articles/homepage?category=${this.article.category}`);
       this.categoryHome = categoryHome.data;
@@ -29,15 +30,7 @@ export default {
     } catch (e) {
       await this.$router.push("/");
     }
-  },
-  // head: {
-  //     meta: [
-  //     { name: 'twitter:site', content: `https://dev.sitechtimes.com/articles/${this.slug}`},
-  //     { name: 'twitter:title', content: this.article.title },
-  //     { name: 'twitter:description', content: this.article.content.substring(0,30)+".." },
-  //     { name: 'twitter:image', content: this.article.imageUrl },
-  // ]
-  // }
+  }
 };
 </script>
 

@@ -1,70 +1,84 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
     <div class="global-container">
-      <h3 class="section-title">Trending Articles</h3>
-      <section class="trending-section">
-        <CardComponent
-          class="trending-main cardquery"
-          size="medium"
-          v-if="homepages[0]"
-          :articleUrl="'/articles/' + homepages[0].slug"
-          :category="homepages[0].category"
-          :imageTitle="homepages[0].imageAlt"
-          :title="homepages[0].title"
-          :imageUrl="homepages[0].imageUrl"
-        />
-        <CardComponent
-          v-if="homepages[1]"
-          :articleUrl="'/articles/' + homepages[1].slug"
-          :category="homepages[1].category"
-          :imageTitle="homepages[1].imageAlt"
-          :title="homepages[1].title"
-          :imageUrl="homepages[1].imageUrl"
-          class="trending-sub"
-          size="small"
-        />
-        <CardComponent
-          v-if="homepages[2]"
-          :articleUrl="'/articles/' + homepages[2].slug"
-          :category="homepages[2].category"
-          :imageTitle="homepages[2].imageAlt"
-          :title="homepages[2].title"
-          :imageUrl="homepages[2].imageUrl"
-          class="trending-detail"
-          size="small"
-        />
-      </section>
+      <div class="desktop-view">
+        <h2 class="section-title">Trending Articles</h2>
+        <section class="trending-section">
+          <CardComponent
+            class="trending-main cardquery"
+            size="medium"
+            v-if="homepages[0]"
+            :articleUrl="'/articles/' + homepages[0].slug"
+            :category="homepages[0].category"
+            :imageTitle="homepages[0].imageAlt"
+            :title="homepages[0].title"
+            :imageUrl="homepages[0].imageUrl"
+          />
+          <CardComponent
+            v-if="homepages[1]"
+            :articleUrl="'/articles/' + homepages[1].slug"
+            :category="homepages[1].category"
+            :imageTitle="homepages[1].imageAlt"
+            :title="homepages[1].title"
+            :imageUrl="homepages[1].imageUrl"
+            class="trending-sub"
+            size="small"
+          />
+          <CardComponent
+            v-if="homepages[2]"
+            :articleUrl="'/articles/' + homepages[2].slug"
+            :category="homepages[2].category"
+            :imageTitle="homepages[2].imageAlt"
+            :title="homepages[2].title"
+            :imageUrl="homepages[2].imageUrl"
+            class="trending-detail"
+            size="small"
+          />
+        </section>
 
-      <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
+        <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
+          <GridArticleComponent
+            v-for="article in homepages.slice(3, 6)"
+            :articleUrl="'/articles/' + article.slug"
+            :category="article.category"
+            :imageAlt="article.imageAlt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :key="article.id"
+          />
+        </section>
+        <section>
+          <DuoArticleContainer
+            v-if="homepages[7]"
+            :articles="homepages.slice(7, 9)"
+          />
+        </section>
+        <section class="grid-article-container six-grid-container" v-if="homepages[0]">
+          <GridArticleComponent
+            v-for="article in homepages.slice(10, 20)"
+            :articleUrl="'/articles/' + article.slug"
+            :author="article.user.name"
+            :published="article.createdAt"
+            :category="article.category"
+            :imageAlt="article.imageAlt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :key="article.id"
+          />
+        </section>
+      </div>
+      <div class="mobile-view">
+        <h2 class="section-title">Trending Articles</h2>
         <GridArticleComponent
-          v-for="article in homepages.slice(3, 6)"
-          :key="article.id"
-          :articleUrl="'/articles/' + article.slug"
-          :category="article.category"
-          :imageAlt="article.imageAlt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-        />
-      </section>
-      <section>
-        <DuoArticleContainer
-          v-if="homepages[7]"
-          :articles="homepages.slice(7, 9)"
-        />
-      </section>
-      <section class="grid-article-container" v-if="homepages[0]">
-        <GridArticleComponent
-          v-for="article in homepages.slice(10, 20)"
-          :articleUrl="'/articles/' + article.slug"
-          :author="article.user.name"
-          :published="article.createdAt"
-          :category="article.category"
-          :imageAlt="article.imageAlt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-          :key="article.id"
-        />
-      </section>
+            v-for="article in homepages.slice(0, 20)"
+            :articleUrl="'/articles/' + article.slug"
+            :category="article.category"
+            :imageAlt="article.imageAlt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :key="article.id"
+          />
+      </div>
     </div>
   </div>
 </template>
@@ -82,31 +96,41 @@ export default {
   data() {
     return {
       homepages: [],
-      isMobile: false
+      isMobile: false,
     };
   },
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+
   },
-  head: {
-  meta: [
-      { name: 'twitter:card', content: "summary" },
-      { name: 'twitter:site', content: 'https://dev.sitechtimes.com/'},
-      { name: 'twitter:title', content: "SITECHTIMES" },
-      { name: 'twitter:description', content: 'Visit the Website to read more!' },
-      { name: 'twitter:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' },
-      { name: 'og:site', content: 'https://dev.sitechtimes.com/'},
-      { name: 'og:title', content: "SITECHTIMES" },
+  head: function() {
+    return {
+        meta: [
+      { name: 'title', content: "The SITECH Times Official Website" },
+      { name: 'description', content: 'Visit the Website to read more!' },
+      { name: 'og:url', content: window.location.href},
+      { name: 'og:type', content: 'website'},
+      { name: 'og:title', content: "The SITECH Times Official Website" },
       { name: 'og:description', content: 'Visit the Website to read more!' },
-      { name: 'og:image', content: 'https://dev.sitechtimes.com/assets/icons/logo_thicker.svg' }
-  ]
+      { name: 'og:image', content: '/logo_thicker.svg' },
+      { name: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
+      { name: 'twitter:card', content: 'summary'},
+      { name: 'twitter:url', content: window.location.href},
+      { name: 'twitter:title', content: "The SITECH Times Official Website" },
+      { name: 'twitter:image', content: '/logo_thicker.svg' },
+      { name: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
+     ]
+  }
 }
 };
 </script>
 
 <style lang="scss">
 @import "../assets/variables";
+.mobile-view {
+  display: none;
+}
 .grid-article-container {
   display: flex;
   gap: 2rem;
@@ -119,6 +143,7 @@ export default {
 //   width: 0rem;
 // }
 .section-title {
+  font-size: var(--h3);
   padding: var(--title-spacing) 0;
 }
 .trending-main {
@@ -172,12 +197,14 @@ export default {
     grid-column-gap: 20px;
     grid-row-gap: 20px; 
   }
-  //
-  //.desktop-view {
-  //  display: none;
-  //}
-  //.mobile-view {
-  //  display: grid;
-  //}
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: inherit;
+  }
+  .section-title {
+    margin-bottom: -5rem;
+  }
 }
 </style>
