@@ -1,0 +1,46 @@
+<template>
+  <button class="see-more-btn">See more</button>
+</template>
+
+<script>
+export default {
+  name: 'SeeMoreBtn',
+}
+</script>
+
+<style lang="scss">
+
+.see-more-btn {
+    background-color: var(--primary-color);
+    padding: 1.7rem 3rem;
+    font: bold 1.74rem var(--font);
+    color: var(--white);
+    border: none;
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+.see-more-btn:hover {
+  box-shadow: 0 .5rem 1rem .5rem rgba(#fff3d2, .5);
+  text-shadow: .1rem .1rem .1rem var(--mid-grey);
+  transform: translateY(-.5rem);
+  cursor: pointer;
+
+}
+</style>
+
+<!--<docs>-->
+<!--This button is a simple button that will be used to generate new articles in the page after a user clicks "see-more".-->
+
+<!--It isn't a very dynamic component and takes no arguments, which as a simple button that will only be used a in a few situation's it doesn't need to do.-->
+
+<!--## Variables Used:-->
+<!--&#45;&#45;primary-color, &#45;&#45;white-->
+
+<!--## Examples-->
+
+<!--```jsx-->
+<!--<SeeMoreBtn />-->
+<!--```-->
+
+<!--</docs>-->

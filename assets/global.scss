@@ -1,0 +1,278 @@
+@import "./variables";
+
+:root {
+  /* colors */
+  --gold: #d9b75e;
+  --light-gold: #fff3d2;
+  --off-white: #fffaf4;
+  --white: #ffffff;
+  --black: #000;
+  --dark-grey: #202020;
+  --dark-grey-2: #383838;
+  --grey: #374151;
+  --mid-grey: #595959;
+  --lightGray: #ececec;
+  --red: #dc2626;
+  --dark-orange: #b45309;
+  --green: #007736;
+  --blue: #2b6dd8;
+  --dark-blue: #0f44d8;
+  --indigo: #312e81;
+  --purple: #5b21b6;
+  --violet: #a316a3;
+  --pink: #da1678;
+  /* intentions */
+  --background-color: var(--white);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
+  --footer: var(--grey);
+  --calendar-band: var(--off-white);
+
+  --covid: var(--purple);
+  --entertainment: var(--red);
+  --news: var(--indigo);
+  --politics: var(--pink);
+  --opinion: var(--violet);
+  --science: var(--green);
+  --technology: var(--blue);
+  --activities: var(--dark-orange);
+
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
+  /* font size */
+  --font: "Josefin Sans", sans-serif;
+  --article-font: "Raleway", sans-serif;
+  --h1: 5.653rem;
+  --h2: 3.998rem;
+  --h3: 2.827rem;
+  --h4: 1.999rem;
+  --h5: 1.414rem;
+  --small-text: 0.707rem;
+  /* boxshadows */
+  --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* spacing */
+  --section-spacing: 4rem;
+  --title-spacing: 3rem;
+  /*linear gradient */
+  --greyToBlack: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(132, 132, 132, 0.4) 54.17%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  /* button icon */
+  --button-icon: url(/assets/icons/sun.svg);
+}
+
+.light-mode {
+  --background-color: var(--white);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
+  --calendar-band: var(--off-white);
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
+  --button-icon: url(/assets/icons/sun.svg);
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
+}
+.dark-mode {
+  --grey: #272b32;
+  --background-color: var(--dark-grey);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--off-white);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--dark-grey-2);
+  --calendar-band: var(--off-white);
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
+  --button-icon: url(/assets/icons/moon.svg);
+  /* new intentions */
+  --mobile-nav-background: var(--background-color);
+  --mobile-nav-text: var(--primary-color);
+  --nav-color: var(--on-background);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+
+*,
+html,
+body {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: var(--background-color);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--black);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:active {
+  text-decoration: none;
+  color: var(--on-background);
+}
+ul {
+  list-style-type: none;
+}
+small,
+.text_small {
+  font-size: var(--small-text);
+}
+
+@media only screen and (max-width: $large-screen) {
+  *,
+  html,
+  body {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: $mid-screen) {
+  *,
+  html,
+  body {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: $x-small-screen) {
+  *,
+  html,
+  body {
+    font-size: 45%;
+  }
+}
+
+//The only reason the code is the right size in styleguide.
+.prism-editor > textarea {
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  border-bottom: 1rem;
+  border-top: 1rem;
+  border-left: 1rem;
+  border-right: 1rem;
+  //width: calc(100% + 0.2rem);
+}
+.prism-editor {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.token {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-left: 0.01%;
+}
+
+pre {
+  width: calc(100% - 0.2rem);
+  height: calc(100% - 0.2rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+.global-container {
+  max-width: $container;
+  margin: auto;
+  padding: 2rem;
+}
+
+::selection {
+  background: var(--accent-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--accent-color); /* Gecko Browsers */
+}
