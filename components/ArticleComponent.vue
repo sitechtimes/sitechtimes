@@ -64,6 +64,7 @@ export default {
   margin: 2rem auto;
   font-weight: 700;
   font-size: var(--h2);
+  line-height: 120%;
 }
 // .main-article-description {
 //   font-style: italic;
@@ -125,27 +126,27 @@ export default {
 }
 .main-article-text h1,
 .main-article-text h1 strong {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 .main-article-text h2
 .main-article-text h2 strong {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .main-article-text h3,
 .main-article-text h3 strong {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .main-article-text h4,
 .main-article-text h4 strong {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .main-article-text h5,
 .main-article-text h5 strong {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .main-article-text h6,
 .main-article-text h6 strong{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 .main-article-img {
   width: 100%;
@@ -195,7 +196,7 @@ export default {
     line-height: 3.5rem;
   }
   .main-article-title {
-    font-size: var(--h1);
+    font-size: var(--h2);
   }
 }
 </style>

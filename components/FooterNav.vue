@@ -69,9 +69,6 @@ export default {
 }
 
  @media only screen and (max-width: $small-screen) {
-   .footer-nav {
-     margin: auto;
-   }
 .footer-nav-ul li {
   font-size: 2.5rem;
   }

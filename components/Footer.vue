@@ -1,13 +1,13 @@
 <template>
-<div class="footer-bg">
-    <footer class="footer-container global-container">
+<footer class="footer-bg">
+    <div class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
         <FooterSocialMedia />
       </div>
       <FooterNav />
-    </footer>
-</div>
+    </div>
+</footer>
 </template>
 
 <script>

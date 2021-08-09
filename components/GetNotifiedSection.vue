@@ -9,6 +9,7 @@
       <div class="footer-inputs">
         <input
           v-on:click="seeLabel()"
+   
           class="footer-email-input"
           type="text"
           id="email"
@@ -30,11 +31,12 @@ export default {
     seeLabel: function() {
       const label = document.querySelector(".footer-form-label");
       label.style.opacity = "1";
-    }
-    // formAlert: function () {
-    //     alert("Success!");
-    // }
-  }
+    },
+    // noLabel: function() {
+    //   const label = document.querySelector(".footer-form-label");
+    //   label.style.opacity = "0";
+    // },
+  },
 };
 </script>
 
@@ -80,7 +82,7 @@ export default {
     }
     .footer-email-input {
         width: 36rem;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-family: var(--font);
     }
     .footer-email-input:focus {

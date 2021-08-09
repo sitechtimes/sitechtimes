@@ -12,6 +12,7 @@ export default {
 
 .see-more-btn {
     background-color: var(--primary-color);
+    text-shadow: .1rem .1rem .2rem var(--mid-grey);
     padding: 1.7rem 3rem;
     font: bold 1.74rem var(--font);
     color: var(--white);
@@ -21,8 +22,7 @@ export default {
     transition: all .3s;
 }
 .see-more-btn:hover {
-  box-shadow: 0 .5rem 1rem .5rem rgba(#fff3d2, .5);
-  text-shadow: .1rem .1rem .1rem var(--mid-grey);
+  box-shadow: 0 .5rem 1rem .5rem var(--see-more-color);
   transform: translateY(-.5rem);
   cursor: pointer;
 
