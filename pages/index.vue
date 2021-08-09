@@ -36,7 +36,10 @@
           />
         </section>
 
-        <section class="grid-article-container trio-grid-container" v-if="homepages[3]">
+        <section
+          class="grid-article-container trio-grid-container"
+          v-if="homepages[3]"
+        >
           <GridArticleComponent
             v-for="article in homepages.slice(3, 6)"
             :articleUrl="'/articles/' + article.slug"
@@ -53,7 +56,10 @@
             :articles="homepages.slice(7, 9)"
           />
         </section>
-        <section class="grid-article-container six-grid-container" v-if="homepages[0]">
+        <section
+          class="grid-article-container six-grid-container"
+          v-if="homepages[0]"
+        >
           <GridArticleComponent
             v-for="article in homepages.slice(10, 20)"
             :articleUrl="'/articles/' + article.slug"
@@ -70,14 +76,14 @@
       <div class="mobile-view">
         <h2 class="section-title">Trending Articles</h2>
         <GridArticleComponent
-            v-for="article in homepages.slice(0, 20)"
-            :articleUrl="'/articles/' + article.slug"
-            :category="article.category"
-            :imageAlt="article.imageAlt"
-            :title="article.title"
-            :imageUrl="article.imageUrl"
-            :key="article.id"
-          />
+          v-for="article in homepages.slice(0, 20)"
+          :articleUrl="'/articles/' + article.slug"
+          :category="article.category"
+          :imageAlt="article.imageAlt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :key="article.id"
+        />
       </div>
     </div>
   </div>
@@ -96,31 +102,30 @@ export default {
   data() {
     return {
       homepages: [],
-      isMobile: false,
+      isMobile: false
     };
   },
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
-
   },
   head: function() {
     return {
-        meta: [
-      { name: 'title', content: "The SITECH Times Official Website" },
-      { name: 'description', content: 'Visit the Website to read more!' },
-      { name: 'og:type', content: 'website'},
-      { name: 'og:title', content: "The SITECH Times Official Website" },
-      { name: 'og:description', content: 'Visit the Website to read more!' },
-      { name: 'og:image', content: '/logo_thicker.svg' },
-      { name: 'og:image:alt', content: 'Staten Island Tech Times Logo' },
-      { name: 'twitter:card', content: 'summary'},
-      { name: 'twitter:title', content: "The SITECH Times Official Website" },
-      { name: 'twitter:image', content: '/logo_thicker.svg' },
-      { name: 'twitter:image:alt', content: 'Staten Island Tech Times Logo' },
-     ]
+      meta: [
+        { name: "title", content: "The SITECH Times Official Website" },
+        { name: "description", content: "Visit the Website to read more!" },
+        { name: "og:type", content: "website" },
+        { name: "og:title", content: "The SITECH Times Official Website" },
+        { name: "og:description", content: "Visit the Website to read more!" },
+        { name: "og:image", content: "/logo_thicker.svg" },
+        { name: "og:image:alt", content: "Staten Island Tech Times Logo" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:title", content: "The SITECH Times Official Website" },
+        { name: "twitter:image", content: "/logo_thicker.svg" },
+        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" }
+      ]
+    };
   }
-}
 };
 </script>
 
@@ -128,6 +133,10 @@ export default {
 @import "../assets/variables";
 .mobile-view {
   display: none;
+}
+.desktop-view > h2,
+.mobile-view > h2 {
+  color: var(--on-background);
 }
 .grid-article-container {
   display: flex;
@@ -193,7 +202,7 @@ export default {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 20px; 
+    grid-row-gap: 20px;
   }
   .desktop-view {
     display: none;
