@@ -1,13 +1,13 @@
 <template>
-<div class="footer-bg">
-    <footer class="footer-container global-container">
+<footer class="footer-bg">
+    <div class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
         <FooterSocialMedia />
       </div>
       <FooterNav />
-    </footer>
-</div>
+    </div>
+</footer>
 </template>
 
 <script>
@@ -53,7 +53,7 @@ export default {
          }
      }
      
-     @media only screen and (max-width: $small-screen) {
+     @media only screen and (max-width: $mid-screen) {
         .footer-container {
             flex-direction: column;
         }

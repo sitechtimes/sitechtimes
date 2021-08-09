@@ -12,7 +12,7 @@
       />
       <div class="main-article-metadata-actions">
         <social-media-sharing :title="title" :articleUrl="articleUrl" :webUrl="webUrl" />
-        <share-icon />
+        <!-- <share-icon /> -->
 
         <print />
       </div>
@@ -65,6 +65,7 @@ export default {
   margin: 2rem auto;
   font-weight: 700;
   font-size: var(--h2);
+  line-height: 120%;
 }
 // .main-article-description {
 //   font-style: italic;
@@ -177,7 +178,7 @@ export default {
   .main-article-text-section li em,
   .main-article-text-section li strong,
   .main-article-text-section span {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 3rem;
   }
 }
@@ -196,7 +197,7 @@ export default {
     line-height: 3.5rem;
   }
   .main-article-title {
-    font-size: var(--h1);
+    font-size: var(--h2);
   }
 }
 </style>
