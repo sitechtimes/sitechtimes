@@ -152,13 +152,16 @@ export default {
 } */
 .logo-container {
   width: 100vw;
-}
-.logo-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
+}
+.logo-link {
+  padding: 1rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo-container h1,
 .mobile-logo-container h1 {
@@ -199,7 +202,6 @@ export default {
 }
 .home-nav-link.nuxt-link-active {
   border-bottom: unset;
-  color: var(--primary-color) !important;
   font-weight: 900;
 }
 .home-nav-ul {

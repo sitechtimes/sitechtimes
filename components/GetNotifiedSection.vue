@@ -9,7 +9,6 @@
       <div class="footer-inputs">
         <input
           v-on:click="seeLabel()"
-   
           class="footer-email-input"
           type="text"
           id="email"
@@ -32,10 +31,6 @@ export default {
       const label = document.querySelector(".footer-form-label");
       label.style.opacity = "1";
     },
-    // noLabel: function() {
-    //   const label = document.querySelector(".footer-form-label");
-    //   label.style.opacity = "0";
-    // },
   },
 };
 </script>
