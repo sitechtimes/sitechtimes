@@ -122,7 +122,7 @@
         </div>
         <div class="break"></div>
         <h2 class="cat-subhead">More Articles</h2>
-        <MobileCategoryArticle
+        <CategoryArticle
           class="mobile-cat"
           v-if="articles[3]"
           :title="articles[3].title"
@@ -132,7 +132,7 @@
           :category="category"
           :articleUrl="`/articles/${articles[3].slug}`"
         />
-        <MobileCategoryArticle
+        <CategoryArticle
           class="mobile-cat"
           v-if="articles[4]"
           :title="articles[4].title"
@@ -142,7 +142,7 @@
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
         />
-        <MobileCategoryArticle
+        <CategoryArticle
           class="mobile-cat"
           v-if="articles[5]"
           :title="articles[5].title"
@@ -153,7 +153,7 @@
           :articleUrl="`/articles/${articles[5].slug}`"
         />
         <div>
-          <MobileCategoryArticle
+          <CategoryArticle
             class="visible"
             v-for="article in allArticles"
             :key="article"
