@@ -12,7 +12,7 @@
       />
       <div class="main-article-metadata-actions">
         <social-media-sharing :title="title" :articleUrl="articleUrl" :webUrl="webUrl" />
-        <share-icon />
+        <!-- <share-icon /> -->
 
         <print />
       </div>
@@ -127,27 +127,27 @@ export default {
 }
 .main-article-text h1,
 .main-article-text h1 strong {
-  font-size: 3.5rem;
+  font-size: 4rem;
 }
 .main-article-text h2
 .main-article-text h2 strong {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 .main-article-text h3,
 .main-article-text h3 strong {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .main-article-text h4,
 .main-article-text h4 strong {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .main-article-text h5,
 .main-article-text h5 strong {
-  font-size: 1.7rem;
+  font-size: 2rem;
 }
 .main-article-text h6,
 .main-article-text h6 strong{
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 .main-article-img {
   width: 100%;
@@ -178,7 +178,7 @@ export default {
   .main-article-text-section li em,
   .main-article-text-section li strong,
   .main-article-text-section span {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 3rem;
   }
 }

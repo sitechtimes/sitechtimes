@@ -201,7 +201,7 @@ export default {
   top: 0;
   z-index: 1;
   background-color: var(--background-color);
-  // box-shadow: 0 .4rem .4rem 0 rgba(#595959, .3);
+  border-bottom: .25rem solid var(--hover);
   display: none;
   width: 100vw;
   max-height: 100vh;

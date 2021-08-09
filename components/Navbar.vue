@@ -198,9 +198,11 @@ export default {
   color: var(--nav-color) !important;
 }
 .home-nav-link:hover {
+  color: var(--primary-color) !important;
   border-bottom: 0.25rem solid var(--primary-color);
 }
 .home-nav-link.nuxt-link-active {
+  color: var(--primary-color) !important;
   border-bottom: unset;
   font-weight: 900;
 }

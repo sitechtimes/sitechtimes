@@ -53,7 +53,7 @@ export default {
          }
      }
      
-     @media only screen and (max-width: $small-screen) {
+     @media only screen and (max-width: $mid-screen) {
         .footer-container {
             flex-direction: column;
         }

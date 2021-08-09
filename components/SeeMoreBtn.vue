@@ -9,23 +9,30 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import "../assets/_variables.scss";
 .see-more-btn {
     background-color: var(--primary-color);
     text-shadow: .1rem .1rem .2rem var(--mid-grey);
     padding: 1.7rem 3rem;
     font: bold 1.74rem var(--font);
-    color: var(--white);
+    color: var(--background-color);
     border: none;
     border-radius: 3.5rem;
     text-transform: uppercase;
     transition: all .3s;
+    cursor: pointer;
 }
 .see-more-btn:hover {
   box-shadow: 0 .5rem 1rem .5rem var(--see-more-color);
   transform: translateY(-.5rem);
-  cursor: pointer;
+}
 
+@media only screen and (max-width: $mid-screen) {
+  .see-more-btn:hover {
+    box-shadow: unset;
+    transform: unset;
+    background-color: #bf9f4b;
+  }
 }
 </style>
 
