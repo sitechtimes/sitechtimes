@@ -230,7 +230,7 @@ export default {
 
 @import "../assets/variables";
 :root {
-  --color-toggle-switch-height: 3.5rem;
+  --color-toggle-switch-height: 3rem;
 }
 
 .test {
