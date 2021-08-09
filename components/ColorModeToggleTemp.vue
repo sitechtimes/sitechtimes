@@ -6,7 +6,48 @@
         changeColorMode();
         $colorMode.preference = colorMode;
       "
-    ></button>
+      v-if="sun == true"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+    </button>
+
+    <button
+      class="color-toggle-button"
+      @click="
+        changeColorMode();
+        $colorMode.preference = colorMode;
+      "
+      v-if="moon == true"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 moon-svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </button>
+
     <!-- <button
       class="color-toggle-dropdown-button"
       id="color-toggle-dropdown-button"
@@ -75,6 +116,7 @@
       (<i>{{ $colorMode.value }}</i> mode detected)
     </p> -->
     <!-- <Theme v-if="openTheme" /> -->
+    <!-- <p class="test">Colormode: {{ colorMode }}</p> -->
   </div>
 </template>
 
@@ -89,7 +131,9 @@ export default {
     return {
       colorMode: "",
       dropdown: false,
-      showModal: false
+      showModal: false,
+      sun: false,
+      moon: false
       /*       showModal: false */
     };
   },
@@ -99,6 +143,23 @@ export default {
   /*   updated() {
     this.colorMode = "system";
   },  */
+  mounted() {
+    if (document.querySelectorAll("html")[0].classList.contains("light-mode")) {
+      //console.log("contains light-mode");
+
+      this.sun = true;
+      this.moon = false;
+    } else if (
+      document.querySelectorAll("html")[0].classList.contains("dark-mode")
+    ) {
+      //console.log("contains dark-mode");
+
+      this.sun = false;
+      this.moon = true;
+    } else {
+      alert("Current color mode is neither light or dark");
+    }
+  },
   methods: {
     changeColorMode: function() {
       /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
@@ -110,11 +171,15 @@ export default {
       ) {
         //console.log("contains light-mode");
         this.colorMode = "dark";
+        this.sun = false;
+        this.moon = true;
       } else if (
         document.querySelectorAll("html")[0].classList.contains("dark-mode")
       ) {
         //console.log("contains dark-mode");
         this.colorMode = "light";
+        this.sun = true;
+        this.moon = false;
       } else {
         alert("Current color mode is neither light or dark");
       }
@@ -188,14 +253,17 @@ export default {
   //padding: 14px;
   cursor: pointer;
   background-color: var(--background-color);
-  background-image: var(--button-icon);
-  background-size: 2.75rem;
+  /* background-image: var(--button-icon);
+  background-size: 27.5px;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   height: var(--color-toggle-switch-height);
   width: var(--color-toggle-switch-height);
 
   outline: none;
+}
+.moon-svg {
+  fill: var(--off-white);
 }
 
 .color-toggle-dropdown-button {
