@@ -14,6 +14,7 @@ export default {
     .cms-btn {
         display: flex;
         align-items: center;
+        vertical-align: middle;
         height: 3rem;
         width: 3rem;
         color: #3e28de;
