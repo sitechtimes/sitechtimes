@@ -20,7 +20,7 @@
   --indigo: #312e81;
   --purple: #5b21b6;
   --violet: #a316a3;
-  --pink: #DA1678;
+  --pink: #da1678;
   /* intentions */
   --background-color: var(--white);
   --primary-color: var(--gold);
@@ -76,7 +76,7 @@
     rgba(0, 0, 0, 0.6) 70%
   );
   /* button icon */
-  --button-icon: url(https://aux2.iconspalace.com/uploads/sun-icon-256.png);
+  --button-icon: url(/assets/icons/sun.svg);
 }
 
 .light-mode {
@@ -97,7 +97,7 @@
   --events: var(--orange);
   --clubs: var(--blue);
   --sports: var(--dark-orange);
-  --button-icon: url(https://static.thenounproject.com/png/4078841-200.png);
+  --button-icon: url(/assets/icons/sun.svg);
   /* new intentions */
   --mobile-nav-background: var(--footer);
   --mobile-nav-text: var(--white);
@@ -123,7 +123,7 @@
   --events: var(--orange);
   --clubs: var(--blue);
   --sports: var(--dark-orange);
-  --button-icon: url(https://i.imgur.com/8GHl6if.png);
+  --button-icon: url(/assets/icons/moon.svg);
   /* new intentions */
   --mobile-nav-background: var(--grey);
   --mobile-nav-text: var(--primary-color);
