@@ -30,11 +30,8 @@ export default {
     seeLabel: function() {
       const label = document.querySelector(".footer-form-label");
       label.style.opacity = "1";
-    }
-    // formAlert: function () {
-    //     alert("Success!");
-    // }
-  }
+    },
+  },
 };
 </script>
 
@@ -80,7 +77,7 @@ export default {
     }
     .footer-email-input {
         width: 36rem;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-family: var(--font);
     }
     .footer-email-input:focus {
@@ -115,53 +112,39 @@ export default {
     //     transition: .2s;
     // }
 
-    @media only screen and (max-width: $mid-screen) {
+
+      @media only screen and (max-width: $mid-screen) {
         .footer-form-box {
-            border-bottom: none;
-            padding-bottom: 0;
+          border-bottom: none;
+          padding-bottom: 0;
         }
-    }
-    @media only screen and (max-width: $x-small-screen) {
         .footer-sub-header {
-            font-size: var(--h4);
-            font-weight: 500;
+          font-size: var(--h4);
+          font-weight: 500;
         }
         .footer-join-btn {
-            width: 9rem;
-            margin-left: -9rem;
+          width: 9.5rem;
+          margin-left: -9.5rem;
         }
-        .footer-email-input, .footer-join-btn {
-            margin-top: .5rem;
-            padding: 1.6rem 2.5rem;
+        .footer-email-input,
+        .footer-join-btn {
+          margin-top: 0.5rem;
+          padding: 1.6rem 2.5rem;
         }
-        .footer-email-input, .footer-join-btn, .footer-form-label {
-            font-size: 1.8rem;
+        .footer-email-input,
+        .footer-join-btn,
+        .footer-form-label {
+          font-size: 1.8rem;
+        }
+      }
+    @media only screen and (max-width: $small-screen) {
+      .footer-email-input,
+        .footer-join-btn,
+        .footer-form-label {
+          font-size: 2.25rem;
         }
     }
-
-@media only screen and (max-width: $x-small-screen) {
-  .footer-form-box {
-    border-bottom: none;
-  }
-  .footer-sub-header {
-    font-size: var(--h4);
-    font-weight: 500;
-  }
-  .footer-join-btn {
-    width: 9rem;
-    margin-left: -9rem;
-  }
-  .footer-email-input,
-  .footer-join-btn {
-    margin-top: 0.5rem;
-    padding: 1.6rem 2.5rem;
-  }
-  .footer-email-input,
-  .footer-join-btn,
-  .footer-form-label {
-    font-size: 1.8rem;
-  }
-}
+      
 </style>
 
 <!--<docs>-->

@@ -1,16 +1,19 @@
 <template>
   <div>
-    <span class="logo-container">
+    <span aria-label="navbar" class="logo-container">
       <nuxt-link class="logo-link" to="/">
         <svg
+          class="logo"
           width="839"
           height="771"
           viewBox="0 0 839 771"
           version="1.1"
-          class="logo"
           id="svg19"
-          sodipodi:docname="logo_thicker__inkscape.svg"
+          sodipodi:docname="logo__inkscape__DanielRequest.svg"
           inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+          inkscape:export-filename="C:\Users\Carol\Downloads\logo_thicker__inkscape.png"
+          inkscape:export-xdpi="96"
+          inkscape:export-ydpi="96"
           xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
           xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +29,14 @@
             inkscape:pageopacity="0"
             inkscape:pagecheckerboard="1"
             showgrid="false"
-            inkscape:zoom="0.55058366"
-            inkscape:cx="313.30389"
-            inkscape:cy="193.4311"
-            inkscape:window-width="1185"
-            inkscape:window-height="1041"
-            inkscape:window-x="737"
-            inkscape:window-y="0"
-            inkscape:window-maximized="0"
+            inkscape:zoom="0.77864288"
+            inkscape:cx="556.44822"
+            inkscape:cy="403.69192"
+            inkscape:window-width="1920"
+            inkscape:window-height="1057"
+            inkscape:window-x="-8"
+            inkscape:window-y="-8"
+            inkscape:window-maximized="1"
             inkscape:current-layer="svg19"
             inkscape:rotation="-2"
           />
@@ -169,17 +172,19 @@ export default {
   align-items: center;
 }
 .logo-link {
+  padding: 1rem;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
-  padding-top: 2rem;
 }
 .logo-container h1,
 .mobile-logo-container h1 {
   font-family: var(--article-font);
-  color: var(--primary-color);
+  color: var(--on-background);
+  font-weight: 400;
   margin-left: 2rem;
+  margin-top: 1.3rem;
 }
 .logo,
 .mobile-logo {
@@ -213,8 +218,8 @@ export default {
   border-bottom: 0.25rem solid var(--primary-color);
 }
 .home-nav-link.nuxt-link-active {
-  border-bottom: unset;
   color: var(--primary-color) !important;
+  border-bottom: unset;
   font-weight: 900;
 }
 .home-nav-ul {

@@ -91,8 +91,8 @@ export default {
 }
 @media only screen and (max-width: $x-small-screen) {
   .author-date-article {
-    flex-direction: column;
     margin-bottom: 2rem;
+    flex-direction: column;
   }
 }
 </style>

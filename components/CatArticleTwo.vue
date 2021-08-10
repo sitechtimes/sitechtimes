@@ -1,13 +1,13 @@
 <template>
-  <div class="cat-article">
+
+  <nuxt-link class="cat-article" :to="articleUrl">
     <div class="cat-img-div">
-      <a :href="articleUrl"
-        ><img
+      <img
           :href="articleUrl"
           :src="imageUrl"
           :alt="imageAlt"
           class="cat-article-img"
-      /></a>
+      />
     </div>
     <div class="cat-article-img-content">
       <div class="cat-labels">
@@ -19,7 +19,7 @@
       </div>
       <h3 class="cat-title">{{ title }}</h3>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -43,6 +43,11 @@ export default {
   display: flex;
   flex-direction: row;
 }
+
+.cat-article:hover {
+  background-color: --grey;
+}
+
 .cat-article-img {
   /* these height + width things are arbitrary right now, they'll be more specific when the other category component is made */
   height: 23rem;

@@ -14,7 +14,7 @@
   --lightGray: #ececec;
   --red: #dc2626;
   --dark-orange: #b45309;
-  --green: #007736;
+  --green: #12804d;
   --blue: #2b6dd8;
   --dark-blue: #0f44d8;
   --indigo: #312e81;
@@ -46,9 +46,10 @@
   --mobile-nav-background: var(--primary-color);
   --mobile-nav-text: var(--white);
   --nav-color: var(--on-background);
+  --see-more-color: var(--accent-color);
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: "Raleway", sans-serif;
+  --article-font: 'Merriweather', serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -98,9 +99,10 @@
   --sports: var(--dark-orange);
   --button-icon: url(/assets/icons/sun.svg);
   /* new intentions */
-  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-background: var(--footer);
   --mobile-nav-text: var(--white);
   --nav-color: var(--on-background);
+  --see-more-color: var(--accent-color);
 }
 .dark-mode {
   --grey: #272b32;
@@ -123,13 +125,14 @@
   --sports: var(--dark-orange);
   --button-icon: url(/assets/icons/moon.svg);
   /* new intentions */
-  --mobile-nav-background: var(--background-color);
+  --mobile-nav-background: var(--grey);
   --mobile-nav-text: var(--primary-color);
   --nav-color: var(--on-background);
+  --see-more-color: var(--hover);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
 
 *,
 html,
@@ -271,8 +274,8 @@ pre {
 }
 
 ::selection {
-  background: var(--accent-color); /* WebKit/Blink Browsers */
+  background: var(--see-more-color); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: var(--accent-color); /* Gecko Browsers */
+  background: var(--see-more-color); /* Gecko Browsers */
 }

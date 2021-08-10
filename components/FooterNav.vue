@@ -62,12 +62,12 @@ export default {
   text-transform: capitalize;
   padding: 0.3rem;
   transition: all 0.1s;
-
   width: 100%;
 }
 .footer-nav-ul li:hover {
   color: var(--accent-color);
 }
+
  @media only screen and (max-width: $small-screen) {
 .footer-nav-ul li {
   font-size: 2.5rem;
@@ -78,12 +78,12 @@ export default {
     font-size: var(--h2);
   }
 }
-@media only screen and (max-width: 340px) {
-  .footer-nav {
-    width: 100%;
-    margin: 3rem;
-  }
-}
+// @media only screen and (max-width: 340px) {
+//   .footer-nav {
+//     width: 100%;
+//     margin: 3rem;
+//   }
+// }
 </style>
 
 <!--<docs>-->

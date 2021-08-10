@@ -47,6 +47,7 @@ export default {
   max-width: 50rem;
   display: flex;
   border: var(--toggleBorder);
+  border-radius: 0 1rem 1rem 0;
   padding: 1.5rem var(--sidebarSidePadding);
 }
 .sidebar-article:hover {
