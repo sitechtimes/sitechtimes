@@ -254,7 +254,7 @@ export default {
   width: 85%;
 }
 .cat-page-title {
-  font-size: var(--h2);
+  font-size: var(--h3);
   text-transform: capitalize;
   margin-bottom: 3rem;
   color: var(--on-background);
@@ -369,7 +369,7 @@ export default {
     margin-bottom: 2rem;
   }
   .cat-subhead {
-    font-size: var(--h2);
+    font-size: var(--h3);
     margin-top: 2rem;
     color: var(--on-background);
   }
