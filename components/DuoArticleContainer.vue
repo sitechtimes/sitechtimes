@@ -38,7 +38,7 @@ export default {
   }
 
   .duo {
-    width: 47%;
+    width: 48%;
   }
 
 @media only screen and (max-width: $small-screen){
