@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="logo-container">
+    <span aria-label="navbar" class="logo-container">
       <nuxt-link class="logo-link" to="/">
         <svg
           class="logo"
