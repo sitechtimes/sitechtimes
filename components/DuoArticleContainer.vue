@@ -34,12 +34,11 @@ export default {
 @import "../assets/variables";
   .duo-article-component-container{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    gap: 4rem;
   }
+
   .duo {
-    width: 50%;
+    width: 47%;
   }
 
 @media only screen and (max-width: $small-screen){

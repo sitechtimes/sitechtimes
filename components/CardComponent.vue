@@ -132,6 +132,10 @@ export default {
 //     flex-wrap: wrap;
 //   padding-bottom: 1.7rem;
 // }
+.card-component-category-author-date{
+  margin-bottom: var(--category-bottom-margin);
+  margin-top: var(--category-top-margin);
+}
 .card-component-category {
   color: var(--white);
   padding-right: 1.7rem;
