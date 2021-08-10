@@ -36,7 +36,8 @@ export default {
   modules: ["@nuxtjs/axios", "vue-social-sharing/nuxt"],
 
   server: {
-    host: "0.0.0.0"
+    host: "0.0.0.0",
+    port: 3009
   },
 
   axios: {
