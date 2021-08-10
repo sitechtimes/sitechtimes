@@ -17,15 +17,16 @@ export default {
         vertical-align: middle;
         height: 3rem;
         width: 3rem;
-        color: #3e28de;
+        color: #000;
         background-color: transparent;
-        border: .2rem solid #3e28de;
+        border: .2rem solid #000;
         padding: .2rem;
         border-radius: .5rem;
         cursor: pointer;
         transition: all .3s;
     }
     .cms-btn:hover {
-        background-color: #d4ceff;
+        color: #3e28de;
+        border: .2rem solid #3e28de;
     }
 </style>

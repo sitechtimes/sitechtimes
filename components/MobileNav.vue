@@ -242,7 +242,6 @@ export default {
   font-size: 3.5rem;
   margin: 1rem;
   color: var(--mobile-nav-text);
-  z-index: 2;
 }
 .mobile-nav-ul:last-child {
   margin-bottom: 5rem;
