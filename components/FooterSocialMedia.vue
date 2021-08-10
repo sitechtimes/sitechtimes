@@ -2,7 +2,7 @@
   <div class="footer-social-media-box">
     <h3 class="footer-header footer-sm-header">Social Media</h3>
     <div class="footer-social-media">
-      <a :href="instagramUrl">
+      <a :href="instagramUrl" target="_blank">
       <svg
         
         width="3.5rem"
@@ -23,7 +23,7 @@
         ></path>
       </svg>
       </a>
-      <a :href="twitterUrl">
+      <a :href="twitterUrl" target="_blank">>
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -43,7 +43,7 @@
         ></path>
       </svg>
       </a>
-      <a :href="facebookUrl">
+      <!-- <a :href="facebookUrl" target="_blank">>
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -62,7 +62,7 @@
           class=""
         ></path>
       </svg>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
