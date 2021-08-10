@@ -32,9 +32,6 @@ export default {
     "@nuxtjs/color-mode"
   ],
 
-  env: {
-    baseUrl: process.env.DOMAIN || 'http://sitechtimes.com',
-  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ["@nuxtjs/axios", "vue-social-sharing/nuxt"],
 

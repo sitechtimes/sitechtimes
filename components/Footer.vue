@@ -3,7 +3,7 @@
     <footer class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
-        <FooterSocialMedia />
+        <FooterSocialMedia :instagramUrl="insta" :twitterUrl="twitter" :facebookUrl="facebook"/>
       </div>
       <FooterNav />
     </footer>
@@ -16,7 +16,12 @@ import FooterSocialMedia from "./FooterSocialMedia";
 import FooterNav from "./FooterNav";
 export default {
   name: "Footer",
-  props: ["categories"],
+  props: {
+    categories: String,
+    insta: String,
+    twitter: String,
+    facebook: String,
+  },
   data() {
     return {};
   },
