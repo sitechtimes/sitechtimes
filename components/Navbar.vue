@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="logo-container">
+    <span aria-label="navbar" class="logo-container">
       <nuxt-link class="logo-link" to="/">
         <svg
           width="839"
@@ -51,7 +51,6 @@
           v-for="category in categories"
           :key="category"
           :to="'../' + category"
-          :aria-label="category"
           class="home-nav-link"
         >
           <li class="home-nav-li">{{ category }}</li>

@@ -1,7 +1,7 @@
 <template>
   <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
 <FooterNav class="mobile-nav"/> -->
-  <div class="mobile-nav-box" :style="backgroundColor">
+  <div aria-label="mobile navbar" class="mobile-nav-box" :style="backgroundColor">
     <div class="mobile-nav-menu-box global-container">
       <span class="mobile-logo-container">
         <nuxt-link class="mobile-logo-link" to="/">
@@ -61,7 +61,6 @@
           v-for="category in categories"
           :key="category"
           :to="'../' + category"
-          :aria-label="category"
         >
           <li class="mobile-nav-li" v-on:click="navFunction()">
             {{ category }}
