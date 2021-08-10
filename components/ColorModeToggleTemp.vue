@@ -262,6 +262,13 @@ export default {
 
   outline: none;
 }
+.color-toggle-button:hover {
+  background-color: var(--background-color);
+  transition: 0.3s ease-out;
+}
+.moon-svg:hover {
+  color: var(--off-white);
+}
 
 .color-toggle-dropdown-button {
   background-color: var(--background-color);

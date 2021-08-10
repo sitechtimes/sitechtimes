@@ -112,7 +112,6 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  //   width: 95%;
   border-radius: 1rem;
 }
 .duo-flex-col {

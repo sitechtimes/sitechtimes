@@ -2,7 +2,9 @@
   <div class="footer-social-media-box">
     <h3 class="footer-header footer-sm-header">Social Media</h3>
     <div class="footer-social-media">
+      <a :href="instagramUrl" target="_blank">
       <svg
+        
         width="3.5rem"
         height="3.5rem"
         aria-hidden="true"
@@ -20,6 +22,8 @@
           class=""
         ></path>
       </svg>
+      </a>
+      <a :href="twitterUrl" target="_blank">>
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -38,6 +42,8 @@
           class=""
         ></path>
       </svg>
+      </a>
+      <!-- <a :href="facebookUrl" target="_blank">>
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -56,6 +62,7 @@
           class=""
         ></path>
       </svg>
+      </a> -->
     </div>
   </div>
 </template>
@@ -65,7 +72,12 @@ export default {
   name: "FooterSocialMedia",
   components: {
     SocialMediaIcons: () => import("./SocialMediaIcons.vue")
-  }
+  },
+    props: {
+    instagramUrl: String,
+    twitterUrl: String,
+    facebookUrl: String,
+  },
 };
 </script>
 

@@ -19,17 +19,17 @@
           ></path>
         </svg>
       </h5>
-    <div class="datebar-btns">
-      <color-mode-toggle-temp />
-      <cms-button></cms-button>
-    </div>
+      <div class="datebar-btns">
+        <color-mode-toggle-temp />
+        <cms-button></cms-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import ColorModeToggleTemp from "../components/ColorModeToggleTemp.vue";
-import CmsButton from './CmsButton.vue';
+import CmsButton from "./CmsButton.vue";
 
 export default {
   name: "Datebar",
@@ -88,7 +88,7 @@ export default {
   line-height: auto;
 }
 .datebar-btns {
-  width: 8rem;
+  width: 7.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
