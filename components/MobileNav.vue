@@ -236,7 +236,6 @@ export default {
   background-color: var(--mobile-nav-background);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
