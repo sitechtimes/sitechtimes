@@ -136,9 +136,8 @@ export default {
   justify-content: flex-end;
 }
 .duo-card-component-category-author-date {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 1rem;
+  margin-bottom: var(--category-bottom-margin);
+  margin-top: var(--category-top-margin);
 }
 .duo-card-component-category {
   color: var(--white);

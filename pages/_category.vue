@@ -250,7 +250,7 @@ export default {
 .cat-page-title {
   font-size: var(--h3);
   text-transform: capitalize;
-  margin-bottom: 3rem;
+  padding: var(--title-spacing) 0;
   color: var(--on-background);
 }
 .three-cat-articles {

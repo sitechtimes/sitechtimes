@@ -49,7 +49,7 @@
   --see-more-color: var(--accent-color);
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: 'Merriweather', serif;
+  --article-font: "Merriweather", serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -68,6 +68,8 @@
   /* spacing */
   --section-spacing: 4rem;
   --title-spacing: 3rem;
+  --category-top-margin: 0.75rem;
+  --category-bottom-margin: 0.25rem;
   /*linear gradient */
   --greyToBlack: linear-gradient(
     180deg,
