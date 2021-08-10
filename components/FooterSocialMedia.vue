@@ -4,7 +4,7 @@
     <div class="footer-social-media">
       <a :href="instagramUrl" target="_blank">
       <svg
-        
+
         width="3.5rem"
         height="3.5rem"
         aria-hidden="true"
@@ -23,7 +23,7 @@
         ></path>
       </svg>
       </a>
-      <a :href="twitterUrl" target="_blank">>
+      <a :href="twitterUrl" target="_blank">
       <svg
         width="3.5rem"
         height="3.5rem"
