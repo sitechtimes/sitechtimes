@@ -250,7 +250,6 @@ export default {
 <style lang="scss">
 @import "/../assets/variables";
 .border-right {
-  border-radius: 0.1rem;
   border-right: solid var(--primary-color);
   width: 85%;
 }
@@ -365,13 +364,14 @@ export default {
   .break {
     width: 100%;
     background-color: var(--primary-color);
-    height: 0.6rem;
-    border-radius: 0.3rem;
+    height: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
   .cat-subhead {
+    font-size: var(--h3);
     margin-top: 2rem;
+    color: var(--on-background);
   }
   .mobile-cat {
     margin-top: 2rem;
