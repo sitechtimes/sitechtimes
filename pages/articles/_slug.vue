@@ -1,6 +1,6 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug" :webUrl="'dev.sitechtimes.com/articles/' + slug"/>
+    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug" :webUrl="baseURL + '/articles/' + slug"/>
     <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
       categoryHome: null,
       categoryRecent: null,
       article: {},
+      baseURL: this.process.env.baseUrl,
     };
   },
   async beforeCreate() {
@@ -26,6 +27,7 @@ export default {
       this.categoryHome = categoryHome.data;
       const categoryRecent = await this.$axios.get(`/articles?category=${this.article.category}&q=3`);
       this.categoryRecent = categoryRecent.data;
+      console.log(this.process.env.DOMAIN);
     } catch (e) {
       await this.$router.push("/");
     }
