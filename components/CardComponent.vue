@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link
+   <nuxt-link
     :to="articleUrl"
     class="card-component card-component-image dropshadow"
     :style="{
@@ -7,7 +7,7 @@
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover'
     }"
-  >
+  > 
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
         <category-icon :category="category" class="card-component-category" />
