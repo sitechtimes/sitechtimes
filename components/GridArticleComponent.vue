@@ -70,7 +70,7 @@ export default {
     flex-direction: column;
     width: 47%;
   }
-  .trio-grid-container .grid-article-component:last-child {
+  .trio-grid-container .grid-article-component:first-child{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -87,7 +87,7 @@ export default {
 }
 
   @media only screen and (max-width: $mid-screen) {
-    .trio-grid-container .grid-article-component:last-child {
+    .trio-grid-container .grid-article-component:first-child {
       display: flex;
       flex-direction: column;
       width: 100%;
