@@ -62,21 +62,16 @@ export default {
 .cat-title {
   font-size: 2.5rem;
   font-weight: 700;
-  padding-top: 1rem;
   max-width: 70rem;
   color: var(--on-background) !important;
 }
 .cat-labels {
-  margin-top: 2rem;
   display: flex;
-}
-.cat-article-icon {
-  padding-right: 1.5rem;
 }
 .cat-article-authdate {
   margin: auto 0;
   line-height: 2.2rem;
-  padding-top: 1rem;
+   margin-bottom: var(--category-bottom-margin);
 }
 @media only screen and (max-width: $mid-screen) {
   .cat-article {

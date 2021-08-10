@@ -51,13 +51,15 @@ export default {
 }
 .category-cat {
   margin-right: 2rem;
+   margin-bottom: var(--category-bottom-margin);
+  margin-top: var(--category-top-margin);
 }
 .category-title {
   margin: 0;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: var(--h4);
+  font-size: var(--h3);
   color: var(--on-background) !important;
 }
 .category-data {
