@@ -18,11 +18,9 @@ export default {
       article: {},
       baseURL: process.env.DOMAIN,
     };
-   
+
   },
-   mounted(){
-      console.log(this.baseURL)
-    },
+
   async beforeCreate() {
     try {
       const article = await this.$axios.get(`/articles/${this.$route.params.slug}`);
