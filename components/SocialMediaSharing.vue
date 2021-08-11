@@ -35,12 +35,15 @@ props: {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '../assets/variables';
+
 .social-media-sharing { 
   color: var(--primary-color);
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all .2s;
+  cursor: pointer;
 }
 .reddit-icon {
   margin-left: 0;
@@ -49,9 +52,14 @@ props: {
   margin-right: 0;
 }
 .social-media-sharing:hover {
-  color: #bf9f4b;
+  color: var(--gold-hover);
   transform: scale(110%);
-  cursor: pointer;
+}
+@media only screen and (max-width: $mid-screen) {
+  .social-media-sharing:hover {
+    color: var(--primary-color);
+    transform: scale(100%);
+  }
 }
 
 </style>

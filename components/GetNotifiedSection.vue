@@ -7,7 +7,6 @@
     <form class="footer-form" action="#" >
       <label class="footer-form-label" for="email">Email</label>
       <div class="footer-inputs">
-        <div class="footer-email-input-box">
           <input
           v-on:click="seeLabel()"
           class="footer-email-input"
@@ -17,7 +16,6 @@
           name="mail"
           required
         />
-        </div>
         <input class="footer-join-btn" type="submit" value="Join" />
       </div>
       <!-- <p class="footer-form-alert">Success!</p> -->
@@ -66,25 +64,21 @@ export default {
         color: var(--accent-color);
         transition: all .2s; 
     }
-    .footer-email-input-box, .footer-join-btn {
-        border-radius: 5rem;
-    }
-    .footer-email-input-box, .footer-email-input, .footer-join-btn {
+    .footer-email-input, .footer-join-btn {
         margin-top: .2rem;
         border: none;
         background-color: var(--accent-color);
+        border-radius: 5rem;
     }
     .footer-inputs {
         display: flex; 
     }
-    .footer-email-input-box {
-        width: 36rem;
-        padding: 1.3rem 2.2rem;
-    }
     .footer-email-input {
-        width: calc(100% - 7.5rem);
+        width: 36rem;
         font-size: 1.6rem;
         font-family: var(--font);
+        padding: 1.3rem 2.2rem;
+        padding-right: 9.7rem;
     }
     .footer-email-input:focus {
         outline: none;
@@ -128,11 +122,9 @@ export default {
           font-size: var(--h4);
           font-weight: 500;
         }
-        .footer-email-input-box {
-          padding: 1.6rem 2rem;
-        }
         .footer-email-input {
-          width: calc(100% - 10rem);
+          padding: 1.6rem 2rem;
+          padding-right: 12rem;
         }
         .footer-join-btn {
           width: 10rem;
@@ -141,7 +133,7 @@ export default {
         .footer-join-btn:hover {
           background-color: var(--primary-color);
         }
-        .footer-email-input-box,
+        .footer-email-input,
         .footer-join-btn {
           margin-top: 0.5rem;
         }
