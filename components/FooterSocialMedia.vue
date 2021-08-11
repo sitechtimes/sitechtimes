@@ -101,7 +101,7 @@ export default {
   transition: all 0.3s;
 }
 .footer-sm-icon:hover {
-  color: #bf9f4b;
+  color: var(--gold-hover);
   transform: scale(110%);
   cursor: pointer;
 }

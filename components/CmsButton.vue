@@ -17,9 +17,9 @@ export default {
         vertical-align: middle;
         height: 3rem;
         width: 3rem;
-        color: #000;
+        color: var(--on-secondary);
         background-color: transparent;
-        border: .2rem solid #000;
+        border: .2rem solid var(--on-secondary);
         padding: .2rem;
         border-radius: .5rem;
         cursor: pointer;

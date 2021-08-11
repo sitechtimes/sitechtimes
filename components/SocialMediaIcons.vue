@@ -51,7 +51,7 @@ name: "SocialMediaIcons",
 }
 .social-media-icon:hover,
 .fa-share:hover {
-  color: #bf9f4b;
+  color: var(--gold-hover);
   transform: scale(110%);
   cursor: pointer;
 }
