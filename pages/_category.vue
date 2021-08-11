@@ -120,52 +120,20 @@
             :articleUrl="`/articles/${articles[2].slug}`"
           />
         </div>
-        <div class="break"></div>
-        <h2 class="cat-subhead">More Articles</h2>
-        <MobileCategoryArticle
-          class="mobile-cat"
-          v-if="articles[3]"
-          :title="articles[3].title"
-          :author="articles[3].user.name"
-          :published="articles[3].updatedAt"
-          :imageUrl="articles[3].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[3].slug}`"
-        />
-        <MobileCategoryArticle
-          class="mobile-cat"
-          v-if="articles[4]"
-          :title="articles[4].title"
-          :author="articles[4].user.name"
-          :published="articles[4].updatedAt"
-          :imageUrl="articles[4].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[4].slug}`"
-        />
-        <MobileCategoryArticle
-          class="mobile-cat"
-          v-if="articles[5]"
-          :title="articles[5].title"
-          :author="articles[5].user.name"
-          :published="articles[5].updatedAt"
-          :imageUrl="articles[5].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[5].slug}`"
-        />
-        <div>
-          <MobileCategoryArticle
-            class="visible"
-            v-for="article in allArticles"
-            :key="article.id"
-            :category="article.category"
-            :author="article.user.name"
-            :published="article.updatedAt"
-            :title="article.title"
-            :imageUrl="article.imageUrl"
-            :articleUrl="`/articles/${article.slug}`"
-          />
-        </div>
-      </div>
+          </div>
+          <div class="rest-of-articles">
+            <CatArticleTwo
+              class="sub-art cat-visible"
+              v-for="article in allArticles"
+              :key="article"
+              :category="article.category"
+              :author="article.user.name"
+              :published="article.createdAt"
+              :title="article.title"
+              :imageUrl="article.imageUrl"
+              :articleUrl="`/articles/${article.slug}`"
+            />
+          </div>
     </div>
     <div class="entertainment-seymour">
       <SeeMoreBtn
@@ -243,6 +211,9 @@ export default {
 
 <style lang="scss">
 @import "/../assets/variables";
+.rest-of-articles {
+  margin-top: -4rem;
+}
 .border-right {
   border-right: solid var(--primary-color);
   width: 85%;
@@ -292,6 +263,7 @@ export default {
 .visible {
   display: none;
 }
+
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
@@ -367,10 +339,7 @@ export default {
     margin-top: 2rem;
     color: var(--on-background);
   }
-  .mobile-cat {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-  }
+
   .not-visible {
     display: none;
   }
