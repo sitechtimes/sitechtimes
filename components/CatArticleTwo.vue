@@ -63,10 +63,12 @@ export default {
   font-size: 2.5rem;
   font-weight: 700;
   max-width: 70rem;
+  margin-top: 1rem;
   color: var(--on-background) !important;
 }
 .cat-labels {
   display: flex;
+  margin-top: 2rem;
 }
 .cat-article-authdate {
   margin: auto 0;
@@ -136,7 +138,7 @@ export default {
       margin: auto;
     }
     .cat-article-img {
-      height: 14rem;
+      height: 17rem;
       width: 35vw;
       border-radius: 1.5rem;
       //   margin-left: 15rem;
@@ -146,15 +148,19 @@ export default {
       justify-content: flex-end;
     }
     .cat-title {
-      font-size: var(--h3);
+      font-size: var(--h4);
       font-weight: 700;
       padding-top: 1rem;
-      max-width: 40rem;
+      max-width: 30rem;
+      margin-top: 1rem;
     }
     .cat-article-icon {
       width: 3rem;
       padding-right: 1.5rem;
       height: 3rem;
+    }
+    .cat-labels {
+      margin-top: 1rem;
     }
   }
 }
