@@ -248,11 +248,11 @@ export default {
 }
 
 .color-toggle-button {
-  border: 0.1rem solid var(--on-background);
-  border-radius: 0.8rem /* 0 0 0.8rem */;
+  border: 0.2rem solid var(--on-primary);
+  border-radius: 0.5rem /* 0 0 0.8rem */;
   //padding: 14px;
   cursor: pointer;
-  background-color: var(--background-color);
+  background-color: transparent;
   /* background-image: var(--button-icon);
   background-size: 27.5px;
   background-position: center;
@@ -262,8 +262,12 @@ export default {
 
   outline: none;
 }
-.moon-svg {
-  fill: var(--off-white);
+.color-toggle-button:hover {
+  background-color: var(--background-color);
+  transition: 0.3s ease-out;
+}
+.moon-svg:hover {
+  color: var(--off-white);
 }
 
 .color-toggle-dropdown-button {

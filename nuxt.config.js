@@ -14,7 +14,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "favicon.png" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -36,7 +36,8 @@ export default {
   modules: ["@nuxtjs/axios", "vue-social-sharing/nuxt"],
 
   server: {
-    host: "0.0.0.0"
+    // host: "0.0.0.0"
+    port: 8080
   },
 
   axios: {

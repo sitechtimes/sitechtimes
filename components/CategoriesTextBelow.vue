@@ -1,18 +1,17 @@
 <template>
-  <div class="category-text-below-preview">
-    <a :href="articleUrl" class="category-link"
-      ><img
+  <nuxt-link class="category-text-below-preview" :to="articleUrl">
+    <img
         :href="articleUrl"
         :src="imageUrl"
         :alt="imageAlt"
         class="article-image dropshadow"
-    /></a>
+    />
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />
       <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
     </div>
     <a :href="articleUrl" class="category-title">{{ title }}</a>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -52,13 +51,15 @@ export default {
 }
 .category-cat {
   margin-right: 2rem;
+   margin-bottom: var(--category-bottom-margin);
+  margin-top: var(--category-top-margin);
 }
 .category-title {
   margin: 0;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
-  font-size: var(--h4);
+  font-size: var(--h3);
   color: var(--on-background) !important;
 }
 .category-data {

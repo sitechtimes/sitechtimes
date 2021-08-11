@@ -8,7 +8,7 @@
             v-if="articles[0]"
             :title="articles[0].title"
             :author="articles[0].user.name"
-            :published="articles[0].createdAt"
+            :published="articles[0].updatedAt"
             :imageUrl="articles[0].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
@@ -21,7 +21,7 @@
               v-if="articles[1]"
               :title="articles[1].title"
               :author="articles[1].user.name"
-              :published="articles[1].createdAt"
+              :published="articles[1].updatedAt"
               :imageUrl="articles[1].imageUrl"
               :category="category"
               :articleUrl="`/articles/${articles[1].slug}`"
@@ -32,7 +32,7 @@
               v-if="articles[2]"
               :title="articles[2].title"
               :author="articles[2].user.name"
-              :published="articles[2].createdAt"
+              :published="articles[2].updatedAt"
               :imageUrl="articles[2].imageUrl"
               :category="category"
               :articleUrl="`/articles/${articles[2].slug}`"
@@ -46,7 +46,7 @@
           v-if="articles[3]"
           :title="articles[3].title"
           :author="articles[3].user.name"
-          :published="articles[3].createdAt"
+          :published="articles[3].updatedAt"
           :imageUrl="articles[3].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[3].slug}`"
@@ -56,7 +56,7 @@
           v-if="articles[4]"
           :title="articles[4].title"
           :author="articles[4].user.name"
-          :published="articles[4].createdAt"
+          :published="articles[4].updatedAt"
           :imageUrl="articles[4].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
@@ -66,7 +66,7 @@
           v-if="articles[5]"
           :title="articles[5].title"
           :author="articles[5].user.name"
-          :published="articles[5].createdAt"
+          :published="articles[5].updatedAt"
           :imageUrl="articles[5].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[5].slug}`"
@@ -78,7 +78,7 @@
             :key="article"
             :category="article.category"
             :author="article.user.name"
-            :published="article.createdAt"
+            :published="article.updatedAt"
             :title="article.title"
             :imageUrl="article.imageUrl"
             :articleUrl="`/articles/${article.slug}`"
@@ -91,7 +91,7 @@
             v-if="articles[0]"
             :title="articles[0].title"
             :author="articles[0].user.name"
-            :published="articles[0].createdAt"
+            :published="articles[0].updatedAt"
             :imageUrl="articles[0].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
@@ -104,7 +104,7 @@
             v-if="articles[1]"
             :title="articles[1].title"
             :author="articles[1].user.name"
-            :published="articles[1].createdAt"
+            :published="articles[1].updatedAt"
             :imageUrl="articles[1].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[1].slug}`"
@@ -114,7 +114,7 @@
             v-if="articles[2]"
             :title="articles[2].title"
             :author="articles[2].user.name"
-            :published="articles[2].createdAt"
+            :published="articles[2].updatedAt"
             :imageUrl="articles[2].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[2].slug}`"
@@ -122,16 +122,47 @@
         </div>
         <div class="break"></div>
         <h2 class="cat-subhead">More Articles</h2>
-          <div class="gappy">
-          <CategoryArticle
-            class="mobile-cat"
-            v-if="articles[3]"
-            :title="articles[3].title"
-            :author="articles[3].user.name"
-            :published="articles[3].createdAt"
-            :imageUrl="articles[3].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[3].slug}`"
+        <MobileCategoryArticle
+          class="mobile-cat"
+          v-if="articles[3]"
+          :title="articles[3].title"
+          :author="articles[3].user.name"
+          :published="articles[3].updatedAt"
+          :imageUrl="articles[3].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[3].slug}`"
+        />
+        <MobileCategoryArticle
+          class="mobile-cat"
+          v-if="articles[4]"
+          :title="articles[4].title"
+          :author="articles[4].user.name"
+          :published="articles[4].updatedAt"
+          :imageUrl="articles[4].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[4].slug}`"
+        />
+        <MobileCategoryArticle
+          class="mobile-cat"
+          v-if="articles[5]"
+          :title="articles[5].title"
+          :author="articles[5].user.name"
+          :published="articles[5].updatedAt"
+          :imageUrl="articles[5].imageUrl"
+          :category="category"
+          :articleUrl="`/articles/${articles[5].slug}`"
+        />
+        <div>
+          <MobileCategoryArticle
+            class="visible"
+            v-for="article in allArticles"
+            :key="article.id"
+            :category="article.category"
+            :author="article.user.name"
+            :published="article.updatedAt"
+            :title="article.title"
+            :imageUrl="article.imageUrl"
+            :articleUrl="`/articles/${article.slug}`"
           />
           </div>
           <div class="gappy">
@@ -217,37 +248,31 @@ export default {
     }
   },
   methods: {
-    newArticles() {
-      this.$axios
-        .get(
-          `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
-        )
-        .then(response => {
-          this.page++;
-          this.allArticles = [].concat(this.allArticles, response.data);
-          if (response.data.length < 5) {
-            this.moreToLoad = false;
-          } else {
-            this.moreToLoad = true;
-          }
-          return this.allArticles;
-        });
+    async newArticles() {
+      const articles = await this.$axios.get(
+        `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
+      )
+
+      this.page += 1
+      this.allArticles = [].concat(this.allArticles, articles.data);
+
+      this.moreToLoad = articles.data.length >= 5
     }
   },
   head: function() {
     return {
       meta: [
       { name: 'title', content: this.$route.params.category },
-      { name: 'description', content: "Click to read all articles about " + this.$route.params.category + " writen by the SITECH Times team!"},
+      { name: 'description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
       { name: 'og:site_name', content: 'SITECHTIMES'},
       { name: 'og:title', content: this.$route.params.category },
       { name: 'og:section', content: this.$route.params.category },
-      { name: 'og:description', content: "Click to read all articles about " + this.$route.params.category + " writen by the SITECH Times team!"},
+      { name: 'og:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
       { name: 'og:image', content: "/logo_thicker.svg" },
       { name: 'og:image:alt', content: "SITECH Times logo" },
       { name: 'twitter:card', content: 'summary'},
       { name: 'twitter:title', content: this.$route.params.category },
-      { name: 'twitter:description', content: "Click to read all articles about " + this.$route.params.category + " writen by the SITECH Times team!"},
+      { name: 'twitter:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
       { name: 'twitter:image', content: "/logo_thicker.svg" },
   ]
     }
@@ -261,14 +286,13 @@ export default {
   padding: 1.5rem 0;
 }
 .border-right {
-  border-radius: 0.1rem;
   border-right: solid var(--primary-color);
   width: 85%;
 }
 .cat-page-title {
   font-size: var(--h3);
   text-transform: capitalize;
-  margin-bottom: 3rem;
+  padding: var(--title-spacing) 0;
   color: var(--on-background);
 }
 .three-cat-articles {
@@ -377,13 +401,14 @@ export default {
   .break {
     width: 100%;
     background-color: var(--primary-color);
-    height: 0.6rem;
-    border-radius: 0.3rem;
+    height: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
   .cat-subhead {
+    font-size: var(--h3);
     margin-top: 2rem;
+    color: var(--on-background);
   }
 
   .not-visible {

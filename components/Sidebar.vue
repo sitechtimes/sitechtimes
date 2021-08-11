@@ -47,6 +47,7 @@ export default {
   max-width: 50rem;
   display: flex;
   border: var(--toggleBorder);
+  border-radius: 0 1rem 1rem 0;
   padding: 1.5rem var(--sidebarSidePadding);
 }
 .sidebar-article:hover {
@@ -94,6 +95,7 @@ export default {
 @media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
+    margin-top: 5rem;
   }
   .sidebar-article {
     padding: 1.5rem 0;

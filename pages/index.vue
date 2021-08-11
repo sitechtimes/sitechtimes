@@ -51,7 +51,7 @@
           />
         </section>
         <section>
-          <DuoArticleContainer
+          <DuoArticleContainer class="not-on-ipad"
             v-if="homepages[7]"
             :articles="homepages.slice(7, 9)"
           />
@@ -185,7 +185,11 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-
+@media only screen and (max-width: $mid-screen){
+  // .not-on-ipad{
+  //   display: none;
+  // }
+}
 @media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;

@@ -1,13 +1,13 @@
 <template>
-<div class="footer-bg">
-    <footer class="footer-container global-container">
+<footer class="footer-bg">
+    <div class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
-        <FooterSocialMedia />
+        <FooterSocialMedia :instagramUrl="insta" :twitterUrl="twitter" :facebookUrl="facebook"/>
       </div>
       <FooterNav />
-    </footer>
-</div>
+    </div>
+</footer>
 </template>
 
 <script>
@@ -16,7 +16,12 @@ import FooterSocialMedia from "./FooterSocialMedia";
 import FooterNav from "./FooterNav";
 export default {
   name: "Footer",
-  props: ["categories"],
+  props: {
+    categories: String,
+    insta: String,
+    twitter: String,
+    facebook: String,
+  },
   data() {
     return {};
   },
@@ -53,7 +58,7 @@ export default {
          }
      }
      
-     @media only screen and (max-width: $small-screen) {
+     @media only screen and (max-width: $mid-screen) {
         .footer-container {
             flex-direction: column;
         }

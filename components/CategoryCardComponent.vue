@@ -143,20 +143,9 @@ export default {
   );
   border-radius: 1.5rem;
 }
-.category-card-component-category-author-date {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 1.7rem;
-}
 .category-card-component-category {
   color: var(--white);
-  padding-right: 1.7rem;
-}
-.category-card-component-author-and-date {
-  position: relative;
-  height: 1.6rem;
-  padding-top: 1rem;
-  color: var(--white);
+   margin-bottom: var(--category-bottom-margin);
 }
 .category-text-overflow {
   display: block;
@@ -173,6 +162,7 @@ export default {
   font-size: var(--customFontSize);
   line-height: 4rem;
   color: var(--white);
+  padding-top: 1rem;
 }
 .category-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
