@@ -77,6 +77,9 @@ export default {
   .footer-nav-header {
     font-size: var(--h2);
   }
+  .footer-nav {
+    max-width: 100%;
+  }
 }
 // @media only screen and (max-width: 340px) {
 //   .footer-nav {
