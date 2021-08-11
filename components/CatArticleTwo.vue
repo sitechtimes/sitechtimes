@@ -62,7 +62,7 @@ export default {
 .cat-title {
   font-size: 2.5rem;
   font-weight: 700;
-  max-width: 70rem;
+  max-width: 50rem;
   margin-top: 1rem;
   color: var(--on-background) !important;
 }
@@ -91,7 +91,7 @@ export default {
     font-size: var(--h3);
     font-weight: 700;
     padding-top: 1rem;
-    max-width: 60rem;
+    max-width: 50rem;
   }
   .cat-article-icon {
     padding-right: 1.5rem;
@@ -125,7 +125,7 @@ export default {
       font-size: var(--h3);
       font-weight: 700;
       padding-top: 1rem;
-      max-width: 60rem;
+      max-width: 50rem;
     }
     .cat-article-icon {
       padding-right: 1.5rem;
