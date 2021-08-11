@@ -74,7 +74,7 @@
         </section>
       </div>
       <div class="mobile-view">
-        <h2 class="section-title">Trending Articles</h2>
+        <h2 class="section-title section-title-mobile">Trending Articles</h2>
         <GridArticleComponent
           v-for="article in homepages.slice(0, 20)"
           :articleUrl="'/articles/' + article.slug"
@@ -214,8 +214,8 @@ export default {
   .mobile-view {
     display: inherit;
   }
-  .section-title {
-    margin-bottom: -5rem;
+  .section-title-mobile {
+   margin-bottom: -5rem;
   }
 }
 </style>
