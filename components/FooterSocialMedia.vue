@@ -87,8 +87,8 @@ export default {
   font-size: var(--h3);
 }
 .footer-social-media-box {
-  width: 36rem;
-  margin: 5.1rem auto 0 auto;
+//   width: 36rem;
+  margin: 5.1rem 0;
 }
 .footer-social-media {
   text-align: center;
