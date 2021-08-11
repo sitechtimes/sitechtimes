@@ -72,7 +72,6 @@ export default {
   display: inline-block;
 }
 #sidebar-article-details-title {
-  font-weight: bold;
   font-size: 1.55rem;
   line-height: 1.35;
   text-decoration: none;
