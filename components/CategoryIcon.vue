@@ -39,10 +39,12 @@ export default {
   padding: 0.6rem .9rem 0.3rem .9rem;
   transition: all .2s;
 }
+
+@media only screen and (min-width: $mid-screen) {
 #article-category:hover {
     transform: translateY(-0.4rem);
 }
-
+}
 </style>
 
 <!--<docs>-->

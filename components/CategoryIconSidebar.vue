@@ -13,7 +13,9 @@
 <script>
 export default {
   name: "CategoryIconSidebar",
-  props: ["category"],
+  props: {
+    category: String,
+  },
   data() {
     return {};
   },
@@ -46,6 +48,12 @@ export default {
     padding: 0.8rem 0.8rem 0.4rem 0.8rem;
     margin: 0.3rem 0 1.5rem 0;
   }
+}
+
+@media only screen and (min-width: $mid-screen) {
+#article-category:hover {
+    transform: translateY(-0.4rem);
+}
 }
 </style>
 
