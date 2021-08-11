@@ -54,6 +54,7 @@ export default {
   width: 35rem;
   border-radius: 1.5rem;
   margin-right: 4rem;
+  object-fit: cover;
 }
 .cat-article-img-content {
   width: 60%;

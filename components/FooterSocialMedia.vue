@@ -99,17 +99,21 @@ export default {
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all 0.3s;
+  cursor: pointer;
 }
 .footer-sm-icon:hover {
   color: var(--gold-hover);
   transform: scale(110%);
-  cursor: pointer;
 }
 
 @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
     margin-bottom: 5.1rem;
   }
+  .footer-sm-icon:hover {
+    color: var(--primary-color);
+    transform: scale(100%);
+ }
 }
 /* @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {

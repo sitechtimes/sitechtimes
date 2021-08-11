@@ -178,7 +178,7 @@ export default {
   .main-article-text-section li strong,
   .main-article-text-section span {
     font-size: 1.9rem;
-    line-height: 3rem;
+    line-height: 3.25rem;
   }
 }
 @media only screen and (max-width: $x-small-screen) {

@@ -31,7 +31,7 @@ export default {
   .see-more-btn:hover {
     box-shadow: unset;
     transform: unset;
-    background-color: #bf9f4b;
+    background-color: var(--primary-color);
   }
 }
 </style>
