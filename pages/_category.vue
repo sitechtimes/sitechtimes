@@ -273,7 +273,8 @@ export default {
   }
   .mobile-sub-arts {
     width: 100%;
-    margin-left: 0rem;
+    margin-left: 0;
+    -webkit-margin-start: 0;
   }
   .sub-art {
     display: flex;
@@ -290,15 +291,14 @@ export default {
   .seymour {
     margin: 4rem 0 10rem 0;
   }
+
 }
 @media only screen and (max-width: $x-small-screen) {
   .rest-of-articles {
     margin-top: -4rem;
   }
   .border-right {
-    width: 95%;
     margin: 0 auto;
-    margin-top: var(--title-spacing);
   }
   .three-cat-articles,
   .mobile-sub-arts {
