@@ -54,6 +54,7 @@ export default {
   width: 35rem;
   border-radius: 1.5rem;
   margin-right: 4rem;
+  object-fit: cover;
 }
 .cat-article-img-content {
   width: 60%;
@@ -62,21 +63,18 @@ export default {
 .cat-title {
   font-size: 2.5rem;
   font-weight: 700;
-  padding-top: 1rem;
-  max-width: 70rem;
+  max-width: 50rem;
+  margin-top: 1rem;
   color: var(--on-background) !important;
 }
 .cat-labels {
-  margin-top: 2rem;
   display: flex;
-}
-.cat-article-icon {
-  padding-right: 1.5rem;
+  margin-top: 2rem;
 }
 .cat-article-authdate {
   margin: auto 0;
   line-height: 2.2rem;
-  padding-top: 1rem;
+   margin-bottom: var(--category-bottom-margin);
 }
 @media only screen and (max-width: $mid-screen) {
   .cat-article {
@@ -94,7 +92,7 @@ export default {
     font-size: var(--h3);
     font-weight: 700;
     padding-top: 1rem;
-    max-width: 60rem;
+    max-width: 50rem;
   }
   .cat-article-icon {
     padding-right: 1.5rem;
@@ -128,7 +126,7 @@ export default {
       font-size: var(--h3);
       font-weight: 700;
       padding-top: 1rem;
-      max-width: 60rem;
+      max-width: 50rem;
     }
     .cat-article-icon {
       padding-right: 1.5rem;
@@ -141,7 +139,7 @@ export default {
       margin: auto;
     }
     .cat-article-img {
-      height: 14rem;
+      height: 17rem;
       width: 35vw;
       border-radius: 1.5rem;
       //   margin-left: 15rem;
@@ -151,15 +149,19 @@ export default {
       justify-content: flex-end;
     }
     .cat-title {
-      font-size: var(--h3);
+      font-size: var(--h4);
       font-weight: 700;
       padding-top: 1rem;
-      max-width: 40rem;
+      max-width: 30rem;
+      margin-top: 1rem;
     }
     .cat-article-icon {
       width: 3rem;
       padding-right: 1.5rem;
       height: 3rem;
+    }
+    .cat-labels {
+      margin-top: 1rem;
     }
   }
 }

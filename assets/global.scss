@@ -3,6 +3,7 @@
 :root {
   /* colors */
   --gold: #d9b75e;
+  --dark-gold: #bf9f4b;
   --light-gold: #fff3d2;
   --off-white: #fffaf4;
   --white: #ffffff;
@@ -47,9 +48,10 @@
   --mobile-nav-text: var(--white);
   --nav-color: var(--on-background);
   --see-more-color: var(--accent-color);
+  --gold-hover: var(--dark-gold);
   /* font size */
   --font: "Josefin Sans", sans-serif;
-  --article-font: 'Merriweather', serif;
+  --article-font: "Merriweather", serif;
   --h1: 5.653rem;
   --h2: 3.998rem;
   --h3: 2.827rem;
@@ -68,6 +70,8 @@
   /* spacing */
   --section-spacing: 4rem;
   --title-spacing: 3rem;
+  --category-top-margin: 0.75rem;
+  --category-bottom-margin: 0.25rem;
   /*linear gradient */
   --greyToBlack: linear-gradient(
     180deg,

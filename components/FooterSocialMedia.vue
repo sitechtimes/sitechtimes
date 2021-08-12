@@ -2,7 +2,9 @@
   <div class="footer-social-media-box">
     <h3 class="footer-header footer-sm-header">Social Media</h3>
     <div class="footer-social-media">
+      <a :href="instagramUrl" target="_blank">
       <svg
+
         width="3.5rem"
         height="3.5rem"
         aria-hidden="true"
@@ -20,6 +22,8 @@
           class=""
         ></path>
       </svg>
+      </a>
+      <a :href="twitterUrl" target="_blank">
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -38,6 +42,8 @@
           class=""
         ></path>
       </svg>
+      </a>
+      <!-- <a :href="facebookUrl" target="_blank">>
       <svg
         width="3.5rem"
         height="3.5rem"
@@ -56,6 +62,7 @@
           class=""
         ></path>
       </svg>
+      </a> -->
     </div>
   </div>
 </template>
@@ -65,7 +72,12 @@ export default {
   name: "FooterSocialMedia",
   components: {
     SocialMediaIcons: () => import("./SocialMediaIcons.vue")
-  }
+  },
+    props: {
+    instagramUrl: String,
+    twitterUrl: String,
+    facebookUrl: String,
+  },
 };
 </script>
 
@@ -75,8 +87,8 @@ export default {
   font-size: var(--h3);
 }
 .footer-social-media-box {
-  width: 36rem;
-  margin: 5.1rem auto 0 auto;
+//   width: 36rem;
+  margin: 5.1rem 0;
 }
 .footer-social-media {
   text-align: center;
@@ -87,17 +99,21 @@ export default {
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all 0.3s;
+  cursor: pointer;
 }
 .footer-sm-icon:hover {
-  color: #bf9f4b;
+  color: var(--gold-hover);
   transform: scale(110%);
-  cursor: pointer;
 }
 
 @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
     margin-bottom: 5.1rem;
   }
+  .footer-sm-icon:hover {
+    color: var(--primary-color);
+    transform: scale(100%);
+ }
 }
 /* @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {

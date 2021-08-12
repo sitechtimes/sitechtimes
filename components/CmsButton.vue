@@ -11,15 +11,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/_variables.scss";
     .cms-btn {
         display: flex;
         align-items: center;
         vertical-align: middle;
         height: 3rem;
         width: 3rem;
-        color: #000;
+        color: var(--on-secondary);
         background-color: transparent;
-        border: .2rem solid #000;
+        border: .2rem solid var(--on-secondary);
         padding: .2rem;
         border-radius: .5rem;
         cursor: pointer;
@@ -29,4 +30,10 @@ export default {
         color: #3e28de;
         border: .2rem solid #3e28de;
     }
+@media only screen and (max-width: $mid-screen) {
+    .cms-btn:hover {
+        color: var(--on-secondary);
+        border: .2rem solid var(--on-secondary);
+    }
+}
 </style>

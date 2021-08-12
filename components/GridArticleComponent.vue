@@ -40,22 +40,26 @@ export default {
 .grid-article-component h4 {
   color: var(--on-background);
 }
+.grid-article-component > h4 {
+  font-size: var(--h3);
+}
 .grid-article-info {
   margin: 1rem 0;
   display: flex;
 }
 .grid-article-image {
   width: 100%;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   height: 25rem;
 
   object-fit: cover;
 }
 .grid-article-cat {
-  margin: 0.2rem 0.5rem;
+  // margin: 0.2rem 0.5rem;
+  margin-bottom: var(--category-bottom-margin);
+  margin-top: var(--category-top-margin);
 }
 .grid-article-title {
-  margin: 0 0.5rem;
   font-family: var(--font);
   font-style: normal;
   font-weight: bold;
@@ -70,7 +74,7 @@ export default {
     flex-direction: column;
     width: 47%;
   }
-  .trio-grid-container .grid-article-component:last-child {
+  .trio-grid-container .grid-article-component:first-child{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -81,13 +85,10 @@ export default {
     height: 35rem;
     object-fit: cover;
   }
-  .trio-grid-container .grid-article-component:last-child .grid-article-title {
-    font-size: var(--h3);
-  }
 }
 
   @media only screen and (max-width: $mid-screen) {
-    .trio-grid-container .grid-article-component:last-child {
+    .trio-grid-container .grid-article-component:first-child {
       display: flex;
       flex-direction: column;
       width: 100%;

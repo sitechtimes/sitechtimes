@@ -51,7 +51,7 @@
           />
         </section>
         <section>
-          <DuoArticleContainer
+          <DuoArticleContainer class="not-on-ipad"
             v-if="homepages[7]"
             :articles="homepages.slice(7, 9)"
           />
@@ -74,7 +74,7 @@
         </section>
       </div>
       <div class="mobile-view">
-        <h2 class="section-title">Trending Articles</h2>
+        <h2 class="section-title section-title-mobile">Trending Articles</h2>
         <GridArticleComponent
           v-for="article in homepages.slice(0, 20)"
           :articleUrl="'/articles/' + article.slug"
@@ -185,7 +185,11 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-
+@media only screen and (max-width: $mid-screen){
+  // .not-on-ipad{
+  //   display: none;
+  // }
+}
 @media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
@@ -210,8 +214,8 @@ export default {
   .mobile-view {
     display: inherit;
   }
-  .section-title {
-    margin-bottom: -5rem;
+  .section-title-mobile {
+   margin-bottom: -5rem;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
-        <FooterSocialMedia />
+        <FooterSocialMedia :instagramUrl="insta" :twitterUrl="twitter" :facebookUrl="facebook"/>
       </div>
       <FooterNav />
     </div>
@@ -16,7 +16,12 @@ import FooterSocialMedia from "./FooterSocialMedia";
 import FooterNav from "./FooterNav";
 export default {
   name: "Footer",
-  props: ["categories"],
+  props: {
+    categories: String,
+    insta: String,
+    twitter: String,
+    facebook: String,
+  },
   data() {
     return {};
   },
@@ -48,12 +53,9 @@ export default {
         height: 100%;
     }
      @media only screen and (max-width: $mid-screen) {
-         .form-and-media, .footer-nav {
+        .form-and-media, .footer-nav {
              margin: auto;
-         }
-     }
-     
-     @media only screen and (max-width: $mid-screen) {
+        }
         .footer-container {
             flex-direction: column;
         }
@@ -61,6 +63,12 @@ export default {
             padding-right: 0;
         }
     }
+     @media only screen and (max-width: $x-small-screen) {
+        .form-and-media {
+            max-width: 100%;
+        }
+     }
+
 
 </style>
 

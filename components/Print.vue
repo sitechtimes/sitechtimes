@@ -17,6 +17,6 @@ name: "Print",
 
 <style>
 .print {
-    margin-left: 3rem;
+    margin-left: 2.5rem;
 }
 </style>
