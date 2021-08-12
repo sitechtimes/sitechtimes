@@ -266,7 +266,7 @@ export default {
   background-color: var(--background-color);
   transition: 0.3s ease-out;
 }
-.moon-svg:hover {
+.color-toggle-button:hover > .moon-svg {
   color: var(--off-white);
 }
 
