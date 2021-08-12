@@ -68,7 +68,7 @@ export default {
   padding-top: 1rem;
 }
 
-@media only screen and (max-width: $midlarge-screen) {
+@media only screen and (max-width: 963px) {
   .grid-article-component {
     display: flex;
     flex-direction: column;
