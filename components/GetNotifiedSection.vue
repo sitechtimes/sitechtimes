@@ -4,10 +4,10 @@
       <span class="footer-header">Get Notified</span>
       <span class="footer-sub-header">Sign up for our newsletter!</span>
     </h2>
-    <form class="footer-form" action="#">
+    <form class="footer-form" action="#" >
       <label class="footer-form-label" for="email">Email</label>
       <div class="footer-inputs">
-        <input
+          <input
           v-on:click="seeLabel()"
           class="footer-email-input"
           type="text"
@@ -37,14 +37,13 @@ export default {
 
 <style lang="scss">
 @import "../assets/_variables.scss";
+    .footer-form-box {
+        padding-bottom: 5.1rem;
+        border-bottom: .2rem solid var(--primary-color);
+    }
     .footer-header-container {
         display: flex;
         flex-direction: column;
-    }
-    .footer-form-box {
-        margin: 0 auto;
-        padding-bottom: 5.1rem;
-        border-bottom: .2rem solid var(--primary-color);
     }
     .footer-header,
     .footer-sub-header {
@@ -69,7 +68,6 @@ export default {
         margin-top: .2rem;
         border: none;
         background-color: var(--accent-color);
-        padding: 1.3rem 2.2rem;
         border-radius: 5rem;
     }
     .footer-inputs {
@@ -79,6 +77,8 @@ export default {
         width: 36rem;
         font-size: 1.6rem;
         font-family: var(--font);
+        padding: 1.3rem 2.2rem;
+        padding-right: 9.7rem;
     }
     .footer-email-input:focus {
         outline: none;
@@ -102,10 +102,10 @@ export default {
         -moz-appearance: none;
         appearance: none;
         opacity: 1;
+        cursor: pointer;
     }
     .footer-join-btn:hover {
-        background-color: #bf9f4b;
-        cursor: pointer;
+        background-color: var(--gold-hover);
     }
     // .footer-form-alert {
     //     opacity: 0;
@@ -122,14 +122,20 @@ export default {
           font-size: var(--h4);
           font-weight: 500;
         }
+        .footer-email-input {
+          padding: 1.6rem 2rem;
+          padding-right: 12rem;
+        }
         .footer-join-btn {
-          width: 9.5rem;
-          margin-left: -9.5rem;
+          width: 10rem;
+          margin-left: -10rem;
+        }
+        .footer-join-btn:hover {
+          background-color: var(--primary-color);
         }
         .footer-email-input,
         .footer-join-btn {
           margin-top: 0.5rem;
-          padding: 1.6rem 2.5rem;
         }
         .footer-email-input,
         .footer-join-btn,
@@ -143,6 +149,11 @@ export default {
         .footer-form-label {
           font-size: 2.25rem;
         }
+    }
+    @media only screen and (max-width: $x-small-screen) {
+      .footer-email-input {
+        max-width: 100%;
+      }
     }
       
 </style>

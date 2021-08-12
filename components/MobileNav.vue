@@ -254,7 +254,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .8rem 2rem;
+  padding-top: .45rem;
+  padding-bottom: .8rem;
 }
 .nav-icon {
   width: 4rem;
@@ -289,13 +290,13 @@ export default {
   transition: 0.25s ease-in-out;
 }
 .nav-icon span:nth-child(1) {
-  top: 1rem;
+  top: 1.2rem;
 }
 .nav-icon span:nth-child(2) {
-  top: 2rem;
+  top: 2.2rem;
 }
 .nav-icon span:nth-child(3) {
-  top: 3rem;
+  top: 3.2rem;
 }
 .nav-icon span:nth-child(1),
 .nav-icon span:nth-child(2),
@@ -312,7 +313,7 @@ export default {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   left: 0.8rem;
-  top: .65rem;
+  top: .7rem;
 }
 .nav-icon.open span:nth-child(2) {
   width: 0%;

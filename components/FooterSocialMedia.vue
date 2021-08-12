@@ -87,8 +87,8 @@ export default {
   font-size: var(--h3);
 }
 .footer-social-media-box {
-  width: 36rem;
-  margin: 5.1rem auto 0 auto;
+//   width: 36rem;
+  margin: 5.1rem 0;
 }
 .footer-social-media {
   text-align: center;
@@ -99,17 +99,21 @@ export default {
   margin-left: 1rem;
   margin-right: 1rem;
   transition: all 0.3s;
+  cursor: pointer;
 }
 .footer-sm-icon:hover {
-  color: #bf9f4b;
+  color: var(--gold-hover);
   transform: scale(110%);
-  cursor: pointer;
 }
 
 @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
     margin-bottom: 5.1rem;
   }
+  .footer-sm-icon:hover {
+    color: var(--primary-color);
+    transform: scale(100%);
+ }
 }
 /* @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
