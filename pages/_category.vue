@@ -71,60 +71,11 @@
           :category="category"
           :articleUrl="`/articles/${articles[5].slug}`"
         />
-        <div>
-          <CatArticleTwo
-            class="sub-art not-visible"
-            v-for="article in allArticles"
-            :key="article"
-            :category="article.category"
-            :author="article.user.name"
-            :published="article.updatedAt"
-            :title="article.title"
-            :imageUrl="article.imageUrl"
-            :articleUrl="`/articles/${article.slug}`"
-          />
         </div>
-      </div>
-      <div class="cat-visible">
-        <div class="mobile-big-cat-article">
-          <CategoryCardComponent
-            v-if="articles[0]"
-            :title="articles[0].title"
-            :author="articles[0].user.name"
-            :published="articles[0].updatedAt"
-            :imageUrl="articles[0].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[0].slug}`"
-            class="cat-main-art"
-          />
-        </div>
-        <div class="mobile-cat-sub-arts">
-          <CatArticleTwo
-            class="mobile-sub-art"
-            v-if="articles[1]"
-            :title="articles[1].title"
-            :author="articles[1].user.name"
-            :published="articles[1].updatedAt"
-            :imageUrl="articles[1].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[1].slug}`"
-          />
-          <CatArticleTwo
-            class="mobile-sub-art"
-            v-if="articles[2]"
-            :title="articles[2].title"
-            :author="articles[2].user.name"
-            :published="articles[2].updatedAt"
-            :imageUrl="articles[2].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[2].slug}`"
-          />
-        </div>
-          </div>
           <div class="rest-of-articles">
             <CatArticleTwo
               class="sub-art cat-visible"
-              v-for="article in allArticles"
+              v-for="article in allArticles.slice(1, 10)"
               :key="article"
               :category="article.category"
               :author="article.user.name"
@@ -212,7 +163,7 @@ export default {
 <style lang="scss">
 @import "/../assets/variables";
 .rest-of-articles {
-  margin-top: -4rem;
+  margin-top: 3.5rem;
 }
 .border-right {
   border-right: solid var(--primary-color);
