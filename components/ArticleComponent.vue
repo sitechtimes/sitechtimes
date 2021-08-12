@@ -61,6 +61,10 @@ export default {
   color: var(--on-background);
 }
 
+#article-component {
+    padding-top: 0.4rem;
+}
+
 .main-article-title {
   margin: 2rem auto;
   font-size: var(--h2);
