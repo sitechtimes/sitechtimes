@@ -1,6 +1,8 @@
 <template>
   <nuxt-link
     :to="articleUrl"
+    role="img"
+    :alt="imageAlt"
     class="category-card-component"
     :style="getFontSize"
   >
