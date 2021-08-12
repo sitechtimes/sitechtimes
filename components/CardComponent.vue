@@ -3,6 +3,7 @@
     :to="articleUrl"
     role="img"
     :alt="imageAlt"
+    :aria-label="imageAlt"
     class="card-component card-component-image dropshadow"
     :style="{
       background: 'url(' + imageUrl + ')',
