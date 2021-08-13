@@ -140,7 +140,7 @@ export default {
         .footer-email-input,
         .footer-join-btn,
         .footer-form-label {
-          font-size: 1.8rem;
+          font-size: 2rem;
         }
       }
     @media only screen and (max-width: $small-screen) {
