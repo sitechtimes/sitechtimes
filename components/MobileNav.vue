@@ -277,7 +277,7 @@ export default {
   position: absolute;
   height: 0.35rem;
   width: 100%;
-  background: var(--on-background);
+  background-color: var(--on-background);
   border-radius: 1rem;
   opacity: 1;
   left: 0;

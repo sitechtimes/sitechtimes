@@ -128,7 +128,7 @@ export default {
 .main-article-text h1 strong {
   font-size: 3.5rem;
 }
-.main-article-text h2
+.main-article-text h2,
 .main-article-text h2 strong {
   font-size: 3rem;
 }
