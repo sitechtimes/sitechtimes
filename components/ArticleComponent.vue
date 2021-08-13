@@ -132,7 +132,7 @@ export default {
 .main-article-text h1 strong {
   font-size: 3.5rem;
 }
-.main-article-text h2
+.main-article-text h2,
 .main-article-text h2 strong {
   font-size: 3rem;
 }
@@ -171,31 +171,35 @@ export default {
   display: flex;
 }
 @media only screen and (max-width: $mid-screen) {
-  .main-article-text ul li,
-  .main-article-text ul li span,
-  .main-article-text ol li,
-  .main-article-text ol li span,
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,
+  .main-article-text-section p a,
   .main-article-text-section li em,
   .main-article-text-section li strong,
-  .main-article-text-section span {
+  .main-article-text-section li a,
+  .main-article-text-section span,
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span {
     font-size: 1.9rem;
     line-height: 3.25rem;
   }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .main-article-text ul li,
-  .main-article-text ul li span,
-  .main-article-text ol li,
-  .main-article-text ol li span,
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,
+  .main-article-text-section p a,
   .main-article-text-section li em,
   .main-article-text-section li strong,
-  .main-article-text-section span {
+  .main-article-text-section li a,
+  .main-article-text-section span,
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span {
     font-size: 2.25rem;
     line-height: 3.5rem;
   }
