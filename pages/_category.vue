@@ -61,16 +61,6 @@
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
         />
-        <CatArticleTwo
-          class="sub-art cat-visible"
-          v-if="articles[5]"
-          :title="articles[5].title"
-          :author="articles[5].user.name"
-          :published="articles[5].updatedAt"
-          :imageUrl="articles[5].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[5].slug}`"
-        />
         <div>
           <CatArticleTwo
             class="sub-art not-visible"
@@ -212,7 +202,7 @@ export default {
 <style lang="scss">
 @import "/../assets/variables";
 .rest-of-articles {
-  margin-top: -4rem;
+  margin-top: 3.5rem;
 }
 .border-right {
   border-right: solid var(--primary-color);
@@ -267,7 +257,6 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
-// margin-left: 5%;
     border: none;
   }
   .two-cat-articles {
@@ -278,7 +267,7 @@ export default {
   }
   .cat-sub-one,
   .cat-sub-two {
-    width: 50%;
+    width: 48%;
     justify-content: space-between;
   }
   .mobile-sub-arts {
@@ -304,6 +293,9 @@ export default {
 
 }
 @media only screen and (max-width: $x-small-screen) {
+  .rest-of-articles {
+    margin-top: -4rem;
+  }
   .border-right {
     margin: 0 auto;
   }
@@ -345,9 +337,6 @@ export default {
   }
   .visible {
     display: block;
-  }
-  .entertainment-seymour {
-    width: 95%;
   }
 }
 </style>

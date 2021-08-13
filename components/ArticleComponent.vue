@@ -61,9 +61,14 @@ export default {
   color: var(--on-background);
 }
 
+#article-component {
+    padding-top: 0.4rem;
+}
+
 .main-article-title {
   margin: 2rem auto;
   font-size: var(--h2);
+  font-weight: 500;
   line-height: 120%;
 }
 // .main-article-description {
@@ -128,7 +133,7 @@ export default {
 .main-article-text h1 strong {
   font-size: 3.5rem;
 }
-.main-article-text h2
+.main-article-text h2,
 .main-article-text h2 strong {
   font-size: 3rem;
 }
@@ -167,31 +172,59 @@ export default {
   display: flex;
 }
 @media only screen and (max-width: $mid-screen) {
-  .main-article-text ul li,
-  .main-article-text ul li span,
-  .main-article-text ol li,
-  .main-article-text ol li span,
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,
+  .main-article-text-section p a,
   .main-article-text-section li em,
   .main-article-text-section li strong,
-  .main-article-text-section span {
+  .main-article-text-section li a,
+  .main-article-text-section span,
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span {
     font-size: 1.9rem;
     line-height: 3.25rem;
   }
+  .main-article-text h1,
+  .main-article-text h1 strong {
+    font-size: 3rem;
+  }
+  .main-article-text h2,
+  .main-article-text h2 strong {
+    font-size: 2.75rem;
+  }
+  .main-article-text h3,
+  .main-article-text h3 strong {
+    font-size: 2.5rem;
+  }
+  .main-article-text h4,
+  .main-article-text h4 strong {
+    font-size: 2.25rem;
+  }
+  .main-article-text h5,
+  .main-article-text h5 strong {
+    font-size: 2rem;
+  }
+  .main-article-text h6,
+  .main-article-text h6 strong{
+    font-size: 1.75rem;
+  }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .main-article-text ul li,
-  .main-article-text ul li span,
-  .main-article-text ol li,
-  .main-article-text ol li span,
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,
+  .main-article-text-section p a,
   .main-article-text-section li em,
   .main-article-text-section li strong,
-  .main-article-text-section span {
+  .main-article-text-section li a,
+  .main-article-text-section span,
+  .main-article-text ul li,
+  .main-article-text ul li span,
+  .main-article-text ol li,
+  .main-article-text ol li span {
     font-size: 2.25rem;
     line-height: 3.5rem;
   }

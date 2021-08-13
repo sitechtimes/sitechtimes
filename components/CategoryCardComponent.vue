@@ -1,6 +1,9 @@
 <template>
   <nuxt-link
     :to="articleUrl"
+    role="img"
+    :alt="imageAlt"
+    :aria-label="imageAlt"
     class="category-card-component"
     :style="getFontSize"
   >
@@ -169,7 +172,7 @@ export default {
 }
 @media only screen and (max-width: $mid-screen) {
   .category-card-component-image {
-    width: 95%;
+    width: 100%;
   }
 }
 @media only screen and (max-width: $small-screen) {

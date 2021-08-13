@@ -232,7 +232,8 @@ export default {
 }
 .mobile-nav {
   width: 100%;
-  height: calc(100vh - 8.1rem);
+  //makes up for the height and padding of the logo-menu-box (6.5rem + .8rem +.45rem)
+  height: calc(100vh - 7.75rem);
   background-color: var(--mobile-nav-background);
   display: flex;
   flex-direction: column;
@@ -254,7 +255,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: .45rem;
+  padding-top: .8rem;
   padding-bottom: .8rem;
 }
 .nav-icon {
@@ -276,7 +277,7 @@ export default {
   position: absolute;
   height: 0.35rem;
   width: 100%;
-  background: var(--on-background);
+  background-color: var(--on-background);
   border-radius: 1rem;
   opacity: 1;
   left: 0;
