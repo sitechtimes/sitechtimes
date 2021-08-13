@@ -68,6 +68,7 @@ export default {
 .main-article-title {
   margin: 2rem auto;
   font-size: var(--h2);
+  font-weight: 500;
   line-height: 120%;
 }
 // .main-article-description {
