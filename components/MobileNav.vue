@@ -255,7 +255,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: .45rem;
+  padding-top: .8rem;
   padding-bottom: .8rem;
 }
 .nav-icon {

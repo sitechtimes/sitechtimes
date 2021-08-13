@@ -257,7 +257,6 @@ export default {
 @media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
-// margin-left: 5%;
     border: none;
   }
   .two-cat-articles {
@@ -268,7 +267,7 @@ export default {
   }
   .cat-sub-one,
   .cat-sub-two {
-    width: 50%;
+    width: 48%;
     justify-content: space-between;
   }
   .mobile-sub-arts {
@@ -338,9 +337,6 @@ export default {
   }
   .visible {
     display: block;
-  }
-  .entertainment-seymour {
-    width: 95%;
   }
 }
 </style>

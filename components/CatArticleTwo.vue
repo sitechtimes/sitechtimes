@@ -49,7 +49,6 @@ export default {
 }
 
 .cat-article-img {
-  /* these height + width things are arbitrary right now, they'll be more specific when the other category component is made */
   height: 23rem;
   width: 35rem;
   border-radius: 1.5rem;
@@ -81,12 +80,11 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // margin-left: 10rem;
   }
   .cat-article-img {
     height: 18.8rem;
     width: 26rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
   }
   .cat-title {
     font-size: var(--h3);
@@ -110,39 +108,19 @@ export default {
     line-height: 2.2rem;
     padding-top: 1rem;
   }
-  @media only screen and (max-width: $mid-screen) {
-    .cat-article {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      // margin-left: 10rem;
-    }
-    .cat-article-img {
-      height: 18.8rem;
-      width: 26rem;
-      border-radius: 1.5rem;
-    }
-    .cat-title {
-      font-size: var(--h3);
-      font-weight: 700;
-      padding-top: 1rem;
-      max-width: 50rem;
-    }
-    .cat-article-icon {
-      padding-right: 1.5rem;
-    }
-  }
   @media only screen and (max-width: $x-small-screen) {
     .cat-article {
       display: flex;
       flex-direction: row-reverse;
       margin: auto;
     }
+    .cat-img-div{
+      width: 40%;
+    }
     .cat-article-img {
       height: 17rem;
       width: 35vw;
-      border-radius: 1.5rem;
-      //   margin-left: 15rem;
+      width: 100%;
       margin-right: 0;
     }
     .cat-article-image-content {
