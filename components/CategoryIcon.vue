@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <nuxt-link :to="'../' + category">
     <h5
       :style="backgroundColor"
       class="article-details-category"
@@ -7,13 +7,15 @@
     >
       {{ category }}
     </h5>
-  </header>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: "CategoryIcon",
-  props: ["category"],
+  props: {
+    category: String,
+  },
   data() {
     return {};
   },
@@ -36,6 +38,12 @@ export default {
   margin: 0.3rem 0 0.3rem 0;
   padding: 0.6rem .9rem 0.3rem .9rem;
   transition: all .2s;
+}
+
+@media only screen and (min-width: $mid-screen) {
+#article-category:hover {
+    transform: translateY(-0.4rem);
+}
 }
 </style>
 
