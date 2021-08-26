@@ -233,7 +233,7 @@ export default {
 .mobile-nav {
   width: 100%;
   //makes up for the height and padding of the logo-menu-box (6.5rem + .8rem +.45rem)
-  height: calc(100vh - 7.75rem);
+  height: calc(100vh - 8.1rem);
   background-color: var(--mobile-nav-background);
   display: flex;
   flex-direction: column;
