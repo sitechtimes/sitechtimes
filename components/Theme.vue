@@ -9,13 +9,13 @@
     <li class="theme-choice color-name" @click="onClickModalButton">
       More
     </li>
-    <!--     <themes-modal class="modal-test" v-if="showModal">
+    <!-- <themes-modal class="modal-test" v-if="showModal">
       you can use custom content here to overwrite default content
       <h3 slot="header">custom header</h3>
-    </themes-modal> -->
-    <!--     <nuxt-link id="dropdown-more-link" to="/Theme"
+    </themes-modal>  -->
+    <!--      <nuxt-link id="dropdown-more-link" to="/Theme"
       ><ThemeColors icon="sun" color="more"
-    /></nuxt-link> -->
+    /></nuxt-link>  -->
   </ul>
 </template>
 
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       //colors: ["system", "light", "dark", "theme"]
-      /* showModal: false */
+     showModal: false 
     };
   },
   methods: {
@@ -49,7 +49,7 @@ export default {
   border: 1px solid black;
 
   position: absolute;
-  top: 3.7rem;
+  top: 3.3rem;
 }
 .theme-switcher > * {
   width: 100%;

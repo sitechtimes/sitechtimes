@@ -88,7 +88,7 @@ export default {
   line-height: auto;
 }
 .datebar-btns {
-  width: 7.8rem;
+  width: 8.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
