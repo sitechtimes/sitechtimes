@@ -156,7 +156,8 @@ export default {
       this.sun = false;
       this.moon = true;
     } else {
-      alert("Current color mode is neither light or dark");
+      this.sun = true;
+      this.moon = false;
     }
   },
   methods: {
@@ -180,7 +181,9 @@ export default {
         this.sun = true;
         this.moon = false;
       } else {
-        alert("Current color mode is neither light or dark");
+        this.sun = true;
+        this.colorMode = 'light';
+        this.moon = false;
       }
     },
     toggleDropdown: function() {

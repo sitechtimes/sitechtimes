@@ -102,7 +102,7 @@ export default {
   cursor: pointer;
 }
 .footer-sm-icon:hover {
-  color: var(--gold-hover);
+  color: var(--hover);
   transform: scale(110%);
 }
 

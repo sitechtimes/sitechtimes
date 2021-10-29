@@ -105,7 +105,7 @@ export default {
         cursor: pointer;
     }
     .footer-join-btn:hover {
-        background-color: var(--gold-hover);
+        background-color: var(--hover);
     }
     // .footer-form-alert {
     //     opacity: 0;

@@ -15,7 +15,7 @@
             <!-- <themes-modal-theme color="system" /> -->
             <themes-modal-theme color="light" />
             <themes-modal-theme color="dark" />
-            <themes-modal-theme color="poppolio" />
+            <themes-modal-theme color="popplio" />
           </ul>
           <button class="close-modal-button" @click="$emit('closeModal')">
             Close

@@ -93,6 +93,7 @@
   --on-secondary-light: var(--mid-grey);
   --hover: var(--lightGray);
   --calendar-band: var(--off-white);
+  //Generic
   --news: var(--dark-blue);
   --politics: var(--pink);
   --entertainment: var(--red);
@@ -133,6 +134,14 @@
   --mobile-nav-text: var(--primary-color);
   --nav-color: var(--on-background);
   --see-more-color: var(--hover);
+}
+.popplio-mode {
+  --background-color: #e8f2ff;
+  --primary-color: #3b82f6;
+  --accent-color: #b6edff;
+  --nav-color: #344e8c;
+  --footer: #21273a;
+  --hover: #f2729d;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");
