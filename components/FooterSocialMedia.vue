@@ -85,6 +85,7 @@ export default {
 @import "../assets/variables";
 .footer-sm-header {
   font-size: var(--h3);
+  color: var(--footer-header-color);
 }
 .footer-social-media-box {
 //   width: 36rem;

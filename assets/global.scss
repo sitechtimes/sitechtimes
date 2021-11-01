@@ -108,6 +108,12 @@
   --mobile-nav-text: var(--white);
   --nav-color: var(--on-background);
   --see-more-color: var(--accent-color);
+
+  --nav-color: #000000;
+  --footer: #374151;
+  --footer-header-color: #eddcb0;
+  --footer-nav-color: #c7a74d;
+  --hover: var(--dark-gold);
 }
 .dark-mode {
   --grey: #272b32;
@@ -138,10 +144,44 @@
 .popplio-mode {
   --background-color: #e8f2ff;
   --primary-color: #3b82f6;
+  --footer-nav-color: #3b82f6;
   --accent-color: #b6edff;
   --nav-color: #344e8c;
   --footer: #21273a;
   --hover: #f2729d;
+}
+.ember-mode {
+  --background-color: #fff3ec;
+  --primary-color: #ff5757;
+  --accent-color: #ffd2c3;
+  --nav-color: #770202;
+  --footer: #2d2222;
+  --footer-nav-color: #fff3ec;
+  --hover: #ff5757;
+}
+.outrun-night-mode {
+  --background-color: #180a40;
+  --on-background: var(--off-white);
+  --primary-color: #ff5757;
+  --accent-color: #ff00c7;
+  --nav-color: #9cfff9;
+  --footer: #0e0525;
+  --footer-header-color: #ff9900;
+  --footer-nav-color: #9cfff9;
+  --hover: #ff007a;
+}
+.waifu-mode {
+  body {
+    background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg")
+      no-repeat top center;
+    background-size: cover;
+  }
+  --primary-color: #3b82f6;
+  --accent-color: #bfdbfe;
+  --nav-color: #1e3a8a;
+  --footer: #2a2d43;
+  --footer-nav-color: #bfdbfe;
+  --hover: #ff5757;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");
