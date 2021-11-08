@@ -140,6 +140,8 @@
   --mobile-nav-text: var(--primary-color);
   --nav-color: var(--on-background);
   --see-more-color: var(--hover);
+  /* new new */
+  --footer-header-color: var(--accent-color);
 }
 .popplio-mode {
   --background-color: #e8f2ff;
@@ -148,6 +150,8 @@
   --accent-color: #b6edff;
   --nav-color: #344e8c;
   --footer: #21273a;
+  --footer-header-color: #b6edff;
+  --footer-nav-color: #b6edff;
   --hover: #f2729d;
 }
 .ember-mode {
@@ -156,6 +160,7 @@
   --accent-color: #ffd2c3;
   --nav-color: #770202;
   --footer: #2d2222;
+  --footer-header-color: #fff3ec;
   --footer-nav-color: #fff3ec;
   --hover: #ff5757;
 }
@@ -169,6 +174,12 @@
   --footer-header-color: #ff9900;
   --footer-nav-color: #9cfff9;
   --hover: #ff007a;
+  .footer-email-input {
+    background-color: #9cfff9;
+  }
+  .footer-join-btn {
+    background-color: #ff007a;
+  }
 }
 .waifu-mode {
   body {
