@@ -165,8 +165,13 @@ export default {
   line-height: 4rem;
   color: var(--white);
 }
-.dropshadow {
+.card-component, .flex-col {
+  transition: all .3s;
+}
+.card-component:hover {
   box-shadow: var(--card-shadow);
+  transform: translateY(-.75rem);
+  z-index: 1;
 }
 
 @media only screen and (max-width: $x-small-screen) {

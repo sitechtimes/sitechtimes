@@ -35,6 +35,7 @@ export default {
   flex-direction: column;
   width: 32%;
   margin: 1rem 0;
+  transition: all .3s;
 }
 .grid-article-component > h5,
 .grid-article-component h4 {
@@ -51,8 +52,15 @@ export default {
   width: 100%;
   border-radius: 1rem;
   height: 25rem;
-
+  transition: all .3s;
   object-fit: cover;
+}
+.grid-article-component:hover {
+  transform: translateY(-.5rem);
+  z-index: 1;
+}
+.grid-article-component:hover .grid-article-image {
+  box-shadow: var(--card-shadow);
 }
 .grid-article-cat {
   // margin: 0.2rem 0.5rem;

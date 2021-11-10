@@ -101,12 +101,17 @@ export default {
 .duo-card-component {
   cursor: pointer;
   border-radius: 1rem;
-  box-shadow: var(--card-shadow);
   //   position: relative;
   //   display: flex;
   //   flex-direction: column;
   //   justify-content: flex-end;
   //   width: 60rem;
+  transition: all .3s;
+}
+.duo-card-component:hover {
+  box-shadow: var(--card-shadow);
+  transform: translateY(-.75rem);
+  z-index: 1;
 }
 .duo-card-component-image {
   background-repeat: no-repeat;

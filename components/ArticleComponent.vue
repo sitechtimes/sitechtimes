@@ -1,5 +1,5 @@
 <template>
-  <div id="article-component">
+  <article id="article-component">
     <category-icon :category="category" />
     <h2 class="main-article-title">{{ title }}</h2>
     <!-- <p class="main-article-description">{{ description }}</p> -->
@@ -23,7 +23,7 @@
     >
       <!-- <p class="main-article-text">{{ articleText }}</p> -->
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
