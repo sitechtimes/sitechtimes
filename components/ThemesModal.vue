@@ -18,7 +18,8 @@
             <themes-modal-theme color="popplio" />
             <themes-modal-theme color="ember" />
             <themes-modal-theme color="outrun-night" />
-            <!-- <themes-modal-theme color="waifu" /> -->
+            <themes-modal-theme color="cucumber" />
+            <themes-modal-theme class="waifu-color-theme-button" color="waifu" /> 
           </ul>
           <button class="close-modal-button" @click="$emit('closeModal')">
             Close
@@ -132,5 +133,19 @@ export default {
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
   transform: scale(1.1);
+}
+
+.waifu-color-theme-button {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: transparent;
+  color: transparent;
+  font-size: 0;
+  --hover: transparent;
+}
+
+.waifu-color-theme-button:hover {
+  cursor: unset;
 }
 </style>
