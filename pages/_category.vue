@@ -156,7 +156,7 @@ export default {
       moreToLoad: true
     };
   },
-  async beforeMount() {
+  async fetch() {
     try {
       const articles = await this.$axios.get(
         `/articles?category=${this.category}&sort=dateDes`

@@ -93,6 +93,7 @@
 import CardComponent from "../components/CardComponent";
 import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
+
 export default {
   components: {
     DuoArticleContainer,
@@ -105,7 +106,7 @@ export default {
       isMobile: false
     };
   },
-  async beforeMount() {
+  async fetch() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
   },
