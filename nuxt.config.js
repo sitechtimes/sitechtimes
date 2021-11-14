@@ -59,7 +59,7 @@ export default {
   hooks: {
     generate: {
       page(page) {
-        page.path = page.path.replace(/html^/, '...')
+        page.path = page.path.replace(/html^/, '')
       }
     }
   }
