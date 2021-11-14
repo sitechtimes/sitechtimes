@@ -54,5 +54,13 @@ export default {
 
   generate: {
     fallback: true
+  },
+
+  hooks: {
+    generate: {
+      page(page) {
+        page.path = page.path.replace(/html^/, '...')
+      }
+    }
   }
 };
