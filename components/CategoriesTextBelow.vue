@@ -45,8 +45,7 @@ export default {
   margin-top: 1rem;
 }
 .article-image {
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
   border-radius: 1.5rem;
 }
 .category-cat {
@@ -68,7 +67,12 @@ export default {
 @import "../assets/variables";
 @media only screen and (max-width: $mid-screen) {
   .article-image {
-    width: 90%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: $small-screen){
+  .article-image{
+    width: 100%;
   }
 }
 @media only screen and (max-width: $x-small-screen) {
