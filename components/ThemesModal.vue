@@ -19,6 +19,7 @@
             <themes-modal-theme color="ember" />
             <themes-modal-theme color="outrun-night" />
             <themes-modal-theme color="cucumber" />
+            <themes-modal-theme color="meditate" />
             <themes-modal-theme class="waifu-color-theme-button" color="waifu" /> 
           </ul>
           <button class="close-modal-button" @click="$emit('closeModal')">

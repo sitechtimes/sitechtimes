@@ -190,6 +190,19 @@
   --footer-nav-color: #ddf8b0;
   --hover: #0a9a57;
 }
+.meditate-mode {
+  --accent-color: #c4b5fd;
+  --background-color: #f5f3ff;
+  --nav-color: #4c1d95;
+  --footer: #241a33;
+  --footer-header-color: var(--background-color);
+  --footer-nav-color: var(--background-color);
+  --primary-color: #8b5cf6;
+  --hover: var(--accent-color);
+  .footer-email-input {
+    background-color: var(--background-color);
+  }
+}
 .waifu-mode {
   body {
     background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg")
