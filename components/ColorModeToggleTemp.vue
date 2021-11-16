@@ -10,7 +10,7 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
+        class="h-6 w-6 sun-svg "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -53,7 +53,7 @@
       id="color-toggle-dropdown-button"
       @mouseover="dropdownTrue"
       @click="toggleDropdown"
-    ><span>▾</span></button>
+    ><span class="down-arrow-color-dropdown">▾</span></button>
 
    <Theme
       id="color-theme-dropdown"
@@ -268,6 +268,9 @@ export default {
   background-color: var(--background-color);
   transition: 0.3s ease-out;
 }
+.color-toggle-button > .sun-svg {
+  color: var(--on-secondary);
+}
 .color-toggle-button:hover > .moon-svg {
   color: var(--off-white);
 }
@@ -297,6 +300,9 @@ export default {
   padding: 0.3rem;
   transform: rotate(45deg);
   outline: none;
+}
+.down-arrow-color-dropdown {
+  color: var(--on-secondary);
 }
 
 /* MAYBE ADD HOVER EFFECT? */
