@@ -50,11 +50,11 @@ export default {
   }
 }
 
-@media only screen and (min-width: $mid-screen) {
-#article-category:hover {
-    transform: translateY(-0.4rem);
-}
-}
+// @media only screen and (min-width: $mid-screen) {
+// #article-category:hover {
+//     transform: translateY(-0.4rem);
+// }
+// }
 </style>
 
 <!--<docs>-->

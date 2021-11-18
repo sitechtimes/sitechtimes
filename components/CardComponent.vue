@@ -162,7 +162,8 @@ export default {
 .card-component-title {
   font-weight: bold;
   font-size: var(--customFontSize);
-  line-height: 4rem;
+  line-height: 1.25;
+  padding-top: .5rem;
   color: var(--white);
 }
 .card-component, .flex-col {
