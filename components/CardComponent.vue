@@ -15,9 +15,9 @@
       <div class="flex-row card-component-category-author-date">
         <!-- <category-icon :category="category" class="card-component-category" /> -->
       </div>
-      <div class="text-overflow card-component-title" :style="getClampSize">
+      <h3 class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
-      </div>
+      </h3>
     </div>
   </nuxt-link>
 </template>

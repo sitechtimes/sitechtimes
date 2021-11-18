@@ -66,7 +66,6 @@
             v-for="article in homepages.slice(10, 20)"
             :articleUrl="'/articles/' + article.slug"
             :author="article.user.name"
-            :published="article.createdAt"
             :category="article.category"
             :imageAlt="article.imageAlt"
             :title="article.title"
