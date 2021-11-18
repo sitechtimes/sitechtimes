@@ -51,11 +51,13 @@
           />
         </section>
         <section>
-          <DuoArticleContainer class="not-on-ipad"
+          <DuoArticleContainer
+            class="not-on-ipad"
             v-if="homepages[7]"
             :articles="homepages.slice(7, 9)"
           />
         </section>
+        -->
         <section
           class="grid-article-container six-grid-container"
           v-if="homepages[0]"
@@ -72,6 +74,7 @@
             :key="article.id"
           />
         </section>
+        -->
       </div>
       <div class="mobile-view">
         <h2 class="section-title section-title-mobile">Trending Articles</h2>
@@ -98,19 +101,19 @@ export default {
   components: {
     DuoArticleContainer,
     CardComponent,
-    GridArticleComponent
+    GridArticleComponent,
   },
   data() {
     return {
       homepages: [],
-      isMobile: false
+      isMobile: false,
     };
   },
   async fetch() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
   },
-  head: function() {
+  head: function () {
     return {
       meta: [
         { name: "title", content: "The SITECH Times Official Website" },
@@ -123,10 +126,10 @@ export default {
         { name: "twitter:card", content: "summary" },
         { name: "twitter:title", content: "The SITECH Times Official Website" },
         { name: "twitter:image", content: "/logo_thicker.svg" },
-        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" }
-      ]
+        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -186,7 +189,7 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-@media only screen and (max-width: $mid-screen){
+@media only screen and (max-width: $mid-screen) {
   // .not-on-ipad{
   //   display: none;
   // }
@@ -216,7 +219,7 @@ export default {
     display: inherit;
   }
   .section-title-mobile {
-   margin-bottom: -5rem;
+    margin-bottom: -5rem;
   }
 }
 </style>
