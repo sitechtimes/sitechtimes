@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--  <Datebar /> -->
+      <Datebar />
 
     <Navbar />
     <MobileNav />

@@ -57,9 +57,9 @@ export default {
 <style lang="scss">
 @import "../assets/variables";
 
-#article-component > * {
-  color: var(--on-background);
-}
+//#article-component > * {
+//  //color: var(--on-background);
+//}
 
 #article-component {
     padding-top: 0.4rem;
