@@ -21,7 +21,7 @@ export default {
 
   },
 
-  async beforeCreate() {
+  async fetch() {
     try {
       const article = await this.$axios.get(`/articles/${this.$route.params.slug}`);
       this.article = article.data;

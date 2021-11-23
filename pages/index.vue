@@ -51,11 +51,13 @@
           />
         </section>
         <section>
-          <DuoArticleContainer class="not-on-ipad"
+          <DuoArticleContainer
+            class="not-on-ipad"
             v-if="homepages[7]"
             :articles="homepages.slice(7, 9)"
           />
         </section>
+        -->
         <section
           class="grid-article-container six-grid-container"
           v-if="homepages[0]"
@@ -64,7 +66,6 @@
             v-for="article in homepages.slice(10, 20)"
             :articleUrl="'/articles/' + article.slug"
             :author="article.user.name"
-            :published="article.createdAt"
             :category="article.category"
             :imageAlt="article.imageAlt"
             :title="article.title"
@@ -72,6 +73,7 @@
             :key="article.id"
           />
         </section>
+        -->
       </div>
       <div class="mobile-view">
         <h2 class="section-title section-title-mobile">Trending Articles</h2>
@@ -93,23 +95,24 @@
 import CardComponent from "../components/CardComponent";
 import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
+
 export default {
   components: {
     DuoArticleContainer,
     CardComponent,
-    GridArticleComponent
+    GridArticleComponent,
   },
   data() {
     return {
       homepages: [],
-      isMobile: false
+      isMobile: false,
     };
   },
-  async beforeMount() {
+  async fetch() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
   },
-  head: function() {
+  head: function () {
     return {
       meta: [
         { name: "title", content: "The SITECH Times Official Website" },
@@ -122,10 +125,10 @@ export default {
         { name: "twitter:card", content: "summary" },
         { name: "twitter:title", content: "The SITECH Times Official Website" },
         { name: "twitter:image", content: "/logo_thicker.svg" },
-        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" }
-      ]
+        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -185,7 +188,7 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-@media only screen and (max-width: $mid-screen){
+@media only screen and (max-width: $mid-screen) {
   // .not-on-ipad{
   //   display: none;
   // }
@@ -215,7 +218,7 @@ export default {
     display: inherit;
   }
   .section-title-mobile {
-   margin-bottom: -5rem;
+    margin-bottom: -5rem;
   }
 }
 </style>
