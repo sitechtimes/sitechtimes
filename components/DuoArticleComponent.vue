@@ -6,10 +6,10 @@
     >
       <div class="duo-flex-col duo-card-component-text-container">
         <div class="duo-flex-row duo-card-component-category-author-date">
-          <category-icon
+          <!-- <category-icon
             :category="category"
             class="duo-card-component-category"
-          />
+          /> -->
         </div>
         <div
           class="duo-text-overflow duo-card-component-title"
@@ -28,70 +28,70 @@ export default {
   props: {
     author: String,
     articleUrl: String,
-    published: Date,
+    published: String,
     category: String,
     imageUrl: String,
     imageAlt: String,
     title: String,
     size: {
       default: "medium",
-      type: String
+      type: String,
     },
     clampSize: {
       default: "mediumClamp",
-      type: String
-    }
+      type: String,
+    },
   },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize
+        "--customFontSize": fontSize,
       });
       const small = createFontSize({
         //create size here
-        fontSize: "2.827rem"
+        fontSize: "2.827rem",
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "3.998rem"
+        fontSize: "3.998rem",
       });
       const large = createFontSize({
-        fontSize: "5.653rem"
+        fontSize: "5.653rem",
       });
       const fontSizes = {
         //list of sizes just names
         small,
         medium, //default
-        large
+        large,
       };
       return fontSizes[this.size];
     },
 
     getClampSize() {
       const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize
+        "--customClampSize": clampSize,
       });
       const smallClamp = createClampSize({
         //create size here
-        clampSize: "2"
+        clampSize: "2",
       });
       const mediumClamp = createClampSize({
         //create size here
-        clampSize: "4"
+        clampSize: "4",
       });
       const largeClamp = createClampSize({
-        clampSize: "5"
+        clampSize: "5",
       });
       const clampSizes = {
         //list of sizes just names
         smallClamp,
         mediumClamp, //default
-        largeClamp
+        largeClamp,
       };
       return clampSizes[this.clampSize];
-    }
-  }
+    },
+  },
 };
 </script>
 

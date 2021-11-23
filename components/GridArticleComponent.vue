@@ -6,7 +6,7 @@
       class="grid-article-image dropshadow"
     />
     <h5 class="grid-article-info">
-      <category-icon :category="category" class="grid-article-cat" />
+      <!-- <category-icon :category="category" class="grid-article-cat" /> -->
     </h5>
     <h4 class="grid-article-title">{{ title }}</h4>
   </nuxt-link>
@@ -22,8 +22,8 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 
@@ -74,7 +74,7 @@ export default {
     flex-direction: column;
     width: 47%;
   }
-  .trio-grid-container .grid-article-component:first-child{
+  .trio-grid-container .grid-article-component:first-child {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -87,38 +87,38 @@ export default {
   }
 }
 
-  @media only screen and (max-width: $mid-screen) {
-    .trio-grid-container .grid-article-component:first-child {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .grid-article-image {
-      width: 100%;
-      border-radius: 1.5rem;
-      height: 40rem;
-      object-fit: cover;
-    }
+@media only screen and (max-width: $mid-screen) {
+  .trio-grid-container .grid-article-component:first-child {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
-  @media only screen and (max-width: $small-screen) {
-    .grid-article-component {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin: 5rem 0;
-    }
-    .grid-article-image {
-      width: 100%;
-      border-radius: 1.5rem;
-      height: 30rem;
-      object-fit: cover;
-    }
-    .grid-article-title {
-      font-size: var(--h3);
-    }
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 40rem;
+    object-fit: cover;
   }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .grid-article-component {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5rem 0;
+  }
+  .grid-article-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    height: 30rem;
+    object-fit: cover;
+  }
+  .grid-article-title {
+    font-size: var(--h3);
+  }
+}
 </style>
 
 <!--<docs>-->
