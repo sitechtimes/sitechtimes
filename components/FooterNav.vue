@@ -41,6 +41,7 @@ export default {
 }
 .footer-nav-header {
   font-size: var(--h3);
+  color: var(--footer-header-color);
 }
 .footer-nav-link {
   text-decoration: none;
@@ -56,7 +57,7 @@ export default {
   border-bottom: 0.3rem solid var(--primary-color);
 }
 .footer-nav-ul li {
-  color: var(--primary-color);
+  color: var(--footer-nav-color);
   font-size: var(--h4);
   list-style-type: none;
   text-transform: capitalize;

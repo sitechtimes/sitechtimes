@@ -10,7 +10,7 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
+        class="h-6 w-6 sun-svg "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -48,22 +48,21 @@
       </svg>
     </button>
 
-    <!-- <button
-      class="color-toggle-dropdown-button"
+     <button
+      class="color-toggle-dropdown-button color-toggle-button"
       id="color-toggle-dropdown-button"
       @mouseover="dropdownTrue"
       @click="toggleDropdown"
-    >
-      <i class="down-arrow"></i>
-    </button>
+    ><span class="down-arrow-color-dropdown">▾</span></button>
 
-    <Theme
+   <Theme
       id="color-theme-dropdown"
       v-if="dropdown"
       @mouseover.native="dropdownTrue"
       @mouseleave.native="dropdownFalse"
       @showModalButtonClicked="showModal = true"
-    />
+    /> 
+
     <themes-modal
       class="modal-test"
       v-if="showModal"
@@ -71,7 +70,7 @@
     >
       you can use custom content here to overwrite default content
       <h3 slot="header">custom header</h3>
-    </themes-modal> -->
+    </themes-modal>
 
     <!-- 
     <button id="show-modal" @click="showModal = true">Show Modal</button> -->
@@ -157,7 +156,8 @@ export default {
       this.sun = false;
       this.moon = true;
     } else {
-      alert("Current color mode is neither light or dark");
+      this.sun = true;
+      this.moon = false;
     }
   },
   methods: {
@@ -181,7 +181,9 @@ export default {
         this.sun = true;
         this.moon = false;
       } else {
-        alert("Current color mode is neither light or dark");
+        this.sun = true;
+        this.colorMode = 'light';
+        this.moon = false;
       }
     },
     toggleDropdown: function() {
@@ -249,7 +251,7 @@ export default {
 
 .color-toggle-button {
   border: 0.2rem solid var(--on-primary);
-  border-radius: 0.5rem /* 0 0 0.8rem */;
+  border-radius: 0.5rem 0 0 0.5rem;
   //padding: 14px;
   cursor: pointer;
   background-color: transparent;
@@ -266,22 +268,30 @@ export default {
   background-color: var(--background-color);
   transition: 0.3s ease-out;
 }
+.color-toggle-button > .sun-svg {
+  color: var(--on-secondary);
+}
 .color-toggle-button:hover > .moon-svg {
   color: var(--off-white);
 }
 
 .color-toggle-dropdown-button {
-  background-color: var(--background-color);
-  border: 0.1rem solid var(--on-background);
-  margin-left: -0.1rem;
-  border-radius: 0 0.8rem 0.8rem 0;
-  padding: 0.8rem 0.6rem 1rem 0.6rem;
+  //background-color: var(--background-color);
+  //border: 0.1rem solid var(--on-background);
+  //margin-left: -0.1rem;
+  //border-radius: 0 0.8rem 0.8rem 0;
+  //padding: 0.8rem 0.6rem 1rem 0.6rem;
 
+  font-size: 3rem;
   height: var(--color-toggle-switch-height);
+  width: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-left: -0.2rem;
+  border-radius: 0 0.5rem 0.5rem 0;
 
-  outline: none;
+  //outline: none;
 }
 .down-arrow {
   border: solid var(--on-background);
@@ -290,6 +300,9 @@ export default {
   padding: 0.3rem;
   transform: rotate(45deg);
   outline: none;
+}
+.down-arrow-color-dropdown {
+  color: var(--on-secondary);
 }
 
 /* MAYBE ADD HOVER EFFECT? */
