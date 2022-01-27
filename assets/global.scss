@@ -102,6 +102,7 @@
   --on-secondary-light: var(--mid-grey);
   --hover: var(--lightGray);
   --calendar-band: var(--off-white);
+  //Generic
   --news: var(--dark-blue);
   --politics: var(--pink);
   --entertainment: var(--red);
@@ -116,6 +117,12 @@
   --mobile-nav-text: var(--white);
   --nav-color: var(--on-background);
   --see-more-color: var(--accent-color);
+
+  --nav-color: #000000;
+  --footer: #374151;
+  --footer-header-color: #eddcb0;
+  --footer-nav-color: #c7a74d;
+  --hover: var(--dark-gold);
 }
 .dark-mode {
   --grey: #272b32;
@@ -142,6 +149,83 @@
   --mobile-nav-text: var(--primary-color);
   --nav-color: var(--on-background);
   --see-more-color: var(--hover);
+  /* new new */
+  --footer-header-color: var(--accent-color);
+}
+.popplio-mode {
+  --background-color: #e8f2ff;
+  --primary-color: #3b82f6;
+  --footer-nav-color: #3b82f6;
+  --accent-color: #b6edff;
+  --nav-color: #344e8c;
+  --footer: #21273a;
+  --footer-header-color: #b6edff;
+  --footer-nav-color: #b6edff;
+  --hover: #f2729d;
+}
+.ember-mode {
+  --background-color: #fff3ec;
+  --primary-color: #ff5757;
+  --accent-color: #ffd2c3;
+  --nav-color: #770202;
+  --footer: #2d2222;
+  --footer-header-color: #fff3ec;
+  --footer-nav-color: #fff3ec;
+  --hover: #ff5757;
+}
+.outrun-night-mode {
+  --background-color: #180a40;
+  --on-background: var(--off-white);
+  --primary-color: #ff00c7;
+  --on-primary: var(--off-white);
+  --on-secondary: var(--off-white);
+  --accent-color: #ff00c7;
+  --nav-color: #9cfff9;
+  --footer: #0e0525;
+  --footer-header-color: #ff9900;
+  --footer-nav-color: #9cfff9;
+  --hover: #ff007a;
+  .footer-email-input {
+    background-color: #9cfff9;
+  }
+  .footer-join-btn {
+    background-color: #ff007a;
+  }
+  --card-shadow: 3px 2px 25px 2px #00d1ff47;
+}
+.cucumber-mode {
+  --background-color: #fbfff1;
+  --primary-color: #0a9a57;
+  --accent-color: #ddf8b0;
+  --footer-header-color: #ddf8b0;
+  --footer-nav-color: #ddf8b0;
+  --hover: #0a9a57;
+}
+.meditate-mode {
+  --accent-color: #c4b5fd;
+  --background-color: #f5f3ff;
+  --nav-color: #4c1d95;
+  --footer: #241a33;
+  --footer-header-color: var(--background-color);
+  --footer-nav-color: var(--background-color);
+  --primary-color: #8b5cf6;
+  --hover: var(--accent-color);
+  .footer-email-input {
+    background-color: var(--background-color);
+  }
+}
+.waifu-mode {
+  body {
+    background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg")
+      no-repeat top center;
+    background-size: cover;
+  }
+  --primary-color: #3b82f6;
+  --accent-color: #bfdbfe;
+  --nav-color: #1e3a8a;
+  --footer: #2a2d43;
+  --footer-nav-color: #bfdbfe;
+  --hover: #ff5757;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");

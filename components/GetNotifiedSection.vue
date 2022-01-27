@@ -49,7 +49,7 @@ export default {
     .footer-sub-header {
         font-size: var(--h2);
         text-align: center;
-        color: var(--accent-color);
+        color: var(--footer-header-color);
         font-weight: 700;
     }
     .footer-sub-header {
@@ -105,7 +105,7 @@ export default {
         cursor: pointer;
     }
     .footer-join-btn:hover {
-        background-color: var(--gold-hover);
+        background-color: var(--hover);
     }
     // .footer-form-alert {
     //     opacity: 0;

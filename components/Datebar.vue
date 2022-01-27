@@ -86,9 +86,10 @@ export default {
   align-items: center;
   font-size: 2.5rem;
   line-height: auto;
+  color: var(--on-secondary);
 }
 .datebar-btns {
-  width: 7.8rem;
+  width: 8.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +99,8 @@ export default {
 
   width: 1.5rem;
   height: 2rem;
+
+  fill: var(--on-secondary);
 }
 
 @media only screen and (max-width: $large-screen) {

@@ -1,15 +1,11 @@
 <template>
-  <nuxt-link :to="'../' + category">
-    <button
-      :style="backgroundColor"
-      class="article-details-category"
-      id="article-category"
-      @mouseover="categoryHover"
-      @mouseleave="noHover"
-    >
-      {{ category }}
-    </button>
-  </nuxt-link>
+  <h5
+    :style="backgroundColor"
+    class="article-details-category"
+    id="article-category"
+  >
+    {{ category }}
+  </h5>
 </template>
 
 <script>
@@ -22,7 +18,7 @@ export default {
     return {};
   },
   computed: {
-    backgroundColor: function() {
+    backgroundColor: function () {
       return "background-color: var(--" + this.category + ")";
     },
   },
@@ -43,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@import "../assets/variables";
 #article-category {
   text-transform: uppercase;
   width: max-content;
@@ -52,16 +48,15 @@ export default {
   border: none;
   border-radius: 0.8rem;
   margin: 0.3rem 0 0.3rem 0;
-  padding: 0.6rem .9rem 0.3rem .9rem;
-  transition: all .2s;
-  cursor: pointer;
+  padding: 0.6rem 0.9rem 0.3rem 0.9rem;
+  transition: all 0.2s;
 }
 
-// @media only screen and (min-width: $mid-screen) {
-// #article-category:hover {
-//     // transform: translateY(-0.2rem);
-// }
-// }
+@media only screen and (min-width: $mid-screen) {
+  #article-category:hover {
+    transform: translateY(-0.4rem);
+  }
+}
 </style>
 
 <!--<docs>-->
