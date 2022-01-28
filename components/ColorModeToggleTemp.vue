@@ -67,11 +67,9 @@
 </template>
 
 <script>
-import Theme from "./Theme.vue";
 
 export default {
   name: "ColorModeToggleTemp",
-  components: { Theme },
   data() {
     return {
       colorMode: "",
