@@ -45,7 +45,9 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 3;
+
   border: 1px solid black;
+
   position: absolute;
   top: 3.3rem;
 }
@@ -65,7 +67,9 @@ export default {
   //margin: 1rem auto;
   padding: 1rem 2rem;
   transition: all 0.3s;
+
   text-align: center;
+
   z-index: 3;
   //border: 1px solid white;
 }
@@ -76,5 +80,4 @@ export default {
   cursor: pointer;
   background-color: var(--hover);
 }
-
 </style>
