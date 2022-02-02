@@ -236,7 +236,7 @@ export default {
 
 .color-toggle-dropdown-button svg {
   width: 2rem;
-  fill: #777777;
+  fill: var(--on-secondary);
 }
 // .down-arrow {
 //   border: solid var(--on-background);
