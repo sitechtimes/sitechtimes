@@ -37,6 +37,10 @@ export default {
   components: { ThemesModalTheme },
   name: "ThemesModal"
 };
+document.querySelector("theme-choice color-name").addEventListener('click', function() {
+    document.querySelector("modal-container").style.display = 'block';
+    document.querySelector("body").style.overflow = 'hidden';
+});
 </script>
 
 <style lang="scss">
@@ -50,6 +54,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: opacity 0.3s ease;
+
 }
 
 .modal-wrapper {
@@ -59,8 +64,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 4rem 0;
+  
 }
 
 .modal-container {
@@ -68,15 +73,15 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   border-radius: 0.5rem;
-
   padding: 4rem;
-
   max-height: 90vh;
   overflow-y: auto;
+  
 }
 .modal-container > h2,
 .modal-container > ul {
   color: var(--on-background);
+  
 }
 
 .color-themes-list {
@@ -98,6 +103,7 @@ export default {
   border-radius: 1rem;
 
   float: right;
+  
 }
 .close-modal-button:hover {
   background-color: var(--accent-color);
@@ -125,6 +131,7 @@ export default {
 
 .modal-enter {
   opacity: 0;
+  
 }
 
 .modal-leave-active {
