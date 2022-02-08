@@ -51,7 +51,8 @@
           />
         </section>
         <section>
-          <DuoArticleContainer class="not-on-ipad"
+          <DuoArticleContainer
+            class="not-on-ipad"
             v-if="homepages[7]"
             :articles="homepages.slice(7, 9)"
           />
@@ -108,6 +109,7 @@ export default {
   async beforeMount() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+    console.log(homepages.data);
   },
   head: function() {
     return {
@@ -185,7 +187,7 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-@media only screen and (max-width: $mid-screen){
+@media only screen and (max-width: $mid-screen) {
   // .not-on-ipad{
   //   display: none;
   // }
@@ -215,7 +217,7 @@ export default {
     display: inherit;
   }
   .section-title-mobile {
-   margin-bottom: -5rem;
+    margin-bottom: -5rem;
   }
 }
 </style>
