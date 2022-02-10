@@ -27,6 +27,7 @@ export default {
       this.article = article.data;
       const categoryHome = await this.$axios.get(`/articles/homepage?category=${this.article.category}`);
       this.categoryHome = categoryHome.data;
+      console.log(this.categoryHome);
       const categoryRecent = await this.$axios.get(`/articles?category=${this.article.category}&q=3`);
       this.categoryRecent = categoryRecent.data;
     } catch (e) {

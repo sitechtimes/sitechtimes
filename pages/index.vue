@@ -10,7 +10,7 @@
             v-if="homepages[0]"
             :articleUrl="'/articles/' + homepages[0].slug"
             :category="homepages[0].category"
-            :imageTitle="homepages[0].imageAlt"
+            :imageAlt="homepages[0].imageAlt"
             :title="homepages[0].title"
             :imageUrl="homepages[0].imageUrl"
           />
@@ -18,7 +18,7 @@
             v-if="homepages[1]"
             :articleUrl="'/articles/' + homepages[1].slug"
             :category="homepages[1].category"
-            :imageTitle="homepages[1].imageAlt"
+            :imageAlt="homepages[1].imageAlt"
             :title="homepages[1].title"
             :imageUrl="homepages[1].imageUrl"
             class="trending-sub"
@@ -28,7 +28,7 @@
             v-if="homepages[2]"
             :articleUrl="'/articles/' + homepages[2].slug"
             :category="homepages[2].category"
-            :imageTitle="homepages[2].imageAlt"
+            :imageAlt="homepages[2].imageAlt"
             :title="homepages[2].title"
             :imageUrl="homepages[2].imageUrl"
             class="trending-detail"
@@ -63,7 +63,7 @@
           v-if="homepages[0]"
         >
           <GridArticleComponent
-            v-for="article in homepages.slice(10, 20)"
+            v-for="article in homepages.slice(9, 19)"
             :articleUrl="'/articles/' + article.slug"
             :author="article.user.name"
             :category="article.category"
@@ -111,6 +111,8 @@ export default {
   async fetch() {
     const homepages = await this.$axios.get("/articles/homepage");
     this.homepages = homepages.data;
+    console.log(this.homepages[7]);
+    console.log(this.homepages[7].imageAlt);
   },
   head: function () {
     return {
