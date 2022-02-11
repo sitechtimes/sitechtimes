@@ -66,6 +66,8 @@
     <themes-modal
       class="modal-test"
       v-if="showModal"
+       @mouseover.native="showModalTrue"
+      @mouseleave.native="showModalFalse"
       @closeModal="showModal = false"
     >
       you can use custom content here to overwrite default content
@@ -188,13 +190,22 @@ export default {
     },
     toggleDropdown: function() {
       this.dropdown = !this.dropdown;
+  
     },
     dropdownTrue() {
       this.dropdown = true;
     },
     dropdownFalse() {
       this.dropdown = false;
-    }
+    },
+    showModalTrue(){
+      this.showModal = true;
+      document.body.classList.add("modal-open");
+    },
+    showModalFalse(){
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
+    },
 
     /*     closeDropdown: function() {
       document.addEventListener("click", event => {
@@ -303,6 +314,11 @@ export default {
 }
 .down-arrow-color-dropdown {
   color: var(--on-secondary);
+}
+
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
 }
 
 /* MAYBE ADD HOVER EFFECT? */
