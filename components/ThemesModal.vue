@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -68,11 +69,10 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   border-radius: 0.5rem;
-
   padding: 4rem;
-
   max-height: 90vh;
   overflow-y: auto;
+ 
 }
 .modal-container > h2,
 .modal-container > ul {

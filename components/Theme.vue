@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .theme-switcher {
   //width: 30rem;
 
@@ -45,12 +46,13 @@ export default {
   align-items: center;
   justify-content: center;
   z-index: 3;
-
   border: 1px solid black;
-
   position: absolute;
   top: 3.3rem;
+ 
+ 
 }
+
 .theme-switcher > * {
   width: 100%;
 }
@@ -80,4 +82,5 @@ export default {
   cursor: pointer;
   background-color: var(--hover);
 }
+
 </style>
