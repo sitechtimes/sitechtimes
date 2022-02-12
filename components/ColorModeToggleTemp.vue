@@ -60,15 +60,13 @@
       v-if="dropdown"
       @mouseover.native="dropdownTrue"
       @mouseleave.native="dropdownFalse"
-      @showModalButtonClicked="showModal = true"
+      @showModalButtonClicked="showModalTrue"
     /> 
 
     <themes-modal
       class="modal-test"
       v-if="showModal"
-       @mouseover.native="showModalTrue"
-      @mouseleave.native="showModalFalse"
-      @closeModal="showModal = false"
+      @closeModal="showModalFalse"
     >
       you can use custom content here to overwrite default content
       <h3 slot="header">custom header</h3>
@@ -202,10 +200,11 @@ export default {
       this.showModal = true;
       document.body.classList.add("modal-open");
     },
-    showModalFalse(){
+     showModalFalse(){
       this.showModal = false;
       document.body.classList.remove("modal-open");
-    },
+     }
+     
 
     /*     closeDropdown: function() {
       document.addEventListener("click", event => {
