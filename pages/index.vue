@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center h-screen bg-gray-100">
-    <div class="global-container">
+    <div class="global-container" >
       <div class="desktop-view">
         <h2 class="section-title">Trending Articles</h2>
         <section class="trending-section">
@@ -176,7 +176,9 @@ export default {
 
 .global-container > h3 {
   color: var(--on-background);
+  
 }
+
 /* .darksection {
   background-color: var(--grey);
   color: white;
