@@ -57,7 +57,7 @@
             :articles="homepages.slice(7, 9)"
           />
         </section>
-        -->
+        
         <section
           class="grid-article-container six-grid-container"
           v-if="homepages[0]"
@@ -73,7 +73,7 @@
             :key="article.id"
           />
         </section>
-        -->
+        
       </div>
       <div class="mobile-view">
         <h2 class="section-title section-title-mobile">Trending Articles</h2>
