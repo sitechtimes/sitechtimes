@@ -62,6 +62,9 @@
       @mouseleave.native="dropdownFalse"
       @showModalButtonClicked="showModalTrue"
     /> 
+      @click="showModal = true"
+    ><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="palette" class="svg-inline--fa fa-palette fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path></svg>
+    </button>
 
     <themes-modal
       class="modal-test"
@@ -71,69 +74,19 @@
       you can use custom content here to overwrite default content
       <h3 slot="header">custom header</h3>
     </themes-modal>
-
-    <!-- 
-    <button id="show-modal" @click="showModal = true">Show Modal</button> -->
-    <!-- use the modal component, pass in the prop -->
-    <!--     <themes-modal
-      class="modal-test"
-      v-if="showModal"
-      @close="showModal = false"
-    > -->
-    <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-    <!--       <h3 slot="header">custom header</h3>
-    </themes-modal> -->
-
-    <!--     <Theme
-      id="color-theme-dropdown"
-      v-if="dropdown"
-      tabindex="0"
-      @mouseover="handleFocus"
-      @mouseleave="handleFocusOut"
-    /> -->
-
-    <!-- <label class="switch">
-      <input
-        type="checkbox"
-        v-model="colorMode"
-        true-value="light"
-        false-value="dark"
-        @click="$colorMode.preference = colorMode"
-      />
-      <span class="slider round"></span>
-    </label> -->
-
-    <!--     <p class="test">$colorMode.preference: {{ $colorMode.preference }}</p>
-    <p
-      class="test"
-      style="right: 25rem"
-      v-if="$colorMode.preference === 'system'"
-    >
-      (<i>{{ $colorMode.value }}</i> mode detected)
-    </p> -->
-    <!-- <Theme v-if="openTheme" /> -->
-    <!-- <p class="test">Colormode: {{ colorMode }}</p> -->
   </div>
 </template>
 
 <script>
-import Theme from "./Theme.vue";
 
 export default {
   name: "ColorModeToggleTemp",
-  components: { Theme },
-  //colorMode: "system",
   data() {
     return {
       colorMode: "",
-      dropdown: false,
       showModal: false,
       sun: false,
       moon: false
-      /*       showModal: false */
     };
   },
   /*   created() {
@@ -245,13 +198,13 @@ export default {
   --color-toggle-switch-height: 3rem;
 }
 
-.test {
-  font-size: 1.6rem;
-  padding-left: 1rem;
-  color: var(--on-background);
-  position: absolute;
-  top: 4rem;
-}
+// .test {
+//   font-size: 1.6rem;
+//   padding-left: 1rem;
+//   color: var(--on-background);
+//   position: absolute;
+//   top: 4rem;
+// }
 
 .color-toggle-switch {
   display: inline-flex;
@@ -291,27 +244,14 @@ export default {
   //margin-left: -0.1rem;
   //border-radius: 0 0.8rem 0.8rem 0;
   //padding: 0.8rem 0.6rem 1rem 0.6rem;
-
-  font-size: 3rem;
   height: var(--color-toggle-switch-height);
-  width: 1.5rem;
+  width: var(--color-toggle-switch-height);
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: -0.2rem;
   border-radius: 0 0.5rem 0.5rem 0;
-
-  //outline: none;
-}
-.down-arrow {
-  border: solid var(--on-background);
-  border-width: 0 0.3rem 0.3rem 0;
-  display: inline-block;
-  padding: 0.3rem;
-  transform: rotate(45deg);
-  outline: none;
-}
-.down-arrow-color-dropdown {
   color: var(--on-secondary);
 }
 
@@ -319,6 +259,21 @@ body.modal-open {
   overflow: hidden;
   height: 100vh;
 }
+.color-toggle-dropdown-button svg {
+  width: 2rem;
+  fill: var(--on-secondary);
+}
+// .down-arrow {
+//   border: solid var(--on-background);
+//   border-width: 0 0.3rem 0.3rem 0;
+//   display: inline-block;
+//   padding: 0.3rem;
+//   transform: rotate(45deg);
+//   outline: none;
+// }
+// .down-arrow-color-dropdown {
+//   color: var(--on-secondary);
+// }
 
 /* MAYBE ADD HOVER EFFECT? */
 
