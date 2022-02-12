@@ -1,55 +1,7 @@
 <template>
-  <div class="color-toggle-switch" @mouseleave="dropdownFalse">
+  <div class="color-toggle-switch">
     <button
       class="color-toggle-button"
-      @click="
-        changeColorMode();
-        $colorMode.preference = colorMode;
-      "
-      v-if="sun == true"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 sun-svg "
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-        />
-      </svg>
-    </button>
-
-    <button
-      class="color-toggle-button"
-      @click="
-        changeColorMode();
-        $colorMode.preference = colorMode;
-      "
-      v-if="moon == true"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 moon-svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-        />
-      </svg>
-    </button>
-
-     <button
-      class="color-toggle-dropdown-button color-toggle-button"
       id="color-toggle-dropdown-button"
       @click="showModalTrue"
     ><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="palette" class="svg-inline--fa fa-palette fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path></svg>
@@ -78,71 +30,12 @@ export default {
       moon: false
     };
   },
-  /*   created() {
-    this.colorMode = "system";
-  }, */
-  /*   updated() {
-    this.colorMode = "system";
-  },  */
-  mounted() {
-    if (document.querySelectorAll("html")[0].classList.contains("light-mode")) {
-      //console.log("contains light-mode");
-
-      this.sun = true;
-      this.moon = false;
-    } else if (
-      document.querySelectorAll("html")[0].classList.contains("dark-mode")
-    ) {
-      //console.log("contains dark-mode");
-
-      this.sun = false;
-      this.moon = true;
-    } else {
-      this.sun = true;
-      this.moon = false;
-    }
-  },
   methods: {
-    changeColorMode: function() {
-      /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
-
-      //console.log(document.querySelectorAll("html")[0].classList);
-
-      if (
-        document.querySelectorAll("html")[0].classList.contains("light-mode")
-      ) {
-        //console.log("contains light-mode");
-        this.colorMode = "dark";
-        this.sun = false;
-        this.moon = true;
-      } else if (
-        document.querySelectorAll("html")[0].classList.contains("dark-mode")
-      ) {
-        //console.log("contains dark-mode");
-        this.colorMode = "light";
-        this.sun = true;
-        this.moon = false;
-      } else {
-        this.sun = true;
-        this.colorMode = 'light';
-        this.moon = false;
-      }
-    },
-    toggleDropdown: function() {
-      this.dropdown = !this.dropdown;
-  
-    },
-    dropdownTrue() {
-      this.dropdown = true;
-    },
-    dropdownFalse() {
-      this.dropdown = false;
-    },
-    showModalTrue(){
+    showModalTrue() {
       this.showModal = true;
       document.body.classList.add("modal-open");
     },
-     showModalFalse(){
+     showModalFalse() {
       this.showModal = false;
       document.body.classList.remove("modal-open");
      }
@@ -203,7 +96,7 @@ export default {
 
 .color-toggle-button {
   border: 0.2rem solid var(--on-primary);
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0.5rem;
   //padding: 14px;
   cursor: pointer;
   background-color: transparent;
@@ -213,7 +106,10 @@ export default {
   background-repeat: no-repeat; */
   height: var(--color-toggle-switch-height);
   width: var(--color-toggle-switch-height);
-
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
 }
 .color-toggle-button:hover {
@@ -227,38 +123,10 @@ export default {
   color: var(--off-white);
 }
 
-.color-toggle-dropdown-button {
-  //background-color: var(--background-color);
-  //border: 0.1rem solid var(--on-background);
-  //margin-left: -0.1rem;
-  //border-radius: 0 0.8rem 0.8rem 0;
-  //padding: 0.8rem 0.6rem 1rem 0.6rem;
-  height: var(--color-toggle-switch-height);
-  width: var(--color-toggle-switch-height);
-  margin-right: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -0.2rem;
-  border-radius: 0 0.5rem 0.5rem 0;
-  color: var(--on-secondary);
-}
-
-.color-toggle-dropdown-button svg {
+.color-toggle-button svg {
   width: 2rem;
   fill: var(--on-secondary);
 }
-// .down-arrow {
-//   border: solid var(--on-background);
-//   border-width: 0 0.3rem 0.3rem 0;
-//   display: inline-block;
-//   padding: 0.3rem;
-//   transform: rotate(45deg);
-//   outline: none;
-// }
-// .down-arrow-color-dropdown {
-//   color: var(--on-secondary);
-// }
 body.modal-open {
   overflow: hidden;
   height: 100vh;

@@ -61,7 +61,7 @@ export default {
 <style lang="scss">
 @import "../assets/variables";
 
-#article-component > * {
+#article-component {
   color: var(--on-background);
 }
 
