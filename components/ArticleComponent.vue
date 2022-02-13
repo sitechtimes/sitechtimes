@@ -63,9 +63,6 @@ export default {
 
 #article-component {
   color: var(--on-background);
-}
-
-#article-component {
   padding-top: 0.4rem;
 }
 
