@@ -15,26 +15,22 @@
         <div
           class="category-flex-row category-card-component-category-author-date"
         >
-        <!-- <h3> -->
-          <!-- <h4> -->
           <category-icon
             :category="category"
             class="category-card-component-category"
           />
-          <!-- </h4> -->
-        <!-- </h3> -->
           <!-- <author-and-date
           :author="author"
           :published="this.published"
           class="category-card-component-author-and-date"
         /> -->
         </div>
-        <h4
+        <h3
           class="category-text-overflow category-card-component-title"
           :style="getClampSize"
         >
           {{ title }}
-        </h4>
+        </h3>
       </div>
     </div>
   </nuxt-link>

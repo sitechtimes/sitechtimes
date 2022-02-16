@@ -17,7 +17,7 @@
         ></category-icon>
         <!-- <author-and-date class="cat-article-authdate" :author="author" :published="published" /> -->
       </div>
-      <h4 class="cat-title">{{ title }}</h4>
+      <h3 class="cat-title">{{ title }}</h3>
     </div>
   </nuxt-link>
 </template>
