@@ -18,8 +18,7 @@ export default {
   font-size: 1.8rem;
   text-align: center;
   text-transform: capitalize;
-
-  padding: 1rem 0;
+  padding: 1.25rem 0;
 }
 .theme-choice-modal:hover {
   background-color: var(--hover);

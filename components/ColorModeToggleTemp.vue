@@ -248,6 +248,21 @@ export default {
   width: 2rem;
   fill: var(--on-secondary);
 }
+
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media only screen and (max-width: $x-small-screen) {
+  .color-toggle-button {
+    display: none;
+  }
+  .color-toggle-dropdown-button {
+    display: block;
+    border-radius: 0.5rem;
+  }
+}
 // .down-arrow {
 //   border: solid var(--on-background);
 //   border-width: 0 0.3rem 0.3rem 0;
@@ -259,10 +274,6 @@ export default {
 // .down-arrow-color-dropdown {
 //   color: var(--on-secondary);
 // }
-body.modal-open {
-  overflow: hidden;
-  height: 100vh;
-}
 
 /* MAYBE ADD HOVER EFFECT? */
 
