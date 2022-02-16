@@ -162,7 +162,7 @@ export default {
 .card-component-title {
   font-weight: bold;
   font-size: var(--customFontSize);
-  line-height: 4rem;
+  line-height: 1.2;
   color: var(--white);
 }
 .dropshadow {
