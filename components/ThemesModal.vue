@@ -72,7 +72,6 @@ export default {
   padding: 4rem;
 
   max-height: 90vh;
-  overflow-y: auto;
 }
 .modal-container > h2,
 .modal-container > ul {
@@ -81,6 +80,8 @@ export default {
 
 .color-themes-list {
   margin: 2rem;
+  max-height: 45vh;
+  overflow-y: scroll;
 }
 
 .close-modal-button {
