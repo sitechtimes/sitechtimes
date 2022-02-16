@@ -116,13 +116,6 @@ export default {
   background-color: var(--background-color);
   transition: 0.3s ease-out;
 }
-.color-toggle-button > .sun-svg {
-  color: var(--on-secondary);
-}
-.color-toggle-button:hover > .moon-svg {
-  color: var(--off-white);
-}
-
 .color-toggle-button svg {
   width: 2rem;
   fill: var(--on-secondary);
