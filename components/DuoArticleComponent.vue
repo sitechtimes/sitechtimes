@@ -6,10 +6,10 @@
     >
       <div class="duo-flex-col duo-card-component-text-container">
         <div class="duo-flex-row duo-card-component-category-author-date">
-          <!-- <category-icon
+          <category-icon
             :category="category"
             class="duo-card-component-category"
-          /> -->
+          />
         </div>
         <div
           class="duo-text-overflow duo-card-component-title"

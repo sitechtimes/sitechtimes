@@ -13,7 +13,7 @@
   >
     <div class="flex-col card-component-text-container" :style="getFontSize">
       <div class="flex-row card-component-category-author-date">
-        <!-- <category-icon :category="category" class="card-component-category" /> -->
+        <category-icon :category="category" class="card-component-category" />
       </div>
       <h3 class="text-overflow card-component-title" :style="getClampSize">
         {{ title }}
