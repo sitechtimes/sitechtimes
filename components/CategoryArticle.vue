@@ -20,7 +20,7 @@
           :published="published"
         />
       </div>
-      <h4 class="category-title">{{ title }}</h4>
+      <h3 class="category-title">{{ title }}</h3>
     </div>
   </nuxt-link>
 </template>
