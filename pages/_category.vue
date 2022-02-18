@@ -1,7 +1,7 @@
 <template>
   <section class="global-container">
     <div class="border-right">
-      <h1 class="cat-page-title">{{ category }}</h1>
+      <h2 class="cat-page-title">{{ category }}</h2>
       <div class="three-cat-articles">
         <div class="big-cat-article">
           <CategoryCardComponent
@@ -10,6 +10,7 @@
             :author="articles[0].user.name"
             :published="articles[0].updatedAt"
             :imageUrl="articles[0].imageUrl"
+            :imageAlt="articles[0].imageAlt"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
             class="cat-main-art"
@@ -23,6 +24,7 @@
               :author="articles[1].user.name"
               :published="articles[1].updatedAt"
               :imageUrl="articles[1].imageUrl"
+              :imageAlt="articles[1].imageAlt"
               :category="category"
               :articleUrl="`/articles/${articles[1].slug}`"
             />
@@ -34,6 +36,7 @@
               :author="articles[2].user.name"
               :published="articles[2].updatedAt"
               :imageUrl="articles[2].imageUrl"
+              :imageAlt="articles[2].imageAlt"
               :category="category"
               :articleUrl="`/articles/${articles[2].slug}`"
             />
@@ -48,6 +51,7 @@
           :author="articles[3].user.name"
           :published="articles[3].updatedAt"
           :imageUrl="articles[3].imageUrl"
+          :imageAlt="articles[3].imageAlt"
           :category="category"
           :articleUrl="`/articles/${articles[3].slug}`"
         />
@@ -58,6 +62,7 @@
           :author="articles[4].user.name"
           :published="articles[4].updatedAt"
           :imageUrl="articles[4].imageUrl"
+          :imageAlt="articles[4].imageAlt"
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
         />
@@ -71,6 +76,7 @@
             :published="article.updatedAt"
             :title="article.title"
             :imageUrl="article.imageUrl"
+            :imageAlt="article.imageAlt"
             :articleUrl="`/articles/${article.slug}`"
           />
         </div>
@@ -83,6 +89,7 @@
             :author="articles[0].user.name"
             :published="articles[0].updatedAt"
             :imageUrl="articles[0].imageUrl"
+            :imageAlt="articles[0].imageAlt"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
             class="cat-main-art"
@@ -96,6 +103,7 @@
             :author="articles[1].user.name"
             :published="articles[1].updatedAt"
             :imageUrl="articles[1].imageUrl"
+            :imageAlt="articles[1].imageAlt"
             :category="category"
             :articleUrl="`/articles/${articles[1].slug}`"
           />
@@ -106,6 +114,7 @@
             :author="articles[2].user.name"
             :published="articles[2].updatedAt"
             :imageUrl="articles[2].imageUrl"
+            :imageAlt="articles[2].imageAlt"
             :category="category"
             :articleUrl="`/articles/${articles[2].slug}`"
           />
@@ -121,6 +130,7 @@
               :published="article.createdAt"
               :title="article.title"
               :imageUrl="article.imageUrl"
+              :imageAlt="article.imageAlt"
               :articleUrl="`/articles/${article.slug}`"
             />
           </div>
