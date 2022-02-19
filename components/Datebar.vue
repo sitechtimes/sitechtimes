@@ -76,7 +76,8 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .datebar-date {
   margin: auto 0;
@@ -106,24 +107,8 @@ export default {
     font-size: 2.8rem;
     line-height: 3rem;
   }
-  .datebar-container {
-    width: 100rem;
-  }
 }
 @media only screen and (max-width: $midlarge-screen) {
-  .datebar-container {
-    width: 80rem;
-  }
-  .datebar-date {
-    font-size: 3rem;
-    line-height: 3rem;
-  }
-}
-@media only screen and (max-width: $midlarge-screen) {
-  .datebar-container {
-    /* justify-content: flex-start; */
-    margin-left: 2rem;
-  }
   .datebar-date {
     font-size: 3rem;
     line-height: 3rem;
@@ -134,9 +119,6 @@ export default {
 }
 
 @media only screen and (max-width: $mid-screen) {
-  .datebar-container {
-    margin: auto 2rem;
-  }
   .datebar-date {
     font-size: 4rem;
     //line-height: 3.2rem;
@@ -144,15 +126,9 @@ export default {
   .calendar-icon {
     padding-top: 0.6rem;
   }
-  .datebar-container {
-    width: auto;
-  }
 }
 
 @media only screen and (max-width: $small-screen) {
-  .datebar-container {
-    margin: auto 2rem;
-  }
   .datebar-date {
     font-size: 4.4rem;
     //line-height: 3.2rem;
@@ -168,10 +144,6 @@ export default {
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-  .datebar-container {
-    /* justify-content: flex-start; */
-    margin-left: 2rem;
   }
   .datebar-date {
     font-size: 4.5rem;

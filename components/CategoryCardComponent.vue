@@ -25,12 +25,12 @@
           class="category-card-component-author-and-date"
         /> -->
         </div>
-        <div
+        <h3
           class="category-text-overflow category-card-component-title"
           :style="getClampSize"
         >
           {{ title }}
-        </div>
+        </h3>
       </div>
     </div>
   </nuxt-link>

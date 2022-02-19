@@ -66,7 +66,7 @@ export default {
   width: 100%;
 }
 .footer-nav-ul li:hover {
-  color: var(--accent-color);
+  color: var(--off-white);
 }
 
  @media only screen and (max-width: $small-screen) {
