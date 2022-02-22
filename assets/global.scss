@@ -35,6 +35,8 @@
   --calendar-band: var(--off-white);
 
   --covid: var(--purple);
+  --world: var(--purple);
+  --us: var(--purple);
   --entertainment: var(--red);
   --news: var(--indigo);
   --politics: var(--pink);
@@ -112,7 +114,8 @@
   --nav-color: #000000;
   --footer: #374151;
   --footer-header-color: #eddcb0;
-  --footer-nav-color: #c7a74d;
+  --footer-nav-color: #eddcb0;
+  /* --footer-nav-color: #c7a74d; */
   --hover: var(--dark-gold);
 }
 .dark-mode {

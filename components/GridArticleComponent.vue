@@ -6,7 +6,7 @@
       class="grid-article-image dropshadow"
     />
     <h5 class="grid-article-info">
-      <!-- <category-icon :category="category" class="grid-article-cat" /> -->
+      <category-icon :category="category" class="grid-article-cat" />
     </h5>
     <h4 class="grid-article-title">{{ title }}</h4>
   </nuxt-link>
@@ -22,8 +22,8 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
