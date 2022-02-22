@@ -12,16 +12,16 @@
 export default {
   name: "CategoryIcon",
   props: {
-    category: String,
+    category: String
   },
   data() {
     return {};
   },
   computed: {
-    backgroundColor: function () {
+    backgroundColor: function() {
       return "background-color: var(--" + this.category + ")";
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -42,6 +42,10 @@ export default {
   #article-category:hover {
     transform: translateY(-0.4rem);
   }
+}
+
+#article-category {
+  color: var(--off-white);
 }
 </style>
 
@@ -71,6 +75,5 @@ export default {
 <!--<category-icon category="sports"></category-icon>-->
 <!--<category-icon category="entertainment"></category-icon>-->
 <!--```-->
-
 
 <!--</docs>-->

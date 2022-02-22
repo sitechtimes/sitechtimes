@@ -47,14 +47,14 @@ export default {
     author: String,
     published: Date,
     articleUrl: String,
-    webUrl: String,
+    webUrl: String
   },
   components: {
     AuthorAndDateArticle,
     SocialMediaIcons,
     ShareIcon,
-    CategoryIcon,
-  },
+    CategoryIcon
+  }
 };
 </script>
 
@@ -63,6 +63,9 @@ export default {
 
 #article-component > * {
   color: var(--on-background);
+}
+#article-component > h5 {
+  color: var(--off-white);
 }
 
 #article-component {
