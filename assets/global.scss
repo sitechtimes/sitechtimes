@@ -35,8 +35,6 @@
   --calendar-band: var(--off-white);
 
   --covid: var(--purple);
-  --world: var(--indigo);
-  --us: var(--indigo);
   --entertainment: var(--red);
   --news: var(--indigo);
   --politics: var(--pink);
@@ -44,6 +42,10 @@
   --science: var(--green);
   --technology: var(--blue);
   --activities: var(--dark-orange);
+
+  --world: var(--indigo);
+  --us: var(--indigo);
+  --sports: var(--dark-orange);
 
   /* new intentions */
   --mobile-nav-background: var(--primary-color);
@@ -145,6 +147,7 @@
   --see-more-color: var(--hover);
   /* new new */
   --footer-header-color: var(--accent-color);
+  --hover: var(--primary-color);
 }
 .popplio-mode {
   --background-color: #e8f2ff;

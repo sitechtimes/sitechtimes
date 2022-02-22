@@ -20,7 +20,10 @@
             <themes-modal-theme color="outrun-night" />
             <themes-modal-theme color="cucumber" />
             <themes-modal-theme color="meditate" />
-            <themes-modal-theme class="waifu-color-theme-button" color="waifu" /> 
+            <themes-modal-theme
+              class="waifu-color-theme-button"
+              color="waifu"
+            />
           </ul>
           <button class="close-modal-button" @click="$emit('closeModal')">
             Close
@@ -81,7 +84,7 @@ export default {
 .color-themes-list {
   margin: 2rem;
   max-height: 45vh;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .close-modal-button {
