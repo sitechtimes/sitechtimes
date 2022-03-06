@@ -1,10 +1,12 @@
 <template>
   <nuxt-link :to="articleUrl" class="grid-article-component">
-    <img
-      :src="imageUrl"
-      :alt="imageAlt"
-      class="grid-article-image dropshadow"
-    />
+    <div class="grid-article-img-div">
+      <img
+        :src="imageUrl"
+        :alt="imageAlt"
+        class="grid-article-image dropshadow"
+      />
+    </div>
     <h5 class="grid-article-info">
       <!-- <category-icon :category="category" class="grid-article-cat" /> -->
     </h5>
@@ -22,8 +24,8 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String,
-  },
+    title: String
+  }
 };
 </script>
 
@@ -36,6 +38,20 @@ export default {
   width: 32%;
   margin: 1rem 0;
 }
+.grid-article-component:hover .grid-article-title {
+  text-decoration: underline;
+}
+.grid-article-component:hover .grid-article-img-div {
+  background: black;
+  transition: 0.3s ease-out;
+
+  overflow: hidden;
+}
+.grid-article-component:hover .grid-article-image {
+  transition: 0.3s ease-out;
+  opacity: 0.93;
+  transform: scale(1.02);
+}
 .grid-article-component > h5,
 .grid-article-component h4 {
   color: var(--on-background);
@@ -47,11 +63,15 @@ export default {
   margin: 1rem 0;
   display: flex;
 }
-.grid-article-image {
+.grid-article-img-div {
   width: 100%;
   border-radius: 1rem;
   height: 25rem;
-
+}
+.grid-article-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
   object-fit: cover;
 }
 .grid-article-cat {
