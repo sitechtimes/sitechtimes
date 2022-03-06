@@ -8,16 +8,18 @@
     :style="{
       background: 'url(' + imageUrl + ')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
+      backgroundSize: 'cover'
     }"
   >
-    <div class="flex-col card-component-text-container" :style="getFontSize">
-      <div class="flex-row card-component-category-author-date">
-        <!-- <category-icon :category="category" class="card-component-category" /> -->
+    <div class="card-component-container">
+      <div class="flex-col card-component-text-container" :style="getFontSize">
+        <div class="flex-row card-component-category-author-date">
+          <!-- <category-icon :category="category" class="card-component-category" /> -->
+        </div>
+        <h3 class="text-overflow card-component-title" :style="getClampSize">
+          {{ title }}
+        </h3>
       </div>
-      <h3 class="text-overflow card-component-title" :style="getClampSize">
-        {{ title }}
-      </h3>
     </div>
   </nuxt-link>
 </template>
@@ -33,63 +35,63 @@ export default {
     title: { type: String },
     size: {
       default: "Medium",
-      type: String,
+      type: String
     },
     clampSize: {
       default: "mediumClamp",
-      type: String,
-    },
+      type: String
+    }
   },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize,
+        "--customFontSize": fontSize
       });
       const small = createFontSize({
         //create size here
-        fontSize: "var(--fontSmall)",
+        fontSize: "var(--fontSmall)"
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "var(--fontMedium)",
+        fontSize: "var(--fontMedium)"
       });
       const large = createFontSize({
-        fontSize: "var(--fontLarge)",
+        fontSize: "var(--fontLarge)"
       });
       const fontSizes = {
         //list of sizes just names
         small,
         medium, //default
-        large,
+        large
       };
       return fontSizes[this.size];
     },
 
     getClampSize() {
       const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize,
+        "--customClampSize": clampSize
       });
       const smallClamp = createClampSize({
         //create size here
-        clampSize: "2",
+        clampSize: "2"
       });
       const mediumClamp = createClampSize({
         //create size here
-        clampSize: "4",
+        clampSize: "4"
       });
       const largeClamp = createClampSize({
-        clampSize: "5",
+        clampSize: "5"
       });
       const clampSizes = {
         //list of sizes just names
         smallClamp,
         mediumClamp, //default
-        largeClamp,
+        largeClamp
       };
       return clampSizes[this.clampSize];
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -106,10 +108,25 @@ export default {
   cursor: pointer;
   border-radius: 1rem;
   position: relative;
+}
+.card-component-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
+.card-component:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.018);
+}
+.card-component-container:hover {
+  transition: 0.3s ease-out;
+
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
