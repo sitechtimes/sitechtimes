@@ -1,11 +1,13 @@
 <template>
   <nuxt-link class="category-text-below-preview" :to="articleUrl">
-    <img
+    <div class="category-text-below-img-div">
+      <img
         :href="articleUrl"
         :src="imageUrl"
         :alt="imageAlt"
         class="article-image dropshadow"
-    />
+      />
+    </div>
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />
       <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
@@ -40,17 +42,35 @@ export default {
   width: 100%;
   height: 100%;
 }
+.category-text-below-preview:hover .article-image {
+  transition: 0.3s ease-out;
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+.category-text-below-preview:hover .category-title {
+  text-decoration: underline;
+}
+.category-text-below-preview:hover .category-text-below-img-div {
+  overflow: hidden;
+}
 .category-info {
   display: flex;
   margin-top: 1rem;
 }
+.category-text-below-img-div {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
 .article-image {
   object-fit: cover;
   border-radius: 1.5rem;
+  height: 100%;
 }
 .category-cat {
   margin-right: 2rem;
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
   margin-top: var(--category-top-margin);
 }
 .category-title {
@@ -66,12 +86,12 @@ export default {
 }
 @import "../assets/variables";
 @media only screen and (max-width: $mid-screen) {
-  .article-image {
+  .category-text-below-img-div {
     width: 100%;
   }
 }
-@media only screen and (max-width: $small-screen){
-  .article-image{
+@media only screen and (max-width: $small-screen) {
+  .category-text-below-img-div {
     width: 100%;
   }
 }
@@ -85,7 +105,7 @@ export default {
   .category-info {
     width: 35rem;
   }
-  .article-image {
+  .category-text-below-img-div {
     width: 37rem;
   }
   .category-title {

@@ -119,6 +119,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  overflow: hidden;
 }
 .category-card-component-image {
   background-repeat: no-repeat;
@@ -126,6 +128,15 @@ export default {
   height: 100%;
   border-radius: 1.5rem;
 }
+.category-card-component-image:hover {
+  transition: 0.3s ease-out;
+  transform: scale(1.02);
+}
+.category-card-component-image:hover .category-card-component-text-container {
+  transition: 0.3s ease-out;
+  transform: scale(0.98);
+}
+
 .category-flex-col {
   display: flex;
   flex-direction: column;
@@ -148,7 +159,7 @@ export default {
 }
 .category-card-component-category {
   color: var(--white);
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
 }
 .category-text-overflow {
   display: block;
