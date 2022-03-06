@@ -1,21 +1,23 @@
 <template>
   <nuxt-link :to="articleUrl" class="duo-card-component" :style="getFontSize">
-    <div
-      class="duo-card-component-image"
-      :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
-    >
-      <div class="duo-flex-col duo-card-component-text-container">
-        <div class="duo-flex-row duo-card-component-category-author-date">
-          <!-- <category-icon
+    <div class="duo-card-img-div">
+      <div
+        class="duo-card-component-image"
+        :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
+      >
+        <div class="duo-flex-col duo-card-component-text-container">
+          <div class="duo-flex-row duo-card-component-category-author-date">
+            <!-- <category-icon
             :category="category"
             class="duo-card-component-category"
           /> -->
-        </div>
-        <div
-          class="duo-text-overflow duo-card-component-title"
-          :style="getClampSize"
-        >
-          {{ title }}
+          </div>
+          <div
+            class="duo-text-overflow duo-card-component-title"
+            :style="getClampSize"
+          >
+            {{ title }}
+          </div>
         </div>
       </div>
     </div>
@@ -35,63 +37,63 @@ export default {
     title: String,
     size: {
       default: "medium",
-      type: String,
+      type: String
     },
     clampSize: {
       default: "mediumClamp",
-      type: String,
-    },
+      type: String
+    }
   },
 
   computed: {
     getFontSize() {
       const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize,
+        "--customFontSize": fontSize
       });
       const small = createFontSize({
         //create size here
-        fontSize: "2.827rem",
+        fontSize: "2.827rem"
       });
       const medium = createFontSize({
         //create size here
-        fontSize: "3.998rem",
+        fontSize: "3.998rem"
       });
       const large = createFontSize({
-        fontSize: "5.653rem",
+        fontSize: "5.653rem"
       });
       const fontSizes = {
         //list of sizes just names
         small,
         medium, //default
-        large,
+        large
       };
       return fontSizes[this.size];
     },
 
     getClampSize() {
       const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize,
+        "--customClampSize": clampSize
       });
       const smallClamp = createClampSize({
         //create size here
-        clampSize: "2",
+        clampSize: "2"
       });
       const mediumClamp = createClampSize({
         //create size here
-        clampSize: "4",
+        clampSize: "4"
       });
       const largeClamp = createClampSize({
-        clampSize: "5",
+        clampSize: "5"
       });
       const clampSizes = {
         //list of sizes just names
         smallClamp,
         mediumClamp, //default
-        largeClamp,
+        largeClamp
       };
       return clampSizes[this.clampSize];
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -107,6 +109,15 @@ export default {
   //   flex-direction: column;
   //   justify-content: flex-end;
   //   width: 60rem;
+  overflow: hidden;
+}
+.duo-card-img-div {
+  height: 100%;
+  width: 100%;
+}
+.duo-card-component:hover .duo-card-component-image {
+  transition: 0.3s ease-out;
+  transform: scale(1.02);
 }
 .duo-card-component-image {
   background-repeat: no-repeat;
@@ -124,8 +135,8 @@ export default {
 }
 .duo-card-component-text-container {
   width: 100%;
-  padding: 50% 7% 7% 7%;
   height: 100%;
+  padding: 50% 6% 4% 6%;
   margin: 0 auto;
   background: -webkit-linear-gradient(
     top,
@@ -134,6 +145,10 @@ export default {
   );
   border-radius: 1rem;
   justify-content: flex-end;
+}
+.duo-card-component-text-container:hover {
+  transition: 0.3s ease-out;
+  transform: scale(0.98);
 }
 .duo-card-component-category-author-date {
   margin-bottom: var(--category-bottom-margin);
