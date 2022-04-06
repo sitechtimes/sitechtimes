@@ -1,6 +1,6 @@
 <template>
   <div class="datebar">
-    <div class="datebar-container">
+    <div class="datebar-container global-container">
       <h5 class="datebar-date">
         <span id="date-text">{{ this.date }} </span>
         <svg
@@ -66,7 +66,6 @@ export default {
 
 .datebar {
   background-color: var(--accent-color);
-  height: 4rem;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -77,7 +76,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 120rem;
+  padding: 0;
 }
 .datebar-date {
   margin: auto 0;
@@ -86,9 +85,9 @@ export default {
   align-items: center;
   font-size: 2.5rem;
   line-height: auto;
+  color: var(--on-secondary);
 }
 .datebar-btns {
-  width: 7.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +97,8 @@ export default {
 
   width: 1.5rem;
   height: 2rem;
+
+  fill: var(--on-secondary);
 }
 
 @media only screen and (max-width: $large-screen) {

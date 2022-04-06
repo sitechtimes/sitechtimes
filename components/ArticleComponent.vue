@@ -11,7 +11,11 @@
         :published="this.$format(this.published)"
       />
       <div class="main-article-metadata-actions">
-        <social-media-sharing :title="title" :articleUrl="articleUrl" :webUrl="webUrl" />
+        <social-media-sharing
+          :title="title"
+          :articleUrl="articleUrl"
+          :webUrl="webUrl"
+        />
         <!-- <share-icon /> -->
 
         <print />
@@ -49,20 +53,20 @@ export default {
     AuthorAndDateArticle,
     SocialMediaIcons,
     ShareIcon,
-    CategoryIcon
-  }
+    CategoryIcon,
+  },
 };
 </script>
 
 <style lang="scss">
 @import "../assets/variables";
 
-//#article-component > * {
-//  //color: var(--on-background);
-//}
+#article-component > * {
+  color: var(--on-background);
+}
 
 #article-component {
-    padding-top: 0.4rem;
+  padding-top: 0.4rem;
 }
 
 .main-article-title {
@@ -78,7 +82,7 @@ export default {
 //   margin: 2rem auto;
 // }
 .main-article-text-section {
-  padding: .05rem;
+  padding: 0.05rem;
 }
 .main-article-text-section p,
 .main-article-text-section p em,
@@ -150,7 +154,7 @@ export default {
   font-size: 1.7rem;
 }
 .main-article-text h6,
-.main-article-text h6 strong{
+.main-article-text h6 strong {
   font-size: 1.5rem;
 }
 .main-article-img {
@@ -208,7 +212,7 @@ export default {
     font-size: 2rem;
   }
   .main-article-text h6,
-  .main-article-text h6 strong{
+  .main-article-text h6 strong {
     font-size: 1.75rem;
   }
 }
