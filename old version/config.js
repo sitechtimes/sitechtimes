@@ -1,7 +1,7 @@
-export const ENV_VALUES = {
+const ENV_VALUES = {
   DEV: {
-    // api: 'http://localhost:3000'
-    api: "https://dev-api.sitechtimes.com"
+    api: "http://localhost:3000"
+    // api: "https://dev-api.sitechtimes.com"
   },
   STAGING: {
     api: "https://dev-api.sitechtimes.com"
@@ -10,3 +10,5 @@ export const ENV_VALUES = {
     api: "https://api.sitechtimes.com"
   }
 };
+
+export default ENV_VALUES;
