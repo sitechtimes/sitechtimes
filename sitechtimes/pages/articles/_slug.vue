@@ -1,7 +1,22 @@
 <template>
   <div class="article-page global-container">
-    <ArticleComponent v-if="article.title" :category="article.category" :title="article.title" :author="article.user.name" :published="article.createdAt" :articleImg="article.imageUrl" :articleAlt="article.imageAlt" :articleText="article.content" :articleUrl="slug" :webUrl="'sitechtimes.com' + '/articles/' + slug"/>
-    <SidebarContainer v-if="categoryHome && categoryRecent" :trending="categoryHome" :moreLikeThis="categoryRecent"/>
+    <ArticleComponent
+      v-if="article.title"
+      :category="article.category"
+      :title="article.title"
+      :author="article.user.name"
+      :published="article.createdAt"
+      :articleImg="article.imageUrl"
+      :articleAlt="article.imageAlt"
+      :articleText="article.content"
+      :articleUrl="slug"
+      :webUrl="'sitechtimes.com' + '/articles/' + slug"
+    />
+    <SidebarContainer
+      v-if="categoryHome && categoryRecent"
+      :trending="categoryHome"
+      :moreLikeThis="categoryRecent"
+    />
   </div>
 </template>
 
@@ -18,26 +33,31 @@ export default {
       article: {},
       baseURL: process.env.DOMAIN,
     };
-
   },
 
   async fetch() {
     try {
-      const article = await this.$axios.get(`/articles/${this.$route.params.slug}`);
+      const article = await this.$fetch.get(
+        `/articles/${this.$route.params.slug}`
+      );
       this.article = article.data;
-      const categoryHome = await this.$axios.get(`/articles/homepage?category=${this.article.category}`);
+      const categoryHome = await this.$fetch.get(
+        `/articles/homepage?category=${this.article.category}`
+      );
       this.categoryHome = categoryHome.data;
-      const categoryRecent = await this.$axios.get(`/articles?category=${this.article.category}&q=3`);
+      const categoryRecent = await this.$fetch.get(
+        `/articles?category=${this.article.category}&q=3`
+      );
       this.categoryRecent = categoryRecent.data;
     } catch (e) {
       await this.$router.push("/");
     }
-  }
+  },
 };
 </script>
 
 <style lang="scss">
-@import '/../assets/variables';
+@import "/../assets/variables";
 .ariticle-page,
 #article-component,
 .sidebar-container {
@@ -59,7 +79,8 @@ export default {
   .article-page {
     flex-direction: column;
   }
-  #article-component, .sidebar-container {
+  #article-component,
+  .sidebar-container {
     width: 100%;
   }
   .sidebar-container {

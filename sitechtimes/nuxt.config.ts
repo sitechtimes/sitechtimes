@@ -26,20 +26,17 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // '@nuxtjs/axios',
-    "@nuxtjs/color-mode",
-  ],
+  buildModules: ["@nuxtjs/color-mode"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "vue-social-sharing/nuxt"],
+  modules: ["vue-social-sharing/nuxt"],
 
   server: {
     host: "0.0.0.0",
     port: 8089,
   },
 
-  axios: {
+  $fetch: {
     baseURL: ENV_VALUES.DEV.api,
   },
 

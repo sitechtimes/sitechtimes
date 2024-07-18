@@ -109,7 +109,7 @@ export default {
     };
   },
   async fetch() {
-    const homepages = await this.$axios.get("/articles/homepage");
+    const homepages = await this.$fetch.get("/articles/homepage");
     this.homepages = homepages.data;
   },
   head: function () {

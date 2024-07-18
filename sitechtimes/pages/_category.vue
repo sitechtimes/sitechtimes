@@ -158,7 +158,7 @@ export default {
   },
   async fetch() {
     try {
-      const articles = await this.$axios.get(
+      const articles = await this.$fetch.get(
         `/articles?category=${this.category}&sort=dateDes`
       );
       this.articles = articles.data;
@@ -168,7 +168,7 @@ export default {
   },
   methods: {
     async newArticles() {
-      const articles = await this.$axios.get(
+      const articles = await this.$fetch.get(
         `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
       )
 
