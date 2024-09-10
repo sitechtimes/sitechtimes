@@ -1,0 +1,369 @@
+@import "./variables.scss";
+
+:root {
+  /* colors */
+  --gold: #d9b75e;
+  --dark-gold: #bf9f4b;
+  --light-gold: #fff3d2;
+  --off-white: #fffaf4;
+  --white: #ffffff;
+  --black: #000;
+  --dark-grey: #202020;
+  --dark-grey-2: #383838;
+  --grey: #374151;
+  --mid-grey: #595959;
+  --lightGray: #ececec;
+  --red: #dc2626;
+  --dark-orange: #b45309;
+  --green: #12804d;
+  --blue: #2b6dd8;
+  --dark-blue: #0f44d8;
+  --indigo: #312e81;
+  --purple: #5b21b6;
+  --violet: #a316a3;
+  --pink: #da1678;
+  /* intentions */
+  --background-color: var(--white);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
+  --footer: var(--grey);
+  --calendar-band: var(--off-white);
+
+  --covid: var(--purple);
+  --entertainment: var(--red);
+  --news: var(--indigo);
+  --politics: var(--pink);
+  --opinion: var(--violet);
+  --science: var(--green);
+  --technology: var(--blue);
+  --activities: var(--dark-orange);
+
+  /* new intentions */
+  --mobile-nav-background: var(--primary-color);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
+  --see-more-color: var(--accent-color);
+  --gold-hover: var(--dark-gold);
+  /* font size */
+  --font: "Josefin Sans", sans-serif;
+  --article-font: "Merriweather", serif;
+  --h1: 5.653rem;
+  --h2: 3.998rem;
+  --h3: 2.827rem;
+  --h4: 1.999rem;
+  --h5: 1.414rem;
+  --small-text: 0.707rem;
+  /* boxshadows */
+  --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* spacing */
+  --section-spacing: 4rem;
+  --title-spacing: 3rem;
+  --category-top-margin: 0.75rem;
+  --category-bottom-margin: 0.25rem;
+  /*linear gradient */
+  --greyToBlack: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(132, 132, 132, 0.4) 54.17%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  /* button icon */
+  --button-icon: url(/assets/icons/sun.svg);
+}
+
+.light-mode {
+  --background-color: var(--white);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--black);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--lightGray);
+  --calendar-band: var(--off-white);
+  //Generic
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
+  --button-icon: url(/assets/icons/sun.svg);
+  /* new intentions */
+  --mobile-nav-background: var(--footer);
+  --mobile-nav-text: var(--white);
+  --nav-color: var(--on-background);
+  --see-more-color: var(--accent-color);
+
+  --nav-color: #000000;
+  --footer: #374151;
+  --footer-header-color: #eddcb0;
+  --footer-nav-color: #c7a74d;
+  --hover: var(--dark-gold);
+}
+.dark-mode {
+  --grey: #272b32;
+  --background-color: var(--dark-grey);
+  --primary-color: var(--gold);
+  --accent-color: var(--light-gold);
+  --on-background: var(--off-white);
+  --on-primary: var(--black);
+  --on-secondary: var(--black);
+  --on-secondary-light: var(--mid-grey);
+  --hover: var(--dark-grey-2);
+  --calendar-band: var(--off-white);
+  --news: var(--dark-blue);
+  --politics: var(--pink);
+  --entertainment: var(--red);
+  --opinion: var(--purple);
+  --science: var(--green);
+  --events: var(--orange);
+  --clubs: var(--blue);
+  --sports: var(--dark-orange);
+  --button-icon: url(/assets/icons/moon.svg);
+  /* new intentions */
+  --mobile-nav-background: var(--grey);
+  --mobile-nav-text: var(--primary-color);
+  --nav-color: var(--on-background);
+  --see-more-color: var(--hover);
+  /* new new */
+  --footer-header-color: var(--accent-color);
+}
+.popplio-mode {
+  --background-color: #e8f2ff;
+  --primary-color: #3b82f6;
+  --footer-nav-color: #3b82f6;
+  --accent-color: #b6edff;
+  --nav-color: #344e8c;
+  --footer: #21273a;
+  --footer-header-color: #b6edff;
+  --footer-nav-color: #b6edff;
+  --hover: #f2729d;
+}
+.ember-mode {
+  --background-color: #fff3ec;
+  --primary-color: #ff5757;
+  --accent-color: #ffd2c3;
+  --nav-color: #770202;
+  --footer: #2d2222;
+  --footer-header-color: #fff3ec;
+  --footer-nav-color: #fff3ec;
+  --hover: #ff5757;
+}
+.outrun-night-mode {
+  --background-color: #180a40;
+  --on-background: var(--off-white);
+  --primary-color: #ff00c7;
+  --on-primary: var(--off-white);
+  --on-secondary: var(--off-white);
+  --accent-color: #ff00c7;
+  --nav-color: #9cfff9;
+  --footer: #0e0525;
+  --footer-header-color: #ff9900;
+  --footer-nav-color: #9cfff9;
+  --hover: #ff007a;
+  .footer-email-input {
+    background-color: #9cfff9;
+  }
+  .footer-join-btn {
+    background-color: #ff007a;
+  }
+  --card-shadow: 3px 2px 25px 2px #00d1ff47;
+}
+.cucumber-mode {
+  --background-color: #fbfff1;
+  --primary-color: #0a9a57;
+  --accent-color: #ddf8b0;
+  --footer-header-color: #ddf8b0;
+  --footer-nav-color: #ddf8b0;
+  --hover: #0a9a57;
+}
+.meditate-mode {
+  --accent-color: #c4b5fd;
+  --background-color: #f5f3ff;
+  --nav-color: #4c1d95;
+  --footer: #241a33;
+  --footer-header-color: var(--background-color);
+  --footer-nav-color: var(--background-color);
+  --primary-color: #8b5cf6;
+  --hover: var(--accent-color);
+  .footer-email-input {
+    background-color: var(--background-color);
+  }
+}
+.waifu-mode {
+  body {
+    background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg")
+      no-repeat top center;
+    background-size: cover;
+  }
+  --primary-color: #3b82f6;
+  --accent-color: #bfdbfe;
+  --nav-color: #1e3a8a;
+  --footer: #2a2d43;
+  --footer-nav-color: #bfdbfe;
+  --hover: #ff5757;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+*,
+html,
+body {
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: var(--background-color);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--black);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--on-background);
+}
+a:active {
+  text-decoration: none;
+  color: var(--on-background);
+}
+ul {
+  list-style-type: none;
+}
+small,
+.text_small {
+  font-size: var(--small-text);
+}
+
+@media only screen and (max-width: $large-screen) {
+  *,
+  html,
+  body {
+    font-size: 58%;
+  }
+}
+
+@media only screen and (max-width: $mid-screen) {
+  *,
+  html,
+  body {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: $x-small-screen) {
+  *,
+  html,
+  body {
+    font-size: 45%;
+  }
+}
+
+//The only reason the code is the right size in styleguide.
+.prism-editor > textarea {
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  border-bottom: 1rem;
+  border-top: 1rem;
+  border-left: 1rem;
+  border-right: 1rem;
+  //width: calc(100% + 0.2rem);
+}
+.prism-editor {
+  font-family: var(--font);
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.token {
+  font-size: 1.5rem;
+  width: 100%;
+  margin-left: 0.01%;
+}
+
+pre {
+  width: calc(100% - 0.2rem);
+  height: calc(100% - 0.2rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+.global-container {
+  max-width: $container;
+  margin: auto;
+  padding: 2rem;
+}
+
+::selection {
+  background: var(--see-more-color); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--see-more-color); /* Gecko Browsers */
+}
