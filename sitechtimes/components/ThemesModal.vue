@@ -7,8 +7,8 @@
           <ul class="color-themes-list">
             <li
               class="theme-choice-modal"
-              @click="$colorMode.preference = 'system'"
-              style="text-transform:none;"
+              @click="setColorMode('system')"
+              style="text-transform: none"
             >
               Auto detect system
             </li>
@@ -20,26 +20,39 @@
             <themes-modal-theme color="outrun-night" />
             <themes-modal-theme color="cucumber" />
             <themes-modal-theme color="meditate" />
-            <themes-modal-theme class="waifu-color-theme-button" color="waifu" /> 
+            <themes-modal-theme
+              class="waifu-color-theme-button"
+              color="waifu"
+            />
           </ul>
-          <button class="close-modal-button" @click="$emit('closeModal')">
-            Close
-          </button>
+          <button class="close-modal-button" @click="closeModal">Close</button>
         </div>
       </div>
     </div>
   </transition>
 </template>
 
-<script>
-import ThemesModalTheme from "./ThemesModalTheme.vue";
-export default {
-  components: { ThemesModalTheme },
-  name: "ThemesModal"
+<script setup lang="ts">
+interface SetColorModeFn {
+  (mode: any): void;
+  preference: any;
+}
+
+const setColorMode: SetColorModeFn = (mode) => {
+  setColorMode.preference = mode;
 };
+setColorMode.preference = null;
+
+function closeModal() {
+  $emit("closeModal");
+}
+
+function $emit(arg0: string) {
+  throw new Error("Function not implemented.");
+}
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .modal-mask {
   position: fixed;
   z-index: 9998;

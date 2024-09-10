@@ -10,7 +10,7 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 sun-svg "
+        class="h-6 w-6 sun-svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -48,11 +48,25 @@
       </svg>
     </button>
 
-     <button
+    <button
       class="color-toggle-dropdown-button color-toggle-button"
       id="color-toggle-dropdown-button"
       @click="showModal = true"
-    ><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="palette" class="svg-inline--fa fa-palette fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"></path></svg>
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="palette"
+        class="svg-inline--fa fa-palette fa-w-16"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+        ></path>
+      </svg>
     </button>
 
     <themes-modal
@@ -66,113 +80,118 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+const props = defineProps<{
+  /*   colorMode: string;  */
+  showModal: boolean;
+  sun: boolean;
+  moon: boolean;
+}>();
+const colorMode = useColorMode();
+const showModal = ref(false);
+const sun = ref(false);
+const moon = ref(false);
 
-export default {
-  name: "ColorModeToggleTemp",
-  data() {
-    return {
-      colorMode: "",
-      showModal: false,
-      sun: false,
-      moon: false
-    };
-  },
-  /*   created() {
-    this.colorMode = "system";
-  }, */
-  /*   updated() {
-    this.colorMode = "system";
-  },  */
-  mounted() {
-    if (document.querySelectorAll("html")[0].classList.contains("light-mode")) {
-      //console.log("contains light-mode");
-
-      this.sun = true;
-      this.moon = false;
-    } else if (
-      document.querySelectorAll("html")[0].classList.contains("dark-mode")
-    ) {
-      //console.log("contains dark-mode");
-
-      this.sun = false;
-      this.moon = true;
-    } else {
-      this.sun = true;
-      this.moon = false;
-    }
-  },
-  methods: {
-    changeColorMode: function() {
-      /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
-
-      //console.log(document.querySelectorAll("html")[0].classList);
-
-      if (
-        document.querySelectorAll("html")[0].classList.contains("light-mode")
-      ) {
-        //console.log("contains light-mode");
-        this.colorMode = "dark";
-        this.sun = false;
-        this.moon = true;
-      } else if (
-        document.querySelectorAll("html")[0].classList.contains("dark-mode")
-      ) {
-        //console.log("contains dark-mode");
-        this.colorMode = "light";
-        this.sun = true;
-        this.moon = false;
-      } else {
-        this.sun = true;
-        this.colorMode = 'light';
-        this.moon = false;
-      }
-    },
-    toggleDropdown: function() {
-      this.dropdown = !this.dropdown;
-    },
-    dropdownTrue() {
-      this.dropdown = true;
-    },
-    dropdownFalse() {
-      this.dropdown = false;
-    }
-
-    /*     closeDropdown: function() {
-      document.addEventListener("click", event => {
-        const dropdown = document.getElementById("color-theme-dropdown");
-        const dropdownButton = document.getElementById(
-          "color-toggle-dropdown-button"
-        );
-        let targetEl = event.target; //clicked element
-        do {
-          if (targetEl == dropdown || targetEl !== dropdownButton) {
-            return;
-          }
-          targetEl = targetEl.parentNode;
-        } while (targetEl);
-        this.dropdown = false;
-        alert("clicked ouside");
-      });
-    } */
-    /*     handleFocus() {
-      alert("focus in");
-    },
-    handleFocusOut() {
-      this.dropdown == false;
-      alert("handleFocusOut");
-    } */
+const colorSwitch = () => {
+  if (document.querySelectorAll("html")[0].classList.contains("light-mode")) {
+    //console.log("contains light-mode");
+    sun.value = true;
+    moon.value = false;
+  } else if (
+    document.querySelectorAll("html")[0].classList.contains("dark-mode")
+  ) {
+    //console.log("contains dark-mode");
+    sun.value = false;
+    moon.value = true;
+  } else {
+    sun.value = true;
+    moon.value = false;
   }
 };
+
+const changeColorMode = () => {
+  /* if html class has light-mode, switch to dark mode. Else, switch to light-mode */
+  //console.log(document.querySelectorAll("html")[0].classList);
+
+  if (document.querySelectorAll("html")[0].classList.contains("light-mode")) {
+    //console.log("contains light-mode");
+    colorMode.value = "dark";
+    sun.value = false;
+    moon.value = true;
+  } else if (
+    document.querySelectorAll("html")[0].classList.contains("dark-mode")
+  ) {
+    //console.log("contains dark-mode");
+    colorMode.value = "light";
+    sun.value = true;
+    moon.value = false;
+  } else {
+    sun.value = true;
+    colorMode.value = "light";
+    moon.value = false;
+  }
+};
+
+/*
+const toggleDropdown = () => {
+  dropdown.value = !dropdown.value;
+};
+const dropdownTrue = () => {
+  dropdown.value = true;
+};
+const dropdownFalse = () => {
+  dropdown.value = false;
+};
+
+const closeDropdown = () => {
+  document.addEventListener("click", (event) => {
+    const dropdown = document.getElementById("color-theme-dropdown");
+    const dropdownButton = document.getElementById(
+      "color-toggle-dropdown-button"
+    );
+    let targetEl = event.target; //clicked element
+    do {
+      if (targetEl == dropdown || targetEl !== dropdownButton) {
+        return;
+      }
+      targetEl = targetEl.parentNode;
+    } while (targetEl);
+    dropdown.value = false;
+    alert("clicked ouside");
+  });
+};
+
+const handleFocus = () => {
+  alert("focus in");
+};
+const handleFocusOut = () => {
+  dropdown.value == false;
+  alert("handleFocusOut");
+};
+const created = () => {
+  colorMode.value = "system";
+};
+const updated = () => {
+  colorMode.value = "system";
+};
+*/
+
+definePageMeta({
+  colorMode: "dark",
+});
+
+onMounted(() => {
+  colorSwitch();
+});
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .modal-test {
   position: absolute;
   top: 10rem;
 }
 
-@import "../assets/variables";
+@import "../assets/variables.scss";
 :root {
   --color-toggle-switch-height: 3rem;
 }

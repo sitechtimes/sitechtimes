@@ -11,96 +11,91 @@
       backgroundSize: 'cover',
     }"
   >
-    <div class="flex-col card-component-text-container" :style="getFontSize">
+    <div class="flex-col card-component-text-container" :style="getFontSize()">
       <div class="flex-row card-component-category-author-date">
         <!-- <category-icon :category="category" class="card-component-category" /> -->
       </div>
-      <h3 class="text-overflow card-component-title" :style="getClampSize">
+      <h3 class="text-overflow card-component-title" :style="getClampSize()">
         {{ title }}
       </h3>
     </div>
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  name: "CardComponent",
-  props: {
-    articleUrl: { type: String },
-    category: { type: String },
-    imageUrl: { type: String },
-    imageAlt: { type: String },
-    title: { type: String },
-    size: {
-      default: "Medium",
-      type: String,
-    },
-    clampSize: {
-      default: "mediumClamp",
-      type: String,
-    },
-  },
+<script setup lang="ts">
+const props = defineProps<{
+  articleUrl: string;
+  category: string;
+  title: string;
+  imageUrl: string;
+  imageAlt: string;
+  size: {
+    default: "Medium";
+    type: string;
+  };
+  clampSize: {
+    default: "mediumClamp";
+    type: string;
+  };
+}>();
 
-  computed: {
-    getFontSize() {
-      const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize,
-      });
-      const small = createFontSize({
-        //create size here
-        fontSize: "var(--fontSmall)",
-      });
-      const medium = createFontSize({
-        //create size here
-        fontSize: "var(--fontMedium)",
-      });
-      const large = createFontSize({
-        fontSize: "var(--fontLarge)",
-      });
-      const fontSizes = {
-        //list of sizes just names
-        small,
-        medium, //default
-        large,
-      };
-      return fontSizes[this.size];
-    },
+const getFontSize = () => {
+  const createFontSize = ({ fontSize }: { fontSize: string }) => ({
+    "--customFontSize": fontSize,
+  });
+  const small = createFontSize({
+    //create size here
+    fontSize: "var(--fontSmall)",
+  });
+  const medium = createFontSize({
+    //create size here
+    fontSize: "var(--fontMedium)",
+  });
+  const large = createFontSize({
+    fontSize: "var(--fontLarge)",
+  });
+  const fontSizes: { [key: string]: { "--customFontSize": string } } = {
+    //list of sizes just names
+    small,
+    medium, //default
+    large,
+  };
+  return fontSizes[props.size.default];
+};
 
-    getClampSize() {
-      const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize,
-      });
-      const smallClamp = createClampSize({
-        //create size here
-        clampSize: "2",
-      });
-      const mediumClamp = createClampSize({
-        //create size here
-        clampSize: "4",
-      });
-      const largeClamp = createClampSize({
-        clampSize: "5",
-      });
-      const clampSizes = {
-        //list of sizes just names
-        smallClamp,
-        mediumClamp, //default
-        largeClamp,
-      };
-      return clampSizes[this.clampSize];
-    },
-  },
+const getClampSize = () => {
+  const createClampSize = ({ clampSize }: { clampSize: string }) => ({
+    "--customClampSize": clampSize,
+  });
+  const smallClamp = createClampSize({
+    //create size here
+    clampSize: "2",
+  });
+  const mediumClamp = createClampSize({
+    //create size here
+    clampSize: "4",
+  });
+  const largeClamp = createClampSize({
+    clampSize: "5",
+  });
+  const clampSizes = {
+    //list of sizes just names
+    smallClamp,
+    mediumClamp, //default
+    largeClamp,
+  };
+  return clampSizes[props.clampSize.default];
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 :root {
   --fontSmall: 2.827rem;
   --fontMedium: 3.998rem;
   --fontLarge: 5.653rem;
 }
 
-@import "../assets/variables";
+@import "../assets/variables.scss";
 
 .card-component {
   cursor: pointer;

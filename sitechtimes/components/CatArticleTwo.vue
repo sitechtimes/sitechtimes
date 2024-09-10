@@ -1,12 +1,11 @@
 <template>
-
   <nuxt-link class="cat-article" :to="articleUrl">
     <div class="cat-img-div">
       <img
-          :href="articleUrl"
-          :src="imageUrl"
-          :alt="imageAlt"
-          class="cat-article-img"
+        :href="articleUrl"
+        :src="imageUrl"
+        :alt="imageAlt"
+        class="cat-article-img"
       />
     </div>
     <div class="cat-article-img-content">
@@ -22,23 +21,20 @@
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  name: "CatArticleTwo",
-  props: [
-    "title",
-    "author",
-    "published",
-    "articleUrl",
-    "imageUrl",
-    "imageAlt",
-    "category"
-  ]
-};
+<script setup lang="ts">
+const props = defineProps<{
+  title: string;
+  author: string;
+  published: string;
+  articleUrl: string;
+  imageUrl: string;
+  imageAlt: string;
+  category: string;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 .cat-article {
   display: flex;
   flex-direction: row;
@@ -73,7 +69,7 @@ export default {
 .cat-article-authdate {
   margin: auto 0;
   line-height: 2.2rem;
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
 }
 @media only screen and (max-width: $mid-screen) {
   .cat-article {
@@ -114,7 +110,7 @@ export default {
       flex-direction: row-reverse;
       margin: auto;
     }
-    .cat-img-div{
+    .cat-img-div {
       width: 40%;
     }
     .cat-article-img {

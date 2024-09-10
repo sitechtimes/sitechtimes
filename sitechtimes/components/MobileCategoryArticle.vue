@@ -8,14 +8,17 @@
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  name: "MobileCategoryArticle",
-  props: ["category", "author", "published", "title", "articleUrl"]
-};
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+  author: string;
+  published: string;
+  title: string;
+  articleUrl: string;
+}>();
 </script>
 
-<style>
+<style scoped lang="scss">
 .mobile-cat-article {
   border-bottom: 0.3rem solid var(--primary-color);
   margin-bottom: 2rem;

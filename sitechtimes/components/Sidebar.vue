@@ -10,23 +10,18 @@
   </nuxt-link>
 </template>
 
-<script>
-import CategoryIconSidebar from "./CategoryIconSidebar.vue";
-export default {
-  components: { CategoryIconSidebar },
-  name: "Sidebar",
-  props: {
-    category: String,
-    title: String,
-    imgUrl: String,
-    imgAlt: String,
-    articleUrl: String
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+  title: string;
+  imgUrl: string;
+  imgAlt: string;
+  articleUrl: string;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 :root {
   --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;

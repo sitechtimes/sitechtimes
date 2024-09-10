@@ -14,28 +14,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "FooterNav", // vue component name
-  data() {
-    return {
-      categories: [
-        "covid",
-        "entertainment",
-        "news",
-        "politics",
-        "opinion",
-        "science",
-        "technology",
-        "activities"
-      ]
-    };
-  }
-};
+<script setup lang="ts">
+const categories = ref([
+  "covid",
+  "entertainment",
+  "news",
+  "politics",
+  "opinion",
+  "science",
+  "technology",
+  "activities",
+]);
 </script>
 
-<style lang="scss">
-@import '../assets/variables';
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 .footer-nav {
   width: 36rem;
 }
@@ -69,9 +62,9 @@ export default {
   color: var(--accent-color);
 }
 
- @media only screen and (max-width: $small-screen) {
-.footer-nav-ul li {
-  font-size: 2.5rem;
+@media only screen and (max-width: $small-screen) {
+  .footer-nav-ul li {
+    font-size: 2.5rem;
   }
 }
 @media only screen and (max-width: $x-small-screen) {

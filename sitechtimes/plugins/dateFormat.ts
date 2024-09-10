@@ -1,9 +1,9 @@
-export default {
+export default defineNuxtPlugin((nuxtApp) => {
   // Plugin options
   // ...
 
   // Plugin function
-  format(apiDate) {
+  const format = (apiDate: string | number | Date) => {
     const date = new Date(apiDate);
     const formattedDate = date.toLocaleString("en", {
       month: "short",
@@ -11,7 +11,6 @@ export default {
       day: "numeric",
       year: "numeric",
     });
-
     return formattedDate;
-  },
-};
+  };
+});

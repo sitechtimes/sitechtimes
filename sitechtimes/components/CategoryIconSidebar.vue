@@ -1,7 +1,7 @@
 <template>
   <div>
     <h5
-      :style="backgroundColor"
+      :style="backgroundColor()"
       class="sidebar-article-details-category"
       id="sidebar-article-category"
     >
@@ -10,25 +10,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "CategoryIconSidebar",
-  props: {
-    category: String,
-  },
-  data() {
-    return {};
-  },
-  computed: {
-    backgroundColor: function() {
-      return "background-color: var(--" + this.category + ")";
-    },
-  },
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+}>();
+const backgroundColor = () => {
+  return "background-color: var(--" + props.category + ")";
 };
 </script>
 
-<style lang="scss">
-@import '../assets/variables';
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 #sidebar-article-category {
   text-transform: uppercase;
   width: max-content;
@@ -51,9 +43,9 @@ export default {
 }
 
 @media only screen and (min-width: $mid-screen) {
-#article-category:hover {
+  #article-category:hover {
     transform: translateY(-0.4rem);
-}
+  }
 }
 </style>
 
@@ -71,6 +63,5 @@ export default {
 <!--<CategoryIconSidebar category="sports"/>-->
 <!--<CategoryIconSidebar category="entertainment"/>-->
 <!--```-->
-
 
 <!--</docs>-->

@@ -2,7 +2,7 @@
   <div class="datebar">
     <div class="datebar-container global-container">
       <h5 class="datebar-date">
-        <span id="date-text">{{ this.date }} </span>
+        <span id="date-text">{{ date }} </span>
         <svg
           aria-hidden="true"
           focusable="false"
@@ -20,49 +20,61 @@
         </svg>
       </h5>
       <div class="datebar-btns">
-        <color-mode-toggle-temp />
-        <cms-button></cms-button>
+        <color-mode-toggle-temp
+          :colorMode="colorMode"
+          :showModal="showModal"
+          :sun="sun"
+          :moon="moon"
+        />
+        <!-- <CmsButton
+          :colorMode="colorMode"
+          :showModal="showModal"
+          :sun="sun"
+          :moon="moon"
+        ></CmsButton> -->
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import ColorModeToggleTemp from "../components/ColorModeToggleTemp.vue";
-import CmsButton from "./CmsButton.vue";
+<script setup lang="ts">
+const props = defineProps<{
+  colorMode: string;
+  showModal: boolean;
+  sun: boolean;
+  moon: boolean;
+  date: string;
+}>();
 
-export default {
-  name: "Datebar",
-  components: { ColorModeToggleTemp, CmsButton },
-  data() {
-    return {
-      date: ""
-    };
-  },
-  mounted() {
-    this.refreshDate();
-  },
-  created() {
-    setInterval(() => {
-      this.refreshDate();
-    }, 1000);
-  },
-  methods: {
-    refreshDate() {
-      this.date = new Date().toLocaleString([], {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-      });
-    }
-  }
+const colorMode = ref("");
+const showModal = ref(false);
+const son = ref(false);
+const moon = ref(false);
+const date = ref("");
+
+const created = () => {
+  setInterval(() => {
+    refreshDate();
+  }, 1000);
 };
+
+const refreshDate = () => {
+  date.value = new Date().toLocaleString([], {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
+onMounted(() => {
+  refreshDate();
+});
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 
 .datebar {
   background-color: var(--accent-color);

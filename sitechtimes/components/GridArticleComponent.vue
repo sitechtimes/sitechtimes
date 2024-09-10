@@ -12,23 +12,18 @@
   </nuxt-link>
 </template>
 
-<script>
-//import AuthorAndDate from './AuthorAndDate.vue';
-//import CategoryIcon from './CategoryIcon.vue';
-export default {
-  name: "GridArticleComponent",
-  props: {
-    articleUrl: String,
-    category: String,
-    imageUrl: String,
-    imageAlt: String,
-    title: String,
-  },
-};
+<script setup lang="ts">
+const props = defineProps<{
+  articleUrl: string;
+  category: string;
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 
 .grid-article-component {
   display: flex;

@@ -13,25 +13,20 @@
   </nuxt-link>
 </template>
 
-<script>
-//import AuthorAndDate from './AuthorAndDate.vue';
-//import CategoryIcon from './CategoryIcon.vue';
-export default {
-  name: "TextBelowArticlePreview",
-  props: {
-    author: String,
-    articleUrl: String,
-    published: Date,
-    category: String,
-    imageUrl: String,
-    imageAlt: String,
-    title: String
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  author: string;
+  articleUrl: string;
+  published: Date;
+  category: string;
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 
 .text-below-preview-article {
   display: flex;

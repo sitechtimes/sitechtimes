@@ -42,23 +42,25 @@
           class=""
         ></path>
       </svg>
-      <h5>{{ this.$format(this.published) }}</h5>
+      <h5>{{ $format(props.published) }}</h5>
     </section>
   </div>
 </template>
 
-<script>
-export default {
-  name: "AuthorAndDateArticle",
-  props: {
-    author: String,
-    published: Date
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  author: String;
+  published: Date;
+}>();
+
+function $format(date: Date): string {
+  // Implement your logic to format the date here
+  return date.toISOString();
+}
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 .author-date-article {
   display: flex;
   //flex-direction: column;

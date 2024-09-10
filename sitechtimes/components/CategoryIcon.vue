@@ -1,6 +1,6 @@
 <template>
   <h5
-    :style="backgroundColor"
+    :style="backgroundColor()"
     class="article-details-category"
     id="article-category"
   >
@@ -8,25 +8,18 @@
   </h5>
 </template>
 
-<script>
-export default {
-  name: "CategoryIcon",
-  props: {
-    category: String,
-  },
-  data() {
-    return {};
-  },
-  computed: {
-    backgroundColor: function () {
-      return "background-color: var(--" + this.category + ")";
-    },
-  },
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+}>();
+
+const backgroundColor = () => {
+  return "background-color: var(--" + props.category + ")";
 };
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 #article-category {
   text-transform: uppercase;
   width: max-content;
@@ -71,6 +64,5 @@ export default {
 <!--<category-icon category="sports"></category-icon>-->
 <!--<category-icon category="entertainment"></category-icon>-->
 <!--```-->
-
 
 <!--</docs>-->

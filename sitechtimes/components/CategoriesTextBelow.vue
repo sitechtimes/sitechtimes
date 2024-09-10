@@ -1,10 +1,10 @@
 <template>
   <nuxt-link class="category-text-below-preview" :to="articleUrl">
     <img
-        :href="articleUrl"
-        :src="imageUrl"
-        :alt="imageAlt"
-        class="article-image dropshadow"
+      :href="articleUrl"
+      :src="imageUrl"
+      :alt="imageAlt"
+      class="article-image dropshadow"
     />
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />
@@ -14,24 +14,19 @@
   </nuxt-link>
 </template>
 
-<script>
-//import AuthorAndDate from './AuthorAndDate.vue';
-//import CategoryIcon from './CategoryIcon.vue';
-export default {
-  name: "CategoriesTextBelow",
-  props: {
-    author: String,
-    articleUrl: String,
-    published: Date,
-    category: String,
-    imageUrl: String,
-    imageAlt: String,
-    title: String
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  author: string;
+  articleUrl: string;
+  published: Date;
+  category: string;
+  imageUrl: string;
+  imageAlt: string;
+  title: string;
+}>();
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
@@ -50,7 +45,7 @@ export default {
 }
 .category-cat {
   margin-right: 2rem;
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
   margin-top: var(--category-top-margin);
 }
 .category-title {
@@ -64,14 +59,14 @@ export default {
 .category-data {
   padding-top: 1rem;
 }
-@import "../assets/variables";
+@import "../assets/variables.scss";
 @media only screen and (max-width: $mid-screen) {
   .article-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: $small-screen){
-  .article-image{
+@media only screen and (max-width: $small-screen) {
+  .article-image {
     width: 100%;
   }
 }

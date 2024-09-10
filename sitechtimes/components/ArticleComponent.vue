@@ -8,7 +8,7 @@
       <author-and-date-article
         class="article-author-and-date"
         :author="author"
-        :published="this.$format(this.published)"
+        :published="$format(new Date(props.published))"
       />
       <div class="main-article-metadata-actions">
         <social-media-sharing
@@ -24,42 +24,32 @@
     <div
       class="main-article-text-section main-article-text"
       v-html="articleText"
-    >
-      <!-- <p class="main-article-text">{{ articleText }}</p> -->
-    </div>
+    ></div>
   </div>
 </template>
 
-<script>
-import AuthorAndDateArticle from "./AuthorAndDateArticle.vue";
-import SocialMediaIcons from "./SocialMediaIcons.vue";
-import ShareIcon from "./ShareIcon.vue";
-import CategoryIcon from "./CategoryIcon.vue";
-export default {
-  name: "ArticleComponent",
-  props: {
-    category: String,
-    title: String,
-    description: String,
-    articleText: String,
-    articleImg: String,
-    articleAlt: String,
-    author: String,
-    published: Date,
-    articleUrl: String,
-    webUrl: String,
-  },
-  components: {
-    AuthorAndDateArticle,
-    SocialMediaIcons,
-    ShareIcon,
-    CategoryIcon,
-  },
-};
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+  title: string;
+  author: string;
+  published: Date;
+  description: string;
+  articleUrl: string | string[];
+  articleText: string;
+  articleImg: string;
+  articleAlt: string;
+  webUrl: string;
+}>();
+
+function $format(date: Date): string {
+  // Implement your logic to format the date here
+  return date.toISOString();
+}
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 
 #article-component > * {
   color: var(--on-background);

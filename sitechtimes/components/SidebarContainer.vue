@@ -31,20 +31,15 @@
   </section>
 </template>
 
-<script>
-import Sidebar from "./Sidebar.vue";
-export default {
-  name: "SidebarContainer",
-  components: { Sidebar },
-  props: {
-    trending: Array,
-    moreLikeThis: Array
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  trending: Array<any>;
+  moreLikeThis: Array<any>;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 .sidebar-container {
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;

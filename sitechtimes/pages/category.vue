@@ -12,6 +12,9 @@
             :imageUrl="articles[0].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
+            :imageAlt="articles[0].imageAlt"
+            :size="{ default: 'medium', type: 'string' }"
+            :clampSize="{ default: 'mediumClamp', type: 'string' }"
             class="cat-main-art"
           />
         </div>
@@ -25,6 +28,7 @@
               :imageUrl="articles[1].imageUrl"
               :category="category"
               :articleUrl="`/articles/${articles[1].slug}`"
+              :imageAlt="articles[1].imageAlt"
             />
           </div>
           <div class="cat-sub-two">
@@ -36,6 +40,7 @@
               :imageUrl="articles[2].imageUrl"
               :category="category"
               :articleUrl="`/articles/${articles[2].slug}`"
+              :imageAlt="articles[2].imageAlt"
             />
           </div>
         </div>
@@ -50,6 +55,7 @@
           :imageUrl="articles[3].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[3].slug}`"
+          :imageAlt="articles[3].imageAlt"
         />
         <CatArticleTwo
           class="sub-art"
@@ -60,18 +66,20 @@
           :imageUrl="articles[4].imageUrl"
           :category="category"
           :articleUrl="`/articles/${articles[4].slug}`"
+          :imageAlt="articles[4].imageAlt"
         />
         <div>
           <CatArticleTwo
             class="sub-art not-visible"
             v-for="article in allArticles"
             :key="article"
-            :category="article.category"
-            :author="article.user.name"
-            :published="article.updatedAt"
-            :title="article.title"
-            :imageUrl="article.imageUrl"
-            :articleUrl="`/articles/${article.slug}`"
+            :category="articles.category"
+            :author="articles.user.name"
+            :published="articles.updatedAt"
+            :title="articles.title"
+            :imageUrl="articles.imageUrl"
+            :articleUrl="`/articles/${articles.slug}`"
+            :imageAlt="articles.imageAlt"
           />
         </div>
       </div>
@@ -85,6 +93,9 @@
             :imageUrl="articles[0].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[0].slug}`"
+            :imageAlt="articles[0].imageAlt"
+            :size="{ default: 'medium', type: 'string' }"
+            :clampSize="{ default: 'mediumClamp', type: 'string' }"
             class="cat-main-art"
           />
         </div>
@@ -98,6 +109,7 @@
             :imageUrl="articles[1].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[1].slug}`"
+            :imageAlt="articles[1].imageAlt"
           />
           <CatArticleTwo
             class="mobile-sub-art"
@@ -108,22 +120,24 @@
             :imageUrl="articles[2].imageUrl"
             :category="category"
             :articleUrl="`/articles/${articles[2].slug}`"
+            :imageAlt="articles[2].imageAlt"
           />
         </div>
-          </div>
-          <div class="rest-of-articles">
-            <CatArticleTwo
-              class="sub-art cat-visible"
-              v-for="article in allArticles"
-              :key="article"
-              :category="article.category"
-              :author="article.user.name"
-              :published="article.createdAt"
-              :title="article.title"
-              :imageUrl="article.imageUrl"
-              :articleUrl="`/articles/${article.slug}`"
-            />
-          </div>
+      </div>
+      <div class="rest-of-articles">
+        <CatArticleTwo
+          class="sub-art cat-visible"
+          v-for="article in allArticles"
+          :key="article"
+          :category="articles.category"
+          :author="articles.user.name"
+          :published="articles.createdAt"
+          :title="articles.title"
+          :imageUrl="articles.imageUrl"
+          :articleUrl="`/articles/${articles.slug}`"
+          :imageAlt="articles.imageAlt"
+        />
+      </div>
     </div>
     <div class="entertainment-seymour">
       <SeeMoreBtn
@@ -134,73 +148,81 @@
     </div>
   </section>
 </template>
-<script>
-import CardComponent from "../components/CardComponent";
-import TextBelowArticlePreview from "../components/TextBelowArticlePreview";
-import CatArticleTwo from "../components/CatArticleTwo";
-import SeeMoreBtn from "../components/SeeMoreBtn";
 
-export default {
-  components: {
-    CardComponent,
-    TextBelowArticlePreview,
-    CatArticleTwo,
-    SeeMoreBtn
-  },
-  data() {
-    return {
-      category: this.$route.params.category,
-      page: 2,
-      articles: [],
-      allArticles: [],
-      moreToLoad: true
-    };
-  },
-  async fetch() {
-    try {
-      const articles = await this.$axios.get(
-        `/articles?category=${this.category}&sort=dateDes`
-      );
-      this.articles = articles.data;
-    } catch (e) {
-      await this.$router.push("/");
-    }
-  },
-  methods: {
-    async newArticles() {
-      const articles = await this.$axios.get(
-        `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
-      )
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+  articles: Promise<any>;
+  allArticles: any;
+  moreToLoad: boolean;
+}>();
 
-      this.page += 1
-      this.allArticles = [].concat(this.allArticles, articles.data);
+const category = ref("");
+const page = ref(2);
+const articles = ref();
+const allArticles = ref([]);
+const moreToLoad = ref(true);
 
-      this.moreToLoad = articles.data.length >= 5
-    }
-  },
-  head: function() {
-    return {
-      meta: [
-      { name: 'title', content: this.$route.params.category },
-      { name: 'description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'og:site_name', content: 'SITECHTIMES'},
-      { name: 'og:title', content: this.$route.params.category },
-      { name: 'og:section', content: this.$route.params.category },
-      { name: 'og:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'og:image', content: "/logo_thicker.svg" },
-      { name: 'og:image:alt', content: "SITECH Times logo" },
-      { name: 'twitter:card', content: 'summary'},
-      { name: 'twitter:title', content: this.$route.params.category },
-      { name: 'twitter:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'twitter:image', content: "/logo_thicker.svg" },
-  ]
-    }
+const fetchArticles = async () => {
+  try {
+    const response = await fetch(
+      `/articles?category=${category.value}&sort=dateDes`
+    );
+    articles.value = await response.json();
+  } catch (e) {
+    await useRouter.push({ path: "/" });
   }
 };
+
+const newArticles = async () => {
+  const response = await fetch(
+    `/articles?category=${category.value}&q=5&page=${page.value}&sort=dateDes`
+  );
+
+  page.value += 1;
+  allArticles.value = [...allArticles.value, ...(await response.json())];
+
+  moreToLoad.value = response.data.length >= 5;
+};
+
+const meta = [
+  { name: "title", content: category.value },
+  {
+    name: "description",
+    content:
+      "Click to read all articles about " +
+      category +
+      " written by the SITECH Times team!",
+  },
+  { name: "og:site_name", content: "SITECHTIMES" },
+  { name: "og:title", content: category.value },
+  { name: "og:section", content: category.value },
+  {
+    name: "og:description",
+    content:
+      "Click to read all articles about " +
+      category.value +
+      " written by the SITECH Times team!",
+  },
+  { name: "og:image", content: "/logo_thicker.svg" },
+  { name: "og:image:alt", content: "SITECH Times logo" },
+  { name: "twitter:card", content: "summary" },
+  { name: "twitter:title", content: category.value },
+  {
+    name: "twitter:description",
+    content:
+      "Click to read all articles about " +
+      category.value +
+      " written by the SITECH Times team!",
+  },
+  { name: "twitter:image", content: "/logo_thicker.svg" },
+];
+
+onMounted(fetchArticles);
 </script>
 
 <style lang="scss">
-@import "/../assets/variables";
+@import "../assets/variables.scss";
 .rest-of-articles {
   margin-top: 3.5rem;
 }
@@ -290,7 +312,6 @@ export default {
   .seymour {
     margin: 4rem 0 10rem 0;
   }
-
 }
 @media only screen and (max-width: $x-small-screen) {
   .rest-of-articles {

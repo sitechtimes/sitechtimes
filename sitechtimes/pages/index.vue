@@ -6,33 +6,36 @@
         <section class="trending-section">
           <CardComponent
             class="trending-main cardquery"
-            size="medium"
             v-if="homepages[0]"
             :articleUrl="'/articles/' + homepages[0].slug"
             :category="homepages[0].category"
-            :imageTitle="homepages[0].imageAlt"
             :title="homepages[0].title"
             :imageUrl="homepages[0].imageUrl"
+            :imageAlt="homepages[0].imageAlt"
+            :size="{ default: 'Medium', type: 'string' }"
+            :clampSize="{ default: 'mediumClamp', type: 'string' }"
           />
           <CardComponent
+            class="trending-sub"
             v-if="homepages[1]"
             :articleUrl="'/articles/' + homepages[1].slug"
             :category="homepages[1].category"
-            :imageTitle="homepages[1].imageAlt"
             :title="homepages[1].title"
             :imageUrl="homepages[1].imageUrl"
-            class="trending-sub"
-            size="small"
+            :imageAlt="homepages[1].imageAlt"
+            :size="{ default: 'Medium', type: 'string' }"
+            :clampSize="{ default: 'mediumClamp', type: 'string' }"
           />
           <CardComponent
+            class="trending-detail"
             v-if="homepages[2]"
             :articleUrl="'/articles/' + homepages[2].slug"
             :category="homepages[2].category"
-            :imageTitle="homepages[2].imageAlt"
             :title="homepages[2].title"
             :imageUrl="homepages[2].imageUrl"
-            class="trending-detail"
-            size="small"
+            :imageAlt="homepages[2].imageAlt"
+            :size="{ default: 'Medium', type: 'string' }"
+            :clampSize="{ default: 'mediumClamp', type: 'string' }"
           />
         </section>
 
@@ -57,7 +60,7 @@
             :articles="homepages.slice(7, 9)"
           />
         </section>
-        
+
         <section
           class="grid-article-container six-grid-container"
           v-if="homepages[0]"
@@ -73,7 +76,6 @@
             :key="article.id"
           />
         </section>
-        
       </div>
       <div class="mobile-view">
         <h2 class="section-title section-title-mobile">Trending Articles</h2>
@@ -91,49 +93,38 @@
   </div>
 </template>
 
-<script>
-import CardComponent from "../components/CardComponent";
-import DuoArticleContainer from "../components/DuoArticleContainer";
-import GridArticleComponent from "../components/GridArticleComponent";
+<script setup lang="ts">
+let homepages: any[] = [];
+const isMobile = false;
 
-export default {
-  components: {
-    DuoArticleContainer,
-    CardComponent,
-    GridArticleComponent,
-  },
-  data() {
-    return {
-      homepages: [],
-      isMobile: false,
-    };
-  },
-  async fetch() {
-    const homepages = await this.$fetch.get("/articles/homepage");
-    this.homepages = homepages.data;
-  },
-  head: function () {
-    return {
-      meta: [
-        { name: "title", content: "The SITECH Times Official Website" },
-        { name: "description", content: "Visit the Website to read more!" },
-        { name: "og:type", content: "website" },
-        { name: "og:title", content: "The SITECH Times Official Website" },
-        { name: "og:description", content: "Visit the Website to read more!" },
-        { name: "og:image", content: "/logo_thicker.svg" },
-        { name: "og:image:alt", content: "Staten Island Tech Times Logo" },
-        { name: "twitter:card", content: "summary" },
-        { name: "twitter:title", content: "The SITECH Times Official Website" },
-        { name: "twitter:image", content: "/logo_thicker.svg" },
-        { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" },
-      ],
-    };
-  },
-};
+/* async function fetch() {
+  const homepage = await fetch("/articles/homepage");
+  homepages.value = await homepage.json();
+} */
+(function () {
+  return {
+    title: "The SITECH Times Official Website",
+    meta: [
+      { name: "description", content: "Visit the Website to read more!" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "The SITECH Times Official Website" },
+      {
+        property: "og:description",
+        content: "Visit the Website to read more!",
+      },
+      { property: "og:image", content: "/logo_thicker.svg" },
+      { property: "og:image:alt", content: "Staten Island Tech Times Logo" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "The SITECH Times Official Website" },
+      { name: "twitter:image", content: "/logo_thicker.svg" },
+      { name: "twitter:image:alt", content: "Staten Island Tech Times Logo" },
+    ],
+  };
+})();
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@import "../assets/variables.scss";
 .mobile-view {
   display: none;
 }
@@ -148,10 +139,6 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-// .invisible {
-//   height: 0rem;
-//   width: 0rem;
-// }
 .section-title {
   font-size: var(--h3);
   padding: var(--title-spacing) 0;
@@ -177,17 +164,7 @@ export default {
 .global-container > h3 {
   color: var(--on-background);
 }
-/* .darksection {
-  background-color: var(--grey);
-  color: white;
-  padding-bottom: 5rem;
-} */
-//.desktop-view {
-//  display: grid;
-//}
-//.mobile-view {
-//  display: none;
-//}
+
 @media only screen and (max-width: $mid-screen) {
   // .not-on-ipad{
   //   display: none;

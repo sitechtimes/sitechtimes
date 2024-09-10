@@ -4,13 +4,10 @@
   </li>
 </template>
 
-<script>
-export default {
-  name: "ThemesModalTheme",
-  props: {
-    color: String
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  color: string;
+}>();
 </script>
 
 <style>

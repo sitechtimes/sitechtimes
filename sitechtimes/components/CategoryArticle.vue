@@ -25,23 +25,20 @@
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  name: "CategoryArticle",
-  props: {
-    title: String,
-    author: String,
-    published: Date,
-    articleUrl: String,
-    imageUrl: String,
-    imageAlt: String,
-    category: String
-  }
-};
+<script setup lang="ts">
+const props = defineProps<{
+  title: string;
+  author: string;
+  published: Date;
+  articleUrl: string;
+  imageUrl: string;
+  imageAlt: string;
+  category: string;
+}>();
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 .category-article {
   display: flex;
   flex-direction: row;

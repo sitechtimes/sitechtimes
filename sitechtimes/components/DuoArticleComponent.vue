@@ -13,7 +13,7 @@
         </div>
         <div
           class="duo-text-overflow duo-card-component-title"
-          :style="getClampSize"
+          :style="getClampSize()"
         >
           {{ title }}
         </div>
@@ -22,81 +22,75 @@
   </nuxt-link>
 </template>
 
-<script>
-export default {
-  name: "DuoArticleComponent",
-  props: {
-    author: String,
-    articleUrl: String,
-    published: String,
-    category: String,
-    imageUrl: String,
-    imageAlt: String,
-    title: String,
-    size: {
-      default: "medium",
-      type: String,
-    },
-    clampSize: {
-      default: "mediumClamp",
-      type: String,
-    },
-  },
+<script setup lang="ts">
+const props = defineProps<{
+  articleUrl: string;
+  author: string;
+  category: string;
+  imageAlt: string;
+  imageUrl: string;
+  published: Date;
+  title: string;
+  size: {
+    default: "medium";
+    type: string;
+  };
+  clampSize: {
+    default: "mediumClamp";
+    type: string;
+  };
+}>();
 
-  computed: {
-    getFontSize() {
-      const createFontSize = ({ fontSize }) => ({
-        "--customFontSize": fontSize,
-      });
-      const small = createFontSize({
-        //create size here
-        fontSize: "2.827rem",
-      });
-      const medium = createFontSize({
-        //create size here
-        fontSize: "3.998rem",
-      });
-      const large = createFontSize({
-        fontSize: "5.653rem",
-      });
-      const fontSizes = {
-        //list of sizes just names
-        small,
-        medium, //default
-        large,
-      };
-      return fontSizes[this.size];
-    },
-
-    getClampSize() {
-      const createClampSize = ({ clampSize }) => ({
-        "--customClampSize": clampSize,
-      });
-      const smallClamp = createClampSize({
-        //create size here
-        clampSize: "2",
-      });
-      const mediumClamp = createClampSize({
-        //create size here
-        clampSize: "4",
-      });
-      const largeClamp = createClampSize({
-        clampSize: "5",
-      });
-      const clampSizes = {
-        //list of sizes just names
-        smallClamp,
-        mediumClamp, //default
-        largeClamp,
-      };
-      return clampSizes[this.clampSize];
-    },
-  },
+const getFontSize = () => {
+  const createFontSize = ({ fontSize }: { fontSize: string }) => ({
+    "--customFontSize": fontSize,
+  });
+  const small = createFontSize({
+    //create size here
+    fontSize: "2.827rem",
+  });
+  const medium = createFontSize({
+    //create size here
+    fontSize: "3.998rem",
+  });
+  const large = createFontSize({
+    fontSize: "5.653rem",
+  });
+  const fontSizes = {
+    //list of sizes just names
+    small,
+    medium, //default
+    large,
+  };
+  return fontSizes[props.size.default];
+};
+const getClampSize = () => {
+  const createClampSize = ({ clampSize }: { clampSize: string }) => ({
+    "--customClampSize": clampSize,
+  });
+  const smallClamp = createClampSize({
+    //create size here
+    clampSize: "2",
+  });
+  const mediumClamp = createClampSize({
+    //create size here
+    clampSize: "4",
+  });
+  const largeClamp = createClampSize({
+    clampSize: "5",
+  });
+  const clampSizes = {
+    //list of sizes just names
+    smallClamp,
+    mediumClamp, //default
+    largeClamp,
+  };
+  return clampSizes[props.clampSize.default];
 };
 </script>
 
-<style lang="scss">
-@import "../assets/variables";
+<style scoped lang="scss">
+@import "../assets/variables.scss";
 
 .duo-card-component {
   cursor: pointer;
