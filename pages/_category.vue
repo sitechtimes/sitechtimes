@@ -65,7 +65,7 @@
           <CatArticleTwo
             class="sub-art not-visible"
             v-for="article in allArticles"
-            :key="article"
+            :key="article.id"
             :category="article.category"
             :author="article.user.name"
             :published="article.updatedAt"
@@ -115,7 +115,7 @@
         <CatArticleTwo
           class="sub-art cat-visible"
           v-for="article in allArticles"
-          :key="article"
+          :key="article.id"
           :category="article.category"
           :author="article.user.name"
           :published="article.createdAt"
@@ -150,32 +150,30 @@ export default {
   data() {
     return {
       category: this.$route.params.category,
-      page: 2,
       articles: [],
       allArticles: [],
-      moreToLoad: true,
+      moreToLoad: false,
     };
   },
   async fetch() {
     try {
-      const articles = await this.$axios.get(
+      const response = await this.$axios.get(
         `/articles?category=${this.category}&sort=dateDes`
       );
-      this.articles = articles.data;
+      this.articles = response.data.articles;
+      this.moreToLoad = response.data.isMore;
     } catch (e) {
       await this.$router.push("/");
     }
   },
   methods: {
     async newArticles() {
-      const articles = await this.$axios.get(
-        `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
+      const response = await this.$axios.get(
+        `/articles?category=${this.category}&q=5&skip=${this.articles.length + this.allArticles.length}&sort=dateDes`
       );
 
-      this.page += 1;
-      this.allArticles = [].concat(this.allArticles, articles.data);
-
-      this.moreToLoad = articles.data.length >= 5;
+      this.allArticles = [].concat(this.allArticles, response.data.articles);
+      this.moreToLoad = response.data.isMore;
     },
   },
   head: function () {
