@@ -24,9 +24,7 @@
     <div
       class="main-article-text-section main-article-text"
       v-html="articleText"
-    >
-      <!-- <p class="main-article-text">{{ articleText }}</p> -->
-    </div>
+    ></div>
   </div>
 </template>
 
@@ -45,7 +43,7 @@ export default {
     articleImg: String,
     articleAlt: String,
     author: String,
-    published: String, // was Date
+    published: String,
     articleUrl: String,
     webUrl: String,
   },

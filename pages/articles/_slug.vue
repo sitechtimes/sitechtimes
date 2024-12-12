@@ -48,7 +48,7 @@ export default {
       const categoryRecent = await this.$axios.get(
         `/articles?category=${this.article.category}&q=3`
       );
-      this.categoryRecent = categoryRecent.data;
+      this.categoryRecent = categoryRecent.data.articles;
     } catch (e) {
       await this.$router.push("/");
     }

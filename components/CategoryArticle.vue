@@ -31,7 +31,7 @@ export default {
   props: {
     title: String,
     author: String,
-    published: Date,
+    published: String,
     articleUrl: String,
     imageUrl: String,
     imageAlt: String,
