@@ -57,7 +57,7 @@
             :articles="homepages.slice(7, 9)"
           />
         </section>
-        
+
         <section
           class="grid-article-container six-grid-container"
           v-if="homepages[0]"
@@ -73,7 +73,6 @@
             :key="article.id"
           />
         </section>
-        
       </div>
       <div class="mobile-view">
         <h2 class="section-title section-title-mobile">Trending Articles</h2>
@@ -133,7 +132,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 .mobile-view {
   display: none;
 }
@@ -188,12 +187,12 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   // .not-on-ipad{
   //   display: none;
   // }
 }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: var(--small-screen)) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
   }

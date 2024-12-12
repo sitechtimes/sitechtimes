@@ -1,13 +1,17 @@
 <template>
-<footer class="footer-bg">
+  <footer class="footer-bg">
     <div class="footer-container global-container">
       <div class="form-and-media">
         <GetNotifiedSection />
-        <FooterSocialMedia :instagramUrl="insta" :twitterUrl="twitter" :facebookUrl="facebook"/>
+        <FooterSocialMedia
+          :instagramUrl="insta"
+          :twitterUrl="twitter"
+          :facebookUrl="facebook"
+        />
       </div>
       <FooterNav />
     </div>
-</footer>
+  </footer>
 </template>
 
 <script>
@@ -28,48 +32,47 @@ export default {
   components: {
     GetNotifiedSection,
     FooterSocialMedia,
-    FooterNav
-  }
+    FooterNav,
+  },
 };
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
-    .footer-bg {
-        background-color: var(--footer);
-        padding: 3rem 0;
-    }
-    .footer-container {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 5%;
-        // margin: 0 auto;
-    }
-    .form-and-media {
-        display: flex;
-        flex-direction: column;
-        // margin-right: 10%;
-        height: 100%;
-    }
-     @media only screen and (max-width: $mid-screen) {
-        .form-and-media, .footer-nav {
-             margin: auto;
-        }
-        .footer-container {
-            flex-direction: column;
-        }
-        .form-and-media {
-            padding-right: 0;
-        }
-    }
-     @media only screen and (max-width: $x-small-screen) {
-        .form-and-media {
-            max-width: 100%;
-        }
-     }
-
-
+@use "../assets/_variables";
+.footer-bg {
+  background-color: var(--footer);
+  padding: 3rem 0;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5%;
+  // margin: 0 auto;
+}
+.form-and-media {
+  display: flex;
+  flex-direction: column;
+  // margin-right: 10%;
+  height: 100%;
+}
+@media only screen and (max-width: var(--mid-screen)) {
+  .form-and-media,
+  .footer-nav {
+    margin: auto;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+  .form-and-media {
+    padding-right: 0;
+  }
+}
+@media only screen and (max-width: var(--x-small-screen)) {
+  .form-and-media {
+    max-width: 100%;
+  }
+}
 </style>
 
 <!--<docs>-->

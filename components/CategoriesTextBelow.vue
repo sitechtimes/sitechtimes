@@ -1,10 +1,10 @@
 <template>
   <nuxt-link class="category-text-below-preview" :to="articleUrl">
     <img
-        :href="articleUrl"
-        :src="imageUrl"
-        :alt="imageAlt"
-        class="article-image dropshadow"
+      :href="articleUrl"
+      :src="imageUrl"
+      :alt="imageAlt"
+      class="article-image dropshadow"
     />
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />
@@ -26,12 +26,14 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 
 <style lang="scss">
+@use "../assets/_variables";
+
 .category-text-below-preview {
   display: flex;
   flex-direction: column;
@@ -50,7 +52,7 @@ export default {
 }
 .category-cat {
   margin-right: 2rem;
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
   margin-top: var(--category-top-margin);
 }
 .category-title {
@@ -64,18 +66,18 @@ export default {
 .category-data {
   padding-top: 1rem;
 }
-@import "../assets/variables";
-@media only screen and (max-width: $mid-screen) {
+
+@media only screen and (max-width: var(--mid-screen)) {
   .article-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: $small-screen){
-  .article-image{
+@media only screen and (max-width: var(--small-screen)) {
+  .article-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: $x-small-screen) {
+@media only screen and (max-width: var(--x-small-screen)) {
   .category-cat {
     margin-right: 1rem;
   }

@@ -20,13 +20,13 @@ export default {
     title: String,
     imgUrl: String,
     imgAlt: String,
-    articleUrl: String
-  }
+    articleUrl: String,
+  },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 :root {
   --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;
@@ -92,7 +92,7 @@ export default {
   height: 11.7rem;
   width: 40rem;
 }
-@media only screen and (max-width: $midlarge-screen) {
+@media only screen and (max-width: var(--midlarge-screen)) {
   .sidebar-container {
     max-width: none;
     margin-top: 5rem;
@@ -107,7 +107,7 @@ export default {
     font-size: var(--h4);
   }
 }
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   :root {
     --sidebarImgWidth: 17rem;
   }

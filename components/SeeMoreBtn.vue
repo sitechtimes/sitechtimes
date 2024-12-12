@@ -4,30 +4,30 @@
 
 <script>
 export default {
-  name: 'SeeMoreBtn',
-}
+  name: "SeeMoreBtn",
+};
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@use "../assets/_variables";
 .see-more-btn {
-    background-color: var(--primary-color);
-    // text-shadow: .1rem .1rem .2rem var(--mid-grey);
-    padding: 1.8rem 3rem 1.6rem 3rem;
-    font: bold 1.74rem var(--font);
-    color: var(--on-primary);
-    border: none;
-    border-radius: 3.5rem;
-    text-transform: uppercase;
-    transition: all .3s;
-    cursor: pointer;
+  background-color: var(--primary-color);
+  // text-shadow: .1rem .1rem .2rem var(--mid-grey);
+  padding: 1.8rem 3rem 1.6rem 3rem;
+  font: bold 1.74rem var(--font);
+  color: var(--on-primary);
+  border: none;
+  border-radius: 3.5rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 .see-more-btn:hover {
-  box-shadow: 0 .5rem 1rem .5rem var(--see-more-color);
-  transform: translateY(-.5rem);
+  box-shadow: 0 0.5rem 1rem 0.5rem var(--see-more-color);
+  transform: translateY(-0.5rem);
 }
 
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   .see-more-btn {
     font-size: 1.9rem;
   }
@@ -37,7 +37,7 @@ export default {
     background-color: var(--primary-color);
   }
 }
-@media only screen and (max-width: $x-small-screen) {
+@media only screen and (max-width: var(--x-small-screen)) {
   .see-more-btn {
     font-size: 2.25rem;
   }

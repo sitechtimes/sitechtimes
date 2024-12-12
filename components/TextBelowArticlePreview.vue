@@ -25,13 +25,13 @@ export default {
     category: String,
     imageUrl: String,
     imageAlt: String,
-    title: String
-  }
+    title: String,
+  },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 
 .text-below-preview-article {
   display: flex;

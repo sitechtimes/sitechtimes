@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 #article-category {
   text-transform: uppercase;
   width: max-content;
@@ -38,7 +38,7 @@ export default {
   transition: all 0.2s;
 }
 
-@media only screen and (min-width: $mid-screen) {
+@media only screen and (min-width: var(--mid-screen)) {
   #article-category:hover {
     transform: translateY(-0.4rem);
   }
@@ -71,6 +71,5 @@ export default {
 <!--<category-icon category="sports"></category-icon>-->
 <!--<category-icon category="entertainment"></category-icon>-->
 <!--```-->
-
 
 <!--</docs>-->

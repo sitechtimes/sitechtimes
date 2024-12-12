@@ -1,4 +1,4 @@
-@import "./variables";
+@use "variables";
 
 :root {
   /* colors */
@@ -303,7 +303,7 @@ small,
   font-size: var(--small-text);
 }
 
-@media only screen and (max-width: $large-screen) {
+@media only screen and (max-width: var(--large-screen)) {
   *,
   html,
   body {
@@ -311,7 +311,7 @@ small,
   }
 }
 
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   *,
   html,
   body {
@@ -319,7 +319,7 @@ small,
   }
 }
 
-@media only screen and (max-width: $x-small-screen) {
+@media only screen and (max-width: var(--x-small-screen)) {
   *,
   html,
   body {
@@ -356,7 +356,7 @@ pre {
 }
 
 .global-container {
-  max-width: $container;
+  max-width: var(--container);
   margin: auto;
   padding: 2rem;
 }

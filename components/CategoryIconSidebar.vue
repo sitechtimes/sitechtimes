@@ -20,7 +20,7 @@ export default {
     return {};
   },
   computed: {
-    backgroundColor: function() {
+    backgroundColor: function () {
       return "background-color: var(--" + this.category + ")";
     },
   },
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/variables';
+@use "../assets/_variables";
 #sidebar-article-category {
   text-transform: uppercase;
   width: max-content;
@@ -41,7 +41,7 @@ export default {
   line-height: 1.5rem;
   padding: 0.2rem 0.6rem 0 0.6rem;
 }
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   #sidebar-article-category {
     font-size: var(--h5);
     border-radius: 0.8rem;
@@ -50,10 +50,10 @@ export default {
   }
 }
 
-@media only screen and (min-width: $mid-screen) {
-#article-category:hover {
+@media only screen and (min-width: var(--mid-screen)) {
+  #article-category:hover {
     transform: translateY(-0.4rem);
-}
+  }
 }
 </style>
 
@@ -71,6 +71,5 @@ export default {
 <!--<CategoryIconSidebar category="sports"/>-->
 <!--<CategoryIconSidebar category="entertainment"/>-->
 <!--```-->
-
 
 <!--</docs>-->

@@ -35,13 +35,13 @@ export default {
     articleUrl: String,
     imageUrl: String,
     imageAlt: String,
-    category: String
-  }
+    category: String,
+  },
 };
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 .category-article {
   display: flex;
   flex-direction: row;
@@ -74,7 +74,7 @@ export default {
   line-height: 2.2rem;
   padding-top: 1rem;
 }
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   .category-article {
     display: flex;
     flex-direction: row;
@@ -117,7 +117,7 @@ export default {
     width: 40rem;
   }
 }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: var(--small-screen)) {
   .category-article {
     display: flex;
     flex-direction: row-reverse;

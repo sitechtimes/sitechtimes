@@ -110,20 +110,20 @@
             :articleUrl="`/articles/${articles[2].slug}`"
           />
         </div>
-          </div>
-          <div class="rest-of-articles">
-            <CatArticleTwo
-              class="sub-art cat-visible"
-              v-for="article in allArticles"
-              :key="article"
-              :category="article.category"
-              :author="article.user.name"
-              :published="article.createdAt"
-              :title="article.title"
-              :imageUrl="article.imageUrl"
-              :articleUrl="`/articles/${article.slug}`"
-            />
-          </div>
+      </div>
+      <div class="rest-of-articles">
+        <CatArticleTwo
+          class="sub-art cat-visible"
+          v-for="article in allArticles"
+          :key="article"
+          :category="article.category"
+          :author="article.user.name"
+          :published="article.createdAt"
+          :title="article.title"
+          :imageUrl="article.imageUrl"
+          :articleUrl="`/articles/${article.slug}`"
+        />
+      </div>
     </div>
     <div class="entertainment-seymour">
       <SeeMoreBtn
@@ -145,7 +145,7 @@ export default {
     CardComponent,
     TextBelowArticlePreview,
     CatArticleTwo,
-    SeeMoreBtn
+    SeeMoreBtn,
   },
   data() {
     return {
@@ -153,7 +153,7 @@ export default {
       page: 2,
       articles: [],
       allArticles: [],
-      moreToLoad: true
+      moreToLoad: true,
     };
   },
   async fetch() {
@@ -170,37 +170,55 @@ export default {
     async newArticles() {
       const articles = await this.$axios.get(
         `/articles?category=${this.category}&q=5&page=${this.page}&sort=dateDes`
-      )
+      );
 
-      this.page += 1
+      this.page += 1;
       this.allArticles = [].concat(this.allArticles, articles.data);
 
-      this.moreToLoad = articles.data.length >= 5
-    }
+      this.moreToLoad = articles.data.length >= 5;
+    },
   },
-  head: function() {
+  head: function () {
     return {
       meta: [
-      { name: 'title', content: this.$route.params.category },
-      { name: 'description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'og:site_name', content: 'SITECHTIMES'},
-      { name: 'og:title', content: this.$route.params.category },
-      { name: 'og:section', content: this.$route.params.category },
-      { name: 'og:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'og:image', content: "/logo_thicker.svg" },
-      { name: 'og:image:alt', content: "SITECH Times logo" },
-      { name: 'twitter:card', content: 'summary'},
-      { name: 'twitter:title', content: this.$route.params.category },
-      { name: 'twitter:description', content: "Click to read all articles about " + this.$route.params.category + " written by the SITECH Times team!"},
-      { name: 'twitter:image', content: "/logo_thicker.svg" },
-  ]
-    }
-  }
+        { name: "title", content: this.$route.params.category },
+        {
+          name: "description",
+          content:
+            "Click to read all articles about " +
+            this.$route.params.category +
+            " written by the SITECH Times team!",
+        },
+        { name: "og:site_name", content: "SITECHTIMES" },
+        { name: "og:title", content: this.$route.params.category },
+        { name: "og:section", content: this.$route.params.category },
+        {
+          name: "og:description",
+          content:
+            "Click to read all articles about " +
+            this.$route.params.category +
+            " written by the SITECH Times team!",
+        },
+        { name: "og:image", content: "/logo_thicker.svg" },
+        { name: "og:image:alt", content: "SITECH Times logo" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:title", content: this.$route.params.category },
+        {
+          name: "twitter:description",
+          content:
+            "Click to read all articles about " +
+            this.$route.params.category +
+            " written by the SITECH Times team!",
+        },
+        { name: "twitter:image", content: "/logo_thicker.svg" },
+      ],
+    };
+  },
 };
 </script>
 
 <style lang="scss">
-@import "/../assets/variables";
+@use "../assets/_variables";
 .rest-of-articles {
   margin-top: 3.5rem;
 }
@@ -254,7 +272,7 @@ export default {
   display: none;
 }
 
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   .border-right {
     width: 100%;
     border: none;
@@ -286,13 +304,12 @@ export default {
     margin: 6rem 0 10rem 0;
   }
 }
-@media only screen and (max-width: $small-screen) {
+@media only screen and (max-width: var(--small-screen)) {
   .seymour {
     margin: 4rem 0 10rem 0;
   }
-
 }
-@media only screen and (max-width: $x-small-screen) {
+@media only screen and (max-width: var(--x-small-screen)) {
   .rest-of-articles {
     margin-top: -4rem;
   }

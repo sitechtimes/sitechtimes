@@ -1,12 +1,11 @@
 <template>
-
   <nuxt-link class="cat-article" :to="articleUrl">
     <div class="cat-img-div">
       <img
-          :href="articleUrl"
-          :src="imageUrl"
-          :alt="imageAlt"
-          class="cat-article-img"
+        :href="articleUrl"
+        :src="imageUrl"
+        :alt="imageAlt"
+        class="cat-article-img"
       />
     </div>
     <div class="cat-article-img-content">
@@ -32,13 +31,13 @@ export default {
     "articleUrl",
     "imageUrl",
     "imageAlt",
-    "category"
-  ]
+    "category",
+  ],
 };
 </script>
 
 <style lang="scss">
-@import "../assets/variables";
+@use "../assets/_variables";
 .cat-article {
   display: flex;
   flex-direction: row;
@@ -73,9 +72,9 @@ export default {
 .cat-article-authdate {
   margin: auto 0;
   line-height: 2.2rem;
-   margin-bottom: var(--category-bottom-margin);
+  margin-bottom: var(--category-bottom-margin);
 }
-@media only screen and (max-width: $mid-screen) {
+@media only screen and (max-width: var(--mid-screen)) {
   .cat-article {
     display: flex;
     flex-direction: row;
@@ -96,7 +95,7 @@ export default {
     padding-right: 1.5rem;
   }
 }
-@media only screen and (max-width: $x-small-screen) {
+@media only screen and (max-width: var(--x-small-screen)) {
   .cat-article {
     display: flex;
   }
@@ -108,13 +107,13 @@ export default {
     line-height: 2.2rem;
     padding-top: 1rem;
   }
-  @media only screen and (max-width: $x-small-screen) {
+  @media only screen and (max-width: var(--x-small-screen)) {
     .cat-article {
       display: flex;
       flex-direction: row-reverse;
       margin: auto;
     }
-    .cat-img-div{
+    .cat-img-div {
       width: 40%;
     }
     .cat-article-img {
