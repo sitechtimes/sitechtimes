@@ -13,7 +13,6 @@
         class="h-6 w-6 sun-svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
       >
         <path
           stroke-linecap="round"
@@ -37,7 +36,6 @@
         class="h-6 w-6 moon-svg"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
       >
         <path
           stroke-linecap="round"
@@ -229,6 +227,9 @@ export default {
 }
 .color-toggle-button:hover > .moon-svg {
   color: var(--off-white);
+}
+.color-toggle-button * {
+  stroke: var(--on-secondary);
 }
 
 .color-toggle-dropdown-button {

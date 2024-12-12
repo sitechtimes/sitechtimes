@@ -10,7 +10,7 @@
       <category-icon :category="category" class="category-cat" />
       <!-- <author-and-date :author="author" :published="published" class="category-data" /> -->
     </div>
-    <a :href="articleUrl" class="category-title">{{ title }}</a>
+    <h3 :href="articleUrl" class="category-title">{{ title }}</h3>
   </nuxt-link>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   props: {
     author: String,
     articleUrl: String,
-    published: Date,
+    published: String, // was Date
     category: String,
     imageUrl: String,
     imageAlt: String,

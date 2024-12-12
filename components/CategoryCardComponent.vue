@@ -42,7 +42,7 @@ export default {
   props: {
     author: String,
     articleUrl: String,
-    published: Date,
+    published: String, // was Date
     category: String,
     imageUrl: String,
     imageAlt: String,

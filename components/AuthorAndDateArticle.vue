@@ -52,7 +52,7 @@ export default {
   name: "AuthorAndDateArticle",
   props: {
     author: String,
-    published: Date,
+    published: String, // was Date
   },
 };
 </script>

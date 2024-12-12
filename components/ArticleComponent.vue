@@ -45,7 +45,7 @@ export default {
     articleImg: String,
     articleAlt: String,
     author: String,
-    published: Date,
+    published: String, // was Date
     articleUrl: String,
     webUrl: String,
   },
@@ -60,10 +60,6 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
-
-#article-component > * {
-  color: var(--on-background);
-}
 
 #article-component {
   padding-top: 0.4rem;
