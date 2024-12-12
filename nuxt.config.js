@@ -41,7 +41,7 @@ export default {
 
   axios: {
     // baseURL: ENV_VALUES[process.env.ENV].api
-    baseURL: "https://dev-api.sitechtimes.com",
+    baseURL: "http://localhost:3000",
   },
 
   colorMode: {
