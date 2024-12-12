@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 :root {
   --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;
@@ -92,7 +92,7 @@ export default {
   height: 11.7rem;
   width: 40rem;
 }
-@media only screen and (max-width: var(--midlarge-screen)) {
+@media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     max-width: none;
     margin-top: 5rem;
@@ -107,7 +107,7 @@ export default {
     font-size: var(--h4);
   }
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   :root {
     --sidebarImgWidth: 17rem;
   }

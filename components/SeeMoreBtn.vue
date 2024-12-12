@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .see-more-btn {
   background-color: var(--primary-color);
   // text-shadow: .1rem .1rem .2rem var(--mid-grey);
@@ -27,7 +27,7 @@ export default {
   transform: translateY(-0.5rem);
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .see-more-btn {
     font-size: 1.9rem;
   }
@@ -37,7 +37,7 @@ export default {
     background-color: var(--primary-color);
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .see-more-btn {
     font-size: 2.25rem;
   }

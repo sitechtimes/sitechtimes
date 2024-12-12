@@ -180,7 +180,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .modal-test {
   position: absolute;

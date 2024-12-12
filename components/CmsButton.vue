@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .cms-btn {
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ export default {
   color: #3e28de;
   border: 0.2rem solid #3e28de;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .cms-btn:hover {
     color: var(--on-secondary);
     border: 0.2rem solid var(--on-secondary);

@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .grid-article-component {
   display: flex;
@@ -87,7 +87,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .trio-grid-container .grid-article-component:first-child {
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .grid-article-component {
     display: flex;
     flex-direction: column;

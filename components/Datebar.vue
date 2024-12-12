@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .datebar {
   background-color: var(--accent-color);
@@ -101,7 +101,7 @@ export default {
   fill: var(--on-secondary);
 }
 
-@media only screen and (max-width: var(--large-screen)) {
+@media only screen and (max-width: $large-screen) {
   .datebar-date {
     font-size: 2.8rem;
     line-height: 3rem;
@@ -110,7 +110,7 @@ export default {
     width: 100rem;
   }
 }
-@media only screen and (max-width: var(--midlarge-screen)) {
+@media only screen and (max-width: $midlarge-screen) {
   .datebar-container {
     width: 80rem;
   }
@@ -119,7 +119,7 @@ export default {
     line-height: 3rem;
   }
 }
-@media only screen and (max-width: var(--midlarge-screen)) {
+@media only screen and (max-width: $midlarge-screen) {
   .datebar-container {
     /* justify-content: flex-start; */
     margin-left: 2rem;
@@ -133,7 +133,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .datebar-container {
     margin: auto 2rem;
   }
@@ -149,7 +149,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .datebar-container {
     margin: auto 2rem;
   }
@@ -161,7 +161,7 @@ export default {
     padding-top: 0.6rem;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .datebar {
     background-color: var(--accent-color);
     height: 5rem;

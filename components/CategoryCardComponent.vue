@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .category-card-component {
   cursor: pointer;
@@ -170,12 +170,12 @@ export default {
 .category-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .category-card-component-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .category-card-component-image {
     width: 100%;
   }

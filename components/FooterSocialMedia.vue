@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .footer-sm-header {
   font-size: var(--h3);
   color: var(--footer-header-color);
@@ -106,7 +106,7 @@ export default {
   transform: scale(110%);
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
     margin-bottom: 5.1rem;
   }
@@ -115,13 +115,13 @@ export default {
     transform: scale(100%);
   }
 }
-/* @media only screen and (max-width: var(--mid-screen)) {
+/* @media only screen and (max-width: $mid-screen) {
   .footer-social-media-box {
     margin: 6.5rem 0;
   }
 } */
 
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .footer-sm-header {
     font-size: var(--h2);
   }

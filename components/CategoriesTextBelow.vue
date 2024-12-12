@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .category-text-below-preview {
   display: flex;
@@ -67,17 +67,17 @@ export default {
   padding-top: 1rem;
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .article-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .article-image {
     width: 100%;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .category-cat {
     margin-right: 1rem;
   }

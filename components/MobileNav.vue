@@ -217,7 +217,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .mobile-nav-box {
   position: sticky;
@@ -349,7 +349,7 @@ export default {
   top: 3.5rem;
   left: 0.8rem;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .mobile-nav-box {
     display: block;
   }
@@ -357,7 +357,7 @@ export default {
     display: block;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .nav-icon {
     width: 2.5rem;
   }

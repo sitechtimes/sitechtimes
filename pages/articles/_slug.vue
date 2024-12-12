@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../../assets/_variables";
+@use "../../assets/_variables" as *;
 .article-page,
 #article-component,
 .sidebar-container {
@@ -75,7 +75,7 @@ export default {
   width: 30%;
   margin-left: 5%;
 }
-@media only screen and (max-width: var(--midlarge-screen)) {
+@media only screen and (max-width: $midlarge-screen) {
   .article-page {
     flex-direction: column;
   }

@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .category-article {
   display: flex;
   flex-direction: row;
@@ -74,7 +74,7 @@ export default {
   line-height: 2.2rem;
   padding-top: 1rem;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .category-article {
     display: flex;
     flex-direction: row;
@@ -117,7 +117,7 @@ export default {
     width: 40rem;
   }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .category-article {
     display: flex;
     flex-direction: row-reverse;

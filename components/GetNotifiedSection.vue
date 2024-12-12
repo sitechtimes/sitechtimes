@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .footer-form-box {
   padding-bottom: 5.1rem;
   border-bottom: 0.2rem solid var(--primary-color);
@@ -113,7 +113,7 @@ export default {
 //     transition: .2s;
 // }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .footer-form-box {
     border-bottom: none;
     padding-bottom: 0;
@@ -143,14 +143,14 @@ export default {
     font-size: 2rem;
   }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .footer-email-input,
   .footer-join-btn,
   .footer-form-label {
     font-size: 2.25rem;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .footer-email-input {
     max-width: 100%;
   }

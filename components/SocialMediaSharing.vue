@@ -90,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .social-media-sharing {
   color: var(--primary-color);
@@ -109,7 +109,7 @@ export default {
   color: var(--gold-hover);
   transform: scale(110%);
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .social-media-sharing:hover {
     color: var(--primary-color);
     transform: scale(100%);

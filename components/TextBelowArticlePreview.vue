@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .text-below-preview-article {
   display: flex;

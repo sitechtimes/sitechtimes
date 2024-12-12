@@ -132,7 +132,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .mobile-view {
   display: none;
 }
@@ -187,12 +187,12 @@ export default {
 //.mobile-view {
 //  display: none;
 //}
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   // .not-on-ipad{
   //   display: none;
   // }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
   }

@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .author-date-article {
   display: flex;
   //flex-direction: column;
@@ -78,7 +78,7 @@ export default {
   margin-right: 0.5rem;
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .article-icon {
     width: 1.6rem;
     height: 1.6rem;
@@ -89,7 +89,7 @@ export default {
     font-size: var(--h4);
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .author-date-article {
     margin-bottom: 2rem;
     flex-direction: column;

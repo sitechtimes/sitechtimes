@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .footer-bg {
   background-color: var(--footer);
   padding: 3rem 0;
@@ -56,7 +56,7 @@ export default {
   // margin-right: 10%;
   height: 100%;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .form-and-media,
   .footer-nav {
     margin: auto;
@@ -68,7 +68,7 @@ export default {
     padding-right: 0;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .form-and-media {
     max-width: 100%;
   }

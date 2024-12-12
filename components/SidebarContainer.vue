@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .sidebar-container {
   border-left: 2px solid var(--primary-color);
   max-width: 50rem;
@@ -65,7 +65,7 @@ export default {
   padding-top: 5rem;
   margin: 0;
 }
-@media only screen and (max-width: var(--midlarge-screen)) {
+@media only screen and (max-width: $midlarge-screen) {
   .sidebar-container {
     border: none;
     flex-direction: row;
@@ -79,7 +79,7 @@ export default {
     padding: 0;
   }
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .sidebar-container {
     flex-direction: column;
   }

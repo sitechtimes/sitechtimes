@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 #sidebar-article-category {
   text-transform: uppercase;
   width: max-content;
@@ -41,7 +41,7 @@ export default {
   line-height: 1.5rem;
   padding: 0.2rem 0.6rem 0 0.6rem;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   #sidebar-article-category {
     font-size: var(--h5);
     border-radius: 0.8rem;
@@ -50,7 +50,7 @@ export default {
   }
 }
 
-@media only screen and (min-width: var(--mid-screen)) {
+@media only screen and (min-width: $mid-screen) {
   #article-category:hover {
     transform: translateY(-0.4rem);
   }

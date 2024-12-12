@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .duo-article-component-container {
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@ export default {
   width: 48%;
 }
 
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .duo-article-component-container {
     flex-direction: column;
   }

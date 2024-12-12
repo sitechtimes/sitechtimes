@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 #article-category {
   text-transform: uppercase;
   width: max-content;
@@ -38,7 +38,7 @@ export default {
   transition: all 0.2s;
 }
 
-@media only screen and (min-width: var(--mid-screen)) {
+@media only screen and (min-width: $mid-screen) {
   #article-category:hover {
     transform: translateY(-0.4rem);
   }

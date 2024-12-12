@@ -218,7 +218,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .rest-of-articles {
   margin-top: 3.5rem;
 }
@@ -272,7 +272,7 @@ export default {
   display: none;
 }
 
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .border-right {
     width: 100%;
     border: none;
@@ -304,12 +304,12 @@ export default {
     margin: 6rem 0 10rem 0;
   }
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .seymour {
     margin: 4rem 0 10rem 0;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .rest-of-articles {
     margin-top: -4rem;
   }

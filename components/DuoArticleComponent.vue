@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 .duo-card-component {
   cursor: pointer;
@@ -162,7 +162,7 @@ export default {
 .duo-dropshadow {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.45);
 }
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .duo-card-component-image {
     height: 30.2rem;
   }
@@ -181,7 +181,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .duo-card-component-title {
     line-height: 3rem;
   }

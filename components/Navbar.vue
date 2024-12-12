@@ -160,7 +160,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 /* a {
   text-decoration: none;
   color: inherit;
@@ -227,10 +227,10 @@ export default {
   justify-content: space-evenly;
   flex-wrap: nowrap;
   padding: 3rem 0;
-  max-width: var(--container);
+  max-width: $container;
   margin: auto;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .home-nav-ul {
     display: none;
   }

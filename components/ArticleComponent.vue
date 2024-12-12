@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 #article-component > * {
   color: var(--on-background);
@@ -175,7 +175,7 @@ export default {
 .main-article-metadata-actions {
   display: flex;
 }
-@media only screen and (max-width: var(--mid-screen)) {
+@media only screen and (max-width: $mid-screen) {
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,
@@ -216,7 +216,7 @@ export default {
     font-size: 1.75rem;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .main-article-text-section p,
   .main-article-text-section p em,
   .main-article-text-section p strong,

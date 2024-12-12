@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 .footer-nav {
   width: 36rem;
 }
@@ -69,12 +69,12 @@ export default {
   color: var(--accent-color);
 }
 
-@media only screen and (max-width: var(--small-screen)) {
+@media only screen and (max-width: $small-screen) {
   .footer-nav-ul li {
     font-size: 2.5rem;
   }
 }
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   .footer-nav-header {
     font-size: var(--h2);
   }

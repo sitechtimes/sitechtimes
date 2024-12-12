@@ -94,7 +94,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "../assets/_variables";
+@use "../assets/_variables" as *;
 
 :root {
   --fontSmall: 2.827rem;
@@ -169,7 +169,7 @@ export default {
   box-shadow: var(--card-shadow);
 }
 
-@media only screen and (max-width: var(--x-small-screen)) {
+@media only screen and (max-width: $x-small-screen) {
   :root {
     --fontSmall: 2.7rem;
     --fontMedium: 2.7rem;
