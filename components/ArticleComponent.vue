@@ -61,6 +61,7 @@ export default {
 
 #article-component {
   padding-top: 0.4rem;
+  color: var(--on-background);
 }
 
 .main-article-title {
