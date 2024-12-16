@@ -158,7 +158,7 @@ export default {
   async fetch() {
     try {
       const response = await this.$axios.get(
-        `/articles?category=${this.category}&sort=dateDes`
+        `/articles?category=${this.category}&sort=dateDes&q=2`
       );
       this.articles = response.data.articles;
       this.moreToLoad = response.data.isMore;
