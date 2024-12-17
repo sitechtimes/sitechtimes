@@ -158,7 +158,7 @@ export default {
   async fetch() {
     try {
       const response = await this.$axios.get(
-        `/articles?category=${this.category}&sort=dateDes&q=2`
+        `/articles?category=${this.category}&sort=dateDes&q=5`
       );
       this.articles = response.data.articles;
       this.moreToLoad = response.data.isMore;
@@ -169,7 +169,9 @@ export default {
   methods: {
     async newArticles() {
       const response = await this.$axios.get(
-        `/articles?category=${this.category}&q=5&skip=${this.articles.length + this.allArticles.length}&sort=dateDes`
+        `/articles?category=${this.category}&q=5&skip=${
+          this.articles.length + this.allArticles.length
+        }&sort=dateDes`
       );
 
       this.allArticles = [].concat(this.allArticles, response.data.articles);
