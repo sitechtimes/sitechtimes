@@ -6,6 +6,7 @@
         :src="imageUrl"
         :alt="imageAlt"
         class="cat-article-img"
+        loading="lazy"
       />
     </div>
     <div class="cat-article-img-content">

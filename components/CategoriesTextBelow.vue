@@ -5,6 +5,7 @@
       :src="imageUrl"
       :alt="imageAlt"
       class="article-image dropshadow"
+      loading="lazy"
     />
     <div class="category-info">
       <category-icon :category="category" class="category-cat" />

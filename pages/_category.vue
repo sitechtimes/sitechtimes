@@ -40,81 +40,10 @@
           </div>
         </div>
       </div>
-      <div class="mobile-sub-arts">
-        <CatArticleTwo
-          class="sub-art"
-          v-if="articles[3]"
-          :title="articles[3].title"
-          :author="articles[3].user.name"
-          :published="articles[3].updatedAt"
-          :imageUrl="articles[3].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[3].slug}`"
-        />
-        <CatArticleTwo
-          class="sub-art"
-          v-if="articles[4]"
-          :title="articles[4].title"
-          :author="articles[4].user.name"
-          :published="articles[4].updatedAt"
-          :imageUrl="articles[4].imageUrl"
-          :category="category"
-          :articleUrl="`/articles/${articles[4].slug}`"
-        />
-        <div>
-          <CatArticleTwo
-            class="sub-art not-visible"
-            v-for="article in allArticles"
-            :key="article.id"
-            :category="article.category"
-            :author="article.user.name"
-            :published="article.updatedAt"
-            :title="article.title"
-            :imageUrl="article.imageUrl"
-            :articleUrl="`/articles/${article.slug}`"
-          />
-        </div>
-      </div>
-      <div class="cat-visible">
-        <div class="mobile-big-cat-article">
-          <CategoryCardComponent
-            v-if="articles[0]"
-            :title="articles[0].title"
-            :author="articles[0].user.name"
-            :published="articles[0].updatedAt"
-            :imageUrl="articles[0].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[0].slug}`"
-            class="cat-main-art"
-          />
-        </div>
-        <div class="mobile-cat-sub-arts">
-          <CatArticleTwo
-            class="mobile-sub-art"
-            v-if="articles[1]"
-            :title="articles[1].title"
-            :author="articles[1].user.name"
-            :published="articles[1].updatedAt"
-            :imageUrl="articles[1].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[1].slug}`"
-          />
-          <CatArticleTwo
-            class="mobile-sub-art"
-            v-if="articles[2]"
-            :title="articles[2].title"
-            :author="articles[2].user.name"
-            :published="articles[2].updatedAt"
-            :imageUrl="articles[2].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[2].slug}`"
-          />
-        </div>
-      </div>
       <div class="rest-of-articles">
         <CatArticleTwo
-          class="sub-art cat-visible"
-          v-for="article in allArticles"
+          class="sub-art"
+          v-for="article in articles.slice(3)"
           :key="article.id"
           :category="article.category"
           :author="article.user.name"
@@ -125,58 +54,35 @@
         />
       </div>
     </div>
-    <div class="entertainment-seymour">
-      <SeeMoreBtn
-        class="seymour"
-        v-if="moreToLoad"
-        @click.prevent.native="newArticles()"
-      />
-    </div>
   </section>
 </template>
+
 <script>
 import CardComponent from "../components/CardComponent";
 import TextBelowArticlePreview from "../components/TextBelowArticlePreview";
 import CatArticleTwo from "../components/CatArticleTwo";
-import SeeMoreBtn from "../components/SeeMoreBtn";
 
 export default {
   components: {
     CardComponent,
     TextBelowArticlePreview,
     CatArticleTwo,
-    SeeMoreBtn,
   },
   data() {
     return {
       category: this.$route.params.category,
       articles: [],
-      allArticles: [],
-      moreToLoad: false,
     };
   },
-  async fetch() {
+  async mounted() {
     try {
       const response = await this.$axios.get(
-        `/articles?category=${this.category}&sort=dateDes&q=5`
+        `/articles?category=${this.category}&sort=dateDes&q=999999`
       );
       this.articles = response.data.articles;
-      this.moreToLoad = response.data.isMore;
     } catch (e) {
       await this.$router.push("/");
     }
-  },
-  methods: {
-    async newArticles() {
-      const response = await this.$axios.get(
-        `/articles?category=${this.category}&q=5&skip=${
-          this.articles.length + this.allArticles.length
-        }&sort=dateDes`
-      );
-
-      this.allArticles = [].concat(this.allArticles, response.data.articles);
-      this.moreToLoad = response.data.isMore;
-    },
   },
   head: function () {
     return {
@@ -250,26 +156,9 @@ export default {
   width: 48.5%;
   margin-top: 3rem;
 }
-.mobile-sub-arts {
-  margin-top: 9rem;
-}
 .sub-art {
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
-}
-.cat-visible {
-  display: none;
-}
-.entertainment-seymour {
-  width: 85%;
-  display: flex;
-  justify-content: center;
-}
-.seymour {
-  margin: 6rem 0 20rem 0;
-}
-.visible {
-  display: none;
 }
 
 @media only screen and (max-width: $mid-screen) {
@@ -288,53 +177,18 @@ export default {
     width: 48%;
     justify-content: space-between;
   }
-  .mobile-sub-arts {
-    width: 100%;
-    margin-left: 0;
-    -webkit-margin-start: 0;
-  }
   .sub-art {
     display: flex;
     justify-content: flex-start;
   }
-  .entertainment-seymour {
-    width: 100%;
-  }
-  .seymour {
-    margin: 6rem 0 10rem 0;
-  }
-}
-@media only screen and (max-width: $small-screen) {
-  .seymour {
-    margin: 4rem 0 10rem 0;
-  }
 }
 @media only screen and (max-width: $x-small-screen) {
-  .rest-of-articles {
-    margin-top: -4rem;
-  }
   .border-right {
     margin: 0 auto;
-  }
-  .three-cat-articles,
-  .mobile-sub-arts {
-    display: none;
   }
   .cat-visible {
     display: flex;
     flex-wrap: wrap;
-  }
-  .mobile-big-cat-article {
-    width: 100%;
-  }
-  .mobile-cat-sub-arts {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  .mobile-sub-art {
-    width: 100%;
-    margin-top: 3.4rem;
-    margin-bottom: 3.4rem;
   }
   .break {
     width: 100%;
@@ -347,13 +201,6 @@ export default {
     font-size: var(--h3);
     margin-top: 2rem;
     color: var(--on-background);
-  }
-
-  .not-visible {
-    display: none;
-  }
-  .visible {
-    display: block;
   }
 }
 </style>

@@ -142,7 +142,7 @@ export default {
 }
 .grid-article-container {
   display: flex;
-  gap: 2rem;
+  // gap: 2rem;
   margin: var(--section-spacing) 0;
   justify-content: space-between;
   flex-wrap: wrap;

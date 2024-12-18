@@ -1,15 +1,14 @@
 <template>
   <nuxt-link
     :to="articleUrl"
-    role="img"
-    :alt="imageAlt"
-    :aria-label="imageAlt"
     class="category-card-component"
     :style="getFontSize"
   >
-    <div
+    <img
       class="category-card-component-image"
-      :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
+      :src="imageUrl"
+      loading="lazy"
+      :alt="imageAlt"
     >
       <div class="category-flex-col category-card-component-text-container">
         <div
@@ -32,7 +31,7 @@
           {{ title }}
         </div>
       </div>
-    </div>
+    </img>
   </nuxt-link>
 </template>
 
@@ -121,10 +120,13 @@ export default {
   justify-content: flex-end;
 }
 .category-card-component-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
+  position: absolute;
   border-radius: 1.5rem;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: -1;
 }
 .category-flex-col {
   display: flex;

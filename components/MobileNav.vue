@@ -225,8 +225,6 @@ export default {
   z-index: 1;
   background-color: var(--background-color);
   display: none;
-  width: 100vw;
-  max-height: 100vh;
 }
 .mobile-logo-link {
   display: flex;
@@ -275,8 +273,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
 }
 .nav-icon {
   width: 4rem;

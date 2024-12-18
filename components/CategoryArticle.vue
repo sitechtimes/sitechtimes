@@ -136,6 +136,7 @@ export default {
     font-size: 1.8rem;
     font-weight: 700;
     width: 40rem;
+    max-width: 100%;
     padding-top: 1rem;
   }
   .category-article-icon {

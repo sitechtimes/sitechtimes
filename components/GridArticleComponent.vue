@@ -4,6 +4,7 @@
       :src="imageUrl"
       :alt="imageAlt"
       class="grid-article-image dropshadow"
+      loading="lazy"
     />
     <h5 class="grid-article-info">
       <!-- <category-icon :category="category" class="grid-article-cat" /> -->
