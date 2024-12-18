@@ -1,20 +1,14 @@
-# sitechtimes
+# Project Setup
 
-## Build Setup
+1. Create a `.env` file in the root of the project
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+```sh
+NUXT_PUBLIC_BASEURL = /* dev: https://dev-api.sitechtimes.com, prod: https://api.sitechtimes.com */
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+2. Install dependencies and run locally
+
+```sh
+npm install
+npm run dev
+```

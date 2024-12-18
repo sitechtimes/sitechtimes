@@ -1,4 +1,9 @@
-@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* colors */
@@ -61,24 +66,16 @@
   /* boxshadows */
   --card-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
   --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   /* spacing */
   --section-spacing: 4rem;
   --title-spacing: 3rem;
   --category-top-margin: 0.75rem;
   --category-bottom-margin: 0.25rem;
   /*linear gradient */
-  --greyToBlack: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(132, 132, 132, 0.4) 54.17%,
-    rgba(0, 0, 0, 0.6) 70%
-  );
+  --greyToBlack: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(132, 132, 132, 0.4) 54.17%, rgba(0, 0, 0, 0.6) 70%);
   /* button icon */
   --button-icon: url(/assets/icons/sun.svg);
 }
@@ -207,8 +204,7 @@
 }
 .waifu-mode {
   body {
-    background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg")
-      no-repeat top center;
+    background: url("https://ae01.alicdn.com/kf/H2754fb3bc3ed431396eb63c40aa34a794.jpg") no-repeat top center;
     background-size: cover;
   }
   --primary-color: #3b82f6;
@@ -219,33 +215,46 @@
   --hover: #ff5757;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
-
-*,
-html,
 body {
-  font-size: 62.5%;
-  padding: 0;
   margin: 0;
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-body {
-  background: var(--background-color);
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--background-color);
   font-family: var(--font);
-  font-weight: 400;
-  line-height: 1.75;
   color: var(--black);
 }
 
 p {
-  margin-bottom: 1rem;
+  @apply mb-4;
+}
+
+h1 {
+  @apply text-8xl;
+}
+
+h2 {
+  @apply text-6xl;
+}
+
+h3 {
+  @apply text-5xl;
+}
+
+h4 {
+  @apply text-3xl;
+}
+
+h5 {
+  @apply text-2xl;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  @apply text-[var(--on-background)];
 }
 
 h1,
@@ -254,116 +263,8 @@ h3,
 h4,
 h5 {
   font-family: var(--font);
-  font-weight: 400;
-  line-height: 1.3;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: var(--h1);
-}
-
-h2 {
-  font-size: var(--h2);
-}
-
-h3 {
-  font-size: var(--h3);
-}
-
-h4 {
-  font-size: var(--h4);
-}
-
-h5 {
-  font-size: var(--h5);
-}
-
-a:link {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:visited {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:hover {
-  text-decoration: none;
-  color: var(--on-background);
-}
-a:active {
-  text-decoration: none;
-  color: var(--on-background);
-}
-ul {
-  list-style-type: none;
-}
-small,
-.text_small {
-  font-size: var(--small-text);
-}
-
-@media only screen and (max-width: $large-screen) {
-  *,
-  html,
-  body {
-    font-size: 58%;
-  }
-}
-
-@media only screen and (max-width: $mid-screen) {
-  *,
-  html,
-  body {
-    font-size: 50%;
-  }
-}
-
-@media only screen and (max-width: $x-small-screen) {
-  *,
-  html,
-  body {
-    font-size: 45%;
-  }
-}
-
-//The only reason the code is the right size in styleguide.
-.prism-editor > textarea {
-  font-size: 1.5rem;
-  border-radius: 0.3rem;
-  border-bottom: 1rem;
-  border-top: 1rem;
-  border-left: 1rem;
-  border-right: 1rem;
-  //width: calc(100% + 0.2rem);
-}
-.prism-editor {
-  font-family: var(--font);
-  font-size: 1.5rem;
-  width: 100%;
-}
-
-.token {
-  font-size: 1.5rem;
-  width: 100%;
-  margin-left: 0.01%;
-}
-
-pre {
-  width: calc(100% - 0.2rem);
-  height: calc(100% - 0.2rem);
-  -webkit-font-smoothing: antialiased;
-}
-
-.global-container {
-  max-width: $container;
-  margin: auto;
-  padding: 2rem;
-}
-
-::selection {
-  background: var(--see-more-color); /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: var(--see-more-color); /* Gecko Browsers */
+small {
+  @apply text-xs;
 }
