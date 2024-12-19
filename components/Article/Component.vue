@@ -9,7 +9,7 @@
         <Print />
       </div>
     </div>
-    <div class="main-article-text-section p-px"></div>
+    <div class="main-article-text p-px" v-html="articleText"></div>
   </div>
 </template>
 
@@ -28,4 +28,77 @@ const props = defineProps<{
 }>();
 </script>
 
-<style scoped></style>
+<style scoped>
+.main-article-text p,
+.main-article-text p em,
+.main-article-text p strong,
+.main-article-text p a,
+.main-article-text li em,
+.main-article-text li strong,
+.main-article-text li a,
+.main-article-text span,
+.main-article-text ul li,
+.main-article-text ul li span,
+.main-article-text ol li,
+.main-article-text ol li span {
+  font-family: var(--article-font);
+  @apply text-2xl sm:text-3xl md:text-4xl;
+}
+
+.main-article-text p,
+.main-article-text li {
+  @apply break-words font-light;
+}
+
+.main-article-text ul li,
+.main-article-text ul li span,
+.main-article-text ol li,
+.main-article-text ol li span {
+  @apply list-inside list-disc font-light;
+}
+
+.main-article-text ol li {
+  @apply list-decimal;
+}
+
+.main-article-text h1,
+.main-article-text h2,
+.main-article-text h3,
+.main-article-text h4,
+.main-article-text h5,
+.main-article-text h6,
+.main-article-text h1 strong,
+.main-article-text h2 strong,
+.main-article-text h3 strong,
+.main-article-text h4 strong,
+.main-article-text h5 strong,
+.main-article-text h6 strong {
+  font-family: var(--article-font);
+  @apply mb-0;
+}
+
+.main-article-text h1,
+.main-article-text h1 strong {
+  @apply text-5xl md:text-6xl;
+}
+.main-article-text h2,
+.main-article-text h2 strong {
+  @apply text-4xl md:text-5xl;
+}
+.main-article-text h3,
+.main-article-text h3 strong {
+  @apply text-3xl md:text-4xl;
+}
+.main-article-text h4,
+.main-article-text h4 strong {
+  @apply text-2xl md:text-3xl;
+}
+.main-article-text h5,
+.main-article-text h5 strong {
+  @apply text-xl md:text-2xl;
+}
+.main-article-text h6,
+.main-article-text h6 strong {
+  @apply text-lg md:text-xl;
+}
+</style>

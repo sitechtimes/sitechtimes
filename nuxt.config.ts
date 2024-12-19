@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     }
   },
   css: ["./assets/global.scss"],
-  modules: ["vue-social-sharing/nuxt"],
   devServer: {
     host: "0.0.0.0",
     port: 8089

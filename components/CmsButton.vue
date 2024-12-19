@@ -5,7 +5,7 @@
       focusable="false"
       data-prefix="fas"
       data-icon="user-edit"
-      class="cms-btn svg-inline--fa fa-user-edit fa-w-20"
+      class="flex size-12 cursor-pointer items-center rounded-lg border-4 border-[var(--on-secondary)] bg-transparent p-1 align-middle text-[var(--on-secondary)] transition md:hover:border-[#3e28de] md:hover:text-[#3e28de]"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 640 512"
@@ -18,36 +18,6 @@
   </a>
 </template>
 
-<script>
-export default {
-  name: "CmsButton",
-};
-</script>
+<script setup lang="ts"></script>
 
-<style lang="scss">
-@use "../assets/_variables" as *;
-.cms-btn {
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  height: 3rem;
-  width: 3rem;
-  color: var(--on-secondary);
-  background-color: transparent;
-  border: 0.2rem solid var(--on-secondary);
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.cms-btn:hover {
-  color: #3e28de;
-  border: 0.2rem solid #3e28de;
-}
-@media only screen and (max-width: $mid-screen) {
-  .cms-btn:hover {
-    color: var(--on-secondary);
-    border: 0.2rem solid var(--on-secondary);
-  }
-}
-</style>
+<style scoped></style>

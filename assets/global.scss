@@ -268,3 +268,7 @@ h5 {
 small {
   @apply text-xs;
 }
+
+.dropshadow {
+  box-shadow: var(--card-shadow);
+}
