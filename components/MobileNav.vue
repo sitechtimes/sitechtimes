@@ -1,11 +1,7 @@
 <template>
   <!-- <font-awesome-icon class="mobile-nav-icon" :icon="['fas', 'bars']" />
 <FooterNav class="mobile-nav"/> -->
-  <div
-    aria-label="mobile navbar"
-    class="mobile-nav-box"
-    :style="backgroundColor"
-  >
+  <div aria-label="mobile navbar" class="mobile-nav-box" :style="backgroundColor">
     <div class="mobile-nav-menu-box global-container">
       <span class="mobile-logo-container">
         <nuxt-link class="mobile-logo-link" to="/" :style="logoVisibility">
@@ -141,11 +137,7 @@
     <transition name="fade" mode="out-in">
       <div class="mobile-nav" v-if="show">
         <ul class="mobile-nav-ul">
-          <nuxt-link
-            v-for="category in categories"
-            :key="category"
-            :to="'../' + category"
-          >
+          <nuxt-link v-for="category in categories" :key="category" :to="'../' + category">
             <li class="mobile-nav-li" v-on:click="navFunction()">
               {{ category }}
             </li>
@@ -165,16 +157,7 @@ export default {
       show: false,
       bgColor: "",
       visibility: "visible",
-      categories: [
-        "covid",
-        "entertainment",
-        "news",
-        "politics",
-        "opinion",
-        "science",
-        "technology",
-        "activities",
-      ],
+      categories: ["covid", "entertainment", "news", "politics", "opinion", "science", "technology", "activities"]
     };
   },
   computed: {
@@ -183,7 +166,7 @@ export default {
     },
     logoVisibility: function () {
       return "visibility: " + this.visibility;
-    },
+    }
   },
   methods: {
     changeMenu: function () {
@@ -211,12 +194,12 @@ export default {
       this.toggleStyles();
       this.toggleNav();
       this.changeMenu();
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "../assets/_variables" as *;
 
 .mobile-nav-box {

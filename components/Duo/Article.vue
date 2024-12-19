@@ -1,25 +1,29 @@
 <template>
-  <NuxtLink
-    :to="articleUrl"
-    role="img"
-    :alt="imageAlt"
-    class="dropshadow relative flex cursor-pointer flex-col justify-end rounded-2xl bg-cover bg-no-repeat"
-    :style="{ backgroundImage: 'url(' + imageUrl + ')' }"
-  >
-    <div class="text-container m-0 flex max-h-[80%] w-full flex-col rounded-2xl px-[7%] pb-[7%] sm:m-auto sm:max-h-[70%] sm:pb-[4.5%]" :class="getFontSize">
-      <div class="mb-[var(--category-bottom-margin)] mt-[var(--category-top-margin)] flex flex-wrap pb-[3%] sm:flex-nowrap sm:pb-0"></div>
-      <h3 class="block overflow-hidden overflow-ellipsis font-bold text-[var(--white)]" :class="(getClampSize, getFontSize)">{{ title }}</h3>
-    </div>
-  </NuxtLink>
+  <div class="flex flex-col justify-between sm:flex-row">
+    <NuxtLink
+      v-for="article in articles"
+      :to="'/articles/' + article.slug"
+      :key="article.title"
+      role="img"
+      :alt="article.imageAlt"
+      class="dropshadow w-full cursor-pointer rounded-2xl sm:w-[48%]"
+      :class="getFontSize"
+    >
+      <div class="h-[30rem] rounded-2xl bg-cover bg-no-repeat sm:h-full" :style="{ backgroundImage: 'url(' + article.imageUrl + ')' }">
+        <div class="text-container my-0 flex h-full w-full flex-col justify-end rounded-2xl px-[7%] pb-[7%] pt-[10%] sm:pt-[50%]">
+          <div class="mb-[var(--category-bottom-margin)] mt-[var(--category-top-margin)] flex"></div>
+          <div class="block overflow-hidden overflow-ellipsis pt-4 font-bold text-[var(--white)]" :class="(getFontSize, getClampSize)">
+            {{ article.title }}
+          </div>
+        </div>
+      </div>
+    </NuxtLink>
+  </div>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  articleUrl: string;
-  category: string;
-  imageUrl: string;
-  imageAlt: string;
-  title: string;
+  articles: any[];
   size: string;
   clampSize: string;
 }>();

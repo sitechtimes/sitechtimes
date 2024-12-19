@@ -51,8 +51,6 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{}>();
-
 const colorMode = ref("");
 const showModal = ref(false);
 const sun = ref(false);
