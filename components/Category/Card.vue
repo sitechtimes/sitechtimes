@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="articleUrl" role="img" :alt="imageAlt" class="relative flex cursor-pointer flex-col justify-end rounded-3xl" :class="getFontSize">
-    <div class="h-full w-full rounded-3xl bg-cover bg-no-repeat md:w-auto" :style="{ backgroundImage: 'url(' + imageUrl + ')' }">
+    <img class="w-full rounded-3xl md:w-auto absolute max-h-full object-cover overflow-hidden -z-10" :src="imageUrl" loading="lazy" :alt="imageAlt">
       <div class="text-container my-0 flex h-full w-full flex-col rounded-3xl pb-[5%] pl-[5%] pt-[32%]">
         <div class="flex">
           <CategoryIcon :category="category" class="mb-[var(--category-bottom-margin)] text-[var(--white)]" />
@@ -9,7 +9,7 @@
           {{ title }}
         </div>
       </div>
-    </div>
+    </img>
   </NuxtLink>
 </template>
 

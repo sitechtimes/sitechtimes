@@ -161,7 +161,7 @@ onMounted(() => {
 
 async function fetchArticles() {
   try {
-    const response = (await $fetch(`/articles?category=${category}&sort=dateDes&q=5`)) as any;
+    const response = (await $fetch(`/articles?category=${category}&sort=dateDes&q=999999`)) as any;
     articles.value = response.articles;
     moreToLoad.value = response.isMore;
   } catch (error) {
