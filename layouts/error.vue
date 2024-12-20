@@ -1,11 +1,11 @@
-<template>
+<template></template>
 
-</template>
+<script setup lang="ts">
+const router = useRouter();
 
-<script>
-export default {
-  async beforeMount() {
-    await this.$router.push("/")
-  }
-}
+onMounted(() => {
+  router.push("/");
+});
 </script>
+
+<style scoped></style>

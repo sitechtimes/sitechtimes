@@ -8,135 +8,31 @@
       </h4>
     </div>
   </nuxt-link>
+
+  <NuxtLink
+    :to="'/articles/' + articleUrl"
+    class="flex w-full max-w-none cursor-pointer rounded-r-2xl border py-6 transition md:w-[var(--sidebarArticleWidth)] md:max-w-[50rem] md:px-[var(--sidebarSidePadding)] md:hover:bg-[var(--hover)]"
+  >
+    <img :src="imgUrl" :alt="imgAlt" class="inline-block size-[var(--sidebarImgWidth)] rounded-2xl border object-cover align-middle" />
+    <div class="inline-block max-w-full pl-[var(--sidebarDetailsPaddingLeft)] md:max-w-[32.65rem]">
+      <CategoryIconSidebar :category="category" />
+      <h4 class="text-2xl font-medium text-[var(--on-background)]">{{ title }}</h4>
+    </div>
+  </NuxtLink>
 </template>
 
-<script>
-import CategoryIconSidebar from "./CategoryIconSidebar.vue";
-export default {
-  components: { CategoryIconSidebar },
-  name: "Sidebar",
-  props: {
-    category: String,
-    title: String,
-    imgUrl: String,
-    imgAlt: String,
-    articleUrl: String,
-  },
-};
+<script setup lang="ts">
+const props = defineProps<{
+  category: string;
+  title: string;
+  imgUrl: string;
+  imgAlt: string;
+  articleUrl: string;
+}>();
 </script>
 
-<style lang="scss">
-@use "../assets/_variables" as *;
-:root {
-  --sidebarArticleWidth: 100%;
-  --sidebarImgWidth: 9rem;
-  --sidebarSidePadding: min(2.5vw, 3rem);
-  --sidebarDetailsPaddingLeft: 1.7rem;
-  --toggleBorder: none;
-  --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
-}
-.sidebar-article > * {
-  color: var(--on-background);
-}
-.temp-img {
-  width: 30vw;
-  height: auto;
-}
-.sidebar-article {
-  width: var(--sidebarArticleWidth);
-  max-width: 50rem;
-  display: flex;
+<style scoped>
+.border {
   border: var(--toggleBorder);
-  border-radius: 0 1rem 1rem 0;
-  padding: 1.5rem var(--sidebarSidePadding);
-}
-.sidebar-article:hover {
-  background-color: var(--hover);
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-}
-.sidebar-img {
-  height: var(--sidebarImgWidth);
-  width: var(--sidebarImgWidth);
-  border-radius: 1rem;
-  border: var(--toggleBorder);
-  object-fit: cover;
-  display: inline-block;
-  vertical-align: middle;
-}
-.sidebar-article-details {
-  max-width: 32.65rem;
-  padding-left: var(--sidebarDetailsPaddingLeft);
-  display: flex;
-  flex-direction: column;
-  display: inline-block;
-}
-#sidebar-article-details-title {
-  font-size: 1.55rem;
-  font-weight: 500;
-  line-height: 1.35;
-  text-decoration: none;
-  color: var(--on-background);
-  margin: 0;
-}
-.sidebar-icon {
-  font-size: 1.4rem;
-  padding-right: 4px;
-}
-#author-icon,
-#published-icon {
-  font-size: 1.4rem;
-}
-.example-img {
-  border: var(--toggleBorder);
-  height: 11.7rem;
-  width: 40rem;
-}
-@media only screen and (max-width: $midlarge-screen) {
-  .sidebar-container {
-    max-width: none;
-    margin-top: 5rem;
-  }
-  .sidebar-article {
-    padding: 1.5rem 0;
-  }
-  .sidebar-article:hover {
-    background-color: unset;
-  }
-  #sidebar-article-details-title {
-    font-size: var(--h4);
-  }
-}
-@media only screen and (max-width: $mid-screen) {
-  :root {
-    --sidebarImgWidth: 17rem;
-  }
-  .sidebar-article-details {
-    max-width: 100%;
-  }
-  .sidebar-article {
-    max-width: none;
-    width: 100%;
-  }
-  .sidebar-img {
-    height: var(--sidebarImgWidth);
-    width: var(--sidebarImgWidth);
-  }
-  #sidebar-article-details-title {
-    font-size: var(--h3);
-  }
 }
 </style>
-
-<!--<docs>-->
-<!--The Sidebar article is the article found in the sidebar and has an image on one side and the article's info on the other-->
-
-<!--## Variables Used:-->
-<!--&#45;&#45;sidebarSidePadding, &#45;&#45;sidebarArticleWidth, &#45;&#45;sidebarSidePadding, &#45;&#45;toggleBorder, &#45;&#45;sidebarDetailsPaddingLeft, &#45;&#45;sidebarImgWidth, &#45;&#45;centerSquareThumbnail, &#45;&#45;-->
-
-<!--## Examples:-->
-
-<!--```jsx-->
-<!--<Sidebar author="Daniel Briskman" published="November 42, 2780" title="One Piece is Bad and here's why" imgUrl="https://dailyillini.com/wp-content/uploads/2021/01/A0122C1B-0C8D-4299-9E5B-2FA8F790C666.jpeg" imgAlt="Sad Man"/>-->
-<!--```-->
-<!--</docs>-->

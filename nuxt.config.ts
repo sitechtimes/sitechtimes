@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
     }
   },
-  css: ["./assets/global.scss"],
+  css: ["./assets/global.css"],
   devServer: {
     host: "0.0.0.0",
     port: 8089

@@ -12,7 +12,6 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  categories: string;
   insta: string;
   twitter: string;
   facebook: string;
