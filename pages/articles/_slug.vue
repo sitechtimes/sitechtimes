@@ -4,7 +4,7 @@
       v-if="article.title"
       :category="article.category"
       :title="article.title"
-      :author="article.user.name"
+      :author="article.customAuthor || article.user.name"
       :published="article.createdAt"
       :articleImg="article.imageUrl"
       :articleAlt="article.imageAlt"

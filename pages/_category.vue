@@ -74,7 +74,7 @@ export default {
       articles: [],
     };
   },
-  async mounted() {
+  async fetch() {
     try {
       const response = await this.$axios.get(
         `/articles?category=${this.category}&sort=dateDes&q=999999`
