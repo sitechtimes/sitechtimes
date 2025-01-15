@@ -115,7 +115,7 @@
           v-for="article in allArticles"
           :key="article.id"
           :category="article.category"
-          :author="article.user.name"
+          :author="article.customAuthor || article.user.name"
           :published="article.createdAt"
           :title="article.title"
           :imageUrl="article.imageUrl"

@@ -61,7 +61,7 @@
           <ArticleGridComponent
             v-for="article in homepages.slice(10, 20)"
             :articleUrl="'/articles/' + article.slug"
-            :author="article.user.name"
+            :author="article.customAuthor || article.user.name"
             :category="article.category"
             :imageAlt="article.imageAlt"
             :title="article.title"
@@ -109,7 +109,8 @@ onMounted(() => {
 });
 
 async function fetchHomepage() {
-  homepages.value = await $fetch("/articles/homepage");
+  const config = useRuntimeConfig();
+  homepages.value = await $fetch(`${config.public.baseURL}/articles/homepage`);
 }
 </script>
 

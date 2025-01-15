@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  ssr: false,
   app: {
     head: {
       title: "sitechtimes",
@@ -20,7 +19,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: ""
+      baseURL: "http://100.101.79.75:3000"
     }
   }
 });
