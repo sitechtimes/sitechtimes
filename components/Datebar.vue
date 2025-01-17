@@ -21,7 +21,7 @@
       </h5>
       <div class="datebar-btns">
         <color-mode-toggle-temp />
-        <cms-button></cms-button>
+        <!-- <cms-button></cms-button> -->
       </div>
     </div>
   </div>
