@@ -145,14 +145,14 @@ export default {
   data() {
     return {
       categories: [
-        "covid",
+        "feature",
         "entertainment",
         "news",
-        "politics",
+        "lifestyle",
         "opinion",
         "science",
         "technology",
-        "activities",
+        "school",
       ],
     };
   },

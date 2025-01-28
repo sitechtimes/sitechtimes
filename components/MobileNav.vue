@@ -166,14 +166,14 @@ export default {
       bgColor: "",
       visibility: "visible",
       categories: [
-        "covid",
+        "feature",
         "entertainment",
         "news",
-        "politics",
+        "lifestyle",
         "opinion",
         "science",
         "technology",
-        "activities",
+        "school",
       ],
     };
   },

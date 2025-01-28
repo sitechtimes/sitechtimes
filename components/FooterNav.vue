@@ -20,14 +20,14 @@ export default {
   data() {
     return {
       categories: [
-        "covid",
-        "entertainment",
+        "feature",
         "news",
-        "politics",
+        "school",
+        "entertainment",
+        "lifestyle",
         "opinion",
         "science",
         "technology",
-        "activities",
       ],
     };
   },

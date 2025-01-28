@@ -2,7 +2,7 @@
   <footer class="footer-bg">
     <div class="footer-container global-container">
       <div class="form-and-media">
-        <GetNotifiedSection />
+        <!-- <GetNotifiedSection /> -->
         <FooterSocialMedia
           :instagramUrl="insta"
           :twitterUrl="twitter"
