@@ -8,9 +8,9 @@
     <Nuxt />
 
     <Footer
-      insta="http://www.instagram.com/statenislandtechtimes"
-      twitter="https://twitter.com/sitechtimes"
-      facebook="https://www.facebook.com/SI-Tech-Times-135100402077100"
+      insta="http://www.instagram.com/sithsnewspaper"
+      twitter=""
+      facebook=""
     />
   </div>
 </template>
