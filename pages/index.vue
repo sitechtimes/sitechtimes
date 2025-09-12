@@ -3,6 +3,8 @@
     <div class="global-container">
       <div class="desktop-view">
         <h2 class="section-title">Trending Articles</h2>
+        <MainCardList />
+        <!--
         <section class="trending-section">
           <CardComponent
             class="trending-main cardquery"
@@ -85,6 +87,7 @@
           :imageUrl="article.imageUrl"
           :key="article.id"
         />
+        -->
       </div>
     </div>
   </div>
@@ -94,6 +97,7 @@
 import CardComponent from "../components/CardComponent";
 import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
+import MainCardList from "../components/MainCardList.vue";
 
 export default {
   components: {
