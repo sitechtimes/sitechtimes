@@ -137,13 +137,16 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 .mobile-view {
   display: none;
 }
-.desktop-view > h2,
-.mobile-view > h2 {
+
+.desktop-view>h2,
+.mobile-view>h2 {
   color: var(--on-background);
 }
+
 .grid-article-container {
   display: flex;
   // gap: 2rem;
@@ -151,6 +154,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 // .invisible {
 //   height: 0rem;
 //   width: 0rem;
@@ -159,15 +163,19 @@ export default {
   font-size: var(--h3);
   padding: var(--title-spacing) 0;
 }
+
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
 }
+
 .trending-sub {
   grid-area: 1 / 5 / 2 / 8;
 }
+
 .trending-detail {
   grid-area: 2 / 5 / 3 / 8;
 }
+
 .trending-section {
   height: 65rem;
   display: grid;
@@ -177,9 +185,10 @@ export default {
   grid-row-gap: 2.5rem;
 }
 
-.global-container > h3 {
+.global-container>h3 {
   color: var(--on-background);
 }
+
 /* .darksection {
   background-color: var(--grey);
   color: white;
@@ -196,16 +205,20 @@ export default {
   //   display: none;
   // }
 }
+
 @media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
   }
+
   .trending-sub {
     grid-area: 2 / 1 / 3 / 2;
   }
+
   .trending-detail {
     grid-area: 3 / 1 / 4 / 2;
   }
+
   .trending-section {
     height: 95rem;
     display: grid;
@@ -214,12 +227,15 @@ export default {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
+
   .desktop-view {
     display: none;
   }
+
   .mobile-view {
     display: inherit;
   }
+
   .section-title-mobile {
     margin-bottom: -5rem;
   }
