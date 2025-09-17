@@ -5,11 +5,7 @@
         <div class="modal-container">
           <h2>All Color Themes</h2>
           <ul class="color-themes-list">
-            <li
-              class="theme-choice-modal"
-              @click="$colorMode.preference = 'system'"
-              style="text-transform:none;"
-            >
+            <li class="theme-choice-modal" @click="$colorMode.preference = 'system'" style="text-transform:none;">
               Auto detect system
             </li>
             <!-- <themes-modal-theme color="system" /> -->
@@ -20,7 +16,7 @@
             <themes-modal-theme color="outrun-night" />
             <themes-modal-theme color="cucumber" />
             <themes-modal-theme color="meditate" />
-            <themes-modal-theme class="waifu-color-theme-button" color="waifu" /> 
+            <themes-modal-theme class="waifu-color-theme-button" color="waifu" />
           </ul>
           <button class="close-modal-button" @click="$emit('closeModal')">
             Close
@@ -73,8 +69,9 @@ export default {
 
   max-height: 90vh;
 }
-.modal-container > h2,
-.modal-container > ul {
+
+.modal-container>h2,
+.modal-container>ul {
   color: var(--on-background);
 }
 
@@ -100,6 +97,7 @@ export default {
 
   float: right;
 }
+
 .close-modal-button:hover {
   background-color: var(--accent-color);
   color: black;
@@ -110,7 +108,8 @@ export default {
   .modal-container {
     margin: auto 2rem;
   }
-  .modal-container > ul > li {
+
+  .modal-container>ul>li {
     font-size: 2.3rem;
   }
 }

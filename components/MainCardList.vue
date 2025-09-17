@@ -39,9 +39,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // 2 columns
     grid-template-rows: repeat(10, 1fr); // 4 rows
+    gap: 0;
 }
 
 .grid-item {
-    height: 100%; // fill row height
+    margin: 5px 0px;
 }
 </style>

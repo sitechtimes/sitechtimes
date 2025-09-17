@@ -48,9 +48,12 @@ export default {
 
 .card-article {
   width: var(--sidebarArticleWidth);
+  height: 100%;
+  background-color: var(--light-gray);
   max-width: 50rem;
   display: flex;
-  border: var(--toggleBorder);
+
+  box-shadow: 1px 1px 1px gray;
   padding: 1.5rem var(--sidebarSidePadding);
   border-radius: 1rem;
   display: flex;
