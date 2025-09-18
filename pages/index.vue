@@ -3,41 +3,19 @@
     <div class="global-container">
       <div class="desktop-view">
         <h2 class="section-title">Trending Articles</h2>
-        <MainCardList />
-        <!--
         <section class="trending-section">
-          <CardComponent
-            class="trending-main cardquery"
-            size="medium"
-            v-if="homepages[0]"
-            :articleUrl="'/articles/' + homepages[0].slug"
-            :category="homepages[0].category"
-            :imageTitle="homepages[0].imageAlt"
-            :title="homepages[0].title"
-            :imageUrl="homepages[0].imageUrl"
-          />
-          <CardComponent
-            v-if="homepages[1]"
-            :articleUrl="'/articles/' + homepages[1].slug"
-            :category="homepages[1].category"
-            :imageTitle="homepages[1].imageAlt"
-            :title="homepages[1].title"
-            :imageUrl="homepages[1].imageUrl"
-            class="trending-sub"
-            size="small"
-          />
-          <CardComponent
-            v-if="homepages[2]"
-            :articleUrl="'/articles/' + homepages[2].slug"
-            :category="homepages[2].category"
-            :imageTitle="homepages[2].imageAlt"
-            :title="homepages[2].title"
-            :imageUrl="homepages[2].imageUrl"
-            class="trending-detail"
-            size="small"
-          />
+          <CardComponent class="trending-main cardquery" size="medium" v-if="homepages[0]"
+            :articleUrl="'/articles/' + homepages[0].slug" :category="homepages[0].category"
+            :imageTitle="homepages[0].imageAlt" :title="homepages[0].title" :imageUrl="homepages[0].imageUrl" />
+          <CardComponent v-if="homepages[1]" :articleUrl="'/articles/' + homepages[1].slug"
+            :category="homepages[1].category" :imageTitle="homepages[1].imageAlt" :title="homepages[1].title"
+            :imageUrl="homepages[1].imageUrl" class="trending-sub" size="small" />
+          <CardComponent v-if="homepages[2]" :articleUrl="'/articles/' + homepages[2].slug"
+            :category="homepages[2].category" :imageTitle="homepages[2].imageAlt" :title="homepages[2].title"
+            :imageUrl="homepages[2].imageUrl" class="trending-detail" size="small" />
         </section>
-
+        <MainCardList :homepages="homepages.slice(-17, -1)" />
+        <!--
         <section
           class="grid-article-container trio-grid-container"
           v-if="homepages[3]"
@@ -112,8 +90,18 @@ export default {
     };
   },
   async fetch() {
-    const homepages = await this.$axios.get("/articles/homepage");
-    this.homepages = homepages.data;
+    const res = await this.$axios.get("/articles/homepage");
+
+    const sorted = res.data.sort((a, b) => {
+      const hasImageA = Boolean(a.imageUrl);
+      const hasImageB = Boolean(b.imageUrl);
+
+      if (hasImageA && !hasImageB) return -1;
+      if (!hasImageA && hasImageB) return 1;
+      return 0;
+    });
+
+    this.homepages = sorted;
   },
   head: function () {
     return {

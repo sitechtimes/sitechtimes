@@ -12,24 +12,8 @@
 import MainPageCard from "../components/MainPageCard.vue";
 export default {
     name: 'GridExample',
-    data() {
-        return {
-            homepages: [],
-        };
-    },
-    async fetch() {
-        const res = await this.$axios.get("/articles/homepage");
-
-        const sorted = res.data.sort((a, b) => {
-            const hasImageA = Boolean(a.imageUrl);
-            const hasImageB = Boolean(b.imageUrl);
-
-            if (hasImageA && !hasImageB) return -1;
-            if (!hasImageA && hasImageB) return 1;
-            return 0;
-        });
-
-        this.homepages = sorted;
+    props: {
+        homepages: Array
     }
 }
 </script>
@@ -37,12 +21,9 @@ export default {
 <style lang="scss">
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // 2 columns
-    grid-template-rows: repeat(10, 1fr); // 4 rows
-    gap: 0;
-}
-
-.grid-item {
-    margin: 5px 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    margin-top: 10px;
+    gap: 10px;
 }
 </style>

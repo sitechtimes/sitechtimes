@@ -29,7 +29,6 @@ export default {
 @use "../assets/_variables" as *;
 
 :root {
-  --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;
   --sidebarSidePadding: min(2.5vw, 3rem);
   --sidebarDetailsPaddingLeft: 1.7rem;
@@ -47,17 +46,16 @@ export default {
 }
 
 .card-article {
-  width: var(--sidebarArticleWidth);
+  width: 100%;
   height: 100%;
   background-color: var(--light-gray);
-  max-width: 50rem;
   display: flex;
-
-  box-shadow: 1px 1px 1px gray;
+  box-shadow: 2px 2px 2px gray;
   padding: 1.5rem var(--sidebarSidePadding);
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .card-article:hover {
