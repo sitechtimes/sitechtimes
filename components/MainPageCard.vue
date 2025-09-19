@@ -50,7 +50,7 @@ export default {
   height: 100%;
   background-color: var(--light-gray);
   display: flex;
-  box-shadow: 2px 2px 2px gray;
+  box-shadow: var(--card-shadow);
   padding: 1.5rem var(--sidebarSidePadding);
   border-radius: 1rem;
   display: flex;

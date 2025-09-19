@@ -4,17 +4,12 @@
       <h1 class="cat-page-title">{{ category }}</h1>
       <div class="three-cat-articles">
         <div class="big-cat-article">
-          <CategoryCardComponent
-            v-if="articles[0]"
-            :title="articles[0].title"
-            :author="articles[0].user.name"
-            :published="articles[0].updatedAt"
-            :imageUrl="articles[0].imageUrl"
-            :category="category"
-            :articleUrl="`/articles/${articles[0].slug}`"
-            class="cat-main-art"
-          />
+          <CategoryCardComponent v-if="articles[0]" :title="articles[0].title" :author="articles[0].user.name"
+            :published="articles[0].updatedAt" :imageUrl="articles[0].imageUrl" :category="category"
+            :articleUrl="`/articles/${articles[0].slug}`" class="cat-main-art" />
         </div>
+      </div>
+      <!--
         <div class="two-cat-articles">
           <div class="cat-sub-one">
             <CategoriesTextBelow
@@ -40,18 +35,11 @@
           </div>
         </div>
       </div>
+      -->
       <div class="rest-of-articles">
-        <CatArticleTwo
-          class="sub-art"
-          v-for="article in articles.slice(3)"
-          :key="article.id"
-          :category="article.category"
-          :author="article.user.name"
-          :published="article.createdAt"
-          :title="article.title"
-          :imageUrl="article.imageUrl"
-          :articleUrl="`/articles/${article.slug}`"
-        />
+        <CatArticleTwo class="sub-art" v-for="article in articles.slice(2)" :key="article.id"
+          :category="article.category" :author="article.user.name" :published="article.createdAt" :title="article.title"
+          :imageUrl="article.imageUrl" :articleUrl="`/articles/${article.slug}`" />
       </div>
     </div>
   </section>
@@ -79,7 +67,11 @@ export default {
       const response = await this.$axios.get(
         `/articles?category=${this.category}&sort=dateDes&q=999999`
       );
-      this.articles = response.data.articles;
+
+      const articlesWithImages = response.data.articles.filter(article => article.imageUrl);
+      const articlesWithoutImages = response.data.articles.filter(article => !article.imageUrl);
+
+      this.articles = [...articlesWithImages, ...articlesWithoutImages];
     } catch (e) {
       await this.$router.push("/");
     }
@@ -125,37 +117,46 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 .rest-of-articles {
   margin-top: 3.5rem;
+  width: 90%;
 }
+
 .border-right {
   border-right: solid var(--primary-color);
   width: 85%;
 }
+
 .cat-page-title {
   font-size: var(--h3);
   text-transform: capitalize;
   padding: var(--title-spacing) 0;
   color: var(--on-background);
 }
+
 .three-cat-articles {
   display: flex;
   flex-wrap: wrap;
 }
+
 .two-cat-articles {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
 }
+
 .big-cat-article {
   width: 90%;
 }
+
 .cat-sub-one,
 .cat-sub-two {
   width: 48.5%;
   margin-top: 3rem;
 }
+
 .sub-art {
   margin-top: 3.4rem;
   margin-bottom: 3.4rem;
@@ -166,30 +167,37 @@ export default {
     width: 100%;
     border: none;
   }
+
   .two-cat-articles {
     width: 100%;
   }
+
   .big-cat-article {
     width: 100%;
   }
+
   .cat-sub-one,
   .cat-sub-two {
     width: 48%;
     justify-content: space-between;
   }
+
   .sub-art {
     display: flex;
     justify-content: flex-start;
   }
 }
+
 @media only screen and (max-width: $x-small-screen) {
   .border-right {
     margin: 0 auto;
   }
+
   .cat-visible {
     display: flex;
     flex-wrap: wrap;
   }
+
   .break {
     width: 100%;
     background-color: var(--primary-color);
@@ -197,6 +205,7 @@ export default {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
+
   .cat-subhead {
     font-size: var(--h3);
     margin-top: 2rem;

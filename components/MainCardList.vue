@@ -23,7 +23,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    margin-top: 10px;
+    margin-top: 20px;
     gap: 10px;
 }
 </style>
