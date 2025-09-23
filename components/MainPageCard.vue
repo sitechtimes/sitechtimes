@@ -1,12 +1,12 @@
 <template>
-  <nuxt-link :to="'/articles/' + articleUrl" class="sidebar-article">
-    <img v-if="imgUrl" :src="imgUrl" :alt="imgAlt" class="sidebar-img" />
-    <div class="sidebar-article-details">
+  <nuxt-link :to="'/articles/' + articleUrl" class="card-article">
+    <div class="card-article-details">
       <category-icon-sidebar :category="category"></category-icon-sidebar>
-      <h4 id="sidebar-article-details-title">
+      <h4 id="card-article-details-title">
         {{ title }}
       </h4>
     </div>
+    <img v-if="imgUrl" :src="imgUrl" :alt="imgAlt" class="card-img" />
   </nuxt-link>
 </template>
 
@@ -14,7 +14,7 @@
 import CategoryIconSidebar from "./CategoryIconSidebar.vue";
 export default {
   components: { CategoryIconSidebar },
-  name: "Sidebar",
+  name: "MainPageCard",
   props: {
     category: String,
     title: String,
@@ -27,35 +27,44 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 :root {
-  --sidebarArticleWidth: 100%;
   --sidebarImgWidth: 9rem;
   --sidebarSidePadding: min(2.5vw, 3rem);
   --sidebarDetailsPaddingLeft: 1.7rem;
   --toggleBorder: none;
   --centerSquareThumbnail: 50% 50%/100% 100% no-repeat;
 }
-.sidebar-article > * {
+
+.sidebar-article>* {
   color: var(--on-background);
 }
+
 .temp-img {
   width: 30vw;
   height: auto;
 }
-.sidebar-article {
-  width: var(--sidebarArticleWidth);
-  max-width: 50rem;
+
+.card-article {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-gray);
   display: flex;
-  border: var(--toggleBorder);
-  border-radius: 0 1rem 1rem 0;
+  box-shadow: var(--card-shadow);
   padding: 1.5rem var(--sidebarSidePadding);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.sidebar-article:hover {
+
+.card-article:hover {
   background-color: var(--hover);
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
-.sidebar-img {
+
+.card-img {
   height: var(--sidebarImgWidth);
   width: var(--sidebarImgWidth);
   border-radius: 1rem;
@@ -64,14 +73,16 @@ export default {
   display: inline-block;
   vertical-align: middle;
 }
-.sidebar-article-details {
+
+.card-article-details {
   max-width: 32.65rem;
   padding-left: var(--sidebarDetailsPaddingLeft);
   display: flex;
   flex-direction: column;
   display: inline-block;
 }
-#sidebar-article-details-title {
+
+#card-article-details-title {
   font-size: 1.55rem;
   font-weight: 500;
   line-height: 1.35;
@@ -79,50 +90,62 @@ export default {
   color: var(--on-background);
   margin: 0;
 }
-.sidebar-icon {
+
+.card-icon {
   font-size: 1.4rem;
   padding-right: 4px;
 }
+
 #author-icon,
 #published-icon {
   font-size: 1.4rem;
 }
+
 .example-img {
   border: var(--toggleBorder);
   height: 11.7rem;
   width: 40rem;
 }
+
 @media only screen and (max-width: $midlarge-screen) {
-  .sidebar-container {
+  .card-container {
     max-width: none;
     margin-top: 5rem;
   }
-  .sidebar-article {
+
+  .card-article {
     padding: 1.5rem 0;
   }
-  .sidebar-article:hover {
+
+  .card-article:hover {
     background-color: unset;
   }
-  #sidebar-article-details-title {
+
+  #card-article-details-title {
     font-size: var(--h4);
   }
 }
+
 @media only screen and (max-width: $mid-screen) {
   :root {
     --sidebarImgWidth: 17rem;
   }
-  .sidebar-article-details {
+
+  .card-article-details {
     max-width: 100%;
   }
-  .sidebar-article {
+
+  .card-article {
     max-width: none;
     width: 100%;
   }
-  .sidebar-img {
+
+  .card-img {
     height: var(--sidebarImgWidth);
     width: var(--sidebarImgWidth);
   }
-  #sidebar-article-details-title {
+
+  #card-article-details-title {
     font-size: var(--h3);
   }
 }

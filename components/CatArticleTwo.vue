@@ -1,23 +1,14 @@
 <template>
   <nuxt-link class="cat-article" :to="articleUrl">
-    <div class="cat-img-div">
-      <img
-        :href="articleUrl"
-        :src="imageUrl"
-        :alt="imageAlt"
-        class="cat-article-img"
-        loading="lazy"
-      />
-    </div>
     <div class="cat-article-img-content">
       <div class="cat-labels">
-        <category-icon
-          class="cat-article-icon"
-          :category="category"
-        ></category-icon>
+        <category-icon class="cat-article-icon" :category="category"></category-icon>
         <!-- <author-and-date class="cat-article-authdate" :author="author" :published="published" /> -->
       </div>
       <h3 class="cat-title">{{ title }}</h3>
+    </div>
+    <div class="cat-img-div">
+      <img v-if="imageUrl" :href="articleUrl" :src="imageUrl" :alt="imageAlt" class="cat-article-img" loading="lazy" />
     </div>
   </nuxt-link>
 </template>
@@ -39,9 +30,19 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 .cat-article {
+  width: 100%;
+  height: 100%;
+  min-height: 25rem;
+  background-color: var(--light-gray);
   display: flex;
-  flex-direction: row;
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem var(--sidebarSidePadding);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .cat-article:hover {
@@ -55,10 +56,12 @@ export default {
   margin-right: 4rem;
   object-fit: cover;
 }
+
 .cat-article-img-content {
   width: 60%;
-  // margin-left: 4rem;
+  margin-left: 4rem;
 }
+
 .cat-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -66,66 +69,80 @@ export default {
   margin-top: 1rem;
   color: var(--on-background) !important;
 }
+
 .cat-labels {
   display: flex;
   margin-top: 2rem;
 }
+
 .cat-article-authdate {
   margin: auto 0;
   line-height: 2.2rem;
   margin-bottom: var(--category-bottom-margin);
 }
+
 @media only screen and (max-width: $mid-screen) {
   .cat-article {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
+
   .cat-article-img {
     height: 18.8rem;
     width: 26rem;
     border-radius: 1rem;
   }
+
   .cat-title {
     font-size: var(--h3);
     font-weight: 700;
     padding-top: 1rem;
     max-width: 50rem;
   }
+
   .cat-article-icon {
     padding-right: 1.5rem;
   }
 }
+
 @media only screen and (max-width: $x-small-screen) {
   .cat-article {
     display: flex;
   }
+
   .cat-article-icon {
     padding-right: 1.5rem;
   }
+
   .cat-article-authdate {
     margin: auto 0;
     line-height: 2.2rem;
     padding-top: 1rem;
   }
+
   @media only screen and (max-width: $x-small-screen) {
     .cat-article {
       display: flex;
       flex-direction: row-reverse;
       margin: auto;
     }
+
     .cat-img-div {
       width: 40%;
     }
+
     .cat-article-img {
       height: 17rem;
       width: 35vw;
       width: 100%;
       margin-right: 0;
     }
+
     .cat-article-image-content {
       justify-content: flex-end;
     }
+
     .cat-title {
       font-size: var(--h4);
       font-weight: 700;
@@ -133,11 +150,13 @@ export default {
       max-width: 30rem;
       margin-top: 1rem;
     }
+
     .cat-article-icon {
       width: 3rem;
       padding-right: 1.5rem;
       height: 3rem;
     }
+
     .cat-labels {
       margin-top: 1rem;
     }

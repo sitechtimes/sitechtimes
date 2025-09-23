@@ -4,38 +4,18 @@
       <div class="desktop-view">
         <h2 class="section-title">Trending Articles</h2>
         <section class="trending-section">
-          <CardComponent
-            class="trending-main cardquery"
-            size="medium"
-            v-if="homepages[0]"
-            :articleUrl="'/articles/' + homepages[0].slug"
-            :category="homepages[0].category"
-            :imageTitle="homepages[0].imageAlt"
-            :title="homepages[0].title"
-            :imageUrl="homepages[0].imageUrl"
-          />
-          <CardComponent
-            v-if="homepages[1]"
-            :articleUrl="'/articles/' + homepages[1].slug"
-            :category="homepages[1].category"
-            :imageTitle="homepages[1].imageAlt"
-            :title="homepages[1].title"
-            :imageUrl="homepages[1].imageUrl"
-            class="trending-sub"
-            size="small"
-          />
-          <CardComponent
-            v-if="homepages[2]"
-            :articleUrl="'/articles/' + homepages[2].slug"
-            :category="homepages[2].category"
-            :imageTitle="homepages[2].imageAlt"
-            :title="homepages[2].title"
-            :imageUrl="homepages[2].imageUrl"
-            class="trending-detail"
-            size="small"
-          />
+          <CardComponent class="trending-main cardquery" size="medium" v-if="homepages[0]"
+            :articleUrl="'/articles/' + homepages[0].slug" :category="homepages[0].category"
+            :imageTitle="homepages[0].imageAlt" :title="homepages[0].title" :imageUrl="homepages[0].imageUrl" />
+          <CardComponent v-if="homepages[1]" :articleUrl="'/articles/' + homepages[1].slug"
+            :category="homepages[1].category" :imageTitle="homepages[1].imageAlt" :title="homepages[1].title"
+            :imageUrl="homepages[1].imageUrl" class="trending-sub" size="small" />
+          <CardComponent v-if="homepages[2]" :articleUrl="'/articles/' + homepages[2].slug"
+            :category="homepages[2].category" :imageTitle="homepages[2].imageAlt" :title="homepages[2].title"
+            :imageUrl="homepages[2].imageUrl" class="trending-detail" size="small" />
         </section>
-
+        <MainCardList :homepages="homepages.slice(-17, -1)" />
+        <!--
         <section
           class="grid-article-container trio-grid-container"
           v-if="homepages[3]"
@@ -85,6 +65,7 @@
           :imageUrl="article.imageUrl"
           :key="article.id"
         />
+        -->
       </div>
     </div>
   </div>
@@ -94,6 +75,7 @@
 import CardComponent from "../components/CardComponent";
 import DuoArticleContainer from "../components/DuoArticleContainer";
 import GridArticleComponent from "../components/GridArticleComponent";
+import MainCardList from "../components/MainCardList.vue";
 
 export default {
   components: {
@@ -108,8 +90,18 @@ export default {
     };
   },
   async fetch() {
-    const homepages = await this.$axios.get("/articles/homepage");
-    this.homepages = homepages.data;
+    const res = await this.$axios.get("/articles/homepage");
+
+    const sorted = res.data.sort((a, b) => {
+      const hasImageA = Boolean(a.imageUrl);
+      const hasImageB = Boolean(b.imageUrl);
+
+      if (hasImageA && !hasImageB) return -1;
+      if (!hasImageA && hasImageB) return 1;
+      return 0;
+    });
+
+    this.homepages = sorted;
   },
   head: function () {
     return {
@@ -133,13 +125,16 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 .mobile-view {
   display: none;
 }
-.desktop-view > h2,
-.mobile-view > h2 {
+
+.desktop-view>h2,
+.mobile-view>h2 {
   color: var(--on-background);
 }
+
 .grid-article-container {
   display: flex;
   // gap: 2rem;
@@ -147,6 +142,7 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 // .invisible {
 //   height: 0rem;
 //   width: 0rem;
@@ -155,15 +151,19 @@ export default {
   font-size: var(--h3);
   padding: var(--title-spacing) 0;
 }
+
 .trending-main {
   grid-area: 1 / 1 / 3 / 5;
 }
+
 .trending-sub {
   grid-area: 1 / 5 / 2 / 8;
 }
+
 .trending-detail {
   grid-area: 2 / 5 / 3 / 8;
 }
+
 .trending-section {
   height: 65rem;
   display: grid;
@@ -173,9 +173,10 @@ export default {
   grid-row-gap: 2.5rem;
 }
 
-.global-container > h3 {
+.global-container>h3 {
   color: var(--on-background);
 }
+
 /* .darksection {
   background-color: var(--grey);
   color: white;
@@ -192,16 +193,20 @@ export default {
   //   display: none;
   // }
 }
+
 @media only screen and (max-width: $small-screen) {
   .trending-main {
     grid-area: 1 / 1 / 2 / 2;
   }
+
   .trending-sub {
     grid-area: 2 / 1 / 3 / 2;
   }
+
   .trending-detail {
     grid-area: 3 / 1 / 4 / 2;
   }
+
   .trending-section {
     height: 95rem;
     display: grid;
@@ -210,12 +215,15 @@ export default {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
   }
+
   .desktop-view {
     display: none;
   }
+
   .mobile-view {
     display: inherit;
   }
+
   .section-title-mobile {
     margin-bottom: -5rem;
   }

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h5
-      :style="backgroundColor"
-      class="sidebar-article-details-category"
-      id="sidebar-article-category"
-    >
+    <h5 :style="backgroundColor" class="sidebar-article-details-category" id="sidebar-article-category">
       {{ category }}
     </h5>
   </div>
@@ -29,6 +25,7 @@ export default {
 
 <style lang="scss">
 @use "../assets/_variables" as *;
+
 #sidebar-article-category {
   text-transform: uppercase;
   width: max-content;
@@ -41,6 +38,7 @@ export default {
   line-height: 1.5rem;
   padding: 0.2rem 0.6rem 0 0.6rem;
 }
+
 @media only screen and (max-width: $mid-screen) {
   #sidebar-article-category {
     font-size: var(--h5);
